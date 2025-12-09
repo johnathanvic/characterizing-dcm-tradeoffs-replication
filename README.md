@@ -145,11 +145,3 @@ Forsythe, C. R., Gillingham, K. T., Michalek, J. J., and Whitefoot, K. S. (2023)
 Technology advancement is driving electric vehicle adoption. 
 Proceedings of the National Academy of Sciences, 120(23).
 ```
-
-Please cite both this repository and the original data source when using this data.
-
-
-## License
-
-
-
