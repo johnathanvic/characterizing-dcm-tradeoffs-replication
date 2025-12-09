@@ -1,0 +1,141 @@
+SLURM_ARRAY_JOB_ID: 35808537 (current estimation job)
+SLURM_JOB_ID: 35808537
+SLURM_ARRAY_TASK_ID: 4
+ORIGINAL_JOB_ID: 35774751 (multistart job)
+Running estimation for model 4 using multistart results from job 35774751...
+Loaded Part 1 results for: MXL1k_none_wtp 
+[1] FALSE
+Starting Part 2 (Estimation): MXL1k_none_wtp 
+Restored to  1000  draws. 
+Using  4  cores. 
+Starting main estimation 
+Preparing user-defined functions.
+WARNING: CAUTION: In models using mixing and workInLogs=TRUE, Apollo
+  assumes (and does not check) that the call to apollo_panelProd is
+  immediately followed by a call to apollo_avgInterDraws. 
+
+Testing likelihood function...
+Setting "avail" is missing, so full availability is assumed.
+
+Overview of choices for MNL model component :
+                                       C1      C2       C3
+Times available                  11010.00 11010.0 11010.00
+Times chosen                      3670.00  3677.0  3663.00
+Percentage chosen overall           33.33    33.4    33.27
+Percentage chosen when available    33.33    33.4    33.27
+
+
+Pre-processing likelihood function...
+Creating cluster...
+INFORMATION: While preparing your inputs for multi-core estimation, the
+  following objects were found in "apollo_inputs", but were not split
+  across cores: "attrCols", "availCols", "heterogeneity_spec",
+  "lognorm_price_dist", "n_classes", "n_draws", "nesting_params",
+  "nesting_spec", "observed_attributes", "scalingFactor_dist",
+  "utility_space". If these objects contain observation or
+  individual-specific data, and thus need to be split, please add a
+  column with the IDs to these objects, and call this column "ID" 
+Preparing workers for multithreading...
+
+Testing influence of parameters..........................
+Starting main estimation
+initial  value 8303.596854 
+iter   2 value 8301.966193
+iter   3 value 8301.962608
+iter   4 value 8294.101462
+iter   5 value 8293.957371
+iter   6 value 8293.867396
+iter   7 value 8288.132894
+iter   8 value 8275.568257
+iter   9 value 8270.340283
+iter  10 value 8269.481549
+iter  11 value 8267.874677
+iter  12 value 8267.023933
+iter  13 value 8266.517287
+iter  14 value 8266.239482
+iter  15 value 8265.882898
+iter  16 value 8265.479854
+iter  17 value 8265.187381
+iter  18 value 8264.885774
+iter  19 value 8264.649559
+iter  20 value 8264.582452
+iter  21 value 8264.452933
+iter  22 value 8264.412127
+iter  23 value 8264.391462
+iter  24 value 8264.381807
+iter  25 value 8264.379136
+iter  26 value 8264.373815
+iter  27 value 8264.373441
+iter  28 value 8264.373154
+iter  29 value 8264.373142
+iter  30 value 8264.373140
+iter  31 value 8264.373140
+iter  32 value 8264.373140
+iter  33 value 8264.373140
+iter  34 value 8264.373140
+iter  35 value 8264.373140
+iter  36 value 8264.373140
+iter  36 value 8264.373140
+iter  36 value 8264.373140
+final  value 8264.373140 
+converged
+
+Estimated parameters with approximate standard errors from BHHH matrix:
+                          Estimate     BHHH se BHH t-ratio (0)
+mu_scalingFactor           0.13643    0.003325         41.0257
+sigma_scalingFactor        0.06365    0.003366         18.9090
+mu_wtp_Acceleration       -1.14767    0.089798        -12.7806
+sigma_wtp_Acceleration     2.01156    0.085645         23.4871
+mu_wtp_OpCost             -1.79484    0.061333        -29.2636
+sigma_wtp_OpCost          -1.56093    0.061781        -25.2658
+mu_wtp_hev                 1.05641    0.441346          2.3936
+sigma_wtp_hev             -6.27840    0.608256        -10.3220
+mu_wtp_phev20              0.07477    0.425285          0.1758
+sigma_wtp_phev20           3.97965    0.680290          5.8499
+mu_wtp_phev40              0.77049    0.430295          1.7906
+sigma_wtp_phev40           3.94593    0.708617          5.5685
+mu_wtp_bev                -4.22002    0.528052         -7.9917
+sigma_wtp_bev             14.96814    0.383712         39.0088
+mu_wtp_bevRangeRel         5.01539    0.186803         26.8485
+sigma_wtp_bevRangeRel      6.26086    0.214485         29.1902
+mu_wtp_noBEVFC            -3.21759    0.337774         -9.5259
+sigma_wtp_noBEVFC          3.38370    0.616608          5.4876
+mu_wtp_american           -1.11347    0.398627         -2.7933
+sigma_wtp_american         7.23930    0.482331         15.0090
+mu_wtp_chinese           -19.40849    0.551513        -35.1914
+sigma_wtp_chinese        -19.05825    0.636204        -29.9562
+mu_wtp_japanese           -0.27236    0.392713         -0.6935
+sigma_wtp_japanese        -6.32035    0.492539        -12.8322
+mu_wtp_skorean            -4.83206    0.386980        -12.4866
+sigma_wtp_skorean          7.00956    0.389817         17.9817
+
+Final LL: -8264.3731
+
+Calculating log-likelihood at equal shares (LL(0)) for applicable
+  models...
+Calculating LL of each model component...
+Calculating other model fit measures
+INFORMATION: Your model took more than 10 minutes to estimate, so it
+  was saved to file
+  logs/job_35774751/MXL1k_none_wtp/MXL1k_none_wtp_model.rds before
+  calculating its covariance matrix. If calculation of the covariance
+  matrix fails or is stopped before finishing, you can load the model
+  up to this point using apollo_loadModel. You may also want to inspect
+  the approximate BHHH standard errors shown above to determine whether
+  you wish to continue this process. 
+Computing covariance matrix using numerical methods (numDeriv).
+ 0%....25%....50%....75%....100%
+Negative definite Hessian with maximum eigenvalue: -0.653115
+
+Please acknowledge the use of Apollo by citing Hess & Palma (2019) -
+  doi.org/10.1016/j.jocm.2019.100170
+Model output saved to logs/job_35774751/MXL1k_none_wtp/MXL1k_none_wtp_output.txt 
+Estimates saved to logs/job_35774751/MXL1k_none_wtp/MXL1k_none_wtp_estimates.csv 
+Model object saved to logs/job_35774751/MXL1k_none_wtp/MXL1k_none_wtp.rds 
+[1] TRUE
+Main estimation complete 
+Part 2 (Estimation) complete for: MXL1k_none_wtp 
+Results saved to: logs/job_35774751/MXL1k_none_wtp 
+Total time: 1.45 hours
+Ready for Part 3 (Cross-validation + remaining)
+Done with estimation. Results and logs saved to logs/job_35774751/

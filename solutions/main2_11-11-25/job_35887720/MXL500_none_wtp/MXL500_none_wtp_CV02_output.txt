@@ -1,0 +1,1667 @@
+Model run by jvicente using Apollo 0.3.6 on R 4.4.1 for Linux.
+Please acknowledge the use of Apollo by citing Hess & Palma (2019)
+  DOI 10.1016/j.jocm.2019.100170
+  www.ApolloChoiceModelling.com
+
+Model name                                  : MXL500_none_wtp_CV02
+Model description                           : No model description provided in apollo_control
+Model run at                                : 2025-11-10 16:19:20.753711
+Estimation method                           : bfgs
+Estimation diagnosis                        : successful convergence
+Optimisation diagnosis                      : Unknown (no Hessian requested by user)
+Number of individuals                       : 587
+Number of rows in database                  : 8805
+Number of modelled outcomes                 : 8805
+
+Number of cores used                        :  4 
+Number of inter-individual draws            : 500 (mlhs)
+
+LL(start)                                   : -6721.12
+LL at equal shares, LL(0)                   : -9823.83
+LL at observed shares, LL(C)                : Not applicable
+LL(final)                                   : -6684.42
+Rho-squared vs equal shares                  :  0.3196 
+Adj.Rho-squared vs equal shares              :  0.3169 
+Rho-squared vs observed shares               :  Not applicable 
+Adj.Rho-squared vs observed shares           :  Not applicable 
+AIC                                         :  13420.83 
+BIC                                         :  13604.99 
+
+Estimated parameters                        : 26
+Time taken (hh:mm:ss)                       :  00:19:48.77 
+     pre-estimation                         :  00:01:21.71 
+     estimation                             :  00:18:16.59 
+     post-estimation                        :  00:00:10.48 
+Iterations                                  :  46  
+
+Unconstrained optimisation.
+
+Estimates:
+                          Estimate        s.e.   t.rat.(0)    Rob.s.e.
+mu_scalingFactor           0.13211          NA          NA          NA
+sigma_scalingFactor        0.06446          NA          NA          NA
+mu_wtp_Acceleration       -1.41750          NA          NA          NA
+sigma_wtp_Acceleration     1.80736          NA          NA          NA
+mu_wtp_OpCost             -1.77001          NA          NA          NA
+sigma_wtp_OpCost          -1.64416          NA          NA          NA
+mu_wtp_hev                 1.07854          NA          NA          NA
+sigma_wtp_hev             -3.46173          NA          NA          NA
+mu_wtp_phev20             -0.20956          NA          NA          NA
+sigma_wtp_phev20          -1.86346          NA          NA          NA
+mu_wtp_phev40              0.16847          NA          NA          NA
+sigma_wtp_phev40           1.12141          NA          NA          NA
+mu_wtp_bev                -3.35593          NA          NA          NA
+sigma_wtp_bev             16.57476          NA          NA          NA
+mu_wtp_bevRangeRel         5.31181          NA          NA          NA
+sigma_wtp_bevRangeRel      6.63802          NA          NA          NA
+mu_wtp_noBEVFC            -3.70506          NA          NA          NA
+sigma_wtp_noBEVFC          1.59352          NA          NA          NA
+mu_wtp_american           -1.41724          NA          NA          NA
+sigma_wtp_american         6.66355          NA          NA          NA
+mu_wtp_chinese           -20.63781          NA          NA          NA
+sigma_wtp_chinese        -18.59295          NA          NA          NA
+mu_wtp_japanese           -0.31328          NA          NA          NA
+sigma_wtp_japanese        -0.41856          NA          NA          NA
+mu_wtp_skorean            -4.18693          NA          NA          NA
+sigma_wtp_skorean         -6.36851          NA          NA          NA
+                       Rob.t.rat.(0)
+mu_scalingFactor                  NA
+sigma_scalingFactor               NA
+mu_wtp_Acceleration               NA
+sigma_wtp_Acceleration            NA
+mu_wtp_OpCost                     NA
+sigma_wtp_OpCost                  NA
+mu_wtp_hev                        NA
+sigma_wtp_hev                     NA
+mu_wtp_phev20                     NA
+sigma_wtp_phev20                  NA
+mu_wtp_phev40                     NA
+sigma_wtp_phev40                  NA
+mu_wtp_bev                        NA
+sigma_wtp_bev                     NA
+mu_wtp_bevRangeRel                NA
+sigma_wtp_bevRangeRel             NA
+mu_wtp_noBEVFC                    NA
+sigma_wtp_noBEVFC                 NA
+mu_wtp_american                   NA
+sigma_wtp_american                NA
+mu_wtp_chinese                    NA
+sigma_wtp_chinese                 NA
+mu_wtp_japanese                   NA
+sigma_wtp_japanese                NA
+mu_wtp_skorean                    NA
+sigma_wtp_skorean                 NA
+
+
+Overview of choices for MNL model component :
+                                      C1      C2      C3
+Times available                  8805.00 8805.00 8805.00
+Times chosen                     2956.00 2905.00 2944.00
+Percentage chosen overall          33.57   32.99   33.44
+Percentage chosen when available   33.57   32.99   33.44
+
+
+
+Classical covariance matrix:
+                             mu_scalingFactor    sigma_scalingFactor
+mu_scalingFactor                           NA                     NA
+sigma_scalingFactor                        NA                     NA
+mu_wtp_Acceleration                        NA                     NA
+sigma_wtp_Acceleration                     NA                     NA
+mu_wtp_OpCost                              NA                     NA
+sigma_wtp_OpCost                           NA                     NA
+mu_wtp_hev                                 NA                     NA
+sigma_wtp_hev                              NA                     NA
+mu_wtp_phev20                              NA                     NA
+sigma_wtp_phev20                           NA                     NA
+mu_wtp_phev40                              NA                     NA
+sigma_wtp_phev40                           NA                     NA
+mu_wtp_bev                                 NA                     NA
+sigma_wtp_bev                              NA                     NA
+mu_wtp_bevRangeRel                         NA                     NA
+sigma_wtp_bevRangeRel                      NA                     NA
+mu_wtp_noBEVFC                             NA                     NA
+sigma_wtp_noBEVFC                          NA                     NA
+mu_wtp_american                            NA                     NA
+sigma_wtp_american                         NA                     NA
+mu_wtp_chinese                             NA                     NA
+sigma_wtp_chinese                          NA                     NA
+mu_wtp_japanese                            NA                     NA
+sigma_wtp_japanese                         NA                     NA
+mu_wtp_skorean                             NA                     NA
+sigma_wtp_skorean                          NA                     NA
+                          mu_wtp_Acceleration sigma_wtp_Acceleration
+mu_scalingFactor                           NA                     NA
+sigma_scalingFactor                        NA                     NA
+mu_wtp_Acceleration                        NA                     NA
+sigma_wtp_Acceleration                     NA                     NA
+mu_wtp_OpCost                              NA                     NA
+sigma_wtp_OpCost                           NA                     NA
+mu_wtp_hev                                 NA                     NA
+sigma_wtp_hev                              NA                     NA
+mu_wtp_phev20                              NA                     NA
+sigma_wtp_phev20                           NA                     NA
+mu_wtp_phev40                              NA                     NA
+sigma_wtp_phev40                           NA                     NA
+mu_wtp_bev                                 NA                     NA
+sigma_wtp_bev                              NA                     NA
+mu_wtp_bevRangeRel                         NA                     NA
+sigma_wtp_bevRangeRel                      NA                     NA
+mu_wtp_noBEVFC                             NA                     NA
+sigma_wtp_noBEVFC                          NA                     NA
+mu_wtp_american                            NA                     NA
+sigma_wtp_american                         NA                     NA
+mu_wtp_chinese                             NA                     NA
+sigma_wtp_chinese                          NA                     NA
+mu_wtp_japanese                            NA                     NA
+sigma_wtp_japanese                         NA                     NA
+mu_wtp_skorean                             NA                     NA
+sigma_wtp_skorean                          NA                     NA
+                                mu_wtp_OpCost       sigma_wtp_OpCost
+mu_scalingFactor                           NA                     NA
+sigma_scalingFactor                        NA                     NA
+mu_wtp_Acceleration                        NA                     NA
+sigma_wtp_Acceleration                     NA                     NA
+mu_wtp_OpCost                              NA                     NA
+sigma_wtp_OpCost                           NA                     NA
+mu_wtp_hev                                 NA                     NA
+sigma_wtp_hev                              NA                     NA
+mu_wtp_phev20                              NA                     NA
+sigma_wtp_phev20                           NA                     NA
+mu_wtp_phev40                              NA                     NA
+sigma_wtp_phev40                           NA                     NA
+mu_wtp_bev                                 NA                     NA
+sigma_wtp_bev                              NA                     NA
+mu_wtp_bevRangeRel                         NA                     NA
+sigma_wtp_bevRangeRel                      NA                     NA
+mu_wtp_noBEVFC                             NA                     NA
+sigma_wtp_noBEVFC                          NA                     NA
+mu_wtp_american                            NA                     NA
+sigma_wtp_american                         NA                     NA
+mu_wtp_chinese                             NA                     NA
+sigma_wtp_chinese                          NA                     NA
+mu_wtp_japanese                            NA                     NA
+sigma_wtp_japanese                         NA                     NA
+mu_wtp_skorean                             NA                     NA
+sigma_wtp_skorean                          NA                     NA
+                                   mu_wtp_hev          sigma_wtp_hev
+mu_scalingFactor                           NA                     NA
+sigma_scalingFactor                        NA                     NA
+mu_wtp_Acceleration                        NA                     NA
+sigma_wtp_Acceleration                     NA                     NA
+mu_wtp_OpCost                              NA                     NA
+sigma_wtp_OpCost                           NA                     NA
+mu_wtp_hev                                 NA                     NA
+sigma_wtp_hev                              NA                     NA
+mu_wtp_phev20                              NA                     NA
+sigma_wtp_phev20                           NA                     NA
+mu_wtp_phev40                              NA                     NA
+sigma_wtp_phev40                           NA                     NA
+mu_wtp_bev                                 NA                     NA
+sigma_wtp_bev                              NA                     NA
+mu_wtp_bevRangeRel                         NA                     NA
+sigma_wtp_bevRangeRel                      NA                     NA
+mu_wtp_noBEVFC                             NA                     NA
+sigma_wtp_noBEVFC                          NA                     NA
+mu_wtp_american                            NA                     NA
+sigma_wtp_american                         NA                     NA
+mu_wtp_chinese                             NA                     NA
+sigma_wtp_chinese                          NA                     NA
+mu_wtp_japanese                            NA                     NA
+sigma_wtp_japanese                         NA                     NA
+mu_wtp_skorean                             NA                     NA
+sigma_wtp_skorean                          NA                     NA
+                                mu_wtp_phev20       sigma_wtp_phev20
+mu_scalingFactor                           NA                     NA
+sigma_scalingFactor                        NA                     NA
+mu_wtp_Acceleration                        NA                     NA
+sigma_wtp_Acceleration                     NA                     NA
+mu_wtp_OpCost                              NA                     NA
+sigma_wtp_OpCost                           NA                     NA
+mu_wtp_hev                                 NA                     NA
+sigma_wtp_hev                              NA                     NA
+mu_wtp_phev20                              NA                     NA
+sigma_wtp_phev20                           NA                     NA
+mu_wtp_phev40                              NA                     NA
+sigma_wtp_phev40                           NA                     NA
+mu_wtp_bev                                 NA                     NA
+sigma_wtp_bev                              NA                     NA
+mu_wtp_bevRangeRel                         NA                     NA
+sigma_wtp_bevRangeRel                      NA                     NA
+mu_wtp_noBEVFC                             NA                     NA
+sigma_wtp_noBEVFC                          NA                     NA
+mu_wtp_american                            NA                     NA
+sigma_wtp_american                         NA                     NA
+mu_wtp_chinese                             NA                     NA
+sigma_wtp_chinese                          NA                     NA
+mu_wtp_japanese                            NA                     NA
+sigma_wtp_japanese                         NA                     NA
+mu_wtp_skorean                             NA                     NA
+sigma_wtp_skorean                          NA                     NA
+                                mu_wtp_phev40       sigma_wtp_phev40
+mu_scalingFactor                           NA                     NA
+sigma_scalingFactor                        NA                     NA
+mu_wtp_Acceleration                        NA                     NA
+sigma_wtp_Acceleration                     NA                     NA
+mu_wtp_OpCost                              NA                     NA
+sigma_wtp_OpCost                           NA                     NA
+mu_wtp_hev                                 NA                     NA
+sigma_wtp_hev                              NA                     NA
+mu_wtp_phev20                              NA                     NA
+sigma_wtp_phev20                           NA                     NA
+mu_wtp_phev40                              NA                     NA
+sigma_wtp_phev40                           NA                     NA
+mu_wtp_bev                                 NA                     NA
+sigma_wtp_bev                              NA                     NA
+mu_wtp_bevRangeRel                         NA                     NA
+sigma_wtp_bevRangeRel                      NA                     NA
+mu_wtp_noBEVFC                             NA                     NA
+sigma_wtp_noBEVFC                          NA                     NA
+mu_wtp_american                            NA                     NA
+sigma_wtp_american                         NA                     NA
+mu_wtp_chinese                             NA                     NA
+sigma_wtp_chinese                          NA                     NA
+mu_wtp_japanese                            NA                     NA
+sigma_wtp_japanese                         NA                     NA
+mu_wtp_skorean                             NA                     NA
+sigma_wtp_skorean                          NA                     NA
+                                   mu_wtp_bev          sigma_wtp_bev
+mu_scalingFactor                           NA                     NA
+sigma_scalingFactor                        NA                     NA
+mu_wtp_Acceleration                        NA                     NA
+sigma_wtp_Acceleration                     NA                     NA
+mu_wtp_OpCost                              NA                     NA
+sigma_wtp_OpCost                           NA                     NA
+mu_wtp_hev                                 NA                     NA
+sigma_wtp_hev                              NA                     NA
+mu_wtp_phev20                              NA                     NA
+sigma_wtp_phev20                           NA                     NA
+mu_wtp_phev40                              NA                     NA
+sigma_wtp_phev40                           NA                     NA
+mu_wtp_bev                                 NA                     NA
+sigma_wtp_bev                              NA                     NA
+mu_wtp_bevRangeRel                         NA                     NA
+sigma_wtp_bevRangeRel                      NA                     NA
+mu_wtp_noBEVFC                             NA                     NA
+sigma_wtp_noBEVFC                          NA                     NA
+mu_wtp_american                            NA                     NA
+sigma_wtp_american                         NA                     NA
+mu_wtp_chinese                             NA                     NA
+sigma_wtp_chinese                          NA                     NA
+mu_wtp_japanese                            NA                     NA
+sigma_wtp_japanese                         NA                     NA
+mu_wtp_skorean                             NA                     NA
+sigma_wtp_skorean                          NA                     NA
+                           mu_wtp_bevRangeRel  sigma_wtp_bevRangeRel
+mu_scalingFactor                           NA                     NA
+sigma_scalingFactor                        NA                     NA
+mu_wtp_Acceleration                        NA                     NA
+sigma_wtp_Acceleration                     NA                     NA
+mu_wtp_OpCost                              NA                     NA
+sigma_wtp_OpCost                           NA                     NA
+mu_wtp_hev                                 NA                     NA
+sigma_wtp_hev                              NA                     NA
+mu_wtp_phev20                              NA                     NA
+sigma_wtp_phev20                           NA                     NA
+mu_wtp_phev40                              NA                     NA
+sigma_wtp_phev40                           NA                     NA
+mu_wtp_bev                                 NA                     NA
+sigma_wtp_bev                              NA                     NA
+mu_wtp_bevRangeRel                         NA                     NA
+sigma_wtp_bevRangeRel                      NA                     NA
+mu_wtp_noBEVFC                             NA                     NA
+sigma_wtp_noBEVFC                          NA                     NA
+mu_wtp_american                            NA                     NA
+sigma_wtp_american                         NA                     NA
+mu_wtp_chinese                             NA                     NA
+sigma_wtp_chinese                          NA                     NA
+mu_wtp_japanese                            NA                     NA
+sigma_wtp_japanese                         NA                     NA
+mu_wtp_skorean                             NA                     NA
+sigma_wtp_skorean                          NA                     NA
+                               mu_wtp_noBEVFC      sigma_wtp_noBEVFC
+mu_scalingFactor                           NA                     NA
+sigma_scalingFactor                        NA                     NA
+mu_wtp_Acceleration                        NA                     NA
+sigma_wtp_Acceleration                     NA                     NA
+mu_wtp_OpCost                              NA                     NA
+sigma_wtp_OpCost                           NA                     NA
+mu_wtp_hev                                 NA                     NA
+sigma_wtp_hev                              NA                     NA
+mu_wtp_phev20                              NA                     NA
+sigma_wtp_phev20                           NA                     NA
+mu_wtp_phev40                              NA                     NA
+sigma_wtp_phev40                           NA                     NA
+mu_wtp_bev                                 NA                     NA
+sigma_wtp_bev                              NA                     NA
+mu_wtp_bevRangeRel                         NA                     NA
+sigma_wtp_bevRangeRel                      NA                     NA
+mu_wtp_noBEVFC                             NA                     NA
+sigma_wtp_noBEVFC                          NA                     NA
+mu_wtp_american                            NA                     NA
+sigma_wtp_american                         NA                     NA
+mu_wtp_chinese                             NA                     NA
+sigma_wtp_chinese                          NA                     NA
+mu_wtp_japanese                            NA                     NA
+sigma_wtp_japanese                         NA                     NA
+mu_wtp_skorean                             NA                     NA
+sigma_wtp_skorean                          NA                     NA
+                              mu_wtp_american     sigma_wtp_american
+mu_scalingFactor                           NA                     NA
+sigma_scalingFactor                        NA                     NA
+mu_wtp_Acceleration                        NA                     NA
+sigma_wtp_Acceleration                     NA                     NA
+mu_wtp_OpCost                              NA                     NA
+sigma_wtp_OpCost                           NA                     NA
+mu_wtp_hev                                 NA                     NA
+sigma_wtp_hev                              NA                     NA
+mu_wtp_phev20                              NA                     NA
+sigma_wtp_phev20                           NA                     NA
+mu_wtp_phev40                              NA                     NA
+sigma_wtp_phev40                           NA                     NA
+mu_wtp_bev                                 NA                     NA
+sigma_wtp_bev                              NA                     NA
+mu_wtp_bevRangeRel                         NA                     NA
+sigma_wtp_bevRangeRel                      NA                     NA
+mu_wtp_noBEVFC                             NA                     NA
+sigma_wtp_noBEVFC                          NA                     NA
+mu_wtp_american                            NA                     NA
+sigma_wtp_american                         NA                     NA
+mu_wtp_chinese                             NA                     NA
+sigma_wtp_chinese                          NA                     NA
+mu_wtp_japanese                            NA                     NA
+sigma_wtp_japanese                         NA                     NA
+mu_wtp_skorean                             NA                     NA
+sigma_wtp_skorean                          NA                     NA
+                               mu_wtp_chinese      sigma_wtp_chinese
+mu_scalingFactor                           NA                     NA
+sigma_scalingFactor                        NA                     NA
+mu_wtp_Acceleration                        NA                     NA
+sigma_wtp_Acceleration                     NA                     NA
+mu_wtp_OpCost                              NA                     NA
+sigma_wtp_OpCost                           NA                     NA
+mu_wtp_hev                                 NA                     NA
+sigma_wtp_hev                              NA                     NA
+mu_wtp_phev20                              NA                     NA
+sigma_wtp_phev20                           NA                     NA
+mu_wtp_phev40                              NA                     NA
+sigma_wtp_phev40                           NA                     NA
+mu_wtp_bev                                 NA                     NA
+sigma_wtp_bev                              NA                     NA
+mu_wtp_bevRangeRel                         NA                     NA
+sigma_wtp_bevRangeRel                      NA                     NA
+mu_wtp_noBEVFC                             NA                     NA
+sigma_wtp_noBEVFC                          NA                     NA
+mu_wtp_american                            NA                     NA
+sigma_wtp_american                         NA                     NA
+mu_wtp_chinese                             NA                     NA
+sigma_wtp_chinese                          NA                     NA
+mu_wtp_japanese                            NA                     NA
+sigma_wtp_japanese                         NA                     NA
+mu_wtp_skorean                             NA                     NA
+sigma_wtp_skorean                          NA                     NA
+                              mu_wtp_japanese     sigma_wtp_japanese
+mu_scalingFactor                           NA                     NA
+sigma_scalingFactor                        NA                     NA
+mu_wtp_Acceleration                        NA                     NA
+sigma_wtp_Acceleration                     NA                     NA
+mu_wtp_OpCost                              NA                     NA
+sigma_wtp_OpCost                           NA                     NA
+mu_wtp_hev                                 NA                     NA
+sigma_wtp_hev                              NA                     NA
+mu_wtp_phev20                              NA                     NA
+sigma_wtp_phev20                           NA                     NA
+mu_wtp_phev40                              NA                     NA
+sigma_wtp_phev40                           NA                     NA
+mu_wtp_bev                                 NA                     NA
+sigma_wtp_bev                              NA                     NA
+mu_wtp_bevRangeRel                         NA                     NA
+sigma_wtp_bevRangeRel                      NA                     NA
+mu_wtp_noBEVFC                             NA                     NA
+sigma_wtp_noBEVFC                          NA                     NA
+mu_wtp_american                            NA                     NA
+sigma_wtp_american                         NA                     NA
+mu_wtp_chinese                             NA                     NA
+sigma_wtp_chinese                          NA                     NA
+mu_wtp_japanese                            NA                     NA
+sigma_wtp_japanese                         NA                     NA
+mu_wtp_skorean                             NA                     NA
+sigma_wtp_skorean                          NA                     NA
+                               mu_wtp_skorean      sigma_wtp_skorean
+mu_scalingFactor                           NA                     NA
+sigma_scalingFactor                        NA                     NA
+mu_wtp_Acceleration                        NA                     NA
+sigma_wtp_Acceleration                     NA                     NA
+mu_wtp_OpCost                              NA                     NA
+sigma_wtp_OpCost                           NA                     NA
+mu_wtp_hev                                 NA                     NA
+sigma_wtp_hev                              NA                     NA
+mu_wtp_phev20                              NA                     NA
+sigma_wtp_phev20                           NA                     NA
+mu_wtp_phev40                              NA                     NA
+sigma_wtp_phev40                           NA                     NA
+mu_wtp_bev                                 NA                     NA
+sigma_wtp_bev                              NA                     NA
+mu_wtp_bevRangeRel                         NA                     NA
+sigma_wtp_bevRangeRel                      NA                     NA
+mu_wtp_noBEVFC                             NA                     NA
+sigma_wtp_noBEVFC                          NA                     NA
+mu_wtp_american                            NA                     NA
+sigma_wtp_american                         NA                     NA
+mu_wtp_chinese                             NA                     NA
+sigma_wtp_chinese                          NA                     NA
+mu_wtp_japanese                            NA                     NA
+sigma_wtp_japanese                         NA                     NA
+mu_wtp_skorean                             NA                     NA
+sigma_wtp_skorean                          NA                     NA
+
+Robust covariance matrix:
+                             mu_scalingFactor    sigma_scalingFactor
+mu_scalingFactor                           NA                     NA
+sigma_scalingFactor                        NA                     NA
+mu_wtp_Acceleration                        NA                     NA
+sigma_wtp_Acceleration                     NA                     NA
+mu_wtp_OpCost                              NA                     NA
+sigma_wtp_OpCost                           NA                     NA
+mu_wtp_hev                                 NA                     NA
+sigma_wtp_hev                              NA                     NA
+mu_wtp_phev20                              NA                     NA
+sigma_wtp_phev20                           NA                     NA
+mu_wtp_phev40                              NA                     NA
+sigma_wtp_phev40                           NA                     NA
+mu_wtp_bev                                 NA                     NA
+sigma_wtp_bev                              NA                     NA
+mu_wtp_bevRangeRel                         NA                     NA
+sigma_wtp_bevRangeRel                      NA                     NA
+mu_wtp_noBEVFC                             NA                     NA
+sigma_wtp_noBEVFC                          NA                     NA
+mu_wtp_american                            NA                     NA
+sigma_wtp_american                         NA                     NA
+mu_wtp_chinese                             NA                     NA
+sigma_wtp_chinese                          NA                     NA
+mu_wtp_japanese                            NA                     NA
+sigma_wtp_japanese                         NA                     NA
+mu_wtp_skorean                             NA                     NA
+sigma_wtp_skorean                          NA                     NA
+                          mu_wtp_Acceleration sigma_wtp_Acceleration
+mu_scalingFactor                           NA                     NA
+sigma_scalingFactor                        NA                     NA
+mu_wtp_Acceleration                        NA                     NA
+sigma_wtp_Acceleration                     NA                     NA
+mu_wtp_OpCost                              NA                     NA
+sigma_wtp_OpCost                           NA                     NA
+mu_wtp_hev                                 NA                     NA
+sigma_wtp_hev                              NA                     NA
+mu_wtp_phev20                              NA                     NA
+sigma_wtp_phev20                           NA                     NA
+mu_wtp_phev40                              NA                     NA
+sigma_wtp_phev40                           NA                     NA
+mu_wtp_bev                                 NA                     NA
+sigma_wtp_bev                              NA                     NA
+mu_wtp_bevRangeRel                         NA                     NA
+sigma_wtp_bevRangeRel                      NA                     NA
+mu_wtp_noBEVFC                             NA                     NA
+sigma_wtp_noBEVFC                          NA                     NA
+mu_wtp_american                            NA                     NA
+sigma_wtp_american                         NA                     NA
+mu_wtp_chinese                             NA                     NA
+sigma_wtp_chinese                          NA                     NA
+mu_wtp_japanese                            NA                     NA
+sigma_wtp_japanese                         NA                     NA
+mu_wtp_skorean                             NA                     NA
+sigma_wtp_skorean                          NA                     NA
+                                mu_wtp_OpCost       sigma_wtp_OpCost
+mu_scalingFactor                           NA                     NA
+sigma_scalingFactor                        NA                     NA
+mu_wtp_Acceleration                        NA                     NA
+sigma_wtp_Acceleration                     NA                     NA
+mu_wtp_OpCost                              NA                     NA
+sigma_wtp_OpCost                           NA                     NA
+mu_wtp_hev                                 NA                     NA
+sigma_wtp_hev                              NA                     NA
+mu_wtp_phev20                              NA                     NA
+sigma_wtp_phev20                           NA                     NA
+mu_wtp_phev40                              NA                     NA
+sigma_wtp_phev40                           NA                     NA
+mu_wtp_bev                                 NA                     NA
+sigma_wtp_bev                              NA                     NA
+mu_wtp_bevRangeRel                         NA                     NA
+sigma_wtp_bevRangeRel                      NA                     NA
+mu_wtp_noBEVFC                             NA                     NA
+sigma_wtp_noBEVFC                          NA                     NA
+mu_wtp_american                            NA                     NA
+sigma_wtp_american                         NA                     NA
+mu_wtp_chinese                             NA                     NA
+sigma_wtp_chinese                          NA                     NA
+mu_wtp_japanese                            NA                     NA
+sigma_wtp_japanese                         NA                     NA
+mu_wtp_skorean                             NA                     NA
+sigma_wtp_skorean                          NA                     NA
+                                   mu_wtp_hev          sigma_wtp_hev
+mu_scalingFactor                           NA                     NA
+sigma_scalingFactor                        NA                     NA
+mu_wtp_Acceleration                        NA                     NA
+sigma_wtp_Acceleration                     NA                     NA
+mu_wtp_OpCost                              NA                     NA
+sigma_wtp_OpCost                           NA                     NA
+mu_wtp_hev                                 NA                     NA
+sigma_wtp_hev                              NA                     NA
+mu_wtp_phev20                              NA                     NA
+sigma_wtp_phev20                           NA                     NA
+mu_wtp_phev40                              NA                     NA
+sigma_wtp_phev40                           NA                     NA
+mu_wtp_bev                                 NA                     NA
+sigma_wtp_bev                              NA                     NA
+mu_wtp_bevRangeRel                         NA                     NA
+sigma_wtp_bevRangeRel                      NA                     NA
+mu_wtp_noBEVFC                             NA                     NA
+sigma_wtp_noBEVFC                          NA                     NA
+mu_wtp_american                            NA                     NA
+sigma_wtp_american                         NA                     NA
+mu_wtp_chinese                             NA                     NA
+sigma_wtp_chinese                          NA                     NA
+mu_wtp_japanese                            NA                     NA
+sigma_wtp_japanese                         NA                     NA
+mu_wtp_skorean                             NA                     NA
+sigma_wtp_skorean                          NA                     NA
+                                mu_wtp_phev20       sigma_wtp_phev20
+mu_scalingFactor                           NA                     NA
+sigma_scalingFactor                        NA                     NA
+mu_wtp_Acceleration                        NA                     NA
+sigma_wtp_Acceleration                     NA                     NA
+mu_wtp_OpCost                              NA                     NA
+sigma_wtp_OpCost                           NA                     NA
+mu_wtp_hev                                 NA                     NA
+sigma_wtp_hev                              NA                     NA
+mu_wtp_phev20                              NA                     NA
+sigma_wtp_phev20                           NA                     NA
+mu_wtp_phev40                              NA                     NA
+sigma_wtp_phev40                           NA                     NA
+mu_wtp_bev                                 NA                     NA
+sigma_wtp_bev                              NA                     NA
+mu_wtp_bevRangeRel                         NA                     NA
+sigma_wtp_bevRangeRel                      NA                     NA
+mu_wtp_noBEVFC                             NA                     NA
+sigma_wtp_noBEVFC                          NA                     NA
+mu_wtp_american                            NA                     NA
+sigma_wtp_american                         NA                     NA
+mu_wtp_chinese                             NA                     NA
+sigma_wtp_chinese                          NA                     NA
+mu_wtp_japanese                            NA                     NA
+sigma_wtp_japanese                         NA                     NA
+mu_wtp_skorean                             NA                     NA
+sigma_wtp_skorean                          NA                     NA
+                                mu_wtp_phev40       sigma_wtp_phev40
+mu_scalingFactor                           NA                     NA
+sigma_scalingFactor                        NA                     NA
+mu_wtp_Acceleration                        NA                     NA
+sigma_wtp_Acceleration                     NA                     NA
+mu_wtp_OpCost                              NA                     NA
+sigma_wtp_OpCost                           NA                     NA
+mu_wtp_hev                                 NA                     NA
+sigma_wtp_hev                              NA                     NA
+mu_wtp_phev20                              NA                     NA
+sigma_wtp_phev20                           NA                     NA
+mu_wtp_phev40                              NA                     NA
+sigma_wtp_phev40                           NA                     NA
+mu_wtp_bev                                 NA                     NA
+sigma_wtp_bev                              NA                     NA
+mu_wtp_bevRangeRel                         NA                     NA
+sigma_wtp_bevRangeRel                      NA                     NA
+mu_wtp_noBEVFC                             NA                     NA
+sigma_wtp_noBEVFC                          NA                     NA
+mu_wtp_american                            NA                     NA
+sigma_wtp_american                         NA                     NA
+mu_wtp_chinese                             NA                     NA
+sigma_wtp_chinese                          NA                     NA
+mu_wtp_japanese                            NA                     NA
+sigma_wtp_japanese                         NA                     NA
+mu_wtp_skorean                             NA                     NA
+sigma_wtp_skorean                          NA                     NA
+                                   mu_wtp_bev          sigma_wtp_bev
+mu_scalingFactor                           NA                     NA
+sigma_scalingFactor                        NA                     NA
+mu_wtp_Acceleration                        NA                     NA
+sigma_wtp_Acceleration                     NA                     NA
+mu_wtp_OpCost                              NA                     NA
+sigma_wtp_OpCost                           NA                     NA
+mu_wtp_hev                                 NA                     NA
+sigma_wtp_hev                              NA                     NA
+mu_wtp_phev20                              NA                     NA
+sigma_wtp_phev20                           NA                     NA
+mu_wtp_phev40                              NA                     NA
+sigma_wtp_phev40                           NA                     NA
+mu_wtp_bev                                 NA                     NA
+sigma_wtp_bev                              NA                     NA
+mu_wtp_bevRangeRel                         NA                     NA
+sigma_wtp_bevRangeRel                      NA                     NA
+mu_wtp_noBEVFC                             NA                     NA
+sigma_wtp_noBEVFC                          NA                     NA
+mu_wtp_american                            NA                     NA
+sigma_wtp_american                         NA                     NA
+mu_wtp_chinese                             NA                     NA
+sigma_wtp_chinese                          NA                     NA
+mu_wtp_japanese                            NA                     NA
+sigma_wtp_japanese                         NA                     NA
+mu_wtp_skorean                             NA                     NA
+sigma_wtp_skorean                          NA                     NA
+                           mu_wtp_bevRangeRel  sigma_wtp_bevRangeRel
+mu_scalingFactor                           NA                     NA
+sigma_scalingFactor                        NA                     NA
+mu_wtp_Acceleration                        NA                     NA
+sigma_wtp_Acceleration                     NA                     NA
+mu_wtp_OpCost                              NA                     NA
+sigma_wtp_OpCost                           NA                     NA
+mu_wtp_hev                                 NA                     NA
+sigma_wtp_hev                              NA                     NA
+mu_wtp_phev20                              NA                     NA
+sigma_wtp_phev20                           NA                     NA
+mu_wtp_phev40                              NA                     NA
+sigma_wtp_phev40                           NA                     NA
+mu_wtp_bev                                 NA                     NA
+sigma_wtp_bev                              NA                     NA
+mu_wtp_bevRangeRel                         NA                     NA
+sigma_wtp_bevRangeRel                      NA                     NA
+mu_wtp_noBEVFC                             NA                     NA
+sigma_wtp_noBEVFC                          NA                     NA
+mu_wtp_american                            NA                     NA
+sigma_wtp_american                         NA                     NA
+mu_wtp_chinese                             NA                     NA
+sigma_wtp_chinese                          NA                     NA
+mu_wtp_japanese                            NA                     NA
+sigma_wtp_japanese                         NA                     NA
+mu_wtp_skorean                             NA                     NA
+sigma_wtp_skorean                          NA                     NA
+                               mu_wtp_noBEVFC      sigma_wtp_noBEVFC
+mu_scalingFactor                           NA                     NA
+sigma_scalingFactor                        NA                     NA
+mu_wtp_Acceleration                        NA                     NA
+sigma_wtp_Acceleration                     NA                     NA
+mu_wtp_OpCost                              NA                     NA
+sigma_wtp_OpCost                           NA                     NA
+mu_wtp_hev                                 NA                     NA
+sigma_wtp_hev                              NA                     NA
+mu_wtp_phev20                              NA                     NA
+sigma_wtp_phev20                           NA                     NA
+mu_wtp_phev40                              NA                     NA
+sigma_wtp_phev40                           NA                     NA
+mu_wtp_bev                                 NA                     NA
+sigma_wtp_bev                              NA                     NA
+mu_wtp_bevRangeRel                         NA                     NA
+sigma_wtp_bevRangeRel                      NA                     NA
+mu_wtp_noBEVFC                             NA                     NA
+sigma_wtp_noBEVFC                          NA                     NA
+mu_wtp_american                            NA                     NA
+sigma_wtp_american                         NA                     NA
+mu_wtp_chinese                             NA                     NA
+sigma_wtp_chinese                          NA                     NA
+mu_wtp_japanese                            NA                     NA
+sigma_wtp_japanese                         NA                     NA
+mu_wtp_skorean                             NA                     NA
+sigma_wtp_skorean                          NA                     NA
+                              mu_wtp_american     sigma_wtp_american
+mu_scalingFactor                           NA                     NA
+sigma_scalingFactor                        NA                     NA
+mu_wtp_Acceleration                        NA                     NA
+sigma_wtp_Acceleration                     NA                     NA
+mu_wtp_OpCost                              NA                     NA
+sigma_wtp_OpCost                           NA                     NA
+mu_wtp_hev                                 NA                     NA
+sigma_wtp_hev                              NA                     NA
+mu_wtp_phev20                              NA                     NA
+sigma_wtp_phev20                           NA                     NA
+mu_wtp_phev40                              NA                     NA
+sigma_wtp_phev40                           NA                     NA
+mu_wtp_bev                                 NA                     NA
+sigma_wtp_bev                              NA                     NA
+mu_wtp_bevRangeRel                         NA                     NA
+sigma_wtp_bevRangeRel                      NA                     NA
+mu_wtp_noBEVFC                             NA                     NA
+sigma_wtp_noBEVFC                          NA                     NA
+mu_wtp_american                            NA                     NA
+sigma_wtp_american                         NA                     NA
+mu_wtp_chinese                             NA                     NA
+sigma_wtp_chinese                          NA                     NA
+mu_wtp_japanese                            NA                     NA
+sigma_wtp_japanese                         NA                     NA
+mu_wtp_skorean                             NA                     NA
+sigma_wtp_skorean                          NA                     NA
+                               mu_wtp_chinese      sigma_wtp_chinese
+mu_scalingFactor                           NA                     NA
+sigma_scalingFactor                        NA                     NA
+mu_wtp_Acceleration                        NA                     NA
+sigma_wtp_Acceleration                     NA                     NA
+mu_wtp_OpCost                              NA                     NA
+sigma_wtp_OpCost                           NA                     NA
+mu_wtp_hev                                 NA                     NA
+sigma_wtp_hev                              NA                     NA
+mu_wtp_phev20                              NA                     NA
+sigma_wtp_phev20                           NA                     NA
+mu_wtp_phev40                              NA                     NA
+sigma_wtp_phev40                           NA                     NA
+mu_wtp_bev                                 NA                     NA
+sigma_wtp_bev                              NA                     NA
+mu_wtp_bevRangeRel                         NA                     NA
+sigma_wtp_bevRangeRel                      NA                     NA
+mu_wtp_noBEVFC                             NA                     NA
+sigma_wtp_noBEVFC                          NA                     NA
+mu_wtp_american                            NA                     NA
+sigma_wtp_american                         NA                     NA
+mu_wtp_chinese                             NA                     NA
+sigma_wtp_chinese                          NA                     NA
+mu_wtp_japanese                            NA                     NA
+sigma_wtp_japanese                         NA                     NA
+mu_wtp_skorean                             NA                     NA
+sigma_wtp_skorean                          NA                     NA
+                              mu_wtp_japanese     sigma_wtp_japanese
+mu_scalingFactor                           NA                     NA
+sigma_scalingFactor                        NA                     NA
+mu_wtp_Acceleration                        NA                     NA
+sigma_wtp_Acceleration                     NA                     NA
+mu_wtp_OpCost                              NA                     NA
+sigma_wtp_OpCost                           NA                     NA
+mu_wtp_hev                                 NA                     NA
+sigma_wtp_hev                              NA                     NA
+mu_wtp_phev20                              NA                     NA
+sigma_wtp_phev20                           NA                     NA
+mu_wtp_phev40                              NA                     NA
+sigma_wtp_phev40                           NA                     NA
+mu_wtp_bev                                 NA                     NA
+sigma_wtp_bev                              NA                     NA
+mu_wtp_bevRangeRel                         NA                     NA
+sigma_wtp_bevRangeRel                      NA                     NA
+mu_wtp_noBEVFC                             NA                     NA
+sigma_wtp_noBEVFC                          NA                     NA
+mu_wtp_american                            NA                     NA
+sigma_wtp_american                         NA                     NA
+mu_wtp_chinese                             NA                     NA
+sigma_wtp_chinese                          NA                     NA
+mu_wtp_japanese                            NA                     NA
+sigma_wtp_japanese                         NA                     NA
+mu_wtp_skorean                             NA                     NA
+sigma_wtp_skorean                          NA                     NA
+                               mu_wtp_skorean      sigma_wtp_skorean
+mu_scalingFactor                           NA                     NA
+sigma_scalingFactor                        NA                     NA
+mu_wtp_Acceleration                        NA                     NA
+sigma_wtp_Acceleration                     NA                     NA
+mu_wtp_OpCost                              NA                     NA
+sigma_wtp_OpCost                           NA                     NA
+mu_wtp_hev                                 NA                     NA
+sigma_wtp_hev                              NA                     NA
+mu_wtp_phev20                              NA                     NA
+sigma_wtp_phev20                           NA                     NA
+mu_wtp_phev40                              NA                     NA
+sigma_wtp_phev40                           NA                     NA
+mu_wtp_bev                                 NA                     NA
+sigma_wtp_bev                              NA                     NA
+mu_wtp_bevRangeRel                         NA                     NA
+sigma_wtp_bevRangeRel                      NA                     NA
+mu_wtp_noBEVFC                             NA                     NA
+sigma_wtp_noBEVFC                          NA                     NA
+mu_wtp_american                            NA                     NA
+sigma_wtp_american                         NA                     NA
+mu_wtp_chinese                             NA                     NA
+sigma_wtp_chinese                          NA                     NA
+mu_wtp_japanese                            NA                     NA
+sigma_wtp_japanese                         NA                     NA
+mu_wtp_skorean                             NA                     NA
+sigma_wtp_skorean                          NA                     NA
+
+Classical correlation matrix:
+                             mu_scalingFactor    sigma_scalingFactor
+mu_scalingFactor                           NA                     NA
+sigma_scalingFactor                        NA                     NA
+mu_wtp_Acceleration                        NA                     NA
+sigma_wtp_Acceleration                     NA                     NA
+mu_wtp_OpCost                              NA                     NA
+sigma_wtp_OpCost                           NA                     NA
+mu_wtp_hev                                 NA                     NA
+sigma_wtp_hev                              NA                     NA
+mu_wtp_phev20                              NA                     NA
+sigma_wtp_phev20                           NA                     NA
+mu_wtp_phev40                              NA                     NA
+sigma_wtp_phev40                           NA                     NA
+mu_wtp_bev                                 NA                     NA
+sigma_wtp_bev                              NA                     NA
+mu_wtp_bevRangeRel                         NA                     NA
+sigma_wtp_bevRangeRel                      NA                     NA
+mu_wtp_noBEVFC                             NA                     NA
+sigma_wtp_noBEVFC                          NA                     NA
+mu_wtp_american                            NA                     NA
+sigma_wtp_american                         NA                     NA
+mu_wtp_chinese                             NA                     NA
+sigma_wtp_chinese                          NA                     NA
+mu_wtp_japanese                            NA                     NA
+sigma_wtp_japanese                         NA                     NA
+mu_wtp_skorean                             NA                     NA
+sigma_wtp_skorean                          NA                     NA
+                          mu_wtp_Acceleration sigma_wtp_Acceleration
+mu_scalingFactor                           NA                     NA
+sigma_scalingFactor                        NA                     NA
+mu_wtp_Acceleration                        NA                     NA
+sigma_wtp_Acceleration                     NA                     NA
+mu_wtp_OpCost                              NA                     NA
+sigma_wtp_OpCost                           NA                     NA
+mu_wtp_hev                                 NA                     NA
+sigma_wtp_hev                              NA                     NA
+mu_wtp_phev20                              NA                     NA
+sigma_wtp_phev20                           NA                     NA
+mu_wtp_phev40                              NA                     NA
+sigma_wtp_phev40                           NA                     NA
+mu_wtp_bev                                 NA                     NA
+sigma_wtp_bev                              NA                     NA
+mu_wtp_bevRangeRel                         NA                     NA
+sigma_wtp_bevRangeRel                      NA                     NA
+mu_wtp_noBEVFC                             NA                     NA
+sigma_wtp_noBEVFC                          NA                     NA
+mu_wtp_american                            NA                     NA
+sigma_wtp_american                         NA                     NA
+mu_wtp_chinese                             NA                     NA
+sigma_wtp_chinese                          NA                     NA
+mu_wtp_japanese                            NA                     NA
+sigma_wtp_japanese                         NA                     NA
+mu_wtp_skorean                             NA                     NA
+sigma_wtp_skorean                          NA                     NA
+                                mu_wtp_OpCost       sigma_wtp_OpCost
+mu_scalingFactor                           NA                     NA
+sigma_scalingFactor                        NA                     NA
+mu_wtp_Acceleration                        NA                     NA
+sigma_wtp_Acceleration                     NA                     NA
+mu_wtp_OpCost                              NA                     NA
+sigma_wtp_OpCost                           NA                     NA
+mu_wtp_hev                                 NA                     NA
+sigma_wtp_hev                              NA                     NA
+mu_wtp_phev20                              NA                     NA
+sigma_wtp_phev20                           NA                     NA
+mu_wtp_phev40                              NA                     NA
+sigma_wtp_phev40                           NA                     NA
+mu_wtp_bev                                 NA                     NA
+sigma_wtp_bev                              NA                     NA
+mu_wtp_bevRangeRel                         NA                     NA
+sigma_wtp_bevRangeRel                      NA                     NA
+mu_wtp_noBEVFC                             NA                     NA
+sigma_wtp_noBEVFC                          NA                     NA
+mu_wtp_american                            NA                     NA
+sigma_wtp_american                         NA                     NA
+mu_wtp_chinese                             NA                     NA
+sigma_wtp_chinese                          NA                     NA
+mu_wtp_japanese                            NA                     NA
+sigma_wtp_japanese                         NA                     NA
+mu_wtp_skorean                             NA                     NA
+sigma_wtp_skorean                          NA                     NA
+                                   mu_wtp_hev          sigma_wtp_hev
+mu_scalingFactor                           NA                     NA
+sigma_scalingFactor                        NA                     NA
+mu_wtp_Acceleration                        NA                     NA
+sigma_wtp_Acceleration                     NA                     NA
+mu_wtp_OpCost                              NA                     NA
+sigma_wtp_OpCost                           NA                     NA
+mu_wtp_hev                                 NA                     NA
+sigma_wtp_hev                              NA                     NA
+mu_wtp_phev20                              NA                     NA
+sigma_wtp_phev20                           NA                     NA
+mu_wtp_phev40                              NA                     NA
+sigma_wtp_phev40                           NA                     NA
+mu_wtp_bev                                 NA                     NA
+sigma_wtp_bev                              NA                     NA
+mu_wtp_bevRangeRel                         NA                     NA
+sigma_wtp_bevRangeRel                      NA                     NA
+mu_wtp_noBEVFC                             NA                     NA
+sigma_wtp_noBEVFC                          NA                     NA
+mu_wtp_american                            NA                     NA
+sigma_wtp_american                         NA                     NA
+mu_wtp_chinese                             NA                     NA
+sigma_wtp_chinese                          NA                     NA
+mu_wtp_japanese                            NA                     NA
+sigma_wtp_japanese                         NA                     NA
+mu_wtp_skorean                             NA                     NA
+sigma_wtp_skorean                          NA                     NA
+                                mu_wtp_phev20       sigma_wtp_phev20
+mu_scalingFactor                           NA                     NA
+sigma_scalingFactor                        NA                     NA
+mu_wtp_Acceleration                        NA                     NA
+sigma_wtp_Acceleration                     NA                     NA
+mu_wtp_OpCost                              NA                     NA
+sigma_wtp_OpCost                           NA                     NA
+mu_wtp_hev                                 NA                     NA
+sigma_wtp_hev                              NA                     NA
+mu_wtp_phev20                              NA                     NA
+sigma_wtp_phev20                           NA                     NA
+mu_wtp_phev40                              NA                     NA
+sigma_wtp_phev40                           NA                     NA
+mu_wtp_bev                                 NA                     NA
+sigma_wtp_bev                              NA                     NA
+mu_wtp_bevRangeRel                         NA                     NA
+sigma_wtp_bevRangeRel                      NA                     NA
+mu_wtp_noBEVFC                             NA                     NA
+sigma_wtp_noBEVFC                          NA                     NA
+mu_wtp_american                            NA                     NA
+sigma_wtp_american                         NA                     NA
+mu_wtp_chinese                             NA                     NA
+sigma_wtp_chinese                          NA                     NA
+mu_wtp_japanese                            NA                     NA
+sigma_wtp_japanese                         NA                     NA
+mu_wtp_skorean                             NA                     NA
+sigma_wtp_skorean                          NA                     NA
+                                mu_wtp_phev40       sigma_wtp_phev40
+mu_scalingFactor                           NA                     NA
+sigma_scalingFactor                        NA                     NA
+mu_wtp_Acceleration                        NA                     NA
+sigma_wtp_Acceleration                     NA                     NA
+mu_wtp_OpCost                              NA                     NA
+sigma_wtp_OpCost                           NA                     NA
+mu_wtp_hev                                 NA                     NA
+sigma_wtp_hev                              NA                     NA
+mu_wtp_phev20                              NA                     NA
+sigma_wtp_phev20                           NA                     NA
+mu_wtp_phev40                              NA                     NA
+sigma_wtp_phev40                           NA                     NA
+mu_wtp_bev                                 NA                     NA
+sigma_wtp_bev                              NA                     NA
+mu_wtp_bevRangeRel                         NA                     NA
+sigma_wtp_bevRangeRel                      NA                     NA
+mu_wtp_noBEVFC                             NA                     NA
+sigma_wtp_noBEVFC                          NA                     NA
+mu_wtp_american                            NA                     NA
+sigma_wtp_american                         NA                     NA
+mu_wtp_chinese                             NA                     NA
+sigma_wtp_chinese                          NA                     NA
+mu_wtp_japanese                            NA                     NA
+sigma_wtp_japanese                         NA                     NA
+mu_wtp_skorean                             NA                     NA
+sigma_wtp_skorean                          NA                     NA
+                                   mu_wtp_bev          sigma_wtp_bev
+mu_scalingFactor                           NA                     NA
+sigma_scalingFactor                        NA                     NA
+mu_wtp_Acceleration                        NA                     NA
+sigma_wtp_Acceleration                     NA                     NA
+mu_wtp_OpCost                              NA                     NA
+sigma_wtp_OpCost                           NA                     NA
+mu_wtp_hev                                 NA                     NA
+sigma_wtp_hev                              NA                     NA
+mu_wtp_phev20                              NA                     NA
+sigma_wtp_phev20                           NA                     NA
+mu_wtp_phev40                              NA                     NA
+sigma_wtp_phev40                           NA                     NA
+mu_wtp_bev                                 NA                     NA
+sigma_wtp_bev                              NA                     NA
+mu_wtp_bevRangeRel                         NA                     NA
+sigma_wtp_bevRangeRel                      NA                     NA
+mu_wtp_noBEVFC                             NA                     NA
+sigma_wtp_noBEVFC                          NA                     NA
+mu_wtp_american                            NA                     NA
+sigma_wtp_american                         NA                     NA
+mu_wtp_chinese                             NA                     NA
+sigma_wtp_chinese                          NA                     NA
+mu_wtp_japanese                            NA                     NA
+sigma_wtp_japanese                         NA                     NA
+mu_wtp_skorean                             NA                     NA
+sigma_wtp_skorean                          NA                     NA
+                           mu_wtp_bevRangeRel  sigma_wtp_bevRangeRel
+mu_scalingFactor                           NA                     NA
+sigma_scalingFactor                        NA                     NA
+mu_wtp_Acceleration                        NA                     NA
+sigma_wtp_Acceleration                     NA                     NA
+mu_wtp_OpCost                              NA                     NA
+sigma_wtp_OpCost                           NA                     NA
+mu_wtp_hev                                 NA                     NA
+sigma_wtp_hev                              NA                     NA
+mu_wtp_phev20                              NA                     NA
+sigma_wtp_phev20                           NA                     NA
+mu_wtp_phev40                              NA                     NA
+sigma_wtp_phev40                           NA                     NA
+mu_wtp_bev                                 NA                     NA
+sigma_wtp_bev                              NA                     NA
+mu_wtp_bevRangeRel                         NA                     NA
+sigma_wtp_bevRangeRel                      NA                     NA
+mu_wtp_noBEVFC                             NA                     NA
+sigma_wtp_noBEVFC                          NA                     NA
+mu_wtp_american                            NA                     NA
+sigma_wtp_american                         NA                     NA
+mu_wtp_chinese                             NA                     NA
+sigma_wtp_chinese                          NA                     NA
+mu_wtp_japanese                            NA                     NA
+sigma_wtp_japanese                         NA                     NA
+mu_wtp_skorean                             NA                     NA
+sigma_wtp_skorean                          NA                     NA
+                               mu_wtp_noBEVFC      sigma_wtp_noBEVFC
+mu_scalingFactor                           NA                     NA
+sigma_scalingFactor                        NA                     NA
+mu_wtp_Acceleration                        NA                     NA
+sigma_wtp_Acceleration                     NA                     NA
+mu_wtp_OpCost                              NA                     NA
+sigma_wtp_OpCost                           NA                     NA
+mu_wtp_hev                                 NA                     NA
+sigma_wtp_hev                              NA                     NA
+mu_wtp_phev20                              NA                     NA
+sigma_wtp_phev20                           NA                     NA
+mu_wtp_phev40                              NA                     NA
+sigma_wtp_phev40                           NA                     NA
+mu_wtp_bev                                 NA                     NA
+sigma_wtp_bev                              NA                     NA
+mu_wtp_bevRangeRel                         NA                     NA
+sigma_wtp_bevRangeRel                      NA                     NA
+mu_wtp_noBEVFC                             NA                     NA
+sigma_wtp_noBEVFC                          NA                     NA
+mu_wtp_american                            NA                     NA
+sigma_wtp_american                         NA                     NA
+mu_wtp_chinese                             NA                     NA
+sigma_wtp_chinese                          NA                     NA
+mu_wtp_japanese                            NA                     NA
+sigma_wtp_japanese                         NA                     NA
+mu_wtp_skorean                             NA                     NA
+sigma_wtp_skorean                          NA                     NA
+                              mu_wtp_american     sigma_wtp_american
+mu_scalingFactor                           NA                     NA
+sigma_scalingFactor                        NA                     NA
+mu_wtp_Acceleration                        NA                     NA
+sigma_wtp_Acceleration                     NA                     NA
+mu_wtp_OpCost                              NA                     NA
+sigma_wtp_OpCost                           NA                     NA
+mu_wtp_hev                                 NA                     NA
+sigma_wtp_hev                              NA                     NA
+mu_wtp_phev20                              NA                     NA
+sigma_wtp_phev20                           NA                     NA
+mu_wtp_phev40                              NA                     NA
+sigma_wtp_phev40                           NA                     NA
+mu_wtp_bev                                 NA                     NA
+sigma_wtp_bev                              NA                     NA
+mu_wtp_bevRangeRel                         NA                     NA
+sigma_wtp_bevRangeRel                      NA                     NA
+mu_wtp_noBEVFC                             NA                     NA
+sigma_wtp_noBEVFC                          NA                     NA
+mu_wtp_american                            NA                     NA
+sigma_wtp_american                         NA                     NA
+mu_wtp_chinese                             NA                     NA
+sigma_wtp_chinese                          NA                     NA
+mu_wtp_japanese                            NA                     NA
+sigma_wtp_japanese                         NA                     NA
+mu_wtp_skorean                             NA                     NA
+sigma_wtp_skorean                          NA                     NA
+                               mu_wtp_chinese      sigma_wtp_chinese
+mu_scalingFactor                           NA                     NA
+sigma_scalingFactor                        NA                     NA
+mu_wtp_Acceleration                        NA                     NA
+sigma_wtp_Acceleration                     NA                     NA
+mu_wtp_OpCost                              NA                     NA
+sigma_wtp_OpCost                           NA                     NA
+mu_wtp_hev                                 NA                     NA
+sigma_wtp_hev                              NA                     NA
+mu_wtp_phev20                              NA                     NA
+sigma_wtp_phev20                           NA                     NA
+mu_wtp_phev40                              NA                     NA
+sigma_wtp_phev40                           NA                     NA
+mu_wtp_bev                                 NA                     NA
+sigma_wtp_bev                              NA                     NA
+mu_wtp_bevRangeRel                         NA                     NA
+sigma_wtp_bevRangeRel                      NA                     NA
+mu_wtp_noBEVFC                             NA                     NA
+sigma_wtp_noBEVFC                          NA                     NA
+mu_wtp_american                            NA                     NA
+sigma_wtp_american                         NA                     NA
+mu_wtp_chinese                             NA                     NA
+sigma_wtp_chinese                          NA                     NA
+mu_wtp_japanese                            NA                     NA
+sigma_wtp_japanese                         NA                     NA
+mu_wtp_skorean                             NA                     NA
+sigma_wtp_skorean                          NA                     NA
+                              mu_wtp_japanese     sigma_wtp_japanese
+mu_scalingFactor                           NA                     NA
+sigma_scalingFactor                        NA                     NA
+mu_wtp_Acceleration                        NA                     NA
+sigma_wtp_Acceleration                     NA                     NA
+mu_wtp_OpCost                              NA                     NA
+sigma_wtp_OpCost                           NA                     NA
+mu_wtp_hev                                 NA                     NA
+sigma_wtp_hev                              NA                     NA
+mu_wtp_phev20                              NA                     NA
+sigma_wtp_phev20                           NA                     NA
+mu_wtp_phev40                              NA                     NA
+sigma_wtp_phev40                           NA                     NA
+mu_wtp_bev                                 NA                     NA
+sigma_wtp_bev                              NA                     NA
+mu_wtp_bevRangeRel                         NA                     NA
+sigma_wtp_bevRangeRel                      NA                     NA
+mu_wtp_noBEVFC                             NA                     NA
+sigma_wtp_noBEVFC                          NA                     NA
+mu_wtp_american                            NA                     NA
+sigma_wtp_american                         NA                     NA
+mu_wtp_chinese                             NA                     NA
+sigma_wtp_chinese                          NA                     NA
+mu_wtp_japanese                            NA                     NA
+sigma_wtp_japanese                         NA                     NA
+mu_wtp_skorean                             NA                     NA
+sigma_wtp_skorean                          NA                     NA
+                               mu_wtp_skorean      sigma_wtp_skorean
+mu_scalingFactor                           NA                     NA
+sigma_scalingFactor                        NA                     NA
+mu_wtp_Acceleration                        NA                     NA
+sigma_wtp_Acceleration                     NA                     NA
+mu_wtp_OpCost                              NA                     NA
+sigma_wtp_OpCost                           NA                     NA
+mu_wtp_hev                                 NA                     NA
+sigma_wtp_hev                              NA                     NA
+mu_wtp_phev20                              NA                     NA
+sigma_wtp_phev20                           NA                     NA
+mu_wtp_phev40                              NA                     NA
+sigma_wtp_phev40                           NA                     NA
+mu_wtp_bev                                 NA                     NA
+sigma_wtp_bev                              NA                     NA
+mu_wtp_bevRangeRel                         NA                     NA
+sigma_wtp_bevRangeRel                      NA                     NA
+mu_wtp_noBEVFC                             NA                     NA
+sigma_wtp_noBEVFC                          NA                     NA
+mu_wtp_american                            NA                     NA
+sigma_wtp_american                         NA                     NA
+mu_wtp_chinese                             NA                     NA
+sigma_wtp_chinese                          NA                     NA
+mu_wtp_japanese                            NA                     NA
+sigma_wtp_japanese                         NA                     NA
+mu_wtp_skorean                             NA                     NA
+sigma_wtp_skorean                          NA                     NA
+
+Robust correlation matrix:
+                             mu_scalingFactor    sigma_scalingFactor
+mu_scalingFactor                           NA                     NA
+sigma_scalingFactor                        NA                     NA
+mu_wtp_Acceleration                        NA                     NA
+sigma_wtp_Acceleration                     NA                     NA
+mu_wtp_OpCost                              NA                     NA
+sigma_wtp_OpCost                           NA                     NA
+mu_wtp_hev                                 NA                     NA
+sigma_wtp_hev                              NA                     NA
+mu_wtp_phev20                              NA                     NA
+sigma_wtp_phev20                           NA                     NA
+mu_wtp_phev40                              NA                     NA
+sigma_wtp_phev40                           NA                     NA
+mu_wtp_bev                                 NA                     NA
+sigma_wtp_bev                              NA                     NA
+mu_wtp_bevRangeRel                         NA                     NA
+sigma_wtp_bevRangeRel                      NA                     NA
+mu_wtp_noBEVFC                             NA                     NA
+sigma_wtp_noBEVFC                          NA                     NA
+mu_wtp_american                            NA                     NA
+sigma_wtp_american                         NA                     NA
+mu_wtp_chinese                             NA                     NA
+sigma_wtp_chinese                          NA                     NA
+mu_wtp_japanese                            NA                     NA
+sigma_wtp_japanese                         NA                     NA
+mu_wtp_skorean                             NA                     NA
+sigma_wtp_skorean                          NA                     NA
+                          mu_wtp_Acceleration sigma_wtp_Acceleration
+mu_scalingFactor                           NA                     NA
+sigma_scalingFactor                        NA                     NA
+mu_wtp_Acceleration                        NA                     NA
+sigma_wtp_Acceleration                     NA                     NA
+mu_wtp_OpCost                              NA                     NA
+sigma_wtp_OpCost                           NA                     NA
+mu_wtp_hev                                 NA                     NA
+sigma_wtp_hev                              NA                     NA
+mu_wtp_phev20                              NA                     NA
+sigma_wtp_phev20                           NA                     NA
+mu_wtp_phev40                              NA                     NA
+sigma_wtp_phev40                           NA                     NA
+mu_wtp_bev                                 NA                     NA
+sigma_wtp_bev                              NA                     NA
+mu_wtp_bevRangeRel                         NA                     NA
+sigma_wtp_bevRangeRel                      NA                     NA
+mu_wtp_noBEVFC                             NA                     NA
+sigma_wtp_noBEVFC                          NA                     NA
+mu_wtp_american                            NA                     NA
+sigma_wtp_american                         NA                     NA
+mu_wtp_chinese                             NA                     NA
+sigma_wtp_chinese                          NA                     NA
+mu_wtp_japanese                            NA                     NA
+sigma_wtp_japanese                         NA                     NA
+mu_wtp_skorean                             NA                     NA
+sigma_wtp_skorean                          NA                     NA
+                                mu_wtp_OpCost       sigma_wtp_OpCost
+mu_scalingFactor                           NA                     NA
+sigma_scalingFactor                        NA                     NA
+mu_wtp_Acceleration                        NA                     NA
+sigma_wtp_Acceleration                     NA                     NA
+mu_wtp_OpCost                              NA                     NA
+sigma_wtp_OpCost                           NA                     NA
+mu_wtp_hev                                 NA                     NA
+sigma_wtp_hev                              NA                     NA
+mu_wtp_phev20                              NA                     NA
+sigma_wtp_phev20                           NA                     NA
+mu_wtp_phev40                              NA                     NA
+sigma_wtp_phev40                           NA                     NA
+mu_wtp_bev                                 NA                     NA
+sigma_wtp_bev                              NA                     NA
+mu_wtp_bevRangeRel                         NA                     NA
+sigma_wtp_bevRangeRel                      NA                     NA
+mu_wtp_noBEVFC                             NA                     NA
+sigma_wtp_noBEVFC                          NA                     NA
+mu_wtp_american                            NA                     NA
+sigma_wtp_american                         NA                     NA
+mu_wtp_chinese                             NA                     NA
+sigma_wtp_chinese                          NA                     NA
+mu_wtp_japanese                            NA                     NA
+sigma_wtp_japanese                         NA                     NA
+mu_wtp_skorean                             NA                     NA
+sigma_wtp_skorean                          NA                     NA
+                                   mu_wtp_hev          sigma_wtp_hev
+mu_scalingFactor                           NA                     NA
+sigma_scalingFactor                        NA                     NA
+mu_wtp_Acceleration                        NA                     NA
+sigma_wtp_Acceleration                     NA                     NA
+mu_wtp_OpCost                              NA                     NA
+sigma_wtp_OpCost                           NA                     NA
+mu_wtp_hev                                 NA                     NA
+sigma_wtp_hev                              NA                     NA
+mu_wtp_phev20                              NA                     NA
+sigma_wtp_phev20                           NA                     NA
+mu_wtp_phev40                              NA                     NA
+sigma_wtp_phev40                           NA                     NA
+mu_wtp_bev                                 NA                     NA
+sigma_wtp_bev                              NA                     NA
+mu_wtp_bevRangeRel                         NA                     NA
+sigma_wtp_bevRangeRel                      NA                     NA
+mu_wtp_noBEVFC                             NA                     NA
+sigma_wtp_noBEVFC                          NA                     NA
+mu_wtp_american                            NA                     NA
+sigma_wtp_american                         NA                     NA
+mu_wtp_chinese                             NA                     NA
+sigma_wtp_chinese                          NA                     NA
+mu_wtp_japanese                            NA                     NA
+sigma_wtp_japanese                         NA                     NA
+mu_wtp_skorean                             NA                     NA
+sigma_wtp_skorean                          NA                     NA
+                                mu_wtp_phev20       sigma_wtp_phev20
+mu_scalingFactor                           NA                     NA
+sigma_scalingFactor                        NA                     NA
+mu_wtp_Acceleration                        NA                     NA
+sigma_wtp_Acceleration                     NA                     NA
+mu_wtp_OpCost                              NA                     NA
+sigma_wtp_OpCost                           NA                     NA
+mu_wtp_hev                                 NA                     NA
+sigma_wtp_hev                              NA                     NA
+mu_wtp_phev20                              NA                     NA
+sigma_wtp_phev20                           NA                     NA
+mu_wtp_phev40                              NA                     NA
+sigma_wtp_phev40                           NA                     NA
+mu_wtp_bev                                 NA                     NA
+sigma_wtp_bev                              NA                     NA
+mu_wtp_bevRangeRel                         NA                     NA
+sigma_wtp_bevRangeRel                      NA                     NA
+mu_wtp_noBEVFC                             NA                     NA
+sigma_wtp_noBEVFC                          NA                     NA
+mu_wtp_american                            NA                     NA
+sigma_wtp_american                         NA                     NA
+mu_wtp_chinese                             NA                     NA
+sigma_wtp_chinese                          NA                     NA
+mu_wtp_japanese                            NA                     NA
+sigma_wtp_japanese                         NA                     NA
+mu_wtp_skorean                             NA                     NA
+sigma_wtp_skorean                          NA                     NA
+                                mu_wtp_phev40       sigma_wtp_phev40
+mu_scalingFactor                           NA                     NA
+sigma_scalingFactor                        NA                     NA
+mu_wtp_Acceleration                        NA                     NA
+sigma_wtp_Acceleration                     NA                     NA
+mu_wtp_OpCost                              NA                     NA
+sigma_wtp_OpCost                           NA                     NA
+mu_wtp_hev                                 NA                     NA
+sigma_wtp_hev                              NA                     NA
+mu_wtp_phev20                              NA                     NA
+sigma_wtp_phev20                           NA                     NA
+mu_wtp_phev40                              NA                     NA
+sigma_wtp_phev40                           NA                     NA
+mu_wtp_bev                                 NA                     NA
+sigma_wtp_bev                              NA                     NA
+mu_wtp_bevRangeRel                         NA                     NA
+sigma_wtp_bevRangeRel                      NA                     NA
+mu_wtp_noBEVFC                             NA                     NA
+sigma_wtp_noBEVFC                          NA                     NA
+mu_wtp_american                            NA                     NA
+sigma_wtp_american                         NA                     NA
+mu_wtp_chinese                             NA                     NA
+sigma_wtp_chinese                          NA                     NA
+mu_wtp_japanese                            NA                     NA
+sigma_wtp_japanese                         NA                     NA
+mu_wtp_skorean                             NA                     NA
+sigma_wtp_skorean                          NA                     NA
+                                   mu_wtp_bev          sigma_wtp_bev
+mu_scalingFactor                           NA                     NA
+sigma_scalingFactor                        NA                     NA
+mu_wtp_Acceleration                        NA                     NA
+sigma_wtp_Acceleration                     NA                     NA
+mu_wtp_OpCost                              NA                     NA
+sigma_wtp_OpCost                           NA                     NA
+mu_wtp_hev                                 NA                     NA
+sigma_wtp_hev                              NA                     NA
+mu_wtp_phev20                              NA                     NA
+sigma_wtp_phev20                           NA                     NA
+mu_wtp_phev40                              NA                     NA
+sigma_wtp_phev40                           NA                     NA
+mu_wtp_bev                                 NA                     NA
+sigma_wtp_bev                              NA                     NA
+mu_wtp_bevRangeRel                         NA                     NA
+sigma_wtp_bevRangeRel                      NA                     NA
+mu_wtp_noBEVFC                             NA                     NA
+sigma_wtp_noBEVFC                          NA                     NA
+mu_wtp_american                            NA                     NA
+sigma_wtp_american                         NA                     NA
+mu_wtp_chinese                             NA                     NA
+sigma_wtp_chinese                          NA                     NA
+mu_wtp_japanese                            NA                     NA
+sigma_wtp_japanese                         NA                     NA
+mu_wtp_skorean                             NA                     NA
+sigma_wtp_skorean                          NA                     NA
+                           mu_wtp_bevRangeRel  sigma_wtp_bevRangeRel
+mu_scalingFactor                           NA                     NA
+sigma_scalingFactor                        NA                     NA
+mu_wtp_Acceleration                        NA                     NA
+sigma_wtp_Acceleration                     NA                     NA
+mu_wtp_OpCost                              NA                     NA
+sigma_wtp_OpCost                           NA                     NA
+mu_wtp_hev                                 NA                     NA
+sigma_wtp_hev                              NA                     NA
+mu_wtp_phev20                              NA                     NA
+sigma_wtp_phev20                           NA                     NA
+mu_wtp_phev40                              NA                     NA
+sigma_wtp_phev40                           NA                     NA
+mu_wtp_bev                                 NA                     NA
+sigma_wtp_bev                              NA                     NA
+mu_wtp_bevRangeRel                         NA                     NA
+sigma_wtp_bevRangeRel                      NA                     NA
+mu_wtp_noBEVFC                             NA                     NA
+sigma_wtp_noBEVFC                          NA                     NA
+mu_wtp_american                            NA                     NA
+sigma_wtp_american                         NA                     NA
+mu_wtp_chinese                             NA                     NA
+sigma_wtp_chinese                          NA                     NA
+mu_wtp_japanese                            NA                     NA
+sigma_wtp_japanese                         NA                     NA
+mu_wtp_skorean                             NA                     NA
+sigma_wtp_skorean                          NA                     NA
+                               mu_wtp_noBEVFC      sigma_wtp_noBEVFC
+mu_scalingFactor                           NA                     NA
+sigma_scalingFactor                        NA                     NA
+mu_wtp_Acceleration                        NA                     NA
+sigma_wtp_Acceleration                     NA                     NA
+mu_wtp_OpCost                              NA                     NA
+sigma_wtp_OpCost                           NA                     NA
+mu_wtp_hev                                 NA                     NA
+sigma_wtp_hev                              NA                     NA
+mu_wtp_phev20                              NA                     NA
+sigma_wtp_phev20                           NA                     NA
+mu_wtp_phev40                              NA                     NA
+sigma_wtp_phev40                           NA                     NA
+mu_wtp_bev                                 NA                     NA
+sigma_wtp_bev                              NA                     NA
+mu_wtp_bevRangeRel                         NA                     NA
+sigma_wtp_bevRangeRel                      NA                     NA
+mu_wtp_noBEVFC                             NA                     NA
+sigma_wtp_noBEVFC                          NA                     NA
+mu_wtp_american                            NA                     NA
+sigma_wtp_american                         NA                     NA
+mu_wtp_chinese                             NA                     NA
+sigma_wtp_chinese                          NA                     NA
+mu_wtp_japanese                            NA                     NA
+sigma_wtp_japanese                         NA                     NA
+mu_wtp_skorean                             NA                     NA
+sigma_wtp_skorean                          NA                     NA
+                              mu_wtp_american     sigma_wtp_american
+mu_scalingFactor                           NA                     NA
+sigma_scalingFactor                        NA                     NA
+mu_wtp_Acceleration                        NA                     NA
+sigma_wtp_Acceleration                     NA                     NA
+mu_wtp_OpCost                              NA                     NA
+sigma_wtp_OpCost                           NA                     NA
+mu_wtp_hev                                 NA                     NA
+sigma_wtp_hev                              NA                     NA
+mu_wtp_phev20                              NA                     NA
+sigma_wtp_phev20                           NA                     NA
+mu_wtp_phev40                              NA                     NA
+sigma_wtp_phev40                           NA                     NA
+mu_wtp_bev                                 NA                     NA
+sigma_wtp_bev                              NA                     NA
+mu_wtp_bevRangeRel                         NA                     NA
+sigma_wtp_bevRangeRel                      NA                     NA
+mu_wtp_noBEVFC                             NA                     NA
+sigma_wtp_noBEVFC                          NA                     NA
+mu_wtp_american                            NA                     NA
+sigma_wtp_american                         NA                     NA
+mu_wtp_chinese                             NA                     NA
+sigma_wtp_chinese                          NA                     NA
+mu_wtp_japanese                            NA                     NA
+sigma_wtp_japanese                         NA                     NA
+mu_wtp_skorean                             NA                     NA
+sigma_wtp_skorean                          NA                     NA
+                               mu_wtp_chinese      sigma_wtp_chinese
+mu_scalingFactor                           NA                     NA
+sigma_scalingFactor                        NA                     NA
+mu_wtp_Acceleration                        NA                     NA
+sigma_wtp_Acceleration                     NA                     NA
+mu_wtp_OpCost                              NA                     NA
+sigma_wtp_OpCost                           NA                     NA
+mu_wtp_hev                                 NA                     NA
+sigma_wtp_hev                              NA                     NA
+mu_wtp_phev20                              NA                     NA
+sigma_wtp_phev20                           NA                     NA
+mu_wtp_phev40                              NA                     NA
+sigma_wtp_phev40                           NA                     NA
+mu_wtp_bev                                 NA                     NA
+sigma_wtp_bev                              NA                     NA
+mu_wtp_bevRangeRel                         NA                     NA
+sigma_wtp_bevRangeRel                      NA                     NA
+mu_wtp_noBEVFC                             NA                     NA
+sigma_wtp_noBEVFC                          NA                     NA
+mu_wtp_american                            NA                     NA
+sigma_wtp_american                         NA                     NA
+mu_wtp_chinese                             NA                     NA
+sigma_wtp_chinese                          NA                     NA
+mu_wtp_japanese                            NA                     NA
+sigma_wtp_japanese                         NA                     NA
+mu_wtp_skorean                             NA                     NA
+sigma_wtp_skorean                          NA                     NA
+                              mu_wtp_japanese     sigma_wtp_japanese
+mu_scalingFactor                           NA                     NA
+sigma_scalingFactor                        NA                     NA
+mu_wtp_Acceleration                        NA                     NA
+sigma_wtp_Acceleration                     NA                     NA
+mu_wtp_OpCost                              NA                     NA
+sigma_wtp_OpCost                           NA                     NA
+mu_wtp_hev                                 NA                     NA
+sigma_wtp_hev                              NA                     NA
+mu_wtp_phev20                              NA                     NA
+sigma_wtp_phev20                           NA                     NA
+mu_wtp_phev40                              NA                     NA
+sigma_wtp_phev40                           NA                     NA
+mu_wtp_bev                                 NA                     NA
+sigma_wtp_bev                              NA                     NA
+mu_wtp_bevRangeRel                         NA                     NA
+sigma_wtp_bevRangeRel                      NA                     NA
+mu_wtp_noBEVFC                             NA                     NA
+sigma_wtp_noBEVFC                          NA                     NA
+mu_wtp_american                            NA                     NA
+sigma_wtp_american                         NA                     NA
+mu_wtp_chinese                             NA                     NA
+sigma_wtp_chinese                          NA                     NA
+mu_wtp_japanese                            NA                     NA
+sigma_wtp_japanese                         NA                     NA
+mu_wtp_skorean                             NA                     NA
+sigma_wtp_skorean                          NA                     NA
+                               mu_wtp_skorean      sigma_wtp_skorean
+mu_scalingFactor                           NA                     NA
+sigma_scalingFactor                        NA                     NA
+mu_wtp_Acceleration                        NA                     NA
+sigma_wtp_Acceleration                     NA                     NA
+mu_wtp_OpCost                              NA                     NA
+sigma_wtp_OpCost                           NA                     NA
+mu_wtp_hev                                 NA                     NA
+sigma_wtp_hev                              NA                     NA
+mu_wtp_phev20                              NA                     NA
+sigma_wtp_phev20                           NA                     NA
+mu_wtp_phev40                              NA                     NA
+sigma_wtp_phev40                           NA                     NA
+mu_wtp_bev                                 NA                     NA
+sigma_wtp_bev                              NA                     NA
+mu_wtp_bevRangeRel                         NA                     NA
+sigma_wtp_bevRangeRel                      NA                     NA
+mu_wtp_noBEVFC                             NA                     NA
+sigma_wtp_noBEVFC                          NA                     NA
+mu_wtp_american                            NA                     NA
+sigma_wtp_american                         NA                     NA
+mu_wtp_chinese                             NA                     NA
+sigma_wtp_chinese                          NA                     NA
+mu_wtp_japanese                            NA                     NA
+sigma_wtp_japanese                         NA                     NA
+mu_wtp_skorean                             NA                     NA
+sigma_wtp_skorean                          NA                     NA
+
+ 20 most extreme outliers in terms of lowest average per choice prediction:
+   ID Avg prob per choice
+ 1064         0.001930234
+  420         0.003708478
+ 1808         0.004301660
+ 1989         0.004430389
+  813         0.008347179
+  396         0.011317519
+ 1799         0.012194342
+  310         0.013976291
+  918         0.020159476
+ 1746         0.022633495
+  739         0.022968375
+  815         0.027175205
+  387         0.027279855
+   79         0.029694362
+ 1884         0.031089924
+  590         0.033505965
+  923         0.039672696
+ 1812         0.041287851
+  130         0.044709612
+ 1032         0.045149972
+
+Settings and functions used in model definition:
+
+apollo_control
+--------------
+                       Value                                            
+modelName              "MXL500_none_wtp_CV02"                           
+indivID                "ID"                                             
+panelData              "TRUE"                                           
+weights                "Weight2018"                                     
+outputDirectory        "logs/job_35887720/MXL500_none_wtp/"             
+nCores                 "4"                                              
+noModification         "TRUE"                                           
+calculateLLC           "FALSE"                                          
+workInLogs             "TRUE"                                           
+mixing                 "TRUE"                                           
+debug                  "FALSE"                                          
+modelDescr             "No model description provided in apollo_control"
+seed                   "13"                                             
+HB                     "FALSE"                                          
+noValidation           "TRUE"                                           
+noDiagnostics          "TRUE"                                           
+analyticHessian        "FALSE"                                          
+memorySaver            "FALSE"                                          
+analyticGrad           "FALSE"                                          
+analyticGrad_manualSet "TRUE"                                           
+overridePanel          "FALSE"                                          
+preventOverridePanel   "FALSE"                                          
+
+Hessian routines attempted
+--------------------------
+none
+
+
+apollo_randCoeff
+------------------
+function (apollo_beta, apollo_inputs) 
+{
+    randcoeff <- list()
+    space <- tolower(apollo_inputs$utility_space)
+    attrs <- apollo_inputs$observed_attributes
+    if (space == "pref") {
+        for (attr in attrs) {
+            mu_name <- paste0("mu_b_", attr)
+            sigma_name <- paste0("sigma_b_", attr)
+            draw_name <- paste0("draws_", attr)
+            out_name <- paste0("b_", attr)
+            mu_val <- apollo_beta[mu_name]
+            sigma_val <- apollo_beta[sigma_name]
+            draw_val <- apollo_inputs$draws[[draw_name]]
+            if (!is.null(apollo_inputs$lognorm_price_dist) && 
+                apollo_inputs$lognorm_price_dist == TRUE && attr == 
+                "Price") {
+                randcoeff[[out_name]] <- -1 * exp(mu_val + sigma_val * 
+                  draw_val)
+            }
+            else {
+                randcoeff[[out_name]] <- mu_val + sigma_val * 
+                  draw_val
+            }
+        }
+    }
+    else if (space == "wtp") {
+        if (apollo_inputs$scalingFactor_dist) {
+            mu_name <- paste0("mu_scalingFactor")
+            sigma_name <- paste0("sigma_scalingFactor")
+            draw_name <- paste0("draws_scalingFactor")
+            out_name <- paste0("scalingFactor")
+            mu_val <- apollo_beta[mu_name]
+            sigma_val <- apollo_beta[sigma_name]
+            draw_val <- apollo_inputs$draws[[draw_name]]
+            randcoeff[[out_name]] <- mu_val + sigma_val * draw_val
+        }
+        attrs_no_price <- setdiff(attrs, "Price")
+        for (attr2 in attrs_no_price) {
+            mu_name <- paste0("mu_wtp_", attr2)
+            sigma_name <- paste0("sigma_wtp_", attr2)
+            draw_name <- paste0("draws_", attr2)
+            out_name <- paste0("wtp_", attr2)
+            mu_val <- apollo_beta[mu_name]
+            sigma_val <- apollo_beta[sigma_name]
+            draw_val <- apollo_inputs$draws[[draw_name]]
+            randcoeff[[out_name]] <- mu_val + sigma_val * draw_val
+        }
+    }
+    return(randcoeff)
+}
+<bytecode: 0x55c20bfe24f0>
+<environment: 0x55c20bff20e0>
+
+
+apollo_probabilities
+----------------------
+function (apollo_beta, apollo_inputs, functionality = "estimate") 
+{
+    apollo_attach(apollo_beta, apollo_inputs)
+    on.exit(apollo_detach(apollo_beta, apollo_inputs))
+    P <- list()
+    V <- list()
+    alternatives <- unique(gsub("^.*C", "C", apollo_inputs$availCols))
+    alt_codes <- setNames(seq_along(alternatives), alternatives)
+    for (altName in alternatives) {
+        if (tolower(apollo_inputs$utility_space) == "wtp") {
+            attrs_no_price <- setdiff(apollo_inputs$observed_attributes, 
+                "Price")
+            attr_terms <- paste0("wtp_", attrs_no_price, " * ", 
+                attrs_no_price, altName, collapse = " + ")
+            v_expr <- paste0("scalingFactor * (", attr_terms, 
+                " - Price", altName, ")")
+        }
+        else {
+            attr_terms <- paste0("b_", apollo_inputs$observed_attributes, 
+                " * ", apollo_inputs$observed_attributes, altName, 
+                collapse = " + ")
+            v_expr <- attr_terms
+        }
+        V[[altName]] <- eval(parse(text = v_expr))
+    }
+    mnl_settings <- list(alternatives = alt_codes, choiceVar = Choice, 
+        utilities = V)
+    P[["model"]] <- apollo_mnl(mnl_settings, functionality)
+    P <- apollo_panelProd(P, apollo_inputs, functionality)
+    P <- apollo_avgInterDraws(P, apollo_inputs, functionality)
+    P <- apollo_weighting(P, apollo_inputs, functionality)
+    P <- apollo_prepareProb(P, apollo_inputs, functionality)
+    return(P)
+}
+<bytecode: 0x55c20bfe6758>
+<environment: 0x55c20bffe348>

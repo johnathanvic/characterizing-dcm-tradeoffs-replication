@@ -1,0 +1,1670 @@
+Model run by jvicente using Apollo 0.3.6 on R 4.4.1 for Linux.
+Please acknowledge the use of Apollo by citing Hess & Palma (2019)
+  DOI 10.1016/j.jocm.2019.100170
+  www.ApolloChoiceModelling.com
+
+Model name                                  : MXL500_none_pref
+Model description                           : No model description provided in apollo_control
+Model run at                                : 2025-11-10 21:11:56.331679
+Estimation method                           : bfgs
+Estimation diagnosis                        : successful convergence
+Optimisation diagnosis                      : Maximum found
+     hessian properties                     : Negative definite
+     maximum eigenvalue                     : -20.9084
+     reciprocal of condition number         : 0.000256593
+Number of individuals                       : 734
+Number of rows in database                  : 11010
+Number of modelled outcomes                 : 11010
+
+Number of cores used                        :  4 
+Number of inter-individual draws            : 500 (mlhs)
+
+LL(start)                                   : -8091.34
+LL at equal shares, LL(0)                   : -12095.72
+LL at observed shares, LL(C)                : Not applicable
+LL(final)                                   : -8037.63
+Rho-squared vs equal shares                  :  0.3355 
+Adj.Rho-squared vs equal shares              :  0.3333 
+Rho-squared vs observed shares               :  Not applicable 
+Adj.Rho-squared vs observed shares           :  Not applicable 
+AIC                                         :  16127.26 
+BIC                                         :  16317.23 
+
+Estimated parameters                        : 26
+Time taken (hh:mm:ss)                       :  00:57:16.03 
+     pre-estimation                         :  00:02:12.48 
+     estimation                             :  00:25:55.54 
+     post-estimation                        :  00:29:8.01 
+Iterations                                  :  39  
+
+Unconstrained optimisation.
+
+Estimates:
+                        Estimate        s.e.   t.rat.(0)    Rob.s.e.
+mu_b_Price             -0.122397    0.004234   -28.90837    0.008561
+sigma_b_Price           0.098709    0.004635    21.29837    0.008998
+mu_b_Acceleration      -0.159605    0.014640   -10.90217    0.025250
+sigma_b_Acceleration   -0.252854    0.019193   -13.17427    0.035303
+mu_b_OpCost            -0.211349    0.010628   -19.88508    0.017161
+sigma_b_OpCost         -0.186768    0.012347   -15.12704    0.020209
+mu_b_hev                0.106932    0.076822     1.39193    0.135771
+sigma_b_hev             0.459923    0.212464     2.16471    0.672632
+mu_b_phev20             0.006944    0.074776     0.09286    0.127675
+sigma_b_phev20          0.124250    0.144628     0.85910    0.267175
+mu_b_phev40             0.199764    0.075265     2.65414    0.128996
+sigma_b_phev40          0.253121    0.150452     1.68240    0.279254
+mu_b_bev               -0.444063    0.089017    -4.98853    0.167991
+sigma_b_bev            -1.676916    0.079733   -21.03175    0.161529
+mu_b_bevRangeRel        0.557605    0.034707    16.06607    0.059472
+sigma_b_bevRangeRel    -0.669719    0.042936   -15.59824    0.086392
+mu_b_noBEVFC           -0.438790    0.061605    -7.12270    0.089241
+sigma_b_noBEVFC        -0.522387    0.092974    -5.61864    0.164794
+mu_b_american          -0.106900    0.066316    -1.61198    0.114123
+sigma_b_american        0.763688    0.092313     8.27279    0.239991
+mu_b_chinese           -2.246241    0.108669   -20.67053    0.213921
+sigma_b_chinese        -2.171236    0.109449   -19.83786    0.187974
+mu_b_japanese          -0.055787    0.066052    -0.84460    0.118030
+sigma_b_japanese        0.833621    0.092952     8.96830    0.190027
+mu_b_skorean           -0.646990    0.068701    -9.41744    0.114979
+sigma_b_skorean        -0.846208    0.089514    -9.45334    0.187894
+                     Rob.t.rat.(0)
+mu_b_Price               -14.29769
+sigma_b_Price             10.97044
+mu_b_Acceleration         -6.32086
+sigma_b_Acceleration      -7.16234
+mu_b_OpCost              -12.31572
+sigma_b_OpCost            -9.24182
+mu_b_hev                   0.78759
+sigma_b_hev                0.68377
+mu_b_phev20                0.05439
+sigma_b_phev20             0.46505
+mu_b_phev40                1.54861
+sigma_b_phev40             0.90642
+mu_b_bev                  -2.64337
+sigma_b_bev              -10.38149
+mu_b_bevRangeRel           9.37587
+sigma_b_bevRangeRel       -7.75205
+mu_b_noBEVFC              -4.91692
+sigma_b_noBEVFC           -3.16995
+mu_b_american             -0.93670
+sigma_b_american           3.18215
+mu_b_chinese             -10.50032
+sigma_b_chinese          -11.55071
+mu_b_japanese             -0.47265
+sigma_b_japanese           4.38687
+mu_b_skorean              -5.62702
+sigma_b_skorean           -4.50363
+
+
+Overview of choices for MNL model component :
+                                       C1      C2       C3
+Times available                  11010.00 11010.0 11010.00
+Times chosen                      3670.00  3677.0  3663.00
+Percentage chosen overall           33.33    33.4    33.27
+Percentage chosen when available    33.33    33.4    33.27
+
+
+
+Classical covariance matrix:
+                               mu_b_Price        sigma_b_Price
+mu_b_Price                      1.793e-05           -5.706e-06
+sigma_b_Price                  -5.706e-06            2.148e-05
+mu_b_Acceleration               3.411e-06           -8.320e-06
+sigma_b_Acceleration            9.162e-06           -1.757e-05
+mu_b_OpCost                     5.052e-06           -9.112e-06
+sigma_b_OpCost                  5.954e-06           -1.102e-05
+mu_b_hev                        2.191e-06            1.883e-06
+sigma_b_hev                     6.255e-05           1.7302e-04
+mu_b_phev20                     7.974e-06            3.491e-06
+sigma_b_phev20                  3.514e-05           -7.787e-06
+mu_b_phev40                    -2.590e-06            1.102e-05
+sigma_b_phev40                 -9.302e-05            1.277e-05
+mu_b_bev                        4.578e-05           -2.812e-05
+sigma_b_bev                     6.132e-05           -6.129e-05
+mu_b_bevRangeRel               -1.251e-05            2.449e-05
+sigma_b_bevRangeRel             2.197e-05           -3.190e-05
+mu_b_noBEVFC                    1.344e-05           -1.165e-05
+sigma_b_noBEVFC                 7.475e-06           -4.364e-05
+mu_b_american                   7.468e-06            9.422e-06
+sigma_b_american                7.373e-06            3.223e-05
+mu_b_chinese                    7.054e-05           -6.468e-05
+sigma_b_chinese                 5.315e-05          -1.0650e-04
+mu_b_japanese                  -1.443e-06            6.900e-06
+sigma_b_japanese               -4.750e-06            5.002e-05
+mu_b_skorean                    2.543e-05           -2.359e-05
+sigma_b_skorean                 6.457e-05            2.329e-06
+                        mu_b_Acceleration sigma_b_Acceleration
+mu_b_Price                      3.411e-06            9.162e-06
+sigma_b_Price                  -8.320e-06           -1.757e-05
+mu_b_Acceleration              2.1432e-04            1.865e-05
+sigma_b_Acceleration            1.865e-05           3.6837e-04
+mu_b_OpCost                     1.051e-05            2.538e-05
+sigma_b_OpCost                  1.691e-05            2.854e-05
+mu_b_hev                        2.707e-05           -4.623e-06
+sigma_b_hev                   -1.8701e-04          -1.4571e-04
+mu_b_phev20                    -3.795e-06           -2.414e-06
+sigma_b_phev20                -1.0213e-04           3.3903e-04
+mu_b_phev40                     6.385e-06            1.329e-05
+sigma_b_phev40                 -6.373e-05           -4.643e-05
+mu_b_bev                        9.805e-05            6.738e-05
+sigma_b_bev                    1.0207e-04           2.1655e-04
+mu_b_bevRangeRel               -4.461e-05           -4.694e-05
+sigma_b_bevRangeRel             3.630e-05            6.968e-05
+mu_b_noBEVFC                    4.737e-06            2.680e-05
+sigma_b_noBEVFC                 1.451e-05            5.016e-05
+mu_b_american                  -3.275e-05            1.470e-05
+sigma_b_american               -5.804e-05           -6.869e-05
+mu_b_chinese                    8.407e-05           2.2012e-04
+sigma_b_chinese                1.4879e-04           2.5501e-04
+mu_b_japanese                   9.237e-06            1.948e-05
+sigma_b_japanese               -3.142e-05           -7.734e-05
+mu_b_skorean                    5.704e-05           1.2080e-04
+sigma_b_skorean                 7.610e-05           1.0750e-04
+                              mu_b_OpCost       sigma_b_OpCost
+mu_b_Price                      5.052e-06            5.954e-06
+sigma_b_Price                  -9.112e-06           -1.102e-05
+mu_b_Acceleration               1.051e-05            1.691e-05
+sigma_b_Acceleration            2.538e-05            2.854e-05
+mu_b_OpCost                    1.1296e-04            1.394e-05
+sigma_b_OpCost                  1.394e-05           1.5244e-04
+mu_b_hev                       -2.119e-05            8.342e-06
+sigma_b_hev                   -2.4264e-04          -1.4913e-04
+mu_b_phev20                    -2.123e-05           -9.250e-06
+sigma_b_phev20                -1.0551e-04            5.382e-05
+mu_b_phev40                    -3.121e-05           -6.961e-06
+sigma_b_phev40                  2.327e-06          -1.0260e-04
+mu_b_bev                        3.078e-05            3.402e-05
+sigma_b_bev                    1.0698e-04           1.3376e-04
+mu_b_bevRangeRel               -3.718e-05           -3.626e-05
+sigma_b_bevRangeRel             4.052e-05            5.088e-05
+mu_b_noBEVFC                    2.364e-05           -3.888e-06
+sigma_b_noBEVFC                1.2376e-04            7.589e-05
+mu_b_american                  -2.387e-05           -1.052e-05
+sigma_b_american              -1.4834e-04           -5.258e-05
+mu_b_chinese                    9.971e-05            6.939e-05
+sigma_b_chinese                1.7677e-04           2.0410e-04
+mu_b_japanese                   1.234e-05            3.371e-06
+sigma_b_japanese               -4.946e-05          -1.0776e-04
+mu_b_skorean                    4.542e-05            3.157e-05
+sigma_b_skorean                 1.754e-05            8.549e-05
+                                 mu_b_hev          sigma_b_hev
+mu_b_Price                      2.191e-06            6.255e-05
+sigma_b_Price                   1.883e-06           1.7302e-04
+mu_b_Acceleration               2.707e-05          -1.8701e-04
+sigma_b_Acceleration           -4.623e-06          -1.4571e-04
+mu_b_OpCost                    -2.119e-05          -2.4264e-04
+sigma_b_OpCost                  8.342e-06          -1.4913e-04
+mu_b_hev                         0.005902           5.4828e-04
+sigma_b_hev                    5.4828e-04             0.045141
+mu_b_phev20                      0.002798           2.8062e-04
+sigma_b_phev20                -1.5505e-04             0.002662
+mu_b_phev40                      0.002784           7.4586e-04
+sigma_b_phev40                 -9.079e-05            -0.002550
+mu_b_bev                         0.002779            -0.001722
+sigma_b_bev                   -1.9911e-04             0.002083
+mu_b_bevRangeRel                2.523e-05           6.4228e-04
+sigma_b_bevRangeRel           -1.2791e-04            -0.001038
+mu_b_noBEVFC                   -1.351e-05           -8.867e-05
+sigma_b_noBEVFC               -1.8430e-04            -0.003224
+mu_b_american                   7.039e-05           2.5258e-04
+sigma_b_american                8.509e-05             0.004727
+mu_b_chinese                    2.708e-05            -0.003884
+sigma_b_chinese               -1.8100e-04            -0.001985
+mu_b_japanese                  1.3069e-04           -6.742e-06
+sigma_b_japanese               2.2244e-04            -0.001571
+mu_b_skorean                    7.641e-05          -9.9338e-04
+sigma_b_skorean               -2.3395e-04             0.002156
+                              mu_b_phev20       sigma_b_phev20
+mu_b_Price                      7.974e-06            3.514e-05
+sigma_b_Price                   3.491e-06           -7.787e-06
+mu_b_Acceleration              -3.795e-06          -1.0213e-04
+sigma_b_Acceleration           -2.414e-06           3.3903e-04
+mu_b_OpCost                    -2.123e-05          -1.0551e-04
+sigma_b_OpCost                 -9.250e-06            5.382e-05
+mu_b_hev                         0.002798          -1.5505e-04
+sigma_b_hev                    2.8062e-04             0.002662
+mu_b_phev20                      0.005591           3.3410e-04
+sigma_b_phev20                 3.3410e-04             0.020917
+mu_b_phev40                      0.002836           2.4097e-04
+sigma_b_phev40                 1.0488e-04            -0.001152
+mu_b_bev                         0.002766          -5.4684e-04
+sigma_b_bev                    -9.116e-05           4.2370e-04
+mu_b_bevRangeRel               -3.373e-05           3.5238e-04
+sigma_b_bevRangeRel           -1.3185e-04           -5.246e-05
+mu_b_noBEVFC                    1.626e-05          -1.1685e-04
+sigma_b_noBEVFC                -3.309e-05          -8.5960e-04
+mu_b_american                  1.2854e-04           4.9758e-04
+sigma_b_american               2.7356e-04             0.001835
+mu_b_chinese                    7.484e-05          -9.2308e-04
+sigma_b_chinese               -1.1491e-04          -2.4624e-04
+mu_b_japanese                   9.026e-05          -3.5094e-04
+sigma_b_japanese                5.914e-05          -1.4425e-04
+mu_b_skorean                    1.925e-05          -3.6004e-04
+sigma_b_skorean                -3.463e-05           6.8519e-04
+                              mu_b_phev40       sigma_b_phev40
+mu_b_Price                     -2.590e-06           -9.302e-05
+sigma_b_Price                   1.102e-05            1.277e-05
+mu_b_Acceleration               6.385e-06           -6.373e-05
+sigma_b_Acceleration            1.329e-05           -4.643e-05
+mu_b_OpCost                    -3.121e-05            2.327e-06
+sigma_b_OpCost                 -6.961e-06          -1.0260e-04
+mu_b_hev                         0.002784           -9.079e-05
+sigma_b_hev                    7.4586e-04            -0.002550
+mu_b_phev20                      0.002836           1.0488e-04
+sigma_b_phev20                 2.4097e-04            -0.001152
+mu_b_phev40                      0.005665           8.8296e-04
+sigma_b_phev40                 8.8296e-04             0.022636
+mu_b_bev                         0.002638            -0.001334
+sigma_b_bev                    -6.770e-06           7.4104e-04
+mu_b_bevRangeRel                6.285e-05          -1.3172e-04
+sigma_b_bevRangeRel           -1.0893e-04          -6.3043e-04
+mu_b_noBEVFC                   -2.780e-05           1.7033e-04
+sigma_b_noBEVFC               -1.8285e-04          -2.7358e-04
+mu_b_american                  -8.257e-05          -1.1922e-04
+sigma_b_american               3.1948e-04            -0.001135
+mu_b_chinese                  -2.6878e-04             0.001409
+sigma_b_chinese               -2.9437e-04             0.001093
+mu_b_japanese                   9.419e-05          -2.2066e-04
+sigma_b_japanese                2.707e-05           6.1577e-04
+mu_b_skorean                  -2.0526e-04          -5.7238e-04
+sigma_b_skorean                 2.628e-05           5.7823e-04
+                                 mu_b_bev          sigma_b_bev
+mu_b_Price                      4.578e-05            6.132e-05
+sigma_b_Price                  -2.812e-05           -6.129e-05
+mu_b_Acceleration               9.805e-05           1.0207e-04
+sigma_b_Acceleration            6.738e-05           2.1655e-04
+mu_b_OpCost                     3.078e-05           1.0698e-04
+sigma_b_OpCost                  3.402e-05           1.3376e-04
+mu_b_hev                         0.002779          -1.9911e-04
+sigma_b_hev                     -0.001722             0.002083
+mu_b_phev20                      0.002766           -9.116e-05
+sigma_b_phev20                -5.4684e-04           4.2370e-04
+mu_b_phev40                      0.002638           -6.770e-06
+sigma_b_phev40                  -0.001334           7.4104e-04
+mu_b_bev                         0.007924          -5.6998e-04
+sigma_b_bev                   -5.6998e-04             0.006357
+mu_b_bevRangeRel               2.8101e-04          -2.4845e-04
+sigma_b_bevRangeRel            3.6870e-04           2.3056e-04
+mu_b_noBEVFC                    -0.001743           1.6282e-04
+sigma_b_noBEVFC               -2.7927e-04           3.1399e-04
+mu_b_american                   3.649e-06            7.913e-07
+sigma_b_american              -2.8359e-04          -1.5263e-04
+mu_b_chinese                   3.2258e-04           9.7995e-04
+sigma_b_chinese                3.6990e-04             0.001606
+mu_b_japanese                   5.712e-05           -1.274e-05
+sigma_b_japanese               5.6933e-04            -0.001001
+mu_b_skorean                   1.8739e-04           5.1608e-04
+sigma_b_skorean                -1.993e-06             0.001468
+                         mu_b_bevRangeRel  sigma_b_bevRangeRel
+mu_b_Price                     -1.251e-05            2.197e-05
+sigma_b_Price                   2.449e-05           -3.190e-05
+mu_b_Acceleration              -4.461e-05            3.630e-05
+sigma_b_Acceleration           -4.694e-05            6.968e-05
+mu_b_OpCost                    -3.718e-05            4.052e-05
+sigma_b_OpCost                 -3.626e-05            5.088e-05
+mu_b_hev                        2.523e-05          -1.2791e-04
+sigma_b_hev                    6.4228e-04            -0.001038
+mu_b_phev20                    -3.373e-05          -1.3185e-04
+sigma_b_phev20                 3.5238e-04           -5.246e-05
+mu_b_phev40                     6.285e-05          -1.0893e-04
+sigma_b_phev40                -1.3172e-04          -6.3043e-04
+mu_b_bev                       2.8101e-04           3.6870e-04
+sigma_b_bev                   -2.4845e-04           2.3056e-04
+mu_b_bevRangeRel                 0.001205          -2.3163e-04
+sigma_b_bevRangeRel           -2.3163e-04             0.001843
+mu_b_noBEVFC                  -1.2233e-04           1.4917e-04
+sigma_b_noBEVFC               -2.6579e-04           -2.738e-05
+mu_b_american                   3.404e-05            5.023e-05
+sigma_b_american               3.4362e-04          -1.3664e-04
+mu_b_chinese                  -4.4008e-04           5.9395e-04
+sigma_b_chinese               -4.5003e-04           6.9107e-04
+mu_b_japanese                  -2.329e-05            2.617e-05
+sigma_b_japanese               2.3850e-04          -3.6771e-04
+mu_b_skorean                   -9.698e-05           1.3852e-04
+sigma_b_skorean               -2.7698e-04          -2.1873e-04
+                             mu_b_noBEVFC      sigma_b_noBEVFC
+mu_b_Price                      1.344e-05            7.475e-06
+sigma_b_Price                  -1.165e-05           -4.364e-05
+mu_b_Acceleration               4.737e-06            1.451e-05
+sigma_b_Acceleration            2.680e-05            5.016e-05
+mu_b_OpCost                     2.364e-05           1.2376e-04
+sigma_b_OpCost                 -3.888e-06            7.589e-05
+mu_b_hev                       -1.351e-05          -1.8430e-04
+sigma_b_hev                    -8.867e-05            -0.003224
+mu_b_phev20                     1.626e-05           -3.309e-05
+sigma_b_phev20                -1.1685e-04          -8.5960e-04
+mu_b_phev40                    -2.780e-05          -1.8285e-04
+sigma_b_phev40                 1.7033e-04          -2.7358e-04
+mu_b_bev                        -0.001743          -2.7927e-04
+sigma_b_bev                    1.6282e-04           3.1399e-04
+mu_b_bevRangeRel              -1.2233e-04          -2.6579e-04
+sigma_b_bevRangeRel            1.4917e-04           -2.738e-05
+mu_b_noBEVFC                     0.003795            3.074e-05
+sigma_b_noBEVFC                 3.074e-05             0.008644
+mu_b_american                   5.301e-06          -1.5090e-04
+sigma_b_american              -3.6035e-04          -8.5458e-04
+mu_b_chinese                   2.0574e-04           9.6873e-04
+sigma_b_chinese                3.0548e-04           8.0351e-04
+mu_b_japanese                   7.269e-06            3.451e-05
+sigma_b_japanese               -1.399e-05          -8.2403e-04
+mu_b_skorean                    4.998e-06           1.5971e-04
+sigma_b_skorean                -4.335e-05          -4.4934e-04
+                            mu_b_american     sigma_b_american
+mu_b_Price                      7.468e-06            7.373e-06
+sigma_b_Price                   9.422e-06            3.223e-05
+mu_b_Acceleration              -3.275e-05           -5.804e-05
+sigma_b_Acceleration            1.470e-05           -6.869e-05
+mu_b_OpCost                    -2.387e-05          -1.4834e-04
+sigma_b_OpCost                 -1.052e-05           -5.258e-05
+mu_b_hev                        7.039e-05            8.509e-05
+sigma_b_hev                    2.5258e-04             0.004727
+mu_b_phev20                    1.2854e-04           2.7356e-04
+sigma_b_phev20                 4.9758e-04             0.001835
+mu_b_phev40                    -8.257e-05           3.1948e-04
+sigma_b_phev40                -1.1922e-04            -0.001135
+mu_b_bev                        3.649e-06          -2.8359e-04
+sigma_b_bev                     7.913e-07          -1.5263e-04
+mu_b_bevRangeRel                3.404e-05           3.4362e-04
+sigma_b_bevRangeRel             5.023e-05          -1.3664e-04
+mu_b_noBEVFC                    5.301e-06          -3.6035e-04
+sigma_b_noBEVFC               -1.5090e-04          -8.5458e-04
+mu_b_american                    0.004398           6.9242e-04
+sigma_b_american               6.9242e-04             0.008522
+mu_b_chinese                     0.002007          -7.6659e-04
+sigma_b_chinese                -6.421e-05          -9.0868e-04
+mu_b_japanese                    0.001674          -2.5750e-04
+sigma_b_japanese               -6.869e-06          -8.7525e-04
+mu_b_skorean                     0.001709          -4.2717e-04
+sigma_b_skorean               -2.4359e-04           -2.828e-05
+                             mu_b_chinese      sigma_b_chinese
+mu_b_Price                      7.054e-05            5.315e-05
+sigma_b_Price                  -6.468e-05          -1.0650e-04
+mu_b_Acceleration               8.407e-05           1.4879e-04
+sigma_b_Acceleration           2.2012e-04           2.5501e-04
+mu_b_OpCost                     9.971e-05           1.7677e-04
+sigma_b_OpCost                  6.939e-05           2.0410e-04
+mu_b_hev                        2.708e-05          -1.8100e-04
+sigma_b_hev                     -0.003884            -0.001985
+mu_b_phev20                     7.484e-05          -1.1491e-04
+sigma_b_phev20                -9.2308e-04          -2.4624e-04
+mu_b_phev40                   -2.6878e-04          -2.9437e-04
+sigma_b_phev40                   0.001409             0.001093
+mu_b_bev                       3.2258e-04           3.6990e-04
+sigma_b_bev                    9.7995e-04             0.001606
+mu_b_bevRangeRel              -4.4008e-04          -4.5003e-04
+sigma_b_bevRangeRel            5.9395e-04           6.9107e-04
+mu_b_noBEVFC                   2.0574e-04           3.0548e-04
+sigma_b_noBEVFC                9.6873e-04           8.0351e-04
+mu_b_american                    0.002007           -6.421e-05
+sigma_b_american              -7.6659e-04          -9.0868e-04
+mu_b_chinese                     0.011809             0.003799
+sigma_b_chinese                  0.003799             0.011979
+mu_b_japanese                    0.001951           1.6296e-04
+sigma_b_japanese              -5.5026e-04          -3.1199e-04
+mu_b_skorean                     0.002069           5.6611e-04
+sigma_b_skorean                 1.546e-05           6.3947e-04
+                            mu_b_japanese     sigma_b_japanese
+mu_b_Price                     -1.443e-06           -4.750e-06
+sigma_b_Price                   6.900e-06            5.002e-05
+mu_b_Acceleration               9.237e-06           -3.142e-05
+sigma_b_Acceleration            1.948e-05           -7.734e-05
+mu_b_OpCost                     1.234e-05           -4.946e-05
+sigma_b_OpCost                  3.371e-06          -1.0776e-04
+mu_b_hev                       1.3069e-04           2.2244e-04
+sigma_b_hev                    -6.742e-06            -0.001571
+mu_b_phev20                     9.026e-05            5.914e-05
+sigma_b_phev20                -3.5094e-04          -1.4425e-04
+mu_b_phev40                     9.419e-05            2.707e-05
+sigma_b_phev40                -2.2066e-04           6.1577e-04
+mu_b_bev                        5.712e-05           5.6933e-04
+sigma_b_bev                    -1.274e-05            -0.001001
+mu_b_bevRangeRel               -2.329e-05           2.3850e-04
+sigma_b_bevRangeRel             2.617e-05          -3.6771e-04
+mu_b_noBEVFC                    7.269e-06           -1.399e-05
+sigma_b_noBEVFC                 3.451e-05          -8.2403e-04
+mu_b_american                    0.001674           -6.869e-06
+sigma_b_american              -2.5750e-04          -8.7525e-04
+mu_b_chinese                     0.001951          -5.5026e-04
+sigma_b_chinese                1.6296e-04          -3.1199e-04
+mu_b_japanese                    0.004363          -3.7770e-04
+sigma_b_japanese              -3.7770e-04             0.008640
+mu_b_skorean                     0.001765           1.9544e-04
+sigma_b_skorean                -3.766e-05           2.6541e-04
+                             mu_b_skorean      sigma_b_skorean
+mu_b_Price                      2.543e-05            6.457e-05
+sigma_b_Price                  -2.359e-05            2.329e-06
+mu_b_Acceleration               5.704e-05            7.610e-05
+sigma_b_Acceleration           1.2080e-04           1.0750e-04
+mu_b_OpCost                     4.542e-05            1.754e-05
+sigma_b_OpCost                  3.157e-05            8.549e-05
+mu_b_hev                        7.641e-05          -2.3395e-04
+sigma_b_hev                   -9.9338e-04             0.002156
+mu_b_phev20                     1.925e-05           -3.463e-05
+sigma_b_phev20                -3.6004e-04           6.8519e-04
+mu_b_phev40                   -2.0526e-04            2.628e-05
+sigma_b_phev40                -5.7238e-04           5.7823e-04
+mu_b_bev                       1.8739e-04           -1.993e-06
+sigma_b_bev                    5.1608e-04             0.001468
+mu_b_bevRangeRel               -9.698e-05          -2.7698e-04
+sigma_b_bevRangeRel            1.3852e-04          -2.1873e-04
+mu_b_noBEVFC                    4.998e-06           -4.335e-05
+sigma_b_noBEVFC                1.5971e-04          -4.4934e-04
+mu_b_american                    0.001709          -2.4359e-04
+sigma_b_american              -4.2717e-04           -2.828e-05
+mu_b_chinese                     0.002069            1.546e-05
+sigma_b_chinese                5.6611e-04           6.3947e-04
+mu_b_japanese                    0.001765           -3.766e-05
+sigma_b_japanese               1.9544e-04           2.6541e-04
+mu_b_skorean                     0.004720           8.3326e-04
+sigma_b_skorean                8.3326e-04             0.008013
+
+Robust covariance matrix:
+                               mu_b_Price        sigma_b_Price
+mu_b_Price                      7.328e-05           -1.764e-05
+sigma_b_Price                  -1.764e-05            8.096e-05
+mu_b_Acceleration              -1.069e-06           -7.989e-05
+sigma_b_Acceleration           -1.070e-05           -8.488e-05
+mu_b_OpCost                     1.993e-05           -2.995e-05
+sigma_b_OpCost                  1.112e-05           -2.778e-05
+mu_b_hev                        1.832e-06            6.260e-05
+sigma_b_hev                      0.001723             0.001896
+mu_b_phev20                    -5.387e-05            8.655e-06
+sigma_b_phev20                 5.7010e-04            6.667e-06
+mu_b_phev40                     8.585e-05            9.399e-05
+sigma_b_phev40                -8.1139e-04           -4.346e-05
+mu_b_bev                       2.1786e-04          -1.0702e-04
+sigma_b_bev                    1.9099e-04            4.936e-05
+mu_b_bevRangeRel                4.619e-05            8.567e-05
+sigma_b_bevRangeRel            -4.532e-05          -1.7723e-04
+mu_b_noBEVFC                   -9.164e-05            3.371e-06
+sigma_b_noBEVFC               -2.9919e-04          -3.5558e-04
+mu_b_american                  -9.415e-05           1.2718e-04
+sigma_b_american               6.8006e-04            7.981e-05
+mu_b_chinese                  -2.2630e-04            3.353e-05
+sigma_b_chinese               -2.3651e-04          -2.9554e-04
+mu_b_japanese                 -1.5114e-04            9.240e-07
+sigma_b_japanese               3.2735e-04           3.2374e-04
+mu_b_skorean                   -1.140e-05           -4.962e-05
+sigma_b_skorean                3.4871e-04           5.2928e-04
+                        mu_b_Acceleration sigma_b_Acceleration
+mu_b_Price                     -1.069e-06           -1.070e-05
+sigma_b_Price                  -7.989e-05           -8.488e-05
+mu_b_Acceleration              6.3759e-04           3.0989e-04
+sigma_b_Acceleration           3.0989e-04             0.001246
+mu_b_OpCost                     2.643e-05            1.651e-05
+sigma_b_OpCost                  8.343e-05            2.359e-05
+mu_b_hev                      -2.5930e-04            1.530e-05
+sigma_b_hev                     -0.001754          -6.1703e-04
+mu_b_phev20                   -1.3486e-04           5.2292e-04
+sigma_b_phev20                -5.7322e-04             0.001625
+mu_b_phev40                   -1.3453e-04           2.5539e-04
+sigma_b_phev40                 6.3080e-04             0.001243
+mu_b_bev                       -7.143e-05          -1.2217e-04
+sigma_b_bev                   -3.0877e-04           1.7122e-04
+mu_b_bevRangeRel              -4.1935e-04           1.1224e-04
+sigma_b_bevRangeRel            6.5107e-04            4.959e-05
+mu_b_noBEVFC                   2.9795e-04           3.7234e-04
+sigma_b_noBEVFC                4.6823e-04            6.954e-05
+mu_b_american                  -3.247e-05          -8.3381e-04
+sigma_b_american               3.7563e-04           9.6061e-04
+mu_b_chinese                    1.854e-05          -8.2293e-04
+sigma_b_chinese                8.1328e-04           4.9458e-04
+mu_b_japanese                  1.8554e-04          -1.8670e-04
+sigma_b_japanese              -8.6616e-04          -9.4276e-04
+mu_b_skorean                   2.4815e-04          -2.0593e-04
+sigma_b_skorean               -4.6818e-04          -5.1834e-04
+                              mu_b_OpCost       sigma_b_OpCost
+mu_b_Price                      1.993e-05            1.112e-05
+sigma_b_Price                  -2.995e-05           -2.778e-05
+mu_b_Acceleration               2.643e-05            8.343e-05
+sigma_b_Acceleration            1.651e-05            2.359e-05
+mu_b_OpCost                    2.9450e-04            3.725e-05
+sigma_b_OpCost                  3.725e-05           4.0840e-04
+mu_b_hev                       -1.121e-05          -2.5921e-04
+sigma_b_hev                     -0.001678            -0.002102
+mu_b_phev20                   -1.4111e-04           1.8764e-04
+sigma_b_phev20                 2.9186e-04          -5.4514e-04
+mu_b_phev40                    -7.178e-05           2.0703e-04
+sigma_b_phev40                -5.4872e-04           4.1736e-04
+mu_b_bev                       -5.333e-05           2.1529e-04
+sigma_b_bev                   -1.0081e-04          -1.5408e-04
+mu_b_bevRangeRel              -1.4273e-04           1.3954e-04
+sigma_b_bevRangeRel            1.5621e-04            1.531e-05
+mu_b_noBEVFC                   2.3770e-04           -4.514e-05
+sigma_b_noBEVFC                3.7066e-04           7.8235e-04
+mu_b_american                  -1.623e-06            7.135e-05
+sigma_b_american              -5.2867e-04            9.510e-05
+mu_b_chinese                   6.2557e-04           1.6442e-04
+sigma_b_chinese                8.4926e-04           8.0404e-04
+mu_b_japanese                   3.337e-05           -5.800e-05
+sigma_b_japanese               5.1838e-04          -2.9717e-04
+mu_b_skorean                    1.548e-05           1.4222e-04
+sigma_b_skorean               -6.5287e-04           6.3786e-04
+                                 mu_b_hev          sigma_b_hev
+mu_b_Price                      1.832e-06             0.001723
+sigma_b_Price                   6.260e-05             0.001896
+mu_b_Acceleration             -2.5930e-04            -0.001754
+sigma_b_Acceleration            1.530e-05          -6.1703e-04
+mu_b_OpCost                    -1.121e-05            -0.001678
+sigma_b_OpCost                -2.5921e-04            -0.002102
+mu_b_hev                         0.018434             0.014315
+sigma_b_hev                      0.014315             0.452434
+mu_b_phev20                      0.010862            -0.003938
+sigma_b_phev20                   0.002044             0.061948
+mu_b_phev40                      0.011210             0.011615
+sigma_b_phev40                  -0.003179            -0.048234
+mu_b_bev                         0.011058            -0.009869
+sigma_b_bev                      0.002806             0.049056
+mu_b_bevRangeRel               1.7019e-04             0.006340
+sigma_b_bevRangeRel           -4.1624e-04            -0.009770
+mu_b_noBEVFC                    -0.001131            -0.009122
+sigma_b_noBEVFC               -7.2943e-04            -0.051423
+mu_b_american                    0.001452             0.005216
+sigma_b_american               4.1920e-04             0.075383
+mu_b_chinese                    -0.001152            -0.054543
+sigma_b_chinese                 -0.002204            -0.043368
+mu_b_japanese                    0.002641             0.006947
+sigma_b_japanese                -0.003416            -0.018664
+mu_b_skorean                  -4.2119e-04            -0.004761
+sigma_b_skorean                  0.001061             0.060838
+                              mu_b_phev20       sigma_b_phev20
+mu_b_Price                     -5.387e-05           5.7010e-04
+sigma_b_Price                   8.655e-06            6.667e-06
+mu_b_Acceleration             -1.3486e-04          -5.7322e-04
+sigma_b_Acceleration           5.2292e-04             0.001625
+mu_b_OpCost                   -1.4111e-04           2.9186e-04
+sigma_b_OpCost                 1.8764e-04          -5.4514e-04
+mu_b_hev                         0.010862             0.002044
+sigma_b_hev                     -0.003938             0.061948
+mu_b_phev20                      0.016301            -0.007165
+sigma_b_phev20                  -0.007165             0.071382
+mu_b_phev40                      0.010769            -0.001772
+sigma_b_phev40                   0.003288            -0.025354
+mu_b_bev                         0.011952            -0.005945
+sigma_b_bev                    5.0986e-04             0.007925
+mu_b_bevRangeRel                6.054e-05             0.003075
+sigma_b_bevRangeRel           -8.5970e-04             0.002744
+mu_b_noBEVFC                  -8.6762e-04            -0.003899
+sigma_b_noBEVFC                4.9238e-04            -0.009783
+mu_b_american                    0.001513           3.3028e-04
+sigma_b_american                -0.002269             0.028544
+mu_b_chinese                     0.003507            -0.017704
+sigma_b_chinese                2.0976e-04            -0.007209
+mu_b_japanese                    0.003386            -0.003959
+sigma_b_japanese              -3.1104e-04            -0.003132
+mu_b_skorean                   5.1630e-04            -0.004668
+sigma_b_skorean               -5.4649e-04             0.008169
+                              mu_b_phev40       sigma_b_phev40
+mu_b_Price                      8.585e-05          -8.1139e-04
+sigma_b_Price                   9.399e-05           -4.346e-05
+mu_b_Acceleration             -1.3453e-04           6.3080e-04
+sigma_b_Acceleration           2.5539e-04             0.001243
+mu_b_OpCost                    -7.178e-05          -5.4872e-04
+sigma_b_OpCost                 2.0703e-04           4.1736e-04
+mu_b_hev                         0.011210            -0.003179
+sigma_b_hev                      0.011615            -0.048234
+mu_b_phev20                      0.010769             0.003288
+sigma_b_phev20                  -0.001772            -0.025354
+mu_b_phev40                      0.016640           5.2143e-04
+sigma_b_phev40                 5.2143e-04             0.077983
+mu_b_bev                         0.012554            -0.010347
+sigma_b_bev                      0.001815             0.002689
+mu_b_bevRangeRel               5.7856e-04           8.2585e-04
+sigma_b_bevRangeRel             -0.002084            -0.005766
+mu_b_noBEVFC                    -0.001747             0.005868
+sigma_b_noBEVFC                 -0.001553             0.006851
+mu_b_american                    0.001931            -0.003780
+sigma_b_american                4.442e-05            -0.014892
+mu_b_chinese                  -9.2055e-04             0.021064
+sigma_b_chinese                 -0.002676             0.015900
+mu_b_japanese                    0.002312            -0.001803
+sigma_b_japanese              -1.4182e-04            -0.007784
+mu_b_skorean                   -8.798e-07            -0.004335
+sigma_b_skorean                  0.003654           1.1646e-04
+                                 mu_b_bev          sigma_b_bev
+mu_b_Price                     2.1786e-04           1.9099e-04
+sigma_b_Price                 -1.0702e-04            4.936e-05
+mu_b_Acceleration              -7.143e-05          -3.0877e-04
+sigma_b_Acceleration          -1.2217e-04           1.7122e-04
+mu_b_OpCost                    -5.333e-05          -1.0081e-04
+sigma_b_OpCost                 2.1529e-04          -1.5408e-04
+mu_b_hev                         0.011058             0.002806
+sigma_b_hev                     -0.009869             0.049056
+mu_b_phev20                      0.011952           5.0986e-04
+sigma_b_phev20                  -0.005945             0.007925
+mu_b_phev40                      0.012554             0.001815
+sigma_b_phev40                  -0.010347             0.002689
+mu_b_bev                         0.028221            -0.004618
+sigma_b_bev                     -0.004618             0.026092
+mu_b_bevRangeRel               1.7555e-04           9.8159e-04
+sigma_b_bevRangeRel             -0.001270          -9.9385e-04
+mu_b_noBEVFC                    -0.005926          -9.7323e-04
+sigma_b_noBEVFC                 -0.002666            -0.003747
+mu_b_american                    0.002166            -0.001329
+sigma_b_american                -0.007148             0.014756
+mu_b_chinese                    -0.001678            -0.004257
+sigma_b_chinese                 -0.005088            -0.002150
+mu_b_japanese                    0.004789            -0.001004
+sigma_b_japanese                 0.005824            -0.007344
+mu_b_skorean                     0.001256            -0.001920
+sigma_b_skorean               -1.7079e-04             0.008519
+                         mu_b_bevRangeRel  sigma_b_bevRangeRel
+mu_b_Price                      4.619e-05           -4.532e-05
+sigma_b_Price                   8.567e-05          -1.7723e-04
+mu_b_Acceleration             -4.1935e-04           6.5107e-04
+sigma_b_Acceleration           1.1224e-04            4.959e-05
+mu_b_OpCost                   -1.4273e-04           1.5621e-04
+sigma_b_OpCost                 1.3954e-04            1.531e-05
+mu_b_hev                       1.7019e-04          -4.1624e-04
+sigma_b_hev                      0.006340            -0.009770
+mu_b_phev20                     6.054e-05          -8.5970e-04
+sigma_b_phev20                   0.003075             0.002744
+mu_b_phev40                    5.7856e-04            -0.002084
+sigma_b_phev40                 8.2585e-04            -0.005766
+mu_b_bev                       1.7555e-04            -0.001270
+sigma_b_bev                    9.8159e-04          -9.9385e-04
+mu_b_bevRangeRel                 0.003537            -0.002462
+sigma_b_bevRangeRel             -0.002462             0.007464
+mu_b_noBEVFC                  -2.8280e-04           6.8374e-04
+sigma_b_noBEVFC               -7.0832e-04             0.001493
+mu_b_american                 -4.2567e-04             0.001065
+sigma_b_american                 0.002841           9.6458e-04
+mu_b_chinese                    -0.001123             0.001351
+sigma_b_chinese                 -0.001102             0.002614
+mu_b_japanese                   -0.001216           8.4655e-04
+sigma_b_japanese               -7.525e-05            -0.002919
+mu_b_skorean                  -6.1065e-04             0.001099
+sigma_b_skorean                  0.003444            -0.004880
+                             mu_b_noBEVFC      sigma_b_noBEVFC
+mu_b_Price                     -9.164e-05          -2.9919e-04
+sigma_b_Price                   3.371e-06          -3.5558e-04
+mu_b_Acceleration              2.9795e-04           4.6823e-04
+sigma_b_Acceleration           3.7234e-04            6.954e-05
+mu_b_OpCost                    2.3770e-04           3.7066e-04
+sigma_b_OpCost                 -4.514e-05           7.8235e-04
+mu_b_hev                        -0.001131          -7.2943e-04
+sigma_b_hev                     -0.009122            -0.051423
+mu_b_phev20                   -8.6762e-04           4.9238e-04
+sigma_b_phev20                  -0.003899            -0.009783
+mu_b_phev40                     -0.001747            -0.001553
+sigma_b_phev40                   0.005868             0.006851
+mu_b_bev                        -0.005926            -0.002666
+sigma_b_bev                   -9.7323e-04            -0.003747
+mu_b_bevRangeRel              -2.8280e-04          -7.0832e-04
+sigma_b_bevRangeRel            6.8374e-04             0.001493
+mu_b_noBEVFC                     0.007964             0.003991
+sigma_b_noBEVFC                  0.003991             0.027157
+mu_b_american                   -0.002098            -0.001000
+sigma_b_american              -1.3355e-04            -0.008381
+mu_b_chinese                     0.003648             0.008082
+sigma_b_chinese                  0.002986             0.009063
+mu_b_japanese                 -8.2648e-04            -0.001112
+sigma_b_japanese                -0.001964            -0.007730
+mu_b_skorean                  -2.6804e-04             0.002709
+sigma_b_skorean                 -0.003473            -0.005415
+                            mu_b_american     sigma_b_american
+mu_b_Price                     -9.415e-05           6.8006e-04
+sigma_b_Price                  1.2718e-04            7.981e-05
+mu_b_Acceleration              -3.247e-05           3.7563e-04
+sigma_b_Acceleration          -8.3381e-04           9.6061e-04
+mu_b_OpCost                    -1.623e-06          -5.2867e-04
+sigma_b_OpCost                  7.135e-05            9.510e-05
+mu_b_hev                         0.001452           4.1920e-04
+sigma_b_hev                      0.005216             0.075383
+mu_b_phev20                      0.001513            -0.002269
+sigma_b_phev20                 3.3028e-04             0.028544
+mu_b_phev40                      0.001931            4.442e-05
+sigma_b_phev40                  -0.003780            -0.014892
+mu_b_bev                         0.002166            -0.007148
+sigma_b_bev                     -0.001329             0.014756
+mu_b_bevRangeRel              -4.2567e-04             0.002841
+sigma_b_bevRangeRel              0.001065           9.6458e-04
+mu_b_noBEVFC                    -0.002098          -1.3355e-04
+sigma_b_noBEVFC                 -0.001000            -0.008381
+mu_b_american                    0.013024            -0.002190
+sigma_b_american                -0.002190             0.057596
+mu_b_chinese                     0.005530            -0.013045
+sigma_b_chinese                5.8148e-04            -0.007380
+mu_b_japanese                    0.006635            -0.005596
+sigma_b_japanese               4.5398e-04            -0.012182
+mu_b_skorean                     0.006289            -0.006348
+sigma_b_skorean               -8.9008e-04             0.012262
+                             mu_b_chinese      sigma_b_chinese
+mu_b_Price                    -2.2630e-04          -2.3651e-04
+sigma_b_Price                   3.353e-05          -2.9554e-04
+mu_b_Acceleration               1.854e-05           8.1328e-04
+sigma_b_Acceleration          -8.2293e-04           4.9458e-04
+mu_b_OpCost                    6.2557e-04           8.4926e-04
+sigma_b_OpCost                 1.6442e-04           8.0404e-04
+mu_b_hev                        -0.001152            -0.002204
+sigma_b_hev                     -0.054543            -0.043368
+mu_b_phev20                      0.003507           2.0976e-04
+sigma_b_phev20                  -0.017704            -0.007209
+mu_b_phev40                   -9.2055e-04            -0.002676
+sigma_b_phev40                   0.021064             0.015900
+mu_b_bev                        -0.001678            -0.005088
+sigma_b_bev                     -0.004257            -0.002150
+mu_b_bevRangeRel                -0.001123            -0.001102
+sigma_b_bevRangeRel              0.001351             0.002614
+mu_b_noBEVFC                     0.003648             0.002986
+sigma_b_noBEVFC                  0.008082             0.009063
+mu_b_american                    0.005530           5.8148e-04
+sigma_b_american                -0.013045            -0.007380
+mu_b_chinese                     0.045762             0.026476
+sigma_b_chinese                  0.026476             0.035334
+mu_b_japanese                    0.005804           5.8969e-04
+sigma_b_japanese              -8.1323e-04            -0.005052
+mu_b_skorean                     0.005615             0.001510
+sigma_b_skorean                 -0.008074            -0.005028
+                            mu_b_japanese     sigma_b_japanese
+mu_b_Price                    -1.5114e-04           3.2735e-04
+sigma_b_Price                   9.240e-07           3.2374e-04
+mu_b_Acceleration              1.8554e-04          -8.6616e-04
+sigma_b_Acceleration          -1.8670e-04          -9.4276e-04
+mu_b_OpCost                     3.337e-05           5.1838e-04
+sigma_b_OpCost                 -5.800e-05          -2.9717e-04
+mu_b_hev                         0.002641            -0.003416
+sigma_b_hev                      0.006947            -0.018664
+mu_b_phev20                      0.003386          -3.1104e-04
+sigma_b_phev20                  -0.003959            -0.003132
+mu_b_phev40                      0.002312          -1.4182e-04
+sigma_b_phev40                  -0.001803            -0.007784
+mu_b_bev                         0.004789             0.005824
+sigma_b_bev                     -0.001004            -0.007344
+mu_b_bevRangeRel                -0.001216           -7.525e-05
+sigma_b_bevRangeRel            8.4655e-04            -0.002919
+mu_b_noBEVFC                  -8.2648e-04            -0.001964
+sigma_b_noBEVFC                 -0.001112            -0.007730
+mu_b_american                    0.006635           4.5398e-04
+sigma_b_american                -0.005596            -0.012182
+mu_b_chinese                     0.005804          -8.1323e-04
+sigma_b_chinese                5.8969e-04            -0.005052
+mu_b_japanese                    0.013931          -9.3435e-04
+sigma_b_japanese              -9.3435e-04             0.036110
+mu_b_skorean                     0.005983           9.0850e-04
+sigma_b_skorean                 -0.001604            -0.002301
+                             mu_b_skorean      sigma_b_skorean
+mu_b_Price                     -1.140e-05           3.4871e-04
+sigma_b_Price                  -4.962e-05           5.2928e-04
+mu_b_Acceleration              2.4815e-04          -4.6818e-04
+sigma_b_Acceleration          -2.0593e-04          -5.1834e-04
+mu_b_OpCost                     1.548e-05          -6.5287e-04
+sigma_b_OpCost                 1.4222e-04           6.3786e-04
+mu_b_hev                      -4.2119e-04             0.001061
+sigma_b_hev                     -0.004761             0.060838
+mu_b_phev20                    5.1630e-04          -5.4649e-04
+sigma_b_phev20                  -0.004668             0.008169
+mu_b_phev40                    -8.798e-07             0.003654
+sigma_b_phev40                  -0.004335           1.1646e-04
+mu_b_bev                         0.001256          -1.7079e-04
+sigma_b_bev                     -0.001920             0.008519
+mu_b_bevRangeRel              -6.1065e-04             0.003444
+sigma_b_bevRangeRel              0.001099            -0.004880
+mu_b_noBEVFC                  -2.6804e-04            -0.003473
+sigma_b_noBEVFC                  0.002709            -0.005415
+mu_b_american                    0.006289          -8.9008e-04
+sigma_b_american                -0.006348             0.012262
+mu_b_chinese                     0.005615            -0.008074
+sigma_b_chinese                  0.001510            -0.005028
+mu_b_japanese                    0.005983            -0.001604
+sigma_b_japanese               9.0850e-04            -0.002301
+mu_b_skorean                     0.013220             0.003641
+sigma_b_skorean                  0.003641             0.035304
+
+Classical correlation matrix:
+                               mu_b_Price        sigma_b_Price
+mu_b_Price                       1.000000            -0.290804
+sigma_b_Price                   -0.290804             1.000000
+mu_b_Acceleration                0.055032            -0.122627
+sigma_b_Acceleration             0.112747            -0.197567
+mu_b_OpCost                      0.112274            -0.184974
+sigma_b_OpCost                   0.113892            -0.192502
+mu_b_hev                         0.006735             0.005290
+sigma_b_hev                      0.069532             0.175714
+mu_b_phev20                      0.025187             0.010074
+sigma_b_phev20                   0.057384            -0.011617
+mu_b_phev40                     -0.008128             0.031581
+sigma_b_phev40                  -0.146020             0.018317
+mu_b_bev                         0.121469            -0.068162
+sigma_b_bev                      0.181652            -0.165863
+mu_b_bevRangeRel                -0.085109             0.152248
+sigma_b_bevRangeRel              0.120868            -0.160310
+mu_b_noBEVFC                     0.051527            -0.040799
+sigma_b_noBEVFC                  0.018988            -0.101286
+mu_b_american                    0.026596             0.030656
+sigma_b_american                 0.018864             0.075322
+mu_b_chinese                     0.153325            -0.128434
+sigma_b_chinese                  0.114688            -0.209961
+mu_b_japanese                   -0.005161             0.022540
+sigma_b_japanese                -0.012069             0.116106
+mu_b_skorean                     0.087419            -0.074098
+sigma_b_skorean                  0.170366             0.005615
+                        mu_b_Acceleration sigma_b_Acceleration
+mu_b_Price                       0.055032             0.112747
+sigma_b_Price                   -0.122627            -0.197567
+mu_b_Acceleration                1.000000             0.066370
+sigma_b_Acceleration             0.066370             1.000000
+mu_b_OpCost                      0.067531             0.124392
+sigma_b_OpCost                   0.093547             0.120418
+mu_b_hev                         0.024067            -0.003135
+sigma_b_hev                     -0.060124            -0.035731
+mu_b_phev20                     -0.003467            -0.001682
+sigma_b_phev20                  -0.048236             0.122137
+mu_b_phev40                      0.005795             0.009199
+sigma_b_phev40                  -0.028934            -0.016080
+mu_b_bev                         0.075238             0.039438
+sigma_b_bev                      0.087445             0.141510
+mu_b_bevRangeRel                -0.087798            -0.070462
+sigma_b_bevRangeRel              0.057758             0.084556
+mu_b_noBEVFC                     0.005252             0.022666
+sigma_b_noBEVFC                  0.010662             0.028107
+mu_b_american                   -0.033733             0.011549
+sigma_b_american                -0.042947            -0.038770
+mu_b_chinese                     0.052846             0.105536
+sigma_b_chinese                  0.092859             0.121395
+mu_b_japanese                    0.009553             0.015362
+sigma_b_japanese                -0.023088            -0.043350
+mu_b_skorean                     0.056716             0.091616
+sigma_b_skorean                  0.058073             0.062570
+                              mu_b_OpCost       sigma_b_OpCost
+mu_b_Price                       0.112274             0.113892
+sigma_b_Price                   -0.184974            -0.192502
+mu_b_Acceleration                0.067531             0.093547
+sigma_b_Acceleration             0.124392             0.120418
+mu_b_OpCost                      1.000000             0.106249
+sigma_b_OpCost                   0.106249             1.000000
+mu_b_hev                        -0.025951             0.008795
+sigma_b_hev                     -0.107449            -0.056849
+mu_b_phev20                     -0.026717            -0.010019
+sigma_b_phev20                  -0.068636             0.030138
+mu_b_phev40                     -0.039009            -0.007490
+sigma_b_phev40                   0.001455            -0.055234
+mu_b_bev                         0.032533             0.030958
+sigma_b_bev                      0.126241             0.135880
+mu_b_bevRangeRel                -0.100783            -0.084629
+sigma_b_bevRangeRel              0.088792             0.095989
+mu_b_noBEVFC                     0.036103            -0.005112
+sigma_b_noBEVFC                  0.125237             0.066108
+mu_b_american                   -0.033865            -0.012845
+sigma_b_american                -0.151194            -0.046137
+mu_b_chinese                     0.086334             0.051719
+sigma_b_chinese                  0.151957             0.151039
+mu_b_japanese                    0.017580             0.004134
+sigma_b_japanese                -0.050060            -0.093893
+mu_b_skorean                     0.062201             0.037213
+sigma_b_skorean                  0.018434             0.077354
+                                 mu_b_hev          sigma_b_hev
+mu_b_Price                       0.006735             0.069532
+sigma_b_Price                    0.005290             0.175714
+mu_b_Acceleration                0.024067            -0.060124
+sigma_b_Acceleration            -0.003135            -0.035731
+mu_b_OpCost                     -0.025951            -0.107449
+sigma_b_OpCost                   0.008795            -0.056849
+mu_b_hev                         1.000000             0.033591
+sigma_b_hev                      0.033591             1.000000
+mu_b_phev20                      0.487117             0.017663
+sigma_b_phev20                  -0.013955             0.086637
+mu_b_phev40                      0.481505             0.046642
+sigma_b_phev40                  -0.007855            -0.079766
+mu_b_bev                         0.406357            -0.091068
+sigma_b_bev                     -0.032506             0.122953
+mu_b_bevRangeRel                 0.009464             0.087101
+sigma_b_bevRangeRel             -0.038780            -0.113777
+mu_b_noBEVFC                    -0.002854            -0.006774
+sigma_b_noBEVFC                 -0.025803            -0.163213
+mu_b_american                    0.013818             0.017926
+sigma_b_american                 0.011999             0.241015
+mu_b_chinese                     0.003244            -0.168221
+sigma_b_chinese                 -0.021527            -0.085346
+mu_b_japanese                    0.025755          -4.8041e-04
+sigma_b_japanese                 0.031150            -0.079534
+mu_b_skorean                     0.014479            -0.068056
+sigma_b_skorean                 -0.034020             0.113349
+                              mu_b_phev20       sigma_b_phev20
+mu_b_Price                       0.025187             0.057384
+sigma_b_Price                    0.010074            -0.011617
+mu_b_Acceleration               -0.003467            -0.048236
+sigma_b_Acceleration            -0.001682             0.122137
+mu_b_OpCost                     -0.026717            -0.068636
+sigma_b_OpCost                  -0.010019             0.030138
+mu_b_hev                         0.487117            -0.013955
+sigma_b_hev                      0.017663             0.086637
+mu_b_phev20                      1.000000             0.030893
+sigma_b_phev20                   0.030893             1.000000
+mu_b_phev40                      0.503876             0.022137
+sigma_b_phev40                   0.009323            -0.052952
+mu_b_bev                         0.415609            -0.042475
+sigma_b_bev                     -0.015289             0.036743
+mu_b_bevRangeRel                -0.012995             0.070200
+sigma_b_bevRangeRel             -0.041067            -0.008448
+mu_b_noBEVFC                     0.003529            -0.013115
+sigma_b_noBEVFC                 -0.004760            -0.063927
+mu_b_american                    0.025921             0.051879
+sigma_b_american                 0.039630             0.137428
+mu_b_chinese                     0.009210            -0.058733
+sigma_b_chinese                 -0.014041            -0.015556
+mu_b_japanese                    0.018274            -0.036736
+sigma_b_japanese                 0.008509            -0.010730
+mu_b_skorean                     0.003748            -0.036236
+sigma_b_skorean                 -0.005174             0.052926
+                              mu_b_phev40       sigma_b_phev40
+mu_b_Price                      -0.008128            -0.146020
+sigma_b_Price                    0.031581             0.018317
+mu_b_Acceleration                0.005795            -0.028934
+sigma_b_Acceleration             0.009199            -0.016080
+mu_b_OpCost                     -0.039009             0.001455
+sigma_b_OpCost                  -0.007490            -0.055234
+mu_b_hev                         0.481505            -0.007855
+sigma_b_hev                      0.046642            -0.079766
+mu_b_phev20                      0.503876             0.009323
+sigma_b_phev20                   0.022137            -0.052952
+mu_b_phev40                      1.000000             0.077974
+sigma_b_phev40                   0.077974             1.000000
+mu_b_bev                         0.393712            -0.099616
+sigma_b_bev                     -0.001128             0.061774
+mu_b_bevRangeRel                 0.024060            -0.025225
+sigma_b_bevRangeRel             -0.033708            -0.097593
+mu_b_noBEVFC                    -0.005995             0.018377
+sigma_b_noBEVFC                 -0.026129            -0.019558
+mu_b_american                   -0.016543            -0.011949
+sigma_b_american                 0.045982            -0.081697
+mu_b_chinese                    -0.032863             0.086187
+sigma_b_chinese                 -0.035735             0.066405
+mu_b_japanese                    0.018947            -0.022205
+sigma_b_japanese                 0.003869             0.044031
+mu_b_skorean                    -0.039696            -0.055375
+sigma_b_skorean                  0.003901             0.042935
+                                 mu_b_bev          sigma_b_bev
+mu_b_Price                       0.121469             0.181652
+sigma_b_Price                   -0.068162            -0.165863
+mu_b_Acceleration                0.075238             0.087445
+sigma_b_Acceleration             0.039438             0.141510
+mu_b_OpCost                      0.032533             0.126241
+sigma_b_OpCost                   0.030958             0.135880
+mu_b_hev                         0.406357            -0.032506
+sigma_b_hev                     -0.091068             0.122953
+mu_b_phev20                      0.415609            -0.015289
+sigma_b_phev20                  -0.042475             0.036743
+mu_b_phev40                      0.393712            -0.001128
+sigma_b_phev40                  -0.099616             0.061774
+mu_b_bev                         1.000000            -0.080306
+sigma_b_bev                     -0.080306             1.000000
+mu_b_bevRangeRel                 0.090957            -0.089783
+sigma_b_bevRangeRel              0.096467             0.067349
+mu_b_noBEVFC                    -0.317767             0.033148
+sigma_b_noBEVFC                 -0.033743             0.042356
+mu_b_american                  6.1812e-04           1.4966e-04
+sigma_b_american                -0.034511            -0.020736
+mu_b_chinese                     0.033347             0.113100
+sigma_b_chinese                  0.037967             0.184052
+mu_b_japanese                    0.009715            -0.002419
+sigma_b_japanese                 0.068808            -0.135115
+mu_b_skorean                     0.030641             0.094215
+sigma_b_skorean               -2.5016e-04             0.205741
+                         mu_b_bevRangeRel  sigma_b_bevRangeRel
+mu_b_Price                      -0.085109             0.120868
+sigma_b_Price                    0.152248            -0.160310
+mu_b_Acceleration               -0.087798             0.057758
+sigma_b_Acceleration            -0.070462             0.084556
+mu_b_OpCost                     -0.100783             0.088792
+sigma_b_OpCost                  -0.084629             0.095989
+mu_b_hev                         0.009464            -0.038780
+sigma_b_hev                      0.087101            -0.113777
+mu_b_phev20                     -0.012995            -0.041067
+sigma_b_phev20                   0.070200            -0.008448
+mu_b_phev40                      0.024060            -0.033708
+sigma_b_phev40                  -0.025225            -0.097593
+mu_b_bev                         0.090957             0.096467
+sigma_b_bev                     -0.089783             0.067349
+mu_b_bevRangeRel                 1.000000            -0.155439
+sigma_b_bevRangeRel             -0.155439             1.000000
+mu_b_noBEVFC                    -0.057213             0.056397
+sigma_b_noBEVFC                 -0.082368            -0.006859
+mu_b_american                    0.014789             0.017640
+sigma_b_american                 0.107250            -0.034474
+mu_b_chinese                    -0.116684             0.127301
+sigma_b_chinese                 -0.118472             0.147059
+mu_b_japanese                   -0.010159             0.009228
+sigma_b_japanese                 0.073928            -0.092135
+mu_b_skorean                    -0.040674             0.046960
+sigma_b_skorean                 -0.089152            -0.056913
+                             mu_b_noBEVFC      sigma_b_noBEVFC
+mu_b_Price                       0.051527             0.018988
+sigma_b_Price                   -0.040799            -0.101286
+mu_b_Acceleration                0.005252             0.010662
+sigma_b_Acceleration             0.022666             0.028107
+mu_b_OpCost                      0.036103             0.125237
+sigma_b_OpCost                  -0.005112             0.066108
+mu_b_hev                        -0.002854            -0.025803
+sigma_b_hev                     -0.006774            -0.163213
+mu_b_phev20                      0.003529            -0.004760
+sigma_b_phev20                  -0.013115            -0.063927
+mu_b_phev40                     -0.005995            -0.026129
+sigma_b_phev40                   0.018377            -0.019558
+mu_b_bev                        -0.317767            -0.033743
+sigma_b_bev                      0.033148             0.042356
+mu_b_bevRangeRel                -0.057213            -0.082368
+sigma_b_bevRangeRel              0.056397            -0.006859
+mu_b_noBEVFC                     1.000000             0.005367
+sigma_b_noBEVFC                  0.005367             1.000000
+mu_b_american                    0.001297            -0.024474
+sigma_b_american                -0.063365            -0.099570
+mu_b_chinese                     0.030733             0.095882
+sigma_b_chinese                  0.045306             0.078962
+mu_b_japanese                    0.001786             0.005620
+sigma_b_japanese                -0.002442            -0.095350
+mu_b_skorean                     0.001181             0.025004
+sigma_b_skorean                 -0.007861            -0.053991
+                            mu_b_american     sigma_b_american
+mu_b_Price                       0.026596             0.018864
+sigma_b_Price                    0.030656             0.075322
+mu_b_Acceleration               -0.033733            -0.042947
+sigma_b_Acceleration             0.011549            -0.038770
+mu_b_OpCost                     -0.033865            -0.151194
+sigma_b_OpCost                  -0.012845            -0.046137
+mu_b_hev                         0.013818             0.011999
+sigma_b_hev                      0.017926             0.241015
+mu_b_phev20                      0.025921             0.039630
+sigma_b_phev20                   0.051879             0.137428
+mu_b_phev40                     -0.016543             0.045982
+sigma_b_phev40                  -0.011949            -0.081697
+mu_b_bev                       6.1812e-04            -0.034511
+sigma_b_bev                    1.4966e-04            -0.020736
+mu_b_bevRangeRel                 0.014789             0.107250
+sigma_b_bevRangeRel              0.017640            -0.034474
+mu_b_noBEVFC                     0.001297            -0.063365
+sigma_b_noBEVFC                 -0.024474            -0.099570
+mu_b_american                    1.000000             0.113106
+sigma_b_american                 0.113106             1.000000
+mu_b_chinese                     0.278511            -0.076418
+sigma_b_chinese                 -0.008846            -0.089936
+mu_b_japanese                    0.382209            -0.042231
+sigma_b_japanese                -0.001114            -0.102002
+mu_b_skorean                     0.375184            -0.067356
+sigma_b_skorean                 -0.041035            -0.003423
+                             mu_b_chinese      sigma_b_chinese
+mu_b_Price                       0.153325             0.114688
+sigma_b_Price                   -0.128434            -0.209961
+mu_b_Acceleration                0.052846             0.092859
+sigma_b_Acceleration             0.105536             0.121395
+mu_b_OpCost                      0.086334             0.151957
+sigma_b_OpCost                   0.051719             0.151039
+mu_b_hev                         0.003244            -0.021527
+sigma_b_hev                     -0.168221            -0.085346
+mu_b_phev20                      0.009210            -0.014041
+sigma_b_phev20                  -0.058733            -0.015556
+mu_b_phev40                     -0.032863            -0.035735
+sigma_b_phev40                   0.086187             0.066405
+mu_b_bev                         0.033347             0.037967
+sigma_b_bev                      0.113100             0.184052
+mu_b_bevRangeRel                -0.116684            -0.118472
+sigma_b_bevRangeRel              0.127301             0.147059
+mu_b_noBEVFC                     0.030733             0.045306
+sigma_b_noBEVFC                  0.095882             0.078962
+mu_b_american                    0.278511            -0.008846
+sigma_b_american                -0.076418            -0.089936
+mu_b_chinese                     1.000000             0.319416
+sigma_b_chinese                  0.319416             1.000000
+mu_b_japanese                    0.271756             0.022542
+sigma_b_japanese                -0.054476            -0.030667
+mu_b_skorean                     0.277158             0.075288
+sigma_b_skorean                  0.001589             0.065270
+                            mu_b_japanese     sigma_b_japanese
+mu_b_Price                      -0.005161            -0.012069
+sigma_b_Price                    0.022540             0.116106
+mu_b_Acceleration                0.009553            -0.023088
+sigma_b_Acceleration             0.015362            -0.043350
+mu_b_OpCost                      0.017580            -0.050060
+sigma_b_OpCost                   0.004134            -0.093893
+mu_b_hev                         0.025755             0.031150
+sigma_b_hev                   -4.8041e-04            -0.079534
+mu_b_phev20                      0.018274             0.008509
+sigma_b_phev20                  -0.036736            -0.010730
+mu_b_phev40                      0.018947             0.003869
+sigma_b_phev40                  -0.022205             0.044031
+mu_b_bev                         0.009715             0.068808
+sigma_b_bev                     -0.002419            -0.135115
+mu_b_bevRangeRel                -0.010159             0.073928
+sigma_b_bevRangeRel              0.009228            -0.092135
+mu_b_noBEVFC                     0.001786            -0.002442
+sigma_b_noBEVFC                  0.005620            -0.095350
+mu_b_american                    0.382209            -0.001114
+sigma_b_american                -0.042231            -0.102002
+mu_b_chinese                     0.271756            -0.054476
+sigma_b_chinese                  0.022542            -0.030667
+mu_b_japanese                    1.000000            -0.061519
+sigma_b_japanese                -0.061519             1.000000
+mu_b_skorean                     0.388999             0.030605
+sigma_b_skorean                 -0.006370             0.031898
+                             mu_b_skorean      sigma_b_skorean
+mu_b_Price                       0.087419             0.170366
+sigma_b_Price                   -0.074098             0.005615
+mu_b_Acceleration                0.056716             0.058073
+sigma_b_Acceleration             0.091616             0.062570
+mu_b_OpCost                      0.062201             0.018434
+sigma_b_OpCost                   0.037213             0.077354
+mu_b_hev                         0.014479            -0.034020
+sigma_b_hev                     -0.068056             0.113349
+mu_b_phev20                      0.003748            -0.005174
+sigma_b_phev20                  -0.036236             0.052926
+mu_b_phev40                     -0.039696             0.003901
+sigma_b_phev40                  -0.055375             0.042935
+mu_b_bev                         0.030641          -2.5016e-04
+sigma_b_bev                      0.094215             0.205741
+mu_b_bevRangeRel                -0.040674            -0.089152
+sigma_b_bevRangeRel              0.046960            -0.056913
+mu_b_noBEVFC                     0.001181            -0.007861
+sigma_b_noBEVFC                  0.025004            -0.053991
+mu_b_american                    0.375184            -0.041035
+sigma_b_american                -0.067356            -0.003423
+mu_b_chinese                     0.277158             0.001589
+sigma_b_chinese                  0.075288             0.065270
+mu_b_japanese                    0.388999            -0.006370
+sigma_b_japanese                 0.030605             0.031898
+mu_b_skorean                     1.000000             0.135496
+sigma_b_skorean                  0.135496             1.000000
+
+Robust correlation matrix:
+                               mu_b_Price        sigma_b_Price
+mu_b_Price                       1.000000            -0.228995
+sigma_b_Price                   -0.228995             1.000000
+mu_b_Acceleration               -0.004947            -0.351612
+sigma_b_Acceleration            -0.035414            -0.267217
+mu_b_OpCost                      0.135656            -0.193949
+sigma_b_OpCost                   0.064250            -0.152793
+mu_b_hev                         0.001576             0.051242
+sigma_b_hev                      0.299159             0.313292
+mu_b_phev20                     -0.049289             0.007534
+sigma_b_phev20                   0.249259             0.002773
+mu_b_phev40                      0.077742             0.080981
+sigma_b_phev40                  -0.339409            -0.017296
+mu_b_bev                         0.151488            -0.070801
+sigma_b_bev                      0.138120             0.033965
+mu_b_bevRangeRel                 0.090728             0.160100
+sigma_b_bevRangeRel             -0.061277            -0.227996
+mu_b_noBEVFC                    -0.119959             0.004198
+sigma_b_noBEVFC                 -0.212080            -0.239808
+mu_b_american                   -0.096370             0.123850
+sigma_b_american                 0.331016             0.036960
+mu_b_chinese                    -0.123573             0.017422
+sigma_b_chinese                 -0.146977            -0.174737
+mu_b_japanese                   -0.149580           8.7001e-04
+sigma_b_japanese                 0.201230             0.189342
+mu_b_skorean                    -0.011585            -0.047965
+sigma_b_skorean                  0.216795             0.313069
+                        mu_b_Acceleration sigma_b_Acceleration
+mu_b_Price                      -0.004947            -0.035414
+sigma_b_Price                   -0.351612            -0.267217
+mu_b_Acceleration                1.000000             0.347633
+sigma_b_Acceleration             0.347633             1.000000
+mu_b_OpCost                      0.060996             0.027244
+sigma_b_OpCost                   0.163506             0.033067
+mu_b_hev                        -0.075636             0.003192
+sigma_b_hev                     -0.103269            -0.025985
+mu_b_phev20                     -0.041832             0.116015
+sigma_b_phev20                  -0.084969             0.172253
+mu_b_phev40                     -0.041303             0.056079
+sigma_b_phev40                   0.089459             0.126046
+mu_b_bev                        -0.016839            -0.020601
+sigma_b_bev                     -0.075703             0.030025
+mu_b_bevRangeRel                -0.279249             0.053459
+sigma_b_bevRangeRel              0.298459             0.016259
+mu_b_noBEVFC                     0.132223             0.118184
+sigma_b_noBEVFC                  0.112525             0.011953
+mu_b_american                   -0.011268            -0.206955
+sigma_b_american                 0.061986             0.113380
+mu_b_chinese                     0.003432            -0.108966
+sigma_b_chinese                  0.171344             0.074528
+mu_b_japanese                    0.062254            -0.044807
+sigma_b_japanese                -0.180515            -0.140531
+mu_b_skorean                     0.085471            -0.050731
+sigma_b_skorean                 -0.098680            -0.078142
+                              mu_b_OpCost       sigma_b_OpCost
+mu_b_Price                       0.135656             0.064250
+sigma_b_Price                   -0.193949            -0.152793
+mu_b_Acceleration                0.060996             0.163506
+sigma_b_Acceleration             0.027244             0.033067
+mu_b_OpCost                      1.000000             0.107399
+sigma_b_OpCost                   0.107399             1.000000
+mu_b_hev                        -0.004813            -0.094472
+sigma_b_hev                     -0.145362            -0.154653
+mu_b_phev20                     -0.064406             0.072722
+sigma_b_phev20                   0.063657            -0.100964
+mu_b_phev40                     -0.032427             0.079418
+sigma_b_phev40                  -0.114502             0.073956
+mu_b_bev                        -0.018500             0.063414
+sigma_b_bev                     -0.036367            -0.047202
+mu_b_bevRangeRel                -0.139851             0.116105
+sigma_b_bevRangeRel              0.105364             0.008767
+mu_b_noBEVFC                     0.155212            -0.025029
+sigma_b_noBEVFC                  0.131068             0.234919
+mu_b_american                 -8.2889e-04             0.030939
+sigma_b_american                -0.128367             0.019609
+mu_b_chinese                     0.170406             0.038033
+sigma_b_chinese                  0.263271             0.211657
+mu_b_japanese                    0.016476            -0.024315
+sigma_b_japanese                 0.158963            -0.077382
+mu_b_skorean                     0.007846             0.061205
+sigma_b_skorean                 -0.202476             0.167984
+                                 mu_b_hev          sigma_b_hev
+mu_b_Price                       0.001576              0.29916
+sigma_b_Price                    0.051242              0.31329
+mu_b_Acceleration               -0.075636             -0.10327
+sigma_b_Acceleration             0.003192             -0.02598
+mu_b_OpCost                     -0.004813             -0.14536
+sigma_b_OpCost                  -0.094472             -0.15465
+mu_b_hev                         1.000000              0.15675
+sigma_b_hev                      0.156749              1.00000
+mu_b_phev20                      0.626597             -0.04585
+sigma_b_phev20                   0.056356              0.34471
+mu_b_phev40                      0.640059              0.13387
+sigma_b_phev40                  -0.083854             -0.25679
+mu_b_bev                         0.484811             -0.08734
+sigma_b_bev                      0.127943              0.45150
+mu_b_bevRangeRel                 0.021078              0.15850
+sigma_b_bevRangeRel             -0.035486             -0.16813
+mu_b_noBEVFC                    -0.093327             -0.15196
+sigma_b_noBEVFC                 -0.032601             -0.46391
+mu_b_american                    0.093714              0.06795
+sigma_b_american                 0.012865              0.46698
+mu_b_chinese                    -0.039661             -0.37906
+sigma_b_chinese                 -0.086368             -0.34300
+mu_b_japanese                    0.164834              0.08750
+sigma_b_japanese                -0.132409             -0.14602
+mu_b_skorean                    -0.026980             -0.06156
+sigma_b_skorean                  0.041585              0.48138
+                              mu_b_phev20       sigma_b_phev20
+mu_b_Price                      -0.049289             0.249259
+sigma_b_Price                    0.007534             0.002773
+mu_b_Acceleration               -0.041832            -0.084969
+sigma_b_Acceleration             0.116015             0.172253
+mu_b_OpCost                     -0.064406             0.063657
+sigma_b_OpCost                   0.072722            -0.100964
+mu_b_hev                         0.626597             0.056356
+sigma_b_hev                     -0.045851             0.344711
+mu_b_phev20                      1.000000            -0.210051
+sigma_b_phev20                  -0.210051             1.000000
+mu_b_phev40                      0.653860            -0.051427
+sigma_b_phev40                   0.092208            -0.339824
+mu_b_bev                         0.557244            -0.132451
+sigma_b_bev                      0.024722             0.183623
+mu_b_bevRangeRel                 0.007973             0.193519
+sigma_b_bevRangeRel             -0.077941             0.118894
+mu_b_noBEVFC                    -0.076148            -0.163545
+sigma_b_noBEVFC                  0.023402            -0.222204
+mu_b_american                    0.103805             0.010832
+sigma_b_american                -0.074041             0.445170
+mu_b_chinese                     0.128404            -0.309753
+sigma_b_chinese                  0.008740            -0.143538
+mu_b_japanese                    0.224719            -0.125553
+sigma_b_japanese                -0.012820            -0.061683
+mu_b_skorean                     0.035170            -0.151968
+sigma_b_skorean                 -0.022781             0.162729
+                              mu_b_phev40       sigma_b_phev40
+mu_b_Price                       0.077742            -0.339409
+sigma_b_Price                    0.080981            -0.017296
+mu_b_Acceleration               -0.041303             0.089459
+sigma_b_Acceleration             0.056079             0.126046
+mu_b_OpCost                     -0.032427            -0.114502
+sigma_b_OpCost                   0.079418             0.073956
+mu_b_hev                         0.640059            -0.083854
+sigma_b_hev                      0.133868            -0.256788
+mu_b_phev20                      0.653860             0.092208
+sigma_b_phev20                  -0.051427            -0.339824
+mu_b_phev40                      1.000000             0.014475
+sigma_b_phev40                   0.014475             1.000000
+mu_b_bev                         0.579316            -0.220554
+sigma_b_bev                      0.087090             0.059610
+mu_b_bevRangeRel                 0.075415             0.049726
+sigma_b_bevRangeRel             -0.186985            -0.239009
+mu_b_noBEVFC                    -0.151733             0.235476
+sigma_b_noBEVFC                 -0.073037             0.148875
+mu_b_american                    0.131165            -0.118611
+sigma_b_american                 0.001435            -0.222200
+mu_b_chinese                    -0.033359             0.352609
+sigma_b_chinese                 -0.110340             0.302896
+mu_b_japanese                    0.151825            -0.054713
+sigma_b_japanese                -0.005786            -0.146693
+mu_b_skorean                   -5.932e-05            -0.135026
+sigma_b_skorean                  0.150768             0.002220
+                                 mu_b_bev          sigma_b_bev
+mu_b_Price                       0.151488              0.13812
+sigma_b_Price                   -0.070801              0.03396
+mu_b_Acceleration               -0.016839             -0.07570
+sigma_b_Acceleration            -0.020601              0.03003
+mu_b_OpCost                     -0.018500             -0.03637
+sigma_b_OpCost                   0.063414             -0.04720
+mu_b_hev                         0.484811              0.12794
+sigma_b_hev                     -0.087337              0.45150
+mu_b_phev20                      0.557244              0.02472
+sigma_b_phev20                  -0.132451              0.18362
+mu_b_phev40                      0.579316              0.08709
+sigma_b_phev40                  -0.220554              0.05961
+mu_b_bev                         1.000000             -0.17018
+sigma_b_bev                     -0.170179              1.00000
+mu_b_bevRangeRel                 0.017571              0.10218
+sigma_b_bevRangeRel             -0.087523             -0.07122
+mu_b_noBEVFC                    -0.395286             -0.06751
+sigma_b_noBEVFC                 -0.096302             -0.14076
+mu_b_american                    0.112966             -0.07208
+sigma_b_american                -0.177310              0.38065
+mu_b_chinese                    -0.046683             -0.12319
+sigma_b_chinese                 -0.161129             -0.07082
+mu_b_japanese                    0.241510             -0.05267
+sigma_b_japanese                 0.182442             -0.23926
+mu_b_skorean                     0.065000             -0.10338
+sigma_b_skorean                 -0.005411              0.28070
+                         mu_b_bevRangeRel  sigma_b_bevRangeRel
+mu_b_Price                       0.090728            -0.061277
+sigma_b_Price                    0.160100            -0.227996
+mu_b_Acceleration               -0.279249             0.298459
+sigma_b_Acceleration             0.053459             0.016259
+mu_b_OpCost                     -0.139851             0.105364
+sigma_b_OpCost                   0.116105             0.008767
+mu_b_hev                         0.021078            -0.035486
+sigma_b_hev                      0.158496            -0.168134
+mu_b_phev20                      0.007973            -0.077941
+sigma_b_phev20                   0.193519             0.118894
+mu_b_phev40                      0.075415            -0.186985
+sigma_b_phev40                   0.049726            -0.239009
+mu_b_bev                         0.017571            -0.087523
+sigma_b_bev                      0.102179            -0.071218
+mu_b_bevRangeRel                 1.000000            -0.479162
+sigma_b_bevRangeRel             -0.479162             1.000000
+mu_b_noBEVFC                    -0.053285             0.088685
+sigma_b_noBEVFC                 -0.072273             0.104903
+mu_b_american                   -0.062717             0.107975
+sigma_b_american                 0.199049             0.046523
+mu_b_chinese                    -0.088276             0.073084
+sigma_b_chinese                 -0.098577             0.160975
+mu_b_japanese                   -0.173182             0.083020
+sigma_b_japanese                -0.006659            -0.177788
+mu_b_skorean                    -0.089302             0.110588
+sigma_b_skorean                  0.308236            -0.300635
+                             mu_b_noBEVFC      sigma_b_noBEVFC
+mu_b_Price                      -0.119959             -0.21208
+sigma_b_Price                    0.004198             -0.23981
+mu_b_Acceleration                0.132223              0.11252
+sigma_b_Acceleration             0.118184              0.01195
+mu_b_OpCost                      0.155212              0.13107
+sigma_b_OpCost                  -0.025029              0.23492
+mu_b_hev                        -0.093327             -0.03260
+sigma_b_hev                     -0.151964             -0.46391
+mu_b_phev20                     -0.076148              0.02340
+sigma_b_phev20                  -0.163545             -0.22220
+mu_b_phev40                     -0.151733             -0.07304
+sigma_b_phev40                   0.235476              0.14888
+mu_b_bev                        -0.395286             -0.09630
+sigma_b_bev                     -0.067515             -0.14076
+mu_b_bevRangeRel                -0.053285             -0.07227
+sigma_b_bevRangeRel              0.088685              0.10490
+mu_b_noBEVFC                     1.000000              0.27136
+sigma_b_noBEVFC                  0.271360              1.00000
+mu_b_american                   -0.205983             -0.05319
+sigma_b_american                -0.006236             -0.21192
+mu_b_chinese                     0.191072              0.22925
+sigma_b_chinese                  0.177983              0.29258
+mu_b_japanese                   -0.078465             -0.05715
+sigma_b_japanese                -0.115800             -0.24684
+mu_b_skorean                    -0.026123              0.14295
+sigma_b_skorean                 -0.207140             -0.17487
+                            mu_b_american     sigma_b_american
+mu_b_Price                       -0.09637             0.331016
+sigma_b_Price                     0.12385             0.036960
+mu_b_Acceleration                -0.01127             0.061986
+sigma_b_Acceleration             -0.20696             0.113380
+mu_b_OpCost                   -8.2889e-04            -0.128367
+sigma_b_OpCost                    0.03094             0.019609
+mu_b_hev                          0.09371             0.012865
+sigma_b_hev                       0.06795             0.466984
+mu_b_phev20                       0.10381            -0.074041
+sigma_b_phev20                    0.01083             0.445170
+mu_b_phev40                       0.13117             0.001435
+sigma_b_phev40                   -0.11861            -0.222200
+mu_b_bev                          0.11297            -0.177310
+sigma_b_bev                      -0.07208             0.380654
+mu_b_bevRangeRel                 -0.06272             0.199049
+sigma_b_bevRangeRel               0.10797             0.046523
+mu_b_noBEVFC                     -0.20598            -0.006236
+sigma_b_noBEVFC                  -0.05319            -0.211918
+mu_b_american                     1.00000            -0.079976
+sigma_b_american                 -0.07998             1.000000
+mu_b_chinese                      0.22653            -0.254095
+sigma_b_chinese                   0.02711            -0.163596
+mu_b_japanese                     0.49260            -0.197560
+sigma_b_japanese                  0.02093            -0.267121
+mu_b_skorean                      0.47931            -0.230058
+sigma_b_skorean                  -0.04151             0.271917
+                             mu_b_chinese      sigma_b_chinese
+mu_b_Price                      -0.123573            -0.146977
+sigma_b_Price                    0.017422            -0.174737
+mu_b_Acceleration                0.003432             0.171344
+sigma_b_Acceleration            -0.108966             0.074528
+mu_b_OpCost                      0.170406             0.263271
+sigma_b_OpCost                   0.038033             0.211657
+mu_b_hev                        -0.039661            -0.086368
+sigma_b_hev                     -0.379056            -0.342999
+mu_b_phev20                      0.128404             0.008740
+sigma_b_phev20                  -0.309753            -0.143538
+mu_b_phev40                     -0.033359            -0.110340
+sigma_b_phev40                   0.352609             0.302896
+mu_b_bev                        -0.046683            -0.161129
+sigma_b_bev                     -0.123185            -0.070815
+mu_b_bevRangeRel                -0.088276            -0.098577
+sigma_b_bevRangeRel              0.073084             0.160975
+mu_b_noBEVFC                     0.191072             0.177983
+sigma_b_noBEVFC                  0.229254             0.292583
+mu_b_american                    0.226531             0.027106
+sigma_b_american                -0.254095            -0.163596
+mu_b_chinese                     1.000000             0.658426
+sigma_b_chinese                  0.658426             1.000000
+mu_b_japanese                    0.229872             0.026578
+sigma_b_japanese                -0.020005            -0.141429
+mu_b_skorean                     0.228304             0.069855
+sigma_b_skorean                 -0.200874            -0.142370
+                            mu_b_japanese     sigma_b_japanese
+mu_b_Price                       -0.14958             0.201230
+sigma_b_Price                  8.7001e-04             0.189342
+mu_b_Acceleration                 0.06225            -0.180515
+sigma_b_Acceleration             -0.04481            -0.140531
+mu_b_OpCost                       0.01648             0.158963
+sigma_b_OpCost                   -0.02431            -0.077382
+mu_b_hev                          0.16483            -0.132409
+sigma_b_hev                       0.08750            -0.146019
+mu_b_phev20                       0.22472            -0.012820
+sigma_b_phev20                   -0.12555            -0.061683
+mu_b_phev40                       0.15183            -0.005786
+sigma_b_phev40                   -0.05471            -0.146693
+mu_b_bev                          0.24151             0.182442
+sigma_b_bev                      -0.05267            -0.239259
+mu_b_bevRangeRel                 -0.17318            -0.006659
+sigma_b_bevRangeRel               0.08302            -0.177788
+mu_b_noBEVFC                     -0.07846            -0.115800
+sigma_b_noBEVFC                  -0.05715            -0.246836
+mu_b_american                     0.49260             0.020934
+sigma_b_american                 -0.19756            -0.267121
+mu_b_chinese                      0.22987            -0.020005
+sigma_b_chinese                   0.02658            -0.141429
+mu_b_japanese                     1.00000            -0.041658
+sigma_b_japanese                 -0.04166             1.000000
+mu_b_skorean                      0.44087             0.041581
+sigma_b_skorean                  -0.07234            -0.064454
+                             mu_b_skorean      sigma_b_skorean
+mu_b_Price                      -0.011585             0.216795
+sigma_b_Price                   -0.047965             0.313069
+mu_b_Acceleration                0.085471            -0.098680
+sigma_b_Acceleration            -0.050731            -0.078142
+mu_b_OpCost                      0.007846            -0.202476
+sigma_b_OpCost                   0.061205             0.167984
+mu_b_hev                        -0.026980             0.041585
+sigma_b_hev                     -0.061563             0.481377
+mu_b_phev20                      0.035170            -0.022781
+sigma_b_phev20                  -0.151968             0.162729
+mu_b_phev40                    -5.932e-05             0.150768
+sigma_b_phev40                  -0.135026             0.002220
+mu_b_bev                         0.065000            -0.005411
+sigma_b_bev                     -0.103376             0.280697
+mu_b_bevRangeRel                -0.089302             0.308236
+sigma_b_bevRangeRel              0.110588            -0.300635
+mu_b_noBEVFC                    -0.026123            -0.207140
+sigma_b_noBEVFC                  0.142948            -0.174872
+mu_b_american                    0.479313            -0.041509
+sigma_b_american                -0.230058             0.271917
+mu_b_chinese                     0.228304            -0.200874
+sigma_b_chinese                  0.069855            -0.142370
+mu_b_japanese                    0.440866            -0.072343
+sigma_b_japanese                 0.041581            -0.064454
+mu_b_skorean                     1.000000             0.168534
+sigma_b_skorean                  0.168534             1.000000
+
+ 20 most extreme outliers in terms of lowest average per choice prediction:
+   ID Avg prob per choice
+ 1808         0.005262992
+ 1989         0.005808842
+  420         0.008977186
+ 1064         0.010861035
+  310         0.011368175
+  396         0.012621303
+ 1799         0.012834644
+  815         0.019283791
+ 1746         0.019385795
+  982         0.019425109
+  903         0.019585412
+  813         0.020888012
+  739         0.021680394
+  387         0.022559647
+  918         0.025460010
+   79         0.027283713
+  130         0.027809461
+ 1884         0.030070680
+  738         0.030916179
+  583         0.034862317
+
+Settings and functions used in model definition:
+
+apollo_control
+--------------
+                       Value                                            
+modelName              "MXL500_none_pref"                               
+indivID                "ID"                                             
+panelData              "TRUE"                                           
+weights                "Weight2018"                                     
+outputDirectory        "logs/job_35887720/MXL500_none_pref/"            
+nCores                 "4"                                              
+noModification         "TRUE"                                           
+calculateLLC           "FALSE"                                          
+workInLogs             "TRUE"                                           
+mixing                 "TRUE"                                           
+debug                  "FALSE"                                          
+modelDescr             "No model description provided in apollo_control"
+seed                   "13"                                             
+HB                     "FALSE"                                          
+noValidation           "FALSE"                                          
+noDiagnostics          "FALSE"                                          
+analyticHessian        "FALSE"                                          
+memorySaver            "FALSE"                                          
+analyticGrad           "FALSE"                                          
+analyticGrad_manualSet "FALSE"                                          
+overridePanel          "FALSE"                                          
+preventOverridePanel   "FALSE"                                          
+
+Hessian routines attempted
+--------------------------
+numerical second derivative of LL (using numDeriv)
+
+
+apollo_randCoeff
+------------------
+function (apollo_beta, apollo_inputs) 
+{
+    randcoeff <- list()
+    space <- tolower(apollo_inputs$utility_space)
+    attrs <- apollo_inputs$observed_attributes
+    if (space == "pref") {
+        for (attr in attrs) {
+            mu_name <- paste0("mu_b_", attr)
+            sigma_name <- paste0("sigma_b_", attr)
+            draw_name <- paste0("draws_", attr)
+            out_name <- paste0("b_", attr)
+            mu_val <- apollo_beta[mu_name]
+            sigma_val <- apollo_beta[sigma_name]
+            draw_val <- apollo_inputs$draws[[draw_name]]
+            if (!is.null(apollo_inputs$lognorm_price_dist) && 
+                apollo_inputs$lognorm_price_dist == TRUE && attr == 
+                "Price") {
+                randcoeff[[out_name]] <- -1 * exp(mu_val + sigma_val * 
+                  draw_val)
+            }
+            else {
+                randcoeff[[out_name]] <- mu_val + sigma_val * 
+                  draw_val
+            }
+        }
+    }
+    else if (space == "wtp") {
+        if (apollo_inputs$scalingFactor_dist) {
+            mu_name <- paste0("mu_scalingFactor")
+            sigma_name <- paste0("sigma_scalingFactor")
+            draw_name <- paste0("draws_scalingFactor")
+            out_name <- paste0("scalingFactor")
+            mu_val <- apollo_beta[mu_name]
+            sigma_val <- apollo_beta[sigma_name]
+            draw_val <- apollo_inputs$draws[[draw_name]]
+            randcoeff[[out_name]] <- mu_val + sigma_val * draw_val
+        }
+        attrs_no_price <- setdiff(attrs, "Price")
+        for (attr2 in attrs_no_price) {
+            mu_name <- paste0("mu_wtp_", attr2)
+            sigma_name <- paste0("sigma_wtp_", attr2)
+            draw_name <- paste0("draws_", attr2)
+            out_name <- paste0("wtp_", attr2)
+            mu_val <- apollo_beta[mu_name]
+            sigma_val <- apollo_beta[sigma_name]
+            draw_val <- apollo_inputs$draws[[draw_name]]
+            randcoeff[[out_name]] <- mu_val + sigma_val * draw_val
+        }
+    }
+    return(randcoeff)
+}
+<bytecode: 0x55987dd8ce10>
+<environment: 0x55987cb243b8>
+
+
+apollo_probabilities
+----------------------
+function (apollo_beta, apollo_inputs, functionality = "estimate") 
+{
+    apollo_attach(apollo_beta, apollo_inputs)
+    on.exit(apollo_detach(apollo_beta, apollo_inputs))
+    P <- list()
+    V <- list()
+    alternatives <- unique(gsub("^.*C", "C", apollo_inputs$availCols))
+    alt_codes <- setNames(seq_along(alternatives), alternatives)
+    for (altName in alternatives) {
+        if (tolower(apollo_inputs$utility_space) == "wtp") {
+            attrs_no_price <- setdiff(apollo_inputs$observed_attributes, 
+                "Price")
+            attr_terms <- paste0("wtp_", attrs_no_price, " * ", 
+                attrs_no_price, altName, collapse = " + ")
+            v_expr <- paste0("scalingFactor * (", attr_terms, 
+                " - Price", altName, ")")
+        }
+        else {
+            attr_terms <- paste0("b_", apollo_inputs$observed_attributes, 
+                " * ", apollo_inputs$observed_attributes, altName, 
+                collapse = " + ")
+            v_expr <- attr_terms
+        }
+        V[[altName]] <- eval(parse(text = v_expr))
+    }
+    mnl_settings <- list(alternatives = alt_codes, choiceVar = Choice, 
+        utilities = V)
+    P[["model"]] <- apollo_mnl(mnl_settings, functionality)
+    P <- apollo_panelProd(P, apollo_inputs, functionality)
+    P <- apollo_avgInterDraws(P, apollo_inputs, functionality)
+    P <- apollo_weighting(P, apollo_inputs, functionality)
+    P <- apollo_prepareProb(P, apollo_inputs, functionality)
+    return(P)
+}
+<bytecode: 0x55987dd8f190>
+<environment: 0x55987cae8948>

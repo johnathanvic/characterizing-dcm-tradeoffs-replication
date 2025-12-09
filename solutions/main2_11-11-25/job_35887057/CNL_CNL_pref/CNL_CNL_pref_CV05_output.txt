@@ -1,0 +1,782 @@
+Model run by jvicente using Apollo 0.3.6 on R 4.4.1 for Linux.
+Please acknowledge the use of Apollo by citing Hess & Palma (2019)
+  DOI 10.1016/j.jocm.2019.100170
+  www.ApolloChoiceModelling.com
+
+Model name                                  : CNL_CNL_pref_CV05
+Model description                           : No model description provided in apollo_control
+Model run at                                : 2025-11-10 10:14:45.094287
+Estimation method                           : bfgs
+Estimation diagnosis                        : successful convergence
+Optimisation diagnosis                      : Unknown (no Hessian requested by user)
+Number of individuals                       : 587
+Number of rows in database                  : 8805
+Number of modelled outcomes                 : 8805
+
+Number of cores used                        :  32 
+Model without mixing
+
+LL(start)                                   : -7481.56
+LL at equal shares, LL(0)                   : -9764.8
+LL at observed shares, LL(C)                : Not applicable
+LL(final)                                   : -7474.39
+Rho-squared vs equal shares                  :  0.2346 
+Adj.Rho-squared vs equal shares              :  0.2329 
+Rho-squared vs observed shares               :  Not applicable 
+Adj.Rho-squared vs observed shares           :  Not applicable 
+AIC                                         :  14980.79 
+BIC                                         :  15094.11 
+
+Estimated parameters                        : 16
+Time taken (hh:mm:ss)                       :  00:02:11.15 
+     pre-estimation                         :  00:01:0.45 
+     estimation                             :  00:01:10.4 
+     post-estimation                        :  00:00:0.29 
+Iterations                                  :  31  
+
+Constrained optimisation:
+ alpha_PHEV_ICE_logistic < 10
+ alpha_PHEV_ICE_logistic > -10
+
+
+Estimates:
+                           Estimate        s.e.   t.rat.(0)    Rob.s.e.
+b_Price                    -0.05539          NA          NA          NA
+b_Acceleration             -0.07930          NA          NA          NA
+b_OpCost                   -0.09865          NA          NA          NA
+b_hev                       0.06759          NA          NA          NA
+b_phev20                   -0.02207          NA          NA          NA
+b_phev40                    0.12327          NA          NA          NA
+b_bev                      -0.31732          NA          NA          NA
+b_bevRangeRel               0.25452          NA          NA          NA
+b_noBEVFC                  -0.22108          NA          NA          NA
+b_american                 -0.12930          NA          NA          NA
+b_chinese                  -0.99593          NA          NA          NA
+b_japanese                 -0.09496          NA          NA          NA
+b_skorean                  -0.36012          NA          NA          NA
+lambda_ICE                  0.68981          NA          NA          NA
+lambda_BEV                  0.77383          NA          NA          NA
+alpha_PHEV_ICE_logistic     2.63971          NA          NA          NA
+                        Rob.t.rat.(0)
+b_Price                            NA
+b_Acceleration                     NA
+b_OpCost                           NA
+b_hev                              NA
+b_phev20                           NA
+b_phev40                           NA
+b_bev                              NA
+b_bevRangeRel                      NA
+b_noBEVFC                          NA
+b_american                         NA
+b_chinese                          NA
+b_japanese                         NA
+b_skorean                          NA
+lambda_ICE                         NA
+lambda_BEV                         NA
+alpha_PHEV_ICE_logistic            NA
+
+Structure for CNL model component :
+         cvC1 (alpha) cvC2 (alpha) cvC3 (alpha) hevC1 (alpha) hevC2 (alpha)
+GAS nest        1.000        1.000        1.000         1.000         1.000
+BEV nest        0.000        0.000        0.000         0.000         0.000
+         hevC3 (alpha) phev20C1 (alpha) phev20C2 (alpha) phev20C3 (alpha)
+GAS nest         1.000          0.93337          0.93337          0.93337
+BEV nest         0.000          0.06663          0.06663          0.06663
+         phev40C1 (alpha) phev40C2 (alpha) phev40C3 (alpha) bev100C1 (alpha)
+GAS nest          0.93337          0.93337          0.93337            0.000
+BEV nest          0.06663          0.06663          0.06663            1.000
+         bev100C2 (alpha) bev100C3 (alpha) bev150C1 (alpha) bev150C2 (alpha)
+GAS nest            0.000            0.000            0.000            0.000
+BEV nest            1.000            1.000            1.000            1.000
+         bev150C3 (alpha) bev300C1 (alpha) bev300C2 (alpha) bev300C3 (alpha)
+GAS nest            0.000            0.000            0.000            0.000
+BEV nest            1.000            1.000            1.000            1.000
+         bev400C1 (alpha) bev400C2 (alpha) bev400C3 (alpha)      lambda
+GAS nest            0.000            0.000            0.000      0.6898
+BEV nest            1.000            1.000            1.000      0.7738
+
+
+Overview of choices for CNL model component :
+                                    cvC1    cvC2    cvC3   hevC1   hevC2
+Times available                  1063.00 1117.00 1061.00 1100.00 1083.00
+Times chosen                      377.00  402.00  383.00  425.00  399.00
+Percentage chosen overall           4.28    4.57    4.35    4.83    4.53
+Percentage chosen when available   35.47   35.99   36.10   38.64   36.84
+                                   hevC3 phev20C1 phev20C2 phev20C3 phev40C1
+Times available                  1100.00  1125.00  1082.00  1093.00  1165.00
+Times chosen                      443.00   390.00   404.00   407.00   451.00
+Percentage chosen overall           5.03     4.43     4.59     4.62     5.12
+Percentage chosen when available   40.27    34.67    37.34    37.24    38.71
+                                 phev40C2 phev40C3 bev100C1 bev100C2 bev100C3
+Times available                   1036.00  1093.00  1068.00  1046.00  1078.00
+Times chosen                       404.00   441.00   263.00   227.00   238.00
+Percentage chosen overall            4.59     5.01     2.99     2.58     2.70
+Percentage chosen when available    39.00    40.35    24.63    21.70    22.08
+                                 bev150C1 bev150C2 bev150C3 bev300C1 bev300C2
+Times available                   1097.00  1146.00  1132.00  1057.00  1162.00
+Times chosen                       288.00   301.00   278.00   362.00   383.00
+Percentage chosen overall            3.27     3.42     3.16     4.11     4.35
+Percentage chosen when available    26.25    26.27    24.56    34.25    32.96
+                                 bev300C3 bev400C1 bev400C2 bev400C3
+Times available                   1113.00  1130.00  1133.00  1135.00
+Times chosen                       357.00   369.00   420.00   393.00
+Percentage chosen overall            4.05     4.19     4.77     4.46
+Percentage chosen when available    32.08    32.65    37.07    34.63
+
+
+Classical covariance matrix:
+                                        b_Price          b_Acceleration
+b_Price                                      NA                      NA
+b_Acceleration                               NA                      NA
+b_OpCost                                     NA                      NA
+b_hev                                        NA                      NA
+b_phev20                                     NA                      NA
+b_phev40                                     NA                      NA
+b_bev                                        NA                      NA
+b_bevRangeRel                                NA                      NA
+b_noBEVFC                                    NA                      NA
+b_american                                   NA                      NA
+b_chinese                                    NA                      NA
+b_japanese                                   NA                      NA
+b_skorean                                    NA                      NA
+lambda_ICE                                   NA                      NA
+lambda_BEV                                   NA                      NA
+alpha_PHEV_ICE_logistic                      NA                      NA
+                                       b_OpCost                   b_hev
+b_Price                                      NA                      NA
+b_Acceleration                               NA                      NA
+b_OpCost                                     NA                      NA
+b_hev                                        NA                      NA
+b_phev20                                     NA                      NA
+b_phev40                                     NA                      NA
+b_bev                                        NA                      NA
+b_bevRangeRel                                NA                      NA
+b_noBEVFC                                    NA                      NA
+b_american                                   NA                      NA
+b_chinese                                    NA                      NA
+b_japanese                                   NA                      NA
+b_skorean                                    NA                      NA
+lambda_ICE                                   NA                      NA
+lambda_BEV                                   NA                      NA
+alpha_PHEV_ICE_logistic                      NA                      NA
+                                       b_phev20                b_phev40
+b_Price                                      NA                      NA
+b_Acceleration                               NA                      NA
+b_OpCost                                     NA                      NA
+b_hev                                        NA                      NA
+b_phev20                                     NA                      NA
+b_phev40                                     NA                      NA
+b_bev                                        NA                      NA
+b_bevRangeRel                                NA                      NA
+b_noBEVFC                                    NA                      NA
+b_american                                   NA                      NA
+b_chinese                                    NA                      NA
+b_japanese                                   NA                      NA
+b_skorean                                    NA                      NA
+lambda_ICE                                   NA                      NA
+lambda_BEV                                   NA                      NA
+alpha_PHEV_ICE_logistic                      NA                      NA
+                                          b_bev           b_bevRangeRel
+b_Price                                      NA                      NA
+b_Acceleration                               NA                      NA
+b_OpCost                                     NA                      NA
+b_hev                                        NA                      NA
+b_phev20                                     NA                      NA
+b_phev40                                     NA                      NA
+b_bev                                        NA                      NA
+b_bevRangeRel                                NA                      NA
+b_noBEVFC                                    NA                      NA
+b_american                                   NA                      NA
+b_chinese                                    NA                      NA
+b_japanese                                   NA                      NA
+b_skorean                                    NA                      NA
+lambda_ICE                                   NA                      NA
+lambda_BEV                                   NA                      NA
+alpha_PHEV_ICE_logistic                      NA                      NA
+                                      b_noBEVFC              b_american
+b_Price                                      NA                      NA
+b_Acceleration                               NA                      NA
+b_OpCost                                     NA                      NA
+b_hev                                        NA                      NA
+b_phev20                                     NA                      NA
+b_phev40                                     NA                      NA
+b_bev                                        NA                      NA
+b_bevRangeRel                                NA                      NA
+b_noBEVFC                                    NA                      NA
+b_american                                   NA                      NA
+b_chinese                                    NA                      NA
+b_japanese                                   NA                      NA
+b_skorean                                    NA                      NA
+lambda_ICE                                   NA                      NA
+lambda_BEV                                   NA                      NA
+alpha_PHEV_ICE_logistic                      NA                      NA
+                                      b_chinese              b_japanese
+b_Price                                      NA                      NA
+b_Acceleration                               NA                      NA
+b_OpCost                                     NA                      NA
+b_hev                                        NA                      NA
+b_phev20                                     NA                      NA
+b_phev40                                     NA                      NA
+b_bev                                        NA                      NA
+b_bevRangeRel                                NA                      NA
+b_noBEVFC                                    NA                      NA
+b_american                                   NA                      NA
+b_chinese                                    NA                      NA
+b_japanese                                   NA                      NA
+b_skorean                                    NA                      NA
+lambda_ICE                                   NA                      NA
+lambda_BEV                                   NA                      NA
+alpha_PHEV_ICE_logistic                      NA                      NA
+                                      b_skorean              lambda_ICE
+b_Price                                      NA                      NA
+b_Acceleration                               NA                      NA
+b_OpCost                                     NA                      NA
+b_hev                                        NA                      NA
+b_phev20                                     NA                      NA
+b_phev40                                     NA                      NA
+b_bev                                        NA                      NA
+b_bevRangeRel                                NA                      NA
+b_noBEVFC                                    NA                      NA
+b_american                                   NA                      NA
+b_chinese                                    NA                      NA
+b_japanese                                   NA                      NA
+b_skorean                                    NA                      NA
+lambda_ICE                                   NA                      NA
+lambda_BEV                                   NA                      NA
+alpha_PHEV_ICE_logistic                      NA                      NA
+                                     lambda_BEV alpha_PHEV_ICE_logistic
+b_Price                                      NA                      NA
+b_Acceleration                               NA                      NA
+b_OpCost                                     NA                      NA
+b_hev                                        NA                      NA
+b_phev20                                     NA                      NA
+b_phev40                                     NA                      NA
+b_bev                                        NA                      NA
+b_bevRangeRel                                NA                      NA
+b_noBEVFC                                    NA                      NA
+b_american                                   NA                      NA
+b_chinese                                    NA                      NA
+b_japanese                                   NA                      NA
+b_skorean                                    NA                      NA
+lambda_ICE                                   NA                      NA
+lambda_BEV                                   NA                      NA
+alpha_PHEV_ICE_logistic                      NA                      NA
+
+Robust covariance matrix:
+                                        b_Price          b_Acceleration
+b_Price                                      NA                      NA
+b_Acceleration                               NA                      NA
+b_OpCost                                     NA                      NA
+b_hev                                        NA                      NA
+b_phev20                                     NA                      NA
+b_phev40                                     NA                      NA
+b_bev                                        NA                      NA
+b_bevRangeRel                                NA                      NA
+b_noBEVFC                                    NA                      NA
+b_american                                   NA                      NA
+b_chinese                                    NA                      NA
+b_japanese                                   NA                      NA
+b_skorean                                    NA                      NA
+lambda_ICE                                   NA                      NA
+lambda_BEV                                   NA                      NA
+alpha_PHEV_ICE_logistic                      NA                      NA
+                                       b_OpCost                   b_hev
+b_Price                                      NA                      NA
+b_Acceleration                               NA                      NA
+b_OpCost                                     NA                      NA
+b_hev                                        NA                      NA
+b_phev20                                     NA                      NA
+b_phev40                                     NA                      NA
+b_bev                                        NA                      NA
+b_bevRangeRel                                NA                      NA
+b_noBEVFC                                    NA                      NA
+b_american                                   NA                      NA
+b_chinese                                    NA                      NA
+b_japanese                                   NA                      NA
+b_skorean                                    NA                      NA
+lambda_ICE                                   NA                      NA
+lambda_BEV                                   NA                      NA
+alpha_PHEV_ICE_logistic                      NA                      NA
+                                       b_phev20                b_phev40
+b_Price                                      NA                      NA
+b_Acceleration                               NA                      NA
+b_OpCost                                     NA                      NA
+b_hev                                        NA                      NA
+b_phev20                                     NA                      NA
+b_phev40                                     NA                      NA
+b_bev                                        NA                      NA
+b_bevRangeRel                                NA                      NA
+b_noBEVFC                                    NA                      NA
+b_american                                   NA                      NA
+b_chinese                                    NA                      NA
+b_japanese                                   NA                      NA
+b_skorean                                    NA                      NA
+lambda_ICE                                   NA                      NA
+lambda_BEV                                   NA                      NA
+alpha_PHEV_ICE_logistic                      NA                      NA
+                                          b_bev           b_bevRangeRel
+b_Price                                      NA                      NA
+b_Acceleration                               NA                      NA
+b_OpCost                                     NA                      NA
+b_hev                                        NA                      NA
+b_phev20                                     NA                      NA
+b_phev40                                     NA                      NA
+b_bev                                        NA                      NA
+b_bevRangeRel                                NA                      NA
+b_noBEVFC                                    NA                      NA
+b_american                                   NA                      NA
+b_chinese                                    NA                      NA
+b_japanese                                   NA                      NA
+b_skorean                                    NA                      NA
+lambda_ICE                                   NA                      NA
+lambda_BEV                                   NA                      NA
+alpha_PHEV_ICE_logistic                      NA                      NA
+                                      b_noBEVFC              b_american
+b_Price                                      NA                      NA
+b_Acceleration                               NA                      NA
+b_OpCost                                     NA                      NA
+b_hev                                        NA                      NA
+b_phev20                                     NA                      NA
+b_phev40                                     NA                      NA
+b_bev                                        NA                      NA
+b_bevRangeRel                                NA                      NA
+b_noBEVFC                                    NA                      NA
+b_american                                   NA                      NA
+b_chinese                                    NA                      NA
+b_japanese                                   NA                      NA
+b_skorean                                    NA                      NA
+lambda_ICE                                   NA                      NA
+lambda_BEV                                   NA                      NA
+alpha_PHEV_ICE_logistic                      NA                      NA
+                                      b_chinese              b_japanese
+b_Price                                      NA                      NA
+b_Acceleration                               NA                      NA
+b_OpCost                                     NA                      NA
+b_hev                                        NA                      NA
+b_phev20                                     NA                      NA
+b_phev40                                     NA                      NA
+b_bev                                        NA                      NA
+b_bevRangeRel                                NA                      NA
+b_noBEVFC                                    NA                      NA
+b_american                                   NA                      NA
+b_chinese                                    NA                      NA
+b_japanese                                   NA                      NA
+b_skorean                                    NA                      NA
+lambda_ICE                                   NA                      NA
+lambda_BEV                                   NA                      NA
+alpha_PHEV_ICE_logistic                      NA                      NA
+                                      b_skorean              lambda_ICE
+b_Price                                      NA                      NA
+b_Acceleration                               NA                      NA
+b_OpCost                                     NA                      NA
+b_hev                                        NA                      NA
+b_phev20                                     NA                      NA
+b_phev40                                     NA                      NA
+b_bev                                        NA                      NA
+b_bevRangeRel                                NA                      NA
+b_noBEVFC                                    NA                      NA
+b_american                                   NA                      NA
+b_chinese                                    NA                      NA
+b_japanese                                   NA                      NA
+b_skorean                                    NA                      NA
+lambda_ICE                                   NA                      NA
+lambda_BEV                                   NA                      NA
+alpha_PHEV_ICE_logistic                      NA                      NA
+                                     lambda_BEV alpha_PHEV_ICE_logistic
+b_Price                                      NA                      NA
+b_Acceleration                               NA                      NA
+b_OpCost                                     NA                      NA
+b_hev                                        NA                      NA
+b_phev20                                     NA                      NA
+b_phev40                                     NA                      NA
+b_bev                                        NA                      NA
+b_bevRangeRel                                NA                      NA
+b_noBEVFC                                    NA                      NA
+b_american                                   NA                      NA
+b_chinese                                    NA                      NA
+b_japanese                                   NA                      NA
+b_skorean                                    NA                      NA
+lambda_ICE                                   NA                      NA
+lambda_BEV                                   NA                      NA
+alpha_PHEV_ICE_logistic                      NA                      NA
+
+Classical correlation matrix:
+                                        b_Price          b_Acceleration
+b_Price                                      NA                      NA
+b_Acceleration                               NA                      NA
+b_OpCost                                     NA                      NA
+b_hev                                        NA                      NA
+b_phev20                                     NA                      NA
+b_phev40                                     NA                      NA
+b_bev                                        NA                      NA
+b_bevRangeRel                                NA                      NA
+b_noBEVFC                                    NA                      NA
+b_american                                   NA                      NA
+b_chinese                                    NA                      NA
+b_japanese                                   NA                      NA
+b_skorean                                    NA                      NA
+lambda_ICE                                   NA                      NA
+lambda_BEV                                   NA                      NA
+alpha_PHEV_ICE_logistic                      NA                      NA
+                                       b_OpCost                   b_hev
+b_Price                                      NA                      NA
+b_Acceleration                               NA                      NA
+b_OpCost                                     NA                      NA
+b_hev                                        NA                      NA
+b_phev20                                     NA                      NA
+b_phev40                                     NA                      NA
+b_bev                                        NA                      NA
+b_bevRangeRel                                NA                      NA
+b_noBEVFC                                    NA                      NA
+b_american                                   NA                      NA
+b_chinese                                    NA                      NA
+b_japanese                                   NA                      NA
+b_skorean                                    NA                      NA
+lambda_ICE                                   NA                      NA
+lambda_BEV                                   NA                      NA
+alpha_PHEV_ICE_logistic                      NA                      NA
+                                       b_phev20                b_phev40
+b_Price                                      NA                      NA
+b_Acceleration                               NA                      NA
+b_OpCost                                     NA                      NA
+b_hev                                        NA                      NA
+b_phev20                                     NA                      NA
+b_phev40                                     NA                      NA
+b_bev                                        NA                      NA
+b_bevRangeRel                                NA                      NA
+b_noBEVFC                                    NA                      NA
+b_american                                   NA                      NA
+b_chinese                                    NA                      NA
+b_japanese                                   NA                      NA
+b_skorean                                    NA                      NA
+lambda_ICE                                   NA                      NA
+lambda_BEV                                   NA                      NA
+alpha_PHEV_ICE_logistic                      NA                      NA
+                                          b_bev           b_bevRangeRel
+b_Price                                      NA                      NA
+b_Acceleration                               NA                      NA
+b_OpCost                                     NA                      NA
+b_hev                                        NA                      NA
+b_phev20                                     NA                      NA
+b_phev40                                     NA                      NA
+b_bev                                        NA                      NA
+b_bevRangeRel                                NA                      NA
+b_noBEVFC                                    NA                      NA
+b_american                                   NA                      NA
+b_chinese                                    NA                      NA
+b_japanese                                   NA                      NA
+b_skorean                                    NA                      NA
+lambda_ICE                                   NA                      NA
+lambda_BEV                                   NA                      NA
+alpha_PHEV_ICE_logistic                      NA                      NA
+                                      b_noBEVFC              b_american
+b_Price                                      NA                      NA
+b_Acceleration                               NA                      NA
+b_OpCost                                     NA                      NA
+b_hev                                        NA                      NA
+b_phev20                                     NA                      NA
+b_phev40                                     NA                      NA
+b_bev                                        NA                      NA
+b_bevRangeRel                                NA                      NA
+b_noBEVFC                                    NA                      NA
+b_american                                   NA                      NA
+b_chinese                                    NA                      NA
+b_japanese                                   NA                      NA
+b_skorean                                    NA                      NA
+lambda_ICE                                   NA                      NA
+lambda_BEV                                   NA                      NA
+alpha_PHEV_ICE_logistic                      NA                      NA
+                                      b_chinese              b_japanese
+b_Price                                      NA                      NA
+b_Acceleration                               NA                      NA
+b_OpCost                                     NA                      NA
+b_hev                                        NA                      NA
+b_phev20                                     NA                      NA
+b_phev40                                     NA                      NA
+b_bev                                        NA                      NA
+b_bevRangeRel                                NA                      NA
+b_noBEVFC                                    NA                      NA
+b_american                                   NA                      NA
+b_chinese                                    NA                      NA
+b_japanese                                   NA                      NA
+b_skorean                                    NA                      NA
+lambda_ICE                                   NA                      NA
+lambda_BEV                                   NA                      NA
+alpha_PHEV_ICE_logistic                      NA                      NA
+                                      b_skorean              lambda_ICE
+b_Price                                      NA                      NA
+b_Acceleration                               NA                      NA
+b_OpCost                                     NA                      NA
+b_hev                                        NA                      NA
+b_phev20                                     NA                      NA
+b_phev40                                     NA                      NA
+b_bev                                        NA                      NA
+b_bevRangeRel                                NA                      NA
+b_noBEVFC                                    NA                      NA
+b_american                                   NA                      NA
+b_chinese                                    NA                      NA
+b_japanese                                   NA                      NA
+b_skorean                                    NA                      NA
+lambda_ICE                                   NA                      NA
+lambda_BEV                                   NA                      NA
+alpha_PHEV_ICE_logistic                      NA                      NA
+                                     lambda_BEV alpha_PHEV_ICE_logistic
+b_Price                                      NA                      NA
+b_Acceleration                               NA                      NA
+b_OpCost                                     NA                      NA
+b_hev                                        NA                      NA
+b_phev20                                     NA                      NA
+b_phev40                                     NA                      NA
+b_bev                                        NA                      NA
+b_bevRangeRel                                NA                      NA
+b_noBEVFC                                    NA                      NA
+b_american                                   NA                      NA
+b_chinese                                    NA                      NA
+b_japanese                                   NA                      NA
+b_skorean                                    NA                      NA
+lambda_ICE                                   NA                      NA
+lambda_BEV                                   NA                      NA
+alpha_PHEV_ICE_logistic                      NA                      NA
+
+Robust correlation matrix:
+                                        b_Price          b_Acceleration
+b_Price                                      NA                      NA
+b_Acceleration                               NA                      NA
+b_OpCost                                     NA                      NA
+b_hev                                        NA                      NA
+b_phev20                                     NA                      NA
+b_phev40                                     NA                      NA
+b_bev                                        NA                      NA
+b_bevRangeRel                                NA                      NA
+b_noBEVFC                                    NA                      NA
+b_american                                   NA                      NA
+b_chinese                                    NA                      NA
+b_japanese                                   NA                      NA
+b_skorean                                    NA                      NA
+lambda_ICE                                   NA                      NA
+lambda_BEV                                   NA                      NA
+alpha_PHEV_ICE_logistic                      NA                      NA
+                                       b_OpCost                   b_hev
+b_Price                                      NA                      NA
+b_Acceleration                               NA                      NA
+b_OpCost                                     NA                      NA
+b_hev                                        NA                      NA
+b_phev20                                     NA                      NA
+b_phev40                                     NA                      NA
+b_bev                                        NA                      NA
+b_bevRangeRel                                NA                      NA
+b_noBEVFC                                    NA                      NA
+b_american                                   NA                      NA
+b_chinese                                    NA                      NA
+b_japanese                                   NA                      NA
+b_skorean                                    NA                      NA
+lambda_ICE                                   NA                      NA
+lambda_BEV                                   NA                      NA
+alpha_PHEV_ICE_logistic                      NA                      NA
+                                       b_phev20                b_phev40
+b_Price                                      NA                      NA
+b_Acceleration                               NA                      NA
+b_OpCost                                     NA                      NA
+b_hev                                        NA                      NA
+b_phev20                                     NA                      NA
+b_phev40                                     NA                      NA
+b_bev                                        NA                      NA
+b_bevRangeRel                                NA                      NA
+b_noBEVFC                                    NA                      NA
+b_american                                   NA                      NA
+b_chinese                                    NA                      NA
+b_japanese                                   NA                      NA
+b_skorean                                    NA                      NA
+lambda_ICE                                   NA                      NA
+lambda_BEV                                   NA                      NA
+alpha_PHEV_ICE_logistic                      NA                      NA
+                                          b_bev           b_bevRangeRel
+b_Price                                      NA                      NA
+b_Acceleration                               NA                      NA
+b_OpCost                                     NA                      NA
+b_hev                                        NA                      NA
+b_phev20                                     NA                      NA
+b_phev40                                     NA                      NA
+b_bev                                        NA                      NA
+b_bevRangeRel                                NA                      NA
+b_noBEVFC                                    NA                      NA
+b_american                                   NA                      NA
+b_chinese                                    NA                      NA
+b_japanese                                   NA                      NA
+b_skorean                                    NA                      NA
+lambda_ICE                                   NA                      NA
+lambda_BEV                                   NA                      NA
+alpha_PHEV_ICE_logistic                      NA                      NA
+                                      b_noBEVFC              b_american
+b_Price                                      NA                      NA
+b_Acceleration                               NA                      NA
+b_OpCost                                     NA                      NA
+b_hev                                        NA                      NA
+b_phev20                                     NA                      NA
+b_phev40                                     NA                      NA
+b_bev                                        NA                      NA
+b_bevRangeRel                                NA                      NA
+b_noBEVFC                                    NA                      NA
+b_american                                   NA                      NA
+b_chinese                                    NA                      NA
+b_japanese                                   NA                      NA
+b_skorean                                    NA                      NA
+lambda_ICE                                   NA                      NA
+lambda_BEV                                   NA                      NA
+alpha_PHEV_ICE_logistic                      NA                      NA
+                                      b_chinese              b_japanese
+b_Price                                      NA                      NA
+b_Acceleration                               NA                      NA
+b_OpCost                                     NA                      NA
+b_hev                                        NA                      NA
+b_phev20                                     NA                      NA
+b_phev40                                     NA                      NA
+b_bev                                        NA                      NA
+b_bevRangeRel                                NA                      NA
+b_noBEVFC                                    NA                      NA
+b_american                                   NA                      NA
+b_chinese                                    NA                      NA
+b_japanese                                   NA                      NA
+b_skorean                                    NA                      NA
+lambda_ICE                                   NA                      NA
+lambda_BEV                                   NA                      NA
+alpha_PHEV_ICE_logistic                      NA                      NA
+                                      b_skorean              lambda_ICE
+b_Price                                      NA                      NA
+b_Acceleration                               NA                      NA
+b_OpCost                                     NA                      NA
+b_hev                                        NA                      NA
+b_phev20                                     NA                      NA
+b_phev40                                     NA                      NA
+b_bev                                        NA                      NA
+b_bevRangeRel                                NA                      NA
+b_noBEVFC                                    NA                      NA
+b_american                                   NA                      NA
+b_chinese                                    NA                      NA
+b_japanese                                   NA                      NA
+b_skorean                                    NA                      NA
+lambda_ICE                                   NA                      NA
+lambda_BEV                                   NA                      NA
+alpha_PHEV_ICE_logistic                      NA                      NA
+                                     lambda_BEV alpha_PHEV_ICE_logistic
+b_Price                                      NA                      NA
+b_Acceleration                               NA                      NA
+b_OpCost                                     NA                      NA
+b_hev                                        NA                      NA
+b_phev20                                     NA                      NA
+b_phev40                                     NA                      NA
+b_bev                                        NA                      NA
+b_bevRangeRel                                NA                      NA
+b_noBEVFC                                    NA                      NA
+b_american                                   NA                      NA
+b_chinese                                    NA                      NA
+b_japanese                                   NA                      NA
+b_skorean                                    NA                      NA
+lambda_ICE                                   NA                      NA
+lambda_BEV                                   NA                      NA
+alpha_PHEV_ICE_logistic                      NA                      NA
+
+ 20 most extreme outliers in terms of lowest average per choice prediction:
+   ID Avg prob per choice
+ 1064         0.001031856
+  420         0.001606671
+ 1808         0.002853544
+  982         0.004187944
+ 1989         0.004537296
+  396         0.007105734
+  130         0.014013829
+   79         0.015835897
+ 1799         0.016878778
+  918         0.018447472
+  310         0.020821661
+ 1819         0.021743002
+  978         0.026158511
+ 1032         0.026955371
+  815         0.027172426
+  534         0.027498845
+  583         0.030666196
+  738         0.035337239
+ 1812         0.035461286
+  439         0.037245649
+
+Settings and functions used in model definition:
+
+apollo_control
+--------------
+                       Value                                            
+modelName              "CNL_CNL_pref_CV05"                              
+indivID                "ID"                                             
+panelData              "TRUE"                                           
+weights                "Weight2018"                                     
+outputDirectory        "logs/job_35887057/CNL_CNL_pref/"                
+nCores                 "32"                                             
+noModification         "TRUE"                                           
+calculateLLC           "FALSE"                                          
+workInLogs             "TRUE"                                           
+mixing                 "FALSE"                                          
+debug                  "FALSE"                                          
+modelDescr             "No model description provided in apollo_control"
+seed                   "13"                                             
+HB                     "FALSE"                                          
+noValidation           "TRUE"                                           
+noDiagnostics          "TRUE"                                           
+analyticHessian        "FALSE"                                          
+memorySaver            "FALSE"                                          
+analyticGrad           "FALSE"                                          
+analyticGrad_manualSet "TRUE"                                           
+overridePanel          "FALSE"                                          
+preventOverridePanel   "FALSE"                                          
+
+Hessian routines attempted
+--------------------------
+none
+
+
+apollo_probabilities
+----------------------
+function (apollo_beta, apollo_inputs, functionality = "estimate") 
+{
+    apollo_attach(apollo_beta, apollo_inputs)
+    on.exit(apollo_detach(apollo_beta, apollo_inputs))
+    V <- list()
+    A <- list()
+    P = list()
+    prefix <- if (tolower(apollo_inputs$utility_space) == "pref") 
+        "b_"
+    else "wtp_"
+    for (altName in apollo_inputs$availCols) {
+        alt_suffix <- substr(altName, nchar(altName) - 1, nchar(altName))
+        A[[altName]] <- get(altName)
+        if (tolower(apollo_inputs$utility_space) == "wtp") {
+            attrs_no_price <- setdiff(apollo_inputs$observed_attributes, 
+                "Price")
+            v_expr <- str_glue("\n        scalingFactor * (\n          {paste0(\n             \"wtp_\", attrs_no_price,\n             \" * \", attrs_no_price, alt_suffix,\n             collapse = \" + \"\n          )}\n          - Price{alt_suffix}\n        )")
+        }
+        else {
+            v_expr <- str_glue("{paste0(\n             \"b_\", apollo_inputs$observed_attributes,\n             \" * \", apollo_inputs$observed_attributes, alt_suffix,\n             collapse = \" + \"\n          )}")
+        }
+        V[[altName]] <- eval(parse(text = v_expr))
+    }
+    res <- get_nl_spec(apollo_inputs$nesting_spec)
+    nlNests <- res$nlNests
+    nlStructure <- res$nlStructure
+    if (apollo_inputs$nesting_spec == "CNL" || apollo_inputs$nesting_spec == 
+        "expanded_CNL") {
+        cnl_settings <- list(alternatives = setNames(1:length(apollo_inputs$availCols), 
+            apollo_inputs$availCols), choiceVar = AltChoice, 
+            utilities = V, avail = A, cnlNests = nlNests, cnlStructure = nlStructure)
+        P[["model"]] = apollo_cnl(cnl_settings, functionality)
+    }
+    else {
+        nl_settings <- list(alternatives = setNames(1:length(apollo_inputs$availCols), 
+            apollo_inputs$availCols), choiceVar = AltChoice, 
+            utilities = V, avail = A, nlNests = nlNests, nlStructure = nlStructure)
+        P[["model"]] = apollo_nl(nl_settings, functionality)
+    }
+    P = apollo_panelProd(P, apollo_inputs, functionality)
+    P <- apollo_weighting(P, apollo_inputs, functionality)
+    P = apollo_prepareProb(P, apollo_inputs, functionality)
+    return(P)
+}
+<bytecode: 0x55952f1199a8>
+<environment: 0x55952f12c4d0>

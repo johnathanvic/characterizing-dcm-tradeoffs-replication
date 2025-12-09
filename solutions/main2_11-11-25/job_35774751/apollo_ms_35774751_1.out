@@ -1,0 +1,554 @@
+SLURM_ARRAY_JOB_ID: 35774751
+SLURM_JOB_ID: 35774753
+SLURM_ARRAY_TASK_ID: 1
+Created job directory: logs/job_35774751
+Task 1: Starting hpc/hpc_init_preparation.R...
+[1] "300s Timeout on Loading Dataset"
+<environment: R_GlobalEnv>
+
+
+=== Running LC8_NL_pref ===
+Apollo ignition sequence completed
+
+outputDirectory provided by user does not exist, so will be created.
+Analytic gradients cannot be used with setting workInLogs
+All checks on apollo_control completed.
+All checks on database completed.
+
+
+=== Running LC8_CNL_pref ===
+Apollo ignition sequence completed
+
+outputDirectory provided by user does not exist, so will be created.
+Analytic gradients cannot be used with setting workInLogs
+All checks on apollo_control completed.
+All checks on database completed.
+
+
+=== Running MXL1k_none_pref ===
+Apollo ignition sequence completed
+apollo_draws and apollo_randCoeff were found, so apollo_control$mixing
+  was set to TRUE
+
+outputDirectory provided by user does not exist, so will be created.
+Analytic gradients cannot be used with setting workInLogs
+All checks on apollo_control completed.
+All checks on database completed.
+Generating inter-individual draws .............. Done
+
+
+=== Running MXL1k_none_wtp ===
+Apollo ignition sequence completed
+apollo_draws and apollo_randCoeff were found, so apollo_control$mixing
+  was set to TRUE
+
+outputDirectory provided by user does not exist, so will be created.
+Analytic gradients cannot be used with setting workInLogs
+All checks on apollo_control completed.
+All checks on database completed.
+Generating inter-individual draws .............. Done
+Saved to directory: logs/job_35774751 
+Prep done: settings & models serialized.
+Task 1: Initialization complete.
+Running model 1...
+Running Part 1 (Multistart): LC8_NL_pref 
+Starting Setup 
+Setup Complete 
+Starting Search-Start 
+Saving original apollo_inputs 
+Testing probability function (apollo_probabilities)
+Apollo found a model component of type classAlloc without a
+  componentName. The name was set to "classAlloc" by default.
+INFORMATION: Setting "avail" is missing, so full availability is
+  assumed. 
+Apollo found a model component of type NL without a componentName. The
+  name was set to "Class_1" by default.
+Apollo found a model component of type NL without a componentName. The
+  name was set to "Class_2" by default.
+Apollo found a model component of type NL without a componentName. The
+  name was set to "Class_3" by default.
+Apollo found a model component of type NL without a componentName. The
+  name was set to "Class_4" by default.
+Apollo found a model component of type NL without a componentName. The
+  name was set to "Class_5" by default.
+Apollo found a model component of type NL without a componentName. The
+  name was set to "Class_6" by default.
+Apollo found a model component of type NL without a componentName. The
+  name was set to "Class_7" by default.
+Apollo found a model component of type NL without a componentName. The
+  name was set to "Class_8" by default.
+Pre-processing likelihood function...
+Creating initial set of 101 candidate values.
+Calculating LL of candidates 0%....50%.....100%
+10 candidates removed due to non-finite starting LL. 91 remain.
+Total avail. cores = 32 cores
+Avail. GB per core = 2 GB
+Req. GB per cluster = 2 GB
+Running searchStart on 32 cores.
+
+Stage 1, 91 active candidates.
+Estimating 25 BFGS iteration(s) for each active candidate.
+ Candidate......LLstart.....LLfinish.....GradientNorm...Converged
+         1        -9336        -8382         1138.482           0
+         2        -9458        -8131         1577.622           0
+         3        -9586        -8238         1823.968           0
+         4        -9314        -8109         2007.242           0
+         5        -9499        -8207         1956.449           0
+         6        -9465        -8066         1353.041           0
+         7        -9351        -8187           990.88           0
+         8        -9455        -8257         1220.002           0
+         9        -9513        -8246          871.547           0
+        10        -8937        -8076          765.146           0
+        11        -9482        -8374         1927.211           0
+        12        -9249        -8275         2013.623           0
+        13        -9335        -8250         1263.002           0
+        14        -9216        -8323         1225.999           0
+        15        -9277        -8203         1616.672           0
+        16        -9292        -8159          1460.29           0
+        17        -9439        -8050         1653.775           0
+        18        -9296        -8098         2060.285           0
+        19        -9138        -8179         1094.159           0
+        20        -9359        -8153         1288.707           0
+        21        -9506        -8361         1505.496           0
+        22        -9336        -8100         1853.751           0
+        23        -9706        -8366         2068.524           0
+        24        -9566        -8235         1539.035           0
+        25        -9299        -8103         1623.932           0
+        26        -9002        -8020         1980.188           0
+        27        -9813        -8164         1149.248           0
+        28        -9299        -8467         1561.073           0
+        29        -9321        -8112         1793.943           0
+        30        -9122        -8501              NaN           0
+        31        -9404        -8254         1623.563           0
+        32        -9230        -8131          750.466           0
+        33        -9156        -8192         1298.253           0
+        34        -9063        -8071         1149.613           0
+        35        -9203        -8187         1267.219           0
+        36        -9539        -8317         1543.191           0
+        37        -9232        -8504         3391.634           0
+        38        -9152        -8220         1504.384           0
+        39        -9016        -8123         2364.789           0
+        40        -9225        -8190         3545.459           0
+        41        -9104        -8050           985.55           0
+        42        -9677        -8346         2125.444           0
+        43        -9128        -8009         1190.896           0
+        44       -10014        -8219         2704.839           0
+        45        -9595        -8220         1393.221           0
+        46        -9201        -8080          851.021           0
+        47        -9566        -8332         1222.049           0
+        48        -9064        -8097         2152.582           0
+        49        -9759        -8064         1198.063           0
+        50        -9218        -8011         1724.269           0
+        51        -9238        -8119         1040.751           0
+        52        -9447        -7964          1279.23           0
+        53        -9602        -8158         1318.122           0
+        54        -9271        -8746              NaN           1
+        55        -9607        -8182         1337.062           0
+        56        -9142        -8247          877.394           0
+        57        -9793        -8351         2221.392           0
+        58        -9334        -8151         1994.203           0
+        59        -9335        -8194         1023.133           0
+        60        -9239        -8161          822.529           0
+        61        -9374        -8167         2039.771           0
+        62        -9238        -8269          909.618           0
+        63        -9037        -8081          837.014           0
+        64        -9309        -8714              NaN           1
+        65        -9136        -8256         1432.631           0
+        66        -9357        -8332         2066.273           0
+        67        -9611        -8149         1919.707           0
+        68        -9335        -8191         1374.123           0
+        69        -9310        -8433         1350.474           0
+        70        -9375        -8099         1465.326           0
+        71        -9267        -8139         2204.403           0
+        72        -9505        -8157         1236.385           0
+        73        -9086        -8355              NaN           1
+        74        -9214        -8210         1188.584           0
+        75        -9614        -8272         1812.737           0
+        76        -9382        -8295         2113.546           0
+        77        -9661        -8347         1804.312           0
+        78        -9746        -8323         1436.078           0
+        79       -10024        -8482         1973.094           0
+        80        -9161        -8326         2212.441           0
+        81        -9067        -8103          868.033           0
+        82        -9193        -8022         1218.089           0
+        83        -9063        -8226          819.559           0
+        84        -9264        -8165              NaN           0
+        85       -17905        -9233         1602.464           0
+        86       -19746       -11436              NaN           1
+        87       -16143        -8893         4316.009           0
+        88       -21205        -9175         2890.416           0
+        89       -13635        -9103         1090.431           0
+        90       -25978       -10898        25289.077           0
+        91       -26109        -9466         2980.439           0
+Best candidate so far (LL=-7964)
+
+Stage 2, 85 active candidates.
+Estimating 25 BFGS iteration(s) for each active candidate.
+ Candidate......LLstart.....LLfinish.....GradientNorm...Converged
+         1        -8382        -7961         1560.555           0
+         2        -8131        -7962         1109.083           0
+         3        -8238        -8053          853.485           0
+         4        -8109        -7920          726.601           0
+         5        -8207        -7982          979.896           0
+         6        -8066        -7885          697.149           0
+         7        -8187        -8062         1066.975           0
+         8        -8257        -8043         1363.223           0
+         9        -8246        -7991         1629.936           0
+        10        -8076        -7921         1154.778           0
+        11        -8374        -8046          858.263           0
+        12        -8275        -8104              NaN           1
+        13        -8250        -8249              NaN           1
+        14        -8323        -8323              NaN           1
+        15        -8203        -7931         1547.721           0
+        16        -8159        -8047              NaN           1
+        17        -8050        -7912          941.643           0
+        18        -8098        -7956         1278.016           0
+        19        -8179        -7895         1434.799           0
+        20        -8153        -7979         1427.755           0
+        21        -8361        -8361              NaN           1
+        22        -8100        -7919          486.694           0
+        23        -8366        -8303              NaN           1
+        24        -8235        -8036              NaN           1
+        25        -8103        -7950         1003.115           0
+        26        -8020        -7987              NaN           1
+        27        -8164        -8064              NaN           1
+        28        -8467        -8181          1098.34           0
+        29        -8112        -7978         1814.223           0
+        31        -8254        -8041          1470.81           0
+        32        -8131        -7907         1191.719           0
+        33        -8192        -7947          679.666           0
+        34        -8071        -7937          343.985           0
+        35        -8187        -7954           802.53           0
+        36        -8317        -8014         1661.214           0
+        37        -8504        -8503              NaN           1
+        38        -8220        -8037         2154.401           0
+        39        -8123        -7914          799.997           0
+        40        -8190        -7876          512.267           0
+        41        -8050        -7888         1394.804           0
+        42        -8346        -8049         1371.689           0
+        43        -8009        -7901          702.435           0
+        44        -8219        -7941          867.793           0
+        45        -8220        -8124          627.232           0
+        46        -8080        -7895          917.749           0
+        47        -8332        -8047          643.303           0
+        48        -8097        -7940         1302.752           0
+        49        -8064        -7915         1286.996           0
+        50        -8011        -7991              NaN           1
+        51        -8119        -8033          1261.15           0
+        52        -7964        -7855           673.33           0
+        53        -8158        -7942         1028.735           0
+        55        -8182        -7921          921.881           0
+        56        -8247        -7985         1239.884           0
+        57        -8351        -8168          1359.28           0
+        58        -8151        -8090              NaN           1
+        59        -8194        -8025         1167.351           0
+        60        -8161        -7970          638.972           0
+        61        -8167        -7925         1149.121           0
+        62        -8269        -8257              NaN           1
+        63        -8081        -7918         1414.099           0
+        65        -8256        -8000         1050.883           0
+        66        -8332        -8309              NaN           1
+        67        -8149        -7976           842.97           0
+        68        -8191        -7989         1066.268           0
+        69        -8433        -8112         1023.043           0
+        70        -8099        -7948          932.626           0
+        71        -8139        -7939           994.66           0
+        72        -8157        -7958          981.623           0
+        74        -8210        -7974          1038.44           0
+        75        -8272        -8040         1549.776           0
+        76        -8295        -8071         2049.751           0
+        77        -8347        -8147         1456.975           0
+        78        -8323        -8102         1550.447           0
+        79        -8482        -8482              NaN           1
+        80        -8326        -8056         1587.281           0
+        81        -8103        -7974         1240.634           0
+        82        -8022        -7922          416.316           0
+        83        -8226        -8055          520.574           0
+        85        -9233        -9170              NaN           1
+        87        -8893        -8423         2441.572           0
+        88        -9175        -8528          805.261           0
+        89        -9103        -8463         2295.478           0
+        90       -10898       -10885              Inf           1
+        91        -9466        -9021         2457.053           0
+Best candidate so far (LL=-7855.3)
+
+Stage 3, 68 active candidates.
+Estimating 25 BFGS iteration(s) for each active candidate.
+ Candidate......LLstart.....LLfinish.....GradientNorm...Converged
+         1        -7961        -7866          608.201           0
+         2        -7962        -7904          701.482           0
+         3        -8053        -7956          975.576           0
+         4        -7920        -7879          607.482           0
+         5        -7982        -7929          681.289           0
+         6        -7885        -7846              NaN           1
+         7        -8062        -7995           588.59           0
+         8        -8043        -7982          626.692           0
+         9        -7991        -7955              NaN           1
+        10        -7921        -7839          463.245           0
+        11        -8046        -7929          936.879           0
+        15        -7931        -7873          694.574           0
+        17        -7912        -7865              NaN           1
+        18        -7956        -7878          623.169           0
+        19        -7895        -7839          944.624           0
+        20        -7979        -7914          942.004           0
+        22        -7919        -7864           507.44           0
+        25        -7950        -7950              NaN           1
+        28        -8181        -8181              NaN           1
+        29        -7978        -7966              NaN           1
+        31        -8041        -8035              NaN           1
+        32        -7907        -7877              NaN           1
+        33        -7947        -7893          433.243           0
+        34        -7937        -7934              NaN           1
+        35        -7954        -7877          669.264           0
+        36        -8014        -7917         1097.521           0
+        38        -8037        -7915          1040.26           0
+        39        -7914        -7871          662.899           0
+        40        -7876        -7826          454.391           0
+        41        -7888        -7835          499.552           0
+        42        -8049        -7905          454.793           0
+        43        -7901        -7853          387.799           0
+        44        -7941        -7878          769.333           0
+        45        -8124        -8124              NaN           1
+        46        -7895        -7844          402.483           0
+        47        -8047        -8044              NaN           1
+        48        -7940        -7857          688.467           0
+        49        -7915        -7867          848.602           0
+        51        -8033        -7998              NaN           1
+        52        -7855        -7855              NaN           1
+        53        -7942        -7867         1059.311           0
+        55        -7921        -7829          938.253           0
+        56        -7985        -7877         1019.441           0
+        57        -8168        -8031         1198.504           0
+        59        -8025        -7954           560.35           0
+        60        -7970        -7908              NaN           1
+        61        -7925        -7861          681.175           0
+        63        -7918        -7851          707.312           0
+        65        -8000        -7912          540.667           0
+        67        -7976        -7976              NaN           1
+        68        -7989        -7945          178.208           0
+        69        -8112        -8112              NaN           1
+        70        -7948        -7938              NaN           1
+        71        -7939        -7876          730.514           0
+        72        -7958        -7889          968.297           0
+        74        -7974        -7916          882.135           0
+        75        -8040        -7967          636.862           0
+        76        -8071        -7910         1022.034           0
+        77        -8147        -8016         1079.343           0
+        78        -8102        -7974          290.232           0
+        80        -8056        -7962          872.346           0
+        81        -7974        -7920          752.985           0
+        82        -7922        -7922              NaN           1
+        83        -8055        -7981              NaN           1
+        87        -8423        -8184         1574.563           0
+        88        -8528        -8376          609.239           0
+        89        -8463        -8227         1141.035           0
+        91        -9021        -9000              NaN           1
+Best candidate so far (LL=-7826.3)
+
+Stage 4, 48 active candidates.
+Estimating 25 BFGS iteration(s) for each active candidate.
+ Candidate......LLstart.....LLfinish.....GradientNorm...Converged
+         1        -7866        -7834          392.444           0
+         2        -7904        -7888          347.694           0
+         3        -7956        -7923           381.48           0
+         4        -7879        -7865          401.242           0
+         5        -7929        -7928              NaN           1
+         7        -7995        -7962          610.296           0
+         8        -7982        -7975          175.208           0
+        10        -7839        -7817          516.657           0
+        11        -7929        -7861          595.141           0
+        15        -7873        -7843          503.442           0
+        18        -7878        -7859           476.41           0
+        19        -7839        -7818          292.298           0
+        20        -7914        -7911              NaN           1
+        22        -7864        -7855              NaN           1
+        33        -7893        -7861           485.65           0
+        35        -7877        -7846          530.265           0
+        36        -7917        -7901              NaN           1
+        38        -7915        -7887              NaN           1
+        39        -7871        -7871              NaN           1
+        40        -7826        -7823              NaN           1
+        41        -7835        -7831              NaN           1
+        42        -7905        -7895              NaN           1
+        43        -7853        -7846          256.381           0
+        44        -7878        -7833          304.585           0
+        46        -7844        -7830          308.421           0
+        48        -7857        -7826          827.378           0
+        49        -7867        -7823          801.776           0
+        53        -7867        -7838           622.02           0
+        55        -7829        -7799          468.146           0
+        56        -7877        -7838          363.928           0
+        57        -8031        -7984          487.725           0
+        59        -7954        -7942              NaN           1
+        61        -7861        -7850          354.588           0
+        63        -7851        -7840          424.903           0
+        65        -7912        -7892          187.231           0
+        68        -7945        -7945              NaN           1
+        71        -7876        -7867              NaN           1
+        72        -7889        -7864          571.657           0
+        74        -7916        -7915              NaN           1
+        75        -7967        -7967              NaN           1
+        76        -7910        -7880          235.707           0
+        77        -8016        -8007              NaN           1
+        78        -7974        -7968              NaN           1
+        80        -7962        -7949              NaN           1
+        81        -7920        -7904          553.319           0
+        87        -8184        -8127         1019.042           0
+        88        -8376        -8312          711.306           0
+        89        -8227        -8087         1507.243           0
+Best candidate so far (LL=-7798.6)
+
+Stage 5, 31 active candidates.
+Estimating 25 BFGS iteration(s) for each active candidate.
+ Candidate......LLstart.....LLfinish.....GradientNorm...Converged
+         1        -7834        -7820          385.225           0
+         2        -7888        -7882          180.538           0
+         3        -7923        -7916           235.31           0
+         4        -7865        -7862          218.243           0
+         7        -7962        -7935          466.074           0
+         8        -7975        -7975              NaN           1
+        10        -7817        -7801          393.169           0
+        11        -7861        -7828          548.693           0
+        15        -7843        -7829          375.882           0
+        18        -7859        -7859              NaN           1
+        19        -7818        -7814          216.694           0
+        33        -7861        -7850          588.422           0
+        35        -7846        -7823           250.46           0
+        43        -7846        -7846              NaN           1
+        44        -7833        -7820          217.556           0
+        46        -7830        -7818          394.698           0
+        48        -7826        -7809           75.586           0
+        49        -7823        -7806          302.067           0
+        53        -7838        -7822          301.862           0
+        55        -7799        -7789           168.97           0
+        56        -7838        -7815          242.218           0
+        57        -7984        -7979              NaN           1
+        61        -7850        -7846          272.768           0
+        63        -7840        -7836              NaN           0
+        65        -7892        -7892              NaN           1
+        72        -7864        -7840          492.504           0
+        76        -7880        -7880              NaN           1
+        81        -7904        -7897          170.742           0
+        87        -8127        -8117          398.239           0
+        88        -8312        -8226          935.298           0
+        89        -8087        -8031          740.732           0
+Best candidate so far (LL=-7789.3)
+
+Stage 6, 24 active candidates.
+Estimating 25 BFGS iteration(s) for each active candidate.
+ Candidate......LLstart.....LLfinish.....GradientNorm...Converged
+         1        -7820        -7812          209.308           0
+         2        -7882        -7876          210.336           0
+         3        -7916        -7914          150.113           0
+         4        -7862        -7861          122.438           0
+         7        -7935        -7922          103.672           0
+        10        -7801        -7799              NaN           1
+        11        -7828        -7803          234.972           0
+        15        -7829        -7823          170.677           0
+        19        -7814        -7812          121.373           0
+        33        -7850        -7845              NaN           1
+        35        -7823        -7818           85.776           0
+        44        -7820        -7811          217.379           0
+        46        -7818        -7811          196.132           0
+        48        -7809        -7807              NaN           0
+        49        -7806        -7800          367.332           0
+        53        -7822        -7812          199.593           0
+        55        -7789        -7787          104.734           0
+        56        -7815        -7808              NaN           1
+        61        -7846        -7845           170.01           0
+        72        -7840        -7832          283.611           0
+        81        -7897        -7866           425.34           0
+        87        -8117        -8114          317.749           0
+        88        -8226        -8056          686.335           0
+        89        -8031        -8031              NaN           1
+Best candidate so far (LL=-7787.2)
+
+Stage 7, 19 active candidates.
+Estimating 25 BFGS iteration(s) for each active candidate.
+ Candidate......LLstart.....LLfinish.....GradientNorm...Converged
+         1        -7812        -7797          314.179           0
+         2        -7876        -7875              NaN           1
+         3        -7914        -7913          119.819           0
+         4        -7861        -7861              NaN           1
+         7        -7922        -7922              NaN           1
+        11        -7803        -7795          217.702           0
+        15        -7823        -7817          263.778           0
+        19        -7812        -7811           62.055           0
+        35        -7818        -7818              NaN           1
+        44        -7811        -7808          176.976           0
+        46        -7811        -7809          123.721           0
+        49        -7800        -7795          200.574           0
+        53        -7812        -7806          119.808           0
+        55        -7787        -7786           51.718           0
+        61        -7845        -7844          108.581           0
+        72        -7832        -7830           75.915           0
+        81        -7866        -7851          357.935           0
+        87        -8114        -8113          117.039           0
+        88        -8056        -8013          369.536           0
+Best candidate so far (LL=-7786.4)
+
+Stage 8, 15 active candidates.
+Estimating 25 BFGS iteration(s) for each active candidate.
+ Candidate......LLstart.....LLfinish.....GradientNorm...Converged
+         1        -7797        -7793          135.073           0
+         3        -7913        -7912           39.916           0
+        11        -7795        -7791          203.732           0
+        15        -7817        -7813          304.826           0
+        19        -7811        -7810              NaN           1
+        44        -7808        -7807              NaN           1
+        46        -7809        -7809            56.83           0
+        49        -7795        -7795              NaN           1
+        53        -7806        -7804          124.897           0
+        55        -7786        -7786           25.328           0
+        61        -7844        -7844              NaN           1
+        72        -7830        -7828           40.787           0
+        81        -7851        -7847          199.943           0
+        87        -8113        -8112           49.131           0
+        88        -8013        -8006          148.752           0
+Best candidate so far (LL=-7785.6)
+
+Stage 9, 11 active candidates.
+Estimating 25 BFGS iteration(s) for each active candidate.
+ Candidate......LLstart.....LLfinish.....GradientNorm...Converged
+         1        -7793        -7790          227.819           0
+         3        -7912        -7912           30.389           0
+        11        -7791        -7788          106.699           0
+        15        -7813        -7813              NaN           1
+        46        -7809        -7808           42.461           0
+        53        -7804        -7804           55.732           0
+        55        -7786        -7785           35.017           0
+        72        -7828        -7828              NaN           1
+        81        -7847        -7845          142.818           0
+        87        -8112        -8112           33.827           0
+        88        -8006        -8004          130.984           0
+Best candidate so far (LL=-7785.4)
+
+Stage 10, 9 active candidates.
+Estimating 100 BFGS iteration(s) for each active candidate.
+ Candidate......LLstart.....LLfinish.....GradientNorm...Converged
+         1        -7790        -7786              NaN           1
+         3        -7912        -7911            5.436           0
+        11        -7788        -7785             3.29           1
+        46        -7808        -7808            0.655           1
+        53        -7804        -7803            0.608           1
+        55        -7785        -7785            0.817           1
+        81        -7845        -7845              NaN           1
+        87        -8112        -8111            0.019           1
+        88        -8004        -8002            3.923           1
+Best candidate so far (LL=-7784.9)
+
+Stage 11, 2 active candidates.
+Estimating 100 BFGS iteration(s) for each active candidate.
+ Candidate......LLstart.....LLfinish.....GradientNorm...Converged
+         3        -7911        -7911           17.307           1
+        55        -7785        -7785                0           1
+Best candidate so far (LL=-7784.9)
+  n_points n_best n_within_tol did_best_conv
+1       91      1            2          TRUE
+Search-Start Execution Complete 
+Search-Start Post-Processing Complete 
+Part 1 (Multistart) complete for: LC8_NL_pref 
+Results saved to: logs/job_35774751/LC8_NL_pref 
+Total time: 15.4 hours
+Ready for Part 2 (Estimation)
+Done Running. Log files moved to logs/job_35774751/

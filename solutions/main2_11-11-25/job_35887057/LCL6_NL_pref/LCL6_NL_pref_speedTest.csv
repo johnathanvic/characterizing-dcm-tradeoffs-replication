@@ -1,0 +1,4 @@
+"model_name","cores","inter_draws","intra_draws","calls","time_per_call","ram_mb"
+"LCL6_NL_pref",1,0,0,100,2.33029366016388,972.7
+"LCL6_NL_pref",2,0,0,100,1.9607447218895,1303.8
+"LCL6_NL_pref",4,0,0,100,1.83266167402267,1622.9

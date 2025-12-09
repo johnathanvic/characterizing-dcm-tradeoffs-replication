@@ -1,0 +1,1670 @@
+Model run by jvicente using Apollo 0.3.6 on R 4.4.1 for Linux.
+Please acknowledge the use of Apollo by citing Hess & Palma (2019)
+  DOI 10.1016/j.jocm.2019.100170
+  www.ApolloChoiceModelling.com
+
+Model name                                  : MXL100_none_wtp
+Model description                           : No model description provided in apollo_control
+Model run at                                : 2025-11-10 13:19:40.414163
+Estimation method                           : bfgs
+Estimation diagnosis                        : successful convergence
+Optimisation diagnosis                      : Maximum found
+     hessian properties                     : Negative definite
+     maximum eigenvalue                     : -0.782769
+     reciprocal of condition number         : 2.288e-06
+Number of individuals                       : 734
+Number of rows in database                  : 11010
+Number of modelled outcomes                 : 11010
+
+Number of cores used                        :  4 
+Number of inter-individual draws            : 100 (mlhs)
+
+LL(start)                                   : -8338.32
+LL at equal shares, LL(0)                   : -12095.72
+LL at observed shares, LL(C)                : Not applicable
+LL(final)                                   : -8338.32
+Rho-squared vs equal shares                  :  0.3106 
+Adj.Rho-squared vs equal shares              :  0.3085 
+Rho-squared vs observed shares               :  Not applicable 
+Adj.Rho-squared vs observed shares           :  Not applicable 
+AIC                                         :  16728.64 
+BIC                                         :  16918.61 
+
+Estimated parameters                        : 26
+Time taken (hh:mm:ss)                       :  00:09:20.75 
+     pre-estimation                         :  00:00:29.95 
+     estimation                             :  00:03:17 
+     post-estimation                        :  00:05:33.8 
+Iterations                                  :  26  
+
+Unconstrained optimisation.
+
+Estimates:
+                          Estimate        s.e.   t.rat.(0)    Rob.s.e.
+mu_scalingFactor           0.12318    0.003686     33.4167    0.007410
+sigma_scalingFactor        0.05765    0.003038     18.9748    0.005245
+mu_wtp_Acceleration       -1.35768    0.112956    -12.0195    0.234525
+sigma_wtp_Acceleration     1.37382    0.191170      7.1864    0.448086
+mu_wtp_OpCost             -1.75521    0.081908    -21.4289    0.141998
+sigma_wtp_OpCost          -1.34507    0.091343    -14.7255    0.156519
+mu_wtp_hev                 1.37665    0.656577      2.0967    1.147504
+sigma_wtp_hev             -3.89662    1.068627     -3.6464    2.200772
+mu_wtp_phev20              0.29510    0.642517      0.4593    1.123591
+sigma_wtp_phev20           2.56915    0.800595      3.2091    1.425789
+mu_wtp_phev40              1.30219    0.638788      2.0385    1.163333
+sigma_wtp_phev40           2.44091    0.828834      2.9450    1.231554
+mu_wtp_bev                -3.85780    0.717197     -5.3790    1.325727
+sigma_wtp_bev             14.26347    0.661791     21.5528    1.642609
+mu_wtp_bevRangeRel         4.84440    0.302397     16.0200    0.642319
+sigma_wtp_bevRangeRel      5.62054    0.327864     17.1429    0.698804
+mu_wtp_noBEVFC            -2.73787    0.477167     -5.7378    0.742029
+sigma_wtp_noBEVFC         -1.22566    0.808082     -1.5168    1.387791
+mu_wtp_american           -1.09560    0.515305     -2.1261    0.847844
+sigma_wtp_american         3.73376    0.688396      5.4239    1.684990
+mu_wtp_chinese           -20.89772    0.882316    -23.6851    1.845342
+sigma_wtp_chinese        -19.30205    0.916956    -21.0501    1.878410
+mu_wtp_japanese           -0.07126    0.526925     -0.1352    0.984338
+sigma_wtp_japanese        -4.68176    0.742531     -6.3051    1.639834
+mu_wtp_skorean            -3.67303    0.535948     -6.8533    0.927474
+sigma_wtp_skorean          4.52234    0.731315      6.1838    1.285868
+                       Rob.t.rat.(0)
+mu_scalingFactor            16.62453
+sigma_scalingFactor         10.99116
+mu_wtp_Acceleration         -5.78906
+sigma_wtp_Acceleration       3.06597
+mu_wtp_OpCost              -12.36080
+sigma_wtp_OpCost            -8.59369
+mu_wtp_hev                   1.19969
+sigma_wtp_hev               -1.77057
+mu_wtp_phev20                0.26264
+sigma_wtp_phev20             1.80192
+mu_wtp_phev40                1.11936
+sigma_wtp_phev40             1.98197
+mu_wtp_bev                  -2.90995
+sigma_wtp_bev                8.68342
+mu_wtp_bevRangeRel           7.54206
+sigma_wtp_bevRangeRel        8.04308
+mu_wtp_noBEVFC              -3.68971
+sigma_wtp_noBEVFC           -0.88318
+mu_wtp_american             -1.29222
+sigma_wtp_american           2.21590
+mu_wtp_chinese             -11.32458
+sigma_wtp_chinese          -10.27573
+mu_wtp_japanese             -0.07240
+sigma_wtp_japanese          -2.85502
+mu_wtp_skorean              -3.96025
+sigma_wtp_skorean            3.51695
+
+
+Overview of choices for MNL model component :
+                                       C1      C2       C3
+Times available                  11010.00 11010.0 11010.00
+Times chosen                      3670.00  3677.0  3663.00
+Percentage chosen overall           33.33    33.4    33.27
+Percentage chosen when available    33.33    33.4    33.27
+
+
+
+Classical covariance matrix:
+                             mu_scalingFactor    sigma_scalingFactor
+mu_scalingFactor                    1.359e-05              8.022e-06
+sigma_scalingFactor                 8.022e-06              9.231e-06
+mu_wtp_Acceleration                 3.013e-05              4.639e-05
+sigma_wtp_Acceleration              3.585e-06             -7.255e-05
+mu_wtp_OpCost                       5.420e-05              3.922e-05
+sigma_wtp_OpCost                    3.110e-05              3.183e-05
+mu_wtp_hev                         -2.573e-05             -5.605e-05
+sigma_wtp_hev                     -1.5892e-04              3.445e-05
+mu_wtp_phev20                      -5.065e-05             -3.763e-05
+sigma_wtp_phev20                   1.3892e-04             1.6820e-04
+mu_wtp_phev40                     -1.2597e-04             -9.222e-05
+sigma_wtp_phev40                  -2.5047e-04            -1.6339e-04
+mu_wtp_bev                         2.9086e-04             1.4388e-04
+sigma_wtp_bev                     -6.2869e-04            -4.4603e-04
+mu_wtp_bevRangeRel                 -9.311e-05             -5.378e-05
+sigma_wtp_bevRangeRel             -1.2773e-04             -7.548e-05
+mu_wtp_noBEVFC                     1.2637e-04             1.0554e-04
+sigma_wtp_noBEVFC                 -1.4072e-04              5.834e-06
+mu_wtp_american                    1.0884e-04              7.950e-05
+sigma_wtp_american                -1.6066e-04             -2.115e-05
+mu_wtp_chinese                     4.4308e-04             2.3511e-04
+sigma_wtp_chinese                  3.8494e-04             3.0707e-04
+mu_wtp_japanese                    -9.240e-06              6.264e-06
+sigma_wtp_japanese                 1.7003e-04             1.2059e-04
+mu_wtp_skorean                     2.8563e-04             2.4208e-04
+sigma_wtp_skorean                   2.163e-05             -6.493e-05
+                          mu_wtp_Acceleration sigma_wtp_Acceleration
+mu_scalingFactor                    3.013e-05              3.585e-06
+sigma_scalingFactor                 4.639e-05             -7.255e-05
+mu_wtp_Acceleration                  0.012759              -0.005725
+sigma_wtp_Acceleration              -0.005725               0.036546
+mu_wtp_OpCost                        0.001192              -0.001984
+sigma_wtp_OpCost                     0.001032             1.1774e-04
+mu_wtp_hev                          -0.002347               0.006074
+sigma_wtp_hev                        0.008235              -0.001572
+mu_wtp_phev20                      7.6254e-04             8.0162e-04
+sigma_wtp_phev20                   7.3130e-04               0.008384
+mu_wtp_phev40                        0.001892              -0.001271
+sigma_wtp_phev40                    -0.003780               0.003724
+mu_wtp_bev                           0.001963               0.008468
+sigma_wtp_bev                       -0.005497             5.9121e-04
+mu_wtp_bevRangeRel                  -0.001382              -0.003342
+sigma_wtp_bevRangeRel             -9.4364e-04             2.3160e-04
+mu_wtp_noBEVFC                     7.8045e-04               0.002504
+sigma_wtp_noBEVFC                    0.006863              -0.013247
+mu_wtp_american                   -5.7796e-04            -9.9156e-04
+sigma_wtp_american                   0.001731               0.003830
+mu_wtp_chinese                       0.005181               0.002304
+sigma_wtp_chinese                    0.016513              -0.020470
+mu_wtp_japanese                    6.6636e-04              -0.001711
+sigma_wtp_japanese                 6.1403e-04               0.007078
+mu_wtp_skorean                     9.3207e-04              -0.006569
+sigma_wtp_skorean                   -0.001776              -0.017958
+                                mu_wtp_OpCost       sigma_wtp_OpCost
+mu_scalingFactor                    5.420e-05              3.110e-05
+sigma_scalingFactor                 3.922e-05              3.183e-05
+mu_wtp_Acceleration                  0.001192               0.001032
+sigma_wtp_Acceleration              -0.001984             1.1774e-04
+mu_wtp_OpCost                        0.006709             1.6755e-04
+sigma_wtp_OpCost                   1.6755e-04               0.008344
+mu_wtp_hev                        -4.2640e-04              -0.003389
+sigma_wtp_hev                        0.004663               0.010394
+mu_wtp_phev20                       -0.001943             2.9705e-04
+sigma_wtp_phev20                    -0.004382               0.007417
+mu_wtp_phev40                       -0.001388              -0.001150
+sigma_wtp_phev40                    -0.001869            -1.8028e-04
+mu_wtp_bev                         9.5085e-04               0.002067
+sigma_wtp_bev                       -0.005146              -0.003629
+mu_wtp_bevRangeRel                 -2.495e-06              -0.003106
+sigma_wtp_bevRangeRel               -0.001762              -0.001612
+mu_wtp_noBEVFC                     4.3727e-04             -4.430e-05
+sigma_wtp_noBEVFC                  9.7338e-04               0.004080
+mu_wtp_american                    4.1350e-04            -7.5637e-04
+sigma_wtp_american                 3.0451e-04               0.004134
+mu_wtp_chinese                       0.007841               0.001088
+sigma_wtp_chinese                    0.010654               0.011031
+mu_wtp_japanese                    7.8663e-04             7.7289e-04
+sigma_wtp_japanese                -7.3682e-04               0.005718
+mu_wtp_skorean                       0.001006               0.001805
+sigma_wtp_skorean                   -0.001841              -0.002592
+                                   mu_wtp_hev          sigma_wtp_hev
+mu_scalingFactor                   -2.573e-05            -1.5892e-04
+sigma_scalingFactor                -5.605e-05              3.445e-05
+mu_wtp_Acceleration                 -0.002347               0.008235
+sigma_wtp_Acceleration               0.006074              -0.001572
+mu_wtp_OpCost                     -4.2640e-04               0.004663
+sigma_wtp_OpCost                    -0.003389               0.010394
+mu_wtp_hev                           0.431094              -0.057902
+sigma_wtp_hev                       -0.057902               1.141964
+mu_wtp_phev20                        0.204875               0.035834
+sigma_wtp_phev20                    -0.021955               0.030055
+mu_wtp_phev40                        0.203981               0.017829
+sigma_wtp_phev40                     0.031580               0.037588
+mu_wtp_bev                           0.213791              -0.016915
+sigma_wtp_bev                        0.031349              -0.049509
+mu_wtp_bevRangeRel                   0.006683              -0.063769
+sigma_wtp_bevRangeRel                0.003565               0.030419
+mu_wtp_noBEVFC                    -9.9469e-04               0.001839
+sigma_wtp_noBEVFC                    0.006885               0.089609
+mu_wtp_american                      0.011579              -0.011017
+sigma_wtp_american                 -1.030e-05               0.024629
+mu_wtp_chinese                       0.003175               0.022629
+sigma_wtp_chinese                   -0.038713               0.112276
+mu_wtp_japanese                      0.017711               0.006351
+sigma_wtp_japanese                  -0.033860               0.022935
+mu_wtp_skorean                       0.003470              -0.022765
+sigma_wtp_skorean                    0.012436              -0.066775
+                                mu_wtp_phev20       sigma_wtp_phev20
+mu_scalingFactor                   -5.065e-05             1.3892e-04
+sigma_scalingFactor                -3.763e-05             1.6820e-04
+mu_wtp_Acceleration                7.6254e-04             7.3130e-04
+sigma_wtp_Acceleration             8.0162e-04               0.008384
+mu_wtp_OpCost                       -0.001943              -0.004382
+sigma_wtp_OpCost                   2.9705e-04               0.007417
+mu_wtp_hev                           0.204875              -0.021955
+sigma_wtp_hev                        0.035834               0.030055
+mu_wtp_phev20                        0.412828              -0.015550
+sigma_wtp_phev20                    -0.015550               0.640952
+mu_wtp_phev40                        0.215646               0.002678
+sigma_wtp_phev40                     0.016942              -0.030241
+mu_wtp_bev                           0.199071               0.003921
+sigma_wtp_bev                        0.017761               0.009907
+mu_wtp_bevRangeRel                  -0.009093              -0.024820
+sigma_wtp_bevRangeRel                0.009127               0.005790
+mu_wtp_noBEVFC                      -0.007084            -6.3236e-04
+sigma_wtp_noBEVFC                    0.027828               0.097575
+mu_wtp_american                     -0.001620               0.010797
+sigma_wtp_american                 5.2500e-04               0.052362
+mu_wtp_chinese                      -0.004313              -0.053538
+sigma_wtp_chinese                    0.003193              -0.003819
+mu_wtp_japanese                      0.018569               0.003238
+sigma_wtp_japanese                  -0.035898               0.107226
+mu_wtp_skorean                     9.6095e-04               0.002049
+sigma_wtp_skorean                   -0.012151              -0.019178
+                                mu_wtp_phev40       sigma_wtp_phev40
+mu_scalingFactor                  -1.2597e-04            -2.5047e-04
+sigma_scalingFactor                -9.222e-05            -1.6339e-04
+mu_wtp_Acceleration                  0.001892              -0.003780
+sigma_wtp_Acceleration              -0.001271               0.003724
+mu_wtp_OpCost                       -0.001388              -0.001869
+sigma_wtp_OpCost                    -0.001150            -1.8028e-04
+mu_wtp_hev                           0.203981               0.031580
+sigma_wtp_hev                        0.017829               0.037588
+mu_wtp_phev20                        0.215646               0.016942
+sigma_wtp_phev20                     0.002678              -0.030241
+mu_wtp_phev40                        0.408051               0.020223
+sigma_wtp_phev40                     0.020223               0.686966
+mu_wtp_bev                           0.204637              -0.052018
+sigma_wtp_bev                        0.015585               0.010689
+mu_wtp_bevRangeRel                  -0.001769              -0.003538
+sigma_wtp_bevRangeRel                0.005582               0.026371
+mu_wtp_noBEVFC                      -0.009530              -0.002623
+sigma_wtp_noBEVFC                    0.011907               0.039191
+mu_wtp_american                     -0.014984               0.005868
+sigma_wtp_american                   0.018581               0.021325
+mu_wtp_chinese                      -0.012670              -0.010998
+sigma_wtp_chinese                   -0.023371              -0.080664
+mu_wtp_japanese                      0.019839               0.018892
+sigma_wtp_japanese                  -0.037264              -0.035865
+mu_wtp_skorean                      -0.007532              -0.001414
+sigma_wtp_skorean                   -0.001977               0.017179
+                                   mu_wtp_bev          sigma_wtp_bev
+mu_scalingFactor                   2.9086e-04            -6.2869e-04
+sigma_scalingFactor                1.4388e-04            -4.4603e-04
+mu_wtp_Acceleration                  0.001963              -0.005497
+sigma_wtp_Acceleration               0.008468             5.9121e-04
+mu_wtp_OpCost                      9.5085e-04              -0.005146
+sigma_wtp_OpCost                     0.002067              -0.003629
+mu_wtp_hev                           0.213791               0.031349
+sigma_wtp_hev                       -0.016915              -0.049509
+mu_wtp_phev20                        0.199071               0.017761
+sigma_wtp_phev20                     0.003921               0.009907
+mu_wtp_phev40                        0.204637               0.015585
+sigma_wtp_phev40                    -0.052018               0.010689
+mu_wtp_bev                           0.514371              -0.053283
+sigma_wtp_bev                       -0.053283               0.437967
+mu_wtp_bevRangeRel                   0.025956               0.041338
+sigma_wtp_bevRangeRel               -0.025187               0.024445
+mu_wtp_noBEVFC                      -0.109884              -0.024923
+sigma_wtp_noBEVFC                   -0.004686               0.125659
+mu_wtp_american                      0.002390               0.008703
+sigma_wtp_american                  -0.014731               0.024872
+mu_wtp_chinese                       0.028820              -0.085841
+sigma_wtp_chinese                   -0.014266              -0.064226
+mu_wtp_japanese                      0.004285               0.016105
+sigma_wtp_japanese                  -0.063572              -0.019699
+mu_wtp_skorean                       0.003479              -0.013906
+sigma_wtp_skorean                   -0.029032             5.7048e-04
+                           mu_wtp_bevRangeRel  sigma_wtp_bevRangeRel
+mu_scalingFactor                   -9.311e-05            -1.2773e-04
+sigma_scalingFactor                -5.378e-05             -7.548e-05
+mu_wtp_Acceleration                 -0.001382            -9.4364e-04
+sigma_wtp_Acceleration              -0.003342             2.3160e-04
+mu_wtp_OpCost                      -2.495e-06              -0.001762
+sigma_wtp_OpCost                    -0.003106              -0.001612
+mu_wtp_hev                           0.006683               0.003565
+sigma_wtp_hev                       -0.063769               0.030419
+mu_wtp_phev20                       -0.009093               0.009127
+sigma_wtp_phev20                    -0.024820               0.005790
+mu_wtp_phev40                       -0.001769               0.005582
+sigma_wtp_phev40                    -0.003538               0.026371
+mu_wtp_bev                           0.025956              -0.025187
+sigma_wtp_bev                        0.041338               0.024445
+mu_wtp_bevRangeRel                   0.091444               0.022032
+sigma_wtp_bevRangeRel                0.022032               0.107495
+mu_wtp_noBEVFC                      -0.006938              5.284e-05
+sigma_wtp_noBEVFC                    0.010954               0.036771
+mu_wtp_american                      0.003184              -0.005566
+sigma_wtp_american                   0.009813               0.010302
+mu_wtp_chinese                      -0.012903              -0.023341
+sigma_wtp_chinese                   -0.034993              -0.024651
+mu_wtp_japanese                      0.005134              -0.002036
+sigma_wtp_japanese                  -0.012718              -0.009269
+mu_wtp_skorean                       0.001461              -0.010635
+sigma_wtp_skorean                    0.003807              -0.005585
+                               mu_wtp_noBEVFC      sigma_wtp_noBEVFC
+mu_scalingFactor                   1.2637e-04            -1.4072e-04
+sigma_scalingFactor                1.0554e-04              5.834e-06
+mu_wtp_Acceleration                7.8045e-04               0.006863
+sigma_wtp_Acceleration               0.002504              -0.013247
+mu_wtp_OpCost                      4.3727e-04             9.7338e-04
+sigma_wtp_OpCost                   -4.430e-05               0.004080
+mu_wtp_hev                        -9.9469e-04               0.006885
+sigma_wtp_hev                        0.001839               0.089609
+mu_wtp_phev20                       -0.007084               0.027828
+sigma_wtp_phev20                  -6.3236e-04               0.097575
+mu_wtp_phev40                       -0.009530               0.011907
+sigma_wtp_phev40                    -0.002623               0.039191
+mu_wtp_bev                          -0.109884              -0.004686
+sigma_wtp_bev                       -0.024923               0.125659
+mu_wtp_bevRangeRel                  -0.006938               0.010954
+sigma_wtp_bevRangeRel               5.284e-05               0.036771
+mu_wtp_noBEVFC                       0.227688              -0.045749
+sigma_wtp_noBEVFC                   -0.045749               0.652996
+mu_wtp_american                     -0.002233               0.024482
+sigma_wtp_american                  -0.008275               0.026901
+mu_wtp_chinese                      -0.008978              -0.061011
+sigma_wtp_chinese                    0.012584               0.036020
+mu_wtp_japanese                     -0.016353               0.013516
+sigma_wtp_japanese                   0.023311               0.029200
+mu_wtp_skorean                      -0.005172               0.011800
+sigma_wtp_skorean                  6.0477e-04              -0.012369
+                              mu_wtp_american     sigma_wtp_american
+mu_scalingFactor                   1.0884e-04            -1.6066e-04
+sigma_scalingFactor                 7.950e-05             -2.115e-05
+mu_wtp_Acceleration               -5.7796e-04               0.001731
+sigma_wtp_Acceleration            -9.9156e-04               0.003830
+mu_wtp_OpCost                      4.1350e-04             3.0451e-04
+sigma_wtp_OpCost                  -7.5637e-04               0.004134
+mu_wtp_hev                           0.011579             -1.030e-05
+sigma_wtp_hev                       -0.011017               0.024629
+mu_wtp_phev20                       -0.001620             5.2500e-04
+sigma_wtp_phev20                     0.010797               0.052362
+mu_wtp_phev40                       -0.014984               0.018581
+sigma_wtp_phev40                     0.005868               0.021325
+mu_wtp_bev                           0.002390              -0.014731
+sigma_wtp_bev                        0.008703               0.024872
+mu_wtp_bevRangeRel                   0.003184               0.009813
+sigma_wtp_bevRangeRel               -0.005566               0.010302
+mu_wtp_noBEVFC                      -0.002233              -0.008275
+sigma_wtp_noBEVFC                    0.024482               0.026901
+mu_wtp_american                      0.265539              -0.052169
+sigma_wtp_american                  -0.052169               0.473888
+mu_wtp_chinese                       0.134279              -0.055570
+sigma_wtp_chinese                    0.002445               0.031613
+mu_wtp_japanese                      0.119774            -6.7953e-04
+sigma_wtp_japanese                   0.010482               0.033845
+mu_wtp_skorean                       0.127784              -0.006168
+sigma_wtp_skorean                    0.010777              -0.047682
+                               mu_wtp_chinese      sigma_wtp_chinese
+mu_scalingFactor                   4.4308e-04             3.8494e-04
+sigma_scalingFactor                2.3511e-04             3.0707e-04
+mu_wtp_Acceleration                  0.005181               0.016513
+sigma_wtp_Acceleration               0.002304              -0.020470
+mu_wtp_OpCost                        0.007841               0.010654
+sigma_wtp_OpCost                     0.001088               0.011031
+mu_wtp_hev                           0.003175              -0.038713
+sigma_wtp_hev                        0.022629               0.112276
+mu_wtp_phev20                       -0.004313               0.003193
+sigma_wtp_phev20                    -0.053538              -0.003819
+mu_wtp_phev40                       -0.012670              -0.023371
+sigma_wtp_phev40                    -0.010998              -0.080664
+mu_wtp_bev                           0.028820              -0.014266
+sigma_wtp_bev                       -0.085841              -0.064226
+mu_wtp_bevRangeRel                  -0.012903              -0.034993
+sigma_wtp_bevRangeRel               -0.023341              -0.024651
+mu_wtp_noBEVFC                      -0.008978               0.012584
+sigma_wtp_noBEVFC                   -0.061011               0.036020
+mu_wtp_american                      0.134279               0.002445
+sigma_wtp_american                  -0.055570               0.031613
+mu_wtp_chinese                       0.778482               0.303201
+sigma_wtp_chinese                    0.303201               0.840808
+mu_wtp_japanese                      0.137081              -0.012541
+sigma_wtp_japanese                  -0.002112               0.068904
+mu_wtp_skorean                       0.128206               0.018541
+sigma_wtp_skorean                    0.013303               0.058941
+                              mu_wtp_japanese     sigma_wtp_japanese
+mu_scalingFactor                   -9.240e-06             1.7003e-04
+sigma_scalingFactor                 6.264e-06             1.2059e-04
+mu_wtp_Acceleration                6.6636e-04             6.1403e-04
+sigma_wtp_Acceleration              -0.001711               0.007078
+mu_wtp_OpCost                      7.8663e-04            -7.3682e-04
+sigma_wtp_OpCost                   7.7289e-04               0.005718
+mu_wtp_hev                           0.017711              -0.033860
+sigma_wtp_hev                        0.006351               0.022935
+mu_wtp_phev20                        0.018569              -0.035898
+sigma_wtp_phev20                     0.003238               0.107226
+mu_wtp_phev40                        0.019839              -0.037264
+sigma_wtp_phev40                     0.018892              -0.035865
+mu_wtp_bev                           0.004285              -0.063572
+sigma_wtp_bev                        0.016105              -0.019699
+mu_wtp_bevRangeRel                   0.005134              -0.012718
+sigma_wtp_bevRangeRel               -0.002036              -0.009269
+mu_wtp_noBEVFC                      -0.016353               0.023311
+sigma_wtp_noBEVFC                    0.013516               0.029200
+mu_wtp_american                      0.119774               0.010482
+sigma_wtp_american                -6.7953e-04               0.033845
+mu_wtp_chinese                       0.137081              -0.002112
+sigma_wtp_chinese                   -0.012541               0.068904
+mu_wtp_japanese                      0.277650              -0.047321
+sigma_wtp_japanese                  -0.047321               0.551352
+mu_wtp_skorean                       0.129350               0.017708
+sigma_wtp_skorean                   -0.005024               0.063184
+                               mu_wtp_skorean      sigma_wtp_skorean
+mu_scalingFactor                   2.8563e-04              2.163e-05
+sigma_scalingFactor                2.4208e-04             -6.493e-05
+mu_wtp_Acceleration                9.3207e-04              -0.001776
+sigma_wtp_Acceleration              -0.006569              -0.017958
+mu_wtp_OpCost                        0.001006              -0.001841
+sigma_wtp_OpCost                     0.001805              -0.002592
+mu_wtp_hev                           0.003470               0.012436
+sigma_wtp_hev                       -0.022765              -0.066775
+mu_wtp_phev20                      9.6095e-04              -0.012151
+sigma_wtp_phev20                     0.002049              -0.019178
+mu_wtp_phev40                       -0.007532              -0.001977
+sigma_wtp_phev40                    -0.001414               0.017179
+mu_wtp_bev                           0.003479              -0.029032
+sigma_wtp_bev                       -0.013906             5.7048e-04
+mu_wtp_bevRangeRel                   0.001461               0.003807
+sigma_wtp_bevRangeRel               -0.010635              -0.005585
+mu_wtp_noBEVFC                      -0.005172             6.0477e-04
+sigma_wtp_noBEVFC                    0.011800              -0.012369
+mu_wtp_american                      0.127784               0.010777
+sigma_wtp_american                  -0.006168              -0.047682
+mu_wtp_chinese                       0.128206               0.013303
+sigma_wtp_chinese                    0.018541               0.058941
+mu_wtp_japanese                      0.129350              -0.005024
+sigma_wtp_japanese                   0.017708               0.063184
+mu_wtp_skorean                       0.287240               0.048510
+sigma_wtp_skorean                    0.048510               0.534822
+
+Robust covariance matrix:
+                             mu_scalingFactor    sigma_scalingFactor
+mu_scalingFactor                    5.490e-05              3.255e-05
+sigma_scalingFactor                 3.255e-05              2.751e-05
+mu_wtp_Acceleration                 8.804e-05             2.4975e-04
+sigma_wtp_Acceleration              7.402e-05            -4.2512e-04
+mu_wtp_OpCost                      2.9979e-04             2.3938e-04
+sigma_wtp_OpCost                   2.6199e-04             2.3660e-04
+mu_wtp_hev                         1.9945e-04            -4.3824e-04
+sigma_wtp_hev                       -0.001226              6.843e-05
+mu_wtp_phev20                       -0.001084              -0.001093
+sigma_wtp_phev20                     0.001461               0.001174
+mu_wtp_phev40                       -0.002306              -0.001869
+sigma_wtp_phev40                    -0.002012              -0.001256
+mu_wtp_bev                           0.002184             4.3277e-04
+sigma_wtp_bev                       -0.006790              -0.004387
+mu_wtp_bevRangeRel                -4.9128e-04            -2.9655e-04
+sigma_wtp_bevRangeRel               -0.001691              -0.001118
+mu_wtp_noBEVFC                       0.001922               0.001438
+sigma_wtp_noBEVFC                 -9.4343e-04             1.6054e-04
+mu_wtp_american                      0.001057             5.3144e-04
+sigma_wtp_american                 5.3392e-04               0.001297
+mu_wtp_chinese                       0.003724               0.001860
+sigma_wtp_chinese                    0.002956               0.002716
+mu_wtp_japanese                    1.3413e-04            -1.7706e-04
+sigma_wtp_japanese                   0.002348               0.001826
+mu_wtp_skorean                       0.001901               0.001420
+sigma_wtp_skorean                 -9.7752e-04            -6.9840e-04
+                          mu_wtp_Acceleration sigma_wtp_Acceleration
+mu_scalingFactor                    8.804e-05              7.402e-05
+sigma_scalingFactor                2.4975e-04            -4.2512e-04
+mu_wtp_Acceleration                  0.055002              -0.071220
+sigma_wtp_Acceleration              -0.071220               0.200781
+mu_wtp_OpCost                        0.009271              -0.022092
+sigma_wtp_OpCost                     0.006775             4.3828e-04
+mu_wtp_hev                          -0.034849               0.060379
+sigma_wtp_hev                        0.064479              -0.060732
+mu_wtp_phev20                       -0.016935               0.008529
+sigma_wtp_phev20                     0.008306               0.134818
+mu_wtp_phev40                        0.007742              -0.034428
+sigma_wtp_phev40                    -0.031158               0.026011
+mu_wtp_bev                          -0.038306               0.110550
+sigma_wtp_bev                       -0.013520              -0.049983
+mu_wtp_bevRangeRel                  -0.017430              -0.035770
+sigma_wtp_bevRangeRel               -0.022611              -0.029779
+mu_wtp_noBEVFC                       0.013784              -0.012041
+sigma_wtp_noBEVFC                    0.089743              -0.123665
+mu_wtp_american                      0.003445               0.037115
+sigma_wtp_american                   0.095496              -0.052554
+mu_wtp_chinese                      -0.002075               0.078229
+sigma_wtp_chinese                    0.178991              -0.189007
+mu_wtp_japanese                     -0.011506              -0.004631
+sigma_wtp_japanese                   0.018965               0.126066
+mu_wtp_skorean                       0.022998              -0.034514
+sigma_wtp_skorean                    0.075013              -0.175486
+                                mu_wtp_OpCost       sigma_wtp_OpCost
+mu_scalingFactor                   2.9979e-04             2.6199e-04
+sigma_scalingFactor                2.3938e-04             2.3660e-04
+mu_wtp_Acceleration                  0.009271               0.006775
+sigma_wtp_Acceleration              -0.022092             4.3828e-04
+mu_wtp_OpCost                        0.020163               0.004270
+sigma_wtp_OpCost                     0.004270               0.024498
+mu_wtp_hev                          4.929e-06              -0.037860
+sigma_wtp_hev                        0.001423               0.082204
+mu_wtp_phev20                       -0.024051              -0.012639
+sigma_wtp_phev20                    -0.033191               0.039943
+mu_wtp_phev40                       -0.009904              -0.024724
+sigma_wtp_phev40                    -0.006383              -0.011601
+mu_wtp_bev                          -0.017596              -0.023195
+sigma_wtp_bev                       -0.026359              -0.029890
+mu_wtp_bevRangeRel                   0.006453              -0.025918
+sigma_wtp_bevRangeRel               -0.011944              -0.032734
+mu_wtp_noBEVFC                       0.025004               0.011910
+sigma_wtp_noBEVFC                    0.007227               0.020372
+mu_wtp_american                      0.014685               0.020641
+sigma_wtp_american                   0.031166               0.075248
+mu_wtp_chinese                       0.064338               0.048450
+sigma_wtp_chinese                    0.090683               0.109745
+mu_wtp_japanese                      0.017223               0.007059
+sigma_wtp_japanese                  -0.035139               0.065019
+mu_wtp_skorean                       0.006947               0.031811
+sigma_wtp_skorean                   -0.018675              -0.015248
+                                   mu_wtp_hev          sigma_wtp_hev
+mu_scalingFactor                   1.9945e-04              -0.001226
+sigma_scalingFactor               -4.3824e-04              6.843e-05
+mu_wtp_Acceleration                 -0.034849               0.064479
+sigma_wtp_Acceleration               0.060379              -0.060732
+mu_wtp_OpCost                       4.929e-06               0.001423
+sigma_wtp_OpCost                    -0.037860               0.082204
+mu_wtp_hev                           1.316765              -0.652293
+sigma_wtp_hev                       -0.652293               4.843397
+mu_wtp_phev20                        0.751548               0.383358
+sigma_wtp_phev20                    -0.077912              -0.588463
+mu_wtp_phev40                        0.753490              -0.065662
+sigma_wtp_phev40                     0.205385              -0.049610
+mu_wtp_bev                           0.774106               0.002722
+sigma_wtp_bev                        0.080009              -0.279170
+mu_wtp_bevRangeRel                   0.075251              -0.443899
+sigma_wtp_bevRangeRel               -0.003273               0.121756
+mu_wtp_noBEVFC                      -0.002444               0.175544
+sigma_wtp_noBEVFC                    0.022384               0.323192
+mu_wtp_american                      0.064420               0.028433
+sigma_wtp_american                  -0.308484               0.182547
+mu_wtp_chinese                       0.028911               0.424598
+sigma_wtp_chinese                   -0.362053               1.344960
+mu_wtp_japanese                      0.129486              -0.301189
+sigma_wtp_japanese                  -0.053284               0.223854
+mu_wtp_skorean                      -0.085397               0.003069
+sigma_wtp_skorean                    0.079754              -0.340503
+                                mu_wtp_phev20       sigma_wtp_phev20
+mu_scalingFactor                    -0.001084               0.001461
+sigma_scalingFactor                 -0.001093               0.001174
+mu_wtp_Acceleration                 -0.016935               0.008306
+sigma_wtp_Acceleration               0.008529               0.134818
+mu_wtp_OpCost                       -0.024051              -0.033191
+sigma_wtp_OpCost                    -0.012639               0.039943
+mu_wtp_hev                           0.751548              -0.077912
+sigma_wtp_hev                        0.383358              -0.588463
+mu_wtp_phev20                        1.262457              -0.281412
+sigma_wtp_phev20                    -0.281412               2.032874
+mu_wtp_phev40                        0.855875              -0.185608
+sigma_wtp_phev40                     0.193540               0.045954
+mu_wtp_bev                           0.674646              -0.026313
+sigma_wtp_bev                        0.086010              -0.295994
+mu_wtp_bevRangeRel                  -0.026639              -0.129623
+sigma_wtp_bevRangeRel                0.092523              -0.103764
+mu_wtp_noBEVFC                      -0.083485              -0.129715
+sigma_wtp_noBEVFC                    0.031178               0.581509
+mu_wtp_american                    6.0515e-04               0.054638
+sigma_wtp_american                  -0.284314               0.738554
+mu_wtp_chinese                      -0.008122              -0.418301
+sigma_wtp_chinese                   -0.067164              -0.213768
+mu_wtp_japanese                      0.216170               0.043401
+sigma_wtp_japanese                  -0.370453               0.986848
+mu_wtp_skorean                      -0.023787              -0.049023
+sigma_wtp_skorean                    0.032913              -0.062566
+                                mu_wtp_phev40       sigma_wtp_phev40
+mu_scalingFactor                    -0.002306              -0.002012
+sigma_scalingFactor                 -0.001869              -0.001256
+mu_wtp_Acceleration                  0.007742              -0.031158
+sigma_wtp_Acceleration              -0.034428               0.026011
+mu_wtp_OpCost                       -0.009904              -0.006383
+sigma_wtp_OpCost                    -0.024724              -0.011601
+mu_wtp_hev                           0.753490               0.205385
+sigma_wtp_hev                       -0.065662              -0.049610
+mu_wtp_phev20                        0.855875               0.193540
+sigma_wtp_phev20                    -0.185608               0.045954
+mu_wtp_phev40                        1.353343               0.327263
+sigma_wtp_phev40                     0.327263               1.516724
+mu_wtp_bev                           0.669987              -0.283163
+sigma_wtp_bev                        0.163056               0.289992
+mu_wtp_bevRangeRel                  -0.007124               0.093126
+sigma_wtp_bevRangeRel                0.107440               0.272287
+mu_wtp_noBEVFC                      -0.159912               0.108798
+sigma_wtp_noBEVFC                   -0.068497              -0.173267
+mu_wtp_american                      0.017902              -0.071759
+sigma_wtp_american                  -0.256560              -0.223390
+mu_wtp_chinese                      -0.195952              -0.349507
+sigma_wtp_chinese                   -0.517070              -0.534411
+mu_wtp_japanese                      0.418508               0.176183
+sigma_wtp_japanese                  -0.705644              -0.332903
+mu_wtp_skorean                       0.058203              -0.062071
+sigma_wtp_skorean                   -0.092352              -0.005434
+                                   mu_wtp_bev          sigma_wtp_bev
+mu_scalingFactor                     0.002184              -0.006790
+sigma_scalingFactor                4.3277e-04              -0.004387
+mu_wtp_Acceleration                 -0.038306              -0.013520
+sigma_wtp_Acceleration               0.110550              -0.049983
+mu_wtp_OpCost                       -0.017596              -0.026359
+sigma_wtp_OpCost                    -0.023195              -0.029890
+mu_wtp_hev                           0.774106               0.080009
+sigma_wtp_hev                        0.002722              -0.279170
+mu_wtp_phev20                        0.674646               0.086010
+sigma_wtp_phev20                    -0.026313              -0.295994
+mu_wtp_phev40                        0.669987               0.163056
+sigma_wtp_phev40                    -0.283163               0.289992
+mu_wtp_bev                           1.757551              -0.669013
+sigma_wtp_bev                       -0.669013               2.698165
+mu_wtp_bevRangeRel                   0.039584               0.396388
+sigma_wtp_bevRangeRel               -0.063464               0.373460
+mu_wtp_noBEVFC                      -0.214335              -0.292896
+sigma_wtp_noBEVFC                   -0.078339               0.788670
+mu_wtp_american                      0.048629              -0.015734
+sigma_wtp_american                  -0.520245              -0.242668
+mu_wtp_chinese                       0.174166              -0.793068
+sigma_wtp_chinese                   -0.328350              -0.425370
+mu_wtp_japanese                      0.091461              -0.113853
+sigma_wtp_japanese                  -0.231236              -0.085349
+mu_wtp_skorean                      -0.064255              -0.268405
+sigma_wtp_skorean                   -0.168174               0.163625
+                           mu_wtp_bevRangeRel  sigma_wtp_bevRangeRel
+mu_scalingFactor                  -4.9128e-04              -0.001691
+sigma_scalingFactor               -2.9655e-04              -0.001118
+mu_wtp_Acceleration                 -0.017430              -0.022611
+sigma_wtp_Acceleration              -0.035770              -0.029779
+mu_wtp_OpCost                        0.006453              -0.011944
+sigma_wtp_OpCost                    -0.025918              -0.032734
+mu_wtp_hev                           0.075251              -0.003273
+sigma_wtp_hev                       -0.443899               0.121756
+mu_wtp_phev20                       -0.026639               0.092523
+sigma_wtp_phev20                    -0.129623              -0.103764
+mu_wtp_phev40                       -0.007124               0.107440
+sigma_wtp_phev40                     0.093126               0.272287
+mu_wtp_bev                           0.039584              -0.063464
+sigma_wtp_bev                        0.396388               0.373460
+mu_wtp_bevRangeRel                   0.412573               0.241994
+sigma_wtp_bevRangeRel                0.241994               0.488328
+mu_wtp_noBEVFC                      -0.013447              -0.025567
+sigma_wtp_noBEVFC                    0.065988               0.025331
+mu_wtp_american                     -0.029353              -0.117047
+sigma_wtp_american                  -0.134843              -0.382357
+mu_wtp_chinese                      -0.143175              -0.363940
+sigma_wtp_chinese                   -0.243248              -0.397889
+mu_wtp_japanese                     -0.008065              -0.047895
+sigma_wtp_japanese                  -0.131370              -0.254789
+mu_wtp_skorean                      -0.070677              -0.130546
+sigma_wtp_skorean                    0.012376               0.036250
+                               mu_wtp_noBEVFC      sigma_wtp_noBEVFC
+mu_scalingFactor                     0.001922            -9.4343e-04
+sigma_scalingFactor                  0.001438             1.6054e-04
+mu_wtp_Acceleration                  0.013784               0.089743
+sigma_wtp_Acceleration              -0.012041              -0.123665
+mu_wtp_OpCost                        0.025004               0.007227
+sigma_wtp_OpCost                     0.011910               0.020372
+mu_wtp_hev                          -0.002444               0.022384
+sigma_wtp_hev                        0.175544               0.323192
+mu_wtp_phev20                       -0.083485               0.031178
+sigma_wtp_phev20                    -0.129715               0.581509
+mu_wtp_phev40                       -0.159912              -0.068497
+sigma_wtp_phev40                     0.108798              -0.173267
+mu_wtp_bev                          -0.214335              -0.078339
+sigma_wtp_bev                       -0.292896               0.788670
+mu_wtp_bevRangeRel                  -0.013447               0.065988
+sigma_wtp_bevRangeRel               -0.025567               0.025331
+mu_wtp_noBEVFC                       0.550607              -0.251883
+sigma_wtp_noBEVFC                   -0.251883               1.925964
+mu_wtp_american                     -0.038788               0.015202
+sigma_wtp_american                  -0.035062               0.781848
+mu_wtp_chinese                       0.158923              -0.652409
+sigma_wtp_chinese                    0.285286               0.409909
+mu_wtp_japanese                     -0.123385              -0.252314
+sigma_wtp_japanese                   0.105797               0.606822
+mu_wtp_skorean                       0.079509              -0.075522
+sigma_wtp_skorean                   -0.010652               0.182832
+                              mu_wtp_american     sigma_wtp_american
+mu_scalingFactor                     0.001057             5.3392e-04
+sigma_scalingFactor                5.3144e-04               0.001297
+mu_wtp_Acceleration                  0.003445               0.095496
+sigma_wtp_Acceleration               0.037115              -0.052554
+mu_wtp_OpCost                        0.014685               0.031166
+sigma_wtp_OpCost                     0.020641               0.075248
+mu_wtp_hev                           0.064420              -0.308484
+sigma_wtp_hev                        0.028433               0.182547
+mu_wtp_phev20                      6.0515e-04              -0.284314
+sigma_wtp_phev20                     0.054638               0.738554
+mu_wtp_phev40                        0.017902              -0.256560
+sigma_wtp_phev40                    -0.071759              -0.223390
+mu_wtp_bev                           0.048629              -0.520245
+sigma_wtp_bev                       -0.015734              -0.242668
+mu_wtp_bevRangeRel                  -0.029353              -0.134843
+sigma_wtp_bevRangeRel               -0.117047              -0.382357
+mu_wtp_noBEVFC                      -0.038788              -0.035062
+sigma_wtp_noBEVFC                    0.015202               0.781848
+mu_wtp_american                      0.718839              -0.076485
+sigma_wtp_american                  -0.076485               2.839192
+mu_wtp_chinese                       0.769480              -0.311964
+sigma_wtp_chinese                    0.243387               0.699723
+mu_wtp_japanese                      0.380550              -0.003149
+sigma_wtp_japanese                   0.017604               0.768330
+mu_wtp_skorean                       0.362100               0.211285
+sigma_wtp_skorean                   -0.045490               0.014858
+                               mu_wtp_chinese      sigma_wtp_chinese
+mu_scalingFactor                     0.003724               0.002956
+sigma_scalingFactor                  0.001860               0.002716
+mu_wtp_Acceleration                 -0.002075               0.178991
+sigma_wtp_Acceleration               0.078229              -0.189007
+mu_wtp_OpCost                        0.064338               0.090683
+sigma_wtp_OpCost                     0.048450               0.109745
+mu_wtp_hev                           0.028911              -0.362053
+sigma_wtp_hev                        0.424598               1.344960
+mu_wtp_phev20                       -0.008122              -0.067164
+sigma_wtp_phev20                    -0.418301              -0.213768
+mu_wtp_phev40                       -0.195952              -0.517070
+sigma_wtp_phev40                    -0.349507              -0.534411
+mu_wtp_bev                           0.174166              -0.328350
+sigma_wtp_bev                       -0.793068              -0.425370
+mu_wtp_bevRangeRel                  -0.143175              -0.243248
+sigma_wtp_bevRangeRel               -0.363940              -0.397889
+mu_wtp_noBEVFC                       0.158923               0.285286
+sigma_wtp_noBEVFC                   -0.652409               0.409909
+mu_wtp_american                      0.769480               0.243387
+sigma_wtp_american                  -0.311964               0.699723
+mu_wtp_chinese                       3.405286               1.929601
+sigma_wtp_chinese                    1.929601               3.528426
+mu_wtp_japanese                      0.517898              -0.386292
+sigma_wtp_japanese                   0.181586               0.980922
+mu_wtp_skorean                       0.429355               0.063985
+sigma_wtp_skorean                   -0.217997               0.363011
+                              mu_wtp_japanese     sigma_wtp_japanese
+mu_scalingFactor                   1.3413e-04               0.002348
+sigma_scalingFactor               -1.7706e-04               0.001826
+mu_wtp_Acceleration                 -0.011506               0.018965
+sigma_wtp_Acceleration              -0.004631               0.126066
+mu_wtp_OpCost                        0.017223              -0.035139
+sigma_wtp_OpCost                     0.007059               0.065019
+mu_wtp_hev                           0.129486              -0.053284
+sigma_wtp_hev                       -0.301189               0.223854
+mu_wtp_phev20                        0.216170              -0.370453
+sigma_wtp_phev20                     0.043401               0.986848
+mu_wtp_phev40                        0.418508              -0.705644
+sigma_wtp_phev40                     0.176183              -0.332903
+mu_wtp_bev                           0.091461              -0.231236
+sigma_wtp_bev                       -0.113853              -0.085349
+mu_wtp_bevRangeRel                  -0.008065              -0.131370
+sigma_wtp_bevRangeRel               -0.047895              -0.254789
+mu_wtp_noBEVFC                      -0.123385               0.105797
+sigma_wtp_noBEVFC                   -0.252314               0.606822
+mu_wtp_american                      0.380550               0.017604
+sigma_wtp_american                  -0.003149               0.768330
+mu_wtp_chinese                       0.517898               0.181586
+sigma_wtp_chinese                   -0.386292               0.980922
+mu_wtp_japanese                      0.968921              -0.689073
+sigma_wtp_japanese                  -0.689073               2.689055
+mu_wtp_skorean                       0.430673               0.038754
+sigma_wtp_skorean                   -0.211476               0.380030
+                               mu_wtp_skorean      sigma_wtp_skorean
+mu_scalingFactor                     0.001901            -9.7752e-04
+sigma_scalingFactor                  0.001420            -6.9840e-04
+mu_wtp_Acceleration                  0.022998               0.075013
+sigma_wtp_Acceleration              -0.034514              -0.175486
+mu_wtp_OpCost                        0.006947              -0.018675
+sigma_wtp_OpCost                     0.031811              -0.015248
+mu_wtp_hev                          -0.085397               0.079754
+sigma_wtp_hev                        0.003069              -0.340503
+mu_wtp_phev20                       -0.023787               0.032913
+sigma_wtp_phev20                    -0.049023              -0.062566
+mu_wtp_phev40                        0.058203              -0.092352
+sigma_wtp_phev40                    -0.062071              -0.005434
+mu_wtp_bev                          -0.064255              -0.168174
+sigma_wtp_bev                       -0.268405               0.163625
+mu_wtp_bevRangeRel                  -0.070677               0.012376
+sigma_wtp_bevRangeRel               -0.130546               0.036250
+mu_wtp_noBEVFC                       0.079509              -0.010652
+sigma_wtp_noBEVFC                   -0.075522               0.182832
+mu_wtp_american                      0.362100              -0.045490
+sigma_wtp_american                   0.211285               0.014858
+mu_wtp_chinese                       0.429355              -0.217997
+sigma_wtp_chinese                    0.063985               0.363011
+mu_wtp_japanese                      0.430673              -0.211476
+sigma_wtp_japanese                   0.038754               0.380030
+mu_wtp_skorean                       0.860208               0.018785
+sigma_wtp_skorean                    0.018785               1.653457
+
+Classical correlation matrix:
+                             mu_scalingFactor    sigma_scalingFactor
+mu_scalingFactor                     1.000000               0.716285
+sigma_scalingFactor                  0.716285               1.000000
+mu_wtp_Acceleration                  0.072366               0.135160
+sigma_wtp_Acceleration               0.005087              -0.124908
+mu_wtp_OpCost                        0.179517               0.157580
+sigma_wtp_OpCost                     0.092353               0.114676
+mu_wtp_hev                          -0.010630              -0.028098
+sigma_wtp_hev                       -0.040342               0.010609
+mu_wtp_phev20                       -0.021387              -0.019274
+sigma_wtp_phev20                     0.047073               0.069149
+mu_wtp_phev40                       -0.053497              -0.047514
+sigma_wtp_phev40                    -0.081980              -0.064882
+mu_wtp_bev                           0.110016               0.066031
+sigma_wtp_bev                       -0.257711              -0.221829
+mu_wtp_bevRangeRel                  -0.083528              -0.058536
+sigma_wtp_bevRangeRel               -0.105688              -0.075768
+mu_wtp_noBEVFC                       0.071843               0.072797
+sigma_wtp_noBEVFC                   -0.047242               0.002376
+mu_wtp_american                      0.057298               0.050781
+sigma_wtp_american                  -0.063311              -0.010112
+mu_wtp_chinese                       0.136229               0.087705
+sigma_wtp_chinese                    0.113883               0.110220
+mu_wtp_japanese                     -0.004757               0.003912
+sigma_wtp_japanese                   0.062119               0.053452
+mu_wtp_skorean                       0.144578               0.148662
+sigma_wtp_skorean                    0.008025              -0.029224
+                          mu_wtp_Acceleration sigma_wtp_Acceleration
+mu_scalingFactor                     0.072366               0.005087
+sigma_scalingFactor                  0.135160              -0.124908
+mu_wtp_Acceleration                  1.000000              -0.265113
+sigma_wtp_Acceleration              -0.265113               1.000000
+mu_wtp_OpCost                        0.128803              -0.126688
+sigma_wtp_OpCost                     0.099996               0.006742
+mu_wtp_hev                          -0.031641               0.048391
+sigma_wtp_hev                        0.068221              -0.007694
+mu_wtp_phev20                        0.010507               0.006526
+sigma_wtp_phev20                     0.008087               0.054782
+mu_wtp_phev40                        0.026223              -0.010405
+sigma_wtp_phev40                    -0.040378               0.023502
+mu_wtp_bev                           0.024226               0.061760
+sigma_wtp_bev                       -0.073541               0.004673
+mu_wtp_bevRangeRel                  -0.040462              -0.057805
+sigma_wtp_bevRangeRel               -0.025480               0.003695
+mu_wtp_noBEVFC                       0.014480               0.027449
+sigma_wtp_noBEVFC                    0.075185              -0.085754
+mu_wtp_american                     -0.009929              -0.010066
+sigma_wtp_american                   0.022264               0.029102
+mu_wtp_chinese                       0.051990               0.013658
+sigma_wtp_chinese                    0.159425              -0.116774
+mu_wtp_japanese                      0.011196              -0.016989
+sigma_wtp_japanese                   0.007321               0.049865
+mu_wtp_skorean                       0.015396              -0.064117
+sigma_wtp_skorean                   -0.021498              -0.128446
+                                mu_wtp_OpCost       sigma_wtp_OpCost
+mu_scalingFactor                     0.179517               0.092353
+sigma_scalingFactor                  0.157580               0.114676
+mu_wtp_Acceleration                  0.128803               0.099996
+sigma_wtp_Acceleration              -0.126688               0.006742
+mu_wtp_OpCost                        1.000000               0.022395
+sigma_wtp_OpCost                     0.022395               1.000000
+mu_wtp_hev                          -0.007929              -0.056515
+sigma_wtp_hev                        0.053273               0.106485
+mu_wtp_phev20                       -0.036923               0.005061
+sigma_wtp_phev20                    -0.066822               0.101418
+mu_wtp_phev40                       -0.026524              -0.019714
+sigma_wtp_phev40                    -0.027532              -0.002381
+mu_wtp_bev                           0.016186               0.031548
+sigma_wtp_bev                       -0.094933              -0.060030
+mu_wtp_bevRangeRel                -1.0073e-04              -0.112449
+sigma_wtp_bevRangeRel               -0.065619              -0.053835
+mu_wtp_noBEVFC                       0.011188              -0.001016
+sigma_wtp_noBEVFC                    0.014706               0.055274
+mu_wtp_american                      0.009797              -0.016069
+sigma_wtp_american                   0.005401               0.065742
+mu_wtp_chinese                       0.108493               0.013496
+sigma_wtp_chinese                    0.141852               0.131704
+mu_wtp_japanese                      0.018226               0.016058
+sigma_wtp_japanese                  -0.012115               0.084299
+mu_wtp_skorean                       0.022910               0.036868
+sigma_wtp_skorean                   -0.030735              -0.038809
+                                   mu_wtp_hev          sigma_wtp_hev
+mu_scalingFactor                    -0.010630              -0.040342
+sigma_scalingFactor                 -0.028098               0.010609
+mu_wtp_Acceleration                 -0.031641               0.068221
+sigma_wtp_Acceleration               0.048391              -0.007694
+mu_wtp_OpCost                       -0.007929               0.053273
+sigma_wtp_OpCost                    -0.056515               0.106485
+mu_wtp_hev                           1.000000              -0.082524
+sigma_wtp_hev                       -0.082524               1.000000
+mu_wtp_phev20                        0.485644               0.052189
+sigma_wtp_phev20                    -0.041768               0.035131
+mu_wtp_phev40                        0.486347               0.026118
+sigma_wtp_phev40                     0.058031               0.042438
+mu_wtp_bev                           0.454010              -0.022070
+sigma_wtp_bev                        0.072146              -0.070006
+mu_wtp_bevRangeRel                   0.033659              -0.197336
+sigma_wtp_bevRangeRel                0.016563               0.086821
+mu_wtp_noBEVFC                      -0.003175               0.003607
+sigma_wtp_noBEVFC                    0.012977               0.103769
+mu_wtp_american                      0.034222              -0.020007
+sigma_wtp_american                 -2.278e-05               0.033480
+mu_wtp_chinese                       0.005480               0.024000
+sigma_wtp_chinese                   -0.064302               0.114581
+mu_wtp_japanese                      0.051192               0.011279
+sigma_wtp_japanese                  -0.069453               0.028905
+mu_wtp_skorean                       0.009862              -0.039749
+sigma_wtp_skorean                    0.025898              -0.085444
+                                mu_wtp_phev20       sigma_wtp_phev20
+mu_scalingFactor                    -0.021387               0.047073
+sigma_scalingFactor                 -0.019274               0.069149
+mu_wtp_Acceleration                  0.010507               0.008087
+sigma_wtp_Acceleration               0.006526               0.054782
+mu_wtp_OpCost                       -0.036923              -0.066822
+sigma_wtp_OpCost                     0.005061               0.101418
+mu_wtp_hev                           0.485644              -0.041768
+sigma_wtp_hev                        0.052189               0.035131
+mu_wtp_phev20                        1.000000              -0.030229
+sigma_wtp_phev20                    -0.030229               1.000000
+mu_wtp_phev40                        0.525412               0.005236
+sigma_wtp_phev40                     0.031814              -0.045574
+mu_wtp_bev                           0.432002               0.006828
+sigma_wtp_bev                        0.041771               0.018699
+mu_wtp_bevRangeRel                  -0.046802              -0.102521
+sigma_wtp_bevRangeRel                0.043325               0.022059
+mu_wtp_noBEVFC                      -0.023105              -0.001655
+sigma_wtp_noBEVFC                    0.053597               0.150824
+mu_wtp_american                     -0.004893               0.026170
+sigma_wtp_american                   0.001187               0.095009
+mu_wtp_chinese                      -0.007608              -0.075792
+sigma_wtp_chinese                    0.005420              -0.005202
+mu_wtp_japanese                      0.054848               0.007676
+sigma_wtp_japanese                  -0.075244               0.180374
+mu_wtp_skorean                       0.002791               0.004776
+sigma_wtp_skorean                   -0.025860              -0.032755
+                                mu_wtp_phev40       sigma_wtp_phev40
+mu_scalingFactor                    -0.053497              -0.081980
+sigma_scalingFactor                 -0.047514              -0.064882
+mu_wtp_Acceleration                  0.026223              -0.040378
+sigma_wtp_Acceleration              -0.010405               0.023502
+mu_wtp_OpCost                       -0.026524              -0.027532
+sigma_wtp_OpCost                    -0.019714              -0.002381
+mu_wtp_hev                           0.486347               0.058031
+sigma_wtp_hev                        0.026118               0.042438
+mu_wtp_phev20                        0.525412               0.031814
+sigma_wtp_phev20                     0.005236              -0.045574
+mu_wtp_phev40                        1.000000               0.038196
+sigma_wtp_phev40                     0.038196               1.000000
+mu_wtp_bev                           0.446672              -0.087508
+sigma_wtp_bev                        0.036867               0.019487
+mu_wtp_bevRangeRel                  -0.009156              -0.014117
+sigma_wtp_bevRangeRel                0.026652               0.097043
+mu_wtp_noBEVFC                      -0.031266              -0.006633
+sigma_wtp_noBEVFC                    0.023068               0.058515
+mu_wtp_american                     -0.045519               0.013739
+sigma_wtp_american                   0.042255               0.037376
+mu_wtp_chinese                      -0.022480              -0.015039
+sigma_wtp_chinese                   -0.039900              -0.106136
+mu_wtp_japanese                      0.058942               0.043258
+sigma_wtp_japanese                  -0.078562              -0.058276
+mu_wtp_skorean                      -0.022000              -0.003183
+sigma_wtp_skorean                   -0.004232               0.028342
+                                   mu_wtp_bev          sigma_wtp_bev
+mu_scalingFactor                     0.110016              -0.257711
+sigma_scalingFactor                  0.066031              -0.221829
+mu_wtp_Acceleration                  0.024226              -0.073541
+sigma_wtp_Acceleration               0.061760               0.004673
+mu_wtp_OpCost                        0.016186              -0.094933
+sigma_wtp_OpCost                     0.031548              -0.060030
+mu_wtp_hev                           0.454010               0.072146
+sigma_wtp_hev                       -0.022070              -0.070006
+mu_wtp_phev20                        0.432002               0.041771
+sigma_wtp_phev20                     0.006828               0.018699
+mu_wtp_phev40                        0.446672               0.036867
+sigma_wtp_phev40                    -0.087508               0.019487
+mu_wtp_bev                           1.000000              -0.112262
+sigma_wtp_bev                       -0.112262               1.000000
+mu_wtp_bevRangeRel                   0.119680               0.206560
+sigma_wtp_bevRangeRel               -0.107112               0.112662
+mu_wtp_noBEVFC                      -0.321089              -0.078926
+sigma_wtp_noBEVFC                   -0.008086               0.234973
+mu_wtp_american                      0.006467               0.025519
+sigma_wtp_american                  -0.029837               0.054594
+mu_wtp_chinese                       0.045543              -0.147012
+sigma_wtp_chinese                   -0.021693              -0.105838
+mu_wtp_japanese                      0.011340               0.046185
+sigma_wtp_japanese                  -0.119374              -0.040087
+mu_wtp_skorean                       0.009051              -0.039208
+sigma_wtp_skorean                   -0.055352               0.001179
+                           mu_wtp_bevRangeRel  sigma_wtp_bevRangeRel
+mu_scalingFactor                    -0.083528              -0.105688
+sigma_scalingFactor                 -0.058536              -0.075768
+mu_wtp_Acceleration                 -0.040462              -0.025480
+sigma_wtp_Acceleration              -0.057805               0.003695
+mu_wtp_OpCost                     -1.0073e-04              -0.065619
+sigma_wtp_OpCost                    -0.112449              -0.053835
+mu_wtp_hev                           0.033659               0.016563
+sigma_wtp_hev                       -0.197336               0.086821
+mu_wtp_phev20                       -0.046802               0.043325
+sigma_wtp_phev20                    -0.102521               0.022059
+mu_wtp_phev40                       -0.009156               0.026652
+sigma_wtp_phev40                    -0.014117               0.097043
+mu_wtp_bev                           0.119680              -0.107112
+sigma_wtp_bev                        0.206560               0.112662
+mu_wtp_bevRangeRel                   1.000000               0.222217
+sigma_wtp_bevRangeRel                0.222217               1.000000
+mu_wtp_noBEVFC                      -0.048080             3.3775e-04
+sigma_wtp_noBEVFC                    0.044827               0.138791
+mu_wtp_american                      0.020434              -0.032947
+sigma_wtp_american                   0.047139               0.045647
+mu_wtp_chinese                      -0.048359              -0.080688
+sigma_wtp_chinese                   -0.126201              -0.081998
+mu_wtp_japanese                      0.032217              -0.011788
+sigma_wtp_japanese                  -0.056639              -0.038073
+mu_wtp_skorean                       0.009015              -0.060521
+sigma_wtp_skorean                    0.017214              -0.023295
+                               mu_wtp_noBEVFC      sigma_wtp_noBEVFC
+mu_scalingFactor                     0.071843              -0.047242
+sigma_scalingFactor                  0.072797               0.002376
+mu_wtp_Acceleration                  0.014480               0.075185
+sigma_wtp_Acceleration               0.027449              -0.085754
+mu_wtp_OpCost                        0.011188               0.014706
+sigma_wtp_OpCost                    -0.001016               0.055274
+mu_wtp_hev                          -0.003175               0.012977
+sigma_wtp_hev                        0.003607               0.103769
+mu_wtp_phev20                       -0.023105               0.053597
+sigma_wtp_phev20                    -0.001655               0.150824
+mu_wtp_phev40                       -0.031266               0.023068
+sigma_wtp_phev40                    -0.006633               0.058515
+mu_wtp_bev                          -0.321089              -0.008086
+sigma_wtp_bev                       -0.078926               0.234973
+mu_wtp_bevRangeRel                  -0.048080               0.044827
+sigma_wtp_bevRangeRel              3.3775e-04               0.138791
+mu_wtp_noBEVFC                       1.000000              -0.118648
+sigma_wtp_noBEVFC                   -0.118648               1.000000
+mu_wtp_american                     -0.009083               0.058793
+sigma_wtp_american                  -0.025192               0.048359
+mu_wtp_chinese                      -0.021324              -0.085572
+sigma_wtp_chinese                    0.028762               0.048612
+mu_wtp_japanese                     -0.065038               0.031744
+sigma_wtp_japanese                   0.065791               0.048665
+mu_wtp_skorean                      -0.020225               0.027246
+sigma_wtp_skorean                    0.001733              -0.020931
+                              mu_wtp_american     sigma_wtp_american
+mu_scalingFactor                     0.057298              -0.063311
+sigma_scalingFactor                  0.050781              -0.010112
+mu_wtp_Acceleration                 -0.009929               0.022264
+sigma_wtp_Acceleration              -0.010066               0.029102
+mu_wtp_OpCost                        0.009797               0.005401
+sigma_wtp_OpCost                    -0.016069               0.065742
+mu_wtp_hev                           0.034222             -2.278e-05
+sigma_wtp_hev                       -0.020007               0.033480
+mu_wtp_phev20                       -0.004893               0.001187
+sigma_wtp_phev20                     0.026170               0.095009
+mu_wtp_phev40                       -0.045519               0.042255
+sigma_wtp_phev40                     0.013739               0.037376
+mu_wtp_bev                           0.006467              -0.029837
+sigma_wtp_bev                        0.025519               0.054594
+mu_wtp_bevRangeRel                   0.020434               0.047139
+sigma_wtp_bevRangeRel               -0.032947               0.045647
+mu_wtp_noBEVFC                      -0.009083              -0.025192
+sigma_wtp_noBEVFC                    0.058793               0.048359
+mu_wtp_american                      1.000000              -0.147064
+sigma_wtp_american                  -0.147064               1.000000
+mu_wtp_chinese                       0.295339              -0.091491
+sigma_wtp_chinese                    0.005174               0.050082
+mu_wtp_japanese                      0.441111              -0.001873
+sigma_wtp_japanese                   0.027393               0.066213
+mu_wtp_skorean                       0.462689              -0.016717
+sigma_wtp_skorean                    0.028598              -0.094714
+                               mu_wtp_chinese      sigma_wtp_chinese
+mu_scalingFactor                     0.136229               0.113883
+sigma_scalingFactor                  0.087705               0.110220
+mu_wtp_Acceleration                  0.051990               0.159425
+sigma_wtp_Acceleration               0.013658              -0.116774
+mu_wtp_OpCost                        0.108493               0.141852
+sigma_wtp_OpCost                     0.013496               0.131704
+mu_wtp_hev                           0.005480              -0.064302
+sigma_wtp_hev                        0.024000               0.114581
+mu_wtp_phev20                       -0.007608               0.005420
+sigma_wtp_phev20                    -0.075792              -0.005202
+mu_wtp_phev40                       -0.022480              -0.039900
+sigma_wtp_phev40                    -0.015039              -0.106136
+mu_wtp_bev                           0.045543              -0.021693
+sigma_wtp_bev                       -0.147012              -0.105838
+mu_wtp_bevRangeRel                  -0.048359              -0.126201
+sigma_wtp_bevRangeRel               -0.080688              -0.081998
+mu_wtp_noBEVFC                      -0.021324               0.028762
+sigma_wtp_noBEVFC                   -0.085572               0.048612
+mu_wtp_american                      0.295339               0.005174
+sigma_wtp_american                  -0.091491               0.050082
+mu_wtp_chinese                       1.000000               0.374764
+sigma_wtp_chinese                    0.374764               1.000000
+mu_wtp_japanese                      0.294852              -0.025955
+sigma_wtp_japanese                  -0.003223               0.101201
+mu_wtp_skorean                       0.271121               0.037729
+sigma_wtp_skorean                    0.020617               0.087895
+                              mu_wtp_japanese     sigma_wtp_japanese
+mu_scalingFactor                    -0.004757               0.062119
+sigma_scalingFactor                  0.003912               0.053452
+mu_wtp_Acceleration                  0.011196               0.007321
+sigma_wtp_Acceleration              -0.016989               0.049865
+mu_wtp_OpCost                        0.018226              -0.012115
+sigma_wtp_OpCost                     0.016058               0.084299
+mu_wtp_hev                           0.051192              -0.069453
+sigma_wtp_hev                        0.011279               0.028905
+mu_wtp_phev20                        0.054848              -0.075244
+sigma_wtp_phev20                     0.007676               0.180374
+mu_wtp_phev40                        0.058942              -0.078562
+sigma_wtp_phev40                     0.043258              -0.058276
+mu_wtp_bev                           0.011340              -0.119374
+sigma_wtp_bev                        0.046185              -0.040087
+mu_wtp_bevRangeRel                   0.032217              -0.056639
+sigma_wtp_bevRangeRel               -0.011788              -0.038073
+mu_wtp_noBEVFC                      -0.065038               0.065791
+sigma_wtp_noBEVFC                    0.031744               0.048665
+mu_wtp_american                      0.441111               0.027393
+sigma_wtp_american                  -0.001873               0.066213
+mu_wtp_chinese                       0.294852              -0.003223
+sigma_wtp_chinese                   -0.025955               0.101201
+mu_wtp_japanese                      1.000000              -0.120947
+sigma_wtp_japanese                  -0.120947               1.000000
+mu_wtp_skorean                       0.458032               0.044497
+sigma_wtp_skorean                   -0.013036               0.116356
+                               mu_wtp_skorean      sigma_wtp_skorean
+mu_scalingFactor                     0.144578               0.008025
+sigma_scalingFactor                  0.148662              -0.029224
+mu_wtp_Acceleration                  0.015396              -0.021498
+sigma_wtp_Acceleration              -0.064117              -0.128446
+mu_wtp_OpCost                        0.022910              -0.030735
+sigma_wtp_OpCost                     0.036868              -0.038809
+mu_wtp_hev                           0.009862               0.025898
+sigma_wtp_hev                       -0.039749              -0.085444
+mu_wtp_phev20                        0.002791              -0.025860
+sigma_wtp_phev20                     0.004776              -0.032755
+mu_wtp_phev40                       -0.022000              -0.004232
+sigma_wtp_phev40                    -0.003183               0.028342
+mu_wtp_bev                           0.009051              -0.055352
+sigma_wtp_bev                       -0.039208               0.001179
+mu_wtp_bevRangeRel                   0.009015               0.017214
+sigma_wtp_bevRangeRel               -0.060521              -0.023295
+mu_wtp_noBEVFC                      -0.020225               0.001733
+sigma_wtp_noBEVFC                    0.027246              -0.020931
+mu_wtp_american                      0.462689               0.028598
+sigma_wtp_american                  -0.016717              -0.094714
+mu_wtp_chinese                       0.271121               0.020617
+sigma_wtp_chinese                    0.037729               0.087895
+mu_wtp_japanese                      0.458032              -0.013036
+sigma_wtp_japanese                   0.044497               0.116356
+mu_wtp_skorean                       1.000000               0.123767
+sigma_wtp_skorean                    0.123767               1.000000
+
+Robust correlation matrix:
+                             mu_scalingFactor    sigma_scalingFactor
+mu_scalingFactor                      1.00000               0.837467
+sigma_scalingFactor                   0.83747               1.000000
+mu_wtp_Acceleration                   0.05066               0.203029
+sigma_wtp_Acceleration                0.02229              -0.180877
+mu_wtp_OpCost                         0.28493               0.321398
+sigma_wtp_OpCost                      0.22590               0.288191
+mu_wtp_hev                            0.02346              -0.072811
+sigma_wtp_hev                        -0.07518               0.005928
+mu_wtp_phev20                        -0.13026              -0.185499
+sigma_wtp_phev20                      0.13832               0.156926
+mu_wtp_phev40                        -0.26749              -0.306245
+sigma_wtp_phev40                     -0.22053              -0.194417
+mu_wtp_bev                            0.22234               0.062235
+sigma_wtp_bev                        -0.55785              -0.509158
+mu_wtp_bevRangeRel                   -0.10322              -0.088019
+sigma_wtp_bevRangeRel                -0.32653              -0.304971
+mu_wtp_noBEVFC                        0.34949               0.369398
+sigma_wtp_noBEVFC                    -0.09175               0.022054
+mu_wtp_american                       0.16831               0.119502
+sigma_wtp_american                    0.04276               0.146804
+mu_wtp_chinese                        0.27233               0.192126
+sigma_wtp_chinese                     0.21237               0.275623
+mu_wtp_japanese                       0.01839              -0.034294
+sigma_wtp_japanese                    0.19327               0.212339
+mu_wtp_skorean                        0.27666               0.291842
+sigma_wtp_skorean                    -0.10260              -0.103548
+                          mu_wtp_Acceleration sigma_wtp_Acceleration
+mu_scalingFactor                     0.050664               0.022294
+sigma_scalingFactor                  0.203029              -0.180877
+mu_wtp_Acceleration                  1.000000              -0.677725
+sigma_wtp_Acceleration              -0.677725               1.000000
+mu_wtp_OpCost                        0.278378              -0.347213
+sigma_wtp_OpCost                     0.184576               0.006249
+mu_wtp_hev                          -0.129493               0.117427
+sigma_wtp_hev                        0.124926              -0.061586
+mu_wtp_phev20                       -0.064269               0.016940
+sigma_wtp_phev20                     0.024838               0.211024
+mu_wtp_phev40                        0.028375              -0.066045
+sigma_wtp_phev40                    -0.107876               0.047134
+mu_wtp_bev                          -0.123204               0.186099
+sigma_wtp_bev                       -0.035096              -0.067909
+mu_wtp_bevRangeRel                  -0.115706              -0.124280
+sigma_wtp_bevRangeRel               -0.137966              -0.095104
+mu_wtp_noBEVFC                       0.079205              -0.036215
+sigma_wtp_noBEVFC                    0.275732              -0.198867
+mu_wtp_american                      0.017328               0.097696
+sigma_wtp_american                   0.241656              -0.069606
+mu_wtp_chinese                      -0.004795               0.094608
+sigma_wtp_chinese                    0.406304              -0.224557
+mu_wtp_japanese                     -0.049843              -0.010501
+sigma_wtp_japanese                   0.049314               0.171568
+mu_wtp_skorean                       0.105732              -0.083049
+sigma_wtp_skorean                    0.248743              -0.304567
+                                mu_wtp_OpCost       sigma_wtp_OpCost
+mu_scalingFactor                     0.284926               0.225905
+sigma_scalingFactor                  0.321398               0.288191
+mu_wtp_Acceleration                  0.278378               0.184576
+sigma_wtp_Acceleration              -0.347213               0.006249
+mu_wtp_OpCost                        1.000000               0.192103
+sigma_wtp_OpCost                     0.192103               1.000000
+mu_wtp_hev                          3.025e-05              -0.210793
+sigma_wtp_hev                        0.004554               0.238645
+mu_wtp_phev20                       -0.150746              -0.071870
+sigma_wtp_phev20                    -0.163939               0.178985
+mu_wtp_phev40                       -0.059956              -0.135784
+sigma_wtp_phev40                    -0.036499              -0.060181
+mu_wtp_bev                          -0.093473              -0.111782
+sigma_wtp_bev                       -0.113009              -0.116258
+mu_wtp_bevRangeRel                   0.070748              -0.257800
+sigma_wtp_bevRangeRel               -0.120364              -0.299276
+mu_wtp_noBEVFC                       0.237304               0.102549
+sigma_wtp_noBEVFC                    0.036672               0.093789
+mu_wtp_american                      0.121980               0.155540
+sigma_wtp_american                   0.130257               0.285321
+mu_wtp_chinese                       0.245532               0.167746
+sigma_wtp_chinese                    0.339981               0.373274
+mu_wtp_japanese                      0.123217               0.045815
+sigma_wtp_japanese                  -0.150907               0.253323
+mu_wtp_skorean                       0.052750               0.219137
+sigma_wtp_skorean                   -0.102279              -0.075764
+                                   mu_wtp_hev          sigma_wtp_hev
+mu_scalingFactor                     0.023458              -0.075179
+sigma_scalingFactor                 -0.072811               0.005928
+mu_wtp_Acceleration                 -0.129493               0.124926
+sigma_wtp_Acceleration               0.117427              -0.061586
+mu_wtp_OpCost                       3.025e-05               0.004554
+sigma_wtp_OpCost                    -0.210793               0.238645
+mu_wtp_hev                           1.000000              -0.258294
+sigma_wtp_hev                       -0.258294               1.000000
+mu_wtp_phev20                        0.582901               0.155032
+sigma_wtp_phev20                    -0.047621              -0.187538
+mu_wtp_phev40                        0.564442              -0.025647
+sigma_wtp_phev40                     0.145332              -0.018304
+mu_wtp_bev                           0.508853             9.3305e-04
+sigma_wtp_bev                        0.042447              -0.077225
+mu_wtp_bevRangeRel                   0.102096              -0.314021
+sigma_wtp_bevRangeRel               -0.004082               0.079170
+mu_wtp_noBEVFC                      -0.002870               0.107495
+sigma_wtp_noBEVFC                    0.014056               0.105818
+mu_wtp_american                      0.066214               0.015238
+sigma_wtp_american                  -0.159544               0.049227
+mu_wtp_chinese                       0.013653               0.104551
+sigma_wtp_chinese                   -0.167969               0.325345
+mu_wtp_japanese                      0.114637              -0.139034
+sigma_wtp_japanese                  -0.028317               0.062028
+mu_wtp_skorean                      -0.080239               0.001503
+sigma_wtp_skorean                    0.054051              -0.120323
+                                mu_wtp_phev20       sigma_wtp_phev20
+mu_scalingFactor                    -0.130256                0.13832
+sigma_scalingFactor                 -0.185499                0.15693
+mu_wtp_Acceleration                 -0.064269                0.02484
+sigma_wtp_Acceleration               0.016940                0.21102
+mu_wtp_OpCost                       -0.150746               -0.16394
+sigma_wtp_OpCost                    -0.071870                0.17898
+mu_wtp_hev                           0.582901               -0.04762
+sigma_wtp_hev                        0.155032               -0.18754
+mu_wtp_phev20                        1.000000               -0.17566
+sigma_wtp_phev20                    -0.175662                1.00000
+mu_wtp_phev40                        0.654784               -0.11190
+sigma_wtp_phev40                     0.139865                0.02617
+mu_wtp_bev                           0.452912               -0.01392
+sigma_wtp_bev                        0.046602               -0.12638
+mu_wtp_bevRangeRel                  -0.036911               -0.14154
+sigma_wtp_bevRangeRel                0.117838               -0.10414
+mu_wtp_noBEVFC                      -0.100134               -0.12261
+sigma_wtp_noBEVFC                    0.019995                0.29388
+mu_wtp_american                    6.3525e-04                0.04520
+sigma_wtp_american                  -0.150173                0.30742
+mu_wtp_chinese                      -0.003917               -0.15899
+sigma_wtp_chinese                   -0.031823               -0.07982
+mu_wtp_japanese                      0.195453                0.03092
+sigma_wtp_japanese                  -0.201059                0.42208
+mu_wtp_skorean                      -0.022826               -0.03707
+sigma_wtp_skorean                    0.022781               -0.03413
+                                mu_wtp_phev40       sigma_wtp_phev40
+mu_scalingFactor                    -0.267486              -0.220526
+sigma_scalingFactor                 -0.306245              -0.194417
+mu_wtp_Acceleration                  0.028375              -0.107876
+sigma_wtp_Acceleration              -0.066045               0.047134
+mu_wtp_OpCost                       -0.059956              -0.036499
+sigma_wtp_OpCost                    -0.135784              -0.060181
+mu_wtp_hev                           0.564442               0.145332
+sigma_wtp_hev                       -0.025647              -0.018304
+mu_wtp_phev20                        0.654784               0.139865
+sigma_wtp_phev20                    -0.111902               0.026171
+mu_wtp_phev40                        1.000000               0.228423
+sigma_wtp_phev40                     0.228423               1.000000
+mu_wtp_bev                           0.434418              -0.173432
+sigma_wtp_bev                        0.085330               0.143350
+mu_wtp_bevRangeRel                  -0.009534               0.117725
+sigma_wtp_bevRangeRel                0.132162               0.316386
+mu_wtp_noBEVFC                      -0.185249               0.119054
+sigma_wtp_noBEVFC                   -0.042427              -0.101377
+mu_wtp_american                      0.018150              -0.068724
+sigma_wtp_american                  -0.130884              -0.107650
+mu_wtp_chinese                      -0.091278              -0.153789
+sigma_wtp_chinese                   -0.236622              -0.231010
+mu_wtp_japanese                      0.365473               0.145334
+sigma_wtp_japanese                  -0.369898              -0.164841
+mu_wtp_skorean                       0.053944              -0.054341
+sigma_wtp_skorean                   -0.061737              -0.003432
+                                   mu_wtp_bev          sigma_wtp_bev
+mu_scalingFactor                      0.22234               -0.55785
+sigma_scalingFactor                   0.06224               -0.50916
+mu_wtp_Acceleration                  -0.12320               -0.03510
+sigma_wtp_Acceleration                0.18610               -0.06791
+mu_wtp_OpCost                        -0.09347               -0.11301
+sigma_wtp_OpCost                     -0.11178               -0.11626
+mu_wtp_hev                            0.50885                0.04245
+sigma_wtp_hev                      9.3305e-04               -0.07723
+mu_wtp_phev20                         0.45291                0.04660
+sigma_wtp_phev20                     -0.01392               -0.12638
+mu_wtp_phev40                         0.43442                0.08533
+sigma_wtp_phev40                     -0.17343                0.14335
+mu_wtp_bev                            1.00000               -0.30722
+sigma_wtp_bev                        -0.30722                1.00000
+mu_wtp_bevRangeRel                    0.04648                0.37570
+sigma_wtp_bevRangeRel                -0.06850                0.32535
+mu_wtp_noBEVFC                       -0.21788               -0.24030
+sigma_wtp_noBEVFC                    -0.04258                0.34597
+mu_wtp_american                       0.04326               -0.01130
+sigma_wtp_american                   -0.23289               -0.08768
+mu_wtp_chinese                        0.07119               -0.26164
+sigma_wtp_chinese                    -0.13185               -0.13786
+mu_wtp_japanese                       0.07009               -0.07042
+sigma_wtp_japanese                   -0.10637               -0.03169
+mu_wtp_skorean                       -0.05226               -0.17618
+sigma_wtp_skorean                    -0.09865                0.07747
+                           mu_wtp_bevRangeRel  sigma_wtp_bevRangeRel
+mu_scalingFactor                    -0.103224              -0.326531
+sigma_scalingFactor                 -0.088019              -0.304971
+mu_wtp_Acceleration                 -0.115706              -0.137966
+sigma_wtp_Acceleration              -0.124280              -0.095104
+mu_wtp_OpCost                        0.070748              -0.120364
+sigma_wtp_OpCost                    -0.257800              -0.299276
+mu_wtp_hev                           0.102096              -0.004082
+sigma_wtp_hev                       -0.314021               0.079170
+mu_wtp_phev20                       -0.036911               0.117838
+sigma_wtp_phev20                    -0.141539              -0.104144
+mu_wtp_phev40                       -0.009534               0.132162
+sigma_wtp_phev40                     0.117725               0.316386
+mu_wtp_bev                           0.046485              -0.068504
+sigma_wtp_bev                        0.375695               0.325352
+mu_wtp_bevRangeRel                   1.000000               0.539137
+sigma_wtp_bevRangeRel                0.539137               1.000000
+mu_wtp_noBEVFC                      -0.028213              -0.049307
+sigma_wtp_noBEVFC                    0.074027               0.026120
+mu_wtp_american                     -0.053900              -0.197555
+sigma_wtp_american                  -0.124589              -0.324725
+mu_wtp_chinese                      -0.120793              -0.282226
+sigma_wtp_chinese                   -0.201608              -0.303121
+mu_wtp_japanese                     -0.012757              -0.069629
+sigma_wtp_japanese                  -0.124723              -0.222344
+mu_wtp_skorean                      -0.118639              -0.201421
+sigma_wtp_skorean                    0.014984               0.040342
+                               mu_wtp_noBEVFC      sigma_wtp_noBEVFC
+mu_scalingFactor                     0.349488               -0.09175
+sigma_scalingFactor                  0.369398                0.02205
+mu_wtp_Acceleration                  0.079205                0.27573
+sigma_wtp_Acceleration              -0.036215               -0.19887
+mu_wtp_OpCost                        0.237304                0.03667
+sigma_wtp_OpCost                     0.102549                0.09379
+mu_wtp_hev                          -0.002870                0.01406
+sigma_wtp_hev                        0.107495                0.10582
+mu_wtp_phev20                       -0.100134                0.01999
+sigma_wtp_phev20                    -0.122606                0.29388
+mu_wtp_phev40                       -0.185249               -0.04243
+sigma_wtp_phev40                     0.119054               -0.10138
+mu_wtp_bev                          -0.217880               -0.04258
+sigma_wtp_bev                       -0.240303                0.34597
+mu_wtp_bevRangeRel                  -0.028213                0.07403
+sigma_wtp_bevRangeRel               -0.049307                0.02612
+mu_wtp_noBEVFC                       1.000000               -0.24460
+sigma_wtp_noBEVFC                   -0.244599                1.00000
+mu_wtp_american                     -0.061655                0.01292
+sigma_wtp_american                  -0.028042                0.33435
+mu_wtp_chinese                       0.116062               -0.25475
+sigma_wtp_chinese                    0.204677                0.15724
+mu_wtp_japanese                     -0.168927               -0.18470
+sigma_wtp_japanese                   0.086947                0.26665
+mu_wtp_skorean                       0.115530               -0.05867
+sigma_wtp_skorean                   -0.011164                0.10245
+                              mu_wtp_american     sigma_wtp_american
+mu_scalingFactor                      0.16831               0.042764
+sigma_scalingFactor                   0.11950               0.146804
+mu_wtp_Acceleration                   0.01733               0.241656
+sigma_wtp_Acceleration                0.09770              -0.069606
+mu_wtp_OpCost                         0.12198               0.130257
+sigma_wtp_OpCost                      0.15554               0.285321
+mu_wtp_hev                            0.06621              -0.159544
+sigma_wtp_hev                         0.01524               0.049227
+mu_wtp_phev20                      6.3525e-04              -0.150173
+sigma_wtp_phev20                      0.04520               0.307418
+mu_wtp_phev40                         0.01815              -0.130884
+sigma_wtp_phev40                     -0.06872              -0.107650
+mu_wtp_bev                            0.04326              -0.232893
+sigma_wtp_bev                        -0.01130              -0.087676
+mu_wtp_bevRangeRel                   -0.05390              -0.124589
+sigma_wtp_bevRangeRel                -0.19756              -0.324725
+mu_wtp_noBEVFC                       -0.06165              -0.028042
+sigma_wtp_noBEVFC                     0.01292               0.334350
+mu_wtp_american                       1.00000              -0.053538
+sigma_wtp_american                   -0.05354               1.000000
+mu_wtp_chinese                        0.49182              -0.100330
+sigma_wtp_chinese                     0.15282               0.221074
+mu_wtp_japanese                       0.45599              -0.001899
+sigma_wtp_japanese                    0.01266               0.278068
+mu_wtp_skorean                        0.46048               0.135198
+sigma_wtp_skorean                    -0.04173               0.006858
+                               mu_wtp_chinese      sigma_wtp_chinese
+mu_scalingFactor                     0.272334                0.21237
+sigma_scalingFactor                  0.192126                0.27562
+mu_wtp_Acceleration                 -0.004795                0.40630
+sigma_wtp_Acceleration               0.094608               -0.22456
+mu_wtp_OpCost                        0.245532                0.33998
+sigma_wtp_OpCost                     0.167746                0.37327
+mu_wtp_hev                           0.013653               -0.16797
+sigma_wtp_hev                        0.104551                0.32534
+mu_wtp_phev20                       -0.003917               -0.03182
+sigma_wtp_phev20                    -0.158985               -0.07982
+mu_wtp_phev40                       -0.091278               -0.23662
+sigma_wtp_phev40                    -0.153789               -0.23101
+mu_wtp_bev                           0.071192               -0.13185
+sigma_wtp_bev                       -0.261637               -0.13786
+mu_wtp_bevRangeRel                  -0.120793               -0.20161
+sigma_wtp_bevRangeRel               -0.282226               -0.30312
+mu_wtp_noBEVFC                       0.116062                0.20468
+sigma_wtp_noBEVFC                   -0.254753                0.15724
+mu_wtp_american                      0.491818                0.15282
+sigma_wtp_american                  -0.100330                0.22107
+mu_wtp_chinese                       1.000000                0.55667
+sigma_wtp_chinese                    0.556673                1.00000
+mu_wtp_japanese                      0.285117               -0.20892
+sigma_wtp_japanese                   0.060007                0.31845
+mu_wtp_skorean                       0.250863                0.03673
+sigma_wtp_skorean                   -0.091871                0.15029
+                              mu_wtp_japanese     sigma_wtp_japanese
+mu_scalingFactor                     0.018391                0.19327
+sigma_scalingFactor                 -0.034294                0.21234
+mu_wtp_Acceleration                 -0.049843                0.04931
+sigma_wtp_Acceleration              -0.010501                0.17157
+mu_wtp_OpCost                        0.123217               -0.15091
+sigma_wtp_OpCost                     0.045815                0.25332
+mu_wtp_hev                           0.114637               -0.02832
+sigma_wtp_hev                       -0.139034                0.06203
+mu_wtp_phev20                        0.195453               -0.20106
+sigma_wtp_phev20                     0.030925                0.42208
+mu_wtp_phev40                        0.365473               -0.36990
+sigma_wtp_phev40                     0.145334               -0.16484
+mu_wtp_bev                           0.070087               -0.10637
+sigma_wtp_bev                       -0.070415               -0.03169
+mu_wtp_bevRangeRel                  -0.012757               -0.12472
+sigma_wtp_bevRangeRel               -0.069629               -0.22234
+mu_wtp_noBEVFC                      -0.168927                0.08695
+sigma_wtp_noBEVFC                   -0.184703                0.26665
+mu_wtp_american                      0.455986                0.01266
+sigma_wtp_american                  -0.001899                0.27807
+mu_wtp_chinese                       0.285117                0.06001
+sigma_wtp_chinese                   -0.208920                0.31845
+mu_wtp_japanese                      1.000000               -0.42690
+sigma_wtp_japanese                  -0.426895                1.00000
+mu_wtp_skorean                       0.471738                0.02548
+sigma_wtp_skorean                   -0.167078                0.18023
+                               mu_wtp_skorean      sigma_wtp_skorean
+mu_scalingFactor                     0.276657              -0.102595
+sigma_scalingFactor                  0.291842              -0.103548
+mu_wtp_Acceleration                  0.105732               0.248743
+sigma_wtp_Acceleration              -0.083049              -0.304567
+mu_wtp_OpCost                        0.052750              -0.102279
+sigma_wtp_OpCost                     0.219137              -0.075764
+mu_wtp_hev                          -0.080239               0.054051
+sigma_wtp_hev                        0.001503              -0.120323
+mu_wtp_phev20                       -0.022826               0.022781
+sigma_wtp_phev20                    -0.037072              -0.034126
+mu_wtp_phev40                        0.053944              -0.061737
+sigma_wtp_phev40                    -0.054341              -0.003432
+mu_wtp_bev                          -0.052258              -0.098652
+sigma_wtp_bev                       -0.176179               0.077467
+mu_wtp_bevRangeRel                  -0.118639               0.014984
+sigma_wtp_bevRangeRel               -0.201421               0.040342
+mu_wtp_noBEVFC                       0.115530              -0.011164
+sigma_wtp_noBEVFC                   -0.058674               0.102455
+mu_wtp_american                      0.460480              -0.041725
+sigma_wtp_american                   0.135198               0.006858
+mu_wtp_chinese                       0.250863              -0.091871
+sigma_wtp_chinese                    0.036727               0.150291
+mu_wtp_japanese                      0.471738              -0.167078
+sigma_wtp_japanese                   0.025481               0.180228
+mu_wtp_skorean                       1.000000               0.015751
+sigma_wtp_skorean                    0.015751               1.000000
+
+ 20 most extreme outliers in terms of lowest average per choice prediction:
+   ID Avg prob per choice
+ 1064         0.001919206
+ 1808         0.002779688
+ 1989         0.003633982
+  813         0.009361547
+  420         0.009663800
+  739         0.010310599
+ 1799         0.011944800
+  396         0.013497770
+  310         0.013914612
+  982         0.018471498
+  387         0.023930369
+ 1746         0.024360285
+  815         0.024712628
+  583         0.025691366
+  918         0.026180557
+  903         0.026483915
+  130         0.028018773
+  738         0.029097436
+ 1881         0.032394607
+ 1884         0.032678617
+
+Settings and functions used in model definition:
+
+apollo_control
+--------------
+                       Value                                            
+modelName              "MXL100_none_wtp"                                
+indivID                "ID"                                             
+panelData              "TRUE"                                           
+weights                "Weight2018"                                     
+outputDirectory        "logs/job_35887057/MXL100_none_wtp/"             
+nCores                 "4"                                              
+noModification         "TRUE"                                           
+calculateLLC           "FALSE"                                          
+workInLogs             "TRUE"                                           
+mixing                 "TRUE"                                           
+debug                  "FALSE"                                          
+modelDescr             "No model description provided in apollo_control"
+seed                   "13"                                             
+HB                     "FALSE"                                          
+noValidation           "FALSE"                                          
+noDiagnostics          "FALSE"                                          
+analyticHessian        "FALSE"                                          
+memorySaver            "FALSE"                                          
+analyticGrad           "FALSE"                                          
+analyticGrad_manualSet "FALSE"                                          
+overridePanel          "FALSE"                                          
+preventOverridePanel   "FALSE"                                          
+
+Hessian routines attempted
+--------------------------
+numerical second derivative of LL (using numDeriv)
+
+
+apollo_randCoeff
+------------------
+function (apollo_beta, apollo_inputs) 
+{
+    randcoeff <- list()
+    space <- tolower(apollo_inputs$utility_space)
+    attrs <- apollo_inputs$observed_attributes
+    if (space == "pref") {
+        for (attr in attrs) {
+            mu_name <- paste0("mu_b_", attr)
+            sigma_name <- paste0("sigma_b_", attr)
+            draw_name <- paste0("draws_", attr)
+            out_name <- paste0("b_", attr)
+            mu_val <- apollo_beta[mu_name]
+            sigma_val <- apollo_beta[sigma_name]
+            draw_val <- apollo_inputs$draws[[draw_name]]
+            if (!is.null(apollo_inputs$lognorm_price_dist) && 
+                apollo_inputs$lognorm_price_dist == TRUE && attr == 
+                "Price") {
+                randcoeff[[out_name]] <- -1 * exp(mu_val + sigma_val * 
+                  draw_val)
+            }
+            else {
+                randcoeff[[out_name]] <- mu_val + sigma_val * 
+                  draw_val
+            }
+        }
+    }
+    else if (space == "wtp") {
+        if (apollo_inputs$scalingFactor_dist) {
+            mu_name <- paste0("mu_scalingFactor")
+            sigma_name <- paste0("sigma_scalingFactor")
+            draw_name <- paste0("draws_scalingFactor")
+            out_name <- paste0("scalingFactor")
+            mu_val <- apollo_beta[mu_name]
+            sigma_val <- apollo_beta[sigma_name]
+            draw_val <- apollo_inputs$draws[[draw_name]]
+            randcoeff[[out_name]] <- mu_val + sigma_val * draw_val
+        }
+        attrs_no_price <- setdiff(attrs, "Price")
+        for (attr2 in attrs_no_price) {
+            mu_name <- paste0("mu_wtp_", attr2)
+            sigma_name <- paste0("sigma_wtp_", attr2)
+            draw_name <- paste0("draws_", attr2)
+            out_name <- paste0("wtp_", attr2)
+            mu_val <- apollo_beta[mu_name]
+            sigma_val <- apollo_beta[sigma_name]
+            draw_val <- apollo_inputs$draws[[draw_name]]
+            randcoeff[[out_name]] <- mu_val + sigma_val * draw_val
+        }
+    }
+    return(randcoeff)
+}
+<bytecode: 0x5603255dff30>
+<environment: 0x5603255f18f0>
+
+
+apollo_probabilities
+----------------------
+function (apollo_beta, apollo_inputs, functionality = "estimate") 
+{
+    apollo_attach(apollo_beta, apollo_inputs)
+    on.exit(apollo_detach(apollo_beta, apollo_inputs))
+    P <- list()
+    V <- list()
+    alternatives <- unique(gsub("^.*C", "C", apollo_inputs$availCols))
+    alt_codes <- setNames(seq_along(alternatives), alternatives)
+    for (altName in alternatives) {
+        if (tolower(apollo_inputs$utility_space) == "wtp") {
+            attrs_no_price <- setdiff(apollo_inputs$observed_attributes, 
+                "Price")
+            attr_terms <- paste0("wtp_", attrs_no_price, " * ", 
+                attrs_no_price, altName, collapse = " + ")
+            v_expr <- paste0("scalingFactor * (", attr_terms, 
+                " - Price", altName, ")")
+        }
+        else {
+            attr_terms <- paste0("b_", apollo_inputs$observed_attributes, 
+                " * ", apollo_inputs$observed_attributes, altName, 
+                collapse = " + ")
+            v_expr <- attr_terms
+        }
+        V[[altName]] <- eval(parse(text = v_expr))
+    }
+    mnl_settings <- list(alternatives = alt_codes, choiceVar = Choice, 
+        utilities = V)
+    P[["model"]] <- apollo_mnl(mnl_settings, functionality)
+    P <- apollo_panelProd(P, apollo_inputs, functionality)
+    P <- apollo_avgInterDraws(P, apollo_inputs, functionality)
+    P <- apollo_weighting(P, apollo_inputs, functionality)
+    P <- apollo_prepareProb(P, apollo_inputs, functionality)
+    return(P)
+}
+<bytecode: 0x5603255e41d0>
+<environment: 0x5603255f7df8>

@@ -1,0 +1,785 @@
+Model run by jvicente using Apollo 0.3.6 on R 4.4.1 for Linux.
+Please acknowledge the use of Apollo by citing Hess & Palma (2019)
+  DOI 10.1016/j.jocm.2019.100170
+  www.ApolloChoiceModelling.com
+
+Model name                                  : CNL_CNL_pref
+Model description                           : No model description provided in apollo_control
+Model run at                                : 2025-11-10 10:00:01.702875
+Estimation method                           : bfgs
+Estimation diagnosis                        : successful convergence
+Optimisation diagnosis                      : Maximum found
+     hessian properties                     : Negative definite
+     maximum eigenvalue                     : -0.339752
+     reciprocal of condition number         : 3.766e-07
+Number of individuals                       : 734
+Number of rows in database                  : 11010
+Number of modelled outcomes                 : 11010
+
+Number of cores used                        :  32 
+Model without mixing
+
+LL(start)                                   : -9285.92
+LL at equal shares, LL(0)                   : -12095.72
+LL at observed shares, LL(C)                : Not applicable
+LL(final)                                   : -9285.92
+Rho-squared vs equal shares                  :  0.2323 
+Adj.Rho-squared vs equal shares              :  0.231 
+Rho-squared vs observed shares               :  Not applicable 
+Adj.Rho-squared vs observed shares           :  Not applicable 
+AIC                                         :  18603.83 
+BIC                                         :  18720.74 
+
+Estimated parameters                        : 16
+Time taken (hh:mm:ss)                       :  00:03:57.96 
+     pre-estimation                         :  00:01:18.12 
+     estimation                             :  00:01:14 
+     post-estimation                        :  00:01:25.84 
+Iterations                                  :  25  
+
+Constrained optimisation:
+ alpha_PHEV_ICE_logistic < 10
+ alpha_PHEV_ICE_logistic > -10
+
+
+Estimates:
+                           Estimate        s.e.   t.rat.(0)    Rob.s.e.
+b_Price                    -0.05518    0.001907    -28.9354    0.003584
+b_Acceleration             -0.07248    0.007091    -10.2213    0.012437
+b_OpCost                   -0.10244    0.005224    -19.6085    0.009031
+b_hev                       0.05718    0.042812      1.3357    0.072798
+b_phev20                    0.02995    0.046139      0.6492    0.077944
+b_phev40                    0.13458    0.044804      3.0037    0.073900
+b_bev                      -0.23619    0.041604     -5.6770    0.088729
+b_bevRangeRel               0.26173    0.016272     16.0850    0.032032
+b_noBEVFC                  -0.23045    0.033806     -6.8169    0.049028
+b_american                 -0.09834    0.034787     -2.8269    0.060560
+b_chinese                  -1.01787    0.046205    -22.0295    0.096018
+b_japanese                 -0.03553    0.034374     -1.0336    0.064752
+b_skorean                  -0.32384    0.035943     -9.0099    0.062071
+lambda_ICE                  0.70157    0.031488     22.2803    0.052544
+lambda_BEV                  0.78037    0.035334     22.0857    0.058073
+alpha_PHEV_ICE_logistic     3.03945    1.715127      1.7721    2.402453
+                        Rob.t.rat.(0)
+b_Price                      -15.3962
+b_Acceleration                -5.8279
+b_OpCost                     -11.3435
+b_hev                          0.7855
+b_phev20                       0.3843
+b_phev40                       1.8211
+b_bev                         -2.6619
+b_bevRangeRel                  8.1709
+b_noBEVFC                     -4.7004
+b_american                    -1.6239
+b_chinese                    -10.6008
+b_japanese                    -0.5487
+b_skorean                     -5.2172
+lambda_ICE                    13.3519
+lambda_BEV                    13.4378
+alpha_PHEV_ICE_logistic        1.2651
+
+Structure for CNL model component :
+         cvC1 (alpha) cvC2 (alpha) cvC3 (alpha) hevC1 (alpha) hevC2 (alpha)
+GAS nest        1.000        1.000        1.000         1.000         1.000
+BEV nest        0.000        0.000        0.000         0.000         0.000
+         hevC3 (alpha) phev20C1 (alpha) phev20C2 (alpha) phev20C3 (alpha)
+GAS nest         1.000          0.95432          0.95432          0.95432
+BEV nest         0.000          0.04568          0.04568          0.04568
+         phev40C1 (alpha) phev40C2 (alpha) phev40C3 (alpha) bev100C1 (alpha)
+GAS nest          0.95432          0.95432          0.95432            0.000
+BEV nest          0.04568          0.04568          0.04568            1.000
+         bev100C2 (alpha) bev100C3 (alpha) bev150C1 (alpha) bev150C2 (alpha)
+GAS nest            0.000            0.000            0.000            0.000
+BEV nest            1.000            1.000            1.000            1.000
+         bev150C3 (alpha) bev300C1 (alpha) bev300C2 (alpha) bev300C3 (alpha)
+GAS nest            0.000            0.000            0.000            0.000
+BEV nest            1.000            1.000            1.000            1.000
+         bev400C1 (alpha) bev400C2 (alpha) bev400C3 (alpha)      lambda
+GAS nest            0.000            0.000            0.000      0.7016
+BEV nest            1.000            1.000            1.000      0.7804
+
+
+Overview of choices for CNL model component :
+                                    cvC1    cvC2    cvC3   hevC1   hevC2
+Times available                  1311.00 1389.00 1340.00 1403.00 1348.00
+Times chosen                      478.00  497.00  495.00  546.00  485.00
+Percentage chosen overall           4.34    4.51    4.50    4.96    4.41
+Percentage chosen when available   36.46   35.78   36.94   38.92   35.98
+                                   hevC3 phev20C1 phev20C2 phev20C3 phev40C1
+Times available                  1371.00  1400.00  1342.00  1367.00  1443.00
+Times chosen                      541.00   494.00   507.00   518.00   558.00
+Percentage chosen overall           4.91     4.49     4.60     4.70     5.07
+Percentage chosen when available   39.46    35.29    37.78    37.89    38.67
+                                 phev40C2 phev40C3 bev100C1 bev100C2 bev100C3
+Times available                   1278.00  1369.00  1345.00  1320.00  1359.00
+Times chosen                       488.00   537.00   313.00   299.00   305.00
+Percentage chosen overall            4.43     4.88     2.84     2.72     2.77
+Percentage chosen when available    38.18    39.23    23.27    22.65    22.44
+                                 bev150C1 bev150C2 bev150C3 bev300C1 bev300C2
+Times available                   1357.00  1472.00  1410.00  1357.00  1459.00
+Times chosen                       363.00   389.00   336.00   449.00   487.00
+Percentage chosen overall            3.30     3.53     3.05     4.08     4.42
+Percentage chosen when available    26.75    26.43    23.83    33.09    33.38
+                                 bev300C3 bev400C1 bev400C2 bev400C3
+Times available                   1396.00  1394.00  1402.00  1398.00
+Times chosen                       441.00   469.00   525.00   490.00
+Percentage chosen overall            4.01     4.26     4.77     4.45
+Percentage chosen when available    31.59    33.64    37.45    35.05
+
+
+Classical covariance matrix:
+                                        b_Price          b_Acceleration
+b_Price                               3.636e-06               4.352e-06
+b_Acceleration                        4.352e-06               5.029e-05
+b_OpCost                              5.090e-06               7.758e-06
+b_hev                                -4.455e-06              -1.918e-06
+b_phev20                              2.258e-05               3.993e-05
+b_phev40                              1.744e-05               3.394e-05
+b_bev                                 6.030e-06               1.519e-05
+b_bevRangeRel                        -1.380e-05              -2.398e-05
+b_noBEVFC                             1.087e-05               1.971e-05
+b_american                            4.575e-06               5.339e-06
+b_chinese                             4.843e-05               7.634e-05
+b_japanese                            4.533e-06               1.011e-05
+b_skorean                             1.624e-05               2.885e-05
+lambda_ICE                           -4.300e-05              -5.949e-05
+lambda_BEV                           -4.617e-05              -7.709e-05
+alpha_PHEV_ICE_logistic               -0.001916               -0.003232
+                                       b_OpCost                   b_hev
+b_Price                               5.090e-06              -4.455e-06
+b_Acceleration                        7.758e-06              -1.918e-06
+b_OpCost                              2.729e-05              -1.271e-05
+b_hev                                -1.271e-05                0.001833
+b_phev20                              3.422e-05              8.7566e-04
+b_phev40                              2.593e-05              8.9072e-04
+b_bev                                 1.024e-05              9.1729e-04
+b_bevRangeRel                        -2.387e-05               2.240e-05
+b_noBEVFC                             1.951e-05              -2.067e-05
+b_american                            1.109e-05               3.209e-05
+b_chinese                             9.096e-05              -3.643e-05
+b_japanese                            1.160e-05               4.787e-05
+b_skorean                             3.186e-05               2.566e-07
+lambda_ICE                           -7.941e-05               7.979e-05
+lambda_BEV                           -8.531e-05               6.678e-05
+alpha_PHEV_ICE_logistic               -0.003218                0.003148
+                                       b_phev20                b_phev40
+b_Price                               2.258e-05               1.744e-05
+b_Acceleration                        3.993e-05               3.394e-05
+b_OpCost                              3.422e-05               2.593e-05
+b_hev                                8.7566e-04              8.9072e-04
+b_phev20                               0.002129                0.001203
+b_phev40                               0.001203                0.002007
+b_bev                                9.9972e-04                0.001006
+b_bevRangeRel                       -1.2324e-04              -8.856e-05
+b_noBEVFC                             9.222e-05               6.531e-05
+b_american                            8.526e-05               1.120e-05
+b_chinese                            4.0523e-04              2.7104e-04
+b_japanese                            7.487e-05               8.132e-05
+b_skorean                            1.4235e-04               8.625e-05
+lambda_ICE                          -3.2101e-04             -2.2737e-04
+lambda_BEV                          -3.9174e-04             -3.0131e-04
+alpha_PHEV_ICE_logistic               -0.032325               -0.025592
+                                          b_bev           b_bevRangeRel
+b_Price                               6.030e-06              -1.380e-05
+b_Acceleration                        1.519e-05              -2.398e-05
+b_OpCost                              1.024e-05              -2.387e-05
+b_hev                                9.1729e-04               2.240e-05
+b_phev20                             9.9972e-04             -1.2324e-04
+b_phev40                               0.001006              -8.856e-05
+b_bev                                  0.001731               5.647e-05
+b_bevRangeRel                         5.647e-05              2.6478e-04
+b_noBEVFC                           -5.2299e-04              -7.140e-05
+b_american                            2.649e-05              -4.275e-05
+b_chinese                            1.5230e-04             -2.4131e-04
+b_japanese                            4.280e-05              -2.291e-05
+b_skorean                             5.049e-05              -8.368e-05
+lambda_ICE                            1.264e-05              1.7394e-04
+lambda_BEV                          -2.1505e-04              2.6864e-04
+alpha_PHEV_ICE_logistic               -0.008729                 0.01008
+                                      b_noBEVFC              b_american
+b_Price                               1.087e-05               4.575e-06
+b_Acceleration                        1.971e-05               5.339e-06
+b_OpCost                              1.951e-05               1.109e-05
+b_hev                                -2.067e-05               3.209e-05
+b_phev20                              9.222e-05               8.526e-05
+b_phev40                              6.531e-05               1.120e-05
+b_bev                               -5.2299e-04               2.649e-05
+b_bevRangeRel                        -7.140e-05              -4.275e-05
+b_noBEVFC                              0.001143               2.839e-05
+b_american                            2.839e-05                0.001210
+b_chinese                            1.5298e-04              6.9971e-04
+b_japanese                            5.778e-07              6.1606e-04
+b_skorean                             4.105e-05              6.4911e-04
+lambda_ICE                          -1.3348e-04              -7.362e-05
+lambda_BEV                          -1.9195e-04              -9.888e-05
+alpha_PHEV_ICE_logistic               -0.007610               -0.004714
+                                      b_chinese              b_japanese
+b_Price                               4.843e-05               4.533e-06
+b_Acceleration                        7.634e-05               1.011e-05
+b_OpCost                              9.096e-05               1.160e-05
+b_hev                                -3.643e-05               4.787e-05
+b_phev20                             4.0523e-04               7.487e-05
+b_phev40                             2.7104e-04               8.132e-05
+b_bev                                1.5230e-04               4.280e-05
+b_bevRangeRel                       -2.4131e-04              -2.291e-05
+b_noBEVFC                            1.5298e-04               5.778e-07
+b_american                           6.9971e-04              6.1606e-04
+b_chinese                              0.002135              6.8295e-04
+b_japanese                           6.8295e-04                0.001182
+b_skorean                            8.8368e-04              6.4690e-04
+lambda_ICE                          -7.3890e-04              -8.179e-05
+lambda_BEV                          -7.9738e-04              -7.033e-05
+alpha_PHEV_ICE_logistic               -0.032007               -0.003451
+                                      b_skorean              lambda_ICE
+b_Price                               1.624e-05              -4.300e-05
+b_Acceleration                        2.885e-05              -5.949e-05
+b_OpCost                              3.186e-05              -7.941e-05
+b_hev                                 2.566e-07               7.979e-05
+b_phev20                             1.4235e-04             -3.2101e-04
+b_phev40                              8.625e-05             -2.2737e-04
+b_bev                                 5.049e-05               1.264e-05
+b_bevRangeRel                        -8.368e-05              1.7394e-04
+b_noBEVFC                             4.105e-05             -1.3348e-04
+b_american                           6.4911e-04              -7.362e-05
+b_chinese                            8.8368e-04             -7.3890e-04
+b_japanese                           6.4690e-04              -8.179e-05
+b_skorean                              0.001292             -2.6680e-04
+lambda_ICE                          -2.6680e-04              9.9151e-04
+lambda_BEV                          -2.8082e-04              5.6240e-04
+alpha_PHEV_ICE_logistic               -0.011569                 0.02782
+                                     lambda_BEV alpha_PHEV_ICE_logistic
+b_Price                              -4.617e-05               -0.001916
+b_Acceleration                       -7.709e-05               -0.003232
+b_OpCost                             -8.531e-05               -0.003218
+b_hev                                 6.678e-05                0.003148
+b_phev20                            -3.9174e-04               -0.032325
+b_phev40                            -3.0131e-04               -0.025592
+b_bev                               -2.1505e-04               -0.008729
+b_bevRangeRel                        2.6864e-04                0.010082
+b_noBEVFC                           -1.9195e-04               -0.007610
+b_american                           -9.888e-05               -0.004714
+b_chinese                           -7.9738e-04               -0.032007
+b_japanese                           -7.033e-05               -0.003451
+b_skorean                           -2.8082e-04               -0.011569
+lambda_ICE                           5.6240e-04                0.027817
+lambda_BEV                             0.001248                0.030702
+alpha_PHEV_ICE_logistic                0.030702                2.941660
+
+Robust covariance matrix:
+                                        b_Price          b_Acceleration
+b_Price                               1.284e-05               5.334e-06
+b_Acceleration                        5.334e-06              1.5468e-04
+b_OpCost                              1.536e-05              -1.673e-06
+b_hev                                 7.278e-06              -6.374e-05
+b_phev20                              5.944e-05              -3.267e-05
+b_phev40                              6.265e-05               1.993e-05
+b_bev                                 2.105e-05              -4.798e-05
+b_bevRangeRel                        -3.874e-05              -5.821e-05
+b_noBEVFC                             4.009e-06               7.407e-05
+b_american                           -4.978e-06               2.504e-05
+b_chinese                            1.2702e-04              -4.118e-05
+b_japanese                            1.068e-05               8.723e-05
+b_skorean                             1.696e-05               8.705e-05
+lambda_ICE                          -1.0780e-04              -7.894e-05
+lambda_BEV                          -1.0691e-04             -1.3705e-04
+alpha_PHEV_ICE_logistic               -0.004075               -0.004556
+                                       b_OpCost                   b_hev
+b_Price                               1.536e-05               7.278e-06
+b_Acceleration                       -1.673e-06              -6.374e-05
+b_OpCost                              8.155e-05               2.259e-05
+b_hev                                 2.259e-05                0.005300
+b_phev20                              4.166e-05                0.003610
+b_phev40                              6.839e-05                0.003458
+b_bev                                -7.458e-05                0.003865
+b_bevRangeRel                        -5.571e-05              -6.541e-05
+b_noBEVFC                             8.846e-05             -1.3579e-04
+b_american                            5.371e-05              4.0601e-04
+b_chinese                            3.0122e-04              4.9769e-04
+b_japanese                            4.290e-05              4.9500e-04
+b_skorean                            -7.540e-08              -2.044e-05
+lambda_ICE                          -1.6192e-04              -1.651e-05
+lambda_BEV                          -1.8608e-04             -3.8146e-04
+alpha_PHEV_ICE_logistic               -0.008459               -0.010426
+                                       b_phev20                b_phev40
+b_Price                               5.944e-05               6.265e-05
+b_Acceleration                       -3.267e-05               1.993e-05
+b_OpCost                              4.166e-05               6.839e-05
+b_hev                                  0.003610                0.003458
+b_phev20                               0.006075                0.003938
+b_phev40                               0.003938                0.005461
+b_bev                                  0.004147                0.003801
+b_bevRangeRel                       -2.7660e-04             -2.2938e-04
+b_noBEVFC                             1.326e-05             -1.5178e-04
+b_american                           7.6054e-04              4.9694e-04
+b_chinese                              0.002040                0.001088
+b_japanese                             0.001046              8.1489e-04
+b_skorean                            7.4313e-04              2.6306e-04
+lambda_ICE                            -0.001026             -5.9122e-04
+lambda_BEV                            -0.001091             -5.9747e-04
+alpha_PHEV_ICE_logistic               -0.064161               -0.056280
+                                          b_bev           b_bevRangeRel
+b_Price                               2.105e-05              -3.874e-05
+b_Acceleration                       -4.798e-05              -5.821e-05
+b_OpCost                             -7.458e-05              -5.571e-05
+b_hev                                  0.003865              -6.541e-05
+b_phev20                               0.004147             -2.7660e-04
+b_phev40                               0.003801             -2.2938e-04
+b_bev                                  0.007873              2.3541e-04
+b_bevRangeRel                        2.3541e-04                0.001026
+b_noBEVFC                             -0.001127               5.908e-05
+b_american                           4.7058e-04             -1.4508e-04
+b_chinese                            1.2976e-04             -5.0911e-04
+b_japanese                           9.9045e-04             -2.9086e-04
+b_skorean                            4.3566e-04             -2.7929e-04
+lambda_ICE                            4.210e-05              3.4822e-04
+lambda_BEV                          -2.9393e-04              7.2015e-04
+alpha_PHEV_ICE_logistic               -0.015576                0.028620
+                                      b_noBEVFC              b_american
+b_Price                               4.009e-06              -4.978e-06
+b_Acceleration                        7.407e-05               2.504e-05
+b_OpCost                              8.846e-05               5.371e-05
+b_hev                               -1.3579e-04              4.0601e-04
+b_phev20                              1.326e-05              7.6054e-04
+b_phev40                            -1.5178e-04              4.9694e-04
+b_bev                                 -0.001127              4.7058e-04
+b_bevRangeRel                         5.908e-05             -1.4508e-04
+b_noBEVFC                              0.002404             -1.8753e-04
+b_american                          -1.8753e-04                0.003667
+b_chinese                            6.9253e-04                0.002643
+b_japanese                           -2.115e-05                0.002172
+b_skorean                             2.880e-05                0.002021
+lambda_ICE                          -3.1505e-04             -1.0579e-04
+lambda_BEV                          -4.7162e-04             -6.5608e-04
+alpha_PHEV_ICE_logistic               -0.023477               -0.013311
+                                      b_chinese              b_japanese
+b_Price                              1.2702e-04               1.068e-05
+b_Acceleration                       -4.118e-05               8.723e-05
+b_OpCost                             3.0122e-04               4.290e-05
+b_hev                                4.9769e-04              4.9500e-04
+b_phev20                               0.002040                0.001046
+b_phev40                               0.001088              8.1489e-04
+b_bev                                1.2976e-04              9.9045e-04
+b_bevRangeRel                       -5.0911e-04             -2.9086e-04
+b_noBEVFC                            6.9253e-04              -2.115e-05
+b_american                             0.002643                0.002172
+b_chinese                              0.009220                0.002460
+b_japanese                             0.002460                0.004193
+b_skorean                              0.002351                0.002068
+lambda_ICE                            -0.002228             -5.5059e-04
+lambda_BEV                            -0.002569             -6.7044e-04
+alpha_PHEV_ICE_logistic               -0.080789               -0.023757
+                                      b_skorean              lambda_ICE
+b_Price                               1.696e-05             -1.0780e-04
+b_Acceleration                        8.705e-05              -7.894e-05
+b_OpCost                             -7.540e-08             -1.6192e-04
+b_hev                                -2.044e-05              -1.651e-05
+b_phev20                             7.4313e-04               -0.001026
+b_phev40                             2.6306e-04             -5.9122e-04
+b_bev                                4.3566e-04               4.210e-05
+b_bevRangeRel                       -2.7929e-04              3.4822e-04
+b_noBEVFC                             2.880e-05             -3.1505e-04
+b_american                             0.002021             -1.0579e-04
+b_chinese                              0.002351               -0.002228
+b_japanese                             0.002068             -5.5059e-04
+b_skorean                              0.003853             -4.4672e-04
+lambda_ICE                          -4.4672e-04                0.002761
+lambda_BEV                          -8.9517e-04                0.001374
+alpha_PHEV_ICE_logistic               -0.023554                0.062389
+                                     lambda_BEV alpha_PHEV_ICE_logistic
+b_Price                             -1.0691e-04               -0.004075
+b_Acceleration                      -1.3705e-04               -0.004556
+b_OpCost                            -1.8608e-04               -0.008459
+b_hev                               -3.8146e-04               -0.010426
+b_phev20                              -0.001091               -0.064161
+b_phev40                            -5.9747e-04               -0.056280
+b_bev                               -2.9393e-04               -0.015576
+b_bevRangeRel                        7.2015e-04                0.028620
+b_noBEVFC                           -4.7162e-04               -0.023477
+b_american                          -6.5608e-04               -0.013311
+b_chinese                             -0.002569               -0.080789
+b_japanese                          -6.7044e-04               -0.023757
+b_skorean                           -8.9517e-04               -0.023554
+lambda_ICE                             0.001374                0.062389
+lambda_BEV                             0.003372                0.076601
+alpha_PHEV_ICE_logistic                0.076601                5.771778
+
+Classical correlation matrix:
+                                        b_Price          b_Acceleration
+b_Price                                 1.00000                0.321836
+b_Acceleration                          0.32184                1.000000
+b_OpCost                                0.51099                0.209416
+b_hev                                  -0.05457               -0.006318
+b_phev20                                0.25660                0.122033
+b_phev40                                0.20417                0.106833
+b_bev                                   0.07600                0.051496
+b_bevRangeRel                          -0.44463               -0.207783
+b_noBEVFC                               0.16861                0.082217
+b_american                              0.06896                0.021641
+b_chinese                               0.54970                0.232988
+b_japanese                              0.06915                0.041477
+b_skorean                               0.23698                0.113172
+lambda_ICE                             -0.71609               -0.266431
+lambda_BEV                             -0.68531               -0.307671
+alpha_PHEV_ICE_logistic                -0.58577               -0.265702
+                                       b_OpCost                   b_hev
+b_Price                                 0.51099               -0.054572
+b_Acceleration                          0.20942               -0.006318
+b_OpCost                                1.00000               -0.056814
+b_hev                                  -0.05681                1.000000
+b_phev20                                0.14198                0.443302
+b_phev40                                0.11080                0.464363
+b_bev                                   0.04711                0.514993
+b_bevRangeRel                          -0.28074                0.032156
+b_noBEVFC                               0.11050               -0.014280
+b_american                              0.06100                0.021548
+b_chinese                               0.37684               -0.018418
+b_japanese                              0.06460                0.032527
+b_skorean                               0.16969              1.6677e-04
+lambda_ICE                             -0.48275                0.059186
+lambda_BEV                             -0.46216                0.044145
+alpha_PHEV_ICE_logistic                -0.35919                0.042871
+                                       b_phev20                b_phev40
+b_Price                                 0.25660                0.204172
+b_Acceleration                          0.12203                0.106833
+b_OpCost                                0.14198                0.110800
+b_hev                                   0.44330                0.464363
+b_phev20                                1.00000                0.582040
+b_phev40                                0.58204                1.000000
+b_bev                                   0.52079                0.539432
+b_bevRangeRel                          -0.16415               -0.121469
+b_noBEVFC                               0.05912                0.043121
+b_american                              0.05312                0.007189
+b_chinese                               0.19008                0.130925
+b_japanese                              0.04721                0.052800
+b_skorean                               0.08583                0.053558
+lambda_ICE                             -0.22095               -0.161163
+lambda_BEV                             -0.24029               -0.190331
+alpha_PHEV_ICE_logistic                -0.40848               -0.333028
+                                          b_bev           b_bevRangeRel
+b_Price                                0.076001                -0.44463
+b_Acceleration                         0.051496                -0.20778
+b_OpCost                               0.047105                -0.28074
+b_hev                                  0.514993                 0.03216
+b_phev20                               0.520792                -0.16415
+b_phev40                               0.539432                -0.12147
+b_bev                                  1.000000                 0.08342
+b_bevRangeRel                          0.083419                 1.00000
+b_noBEVFC                             -0.371846                -0.12980
+b_american                             0.018303                -0.07552
+b_chinese                              0.079229                -0.32096
+b_japanese                             0.029925                -0.04096
+b_skorean                              0.033762                -0.14308
+lambda_ICE                             0.009645                 0.33948
+lambda_BEV                            -0.146290                 0.46723
+alpha_PHEV_ICE_logistic               -0.122328                 0.36125
+                                      b_noBEVFC              b_american
+b_Price                                 0.16861                0.068960
+b_Acceleration                          0.08222                0.021641
+b_OpCost                                0.11050                0.061003
+b_hev                                  -0.01428                0.021548
+b_phev20                                0.05912                0.053117
+b_phev40                                0.04312                0.007189
+b_bev                                  -0.37185                0.018303
+b_bevRangeRel                          -0.12980               -0.075519
+b_noBEVFC                               1.00000                0.024138
+b_american                              0.02414                1.000000
+b_chinese                               0.09794                0.435316
+b_japanese                           4.9727e-04                0.515196
+b_skorean                               0.03378                0.519142
+lambda_ICE                             -0.12540               -0.067207
+lambda_BEV                             -0.16070               -0.080444
+alpha_PHEV_ICE_logistic                -0.13125               -0.079003
+                                      b_chinese              b_japanese
+b_Price                                 0.54970                 0.06915
+b_Acceleration                          0.23299                 0.04148
+b_OpCost                                0.37684                 0.06460
+b_hev                                  -0.01842                 0.03253
+b_phev20                                0.19008                 0.04721
+b_phev40                                0.13093                 0.05280
+b_bev                                   0.07923                 0.02993
+b_bevRangeRel                          -0.32096                -0.04096
+b_noBEVFC                               0.09794              4.9727e-04
+b_american                              0.43532                 0.51520
+b_chinese                               1.00000                 0.43000
+b_japanese                              0.43000                 1.00000
+b_skorean                               0.53210                 0.52360
+lambda_ICE                             -0.50786                -0.07556
+lambda_BEV                             -0.48841                -0.05791
+alpha_PHEV_ICE_logistic                -0.40389                -0.05854
+                                      b_skorean              lambda_ICE
+b_Price                                 0.23698               -0.716093
+b_Acceleration                          0.11317               -0.266431
+b_OpCost                                0.16969               -0.482753
+b_hev                                1.6677e-04                0.059186
+b_phev20                                0.08583               -0.220952
+b_phev40                                0.05356               -0.161163
+b_bev                                   0.03376                0.009645
+b_bevRangeRel                          -0.14308                0.339480
+b_noBEVFC                               0.03378               -0.125398
+b_american                              0.51914               -0.067207
+b_chinese                               0.53210               -0.507862
+b_japanese                              0.52360               -0.075565
+b_skorean                               1.00000               -0.235734
+lambda_ICE                             -0.23573                1.000000
+lambda_BEV                             -0.22112                0.505480
+alpha_PHEV_ICE_logistic                -0.18767                0.515068
+                                     lambda_BEV alpha_PHEV_ICE_logistic
+b_Price                                -0.68531                -0.58577
+b_Acceleration                         -0.30767                -0.26570
+b_OpCost                               -0.46216                -0.35919
+b_hev                                   0.04415                 0.04287
+b_phev20                               -0.24029                -0.40848
+b_phev40                               -0.19033                -0.33303
+b_bev                                  -0.14629                -0.12233
+b_bevRangeRel                           0.46723                 0.36125
+b_noBEVFC                              -0.16070                -0.13125
+b_american                             -0.08044                -0.07900
+b_chinese                              -0.48841                -0.40389
+b_japanese                             -0.05791                -0.05854
+b_skorean                              -0.22112                -0.18767
+lambda_ICE                              0.50548                 0.51507
+lambda_BEV                              1.00000                 0.50662
+alpha_PHEV_ICE_logistic                 0.50662                 1.00000
+
+Robust correlation matrix:
+                                        b_Price          b_Acceleration
+b_Price                                 1.00000                 0.11968
+b_Acceleration                          0.11968                 1.00000
+b_OpCost                                0.47467                -0.01490
+b_hev                                   0.02790                -0.07040
+b_phev20                                0.21278                -0.03370
+b_phev40                                0.23654                 0.02169
+b_bev                                   0.06620                -0.04348
+b_bevRangeRel                          -0.33743                -0.14612
+b_noBEVFC                               0.02282                 0.12147
+b_american                             -0.02294                 0.03324
+b_chinese                               0.36913                -0.03449
+b_japanese                              0.04601                 0.10832
+b_skorean                               0.07625                 0.11277
+lambda_ICE                             -0.57249                -0.12079
+lambda_BEV                             -0.51368                -0.18975
+alpha_PHEV_ICE_logistic                -0.47329                -0.15250
+                                       b_OpCost                   b_hev
+b_Price                                 0.47467                0.027898
+b_Acceleration                         -0.01490               -0.070398
+b_OpCost                                1.00000                0.034368
+b_hev                                   0.03437                1.000000
+b_phev20                                0.05919                0.636273
+b_phev40                                0.10247                0.642802
+b_bev                                  -0.09307                0.598369
+b_bevRangeRel                          -0.19259               -0.028049
+b_noBEVFC                               0.19979               -0.038046
+b_american                              0.09820                0.092094
+b_chinese                               0.34738                0.071200
+b_japanese                              0.07336                0.105010
+b_skorean                           -1.3451e-04               -0.004524
+lambda_ICE                             -0.34124               -0.004317
+lambda_BEV                             -0.35482               -0.090232
+alpha_PHEV_ICE_logistic                -0.38989               -0.059615
+                                       b_phev20                b_phev40
+b_Price                                0.212776                 0.23654
+b_Acceleration                        -0.033697                 0.02169
+b_OpCost                               0.059187                 0.10247
+b_hev                                  0.636273                 0.64280
+b_phev20                               1.000000                 0.68361
+b_phev40                               0.683610                 1.00000
+b_bev                                  0.599662                 0.57973
+b_bevRangeRel                         -0.110784                -0.09690
+b_noBEVFC                              0.003470                -0.04189
+b_american                             0.161121                 0.11104
+b_chinese                              0.272515                 0.15335
+b_japanese                             0.207336                 0.17029
+b_skorean                              0.153601                 0.05735
+lambda_ICE                            -0.250554                -0.15226
+lambda_BEV                            -0.240949                -0.13922
+alpha_PHEV_ICE_logistic               -0.342639                -0.31700
+                                          b_bev           b_bevRangeRel
+b_Price                                0.066196                -0.33743
+b_Acceleration                        -0.043478                -0.14612
+b_OpCost                              -0.093072                -0.19259
+b_hev                                  0.598369                -0.02805
+b_phev20                               0.599662                -0.11078
+b_phev40                               0.579729                -0.09690
+b_bev                                  1.000000                 0.08283
+b_bevRangeRel                          0.082828                 1.00000
+b_noBEVFC                             -0.259016                 0.03762
+b_american                             0.087576                -0.07479
+b_chinese                              0.015230                -0.16553
+b_japanese                             0.172389                -0.14023
+b_skorean                              0.079104                -0.14047
+lambda_ICE                             0.009031                 0.20689
+lambda_BEV                            -0.057043                 0.38713
+alpha_PHEV_ICE_logistic               -0.073069                 0.37190
+                                      b_noBEVFC              b_american
+b_Price                                0.022819                -0.02294
+b_Acceleration                         0.121468                 0.03324
+b_OpCost                               0.199789                 0.09820
+b_hev                                 -0.038046                 0.09209
+b_phev20                               0.003470                 0.16112
+b_phev40                              -0.041890                 0.11104
+b_bev                                 -0.259016                 0.08758
+b_bevRangeRel                          0.037621                -0.07479
+b_noBEVFC                              1.000000                -0.06316
+b_american                            -0.063159                 1.00000
+b_chinese                              0.147109                 0.45447
+b_japanese                            -0.006662                 0.55400
+b_skorean                              0.009463                 0.53758
+lambda_ICE                            -0.122293                -0.03325
+lambda_BEV                            -0.165643                -0.18655
+alpha_PHEV_ICE_logistic               -0.199319                -0.09149
+                                      b_chinese              b_japanese
+b_Price                                 0.36913                0.046011
+b_Acceleration                         -0.03449                0.108322
+b_OpCost                                0.34738                0.073356
+b_hev                                   0.07120                0.105010
+b_phev20                                0.27252                0.207336
+b_phev40                                0.15335                0.170293
+b_bev                                   0.01523                0.172389
+b_bevRangeRel                          -0.16553               -0.140227
+b_noBEVFC                               0.14711               -0.006662
+b_american                              0.45447                0.553997
+b_chinese                               1.00000                0.395681
+b_japanese                              0.39568                1.000000
+b_skorean                               0.39441                0.514635
+lambda_ICE                             -0.44164               -0.161826
+lambda_BEV                             -0.46075               -0.178294
+alpha_PHEV_ICE_logistic                -0.35022               -0.152714
+                                      b_skorean              lambda_ICE
+b_Price                                0.076251               -0.572494
+b_Acceleration                         0.112765               -0.120794
+b_OpCost                            -1.3451e-04               -0.341237
+b_hev                                 -0.004524               -0.004317
+b_phev20                               0.153601               -0.250554
+b_phev40                               0.057348               -0.152258
+b_bev                                  0.079104                0.009031
+b_bevRangeRel                         -0.140469                0.206887
+b_noBEVFC                              0.009463               -0.122293
+b_american                             0.537580               -0.033246
+b_chinese                              0.394407               -0.441639
+b_japanese                             0.514635               -0.161826
+b_skorean                              1.000000               -0.136967
+lambda_ICE                            -0.136967                1.000000
+lambda_BEV                            -0.248341                0.450398
+alpha_PHEV_ICE_logistic               -0.157952                0.494231
+                                     lambda_BEV alpha_PHEV_ICE_logistic
+b_Price                                -0.51368                -0.47329
+b_Acceleration                         -0.18975                -0.15250
+b_OpCost                               -0.35482                -0.38989
+b_hev                                  -0.09023                -0.05961
+b_phev20                               -0.24095                -0.34264
+b_phev40                               -0.13922                -0.31700
+b_bev                                  -0.05704                -0.07307
+b_bevRangeRel                           0.38713                 0.37190
+b_noBEVFC                              -0.16564                -0.19932
+b_american                             -0.18655                -0.09149
+b_chinese                              -0.46075                -0.35022
+b_japanese                             -0.17829                -0.15271
+b_skorean                              -0.24834                -0.15795
+lambda_ICE                              0.45040                 0.49423
+lambda_BEV                              1.00000                 0.54904
+alpha_PHEV_ICE_logistic                 0.54904                 1.00000
+
+ 20 most extreme outliers in terms of lowest average per choice prediction:
+   ID Avg prob per choice
+ 1064        0.0008493553
+  420        0.0017296778
+ 1808        0.0025191233
+  739        0.0029898349
+ 1989        0.0043561770
+  982        0.0048542581
+  903        0.0056397196
+  396        0.0065865017
+  813        0.0071663157
+   79        0.0143052958
+  130        0.0143123502
+ 1799        0.0165708929
+  918        0.0170716957
+ 1819        0.0191705798
+  310        0.0203769887
+ 1032        0.0259703699
+  815        0.0263434411
+  978        0.0277174202
+ 1746        0.0277752741
+  534        0.0298359223
+
+Settings and functions used in model definition:
+
+apollo_control
+--------------
+                       Value                                            
+modelName              "CNL_CNL_pref"                                   
+indivID                "ID"                                             
+panelData              "TRUE"                                           
+weights                "Weight2018"                                     
+outputDirectory        "logs/job_35887057/CNL_CNL_pref/"                
+nCores                 "32"                                             
+noModification         "TRUE"                                           
+calculateLLC           "FALSE"                                          
+workInLogs             "TRUE"                                           
+mixing                 "FALSE"                                          
+debug                  "FALSE"                                          
+modelDescr             "No model description provided in apollo_control"
+seed                   "13"                                             
+HB                     "FALSE"                                          
+noValidation           "FALSE"                                          
+noDiagnostics          "FALSE"                                          
+analyticHessian        "FALSE"                                          
+memorySaver            "FALSE"                                          
+analyticGrad           "FALSE"                                          
+analyticGrad_manualSet "FALSE"                                          
+overridePanel          "FALSE"                                          
+preventOverridePanel   "FALSE"                                          
+
+Hessian routines attempted
+--------------------------
+numerical second derivative of LL (using numDeriv)
+
+
+apollo_probabilities
+----------------------
+function (apollo_beta, apollo_inputs, functionality = "estimate") 
+{
+    apollo_attach(apollo_beta, apollo_inputs)
+    on.exit(apollo_detach(apollo_beta, apollo_inputs))
+    V <- list()
+    A <- list()
+    P = list()
+    prefix <- if (tolower(apollo_inputs$utility_space) == "pref") 
+        "b_"
+    else "wtp_"
+    for (altName in apollo_inputs$availCols) {
+        alt_suffix <- substr(altName, nchar(altName) - 1, nchar(altName))
+        A[[altName]] <- get(altName)
+        if (tolower(apollo_inputs$utility_space) == "wtp") {
+            attrs_no_price <- setdiff(apollo_inputs$observed_attributes, 
+                "Price")
+            v_expr <- str_glue("\n        scalingFactor * (\n          {paste0(\n             \"wtp_\", attrs_no_price,\n             \" * \", attrs_no_price, alt_suffix,\n             collapse = \" + \"\n          )}\n          - Price{alt_suffix}\n        )")
+        }
+        else {
+            v_expr <- str_glue("{paste0(\n             \"b_\", apollo_inputs$observed_attributes,\n             \" * \", apollo_inputs$observed_attributes, alt_suffix,\n             collapse = \" + \"\n          )}")
+        }
+        V[[altName]] <- eval(parse(text = v_expr))
+    }
+    res <- get_nl_spec(apollo_inputs$nesting_spec)
+    nlNests <- res$nlNests
+    nlStructure <- res$nlStructure
+    if (apollo_inputs$nesting_spec == "CNL" || apollo_inputs$nesting_spec == 
+        "expanded_CNL") {
+        cnl_settings <- list(alternatives = setNames(1:length(apollo_inputs$availCols), 
+            apollo_inputs$availCols), choiceVar = AltChoice, 
+            utilities = V, avail = A, cnlNests = nlNests, cnlStructure = nlStructure)
+        P[["model"]] = apollo_cnl(cnl_settings, functionality)
+    }
+    else {
+        nl_settings <- list(alternatives = setNames(1:length(apollo_inputs$availCols), 
+            apollo_inputs$availCols), choiceVar = AltChoice, 
+            utilities = V, avail = A, nlNests = nlNests, nlStructure = nlStructure)
+        P[["model"]] = apollo_nl(nl_settings, functionality)
+    }
+    P = apollo_panelProd(P, apollo_inputs, functionality)
+    P <- apollo_weighting(P, apollo_inputs, functionality)
+    P = apollo_prepareProb(P, apollo_inputs, functionality)
+    return(P)
+}
+<bytecode: 0x55952f1199a8>
+<environment: 0x55952f12c4d0>

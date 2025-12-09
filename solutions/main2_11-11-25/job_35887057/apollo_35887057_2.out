@@ -1,0 +1,763 @@
+SLURM_ARRAY_JOB_ID: 35887057
+SLURM_JOB_ID: 35887060
+SLURM_ARRAY_TASK_ID: 2
+Created job directory: logs/job_35887057
+Task 2: Waiting for initialization to complete...
+Task 2: Initialization complete, proceeding...
+Running model 2...
+Running: NL_NL_pref 
+Starting Setup 
+Setup  Complete 
+Starting Search-Start 
+Saving original apollo_inputs 
+Testing probability function (apollo_probabilities)
+Pre-processing likelihood function...
+Creating initial set of 101 candidate values.
+Calculating LL of candidates 0%....50%.....100%
+Total avail. cores = 32 cores
+Avail. GB per core = 2 GB
+Req. GB per cluster = 2 GB
+Running searchStart on 32 cores.
+
+Stage 1, 101 active candidates.
+Estimating 25 BFGS iteration(s) for each active candidate.
+ Candidate......LLstart.....LLfinish.....GradientNorm...Converged
+         1        -9336        -9282            0.181           1
+         2       -16648        -9288          228.339           0
+         3       -50368        -9285          357.009           0
+         4       -11045        -9282           29.404           0
+         5       -19872        -9396         2612.986           0
+         6       -15655        -9283           451.03           0
+         7       -10661        -9282            6.224           0
+         8       -12517        -9286          139.135           0
+         9       -98322       -11439          902.055           0
+        10       -10799        -9283           48.676           0
+        11       -12363        -9301          637.534           0
+        12       -14508        -9283          351.338           0
+        13       -43868        -9640           355.96           0
+        14       -16232        -9283          533.467           0
+        15       -31500        -9740         2610.215           0
+        16       -20370        -9292         1060.786           0
+        17       -11134        -9285          318.639           0
+        18       -10926        -9282            0.772           1
+        19       -10626        -9282            7.034           0
+        20       -15909        -9285          436.581           0
+        21       -11002        -9282            1.383           0
+        22       -14731        -9284          917.441           0
+        23       -23973        -9306          570.387           0
+        24       -10966        -9282            0.196           1
+        25       -40260        -9330          969.296           0
+        26       -11555        -9283          160.109           0
+        27       -13481        -9282           12.726           0
+        28       -10296        -9282            0.227           1
+        29       -10641        -9282            2.114           0
+        30       -23519        -9332          484.756           0
+        31       -15629        -9440          5338.33           0
+        32       -24125        -9443         1327.537           0
+        33       -11286        -9282            0.248           1
+        34       -14441        -9527         8641.729           0
+        35       -32714        -9315         2206.831           0
+        36       -23147       -10089         5110.095           0
+        37       -15229        -9296          259.692           0
+        38       -14444        -9285           78.787           0
+        39       -23263        -9615         6048.639           0
+        40       -11152        -9282          132.236           0
+        41       -13169        -9282           37.445           0
+        42       -17733        -9520         2360.763           0
+        43        -9692        -9282            0.102           1
+        44       -13240        -9282           44.137           0
+        45       -13908        -9284          258.318           0
+        46       -21228        -9282           54.272           0
+        47       -27928       -10438        21389.251           0
+        48       -28429        -9284          341.622           0
+        49       -12166        -9283           81.909           0
+        50       -13618        -9295         2731.908           0
+        51       -15957        -9284          275.203           0
+        52       -14219        -9283          845.135           0
+        53       -32744        -9287         1057.725           0
+        54       -14432        -9309          713.878           0
+        55       -10987        -9283          448.738           0
+        56       -12864        -9282            0.957           0
+        57       -20752        -9285          527.693           0
+        58       -26984        -9341          658.457           0
+        59       -14891        -9283           68.436           0
+        60       -21018        -9425         1470.568           0
+        61       -21392        -9430         6203.148           0
+        62       -12133        -9293          902.531           0
+        63       -10735        -9282             0.21           1
+        64       -13955        -9283          372.147           0
+        65       -55765        -9286           612.19           0
+        66       -18021        -9323          171.628           0
+        67       -11039        -9282            0.135           1
+        68       -13822        -9282          165.394           0
+        69       -12196        -9282           10.233           0
+        70       -11979        -9282          237.408           0
+        71       -10444        -9282            0.863           1
+        72       -10888        -9282           27.527           0
+        73       -14962        -9282            2.742           0
+        74       -24844        -9591         2707.064           0
+        75       -22738        -9284         1021.069           0
+        76       -36600        -9340          918.918           0
+        77       -33173        -9372         6324.684           0
+        78       -19100        -9283           47.853           0
+        79       -14770        -9457         7300.434           0
+        80       -10797        -9282            1.899           1
+        81       -40737        -9293          214.158           0
+        82       -37168        -9944         4227.268           0
+        83       -10687        -9282            0.267           1
+        84       -37057        -9374          711.813           0
+        85       -11903        -9282           20.141           0
+        86       -13682        -9282            5.697           0
+        87       -10792        -9282            0.852           1
+        88       -12170        -9282           34.066           0
+        89       -11380        -9282            3.052           0
+        90       -10507        -9282             0.86           1
+        91       -14083        -9287         1049.639           0
+        92      -147213       -10016          533.312           0
+        93       -22701        -9282            8.353           0
+        94       -32530        -9438         2221.797           0
+        95      -204228       -11099          720.051           0
+        96       -45862        -9346         4987.719           0
+        97       -23232        -9306          343.209           0
+        98      -236026       -11290          3950.48           0
+        99      -148563       -10319         2492.239           0
+       100      -249575       -16205         4396.748           0
+       101      -283391       -10303          339.203           0
+Candidate 2 dropped.
+- Failed test 1: Too close to 3 in parameter space.
+Candidate 3 dropped.
+- Failed test 1: Too close to 1, 4, 6, 7, 10, 14, 18, 19, 21, 22, 24,
+  26, 27, 28, 29, 33, 40, 41, 43, 44, 46, 48, 49, 51, 52, 55, 56, 59,
+  63, 64, 67, 68, 69, 70, 71, 72, 73, 75, 78, 80, 83, 85, 86, 87, 88,
+  89, 90, 93 in parameter space.
+Candidate 4 dropped.
+- Failed test 1: Too close to 1, 7, 18, 19, 21, 24, 27, 28, 29, 33, 43,
+  56, 63, 67, 69, 71, 73, 80, 83, 87, 89, 90 in parameter space.
+Candidate 6 dropped.
+- Failed test 1: Too close to 1, 4, 7, 18, 19, 21, 24, 27, 28, 29, 33,
+  40, 41, 43, 44, 46, 49, 55, 56, 59, 63, 67, 68, 69, 70, 71, 72, 73,
+  78, 80, 83, 85, 86, 87, 88, 89, 90, 93 in parameter space.
+Candidate 7 dropped.
+- Failed test 1: Too close to 1, 18, 19, 21, 24, 28, 29, 33, 43, 56,
+  63, 67, 69, 71, 73, 80, 83, 87, 89, 90 in parameter space.
+Candidate 8 dropped.
+- Failed test 1: Too close to 26, 48 in parameter space.
+Candidate 10 dropped.
+- Failed test 1: Too close to 1, 4, 6, 7, 14, 18, 19, 21, 24, 27, 28,
+  29, 33, 40, 41, 43, 44, 46, 49, 55, 56, 59, 63, 67, 68, 69, 70, 71,
+  72, 73, 78, 80, 83, 85, 86, 87, 88, 89, 90, 93 in parameter space.
+Candidate 12 dropped.
+- Failed test 1: Too close to 1, 4, 6, 7, 10, 14, 18, 19, 21, 24, 27,
+  28, 29, 33, 40, 41, 43, 44, 46, 49, 55, 56, 59, 63, 67, 68, 69, 70,
+  71, 72, 73, 78, 80, 83, 85, 86, 87, 88, 89, 90, 93 in parameter
+  space.
+Candidate 14 dropped.
+- Failed test 1: Too close to 1, 4, 6, 7, 18, 19, 21, 24, 27, 28, 29,
+  33, 40, 41, 43, 44, 46, 49, 55, 56, 59, 63, 67, 68, 69, 70, 71, 72,
+  73, 78, 80, 83, 85, 86, 87, 88, 89, 90, 93 in parameter space.
+Candidate 16 dropped.
+- Failed test 1: Too close to 38, 53, 57 in parameter space.
+Candidate 17 dropped.
+- Failed test 1: Too close to 1, 3, 4, 6, 7, 12, 14, 18, 19, 21, 22,
+  24, 27, 28, 29, 33, 40, 41, 43, 44, 46, 48, 49, 51, 52, 55, 56, 59,
+  63, 64, 67, 68, 69, 70, 71, 72, 73, 75, 78, 80, 83, 85, 86, 87, 88,
+  89, 90, 93 in parameter space.
+Candidate 19 dropped.
+- Failed test 1: Too close to 1, 18, 21, 24, 28, 29, 33, 43, 56, 63,
+  67, 69, 71, 73, 80, 83, 87, 89, 90 in parameter space.
+Candidate 20 dropped.
+- Failed test 1: Too close to 1, 4, 6, 7, 10, 12, 14, 18, 19, 21, 22,
+  24, 27, 28, 29, 33, 38, 40, 41, 43, 44, 46, 49, 51, 52, 55, 56, 63,
+  64, 67, 68, 69, 70, 71, 72, 73, 75, 78, 80, 83, 85, 86, 87, 88, 89,
+  90, 93 in parameter space.
+Candidate 21 dropped.
+- Failed test 1: Too close to 1, 18, 24, 28, 29, 33, 43, 56, 63, 67,
+  71, 80, 83, 87, 90 in parameter space.
+Candidate 22 dropped.
+- Failed test 1: Too close to 1, 4, 6, 7, 10, 12, 14, 18, 19, 21, 24,
+  26, 27, 28, 29, 33, 40, 41, 43, 44, 46, 48, 49, 52, 55, 56, 59, 63,
+  64, 67, 68, 69, 70, 71, 72, 73, 75, 78, 80, 83, 85, 86, 87, 88, 89,
+  90, 93 in parameter space.
+Candidate 26 dropped.
+- Failed test 1: Too close to 1, 4, 6, 7, 10, 12, 14, 18, 19, 21, 24,
+  27, 28, 29, 33, 40, 41, 43, 44, 46, 49, 55, 56, 59, 63, 67, 68, 69,
+  70, 71, 72, 73, 78, 80, 83, 85, 86, 87, 88, 89, 90, 93 in parameter
+  space.
+Candidate 27 dropped.
+- Failed test 1: Too close to 1, 7, 18, 19, 21, 24, 28, 29, 33, 43, 56,
+  63, 67, 69, 71, 73, 80, 83, 87, 89, 90 in parameter space.
+Candidate 29 dropped.
+- Failed test 1: Too close to 1, 24, 28, 33, 43, 63, 67, 71 in
+  parameter space.
+Candidate 38 dropped.
+- Failed test 1: Too close to 1, 4, 7, 10, 12, 14, 18, 19, 21, 22, 24,
+  27, 28, 29, 33, 40, 41, 43, 44, 46, 49, 51, 55, 56, 63, 64, 67, 68,
+  69, 70, 71, 72, 73, 75, 78, 80, 83, 85, 86, 87, 88, 89, 90, 93 in
+  parameter space.
+Candidate 40 dropped.
+- Failed test 1: Too close to 1, 4, 7, 18, 19, 21, 24, 27, 28, 29, 33,
+  41, 43, 44, 46, 56, 63, 67, 69, 70, 71, 72, 73, 80, 83, 85, 86, 87,
+  88, 89, 90, 93 in parameter space.
+Candidate 41 dropped.
+- Failed test 1: Too close to 1, 4, 7, 18, 19, 21, 24, 27, 28, 29, 33,
+  43, 56, 63, 67, 69, 71, 73, 80, 83, 86, 87, 89, 90, 93 in parameter
+  space.
+Candidate 44 dropped.
+- Failed test 1: Too close to 1, 4, 7, 18, 19, 21, 24, 27, 28, 29, 33,
+  41, 43, 56, 63, 67, 69, 71, 72, 73, 80, 83, 85, 86, 87, 88, 89, 90,
+  93 in parameter space.
+Candidate 45 dropped.
+- Failed test 1: Too close to 1, 4, 7, 10, 12, 18, 19, 21, 24, 26, 27,
+  28, 29, 33, 40, 41, 43, 44, 46, 55, 56, 63, 67, 68, 69, 70, 71, 72,
+  73, 75, 78, 80, 83, 85, 86, 87, 88, 89, 90, 93 in parameter space.
+Candidate 46 dropped.
+- Failed test 1: Too close to 1, 4, 7, 18, 19, 21, 24, 27, 28, 29, 33,
+  41, 43, 44, 56, 63, 67, 69, 70, 71, 72, 73, 80, 83, 85, 86, 87, 88,
+  89, 90, 93 in parameter space.
+Candidate 48 dropped.
+- Failed test 1: Too close to 1, 4, 6, 7, 10, 12, 14, 18, 19, 21, 24,
+  26, 27, 28, 29, 33, 40, 41, 43, 44, 46, 49, 52, 55, 56, 59, 63, 64,
+  67, 68, 69, 70, 71, 72, 73, 75, 78, 80, 83, 85, 86, 87, 88, 89, 90,
+  93 in parameter space.
+Candidate 49 dropped.
+- Failed test 1: Too close to 1, 4, 7, 18, 19, 21, 24, 27, 28, 29, 33,
+  40, 41, 43, 44, 46, 55, 56, 59, 63, 67, 68, 69, 70, 71, 72, 73, 78,
+  80, 83, 85, 86, 87, 88, 89, 90, 93 in parameter space.
+Candidate 50 dropped.
+- Failed test 1: Too close to 3, 48, 59 in parameter space.
+Candidate 51 dropped.
+- Failed test 1: Too close to 1, 4, 6, 7, 10, 12, 14, 18, 19, 21, 22,
+  24, 26, 27, 28, 29, 33, 40, 41, 43, 44, 46, 48, 49, 52, 55, 56, 59,
+  63, 64, 67, 68, 69, 70, 71, 72, 73, 75, 78, 80, 83, 85, 86, 87, 88,
+  89, 90, 93 in parameter space.
+Candidate 52 dropped.
+- Failed test 1: Too close to 1, 4, 6, 7, 10, 12, 14, 18, 19, 21, 24,
+  26, 27, 28, 29, 33, 40, 41, 43, 44, 46, 49, 55, 56, 59, 63, 64, 67,
+  68, 69, 70, 71, 72, 73, 78, 80, 83, 85, 86, 87, 88, 89, 90, 93 in
+  parameter space.
+Candidate 53 dropped.
+- Failed test 1: Too close to 10, 12, 14, 20, 38, 46, 49, 57, 64, 65,
+  78 in parameter space.
+Candidate 55 dropped.
+- Failed test 1: Too close to 1, 4, 7, 18, 19, 21, 24, 27, 28, 29, 33,
+  40, 41, 43, 44, 46, 56, 63, 67, 68, 69, 70, 71, 72, 73, 78, 80, 83,
+  85, 86, 87, 88, 89, 90, 93 in parameter space.
+Candidate 56 dropped.
+- Failed test 1: Too close to 1, 24, 28, 29, 33, 43, 63, 67, 71, 80,
+  83, 87, 90 in parameter space.
+Candidate 57 dropped.
+- Failed test 1: Too close to 1, 4, 7, 10, 12, 14, 18, 19, 20, 21, 22,
+  24, 27, 28, 29, 33, 38, 40, 41, 43, 44, 46, 49, 55, 56, 63, 64, 67,
+  68, 69, 70, 71, 72, 73, 75, 78, 80, 83, 85, 86, 87, 88, 89, 90, 93 in
+  parameter space.
+Candidate 59 dropped.
+- Failed test 1: Too close to 1, 4, 7, 18, 19, 21, 24, 27, 28, 29, 33,
+  40, 41, 43, 44, 46, 55, 56, 63, 67, 68, 69, 70, 71, 72, 73, 78, 80,
+  83, 85, 86, 87, 88, 89, 90, 93 in parameter space.
+Candidate 64 dropped.
+- Failed test 1: Too close to 1, 4, 6, 7, 10, 12, 14, 18, 19, 21, 24,
+  26, 27, 28, 29, 33, 40, 41, 43, 44, 46, 49, 55, 56, 59, 63, 67, 68,
+  69, 70, 71, 72, 73, 78, 80, 83, 85, 86, 87, 88, 89, 90, 93 in
+  parameter space.
+Candidate 65 dropped.
+- Failed test 1: Too close to 1, 4, 6, 7, 10, 12, 14, 17, 18, 19, 20,
+  21, 22, 24, 27, 28, 29, 33, 38, 40, 41, 43, 44, 46, 49, 51, 55, 56,
+  57, 63, 64, 67, 68, 69, 70, 71, 72, 73, 78, 80, 83, 85, 86, 87, 88,
+  89, 90, 93 in parameter space.
+Candidate 68 dropped.
+- Failed test 1: Too close to 1, 4, 7, 18, 19, 21, 24, 27, 28, 29, 33,
+  40, 41, 43, 44, 46, 56, 63, 67, 69, 70, 71, 72, 73, 80, 83, 85, 86,
+  87, 88, 89, 90, 93 in parameter space.
+Candidate 69 dropped.
+- Failed test 1: Too close to 1, 18, 21, 24, 28, 29, 33, 43, 56, 63,
+  67, 71, 73, 80, 83, 87, 89, 90 in parameter space.
+Candidate 70 dropped.
+- Failed test 1: Too close to 1, 4, 7, 18, 19, 21, 24, 27, 28, 29, 33,
+  41, 43, 44, 56, 63, 67, 69, 71, 72, 73, 80, 83, 85, 86, 87, 88, 89,
+  90, 93 in parameter space.
+Candidate 72 dropped.
+- Failed test 1: Too close to 1, 4, 7, 18, 19, 21, 24, 27, 28, 29, 33,
+  41, 43, 56, 63, 67, 69, 71, 73, 80, 83, 86, 87, 89, 90, 93 in
+  parameter space.
+Candidate 73 dropped.
+- Failed test 1: Too close to 1, 18, 21, 24, 28, 29, 33, 43, 56, 63,
+  67, 71, 80, 83, 87, 90 in parameter space.
+Candidate 75 dropped.
+- Failed test 1: Too close to 1, 4, 6, 7, 10, 12, 14, 18, 19, 21, 24,
+  26, 27, 28, 29, 33, 40, 41, 43, 44, 46, 49, 52, 55, 56, 59, 63, 64,
+  67, 68, 69, 70, 71, 72, 73, 78, 80, 83, 85, 86, 87, 88, 89, 90, 93 in
+  parameter space.
+Candidate 78 dropped.
+- Failed test 1: Too close to 1, 4, 7, 18, 19, 21, 24, 27, 28, 29, 33,
+  40, 41, 43, 44, 46, 56, 63, 67, 68, 69, 70, 71, 72, 73, 80, 83, 85,
+  86, 87, 88, 89, 90, 93 in parameter space.
+Candidate 85 dropped.
+- Failed test 1: Too close to 1, 4, 7, 18, 19, 21, 24, 27, 28, 29, 33,
+  41, 43, 56, 63, 67, 69, 71, 72, 73, 80, 83, 86, 87, 89, 90, 93 in
+  parameter space.
+Candidate 86 dropped.
+- Failed test 1: Too close to 1, 4, 7, 18, 19, 21, 24, 27, 28, 29, 33,
+  43, 56, 63, 67, 69, 71, 73, 80, 83, 87, 89, 90, 93 in parameter
+  space.
+Candidate 88 dropped.
+- Failed test 1: Too close to 1, 4, 7, 18, 19, 21, 24, 27, 28, 29, 33,
+  41, 43, 56, 63, 67, 69, 71, 72, 73, 80, 83, 85, 86, 87, 89, 90, 93 in
+  parameter space.
+Candidate 89 dropped.
+- Failed test 1: Too close to 1, 18, 21, 24, 28, 29, 33, 43, 56, 63,
+  67, 71, 73, 80, 83, 87, 90 in parameter space.
+Candidate 91 dropped.
+- Failed test 1: Too close to 1, 3, 4, 6, 7, 14, 17, 18, 19, 21, 22,
+  24, 27, 28, 29, 33, 41, 43, 49, 51, 52, 56, 59, 63, 64, 65, 67, 69,
+  70, 71, 72, 73, 75, 78, 80, 83, 85, 86, 87, 88, 89, 90, 93 in
+  parameter space.
+Candidate 93 dropped.
+- Failed test 1: Too close to 1, 4, 7, 18, 19, 21, 24, 27, 28, 29, 33,
+  43, 56, 63, 67, 69, 71, 73, 80, 83, 87, 89, 90 in parameter space.
+Best candidate so far (LL=-9282.3)
+
+Stage 2, 40 active candidates.
+Estimating 25 BFGS iteration(s) for each active candidate.
+ Candidate......LLstart.....LLfinish.....GradientNorm...Converged
+         1        -9282        -9282                0           1
+         5        -9396        -9282            0.127           1
+         9       -11439        -9283          115.363           0
+        11        -9301        -9282            0.015           1
+        13        -9640        -9282            0.135           1
+        15        -9740        -9282            4.136           0
+        23        -9306        -9282            0.186           1
+        25        -9330        -9282            0.141           1
+        30        -9332        -9282            0.045           1
+        31        -9440        -9282            0.089           1
+        32        -9443        -9282            0.127           1
+        34        -9527        -9282            0.233           1
+        35        -9315        -9282            0.054           1
+        36       -10089        -9284          318.034           0
+        37        -9296        -9282            0.114           1
+        39        -9615        -9282             8.73           0
+        42        -9520        -9282            0.371           1
+        47       -10438        -9310         3129.644           0
+        54        -9309        -9282            0.038           1
+        58        -9341        -9282            0.106           1
+        60        -9425        -9282            0.016           1
+        61        -9430        -9282            0.018           1
+        62        -9293        -9282            0.038           1
+        66        -9323        -9282            0.047           1
+        74        -9591        -9282            1.879           0
+        76        -9340        -9282            0.182           1
+        77        -9372        -9282             0.16           1
+        79        -9457        -9282            0.109           1
+        81        -9293        -9282            0.071           1
+        82        -9944        -9282           75.903           0
+        84        -9374        -9282            0.335           1
+        92       -10016        -9282            0.571           0
+        94        -9438        -9282             0.64           1
+        95       -11099        -9282            2.956           0
+        96        -9346        -9282            0.178           1
+        97        -9306        -9282            0.031           1
+        98       -11290        -9283           85.416           0
+        99       -10319        -9282            0.889           0
+       100       -16205        -9330         1404.036           0
+       101       -10303        -9282            8.423           0
+Candidate 9 dropped.
+- Failed test 1: Too close to 1, 5, 11, 13, 15, 23, 25, 30, 31, 32, 34,
+  35, 37, 39, 42, 54, 58, 60, 61, 62, 66, 74, 76, 77, 79, 81, 82, 84,
+  92, 94, 95, 96, 97, 99, 101 in parameter space.
+Candidate 15 dropped.
+- Failed test 1: Too close to 1, 5, 11, 13, 23, 25, 30, 31, 32, 34, 35,
+  37, 42, 54, 58, 60, 61, 62, 66, 74, 76, 77, 79, 81, 84, 92, 94, 96,
+  97, 99 in parameter space.
+Candidate 36 dropped.
+- Failed test 1: Too close to 1, 5, 9, 11, 13, 15, 23, 25, 30, 31, 32,
+  34, 35, 37, 39, 42, 54, 58, 60, 61, 62, 66, 74, 76, 77, 79, 81, 82,
+  84, 92, 94, 95, 96, 97, 98, 99, 101 in parameter space.
+Candidate 39 dropped.
+- Failed test 1: Too close to 1, 5, 11, 13, 15, 23, 25, 30, 31, 32, 34,
+  35, 37, 42, 54, 58, 60, 61, 62, 66, 74, 76, 77, 79, 81, 84, 92, 94,
+  96, 97, 99 in parameter space.
+Candidate 74 dropped.
+- Failed test 1: Too close to 1, 5, 11, 13, 23, 25, 30, 31, 32, 34, 35,
+  37, 42, 54, 58, 60, 61, 62, 66, 76, 77, 79, 81, 84, 92, 94, 96, 97,
+  99 in parameter space.
+Candidate 82 dropped.
+- Failed test 1: Too close to 1, 5, 11, 13, 15, 23, 25, 30, 31, 32, 34,
+  35, 37, 39, 42, 54, 58, 60, 61, 62, 66, 74, 76, 77, 79, 81, 84, 92,
+  94, 95, 96, 97, 99, 101 in parameter space.
+Candidate 92 dropped.
+- Failed test 1: Too close to 1, 5, 11, 13, 23, 25, 30, 31, 32, 34, 35,
+  37, 42, 54, 58, 60, 61, 62, 66, 76, 77, 79, 81, 84, 94, 96, 97 in
+  parameter space.
+Candidate 95 dropped.
+- Failed test 1: Too close to 1, 5, 11, 13, 15, 23, 25, 30, 31, 32, 34,
+  35, 37, 39, 42, 54, 58, 60, 61, 62, 66, 74, 76, 77, 79, 81, 84, 92,
+  94, 96, 97, 99 in parameter space.
+Candidate 98 dropped.
+- Failed test 1: Too close to 1, 5, 9, 11, 13, 15, 23, 25, 30, 31, 32,
+  34, 35, 37, 39, 42, 54, 58, 60, 61, 62, 66, 74, 76, 77, 79, 81, 82,
+  84, 92, 94, 95, 96, 97, 99, 101 in parameter space.
+Candidate 99 dropped.
+- Failed test 1: Too close to 1, 5, 11, 13, 23, 25, 30, 31, 32, 34, 35,
+  37, 42, 54, 58, 60, 61, 62, 66, 76, 77, 79, 81, 84, 92, 94, 96, 97 in
+  parameter space.
+Candidate 101 dropped.
+- Failed test 1: Too close to 1, 5, 11, 13, 15, 23, 25, 30, 31, 32, 34,
+  35, 37, 39, 42, 54, 58, 60, 61, 62, 66, 74, 76, 77, 79, 81, 84, 92,
+  94, 95, 96, 97, 99 in parameter space.
+Best candidate so far (LL=-9282.3)
+
+Stage 3, 3 active candidates.
+Estimating 25 BFGS iteration(s) for each active candidate.
+ Candidate......LLstart.....LLfinish.....GradientNorm...Converged
+        47        -9310        -9282            0.079           1
+        61        -9282        -9282                0           1
+       100        -9330        -9282            0.209           1
+Best candidate so far (LL=-9282.3)
+  n_points n_best n_within_tol did_best_conv
+1      101    101          101          TRUE
+Search-Start Execution Complete 
+Using  32 cores. 
+Search-Start Post-Processing Complete 
+Starting main estimation 
+WARNING: Object get_nl_spec from the global environment should not be
+  used inside apollo_probabilities. If needed, save it inside
+  apollo_inputs and call it as apollo_inputs$get_nl_spec. 
+Preparing user-defined functions.
+
+Testing likelihood function...
+
+Overview of choices for NL model component :
+                                    cvC1    cvC2    cvC3   hevC1   hevC2
+Times available                  1311.00 1389.00 1340.00 1403.00 1348.00
+Times chosen                      478.00  497.00  495.00  546.00  485.00
+Percentage chosen overall           4.34    4.51    4.50    4.96    4.41
+Percentage chosen when available   36.46   35.78   36.94   38.92   35.98
+                                   hevC3 phev20C1 phev20C2 phev20C3 phev40C1
+Times available                  1371.00  1400.00  1342.00  1367.00  1443.00
+Times chosen                      541.00   494.00   507.00   518.00   558.00
+Percentage chosen overall           4.91     4.49     4.60     4.70     5.07
+Percentage chosen when available   39.46    35.29    37.78    37.89    38.67
+                                 phev40C2 phev40C3 bev100C1 bev100C2 bev100C3
+Times available                   1278.00  1369.00  1345.00  1320.00  1359.00
+Times chosen                       488.00   537.00   313.00   299.00   305.00
+Percentage chosen overall            4.43     4.88     2.84     2.72     2.77
+Percentage chosen when available    38.18    39.23    23.27    22.65    22.44
+                                 bev150C1 bev150C2 bev150C3 bev300C1 bev300C2
+Times available                   1357.00  1472.00  1410.00  1357.00  1459.00
+Times chosen                       363.00   389.00   336.00   449.00   487.00
+Percentage chosen overall            3.30     3.53     3.05     4.08     4.42
+Percentage chosen when available    26.75    26.43    23.83    33.09    33.38
+                                 bev300C3 bev400C1 bev400C2 bev400C3
+Times available                   1396.00  1394.00  1402.00  1398.00
+Times chosen                       441.00   469.00   525.00   490.00
+Percentage chosen overall            4.01     4.26     4.77     4.45
+Percentage chosen when available    31.59    33.64    37.45    35.05
+
+Nesting structure for NL model component :
+Nest: root (1)
+|-Nest: ICE (0.7559)
+|  |-Alternative: cvC1
+|  |-Alternative: cvC2
+|  |-Alternative: cvC3
+|  |-Alternative: hevC1
+|  |-Alternative: hevC2
+|  '-Alternative: hevC3
+|-Nest: PHEV (0.5888)
+|  |-Alternative: phev20C1
+|  |-Alternative: phev20C2
+|  |-Alternative: phev20C3
+|  |-Alternative: phev40C1
+|  |-Alternative: phev40C2
+|  '-Alternative: phev40C3
+'-Nest: BEV (0.8194)
+   |-Alternative: bev100C1
+   |-Alternative: bev100C2
+   |-Alternative: bev100C3
+   |-Alternative: bev150C1
+   |-Alternative: bev150C2
+   |-Alternative: bev150C3
+   |-Alternative: bev300C1
+   |-Alternative: bev300C2
+   |-Alternative: bev300C3
+   |-Alternative: bev400C1
+   |-Alternative: bev400C2
+   '-Alternative: bev400C3
+
+Pre-processing likelihood function...
+Creating cluster...
+INFORMATION: While preparing your inputs for multi-core estimation, the
+  following objects were found in "apollo_inputs", but were not split
+  across cores: "attrCols", "availCols", "heterogeneity_spec",
+  "lognorm_price_dist", "n_classes", "n_draws", "nesting_params",
+  "nesting_spec", "observed_attributes", "scalingFactor_dist",
+  "utility_space". If these objects contain observation or
+  individual-specific data, and thus need to be split, please add a
+  column with the IDs to these objects, and call this column "ID" 
+Preparing workers for multithreading...
+
+Testing influence of parameters................
+Starting main estimation
+initial  value 9282.278321 
+iter   2 value 9282.278321
+iter   3 value 9282.278321
+iter   4 value 9282.278321
+iter   5 value 9282.278321
+iter   6 value 9282.278321
+iter   7 value 9282.278321
+iter   8 value 9282.278321
+iter   9 value 9282.278321
+iter  10 value 9282.278321
+iter  11 value 9282.278321
+iter  12 value 9282.278321
+iter  13 value 9282.278321
+iter  14 value 9282.278321
+iter  15 value 9282.278321
+iter  16 value 9282.278321
+iter  17 value 9282.278321
+iter  18 value 9282.278321
+iter  19 value 9282.278321
+iter  20 value 9282.278321
+iter  20 value 9282.278321
+iter  20 value 9282.278321
+final  value 9282.278321 
+converged
+
+Estimated parameters with approximate standard errors from BHHH matrix:
+                  Estimate     BHHH se BHH t-ratio (0)
+b_Price           -0.05866  7.6347e-04         -76.838
+b_Acceleration    -0.07352    0.004224         -17.404
+b_OpCost          -0.11002    0.002984         -36.874
+b_hev              0.06517    0.030086           2.166
+b_phev20           0.03546    0.031029           1.143
+b_phev40           0.13450    0.032200           4.177
+b_bev             -0.21118    0.024531          -8.608
+b_bevRangeRel      0.27287    0.008172          33.392
+b_noBEVFC         -0.23786    0.025762          -9.233
+b_american        -0.10538    0.022432          -4.698
+b_chinese         -1.08615    0.022381         -48.530
+b_japanese        -0.04745    0.020370          -2.329
+b_skorean         -0.34395    0.022425         -15.338
+lambda_ICE         0.75590    0.030508          24.777
+lambda_PHEV        0.58879    0.021767          27.050
+lambda_BEV         0.81935    0.019620          41.761
+
+Final LL: -9282.2783
+
+Nesting structure for NL model component :
+Nest: root (1)
+|-Nest: ICE (0.7559)
+|  |-Alternative: cvC1
+|  |-Alternative: cvC2
+|  |-Alternative: cvC3
+|  |-Alternative: hevC1
+|  |-Alternative: hevC2
+|  '-Alternative: hevC3
+|-Nest: PHEV (0.5888)
+|  |-Alternative: phev20C1
+|  |-Alternative: phev20C2
+|  |-Alternative: phev20C3
+|  |-Alternative: phev40C1
+|  |-Alternative: phev40C2
+|  '-Alternative: phev40C3
+'-Nest: BEV (0.8194)
+   |-Alternative: bev100C1
+   |-Alternative: bev100C2
+   |-Alternative: bev100C3
+   |-Alternative: bev150C1
+   |-Alternative: bev150C2
+   |-Alternative: bev150C3
+   |-Alternative: bev300C1
+   |-Alternative: bev300C2
+   |-Alternative: bev300C3
+   |-Alternative: bev400C1
+   |-Alternative: bev400C2
+   '-Alternative: bev400C3
+
+Calculating log-likelihood at equal shares (LL(0)) for applicable
+  models...
+Calculating LL of each model component...
+Calculating other model fit measures
+Computing covariance matrix using numerical methods (numDeriv).
+ 0%....25%....50%....75%....100%
+Negative definite Hessian with maximum eigenvalue: -164.658178
+
+Please acknowledge the use of Apollo by citing Hess & Palma (2019) -
+  doi.org/10.1016/j.jocm.2019.100170
+Model output saved to logs/job_35887057/NL_NL_pref/NL_NL_pref_output.txt 
+Estimates saved to logs/job_35887057/NL_NL_pref/NL_NL_pref_estimates.csv 
+Model object saved to logs/job_35887057/NL_NL_pref/NL_NL_pref.rds 
+[1] TRUE
+Starting Cross-Validation 
+Testing likelihood function.
+5 separate runs will be conducted, each using a random subset of 80% of
+  individuals for estimation, and the remainder for validation.
+Number of individuals
+- for estimation : 587
+- for forecasting : 147
+- in sample (total): 734
+Estimated parameters and log-likelihoods for each sample will be
+  written to:
+  logs/job_35887057/NL_NL_pref/NL_NL_pref_outOfSample_params.csv
+The matrix defining the observations used in each repetition will be
+  written to:
+  logs/job_35887057/NL_NL_pref/NL_NL_pref_outOfSample_samples.csv
+
+Estimation cycle 1 (8805 obs.)
+WARNING: Object get_nl_spec from the global environment should not be
+  used inside apollo_probabilities. If needed, save it inside
+  apollo_inputs and call it as apollo_inputs$get_nl_spec. 
+INFORMATION: While preparing your inputs for multi-core estimation, the
+  following objects were found in "apollo_inputs", but were not split
+  across cores: "attrCols", "availCols", "heterogeneity_spec",
+  "lognorm_price_dist", "n_classes", "n_draws", "nesting_params",
+  "nesting_spec", "observed_attributes", "scalingFactor_dist",
+  "utility_space". If these objects contain observation or
+  individual-specific data, and thus need to be split, please add a
+  column with the IDs to these objects, and call this column "ID" 
+Saving CV model as: NL_NL_pref_CV01
+Model output saved to logs/job_35887057/NL_NL_pref/NL_NL_pref_CV01_output.txt 
+Estimates saved to logs/job_35887057/NL_NL_pref/NL_NL_pref_CV01_estimates.csv 
+Model object saved to logs/job_35887057/NL_NL_pref/NL_NL_pref_CV01.rds 
+Out-of-sample time: 0.028
+Iter. total wall time: 149.504 secs
+Estimation results written to file.
+Estimation cycle 2 (8805 obs.)
+WARNING: Object get_nl_spec from the global environment should not be
+  used inside apollo_probabilities. If needed, save it inside
+  apollo_inputs and call it as apollo_inputs$get_nl_spec. 
+INFORMATION: While preparing your inputs for multi-core estimation, the
+  following objects were found in "apollo_inputs", but were not split
+  across cores: "attrCols", "availCols", "heterogeneity_spec",
+  "lognorm_price_dist", "n_classes", "n_draws", "nesting_params",
+  "nesting_spec", "observed_attributes", "scalingFactor_dist",
+  "utility_space". If these objects contain observation or
+  individual-specific data, and thus need to be split, please add a
+  column with the IDs to these objects, and call this column "ID" 
+Saving CV model as: NL_NL_pref_CV02
+Model output saved to logs/job_35887057/NL_NL_pref/NL_NL_pref_CV02_output.txt 
+Estimates saved to logs/job_35887057/NL_NL_pref/NL_NL_pref_CV02_estimates.csv 
+Model object saved to logs/job_35887057/NL_NL_pref/NL_NL_pref_CV02.rds 
+Out-of-sample time: 0.027
+Iter. total wall time: 150.5558 secs
+Estimation results written to file.
+Estimation cycle 3 (8805 obs.)
+WARNING: Object get_nl_spec from the global environment should not be
+  used inside apollo_probabilities. If needed, save it inside
+  apollo_inputs and call it as apollo_inputs$get_nl_spec. 
+INFORMATION: While preparing your inputs for multi-core estimation, the
+  following objects were found in "apollo_inputs", but were not split
+  across cores: "attrCols", "availCols", "heterogeneity_spec",
+  "lognorm_price_dist", "n_classes", "n_draws", "nesting_params",
+  "nesting_spec", "observed_attributes", "scalingFactor_dist",
+  "utility_space". If these objects contain observation or
+  individual-specific data, and thus need to be split, please add a
+  column with the IDs to these objects, and call this column "ID" 
+Saving CV model as: NL_NL_pref_CV03
+Model output saved to logs/job_35887057/NL_NL_pref/NL_NL_pref_CV03_output.txt 
+Estimates saved to logs/job_35887057/NL_NL_pref/NL_NL_pref_CV03_estimates.csv 
+Model object saved to logs/job_35887057/NL_NL_pref/NL_NL_pref_CV03.rds 
+Out-of-sample time: 0.024
+Iter. total wall time: 149.5947 secs
+Estimation results written to file.
+Estimation cycle 4 (8805 obs.)
+WARNING: Object get_nl_spec from the global environment should not be
+  used inside apollo_probabilities. If needed, save it inside
+  apollo_inputs and call it as apollo_inputs$get_nl_spec. 
+INFORMATION: While preparing your inputs for multi-core estimation, the
+  following objects were found in "apollo_inputs", but were not split
+  across cores: "attrCols", "availCols", "heterogeneity_spec",
+  "lognorm_price_dist", "n_classes", "n_draws", "nesting_params",
+  "nesting_spec", "observed_attributes", "scalingFactor_dist",
+  "utility_space". If these objects contain observation or
+  individual-specific data, and thus need to be split, please add a
+  column with the IDs to these objects, and call this column "ID" 
+Saving CV model as: NL_NL_pref_CV04
+Model output saved to logs/job_35887057/NL_NL_pref/NL_NL_pref_CV04_output.txt 
+Estimates saved to logs/job_35887057/NL_NL_pref/NL_NL_pref_CV04_estimates.csv 
+Model object saved to logs/job_35887057/NL_NL_pref/NL_NL_pref_CV04.rds 
+Out-of-sample time: 0.024
+Iter. total wall time: 156.8759 secs
+Estimation results written to file.
+Estimation cycle 5 (8805 obs.)
+WARNING: Object get_nl_spec from the global environment should not be
+  used inside apollo_probabilities. If needed, save it inside
+  apollo_inputs and call it as apollo_inputs$get_nl_spec. 
+INFORMATION: While preparing your inputs for multi-core estimation, the
+  following objects were found in "apollo_inputs", but were not split
+  across cores: "attrCols", "availCols", "heterogeneity_spec",
+  "lognorm_price_dist", "n_classes", "n_draws", "nesting_params",
+  "nesting_spec", "observed_attributes", "scalingFactor_dist",
+  "utility_space". If these objects contain observation or
+  individual-specific data, and thus need to be split, please add a
+  column with the IDs to these objects, and call this column "ID" 
+Saving CV model as: NL_NL_pref_CV05
+Model output saved to logs/job_35887057/NL_NL_pref/NL_NL_pref_CV05_output.txt 
+Estimates saved to logs/job_35887057/NL_NL_pref/NL_NL_pref_CV05_estimates.csv 
+Model object saved to logs/job_35887057/NL_NL_pref/NL_NL_pref_CV05.rds 
+Out-of-sample time: 0.029
+Iter. total wall time: 150.5929 secs
+Estimation results written to file.
+Processing time: 12.62683 mins
+
+Summary of cross-validation:
+         LL per obs in estimation sample LL per obs in validation sample
+sample_1                         -0.8491                         -0.8222
+sample_2                         -0.8534                         -0.8055
+sample_3                         -0.8412                         -0.8548
+sample_4                         -0.8082                         -0.9862
+sample_5                         -0.8494                         -0.8221
+Average                          -0.8402                         -0.8581
+         % difference CPU sec in validation sample
+sample_1       -3.162                      0.02800
+sample_2       -5.619                      0.02700
+sample_3        1.619                      0.02400
+sample_4       22.026                      0.02400
+sample_5       -3.213                      0.02900
+Average         2.330                      0.02640
+Cross-Validation Complete 
+Starting Psi' on Dataset Test 
+Mean Psi' (all) =  0.1564578 
+Mean Psi' (chosen only) =  0.1692363 
+Saved psi' dataset to:  logs/job_35887057/NL_NL_pref//NL_NL_pref_psi_prime_dataset.csv 
+Psi' on Dataset Test Complete
+Starting Speed Test 
+       ___Draws___              sec/
+nCores inter intra  progress  LLCall RAM(MB)
+     1     0     0 ..........   0.34   965.4
+     2     0     0 INFORMATION: While preparing your inputs for multi-core estimation, the
+  following objects were found in "apollo_inputs", but were not split
+  across cores: "attrCols", "availCols", "heterogeneity_spec",
+  "lognorm_price_dist", "n_classes", "n_draws", "nesting_params",
+  "nesting_spec", "observed_attributes", "scalingFactor_dist",
+  "utility_space". If these objects contain observation or
+  individual-specific data, and thus need to be split, please add a
+  column with the IDs to these objects, and call this column "ID" 
+..........   0.73  1342.3
+     4     0     0 INFORMATION: While preparing your inputs for multi-core estimation, the
+  following objects were found in "apollo_inputs", but were not split
+  across cores: "attrCols", "availCols", "heterogeneity_spec",
+  "lognorm_price_dist", "n_classes", "n_draws", "nesting_params",
+  "nesting_spec", "observed_attributes", "scalingFactor_dist",
+  "utility_space". If these objects contain observation or
+  individual-specific data, and thus need to be split, please add a
+  column with the IDs to these objects, and call this column "ID" 
+..........   0.68  1707.3
+
+Summary of results (sec. per call to LL function)
+       draws0
+cores1 0.3418
+cores2 0.7334
+cores4 0.6826
+  model_name cores inter_draws intra_draws calls time_per_call ram_mb
+1 NL_NL_pref     1           0           0   100     0.3417941  965.4
+2 NL_NL_pref     2           0           0   100     0.7333929 1342.3
+3 NL_NL_pref     4           0           0   100     0.6826277 1707.3
+Saved speed test results to: logs/job_35887057/NL_NL_pref//NL_NL_pref_speedTest.csv 
+Saved detailed speed test results to: logs/job_35887057/NL_NL_pref//NL_NL_pref_speedTest_detailed.csv 
+Speed Test Complete 
+Starting Psi' Test 
+Psi' Test Complete 
+Starting Func Eval Timing 
+Func Eval Timing Complete 
+NL_NL_pref done.
+Results saved to: logs/job_35887057/NL_NL_pref 
+Done Running. Log files moved to logs/job_35887057/

@@ -1,0 +1,389 @@
+Model run by jvicente using Apollo 0.3.6 on R 4.4.1 for Linux.
+Please acknowledge the use of Apollo by citing Hess & Palma (2019)
+  DOI 10.1016/j.jocm.2019.100170
+  www.ApolloChoiceModelling.com
+
+Model name                                  : MNL_none_pref_CV03
+Model description                           : No model description provided in apollo_control
+Model run at                                : 2025-11-10 09:56:50.653414
+Estimation method                           : bfgs
+Estimation diagnosis                        : successful convergence
+Optimisation diagnosis                      : Unknown (no Hessian requested by user)
+Number of individuals                       : 587
+Number of rows in database                  : 8805
+Number of modelled outcomes                 : 8805
+
+Number of cores used                        :  32 
+Model without mixing
+
+LL(start)                                   : -7448.17
+LL at equal shares, LL(0)                   : -9795.09
+LL at observed shares, LL(C)                : Not applicable
+LL(final)                                   : -7441.44
+Rho-squared vs equal shares                  :  0.2403 
+Adj.Rho-squared vs equal shares              :  0.239 
+Rho-squared vs observed shares               :  Not applicable 
+Adj.Rho-squared vs observed shares           :  Not applicable 
+AIC                                         :  14908.87 
+BIC                                         :  15000.95 
+
+Estimated parameters                        : 13
+Time taken (hh:mm:ss)                       :  00:02:6.54 
+     pre-estimation                         :  00:01:21.76 
+     estimation                             :  00:00:44.58 
+     post-estimation                        :  00:00:0.19 
+Iterations                                  :  20  
+
+Unconstrained optimisation.
+
+Estimates:
+                  Estimate        s.e.   t.rat.(0)    Rob.s.e. Rob.t.rat.(0)
+b_Price           -0.06970          NA          NA          NA            NA
+b_Acceleration    -0.08005          NA          NA          NA            NA
+b_OpCost          -0.12896          NA          NA          NA            NA
+b_hev              0.09566          NA          NA          NA            NA
+b_phev20           0.02303          NA          NA          NA            NA
+b_phev40           0.14713          NA          NA          NA            NA
+b_bev             -0.19499          NA          NA          NA            NA
+b_bevRangeRel      0.31647          NA          NA          NA            NA
+b_noBEVFC         -0.21579          NA          NA          NA            NA
+b_american        -0.11642          NA          NA          NA            NA
+b_chinese         -1.26805          NA          NA          NA            NA
+b_japanese        -0.04232          NA          NA          NA            NA
+b_skorean         -0.39925          NA          NA          NA            NA
+
+
+Overview of choices for MNL model component :
+                                      C1      C2     C3
+Times available                  8805.00 8805.00 8805.0
+Times chosen                     2908.00 2956.00 2941.0
+Percentage chosen overall          33.03   33.57   33.4
+Percentage chosen when available   33.03   33.57   33.4
+
+
+
+Classical covariance matrix:
+                      b_Price b_Acceleration       b_OpCost          b_hev
+b_Price                    NA             NA             NA             NA
+b_Acceleration             NA             NA             NA             NA
+b_OpCost                   NA             NA             NA             NA
+b_hev                      NA             NA             NA             NA
+b_phev20                   NA             NA             NA             NA
+b_phev40                   NA             NA             NA             NA
+b_bev                      NA             NA             NA             NA
+b_bevRangeRel              NA             NA             NA             NA
+b_noBEVFC                  NA             NA             NA             NA
+b_american                 NA             NA             NA             NA
+b_chinese                  NA             NA             NA             NA
+b_japanese                 NA             NA             NA             NA
+b_skorean                  NA             NA             NA             NA
+                     b_phev20       b_phev40          b_bev  b_bevRangeRel
+b_Price                    NA             NA             NA             NA
+b_Acceleration             NA             NA             NA             NA
+b_OpCost                   NA             NA             NA             NA
+b_hev                      NA             NA             NA             NA
+b_phev20                   NA             NA             NA             NA
+b_phev40                   NA             NA             NA             NA
+b_bev                      NA             NA             NA             NA
+b_bevRangeRel              NA             NA             NA             NA
+b_noBEVFC                  NA             NA             NA             NA
+b_american                 NA             NA             NA             NA
+b_chinese                  NA             NA             NA             NA
+b_japanese                 NA             NA             NA             NA
+b_skorean                  NA             NA             NA             NA
+                    b_noBEVFC     b_american      b_chinese     b_japanese
+b_Price                    NA             NA             NA             NA
+b_Acceleration             NA             NA             NA             NA
+b_OpCost                   NA             NA             NA             NA
+b_hev                      NA             NA             NA             NA
+b_phev20                   NA             NA             NA             NA
+b_phev40                   NA             NA             NA             NA
+b_bev                      NA             NA             NA             NA
+b_bevRangeRel              NA             NA             NA             NA
+b_noBEVFC                  NA             NA             NA             NA
+b_american                 NA             NA             NA             NA
+b_chinese                  NA             NA             NA             NA
+b_japanese                 NA             NA             NA             NA
+b_skorean                  NA             NA             NA             NA
+                    b_skorean
+b_Price                    NA
+b_Acceleration             NA
+b_OpCost                   NA
+b_hev                      NA
+b_phev20                   NA
+b_phev40                   NA
+b_bev                      NA
+b_bevRangeRel              NA
+b_noBEVFC                  NA
+b_american                 NA
+b_chinese                  NA
+b_japanese                 NA
+b_skorean                  NA
+
+Robust covariance matrix:
+                      b_Price b_Acceleration       b_OpCost          b_hev
+b_Price                    NA             NA             NA             NA
+b_Acceleration             NA             NA             NA             NA
+b_OpCost                   NA             NA             NA             NA
+b_hev                      NA             NA             NA             NA
+b_phev20                   NA             NA             NA             NA
+b_phev40                   NA             NA             NA             NA
+b_bev                      NA             NA             NA             NA
+b_bevRangeRel              NA             NA             NA             NA
+b_noBEVFC                  NA             NA             NA             NA
+b_american                 NA             NA             NA             NA
+b_chinese                  NA             NA             NA             NA
+b_japanese                 NA             NA             NA             NA
+b_skorean                  NA             NA             NA             NA
+                     b_phev20       b_phev40          b_bev  b_bevRangeRel
+b_Price                    NA             NA             NA             NA
+b_Acceleration             NA             NA             NA             NA
+b_OpCost                   NA             NA             NA             NA
+b_hev                      NA             NA             NA             NA
+b_phev20                   NA             NA             NA             NA
+b_phev40                   NA             NA             NA             NA
+b_bev                      NA             NA             NA             NA
+b_bevRangeRel              NA             NA             NA             NA
+b_noBEVFC                  NA             NA             NA             NA
+b_american                 NA             NA             NA             NA
+b_chinese                  NA             NA             NA             NA
+b_japanese                 NA             NA             NA             NA
+b_skorean                  NA             NA             NA             NA
+                    b_noBEVFC     b_american      b_chinese     b_japanese
+b_Price                    NA             NA             NA             NA
+b_Acceleration             NA             NA             NA             NA
+b_OpCost                   NA             NA             NA             NA
+b_hev                      NA             NA             NA             NA
+b_phev20                   NA             NA             NA             NA
+b_phev40                   NA             NA             NA             NA
+b_bev                      NA             NA             NA             NA
+b_bevRangeRel              NA             NA             NA             NA
+b_noBEVFC                  NA             NA             NA             NA
+b_american                 NA             NA             NA             NA
+b_chinese                  NA             NA             NA             NA
+b_japanese                 NA             NA             NA             NA
+b_skorean                  NA             NA             NA             NA
+                    b_skorean
+b_Price                    NA
+b_Acceleration             NA
+b_OpCost                   NA
+b_hev                      NA
+b_phev20                   NA
+b_phev40                   NA
+b_bev                      NA
+b_bevRangeRel              NA
+b_noBEVFC                  NA
+b_american                 NA
+b_chinese                  NA
+b_japanese                 NA
+b_skorean                  NA
+
+Classical correlation matrix:
+                      b_Price b_Acceleration       b_OpCost          b_hev
+b_Price                    NA             NA             NA             NA
+b_Acceleration             NA             NA             NA             NA
+b_OpCost                   NA             NA             NA             NA
+b_hev                      NA             NA             NA             NA
+b_phev20                   NA             NA             NA             NA
+b_phev40                   NA             NA             NA             NA
+b_bev                      NA             NA             NA             NA
+b_bevRangeRel              NA             NA             NA             NA
+b_noBEVFC                  NA             NA             NA             NA
+b_american                 NA             NA             NA             NA
+b_chinese                  NA             NA             NA             NA
+b_japanese                 NA             NA             NA             NA
+b_skorean                  NA             NA             NA             NA
+                     b_phev20       b_phev40          b_bev  b_bevRangeRel
+b_Price                    NA             NA             NA             NA
+b_Acceleration             NA             NA             NA             NA
+b_OpCost                   NA             NA             NA             NA
+b_hev                      NA             NA             NA             NA
+b_phev20                   NA             NA             NA             NA
+b_phev40                   NA             NA             NA             NA
+b_bev                      NA             NA             NA             NA
+b_bevRangeRel              NA             NA             NA             NA
+b_noBEVFC                  NA             NA             NA             NA
+b_american                 NA             NA             NA             NA
+b_chinese                  NA             NA             NA             NA
+b_japanese                 NA             NA             NA             NA
+b_skorean                  NA             NA             NA             NA
+                    b_noBEVFC     b_american      b_chinese     b_japanese
+b_Price                    NA             NA             NA             NA
+b_Acceleration             NA             NA             NA             NA
+b_OpCost                   NA             NA             NA             NA
+b_hev                      NA             NA             NA             NA
+b_phev20                   NA             NA             NA             NA
+b_phev40                   NA             NA             NA             NA
+b_bev                      NA             NA             NA             NA
+b_bevRangeRel              NA             NA             NA             NA
+b_noBEVFC                  NA             NA             NA             NA
+b_american                 NA             NA             NA             NA
+b_chinese                  NA             NA             NA             NA
+b_japanese                 NA             NA             NA             NA
+b_skorean                  NA             NA             NA             NA
+                    b_skorean
+b_Price                    NA
+b_Acceleration             NA
+b_OpCost                   NA
+b_hev                      NA
+b_phev20                   NA
+b_phev40                   NA
+b_bev                      NA
+b_bevRangeRel              NA
+b_noBEVFC                  NA
+b_american                 NA
+b_chinese                  NA
+b_japanese                 NA
+b_skorean                  NA
+
+Robust correlation matrix:
+                      b_Price b_Acceleration       b_OpCost          b_hev
+b_Price                    NA             NA             NA             NA
+b_Acceleration             NA             NA             NA             NA
+b_OpCost                   NA             NA             NA             NA
+b_hev                      NA             NA             NA             NA
+b_phev20                   NA             NA             NA             NA
+b_phev40                   NA             NA             NA             NA
+b_bev                      NA             NA             NA             NA
+b_bevRangeRel              NA             NA             NA             NA
+b_noBEVFC                  NA             NA             NA             NA
+b_american                 NA             NA             NA             NA
+b_chinese                  NA             NA             NA             NA
+b_japanese                 NA             NA             NA             NA
+b_skorean                  NA             NA             NA             NA
+                     b_phev20       b_phev40          b_bev  b_bevRangeRel
+b_Price                    NA             NA             NA             NA
+b_Acceleration             NA             NA             NA             NA
+b_OpCost                   NA             NA             NA             NA
+b_hev                      NA             NA             NA             NA
+b_phev20                   NA             NA             NA             NA
+b_phev40                   NA             NA             NA             NA
+b_bev                      NA             NA             NA             NA
+b_bevRangeRel              NA             NA             NA             NA
+b_noBEVFC                  NA             NA             NA             NA
+b_american                 NA             NA             NA             NA
+b_chinese                  NA             NA             NA             NA
+b_japanese                 NA             NA             NA             NA
+b_skorean                  NA             NA             NA             NA
+                    b_noBEVFC     b_american      b_chinese     b_japanese
+b_Price                    NA             NA             NA             NA
+b_Acceleration             NA             NA             NA             NA
+b_OpCost                   NA             NA             NA             NA
+b_hev                      NA             NA             NA             NA
+b_phev20                   NA             NA             NA             NA
+b_phev40                   NA             NA             NA             NA
+b_bev                      NA             NA             NA             NA
+b_bevRangeRel              NA             NA             NA             NA
+b_noBEVFC                  NA             NA             NA             NA
+b_american                 NA             NA             NA             NA
+b_chinese                  NA             NA             NA             NA
+b_japanese                 NA             NA             NA             NA
+b_skorean                  NA             NA             NA             NA
+                    b_skorean
+b_Price                    NA
+b_Acceleration             NA
+b_OpCost                   NA
+b_hev                      NA
+b_phev20                   NA
+b_phev40                   NA
+b_bev                      NA
+b_bevRangeRel              NA
+b_noBEVFC                  NA
+b_american                 NA
+b_chinese                  NA
+b_japanese                 NA
+b_skorean                  NA
+
+ 20 most extreme outliers in terms of lowest average per choice prediction:
+   ID Avg prob per choice
+ 1808         0.002093703
+  739         0.002791469
+ 1989         0.004464352
+  982         0.005968366
+  396         0.007062799
+   79         0.013370177
+ 1799         0.013613565
+  130         0.017378455
+  310         0.018549096
+ 1746         0.019643089
+  918         0.020362308
+  815         0.023075303
+   21         0.025534946
+  534         0.028975209
+  387         0.032727929
+  777         0.034028298
+  923         0.034711040
+  738         0.035965343
+  439         0.036084838
+  116         0.039312519
+
+Settings and functions used in model definition:
+
+apollo_control
+--------------
+                       Value                                            
+modelName              "MNL_none_pref_CV03"                             
+indivID                "ID"                                             
+panelData              "TRUE"                                           
+weights                "Weight2018"                                     
+outputDirectory        "logs/job_35887057/MNL_none_pref/"               
+nCores                 "32"                                             
+noModification         "TRUE"                                           
+calculateLLC           "FALSE"                                          
+workInLogs             "TRUE"                                           
+mixing                 "FALSE"                                          
+debug                  "FALSE"                                          
+modelDescr             "No model description provided in apollo_control"
+seed                   "13"                                             
+HB                     "FALSE"                                          
+noValidation           "TRUE"                                           
+noDiagnostics          "TRUE"                                           
+analyticHessian        "FALSE"                                          
+memorySaver            "FALSE"                                          
+analyticGrad           "FALSE"                                          
+analyticGrad_manualSet "TRUE"                                           
+overridePanel          "FALSE"                                          
+preventOverridePanel   "FALSE"                                          
+
+Hessian routines attempted
+--------------------------
+none
+
+
+apollo_probabilities
+----------------------
+function (apollo_beta, apollo_inputs, functionality = "estimate") 
+{
+    apollo_attach(apollo_beta, apollo_inputs)
+    on.exit(apollo_detach(apollo_beta, apollo_inputs))
+    V <- list()
+    alternatives <- unique(gsub("^.*C", "C", apollo_inputs$availCols))
+    alt_codes <- setNames(seq_along(alternatives), alternatives)
+    for (altName in alternatives) {
+        if (tolower(apollo_inputs$utility_space) == "wtp") {
+            attrs_no_price <- setdiff(apollo_inputs$observed_attributes, 
+                "Price")
+            attr_terms <- paste0("wtp_", attrs_no_price, " * ", 
+                attrs_no_price, altName, collapse = " + ")
+            v_expr <- paste0("scalingFactor * (", attr_terms, 
+                " - Price", altName, ")")
+        }
+        else {
+            attr_terms <- paste0("b_", apollo_inputs$observed_attributes, 
+                " * ", apollo_inputs$observed_attributes, altName, 
+                collapse = " + ")
+            v_expr <- attr_terms
+        }
+        V[[altName]] <- eval(parse(text = v_expr))
+    }
+    mnl_settings <- list(alternatives = alt_codes, choiceVar = Choice, 
+        utilities = V)
+    P <- list()
+    P[["model"]] <- apollo_mnl(mnl_settings, functionality)
+    P <- apollo_panelProd(P, apollo_inputs, functionality)
+    P <- apollo_weighting(P, apollo_inputs, functionality)
+    P <- apollo_prepareProb(P, apollo_inputs, functionality)
+    return(P)
+}
+<bytecode: 0x55bb67192118>
+<environment: 0x55bb67156018>

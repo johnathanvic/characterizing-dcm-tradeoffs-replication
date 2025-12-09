@@ -1,0 +1,4 @@
+"model_name","cores","inter_draws","intra_draws","calls","time_per_call","ram_mb"
+"MXL500_none_wtp",1,500,0,100,12.7566199660301,4239.6
+"MXL500_none_wtp",2,500,0,100,6.92404502391815,7553.8
+"MXL500_none_wtp",4,500,0,100,4.90141113042831,10268

@@ -1,0 +1,828 @@
+SLURM_ARRAY_JOB_ID: 35887720
+SLURM_JOB_ID: 35887723
+SLURM_ARRAY_TASK_ID: 1
+Created job directory: logs/job_35887720
+Task 1: Starting hpc/hpc_init_preparation.R...
+[1] "300s Timeout on Loading Dataset"
+<environment: R_GlobalEnv>
+
+
+=== Running MXL500_none_pref ===
+Apollo ignition sequence completed
+apollo_draws and apollo_randCoeff were found, so apollo_control$mixing
+  was set to TRUE
+
+outputDirectory provided by user does not exist, so will be created.
+Analytic gradients cannot be used with setting workInLogs
+All checks on apollo_control completed.
+All checks on database completed.
+Generating inter-individual draws .............. Done
+
+
+=== Running MXL500_none_wtp ===
+Apollo ignition sequence completed
+apollo_draws and apollo_randCoeff were found, so apollo_control$mixing
+  was set to TRUE
+
+outputDirectory provided by user does not exist, so will be created.
+Analytic gradients cannot be used with setting workInLogs
+All checks on apollo_control completed.
+All checks on database completed.
+Generating inter-individual draws .............. Done
+Saved to directory: logs/job_35887720 
+Prep done: settings & models serialized.
+Task 1: Initialization complete.
+Running model 1...
+Running: MXL500_none_pref 
+Starting Setup 
+Setup  Complete 
+Starting Search-Start 
+Saving original apollo_inputs 
+Validating inputs 
+Running searchStart with  100  draws. 
+Testing probability function (apollo_probabilities)
+Creating initial set of 101 candidate values.
+Calculating LL of candidates 0%....50%.....100%
+Total avail. cores = 32 cores
+Avail. GB per core = 2 GB
+Req. GB per cluster = 8 GB
+Running searchStart on 8 cores.
+
+Stage 1, 101 active candidates.
+Estimating 25 BFGS iteration(s) for each active candidate.
+ Candidate......LLstart.....LLfinish.....GradientNorm...Converged
+         1        -9336        -8552         1608.908           0
+         2        -9453        -8197          392.212           0
+         3        -9449        -8200          755.362           0
+         4        -9560        -8280          1212.55           0
+         5        -9464        -8578         1796.605           0
+         6       -10186        -8827          1761.64           0
+         7        -9199        -8199           233.35           0
+         8        -9994        -8200         1196.806           0
+         9       -12296        -9845          897.478           0
+        10       -10394        -8403         2005.467           0
+        11        -9945        -8555         2501.308           0
+        12       -11962        -8294         1644.521           0
+        13        -9653        -8466         1996.337           0
+        14       -10847        -8381         2826.498           0
+        15        -9592        -8301         1846.301           0
+        16       -10034        -8212         1516.541           0
+        17        -9144        -8132           496.96           0
+        18        -9496        -8260         1553.643           0
+        19        -9166        -8326         2243.796           0
+        20        -9922        -8201         1037.877           0
+        21       -10055        -8868         2124.542           0
+        22        -9353        -8166          993.092           0
+        23        -9324        -8186          770.465           0
+        24        -9367        -8172          772.262           0
+        25       -11698        -8760         5144.962           0
+        26        -9319        -8204          398.635           0
+        27       -11203        -9450         1217.704           0
+        28       -10737        -8357         1800.569           0
+        29       -10044        -8296         2580.309           0
+        30        -9285        -8293         1076.004           0
+        31        -9781        -8195         2787.372           0
+        32        -9245        -8252         2101.782           0
+        33        -9928        -8672         2552.291           0
+        34       -10627        -8702         1991.167           0
+        35       -17104        -9361         1571.596           0
+        36        -9043        -8225          684.919           0
+        37        -9380        -8231         1357.994           0
+        38        -8978        -8214          574.139           0
+        39        -9998        -8765         2602.925           0
+        40        -9600        -8252         1331.851           0
+        41        -9174        -8244          857.603           0
+        42        -9377        -8177         1265.734           0
+        43        -9015        -8158          481.288           0
+        44        -9321        -8282         1614.686           0
+        45        -9993        -8250          1070.51           0
+        46       -13229        -9711         1133.371           0
+        47       -11115        -8244          1195.12           0
+        48        -9987        -8244         1593.066           0
+        49       -10288        -8411         1622.661           0
+        50        -9554        -8421          1994.22           0
+        51       -10329        -8233         1974.643           0
+        52        -9589        -8278          2009.83           0
+        53       -14237       -10142         1671.558           0
+        54       -10570        -8387         2176.828           0
+        55       -11512        -8672         2164.654           0
+        56        -9301        -8262          807.672           0
+        57       -10074        -8352         5380.642           0
+        58       -11158        -8931         1972.344           0
+        59        -8953        -8183          578.372           0
+        60        -9547        -8163          896.979           0
+        61       -15332       -10525          609.078           0
+        62        -8873        -8141          459.596           0
+        63       -10231        -8257         1792.805           0
+        64        -9686        -8163          298.976           0
+        65        -9208        -8301          1240.05           0
+        66        -9543        -8322         1521.894           0
+        67       -11508        -8401         1912.216           0
+        68        -9629        -8242         1843.443           0
+        69       -11518        -9290         1654.983           0
+        70        -9619        -8143          528.193           0
+        71        -8901        -8222         1732.925           0
+        72        -9241        -8191          269.852           0
+        73        -9832        -8958          1721.93           0
+        74        -9265        -8237          1288.85           0
+        75       -10762        -9251         1451.567           0
+        76        -9193        -8174          230.533           0
+        77        -9367        -8135          751.961           0
+        78        -9644        -8192          921.872           0
+        79        -9434        -8236         1035.597           0
+        80        -9535        -8246         2490.509           0
+        81       -14713       -10247          933.518           0
+        82       -12730        -9590         1608.316           0
+        83        -9999        -8514         2170.512           0
+        84        -9471        -8320         2212.634           0
+        85        -9998        -8217         1743.492           0
+        86       -10104        -8652         2347.471           0
+        87        -9975        -8562         2254.993           0
+        88       -10451        -8278         1518.613           0
+        89        -9437        -8255         1262.491           0
+        90        -8923        -8199           898.62           0
+        91        -9568        -8266          555.938           0
+        92       -13413        -8553         3861.567           0
+        93       -14064        -9227         5003.455           0
+        94       -11232        -8241         1047.883           0
+        95       -11919        -8220         1087.534           0
+        96       -98091        -9881         1520.901           0
+        97       -11790        -8339         1199.345           0
+        98       -16651       -10676         1126.281           0
+        99       -26482       -10874          723.111           0
+       100       -30340       -10391         2041.975           0
+       101       -11670        -8225         1052.647           0
+Best candidate so far (LL=-8132.3)
+
+Stage 2, 101 active candidates.
+Estimating 25 BFGS iteration(s) for each active candidate.
+ Candidate......LLstart.....LLfinish.....GradientNorm...Converged
+         1        -8552        -8165          813.249           0
+         2        -8197        -8189           43.896           0
+         3        -8200        -8168          203.942           0
+         4        -8280        -8199           308.64           0
+         5        -8578        -8171          128.949           0
+         6        -8827        -8143         1014.401           0
+         7        -8199        -8149          162.316           0
+         8        -8200        -8168            7.237           0
+         9        -9845        -8241          638.198           0
+        10        -8403        -8192          175.085           0
+        11        -8555        -8226          546.318           0
+        12        -8294        -8148          268.234           0
+        13        -8466        -8172          233.771           0
+        14        -8381        -8128           93.101           0
+        15        -8301        -8191          230.033           0
+        16        -8212        -8158           37.143           0
+        17        -8132        -8112           26.368           0
+        18        -8260        -8132          288.713           0
+        19        -8326        -8167          193.848           0
+        20        -8201        -8174           35.297           0
+        21        -8868        -8183          274.377           0
+        22        -8166        -8133           62.457           0
+        23        -8186        -8133           34.545           0
+        24        -8172        -8151           32.311           0
+        25        -8760        -8182         1397.573           0
+        26        -8204        -8191            23.94           0
+        27        -9450        -8380         2666.843           0
+        28        -8357        -8166          388.073           0
+        29        -8296        -8160           418.15           0
+        30        -8293        -8181          318.822           0
+        31        -8195        -8133          122.997           0
+        32        -8252        -8133           55.694           0
+        33        -8672        -8162          1615.76           0
+        34        -8702        -8171          391.293           0
+        35        -9361        -8187         1082.391           0
+        36        -8225        -8178          258.328           0
+        37        -8231        -8186          332.274           0
+        38        -8214        -8159           75.597           0
+        39        -8765        -8139          733.867           0
+        40        -8252        -8173          203.039           0
+        41        -8244        -8163          362.106           0
+        42        -8177        -8142           26.255           0
+        43        -8158        -8144            26.42           0
+        44        -8282        -8186          136.782           0
+        45        -8250        -8160            111.4           0
+        46        -9711        -8201          561.634           0
+        47        -8244        -8101           19.225           0
+        48        -8244        -8134           88.866           0
+        49        -8411        -8201         1024.874           0
+        50        -8421        -8167          717.336           0
+        51        -8233        -8160          508.279           0
+        52        -8278        -8163          205.138           0
+        53       -10142        -8167          485.182           0
+        54        -8387        -8156          908.498           0
+        55        -8672        -8181          240.866           0
+        56        -8262        -8185          338.534           0
+        57        -8352        -8141           74.864           0
+        58        -8931        -8181          799.029           0
+        59        -8183        -8158            6.692           0
+        60        -8163        -8126           25.665           0
+        61       -10525        -8157          226.855           0
+        62        -8141        -8116           97.177           0
+        63        -8257        -8189            31.01           0
+        64        -8163        -8144           26.707           0
+        65        -8301        -8191          253.675           0
+        66        -8322        -8158          300.936           0
+        67        -8401        -8174          284.225           0
+        68        -8242        -8144          131.727           0
+        69        -9290        -8170          718.042           0
+        70        -8143        -8115           25.804           0
+        71        -8222        -8129          118.865           0
+        72        -8191        -8184           91.786           0
+        73        -8958        -8123          296.955           0
+        74        -8237        -8190           83.466           0
+        75        -9251        -8226          880.295           0
+        76        -8174        -8157           24.095           0
+        77        -8135        -8123           10.923           0
+        78        -8192        -8149           25.985           0
+        79        -8236        -8198           25.782           0
+        80        -8246        -8168          144.562           0
+        81       -10247        -8419          1376.16           0
+        82        -9590        -8120          260.845           0
+        83        -8514        -8164          219.535           0
+        84        -8320        -8127          111.827           0
+        85        -8217        -8168           35.433           0
+        86        -8652        -8162          127.698           0
+        87        -8562        -8200          235.611           0
+        88        -8278        -8123          248.791           0
+        89        -8255        -8155          408.735           0
+        90        -8199        -8162           76.925           0
+        91        -8266        -8218           330.92           0
+        92        -8553        -8189           59.366           0
+        93        -9227        -8165          204.367           0
+        94        -8241        -8166          329.779           0
+        95        -8220        -8152          200.918           0
+        96        -9881        -8109          654.088           0
+        97        -8339        -8159          243.363           0
+        98       -10676        -8302         2648.031           0
+        99       -10874        -8214         1998.102           0
+       100       -10391        -8318         3148.774           0
+       101        -8225        -8196           85.434           0
+Candidate 62 dropped.
+- Failed test 1: Too close to 70 in parameter space.
+Candidate 63 dropped.
+- Failed test 1: Too close to 2 in parameter space.
+Candidate 64 dropped.
+- Failed test 1: Too close to 43 in parameter space.
+Best candidate so far (LL=-8101.1)
+
+Stage 3, 98 active candidates.
+Estimating 25 BFGS iteration(s) for each active candidate.
+ Candidate......LLstart.....LLfinish.....GradientNorm...Converged
+         1        -8165        -8142           40.201           0
+         2        -8189        -8189            1.434           1
+         3        -8168        -8167           12.246           0
+         4        -8199        -8189           12.583           0
+         5        -8171        -8167            8.423           0
+         6        -8143        -8103          114.448           0
+         7        -8149        -8140            15.54           0
+         8        -8168        -8168              1.7           1
+         9        -8241        -8210           57.981           0
+        10        -8192        -8190            7.467           0
+        11        -8226        -8187           16.468           0
+        12        -8148        -8141           25.425           0
+        13        -8172        -8164           16.021           0
+        14        -8128        -8124            6.059           0
+        15        -8191        -8189           13.277           0
+        16        -8158        -8157           10.707           0
+        17        -8112        -8111            6.922           0
+        18        -8132        -8130           22.943           0
+        19        -8167        -8164            4.699           0
+        20        -8174        -8174            9.542           0
+        21        -8183        -8157          227.809           0
+        22        -8133        -8132            4.382           1
+        23        -8133        -8132          135.622           0
+        24        -8151        -8151            51.21           1
+        25        -8182        -8144          467.445           0
+        26        -8191        -8190            3.744           0
+        27        -8380        -8189          359.609           0
+        28        -8166        -8161           16.576           0
+        29        -8160        -8152           61.398           0
+        30        -8181        -8170           15.301           0
+        31        -8133        -8132            9.322           0
+        32        -8133        -8131           20.241           0
+        33        -8162        -8149           23.489           0
+        34        -8171        -8151          105.517           0
+        35        -8187        -8164           52.951           0
+        36        -8178        -8174          119.428           0
+        37        -8186        -8181            30.52           0
+        38        -8159        -8157            4.246           0
+        39        -8139        -8128          131.073           0
+        40        -8173        -8172             6.34           0
+        41        -8163        -8152            7.266           0
+        42        -8142        -8141            5.674           0
+        43        -8144        -8144            3.233           1
+        44        -8186        -8186            7.631           0
+        45        -8160        -8157           16.609           0
+        46        -8201        -8168           62.341           0
+        47        -8101        -8100            3.107           0
+        48        -8134        -8132            1.729           1
+        49        -8201        -8186           13.727           0
+        50        -8167        -8160           34.154           0
+        51        -8160        -8149           86.608           0
+        52        -8163        -8160              3.6           0
+        53        -8167        -8154            6.715           0
+        54        -8156        -8148          103.538           0
+        55        -8181        -8168           53.809           0
+        56        -8185        -8181           32.866           0
+        57        -8141        -8139             7.76           0
+        58        -8181        -8162          165.069           0
+        59        -8158        -8158            2.776           1
+        60        -8126        -8125            2.803           0
+        61        -8157        -8150           37.512           0
+        65        -8191        -8190            4.258           0
+        66        -8158        -8153           13.796           0
+        67        -8174        -8171            4.819           0
+        68        -8144        -8144            2.008           0
+        69        -8170        -8154          107.454           0
+        70        -8115        -8115            1.717           0
+        71        -8129        -8128           30.849           0
+        72        -8184        -8180           20.502           0
+        73        -8123        -8119             4.75           0
+        74        -8190        -8189            3.171           0
+        75        -8226        -8205           40.692           0
+        76        -8157        -8157            3.513           1
+        77        -8123        -8123            0.529           0
+        78        -8149        -8149            7.932           1
+        79        -8198        -8197            3.507           1
+        80        -8168        -8164            8.951           0
+        81        -8419        -8139          186.776           0
+        82        -8120        -8112           17.988           0
+        83        -8164        -8157           54.762           0
+        84        -8127        -8126           22.848           0
+        85        -8168        -8167            4.043           0
+        86        -8162        -8157            3.802           0
+        87        -8200        -8195           23.603           0
+        88        -8123        -8121           23.708           0
+        89        -8155        -8144           15.555           0
+        90        -8162        -8161            9.689           0
+        91        -8218        -8210           10.091           0
+        92        -8189        -8188            5.303           0
+        93        -8165        -8161           12.365           0
+        94        -8166        -8164            7.342           0
+        95        -8152        -8149           37.843           0
+        96        -8109        -8100           42.274           0
+        97        -8159        -8147           68.923           0
+        98        -8302        -8151           53.971           0
+        99        -8214        -8127           39.516           0
+       100        -8318        -8148          127.213           0
+       101        -8196        -8196            3.792           0
+Candidate 4 dropped.
+- Failed test 1: Too close to 2, 15, 74 in parameter space.
+Candidate 5 dropped.
+- Failed test 1: Too close to 85 in parameter space.
+Candidate 7 dropped.
+- Failed test 1: Too close to 57 in parameter space.
+Candidate 10 dropped.
+- Failed test 1: Too close to 26 in parameter space.
+Candidate 13 dropped.
+- Failed test 1: Too close to 19 in parameter space.
+Candidate 15 dropped.
+- Failed test 1: Too close to 2, 74 in parameter space.
+Candidate 31 dropped.
+- Failed test 1: Too close to 22, 48 in parameter space.
+Candidate 37 dropped.
+- Failed test 1: Too close to 56 in parameter space.
+Candidate 38 dropped.
+- Failed test 1: Too close to 76 in parameter space.
+Candidate 46 dropped.
+- Failed test 1: Too close to 5, 55, 85 in parameter space.
+Candidate 50 dropped.
+- Failed test 1: Too close to 52 in parameter space.
+Candidate 51 dropped.
+- Failed test 1: Too close to 33 in parameter space.
+Candidate 55 dropped.
+- Failed test 1: Too close to 5, 85 in parameter space.
+Candidate 74 dropped.
+- Failed test 1: Too close to 2 in parameter space.
+Candidate 80 dropped.
+- Failed test 1: Too close to 94 in parameter space.
+Candidate 82 dropped.
+- Failed test 1: Too close to 17 in parameter space.
+Candidate 83 dropped.
+- Failed test 1: Too close to 16 in parameter space.
+Candidate 93 dropped.
+- Failed test 1: Too close to 28 in parameter space.
+Candidate 96 dropped.
+- Failed test 1: Too close to 47 in parameter space.
+Best candidate so far (LL=-8100.4)
+
+Stage 4, 69 active candidates.
+Estimating 25 BFGS iteration(s) for each active candidate.
+ Candidate......LLstart.....LLfinish.....GradientNorm...Converged
+         1        -8142        -8142            5.416           0
+         3        -8167        -8167            3.193           1
+         6        -8103        -8100            0.922           0
+         9        -8210        -8208            8.593           0
+        11        -8187        -8187             6.22           0
+        12        -8141        -8141            2.517           0
+        14        -8124        -8124            8.933           1
+        16        -8157        -8157            3.698           1
+        17        -8111        -8111            4.534           1
+        18        -8130        -8130            4.522           1
+        19        -8164        -8164            2.281           1
+        20        -8174        -8174            4.643           1
+        21        -8157        -8155           21.271           0
+        23        -8132        -8131           10.621           0
+        25        -8144        -8139            6.576           0
+        26        -8190        -8190            7.454           1
+        27        -8189        -8174          152.221           0
+        28        -8161        -8161            2.846           1
+        29        -8152        -8152            8.546           0
+        30        -8170        -8169           12.286           1
+        32        -8131        -8131            1.697           1
+        33        -8149        -8149            4.773           1
+        34        -8151        -8149           12.046           0
+        35        -8164        -8164            7.483           0
+        36        -8174        -8168            5.133           0
+        39        -8128        -8127            2.827           0
+        40        -8172        -8172            4.886           1
+        41        -8152        -8152            3.336           1
+        42        -8141        -8141            9.591           1
+        44        -8186        -8186           11.747           1
+        45        -8157        -8157            1.918           1
+        47        -8100        -8100            2.637           1
+        49        -8186        -8186            1.492           1
+        52        -8160        -8160            3.683           1
+        53        -8154        -8154            5.364           1
+        54        -8148        -8148            2.285           1
+        56        -8181        -8181            2.311           1
+        57        -8139        -8139           13.242           1
+        58        -8162        -8161            19.42           0
+        60        -8125        -8125           11.847           1
+        61        -8150        -8150           11.383           0
+        65        -8190        -8190            7.556           1
+        66        -8153        -8153            0.803           0
+        67        -8171        -8171             4.63           1
+        68        -8144        -8144            5.828           1
+        69        -8154        -8153            7.705           0
+        70        -8115        -8115            2.058           1
+        71        -8128        -8128            1.968           1
+        72        -8180        -8180            3.641           1
+        73        -8119        -8119            0.892           1
+        75        -8205        -8204            5.854           0
+        77        -8123        -8123            1.589           1
+        81        -8139        -8130           12.875           0
+        84        -8126        -8126            6.892           0
+        85        -8167        -8167            2.026           1
+        86        -8157        -8157            6.023           1
+        87        -8195        -8195             0.76           0
+        88        -8121        -8121            2.887           1
+        89        -8144        -8144            1.769           1
+        90        -8161        -8161            3.619           1
+        91        -8210        -8210            3.533           1
+        92        -8188        -8188            5.136           0
+        94        -8164        -8164             9.12           1
+        95        -8149        -8149            4.963           1
+        97        -8147        -8146            0.635           0
+        98        -8151        -8149            3.547           0
+        99        -8127        -8126            8.089           0
+       100        -8148        -8144           37.245           0
+       101        -8196        -8196            4.779           1
+Candidate 6 dropped.
+- Failed test 1: Too close to 47 in parameter space.
+Candidate 23 dropped.
+- Failed test 1: Too close to 32 in parameter space.
+Candidate 58 dropped.
+- Failed test 1: Too close to 90 in parameter space.
+Candidate 69 dropped.
+- Failed test 1: Too close to 66 in parameter space.
+Candidate 81 dropped.
+- Failed test 1: Too close to 18 in parameter space.
+Candidate 99 dropped.
+- Failed test 1: Too close to 84 in parameter space.
+Best candidate so far (LL=-8100.4)
+
+Stage 5, 22 active candidates.
+Estimating 25 BFGS iteration(s) for each active candidate.
+ Candidate......LLstart.....LLfinish.....GradientNorm...Converged
+         1        -8142        -8142            5.792           1
+         9        -8208        -8208             2.19           1
+        11        -8187        -8187            1.761           1
+        12        -8141        -8141            2.735           1
+        21        -8155        -8155             1.37           1
+        25        -8139        -8139            3.605           1
+        27        -8174        -8171           34.511           0
+        29        -8152        -8152            2.583           1
+        34        -8149        -8149            17.74           1
+        35        -8164        -8164            8.809           1
+        36        -8168        -8168             5.64           1
+        39        -8127        -8127            3.936           1
+        47        -8100        -8100                0           1
+        61        -8150        -8150            2.133           1
+        66        -8153        -8153            4.054           1
+        75        -8204        -8204           10.344           1
+        84        -8126        -8126            3.581           1
+        87        -8195        -8195            0.669           1
+        92        -8188        -8188            2.618           1
+        97        -8146        -8146            2.458           1
+        98        -8149        -8149            8.783           1
+       100        -8144        -8144             5.65           0
+Best candidate so far (LL=-8100.4)
+
+Stage 6, 3 active candidates.
+Estimating 25 BFGS iteration(s) for each active candidate.
+ Candidate......LLstart.....LLfinish.....GradientNorm...Converged
+        27        -8171        -8171            5.935           1
+        47        -8100        -8100                0           1
+       100        -8144        -8144            5.901           1
+Best candidate so far (LL=-8100.4)
+  n_points n_best n_within_tol did_best_conv
+1      101      3            3          TRUE
+Search-Start Execution Complete 
+Restored to  500  draws. 
+Using  4  cores. 
+Search-Start Post-Processing Complete 
+Starting main estimation 
+Preparing user-defined functions.
+WARNING: CAUTION: In models using mixing and workInLogs=TRUE, Apollo
+  assumes (and does not check) that the call to apollo_panelProd is
+  immediately followed by a call to apollo_avgInterDraws. 
+
+Testing likelihood function...
+Setting "avail" is missing, so full availability is assumed.
+
+Overview of choices for MNL model component :
+                                       C1      C2       C3
+Times available                  11010.00 11010.0 11010.00
+Times chosen                      3670.00  3677.0  3663.00
+Percentage chosen overall           33.33    33.4    33.27
+Percentage chosen when available    33.33    33.4    33.27
+
+
+Pre-processing likelihood function...
+Creating cluster...
+INFORMATION: While preparing your inputs for multi-core estimation, the
+  following objects were found in "apollo_inputs", but were not split
+  across cores: "attrCols", "availCols", "heterogeneity_spec",
+  "lognorm_price_dist", "n_classes", "n_draws", "nesting_params",
+  "nesting_spec", "observed_attributes", "scalingFactor_dist",
+  "utility_space". If these objects contain observation or
+  individual-specific data, and thus need to be split, please add a
+  column with the IDs to these objects, and call this column "ID" 
+Preparing workers for multithreading...
+
+Testing influence of parameters..........................
+Starting main estimation
+initial  value 8091.342944 
+iter   2 value 8086.329640
+iter   3 value 8084.072806
+iter   4 value 8083.035448
+iter   5 value 8078.594236
+iter   6 value 8075.962778
+iter   7 value 8073.229010
+iter   8 value 8072.556439
+iter   9 value 8069.132416
+iter  10 value 8064.856680
+iter  11 value 8062.234477
+iter  12 value 8059.687751
+iter  13 value 8059.394898
+iter  14 value 8059.006992
+iter  15 value 8058.336338
+iter  16 value 8056.010477
+iter  17 value 8052.888889
+iter  18 value 8047.155121
+iter  19 value 8045.338347
+iter  20 value 8044.008779
+iter  21 value 8043.488472
+iter  22 value 8043.169850
+iter  23 value 8042.917683
+iter  24 value 8042.173926
+iter  25 value 8040.672614
+iter  26 value 8038.832592
+iter  27 value 8038.589165
+iter  28 value 8038.551555
+iter  29 value 8038.127299
+iter  30 value 8038.032424
+iter  31 value 8037.632816
+iter  32 value 8037.627825
+iter  33 value 8037.627806
+iter  34 value 8037.627805
+iter  35 value 8037.627805
+iter  36 value 8037.627805
+iter  37 value 8037.627805
+iter  38 value 8037.627805
+iter  38 value 8037.627805
+iter  38 value 8037.627805
+final  value 8037.627805 
+converged
+
+Estimated parameters with approximate standard errors from BHHH matrix:
+                        Estimate     BHHH se BHH t-ratio (0)
+mu_b_Price             -0.122397    0.002639        -46.3848
+sigma_b_Price           0.098709    0.002948         33.4865
+mu_b_Acceleration      -0.159605    0.010138        -15.7433
+sigma_b_Acceleration   -0.252854    0.012963        -19.5066
+mu_b_OpCost            -0.211349    0.007344        -28.7791
+sigma_b_OpCost         -0.186768    0.008698        -21.4727
+mu_b_hev                0.106932    0.048128          2.2218
+sigma_b_hev             0.459923    0.082683          5.5625
+mu_b_phev20             0.006944    0.050761          0.1368
+sigma_b_phev20          0.124250    0.100684          1.2341
+mu_b_phev40             0.199764    0.049715          4.0182
+sigma_b_phev40          0.253121    0.104404          2.4244
+mu_b_bev               -0.444063    0.055361         -8.0212
+sigma_b_bev            -1.676916    0.048980        -34.2367
+mu_b_bevRangeRel        0.557605    0.025160         22.1624
+sigma_b_bevRangeRel    -0.669719    0.026807        -24.9834
+mu_b_noBEVFC           -0.438790    0.051617         -8.5008
+sigma_b_noBEVFC        -0.522387    0.063226         -8.2623
+mu_b_american          -0.106900    0.043725         -2.4448
+sigma_b_american        0.763688    0.045522         16.7762
+mu_b_chinese           -2.246241    0.071580        -31.3810
+sigma_b_chinese        -2.171236    0.079828        -27.1991
+mu_b_japanese          -0.055787    0.041916         -1.3309
+sigma_b_japanese        0.833621    0.056506         14.7528
+mu_b_skorean           -0.646990    0.045342        -14.2690
+sigma_b_skorean        -0.846208    0.057779        -14.6456
+
+Final LL: -8037.6278
+
+Calculating log-likelihood at equal shares (LL(0)) for applicable
+  models...
+Calculating LL of each model component...
+Calculating other model fit measures
+INFORMATION: Your model took more than 10 minutes to estimate, so it
+  was saved to file
+  logs/job_35887720/MXL500_none_pref/MXL500_none_pref_model.rds before
+  calculating its covariance matrix. If calculation of the covariance
+  matrix fails or is stopped before finishing, you can load the model
+  up to this point using apollo_loadModel. You may also want to inspect
+  the approximate BHHH standard errors shown above to determine whether
+  you wish to continue this process. 
+Computing covariance matrix using numerical methods (numDeriv).
+ 0%....25%....50%....75%....100%
+Negative definite Hessian with maximum eigenvalue: -20.9084
+
+Please acknowledge the use of Apollo by citing Hess & Palma (2019) -
+  doi.org/10.1016/j.jocm.2019.100170
+Model output saved to logs/job_35887720/MXL500_none_pref/MXL500_none_pref_output.txt 
+Estimates saved to logs/job_35887720/MXL500_none_pref/MXL500_none_pref_estimates.csv 
+Model object saved to logs/job_35887720/MXL500_none_pref/MXL500_none_pref.rds 
+[1] TRUE
+Starting Cross-Validation 
+Testing likelihood function.
+5 separate runs will be conducted, each using a random subset of 80% of
+  individuals for estimation, and the remainder for validation.
+Number of individuals
+- for estimation : 587
+- for forecasting : 147
+- in sample (total): 734
+Estimated parameters and log-likelihoods for each sample will be
+  written to:
+  logs/job_35887720/MXL500_none_pref/MXL500_none_pref_outOfSample_params.csv
+The matrix defining the observations used in each repetition will be
+  written to:
+  logs/job_35887720/MXL500_none_pref/MXL500_none_pref_outOfSample_samples.csv
+
+Estimation cycle 1 (8805 obs.)
+INFORMATION: While preparing your inputs for multi-core estimation, the
+  following objects were found in "apollo_inputs", but were not split
+  across cores: "attrCols", "availCols", "heterogeneity_spec",
+  "lognorm_price_dist", "n_classes", "n_draws", "nesting_params",
+  "nesting_spec", "observed_attributes", "scalingFactor_dist",
+  "utility_space". If these objects contain observation or
+  individual-specific data, and thus need to be split, please add a
+  column with the IDs to these objects, and call this column "ID" 
+Saving CV model as: MXL500_none_pref_CV01
+Model output saved to logs/job_35887720/MXL500_none_pref/MXL500_none_pref_CV01_output.txt 
+Estimates saved to logs/job_35887720/MXL500_none_pref/MXL500_none_pref_CV01_estimates.csv 
+Model object saved to logs/job_35887720/MXL500_none_pref/MXL500_none_pref_CV01.rds 
+Out-of-sample time: 0.967
+Iter. total wall time: 1380.198 secs
+Estimation results written to file.
+Estimation cycle 2 (8805 obs.)
+INFORMATION: While preparing your inputs for multi-core estimation, the
+  following objects were found in "apollo_inputs", but were not split
+  across cores: "attrCols", "availCols", "heterogeneity_spec",
+  "lognorm_price_dist", "n_classes", "n_draws", "nesting_params",
+  "nesting_spec", "observed_attributes", "scalingFactor_dist",
+  "utility_space". If these objects contain observation or
+  individual-specific data, and thus need to be split, please add a
+  column with the IDs to these objects, and call this column "ID" 
+Saving CV model as: MXL500_none_pref_CV02
+Model output saved to logs/job_35887720/MXL500_none_pref/MXL500_none_pref_CV02_output.txt 
+Estimates saved to logs/job_35887720/MXL500_none_pref/MXL500_none_pref_CV02_estimates.csv 
+Model object saved to logs/job_35887720/MXL500_none_pref/MXL500_none_pref_CV02.rds 
+Out-of-sample time: 1.241
+Iter. total wall time: 1341.698 secs
+Estimation results written to file.
+Estimation cycle 3 (8805 obs.)
+INFORMATION: While preparing your inputs for multi-core estimation, the
+  following objects were found in "apollo_inputs", but were not split
+  across cores: "attrCols", "availCols", "heterogeneity_spec",
+  "lognorm_price_dist", "n_classes", "n_draws", "nesting_params",
+  "nesting_spec", "observed_attributes", "scalingFactor_dist",
+  "utility_space". If these objects contain observation or
+  individual-specific data, and thus need to be split, please add a
+  column with the IDs to these objects, and call this column "ID" 
+Saving CV model as: MXL500_none_pref_CV03
+Model output saved to logs/job_35887720/MXL500_none_pref/MXL500_none_pref_CV03_output.txt 
+Estimates saved to logs/job_35887720/MXL500_none_pref/MXL500_none_pref_CV03_estimates.csv 
+Model object saved to logs/job_35887720/MXL500_none_pref/MXL500_none_pref_CV03.rds 
+Out-of-sample time: 1.105
+Iter. total wall time: 1410.536 secs
+Estimation results written to file.
+Estimation cycle 4 (8805 obs.)
+INFORMATION: While preparing your inputs for multi-core estimation, the
+  following objects were found in "apollo_inputs", but were not split
+  across cores: "attrCols", "availCols", "heterogeneity_spec",
+  "lognorm_price_dist", "n_classes", "n_draws", "nesting_params",
+  "nesting_spec", "observed_attributes", "scalingFactor_dist",
+  "utility_space". If these objects contain observation or
+  individual-specific data, and thus need to be split, please add a
+  column with the IDs to these objects, and call this column "ID" 
+Saving CV model as: MXL500_none_pref_CV04
+Model output saved to logs/job_35887720/MXL500_none_pref/MXL500_none_pref_CV04_output.txt 
+Estimates saved to logs/job_35887720/MXL500_none_pref/MXL500_none_pref_CV04_estimates.csv 
+Model object saved to logs/job_35887720/MXL500_none_pref/MXL500_none_pref_CV04.rds 
+Out-of-sample time: 1.055
+Iter. total wall time: 1361.511 secs
+Estimation results written to file.
+Estimation cycle 5 (8805 obs.)
+INFORMATION: While preparing your inputs for multi-core estimation, the
+  following objects were found in "apollo_inputs", but were not split
+  across cores: "attrCols", "availCols", "heterogeneity_spec",
+  "lognorm_price_dist", "n_classes", "n_draws", "nesting_params",
+  "nesting_spec", "observed_attributes", "scalingFactor_dist",
+  "utility_space". If these objects contain observation or
+  individual-specific data, and thus need to be split, please add a
+  column with the IDs to these objects, and call this column "ID" 
+Saving CV model as: MXL500_none_pref_CV05
+Model output saved to logs/job_35887720/MXL500_none_pref/MXL500_none_pref_CV05_output.txt 
+Estimates saved to logs/job_35887720/MXL500_none_pref/MXL500_none_pref_CV05_estimates.csv 
+Model object saved to logs/job_35887720/MXL500_none_pref/MXL500_none_pref_CV05.rds 
+Out-of-sample time: 0.956
+Iter. total wall time: 1413.949 secs
+Estimation results written to file.
+Processing time: 1.920984 hours
+
+Summary of cross-validation:
+         LL per obs in estimation sample LL per obs in validation sample
+sample_1                         -0.7345                         -0.6976
+sample_2                         -0.7320                         -0.7069
+sample_3                         -0.7317                         -0.7161
+sample_4                         -0.7015                         -0.8501
+sample_5                         -0.7323                         -0.7188
+Average                          -0.7264                         -0.7379
+         % difference CPU sec in validation sample
+sample_1       -5.018                       0.9670
+sample_2       -3.422                       1.2410
+sample_3       -2.127                       1.1050
+sample_4       21.186                       1.0550
+sample_5       -1.850                       0.9560
+Average         1.754                       1.0648
+Cross-Validation Complete 
+Starting Psi' on Dataset Test 
+Restored to  500  draws. 
+Mean Psi' (all) =  0.4289861 
+Mean Psi' (chosen only) =  0.4122541 
+Saved psi' dataset to:  logs/job_35887720/MXL500_none_pref//MXL500_none_pref_psi_prime_dataset.csv 
+Psi' on Dataset Test Complete
+Starting Speed Test 
+       ___Draws___              sec/
+nCores inter intra  progress  LLCall RAM(MB)
+     1   500     0 ..........  18.44  4239.7
+     2   500     0 INFORMATION: While preparing your inputs for multi-core estimation, the
+  following objects were found in "apollo_inputs", but were not split
+  across cores: "attrCols", "availCols", "heterogeneity_spec",
+  "lognorm_price_dist", "n_classes", "n_draws", "nesting_params",
+  "nesting_spec", "observed_attributes", "scalingFactor_dist",
+  "utility_space". If these objects contain observation or
+  individual-specific data, and thus need to be split, please add a
+  column with the IDs to these objects, and call this column "ID" 
+..........   9.53  7553.8
+     4   500     0 INFORMATION: While preparing your inputs for multi-core estimation, the
+  following objects were found in "apollo_inputs", but were not split
+  across cores: "attrCols", "availCols", "heterogeneity_spec",
+  "lognorm_price_dist", "n_classes", "n_draws", "nesting_params",
+  "nesting_spec", "observed_attributes", "scalingFactor_dist",
+  "utility_space". If these objects contain observation or
+  individual-specific data, and thus need to be split, please add a
+  column with the IDs to these objects, and call this column "ID" 
+..........   5.98 10268.1
+
+Summary of results (sec. per call to LL function)
+       draws500
+cores1  18.4368
+cores2   9.5285
+cores4   5.9829
+        model_name cores inter_draws intra_draws calls time_per_call  ram_mb
+1 MXL500_none_pref     1         500           0   100     18.436774  4239.7
+2 MXL500_none_pref     2         500           0   100      9.528531  7553.8
+3 MXL500_none_pref     4         500           0   100      5.982868 10268.1
+Saved speed test results to: logs/job_35887720/MXL500_none_pref//MXL500_none_pref_speedTest.csv 
+Saved detailed speed test results to: logs/job_35887720/MXL500_none_pref//MXL500_none_pref_speedTest_detailed.csv 
+Speed Test Complete 
+Starting Psi' Test 
+Psi' Test Complete 
+Starting Func Eval Timing 
+Func Eval Timing Complete 
+MXL500_none_pref done.
+Results saved to: logs/job_35887720/MXL500_none_pref 
+All tasks completed - aggregating results...
+Found 2 model summary files
+Aggregated results saved to: logs/job_35887720/aggregated_model_summary.csv 
+Total rows: 2 
+Models included: MXL500_none_pref, MXL500_none_wtp 
+Done Running. Log files moved to logs/job_35887720/

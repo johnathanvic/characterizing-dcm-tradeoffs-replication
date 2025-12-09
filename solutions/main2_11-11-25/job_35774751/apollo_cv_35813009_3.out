@@ -1,0 +1,191 @@
+SLURM_ARRAY_JOB_ID: 35813009 (current CV job)
+SLURM_JOB_ID: 35813038
+SLURM_ARRAY_TASK_ID: 3
+ORIGINAL_JOB_ID: 35774751 (multistart job)
+Running cross-validation for model 3 using estimation results from job 35774751...
+Loaded Part 2 results for: MXL1k_none_pref 
+Constraints:
+NULL
+Using apollo_beta 
+          mu_b_Price        sigma_b_Price    mu_b_Acceleration 
+         -0.12427203           0.08573801          -0.13736387 
+sigma_b_Acceleration          mu_b_OpCost       sigma_b_OpCost 
+         -0.17999040          -0.19080811          -0.15260723 
+            mu_b_hev          sigma_b_hev          mu_b_phev20 
+          0.09100320           0.46028250           0.04035464 
+      sigma_b_phev20          mu_b_phev40       sigma_b_phev40 
+         -0.18340900           0.19860708           0.14653938 
+            mu_b_bev          sigma_b_bev     mu_b_bevRangeRel 
+         -0.23991999          -1.49083729           0.48577817 
+ sigma_b_bevRangeRel         mu_b_noBEVFC      sigma_b_noBEVFC 
+         -0.53705205          -0.39905870           0.22566197 
+       mu_b_american     sigma_b_american         mu_b_chinese 
+         -0.14375612           0.85365172          -2.11516162 
+     sigma_b_chinese        mu_b_japanese     sigma_b_japanese 
+         -2.12043368          -0.07224887           0.74308820 
+        mu_b_skorean      sigma_b_skorean 
+         -0.52424785          -0.11106885 
+
+ Final LL: Starting Part 3 (Cross-validation + Remaining): MXL1k_none_pref 
+Starting Cross-Validation
+Testing likelihood function.
+5 separate runs will be conducted, each using a random subset of 80% of
+  individuals for estimation, and the remainder for validation.
+Number of individuals
+- for estimation : 587
+- for forecasting : 147
+- in sample (total): 734
+Estimated parameters and log-likelihoods for each sample will be
+  written to:
+  logs/job_35774751/MXL1k_none_pref/MXL1k_none_pref_outOfSample_params.csv
+The matrix defining the observations used in each repetition will be
+  written to:
+  logs/job_35774751/MXL1k_none_pref/MXL1k_none_pref_outOfSample_samples.csv
+
+Estimation cycle 1 (8805 obs.)
+INFORMATION: While preparing your inputs for multi-core estimation, the
+  following objects were found in "apollo_inputs", but were not split
+  across cores: "attrCols", "availCols", "heterogeneity_spec",
+  "lognorm_price_dist", "n_classes", "n_draws", "nesting_params",
+  "nesting_spec", "observed_attributes", "scalingFactor_dist",
+  "utility_space". If these objects contain observation or
+  individual-specific data, and thus need to be split, please add a
+  column with the IDs to these objects, and call this column "ID" 
+Saving CV model as: MXL1k_none_pref_CV01
+Model output saved to logs/job_35774751/MXL1k_none_pref/MXL1k_none_pref_CV01_output.txt 
+Estimates saved to logs/job_35774751/MXL1k_none_pref/MXL1k_none_pref_CV01_estimates.csv 
+Model object saved to logs/job_35774751/MXL1k_none_pref/MXL1k_none_pref_CV01.rds 
+Out-of-sample time: 1.256
+Iter. total wall time: 1963.621 secs
+Estimation results written to file.
+Estimation cycle 2 (8805 obs.)
+INFORMATION: While preparing your inputs for multi-core estimation, the
+  following objects were found in "apollo_inputs", but were not split
+  across cores: "attrCols", "availCols", "heterogeneity_spec",
+  "lognorm_price_dist", "n_classes", "n_draws", "nesting_params",
+  "nesting_spec", "observed_attributes", "scalingFactor_dist",
+  "utility_space". If these objects contain observation or
+  individual-specific data, and thus need to be split, please add a
+  column with the IDs to these objects, and call this column "ID" 
+Saving CV model as: MXL1k_none_pref_CV02
+Model output saved to logs/job_35774751/MXL1k_none_pref/MXL1k_none_pref_CV02_output.txt 
+Estimates saved to logs/job_35774751/MXL1k_none_pref/MXL1k_none_pref_CV02_estimates.csv 
+Model object saved to logs/job_35774751/MXL1k_none_pref/MXL1k_none_pref_CV02.rds 
+Out-of-sample time: 1.392
+Iter. total wall time: 1884.088 secs
+Estimation results written to file.
+Estimation cycle 3 (8805 obs.)
+INFORMATION: While preparing your inputs for multi-core estimation, the
+  following objects were found in "apollo_inputs", but were not split
+  across cores: "attrCols", "availCols", "heterogeneity_spec",
+  "lognorm_price_dist", "n_classes", "n_draws", "nesting_params",
+  "nesting_spec", "observed_attributes", "scalingFactor_dist",
+  "utility_space". If these objects contain observation or
+  individual-specific data, and thus need to be split, please add a
+  column with the IDs to these objects, and call this column "ID" 
+Saving CV model as: MXL1k_none_pref_CV03
+Model output saved to logs/job_35774751/MXL1k_none_pref/MXL1k_none_pref_CV03_output.txt 
+Estimates saved to logs/job_35774751/MXL1k_none_pref/MXL1k_none_pref_CV03_estimates.csv 
+Model object saved to logs/job_35774751/MXL1k_none_pref/MXL1k_none_pref_CV03.rds 
+Out-of-sample time: 1.278
+Iter. total wall time: 2136.911 secs
+Estimation results written to file.
+Estimation cycle 4 (8805 obs.)
+INFORMATION: While preparing your inputs for multi-core estimation, the
+  following objects were found in "apollo_inputs", but were not split
+  across cores: "attrCols", "availCols", "heterogeneity_spec",
+  "lognorm_price_dist", "n_classes", "n_draws", "nesting_params",
+  "nesting_spec", "observed_attributes", "scalingFactor_dist",
+  "utility_space". If these objects contain observation or
+  individual-specific data, and thus need to be split, please add a
+  column with the IDs to these objects, and call this column "ID" 
+Saving CV model as: MXL1k_none_pref_CV04
+Model output saved to logs/job_35774751/MXL1k_none_pref/MXL1k_none_pref_CV04_output.txt 
+Estimates saved to logs/job_35774751/MXL1k_none_pref/MXL1k_none_pref_CV04_estimates.csv 
+Model object saved to logs/job_35774751/MXL1k_none_pref/MXL1k_none_pref_CV04.rds 
+Out-of-sample time: 1.209
+Iter. total wall time: 2226.33 secs
+Estimation results written to file.
+Estimation cycle 5 (8805 obs.)
+INFORMATION: While preparing your inputs for multi-core estimation, the
+  following objects were found in "apollo_inputs", but were not split
+  across cores: "attrCols", "availCols", "heterogeneity_spec",
+  "lognorm_price_dist", "n_classes", "n_draws", "nesting_params",
+  "nesting_spec", "observed_attributes", "scalingFactor_dist",
+  "utility_space". If these objects contain observation or
+  individual-specific data, and thus need to be split, please add a
+  column with the IDs to these objects, and call this column "ID" 
+Saving CV model as: MXL1k_none_pref_CV05
+Model output saved to logs/job_35774751/MXL1k_none_pref/MXL1k_none_pref_CV05_output.txt 
+Estimates saved to logs/job_35774751/MXL1k_none_pref/MXL1k_none_pref_CV05_estimates.csv 
+Model object saved to logs/job_35774751/MXL1k_none_pref/MXL1k_none_pref_CV05.rds 
+Out-of-sample time: 1.204
+Iter. total wall time: 2009.519 secs
+Estimation results written to file.
+Processing time: 2.842878 hours
+
+Summary of cross-validation:
+         LL per obs in estimation sample LL per obs in validation sample
+sample_1                         -0.7354                         -0.6944
+sample_2                         -0.7332                         -0.6949
+sample_3                         -0.7300                         -0.7177
+sample_4                         -0.6948                         -0.8493
+sample_5                         -0.7289                         -0.7201
+Average                          -0.7245                         -0.7353
+         % difference CPU sec in validation sample
+sample_1       -5.579                        1.256
+sample_2       -5.223                        1.392
+sample_3       -1.676                        1.278
+sample_4       22.244                        1.209
+sample_5       -1.197                        1.204
+Average         1.714                        1.268
+Cross-Validation Complete
+Starting Psi' on Dataset Test 
+Restored to  1000  draws. 
+Mean Psi' (all) =  0.4575364 
+Mean Psi' (chosen only) =  0.4396348 
+Saved psi' dataset to:  logs/job_35774751/MXL1k_none_pref//MXL1k_none_pref_psi_prime_dataset.csv 
+Psi' on Dataset Test Complete
+Starting Speed Test 
+       ___Draws___              sec/
+nCores inter intra  progress  LLCall RAM(MB)
+     1  1000     0 ..........  25.83  8365.8
+     2  1000     0 INFORMATION: While preparing your inputs for multi-core estimation, the
+  following objects were found in "apollo_inputs", but were not split
+  across cores: "attrCols", "availCols", "heterogeneity_spec",
+  "lognorm_price_dist", "n_classes", "n_draws", "nesting_params",
+  "nesting_spec", "observed_attributes", "scalingFactor_dist",
+  "utility_space". If these objects contain observation or
+  individual-specific data, and thus need to be split, please add a
+  column with the IDs to these objects, and call this column "ID" 
+..........  14.75 14618.7
+     4  1000     0 INFORMATION: While preparing your inputs for multi-core estimation, the
+  following objects were found in "apollo_inputs", but were not split
+  across cores: "attrCols", "availCols", "heterogeneity_spec",
+  "lognorm_price_dist", "n_classes", "n_draws", "nesting_params",
+  "nesting_spec", "observed_attributes", "scalingFactor_dist",
+  "utility_space". If these objects contain observation or
+  individual-specific data, and thus need to be split, please add a
+  column with the IDs to these objects, and call this column "ID" 
+..........   8.95 19683.6
+
+Summary of results (sec. per call to LL function)
+       draws1000
+cores1   25.8341
+cores2   14.7483
+cores4    8.9464
+       model_name cores inter_draws intra_draws calls time_per_call  ram_mb
+1 MXL1k_none_pref     1        1000           0   100     25.834062  8365.8
+2 MXL1k_none_pref     2        1000           0   100     14.748325 14618.7
+3 MXL1k_none_pref     4        1000           0   100      8.946358 19683.6
+Saved speed test results to: logs/job_35774751/MXL1k_none_pref//MXL1k_none_pref_speedTest.csv 
+Saved detailed speed test results to: logs/job_35774751/MXL1k_none_pref//MXL1k_none_pref_speedTest_detailed.csv 
+Speed Test Complete 
+Starting Psi' Tests
+Psi' Tests Complete
+Starting Function Evaluation Timing
+Function Evaluation Timing Complete
+Part 3 (Cross-validation + Remaining) complete for: MXL1k_none_pref 
+All parts complete! Total execution time: 11.95 hours
+Final results saved to: logs/job_35774751/MXL1k_none_pref 
+Done with cross-validation. Results and logs saved to logs/job_35774751/

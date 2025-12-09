@@ -1,0 +1,935 @@
+SLURM_ARRAY_JOB_ID: 35808537 (current estimation job)
+SLURM_JOB_ID: 35808539
+SLURM_ARRAY_TASK_ID: 2
+ORIGINAL_JOB_ID: 35774751 (multistart job)
+Running estimation for model 2 using multistart results from job 35774751...
+Loaded Part 1 results for: LC8_CNL_pref 
+[1] FALSE
+Starting Part 2 (Estimation): LC8_CNL_pref 
+Using  32  cores. 
+Starting main estimation 
+WARNING: Object get_nl_spec from the global environment should not be
+  used inside apollo_probabilities. If needed, save it inside
+  apollo_inputs and call it as apollo_inputs$get_nl_spec. 
+Preparing user-defined functions.
+
+Testing likelihood function...
+Apollo found a model component of type classAlloc without a
+  componentName. The name was set to "classAlloc" by default.
+INFORMATION: Setting "avail" is missing, so full availability is
+  assumed. 
+
+Overview of choices for CNL model component Class_1:
+                                    cvC1    cvC2    cvC3   hevC1   hevC2
+Times available                  1311.00 1389.00 1340.00 1403.00 1348.00
+Times chosen                      478.00  497.00  495.00  546.00  485.00
+Percentage chosen overall           4.34    4.51    4.50    4.96    4.41
+Percentage chosen when available   36.46   35.78   36.94   38.92   35.98
+                                   hevC3 phev20C1 phev20C2 phev20C3 phev40C1
+Times available                  1371.00  1400.00  1342.00  1367.00  1443.00
+Times chosen                      541.00   494.00   507.00   518.00   558.00
+Percentage chosen overall           4.91     4.49     4.60     4.70     5.07
+Percentage chosen when available   39.46    35.29    37.78    37.89    38.67
+                                 phev40C2 phev40C3 bev100C1 bev100C2 bev100C3
+Times available                   1278.00  1369.00  1345.00  1320.00  1359.00
+Times chosen                       488.00   537.00   313.00   299.00   305.00
+Percentage chosen overall            4.43     4.88     2.84     2.72     2.77
+Percentage chosen when available    38.18    39.23    23.27    22.65    22.44
+                                 bev150C1 bev150C2 bev150C3 bev300C1 bev300C2
+Times available                   1357.00  1472.00  1410.00  1357.00  1459.00
+Times chosen                       363.00   389.00   336.00   449.00   487.00
+Percentage chosen overall            3.30     3.53     3.05     4.08     4.42
+Percentage chosen when available    26.75    26.43    23.83    33.09    33.38
+                                 bev300C3 bev400C1 bev400C2 bev400C3
+Times available                   1396.00  1394.00  1402.00  1398.00
+Times chosen                       441.00   469.00   525.00   490.00
+Percentage chosen overall            4.01     4.26     4.77     4.45
+Percentage chosen when available    31.59    33.64    37.45    35.05
+
+Structure for CNL model component Class_1:
+         cvC1 (alpha) cvC2 (alpha) cvC3 (alpha) hevC1 (alpha) hevC2 (alpha)
+GAS nest        1.000        1.000        1.000         1.000         1.000
+BEV nest        0.000        0.000        0.000         0.000         0.000
+         hevC3 (alpha) phev20C1 (alpha) phev20C2 (alpha) phev20C3 (alpha)
+GAS nest         1.000           0.9996           0.9996           0.9996
+BEV nest         0.000       3.9232e-04       3.9232e-04       3.9232e-04
+         phev40C1 (alpha) phev40C2 (alpha) phev40C3 (alpha) bev100C1 (alpha)
+GAS nest           0.9996           0.9996           0.9996            0.000
+BEV nest       3.9232e-04       3.9232e-04       3.9232e-04            1.000
+         bev100C2 (alpha) bev100C3 (alpha) bev150C1 (alpha) bev150C2 (alpha)
+GAS nest            0.000            0.000            0.000            0.000
+BEV nest            1.000            1.000            1.000            1.000
+         bev150C3 (alpha) bev300C1 (alpha) bev300C2 (alpha) bev300C3 (alpha)
+GAS nest            0.000            0.000            0.000            0.000
+BEV nest            1.000            1.000            1.000            1.000
+         bev400C1 (alpha) bev400C2 (alpha) bev400C3 (alpha)      lambda
+GAS nest            0.000            0.000            0.000       1.603
+BEV nest            1.000            1.000            1.000       1.688
+Some lambda parameters are larger than 1. You may want to impose a
+  constraint or reconsider your model structure.
+
+Overview of choices for CNL model component Class_2:
+                                    cvC1    cvC2    cvC3   hevC1   hevC2
+Times available                  1311.00 1389.00 1340.00 1403.00 1348.00
+Times chosen                      478.00  497.00  495.00  546.00  485.00
+Percentage chosen overall           4.34    4.51    4.50    4.96    4.41
+Percentage chosen when available   36.46   35.78   36.94   38.92   35.98
+                                   hevC3 phev20C1 phev20C2 phev20C3 phev40C1
+Times available                  1371.00  1400.00  1342.00  1367.00  1443.00
+Times chosen                      541.00   494.00   507.00   518.00   558.00
+Percentage chosen overall           4.91     4.49     4.60     4.70     5.07
+Percentage chosen when available   39.46    35.29    37.78    37.89    38.67
+                                 phev40C2 phev40C3 bev100C1 bev100C2 bev100C3
+Times available                   1278.00  1369.00  1345.00  1320.00  1359.00
+Times chosen                       488.00   537.00   313.00   299.00   305.00
+Percentage chosen overall            4.43     4.88     2.84     2.72     2.77
+Percentage chosen when available    38.18    39.23    23.27    22.65    22.44
+                                 bev150C1 bev150C2 bev150C3 bev300C1 bev300C2
+Times available                   1357.00  1472.00  1410.00  1357.00  1459.00
+Times chosen                       363.00   389.00   336.00   449.00   487.00
+Percentage chosen overall            3.30     3.53     3.05     4.08     4.42
+Percentage chosen when available    26.75    26.43    23.83    33.09    33.38
+                                 bev300C3 bev400C1 bev400C2 bev400C3
+Times available                   1396.00  1394.00  1402.00  1398.00
+Times chosen                       441.00   469.00   525.00   490.00
+Percentage chosen overall            4.01     4.26     4.77     4.45
+Percentage chosen when available    31.59    33.64    37.45    35.05
+
+Structure for CNL model component Class_2:
+         cvC1 (alpha) cvC2 (alpha) cvC3 (alpha) hevC1 (alpha) hevC2 (alpha)
+GAS nest        1.000        1.000        1.000         1.000         1.000
+BEV nest        0.000        0.000        0.000         0.000         0.000
+         hevC3 (alpha) phev20C1 (alpha) phev20C2 (alpha) phev20C3 (alpha)
+GAS nest         1.000           0.6071           0.6071           0.6071
+BEV nest         0.000           0.3929           0.3929           0.3929
+         phev40C1 (alpha) phev40C2 (alpha) phev40C3 (alpha) bev100C1 (alpha)
+GAS nest           0.6071           0.6071           0.6071            0.000
+BEV nest           0.3929           0.3929           0.3929            1.000
+         bev100C2 (alpha) bev100C3 (alpha) bev150C1 (alpha) bev150C2 (alpha)
+GAS nest            0.000            0.000            0.000            0.000
+BEV nest            1.000            1.000            1.000            1.000
+         bev150C3 (alpha) bev300C1 (alpha) bev300C2 (alpha) bev300C3 (alpha)
+GAS nest            0.000            0.000            0.000            0.000
+BEV nest            1.000            1.000            1.000            1.000
+         bev400C1 (alpha) bev400C2 (alpha) bev400C3 (alpha)      lambda
+GAS nest            0.000            0.000            0.000      0.3437
+BEV nest            1.000            1.000            1.000      1.0094
+Some lambda parameters are larger than 1. You may want to impose a
+  constraint or reconsider your model structure.
+
+Overview of choices for CNL model component Class_3:
+                                    cvC1    cvC2    cvC3   hevC1   hevC2
+Times available                  1311.00 1389.00 1340.00 1403.00 1348.00
+Times chosen                      478.00  497.00  495.00  546.00  485.00
+Percentage chosen overall           4.34    4.51    4.50    4.96    4.41
+Percentage chosen when available   36.46   35.78   36.94   38.92   35.98
+                                   hevC3 phev20C1 phev20C2 phev20C3 phev40C1
+Times available                  1371.00  1400.00  1342.00  1367.00  1443.00
+Times chosen                      541.00   494.00   507.00   518.00   558.00
+Percentage chosen overall           4.91     4.49     4.60     4.70     5.07
+Percentage chosen when available   39.46    35.29    37.78    37.89    38.67
+                                 phev40C2 phev40C3 bev100C1 bev100C2 bev100C3
+Times available                   1278.00  1369.00  1345.00  1320.00  1359.00
+Times chosen                       488.00   537.00   313.00   299.00   305.00
+Percentage chosen overall            4.43     4.88     2.84     2.72     2.77
+Percentage chosen when available    38.18    39.23    23.27    22.65    22.44
+                                 bev150C1 bev150C2 bev150C3 bev300C1 bev300C2
+Times available                   1357.00  1472.00  1410.00  1357.00  1459.00
+Times chosen                       363.00   389.00   336.00   449.00   487.00
+Percentage chosen overall            3.30     3.53     3.05     4.08     4.42
+Percentage chosen when available    26.75    26.43    23.83    33.09    33.38
+                                 bev300C3 bev400C1 bev400C2 bev400C3
+Times available                   1396.00  1394.00  1402.00  1398.00
+Times chosen                       441.00   469.00   525.00   490.00
+Percentage chosen overall            4.01     4.26     4.77     4.45
+Percentage chosen when available    31.59    33.64    37.45    35.05
+
+Structure for CNL model component Class_3:
+         cvC1 (alpha) cvC2 (alpha) cvC3 (alpha) hevC1 (alpha) hevC2 (alpha)
+GAS nest        1.000        1.000        1.000         1.000         1.000
+BEV nest        0.000        0.000        0.000         0.000         0.000
+         hevC3 (alpha) phev20C1 (alpha) phev20C2 (alpha) phev20C3 (alpha)
+GAS nest         1.000           0.4538           0.4538           0.4538
+BEV nest         0.000           0.5462           0.5462           0.5462
+         phev40C1 (alpha) phev40C2 (alpha) phev40C3 (alpha) bev100C1 (alpha)
+GAS nest           0.4538           0.4538           0.4538            0.000
+BEV nest           0.5462           0.5462           0.5462            1.000
+         bev100C2 (alpha) bev100C3 (alpha) bev150C1 (alpha) bev150C2 (alpha)
+GAS nest            0.000            0.000            0.000            0.000
+BEV nest            1.000            1.000            1.000            1.000
+         bev150C3 (alpha) bev300C1 (alpha) bev300C2 (alpha) bev300C3 (alpha)
+GAS nest            0.000            0.000            0.000            0.000
+BEV nest            1.000            1.000            1.000            1.000
+         bev400C1 (alpha) bev400C2 (alpha) bev400C3 (alpha)      lambda
+GAS nest            0.000            0.000            0.000      0.2520
+BEV nest            1.000            1.000            1.000      0.6344
+
+Overview of choices for CNL model component Class_4:
+                                    cvC1    cvC2    cvC3   hevC1   hevC2
+Times available                  1311.00 1389.00 1340.00 1403.00 1348.00
+Times chosen                      478.00  497.00  495.00  546.00  485.00
+Percentage chosen overall           4.34    4.51    4.50    4.96    4.41
+Percentage chosen when available   36.46   35.78   36.94   38.92   35.98
+                                   hevC3 phev20C1 phev20C2 phev20C3 phev40C1
+Times available                  1371.00  1400.00  1342.00  1367.00  1443.00
+Times chosen                      541.00   494.00   507.00   518.00   558.00
+Percentage chosen overall           4.91     4.49     4.60     4.70     5.07
+Percentage chosen when available   39.46    35.29    37.78    37.89    38.67
+                                 phev40C2 phev40C3 bev100C1 bev100C2 bev100C3
+Times available                   1278.00  1369.00  1345.00  1320.00  1359.00
+Times chosen                       488.00   537.00   313.00   299.00   305.00
+Percentage chosen overall            4.43     4.88     2.84     2.72     2.77
+Percentage chosen when available    38.18    39.23    23.27    22.65    22.44
+                                 bev150C1 bev150C2 bev150C3 bev300C1 bev300C2
+Times available                   1357.00  1472.00  1410.00  1357.00  1459.00
+Times chosen                       363.00   389.00   336.00   449.00   487.00
+Percentage chosen overall            3.30     3.53     3.05     4.08     4.42
+Percentage chosen when available    26.75    26.43    23.83    33.09    33.38
+                                 bev300C3 bev400C1 bev400C2 bev400C3
+Times available                   1396.00  1394.00  1402.00  1398.00
+Times chosen                       441.00   469.00   525.00   490.00
+Percentage chosen overall            4.01     4.26     4.77     4.45
+Percentage chosen when available    31.59    33.64    37.45    35.05
+
+Structure for CNL model component Class_4:
+         cvC1 (alpha) cvC2 (alpha) cvC3 (alpha) hevC1 (alpha) hevC2 (alpha)
+GAS nest        1.000        1.000        1.000         1.000         1.000
+BEV nest        0.000        0.000        0.000         0.000         0.000
+         hevC3 (alpha) phev20C1 (alpha) phev20C2 (alpha) phev20C3 (alpha)
+GAS nest         1.000          0.98353          0.98353          0.98353
+BEV nest         0.000          0.01647          0.01647          0.01647
+         phev40C1 (alpha) phev40C2 (alpha) phev40C3 (alpha) bev100C1 (alpha)
+GAS nest          0.98353          0.98353          0.98353            0.000
+BEV nest          0.01647          0.01647          0.01647            1.000
+         bev100C2 (alpha) bev100C3 (alpha) bev150C1 (alpha) bev150C2 (alpha)
+GAS nest            0.000            0.000            0.000            0.000
+BEV nest            1.000            1.000            1.000            1.000
+         bev150C3 (alpha) bev300C1 (alpha) bev300C2 (alpha) bev300C3 (alpha)
+GAS nest            0.000            0.000            0.000            0.000
+BEV nest            1.000            1.000            1.000            1.000
+         bev400C1 (alpha) bev400C2 (alpha) bev400C3 (alpha)      lambda
+GAS nest            0.000            0.000            0.000      0.7371
+BEV nest            1.000            1.000            1.000      0.8063
+
+Overview of choices for CNL model component Class_5:
+                                    cvC1    cvC2    cvC3   hevC1   hevC2
+Times available                  1311.00 1389.00 1340.00 1403.00 1348.00
+Times chosen                      478.00  497.00  495.00  546.00  485.00
+Percentage chosen overall           4.34    4.51    4.50    4.96    4.41
+Percentage chosen when available   36.46   35.78   36.94   38.92   35.98
+                                   hevC3 phev20C1 phev20C2 phev20C3 phev40C1
+Times available                  1371.00  1400.00  1342.00  1367.00  1443.00
+Times chosen                      541.00   494.00   507.00   518.00   558.00
+Percentage chosen overall           4.91     4.49     4.60     4.70     5.07
+Percentage chosen when available   39.46    35.29    37.78    37.89    38.67
+                                 phev40C2 phev40C3 bev100C1 bev100C2 bev100C3
+Times available                   1278.00  1369.00  1345.00  1320.00  1359.00
+Times chosen                       488.00   537.00   313.00   299.00   305.00
+Percentage chosen overall            4.43     4.88     2.84     2.72     2.77
+Percentage chosen when available    38.18    39.23    23.27    22.65    22.44
+                                 bev150C1 bev150C2 bev150C3 bev300C1 bev300C2
+Times available                   1357.00  1472.00  1410.00  1357.00  1459.00
+Times chosen                       363.00   389.00   336.00   449.00   487.00
+Percentage chosen overall            3.30     3.53     3.05     4.08     4.42
+Percentage chosen when available    26.75    26.43    23.83    33.09    33.38
+                                 bev300C3 bev400C1 bev400C2 bev400C3
+Times available                   1396.00  1394.00  1402.00  1398.00
+Times chosen                       441.00   469.00   525.00   490.00
+Percentage chosen overall            4.01     4.26     4.77     4.45
+Percentage chosen when available    31.59    33.64    37.45    35.05
+
+Structure for CNL model component Class_5:
+         cvC1 (alpha) cvC2 (alpha) cvC3 (alpha) hevC1 (alpha) hevC2 (alpha)
+GAS nest        1.000        1.000        1.000         1.000         1.000
+BEV nest        0.000        0.000        0.000         0.000         0.000
+         hevC3 (alpha) phev20C1 (alpha) phev20C2 (alpha) phev20C3 (alpha)
+GAS nest         1.000           0.6151           0.6151           0.6151
+BEV nest         0.000           0.3849           0.3849           0.3849
+         phev40C1 (alpha) phev40C2 (alpha) phev40C3 (alpha) bev100C1 (alpha)
+GAS nest           0.6151           0.6151           0.6151            0.000
+BEV nest           0.3849           0.3849           0.3849            1.000
+         bev100C2 (alpha) bev100C3 (alpha) bev150C1 (alpha) bev150C2 (alpha)
+GAS nest            0.000            0.000            0.000            0.000
+BEV nest            1.000            1.000            1.000            1.000
+         bev150C3 (alpha) bev300C1 (alpha) bev300C2 (alpha) bev300C3 (alpha)
+GAS nest            0.000            0.000            0.000            0.000
+BEV nest            1.000            1.000            1.000            1.000
+         bev400C1 (alpha) bev400C2 (alpha) bev400C3 (alpha)      lambda
+GAS nest            0.000            0.000            0.000      0.6827
+BEV nest            1.000            1.000            1.000      0.4414
+
+Overview of choices for CNL model component Class_6:
+                                    cvC1    cvC2    cvC3   hevC1   hevC2
+Times available                  1311.00 1389.00 1340.00 1403.00 1348.00
+Times chosen                      478.00  497.00  495.00  546.00  485.00
+Percentage chosen overall           4.34    4.51    4.50    4.96    4.41
+Percentage chosen when available   36.46   35.78   36.94   38.92   35.98
+                                   hevC3 phev20C1 phev20C2 phev20C3 phev40C1
+Times available                  1371.00  1400.00  1342.00  1367.00  1443.00
+Times chosen                      541.00   494.00   507.00   518.00   558.00
+Percentage chosen overall           4.91     4.49     4.60     4.70     5.07
+Percentage chosen when available   39.46    35.29    37.78    37.89    38.67
+                                 phev40C2 phev40C3 bev100C1 bev100C2 bev100C3
+Times available                   1278.00  1369.00  1345.00  1320.00  1359.00
+Times chosen                       488.00   537.00   313.00   299.00   305.00
+Percentage chosen overall            4.43     4.88     2.84     2.72     2.77
+Percentage chosen when available    38.18    39.23    23.27    22.65    22.44
+                                 bev150C1 bev150C2 bev150C3 bev300C1 bev300C2
+Times available                   1357.00  1472.00  1410.00  1357.00  1459.00
+Times chosen                       363.00   389.00   336.00   449.00   487.00
+Percentage chosen overall            3.30     3.53     3.05     4.08     4.42
+Percentage chosen when available    26.75    26.43    23.83    33.09    33.38
+                                 bev300C3 bev400C1 bev400C2 bev400C3
+Times available                   1396.00  1394.00  1402.00  1398.00
+Times chosen                       441.00   469.00   525.00   490.00
+Percentage chosen overall            4.01     4.26     4.77     4.45
+Percentage chosen when available    31.59    33.64    37.45    35.05
+
+Structure for CNL model component Class_6:
+         cvC1 (alpha) cvC2 (alpha) cvC3 (alpha) hevC1 (alpha) hevC2 (alpha)
+GAS nest        1.000        1.000        1.000         1.000         1.000
+BEV nest        0.000        0.000        0.000         0.000         0.000
+         hevC3 (alpha) phev20C1 (alpha) phev20C2 (alpha) phev20C3 (alpha)
+GAS nest         1.000           0.8300           0.8300           0.8300
+BEV nest         0.000           0.1700           0.1700           0.1700
+         phev40C1 (alpha) phev40C2 (alpha) phev40C3 (alpha) bev100C1 (alpha)
+GAS nest           0.8300           0.8300           0.8300            0.000
+BEV nest           0.1700           0.1700           0.1700            1.000
+         bev100C2 (alpha) bev100C3 (alpha) bev150C1 (alpha) bev150C2 (alpha)
+GAS nest            0.000            0.000            0.000            0.000
+BEV nest            1.000            1.000            1.000            1.000
+         bev150C3 (alpha) bev300C1 (alpha) bev300C2 (alpha) bev300C3 (alpha)
+GAS nest            0.000            0.000            0.000            0.000
+BEV nest            1.000            1.000            1.000            1.000
+         bev400C1 (alpha) bev400C2 (alpha) bev400C3 (alpha)      lambda
+GAS nest            0.000            0.000            0.000      0.3608
+BEV nest            1.000            1.000            1.000      0.7601
+
+Overview of choices for CNL model component Class_7:
+                                    cvC1    cvC2    cvC3   hevC1   hevC2
+Times available                  1311.00 1389.00 1340.00 1403.00 1348.00
+Times chosen                      478.00  497.00  495.00  546.00  485.00
+Percentage chosen overall           4.34    4.51    4.50    4.96    4.41
+Percentage chosen when available   36.46   35.78   36.94   38.92   35.98
+                                   hevC3 phev20C1 phev20C2 phev20C3 phev40C1
+Times available                  1371.00  1400.00  1342.00  1367.00  1443.00
+Times chosen                      541.00   494.00   507.00   518.00   558.00
+Percentage chosen overall           4.91     4.49     4.60     4.70     5.07
+Percentage chosen when available   39.46    35.29    37.78    37.89    38.67
+                                 phev40C2 phev40C3 bev100C1 bev100C2 bev100C3
+Times available                   1278.00  1369.00  1345.00  1320.00  1359.00
+Times chosen                       488.00   537.00   313.00   299.00   305.00
+Percentage chosen overall            4.43     4.88     2.84     2.72     2.77
+Percentage chosen when available    38.18    39.23    23.27    22.65    22.44
+                                 bev150C1 bev150C2 bev150C3 bev300C1 bev300C2
+Times available                   1357.00  1472.00  1410.00  1357.00  1459.00
+Times chosen                       363.00   389.00   336.00   449.00   487.00
+Percentage chosen overall            3.30     3.53     3.05     4.08     4.42
+Percentage chosen when available    26.75    26.43    23.83    33.09    33.38
+                                 bev300C3 bev400C1 bev400C2 bev400C3
+Times available                   1396.00  1394.00  1402.00  1398.00
+Times chosen                       441.00   469.00   525.00   490.00
+Percentage chosen overall            4.01     4.26     4.77     4.45
+Percentage chosen when available    31.59    33.64    37.45    35.05
+
+Structure for CNL model component Class_7:
+         cvC1 (alpha) cvC2 (alpha) cvC3 (alpha) hevC1 (alpha) hevC2 (alpha)
+GAS nest        1.000        1.000        1.000         1.000         1.000
+BEV nest        0.000        0.000        0.000         0.000         0.000
+         hevC3 (alpha) phev20C1 (alpha) phev20C2 (alpha) phev20C3 (alpha)
+GAS nest         1.000           0.4419           0.4419           0.4419
+BEV nest         0.000           0.5581           0.5581           0.5581
+         phev40C1 (alpha) phev40C2 (alpha) phev40C3 (alpha) bev100C1 (alpha)
+GAS nest           0.4419           0.4419           0.4419            0.000
+BEV nest           0.5581           0.5581           0.5581            1.000
+         bev100C2 (alpha) bev100C3 (alpha) bev150C1 (alpha) bev150C2 (alpha)
+GAS nest            0.000            0.000            0.000            0.000
+BEV nest            1.000            1.000            1.000            1.000
+         bev150C3 (alpha) bev300C1 (alpha) bev300C2 (alpha) bev300C3 (alpha)
+GAS nest            0.000            0.000            0.000            0.000
+BEV nest            1.000            1.000            1.000            1.000
+         bev400C1 (alpha) bev400C2 (alpha) bev400C3 (alpha)      lambda
+GAS nest            0.000            0.000            0.000      0.1274
+BEV nest            1.000            1.000            1.000      0.6292
+
+Overview of choices for CNL model component Class_8:
+                                    cvC1    cvC2    cvC3   hevC1   hevC2
+Times available                  1311.00 1389.00 1340.00 1403.00 1348.00
+Times chosen                      478.00  497.00  495.00  546.00  485.00
+Percentage chosen overall           4.34    4.51    4.50    4.96    4.41
+Percentage chosen when available   36.46   35.78   36.94   38.92   35.98
+                                   hevC3 phev20C1 phev20C2 phev20C3 phev40C1
+Times available                  1371.00  1400.00  1342.00  1367.00  1443.00
+Times chosen                      541.00   494.00   507.00   518.00   558.00
+Percentage chosen overall           4.91     4.49     4.60     4.70     5.07
+Percentage chosen when available   39.46    35.29    37.78    37.89    38.67
+                                 phev40C2 phev40C3 bev100C1 bev100C2 bev100C3
+Times available                   1278.00  1369.00  1345.00  1320.00  1359.00
+Times chosen                       488.00   537.00   313.00   299.00   305.00
+Percentage chosen overall            4.43     4.88     2.84     2.72     2.77
+Percentage chosen when available    38.18    39.23    23.27    22.65    22.44
+                                 bev150C1 bev150C2 bev150C3 bev300C1 bev300C2
+Times available                   1357.00  1472.00  1410.00  1357.00  1459.00
+Times chosen                       363.00   389.00   336.00   449.00   487.00
+Percentage chosen overall            3.30     3.53     3.05     4.08     4.42
+Percentage chosen when available    26.75    26.43    23.83    33.09    33.38
+                                 bev300C3 bev400C1 bev400C2 bev400C3
+Times available                   1396.00  1394.00  1402.00  1398.00
+Times chosen                       441.00   469.00   525.00   490.00
+Percentage chosen overall            4.01     4.26     4.77     4.45
+Percentage chosen when available    31.59    33.64    37.45    35.05
+
+Structure for CNL model component Class_8:
+         cvC1 (alpha) cvC2 (alpha) cvC3 (alpha) hevC1 (alpha) hevC2 (alpha)
+GAS nest        1.000        1.000        1.000         1.000         1.000
+BEV nest        0.000        0.000        0.000         0.000         0.000
+         hevC3 (alpha) phev20C1 (alpha) phev20C2 (alpha) phev20C3 (alpha)
+GAS nest         1.000        4.770e-05        4.770e-05        4.770e-05
+BEV nest         0.000            1.000            1.000            1.000
+         phev40C1 (alpha) phev40C2 (alpha) phev40C3 (alpha) bev100C1 (alpha)
+GAS nest        4.770e-05        4.770e-05        4.770e-05            0.000
+BEV nest            1.000            1.000            1.000            1.000
+         bev100C2 (alpha) bev100C3 (alpha) bev150C1 (alpha) bev150C2 (alpha)
+GAS nest            0.000            0.000            0.000            0.000
+BEV nest            1.000            1.000            1.000            1.000
+         bev150C3 (alpha) bev300C1 (alpha) bev300C2 (alpha) bev300C3 (alpha)
+GAS nest            0.000            0.000            0.000            0.000
+BEV nest            1.000            1.000            1.000            1.000
+         bev400C1 (alpha) bev400C2 (alpha) bev400C3 (alpha)      lambda
+GAS nest            0.000            0.000            0.000      2.8845
+BEV nest            1.000            1.000            1.000      0.8844
+Some lambda parameters are larger than 1. You may want to impose a
+  constraint or reconsider your model structure.
+
+Summary of class allocation for model component :
+         Mean prob.
+Class_1     0.06229
+Class_2     0.20614
+Class_3     0.17780
+Class_4     0.14615
+Class_5     0.13749
+Class_6     0.13534
+Class_7     0.08880
+Class_8     0.04600
+
+Pre-processing likelihood function...
+Creating cluster...
+INFORMATION: While preparing your inputs for multi-core estimation, the
+  following objects were found in "apollo_inputs", but were not split
+  across cores: "attrCols", "availCols", "constraints",
+  "heterogeneity_spec", "lognorm_price_dist", "n_classes", "n_draws",
+  "nesting_params", "nesting_spec", "observed_attributes",
+  "scalingFactor_dist", "utility_space". If these objects contain
+  observation or individual-specific data, and thus need to be split,
+  please add a column with the IDs to these objects, and call this
+  column "ID" 
+Preparing workers for multithreading...
+
+Testing influence of parameters.......................................................................................................................................
+Starting main estimation
+initial  value 7775.375031 
+iter   2 value 7775.374930
+iter   3 value 7775.374905
+iter   4 value 7775.374894
+iter   5 value 7775.374760
+iter   6 value 7775.374729
+iter   7 value 7775.374668
+iter   8 value 7775.374426
+iter   9 value 7775.374366
+iter  10 value 7775.374170
+iter  11 value 7775.374111
+iter  12 value 7775.373994
+iter  13 value 7775.373838
+iter  14 value 7775.373595
+iter  15 value 7775.373377
+iter  16 value 7775.373347
+iter  17 value 7775.373026
+iter  18 value 7775.372746
+iter  19 value 7775.372518
+iter  20 value 7775.371523
+iter  21 value 7775.371237
+iter  22 value 7775.370677
+iter  23 value 7775.370482
+iter  24 value 7775.369957
+iter  25 value 7775.369860
+iter  26 value 7775.369576
+iter  27 value 7775.369070
+iter  28 value 7775.368906
+iter  29 value 7775.368354
+iter  30 value 7775.367827
+iter  31 value 7775.367689
+iter  32 value 7775.367342
+iter  33 value 7775.366996
+iter  34 value 7775.366479
+iter  35 value 7775.366092
+iter  36 value 7775.366078
+iter  37 value 7775.365957
+iter  38 value 7775.365415
+iter  39 value 7775.365198
+iter  40 value 7775.364633
+iter  41 value 7775.363629
+iter  42 value 7775.362804
+iter  43 value 7775.362148
+iter  44 value 7775.361754
+iter  45 value 7775.361523
+iter  46 value 7775.361197
+iter  47 value 7775.360710
+iter  48 value 7775.360313
+iter  49 value 7775.359917
+iter  50 value 7775.359582
+iter  51 value 7775.359312
+iter  52 value 7775.359125
+iter  53 value 7775.358966
+iter  54 value 7775.358814
+iter  55 value 7775.358735
+iter  56 value 7775.358484
+iter  57 value 7775.358324
+iter  58 value 7775.358176
+iter  59 value 7775.358029
+iter  60 value 7775.357895
+iter  61 value 7775.357761
+iter  62 value 7775.357632
+iter  63 value 7775.357501
+iter  64 value 7775.357360
+iter  65 value 7775.357162
+iter  66 value 7775.356911
+iter  67 value 7775.356654
+iter  68 value 7775.356347
+iter  69 value 7775.356093
+iter  70 value 7775.355879
+iter  71 value 7775.355689
+iter  72 value 7775.355512
+iter  73 value 7775.355316
+iter  74 value 7775.355142
+iter  75 value 7775.354849
+iter  76 value 7775.354525
+iter  77 value 7775.354163
+iter  78 value 7775.353682
+iter  79 value 7775.353232
+iter  80 value 7775.353049
+iter  81 value 7775.352598
+iter  82 value 7775.351793
+iter  83 value 7775.350899
+iter  84 value 7775.350834
+iter  85 value 7775.349967
+iter  86 value 7775.349475
+iter  87 value 7775.348770
+iter  88 value 7775.346550
+iter  89 value 7775.345146
+iter  90 value 7775.344790
+iter  91 value 7775.343488
+iter  92 value 7775.342330
+iter  93 value 7775.341118
+iter  94 value 7775.338686
+iter  95 value 7775.336139
+iter  96 value 7775.334733
+iter  97 value 7775.332961
+iter  98 value 7775.331163
+iter  99 value 7775.329747
+iter 100 value 7775.327245
+iter 101 value 7775.325634
+iter 102 value 7775.323397
+iter 103 value 7775.322513
+iter 104 value 7775.322063
+iter 105 value 7775.320016
+iter 106 value 7775.316687
+iter 107 value 7775.315603
+iter 108 value 7775.314106
+iter 109 value 7775.312448
+iter 110 value 7775.310849
+iter 111 value 7775.309713
+iter 112 value 7775.308852
+iter 113 value 7775.307855
+iter 114 value 7775.307717
+iter 115 value 7775.306654
+iter 116 value 7775.306290
+iter 117 value 7775.306078
+iter 118 value 7775.305854
+iter 119 value 7775.305700
+iter 120 value 7775.305408
+iter 121 value 7775.305226
+iter 122 value 7775.305161
+iter 123 value 7775.305100
+iter 124 value 7775.305089
+iter 125 value 7775.305012
+iter 126 value 7775.304983
+iter 127 value 7775.304898
+iter 128 value 7775.304849
+iter 129 value 7775.304819
+iter 130 value 7775.304797
+iter 131 value 7775.304743
+iter 132 value 7775.304686
+iter 133 value 7775.304635
+iter 134 value 7775.304608
+iter 135 value 7775.304572
+iter 136 value 7775.304505
+iter 137 value 7775.304455
+iter 138 value 7775.304400
+iter 139 value 7775.304316
+iter 140 value 7775.304174
+iter 141 value 7775.304058
+iter 142 value 7775.303692
+iter 143 value 7775.303411
+iter 144 value 7775.302532
+iter 145 value 7775.301897
+iter 146 value 7775.301305
+iter 147 value 7775.300159
+iter 148 value 7775.300054
+iter 149 value 7775.299982
+iter 150 value 7775.299935
+iter 151 value 7775.299846
+iter 152 value 7775.299842
+iter 153 value 7775.299840
+iter 154 value 7775.299839
+iter 155 value 7775.299838
+iter 156 value 7775.299838
+iter 157 value 7775.299838
+iter 158 value 7775.299838
+iter 159 value 7775.299838
+iter 160 value 7775.299838
+iter 161 value 7775.299838
+iter 162 value 7775.299838
+iter 162 value 7775.299838
+iter 162 value 7775.299838
+final  value 7775.299838 
+converged
+
+Estimated parameters with approximate standard errors from BHHH matrix:
+                             Estimate     BHHH se BHH t-ratio (0)
+b_Price_1                   -0.066740    0.012013       -5.555753
+b_Acceleration_1            -0.039783    0.108252       -0.367508
+b_OpCost_1                   0.114664    0.051313        2.234616
+b_hev_1                     -0.268951    0.345161       -0.779203
+b_phev20_1                  -1.440218    0.609602       -2.362556
+b_phev40_1                  -0.595988    0.694577       -0.858059
+b_bev_1                     -1.991298    0.653572       -3.046794
+b_bevRangeRel_1              0.134122    0.189976        0.705997
+b_noBEVFC_1                  0.823992    0.475058        1.734506
+b_american_1                -2.724029    0.389715       -6.989791
+b_chinese_1                 -6.228786    0.833300       -7.474841
+b_japanese_1                -0.760848    0.191717       -3.968604
+b_skorean_1                 -3.968667    0.542909       -7.310008
+lambda_ICE_1                 1.603270    0.385729        4.156463
+lambda_BEV_1                 1.691813    0.489851        3.453730
+alpha_PHEV_ICE_logistic_1    9.959634  117.687262        0.084628
+class_intercept_1            0.000000          NA              NA
+b_Price_2                   -0.082752    0.007592      -10.899497
+b_Acceleration_2            -0.113022    0.019745       -5.724201
+b_OpCost_2                  -0.247447    0.023932      -10.339417
+b_hev_2                      0.291388    0.107499        2.710599
+b_phev20_2                   0.475507    0.129817        3.662915
+b_phev40_2                   0.404841    0.104670        3.867777
+b_bev_2                      0.602367    0.123612        4.873034
+b_bevRangeRel_2              0.270663    0.039870        6.788556
+b_noBEVFC_2                 -0.639989    0.116983       -5.470803
+b_american_2                -0.330784    0.072660       -4.552472
+b_chinese_2                 -4.517663    0.402914      -11.212481
+b_japanese_2                 0.275813    0.085692        3.218645
+b_skorean_2                 -0.210251    0.071248       -2.950991
+lambda_ICE_2                 0.343989    0.065999        5.212001
+lambda_BEV_2                 1.008143    0.106900        9.430720
+alpha_PHEV_ICE_logistic_2    0.449848    0.390878        1.150866
+class_intercept_2            1.197529    0.157137        7.620942
+b_Price_3                   -0.109109    0.009181      -11.884525
+b_Acceleration_3            -0.167050    0.019915       -8.388100
+b_OpCost_3                  -0.196216    0.019716       -9.952244
+b_hev_3                      0.100715    0.057446        1.753226
+b_phev20_3                   0.093562    0.111419        0.839738
+b_phev40_3                   0.162829    0.098569        1.651924
+b_bev_3                      0.003897    0.097588        0.039934
+b_bevRangeRel_3              0.484854    0.048462       10.004822
+b_noBEVFC_3                 -0.301490    0.087622       -3.440822
+b_american_3                -0.166788    0.086968       -1.917803
+b_chinese_3                 -0.231311    0.093941       -2.462312
+b_japanese_3                -0.329181    0.103600       -3.177431
+b_skorean_3                 -0.361485    0.093727       -3.856806
+lambda_ICE_3                 0.251936    0.058765        4.287184
+lambda_BEV_3                 0.634374    0.063579        9.977657
+alpha_PHEV_ICE_logistic_3   -0.191617    0.266636       -0.718647
+class_intercept_3            1.050926    0.161852        6.493135
+b_Price_4                   -0.020001    0.002458       -8.135582
+b_Acceleration_4            -0.157532    0.015890       -9.913752
+b_OpCost_4                  -0.100680    0.010826       -9.299936
+b_hev_4                      0.530973    0.114521        4.636459
+b_phev20_4                   0.325636    0.236467        1.377090
+b_phev40_4                   0.555797    0.274213        2.026880
+b_bev_4                      0.703304    0.109704        6.410900
+b_bevRangeRel_4              0.108859    0.035425        3.072956
+b_noBEVFC_4                 -0.563804    0.095027       -5.933087
+b_american_4                 0.348930    0.103945        3.356872
+b_chinese_4                  0.006014    0.121126        0.049652
+b_japanese_4                 0.251656    0.084936        2.962906
+b_skorean_4                 -0.334818    0.098064       -3.414295
+lambda_ICE_4                 0.737531    0.063925       11.537486
+lambda_BEV_4                 0.806320    0.120748        6.677709
+alpha_PHEV_ICE_logistic_4    9.099602 2872.214162        0.003168
+class_intercept_4            0.852882    0.175636        4.855961
+b_Price_5                   -0.033460    0.005553       -6.025678
+b_Acceleration_5            -0.080415    0.023117       -3.478554
+b_OpCost_5                  -0.075946    0.014311       -5.306887
+b_hev_5                     -0.322232    0.109159       -2.951949
+b_phev20_5                  -0.026781    0.086255       -0.310482
+b_phev40_5                  -0.095951    0.106220       -0.903326
+b_bev_5                     -1.961594    0.168658      -11.630570
+b_bevRangeRel_5              0.329466    0.078953        4.172945
+b_noBEVFC_5                 -0.172212    0.111182       -1.548917
+b_american_5                -0.212019    0.127421       -1.663932
+b_chinese_5                 -0.991249    0.208374       -4.757077
+b_japanese_5                -0.200082    0.119056       -1.680567
+b_skorean_5                 -0.144853    0.116923       -1.238870
+lambda_ICE_5                 0.684602    0.133491        5.128470
+lambda_BEV_5                 0.443340    0.080757        5.489821
+alpha_PHEV_ICE_logistic_5    0.467553    0.628748        0.743626
+class_intercept_5            0.792371    0.167045        4.743467
+b_Price_6                   -0.109525    0.011083       -9.882504
+b_Acceleration_6             0.057660    0.021704        2.656659
+b_OpCost_6                  -0.053506    0.016656       -3.212387
+b_hev_6                     -0.391681    0.097010       -4.037525
+b_phev20_6                  -0.679462    0.161416       -4.209383
+b_phev40_6                  -0.393028    0.161729       -2.430162
+b_bev_6                     -1.644294    0.179722       -9.149100
+b_bevRangeRel_6              0.486744    0.086054        5.656292
+b_noBEVFC_6                  0.113221    0.117437        0.964097
+b_american_6                 0.986734    0.184574        5.346009
+b_chinese_6                 -0.914212    0.185318       -4.933196
+b_japanese_6                 0.480805    0.158654        3.030522
+b_skorean_6                  0.217078    0.170925        1.270024
+lambda_ICE_6                 0.362950    0.087484        4.148756
+lambda_BEV_6                 0.762144    0.100867        7.555920
+alpha_PHEV_ICE_logistic_6    1.635598    1.242560        1.316313
+class_intercept_6            0.775244    0.177912        4.357460
+b_Price_7                   -0.529197    0.095315       -5.552060
+b_Acceleration_7            -0.018578    0.038967       -0.476756
+b_OpCost_7                  -0.241171    0.054277       -4.443356
+b_hev_7                     -0.151708    0.214814       -0.706230
+b_phev20_7                   0.462005    0.265703        1.738802
+b_phev40_7                  -0.218114    0.329732       -0.661489
+b_bev_7                     -0.108045    0.283304       -0.381375
+b_bevRangeRel_7             -0.204069    0.101647       -2.007636
+b_noBEVFC_7                  0.233680    0.229090        1.020036
+b_american_7                 0.124881    0.228791        0.545833
+b_chinese_7                 -0.919087    0.307697       -2.986987
+b_japanese_7                 0.267944    0.176628        1.516996
+b_skorean_7                 -0.136508    0.216990       -0.629098
+lambda_ICE_7                 0.127839    0.102935        1.241935
+lambda_BEV_7                 0.631129    0.180086        3.504595
+alpha_PHEV_ICE_logistic_7   -0.234708    0.643189       -0.364913
+class_intercept_7            0.354072    0.180196        1.964929
+b_Price_8                   -0.056989    0.031536       -1.807092
+b_Acceleration_8            -0.452454    0.285574       -1.584368
+b_OpCost_8                  -0.159116    0.074576       -2.133610
+b_hev_8                     -2.154618    1.411512       -1.526461
+b_phev20_8                  -1.108431    1.301444       -0.851693
+b_phev40_8                  -0.544033    1.393548       -0.390394
+b_bev_8                      1.332545    0.808145        1.648894
+b_bevRangeRel_8              2.464356    0.795346        3.098469
+b_noBEVFC_8                 -0.701444    0.354497       -1.978700
+b_american_8                -1.296030    1.084585       -1.194955
+b_chinese_8                 -3.137626    1.011816       -3.100985
+b_japanese_8                -0.762713    0.879344       -0.867365
+b_skorean_8                 -1.049095    0.828811       -1.265784
+lambda_ICE_8                 2.869763    2.611062        1.099079
+lambda_BEV_8                 0.864738    0.464432        1.861927
+alpha_PHEV_ICE_logistic_8   -9.999934   25.194992       -0.396902
+class_intercept_8           -0.304721    0.219875       -1.385886
+
+Final LL: -7775.3376
+
+Structure for CNL model component Class_1:
+         cvC1 (alpha) cvC2 (alpha) cvC3 (alpha) hevC1 (alpha) hevC2 (alpha)
+GAS nest        1.000        1.000        1.000         1.000         1.000
+BEV nest        0.000        0.000        0.000         0.000         0.000
+         hevC3 (alpha) phev20C1 (alpha) phev20C2 (alpha) phev20C3 (alpha)
+GAS nest         1.000            1.000            1.000            1.000
+BEV nest         0.000        4.727e-05        4.727e-05        4.727e-05
+         phev40C1 (alpha) phev40C2 (alpha) phev40C3 (alpha) bev100C1 (alpha)
+GAS nest            1.000            1.000            1.000            0.000
+BEV nest        4.727e-05        4.727e-05        4.727e-05            1.000
+         bev100C2 (alpha) bev100C3 (alpha) bev150C1 (alpha) bev150C2 (alpha)
+GAS nest            0.000            0.000            0.000            0.000
+BEV nest            1.000            1.000            1.000            1.000
+         bev150C3 (alpha) bev300C1 (alpha) bev300C2 (alpha) bev300C3 (alpha)
+GAS nest            0.000            0.000            0.000            0.000
+BEV nest            1.000            1.000            1.000            1.000
+         bev400C1 (alpha) bev400C2 (alpha) bev400C3 (alpha)      lambda
+GAS nest            0.000            0.000            0.000       1.603
+BEV nest            1.000            1.000            1.000       1.692
+Some lambda parameters are larger than 1. You may want to impose a
+  constraint or reconsider your model structure.
+Structure for CNL model component Class_2:
+         cvC1 (alpha) cvC2 (alpha) cvC3 (alpha) hevC1 (alpha) hevC2 (alpha)
+GAS nest        1.000        1.000        1.000         1.000         1.000
+BEV nest        0.000        0.000        0.000         0.000         0.000
+         hevC3 (alpha) phev20C1 (alpha) phev20C2 (alpha) phev20C3 (alpha)
+GAS nest         1.000           0.6106           0.6106           0.6106
+BEV nest         0.000           0.3894           0.3894           0.3894
+         phev40C1 (alpha) phev40C2 (alpha) phev40C3 (alpha) bev100C1 (alpha)
+GAS nest           0.6106           0.6106           0.6106            0.000
+BEV nest           0.3894           0.3894           0.3894            1.000
+         bev100C2 (alpha) bev100C3 (alpha) bev150C1 (alpha) bev150C2 (alpha)
+GAS nest            0.000            0.000            0.000            0.000
+BEV nest            1.000            1.000            1.000            1.000
+         bev150C3 (alpha) bev300C1 (alpha) bev300C2 (alpha) bev300C3 (alpha)
+GAS nest            0.000            0.000            0.000            0.000
+BEV nest            1.000            1.000            1.000            1.000
+         bev400C1 (alpha) bev400C2 (alpha) bev400C3 (alpha)      lambda
+GAS nest            0.000            0.000            0.000      0.3440
+BEV nest            1.000            1.000            1.000      1.0081
+Some lambda parameters are larger than 1. You may want to impose a
+  constraint or reconsider your model structure.
+Structure for CNL model component Class_3:
+         cvC1 (alpha) cvC2 (alpha) cvC3 (alpha) hevC1 (alpha) hevC2 (alpha)
+GAS nest        1.000        1.000        1.000         1.000         1.000
+BEV nest        0.000        0.000        0.000         0.000         0.000
+         hevC3 (alpha) phev20C1 (alpha) phev20C2 (alpha) phev20C3 (alpha)
+GAS nest         1.000           0.4522           0.4522           0.4522
+BEV nest         0.000           0.5478           0.5478           0.5478
+         phev40C1 (alpha) phev40C2 (alpha) phev40C3 (alpha) bev100C1 (alpha)
+GAS nest           0.4522           0.4522           0.4522            0.000
+BEV nest           0.5478           0.5478           0.5478            1.000
+         bev100C2 (alpha) bev100C3 (alpha) bev150C1 (alpha) bev150C2 (alpha)
+GAS nest            0.000            0.000            0.000            0.000
+BEV nest            1.000            1.000            1.000            1.000
+         bev150C3 (alpha) bev300C1 (alpha) bev300C2 (alpha) bev300C3 (alpha)
+GAS nest            0.000            0.000            0.000            0.000
+BEV nest            1.000            1.000            1.000            1.000
+         bev400C1 (alpha) bev400C2 (alpha) bev400C3 (alpha)      lambda
+GAS nest            0.000            0.000            0.000      0.2519
+BEV nest            1.000            1.000            1.000      0.6344
+Structure for CNL model component Class_4:
+         cvC1 (alpha) cvC2 (alpha) cvC3 (alpha) hevC1 (alpha) hevC2 (alpha)
+GAS nest        1.000        1.000        1.000         1.000         1.000
+BEV nest        0.000        0.000        0.000         0.000         0.000
+         hevC3 (alpha) phev20C1 (alpha) phev20C2 (alpha) phev20C3 (alpha)
+GAS nest         1.000           0.9999           0.9999           0.9999
+BEV nest         0.000       1.1170e-04       1.1170e-04       1.1170e-04
+         phev40C1 (alpha) phev40C2 (alpha) phev40C3 (alpha) bev100C1 (alpha)
+GAS nest           0.9999           0.9999           0.9999            0.000
+BEV nest       1.1170e-04       1.1170e-04       1.1170e-04            1.000
+         bev100C2 (alpha) bev100C3 (alpha) bev150C1 (alpha) bev150C2 (alpha)
+GAS nest            0.000            0.000            0.000            0.000
+BEV nest            1.000            1.000            1.000            1.000
+         bev150C3 (alpha) bev300C1 (alpha) bev300C2 (alpha) bev300C3 (alpha)
+GAS nest            0.000            0.000            0.000            0.000
+BEV nest            1.000            1.000            1.000            1.000
+         bev400C1 (alpha) bev400C2 (alpha) bev400C3 (alpha)      lambda
+GAS nest            0.000            0.000            0.000      0.7375
+BEV nest            1.000            1.000            1.000      0.8063
+Structure for CNL model component Class_5:
+         cvC1 (alpha) cvC2 (alpha) cvC3 (alpha) hevC1 (alpha) hevC2 (alpha)
+GAS nest        1.000        1.000        1.000         1.000         1.000
+BEV nest        0.000        0.000        0.000         0.000         0.000
+         hevC3 (alpha) phev20C1 (alpha) phev20C2 (alpha) phev20C3 (alpha)
+GAS nest         1.000           0.6148           0.6148           0.6148
+BEV nest         0.000           0.3852           0.3852           0.3852
+         phev40C1 (alpha) phev40C2 (alpha) phev40C3 (alpha) bev100C1 (alpha)
+GAS nest           0.6148           0.6148           0.6148            0.000
+BEV nest           0.3852           0.3852           0.3852            1.000
+         bev100C2 (alpha) bev100C3 (alpha) bev150C1 (alpha) bev150C2 (alpha)
+GAS nest            0.000            0.000            0.000            0.000
+BEV nest            1.000            1.000            1.000            1.000
+         bev150C3 (alpha) bev300C1 (alpha) bev300C2 (alpha) bev300C3 (alpha)
+GAS nest            0.000            0.000            0.000            0.000
+BEV nest            1.000            1.000            1.000            1.000
+         bev400C1 (alpha) bev400C2 (alpha) bev400C3 (alpha)      lambda
+GAS nest            0.000            0.000            0.000      0.6846
+BEV nest            1.000            1.000            1.000      0.4433
+Structure for CNL model component Class_6:
+         cvC1 (alpha) cvC2 (alpha) cvC3 (alpha) hevC1 (alpha) hevC2 (alpha)
+GAS nest        1.000        1.000        1.000         1.000         1.000
+BEV nest        0.000        0.000        0.000         0.000         0.000
+         hevC3 (alpha) phev20C1 (alpha) phev20C2 (alpha) phev20C3 (alpha)
+GAS nest         1.000           0.8369           0.8369           0.8369
+BEV nest         0.000           0.1631           0.1631           0.1631
+         phev40C1 (alpha) phev40C2 (alpha) phev40C3 (alpha) bev100C1 (alpha)
+GAS nest           0.8369           0.8369           0.8369            0.000
+BEV nest           0.1631           0.1631           0.1631            1.000
+         bev100C2 (alpha) bev100C3 (alpha) bev150C1 (alpha) bev150C2 (alpha)
+GAS nest            0.000            0.000            0.000            0.000
+BEV nest            1.000            1.000            1.000            1.000
+         bev150C3 (alpha) bev300C1 (alpha) bev300C2 (alpha) bev300C3 (alpha)
+GAS nest            0.000            0.000            0.000            0.000
+BEV nest            1.000            1.000            1.000            1.000
+         bev400C1 (alpha) bev400C2 (alpha) bev400C3 (alpha)      lambda
+GAS nest            0.000            0.000            0.000      0.3630
+BEV nest            1.000            1.000            1.000      0.7621
+Structure for CNL model component Class_7:
+         cvC1 (alpha) cvC2 (alpha) cvC3 (alpha) hevC1 (alpha) hevC2 (alpha)
+GAS nest        1.000        1.000        1.000         1.000         1.000
+BEV nest        0.000        0.000        0.000         0.000         0.000
+         hevC3 (alpha) phev20C1 (alpha) phev20C2 (alpha) phev20C3 (alpha)
+GAS nest         1.000           0.4416           0.4416           0.4416
+BEV nest         0.000           0.5584           0.5584           0.5584
+         phev40C1 (alpha) phev40C2 (alpha) phev40C3 (alpha) bev100C1 (alpha)
+GAS nest           0.4416           0.4416           0.4416            0.000
+BEV nest           0.5584           0.5584           0.5584            1.000
+         bev100C2 (alpha) bev100C3 (alpha) bev150C1 (alpha) bev150C2 (alpha)
+GAS nest            0.000            0.000            0.000            0.000
+BEV nest            1.000            1.000            1.000            1.000
+         bev150C3 (alpha) bev300C1 (alpha) bev300C2 (alpha) bev300C3 (alpha)
+GAS nest            0.000            0.000            0.000            0.000
+BEV nest            1.000            1.000            1.000            1.000
+         bev400C1 (alpha) bev400C2 (alpha) bev400C3 (alpha)      lambda
+GAS nest            0.000            0.000            0.000      0.1278
+BEV nest            1.000            1.000            1.000      0.6311
+Structure for CNL model component Class_8:
+         cvC1 (alpha) cvC2 (alpha) cvC3 (alpha) hevC1 (alpha) hevC2 (alpha)
+GAS nest        1.000        1.000        1.000         1.000         1.000
+BEV nest        0.000        0.000        0.000         0.000         0.000
+         hevC3 (alpha) phev20C1 (alpha) phev20C2 (alpha) phev20C3 (alpha)
+GAS nest         1.000        4.540e-05        4.540e-05        4.540e-05
+BEV nest         0.000            1.000            1.000            1.000
+         phev40C1 (alpha) phev40C2 (alpha) phev40C3 (alpha) bev100C1 (alpha)
+GAS nest        4.540e-05        4.540e-05        4.540e-05            0.000
+BEV nest            1.000            1.000            1.000            1.000
+         bev100C2 (alpha) bev100C3 (alpha) bev150C1 (alpha) bev150C2 (alpha)
+GAS nest            0.000            0.000            0.000            0.000
+BEV nest            1.000            1.000            1.000            1.000
+         bev150C3 (alpha) bev300C1 (alpha) bev300C2 (alpha) bev300C3 (alpha)
+GAS nest            0.000            0.000            0.000            0.000
+BEV nest            1.000            1.000            1.000            1.000
+         bev400C1 (alpha) bev400C2 (alpha) bev400C3 (alpha)      lambda
+GAS nest            0.000            0.000            0.000      2.8698
+BEV nest            1.000            1.000            1.000      0.8647
+Some lambda parameters are larger than 1. You may want to impose a
+  constraint or reconsider your model structure.
+
+Summary of class allocation for model component :
+         Mean prob.
+Class_1     0.06226
+Class_2     0.20621
+Class_3     0.17809
+Class_4     0.14610
+Class_5     0.13752
+Class_6     0.13518
+Class_7     0.08872
+Class_8     0.04591
+
+Calculating log-likelihood at equal shares (LL(0)) for applicable
+  models...
+Calculating LL of each model component...
+Calculating other model fit measures
+INFORMATION: Your model took more than 10 minutes to estimate, so it
+  was saved to file
+  logs/job_35774751/LC8_CNL_pref/LC8_CNL_pref_model.rds before
+  calculating its covariance matrix. If calculation of the covariance
+  matrix fails or is stopped before finishing, you can load the model
+  up to this point using apollo_loadModel. You may also want to inspect
+  the approximate BHHH standard errors shown above to determine whether
+  you wish to continue this process. 
+Computing covariance matrix using numerical methods (numDeriv).
+ 0%....25%....50%....75%....100%
+Negative definite Hessian with maximum eigenvalue: -0.000534
+
+Please acknowledge the use of Apollo by citing Hess & Palma (2019) -
+  doi.org/10.1016/j.jocm.2019.100170
+Model output saved to logs/job_35774751/LC8_CNL_pref/LC8_CNL_pref_output.txt 
+Estimates saved to logs/job_35774751/LC8_CNL_pref/LC8_CNL_pref_estimates.csv 
+Model object saved to logs/job_35774751/LC8_CNL_pref/LC8_CNL_pref.rds 
+[1] TRUE
+Main estimation complete 
+Part 2 (Estimation) complete for: LC8_CNL_pref 
+Results saved to: logs/job_35774751/LC8_CNL_pref 
+Total time: 3.88 hours
+Ready for Part 3 (Cross-validation + remaining)
+Done with estimation. Results and logs saved to logs/job_35774751/

@@ -1,0 +1,68 @@
+# History files
+.Rhistory
+.Rapp.history
+
+# Session Data files
+.RData
+.RDataTmp
+
+# User-specific files
+.Ruserdata
+
+# Example code in package build process
+*-Ex.R
+
+# Output files from R CMD build
+/*.tar.gz
+
+# Output files from R CMD check
+/*.Rcheck/
+
+# RStudio files
+.Rproj.user/
+
+# produced vignettes
+vignettes/*.html
+vignettes/*.pdf
+
+# OAuth2 token, see https://github.com/hadley/httr/releases/tag/v0.3
+.httr-oauth
+
+# knitr and R markdown default cache directories
+*_cache/
+/cache/
+
+# Temporary files created by R markdown
+*.utf8.md
+*.knit.md
+
+# R Environment Variables
+.Renviron
+
+# pkgdown site
+docs/
+
+# translation temp files
+po/*~
+
+# RStudio Connect folder
+rsconnect/
+
+output/
+dcm-for-design.Rproj
+solutions/v4_2_09-02_18-03_MXL100_profile/run_model_profile.out
+solutions/v4_2_09-03_16-54_profile_MXL1k/MXL_none_pref/MXL_none_pref_model.rds
+solutions/v4_2_09-03_16-54_profile_MXL1k/MXL_none_pref/MXL_none_pref_OLD1_model.rds
+solutions/v4_2_09-03_16-54_profile_MXL1k/MXL_none_pref/MXL_none_pref_OLD2_model.rds
+solutions/v4_2_09-03_16-54_profile_MXL1k/run_model_profile.out
+logs/*
+solutions/~$Data Collection Logbook.xlsx
+/solutions/main1/too_big_for_github/
+/solutions/main1/archived/too_big_for_github/
+/solutions/main1_preserved/too_big_for_github/
+/solutions/main2_preserved/too_big_for_github/
+/solutions/main2_recollectA/too_big_for_github/
+/solutions/main2_recollectB/too_big_for_github/
+/solutions/main2_10-29-25/too_big_for_github/
+/solutions/main2_11-11-25/too_big_for_github/
+/solutions/Solutions Archive Local/

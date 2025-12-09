@@ -1,0 +1,1061 @@
+SLURM_ARRAY_JOB_ID: 35808537 (current estimation job)
+SLURM_JOB_ID: 35808538
+SLURM_ARRAY_TASK_ID: 1
+ORIGINAL_JOB_ID: 35774751 (multistart job)
+Running estimation for model 1 using multistart results from job 35774751...
+Loaded Part 1 results for: LC8_NL_pref 
+[1] FALSE
+Starting Part 2 (Estimation): LC8_NL_pref 
+Using  32  cores. 
+Starting main estimation 
+WARNING: Object get_nl_spec from the global environment should not be
+  used inside apollo_probabilities. If needed, save it inside
+  apollo_inputs and call it as apollo_inputs$get_nl_spec. 
+Preparing user-defined functions.
+
+Testing likelihood function...
+Apollo found a model component of type classAlloc without a
+  componentName. The name was set to "classAlloc" by default.
+INFORMATION: Setting "avail" is missing, so full availability is
+  assumed. 
+
+Overview of choices for NL model component Class_1:
+                                    cvC1    cvC2    cvC3   hevC1   hevC2
+Times available                  1311.00 1389.00 1340.00 1403.00 1348.00
+Times chosen                      478.00  497.00  495.00  546.00  485.00
+Percentage chosen overall           4.34    4.51    4.50    4.96    4.41
+Percentage chosen when available   36.46   35.78   36.94   38.92   35.98
+                                   hevC3 phev20C1 phev20C2 phev20C3 phev40C1
+Times available                  1371.00  1400.00  1342.00  1367.00  1443.00
+Times chosen                      541.00   494.00   507.00   518.00   558.00
+Percentage chosen overall           4.91     4.49     4.60     4.70     5.07
+Percentage chosen when available   39.46    35.29    37.78    37.89    38.67
+                                 phev40C2 phev40C3 bev100C1 bev100C2 bev100C3
+Times available                   1278.00  1369.00  1345.00  1320.00  1359.00
+Times chosen                       488.00   537.00   313.00   299.00   305.00
+Percentage chosen overall            4.43     4.88     2.84     2.72     2.77
+Percentage chosen when available    38.18    39.23    23.27    22.65    22.44
+                                 bev150C1 bev150C2 bev150C3 bev300C1 bev300C2
+Times available                   1357.00  1472.00  1410.00  1357.00  1459.00
+Times chosen                       363.00   389.00   336.00   449.00   487.00
+Percentage chosen overall            3.30     3.53     3.05     4.08     4.42
+Percentage chosen when available    26.75    26.43    23.83    33.09    33.38
+                                 bev300C3 bev400C1 bev400C2 bev400C3
+Times available                   1396.00  1394.00  1402.00  1398.00
+Times chosen                       441.00   469.00   525.00   490.00
+Percentage chosen overall            4.01     4.26     4.77     4.45
+Percentage chosen when available    31.59    33.64    37.45    35.05
+
+Nesting structure for NL model component Class_1:
+Nest: root (1)
+|-Nest: ICE (0.7606)
+|  |-Alternative: cvC1
+|  |-Alternative: cvC2
+|  |-Alternative: cvC3
+|  |-Alternative: hevC1
+|  |-Alternative: hevC2
+|  '-Alternative: hevC3
+|-Nest: PHEV (0.3289)
+|  |-Alternative: phev20C1
+|  |-Alternative: phev20C2
+|  |-Alternative: phev20C3
+|  |-Alternative: phev40C1
+|  |-Alternative: phev40C2
+|  '-Alternative: phev40C3
+'-Nest: BEV (1.1186)
+   |-Alternative: bev100C1
+   |-Alternative: bev100C2
+   |-Alternative: bev100C3
+   |-Alternative: bev150C1
+   |-Alternative: bev150C2
+   |-Alternative: bev150C3
+   |-Alternative: bev300C1
+   |-Alternative: bev300C2
+   |-Alternative: bev300C3
+   |-Alternative: bev400C1
+   |-Alternative: bev400C2
+   '-Alternative: bev400C3
+
+WARNING: The nesting parameter for nest "BEV" should be between 0 and 1
+  (the nesting parameter for nest "root"), yet its value is 1.1186. 
+
+Overview of choices for NL model component Class_2:
+                                    cvC1    cvC2    cvC3   hevC1   hevC2
+Times available                  1311.00 1389.00 1340.00 1403.00 1348.00
+Times chosen                      478.00  497.00  495.00  546.00  485.00
+Percentage chosen overall           4.34    4.51    4.50    4.96    4.41
+Percentage chosen when available   36.46   35.78   36.94   38.92   35.98
+                                   hevC3 phev20C1 phev20C2 phev20C3 phev40C1
+Times available                  1371.00  1400.00  1342.00  1367.00  1443.00
+Times chosen                      541.00   494.00   507.00   518.00   558.00
+Percentage chosen overall           4.91     4.49     4.60     4.70     5.07
+Percentage chosen when available   39.46    35.29    37.78    37.89    38.67
+                                 phev40C2 phev40C3 bev100C1 bev100C2 bev100C3
+Times available                   1278.00  1369.00  1345.00  1320.00  1359.00
+Times chosen                       488.00   537.00   313.00   299.00   305.00
+Percentage chosen overall            4.43     4.88     2.84     2.72     2.77
+Percentage chosen when available    38.18    39.23    23.27    22.65    22.44
+                                 bev150C1 bev150C2 bev150C3 bev300C1 bev300C2
+Times available                   1357.00  1472.00  1410.00  1357.00  1459.00
+Times chosen                       363.00   389.00   336.00   449.00   487.00
+Percentage chosen overall            3.30     3.53     3.05     4.08     4.42
+Percentage chosen when available    26.75    26.43    23.83    33.09    33.38
+                                 bev300C3 bev400C1 bev400C2 bev400C3
+Times available                   1396.00  1394.00  1402.00  1398.00
+Times chosen                       441.00   469.00   525.00   490.00
+Percentage chosen overall            4.01     4.26     4.77     4.45
+Percentage chosen when available    31.59    33.64    37.45    35.05
+
+Nesting structure for NL model component Class_2:
+Nest: root (1)
+|-Nest: ICE (0.44)
+|  |-Alternative: cvC1
+|  |-Alternative: cvC2
+|  |-Alternative: cvC3
+|  |-Alternative: hevC1
+|  |-Alternative: hevC2
+|  '-Alternative: hevC3
+|-Nest: PHEV (0.3869)
+|  |-Alternative: phev20C1
+|  |-Alternative: phev20C2
+|  |-Alternative: phev20C3
+|  |-Alternative: phev40C1
+|  |-Alternative: phev40C2
+|  '-Alternative: phev40C3
+'-Nest: BEV (0.7407)
+   |-Alternative: bev100C1
+   |-Alternative: bev100C2
+   |-Alternative: bev100C3
+   |-Alternative: bev150C1
+   |-Alternative: bev150C2
+   |-Alternative: bev150C3
+   |-Alternative: bev300C1
+   |-Alternative: bev300C2
+   |-Alternative: bev300C3
+   |-Alternative: bev400C1
+   |-Alternative: bev400C2
+   '-Alternative: bev400C3
+
+Overview of choices for NL model component Class_3:
+                                    cvC1    cvC2    cvC3   hevC1   hevC2
+Times available                  1311.00 1389.00 1340.00 1403.00 1348.00
+Times chosen                      478.00  497.00  495.00  546.00  485.00
+Percentage chosen overall           4.34    4.51    4.50    4.96    4.41
+Percentage chosen when available   36.46   35.78   36.94   38.92   35.98
+                                   hevC3 phev20C1 phev20C2 phev20C3 phev40C1
+Times available                  1371.00  1400.00  1342.00  1367.00  1443.00
+Times chosen                      541.00   494.00   507.00   518.00   558.00
+Percentage chosen overall           4.91     4.49     4.60     4.70     5.07
+Percentage chosen when available   39.46    35.29    37.78    37.89    38.67
+                                 phev40C2 phev40C3 bev100C1 bev100C2 bev100C3
+Times available                   1278.00  1369.00  1345.00  1320.00  1359.00
+Times chosen                       488.00   537.00   313.00   299.00   305.00
+Percentage chosen overall            4.43     4.88     2.84     2.72     2.77
+Percentage chosen when available    38.18    39.23    23.27    22.65    22.44
+                                 bev150C1 bev150C2 bev150C3 bev300C1 bev300C2
+Times available                   1357.00  1472.00  1410.00  1357.00  1459.00
+Times chosen                       363.00   389.00   336.00   449.00   487.00
+Percentage chosen overall            3.30     3.53     3.05     4.08     4.42
+Percentage chosen when available    26.75    26.43    23.83    33.09    33.38
+                                 bev300C3 bev400C1 bev400C2 bev400C3
+Times available                   1396.00  1394.00  1402.00  1398.00
+Times chosen                       441.00   469.00   525.00   490.00
+Percentage chosen overall            4.01     4.26     4.77     4.45
+Percentage chosen when available    31.59    33.64    37.45    35.05
+
+Nesting structure for NL model component Class_3:
+Nest: root (1)
+|-Nest: ICE (0.6611)
+|  |-Alternative: cvC1
+|  |-Alternative: cvC2
+|  |-Alternative: cvC3
+|  |-Alternative: hevC1
+|  |-Alternative: hevC2
+|  '-Alternative: hevC3
+|-Nest: PHEV (1.0537)
+|  |-Alternative: phev20C1
+|  |-Alternative: phev20C2
+|  |-Alternative: phev20C3
+|  |-Alternative: phev40C1
+|  |-Alternative: phev40C2
+|  '-Alternative: phev40C3
+'-Nest: BEV (0.9871)
+   |-Alternative: bev100C1
+   |-Alternative: bev100C2
+   |-Alternative: bev100C3
+   |-Alternative: bev150C1
+   |-Alternative: bev150C2
+   |-Alternative: bev150C3
+   |-Alternative: bev300C1
+   |-Alternative: bev300C2
+   |-Alternative: bev300C3
+   |-Alternative: bev400C1
+   |-Alternative: bev400C2
+   '-Alternative: bev400C3
+
+WARNING: The nesting parameter for nest "PHEV" should be between 0 and
+  1 (the nesting parameter for nest "root"), yet its value is 1.0537. 
+
+Overview of choices for NL model component Class_4:
+                                    cvC1    cvC2    cvC3   hevC1   hevC2
+Times available                  1311.00 1389.00 1340.00 1403.00 1348.00
+Times chosen                      478.00  497.00  495.00  546.00  485.00
+Percentage chosen overall           4.34    4.51    4.50    4.96    4.41
+Percentage chosen when available   36.46   35.78   36.94   38.92   35.98
+                                   hevC3 phev20C1 phev20C2 phev20C3 phev40C1
+Times available                  1371.00  1400.00  1342.00  1367.00  1443.00
+Times chosen                      541.00   494.00   507.00   518.00   558.00
+Percentage chosen overall           4.91     4.49     4.60     4.70     5.07
+Percentage chosen when available   39.46    35.29    37.78    37.89    38.67
+                                 phev40C2 phev40C3 bev100C1 bev100C2 bev100C3
+Times available                   1278.00  1369.00  1345.00  1320.00  1359.00
+Times chosen                       488.00   537.00   313.00   299.00   305.00
+Percentage chosen overall            4.43     4.88     2.84     2.72     2.77
+Percentage chosen when available    38.18    39.23    23.27    22.65    22.44
+                                 bev150C1 bev150C2 bev150C3 bev300C1 bev300C2
+Times available                   1357.00  1472.00  1410.00  1357.00  1459.00
+Times chosen                       363.00   389.00   336.00   449.00   487.00
+Percentage chosen overall            3.30     3.53     3.05     4.08     4.42
+Percentage chosen when available    26.75    26.43    23.83    33.09    33.38
+                                 bev300C3 bev400C1 bev400C2 bev400C3
+Times available                   1396.00  1394.00  1402.00  1398.00
+Times chosen                       441.00   469.00   525.00   490.00
+Percentage chosen overall            4.01     4.26     4.77     4.45
+Percentage chosen when available    31.59    33.64    37.45    35.05
+
+Nesting structure for NL model component Class_4:
+Nest: root (1)
+|-Nest: ICE (0.8629)
+|  |-Alternative: cvC1
+|  |-Alternative: cvC2
+|  |-Alternative: cvC3
+|  |-Alternative: hevC1
+|  |-Alternative: hevC2
+|  '-Alternative: hevC3
+|-Nest: PHEV (0.3218)
+|  |-Alternative: phev20C1
+|  |-Alternative: phev20C2
+|  |-Alternative: phev20C3
+|  |-Alternative: phev40C1
+|  |-Alternative: phev40C2
+|  '-Alternative: phev40C3
+'-Nest: BEV (0.91)
+   |-Alternative: bev100C1
+   |-Alternative: bev100C2
+   |-Alternative: bev100C3
+   |-Alternative: bev150C1
+   |-Alternative: bev150C2
+   |-Alternative: bev150C3
+   |-Alternative: bev300C1
+   |-Alternative: bev300C2
+   |-Alternative: bev300C3
+   |-Alternative: bev400C1
+   |-Alternative: bev400C2
+   '-Alternative: bev400C3
+
+Overview of choices for NL model component Class_5:
+                                    cvC1    cvC2    cvC3   hevC1   hevC2
+Times available                  1311.00 1389.00 1340.00 1403.00 1348.00
+Times chosen                      478.00  497.00  495.00  546.00  485.00
+Percentage chosen overall           4.34    4.51    4.50    4.96    4.41
+Percentage chosen when available   36.46   35.78   36.94   38.92   35.98
+                                   hevC3 phev20C1 phev20C2 phev20C3 phev40C1
+Times available                  1371.00  1400.00  1342.00  1367.00  1443.00
+Times chosen                      541.00   494.00   507.00   518.00   558.00
+Percentage chosen overall           4.91     4.49     4.60     4.70     5.07
+Percentage chosen when available   39.46    35.29    37.78    37.89    38.67
+                                 phev40C2 phev40C3 bev100C1 bev100C2 bev100C3
+Times available                   1278.00  1369.00  1345.00  1320.00  1359.00
+Times chosen                       488.00   537.00   313.00   299.00   305.00
+Percentage chosen overall            4.43     4.88     2.84     2.72     2.77
+Percentage chosen when available    38.18    39.23    23.27    22.65    22.44
+                                 bev150C1 bev150C2 bev150C3 bev300C1 bev300C2
+Times available                   1357.00  1472.00  1410.00  1357.00  1459.00
+Times chosen                       363.00   389.00   336.00   449.00   487.00
+Percentage chosen overall            3.30     3.53     3.05     4.08     4.42
+Percentage chosen when available    26.75    26.43    23.83    33.09    33.38
+                                 bev300C3 bev400C1 bev400C2 bev400C3
+Times available                   1396.00  1394.00  1402.00  1398.00
+Times chosen                       441.00   469.00   525.00   490.00
+Percentage chosen overall            4.01     4.26     4.77     4.45
+Percentage chosen when available    31.59    33.64    37.45    35.05
+
+Nesting structure for NL model component Class_5:
+Nest: root (1)
+|-Nest: ICE (0.9116)
+|  |-Alternative: cvC1
+|  |-Alternative: cvC2
+|  |-Alternative: cvC3
+|  |-Alternative: hevC1
+|  |-Alternative: hevC2
+|  '-Alternative: hevC3
+|-Nest: PHEV (0.7167)
+|  |-Alternative: phev20C1
+|  |-Alternative: phev20C2
+|  |-Alternative: phev20C3
+|  |-Alternative: phev40C1
+|  |-Alternative: phev40C2
+|  '-Alternative: phev40C3
+'-Nest: BEV (0.9103)
+   |-Alternative: bev100C1
+   |-Alternative: bev100C2
+   |-Alternative: bev100C3
+   |-Alternative: bev150C1
+   |-Alternative: bev150C2
+   |-Alternative: bev150C3
+   |-Alternative: bev300C1
+   |-Alternative: bev300C2
+   |-Alternative: bev300C3
+   |-Alternative: bev400C1
+   |-Alternative: bev400C2
+   '-Alternative: bev400C3
+
+Overview of choices for NL model component Class_6:
+                                    cvC1    cvC2    cvC3   hevC1   hevC2
+Times available                  1311.00 1389.00 1340.00 1403.00 1348.00
+Times chosen                      478.00  497.00  495.00  546.00  485.00
+Percentage chosen overall           4.34    4.51    4.50    4.96    4.41
+Percentage chosen when available   36.46   35.78   36.94   38.92   35.98
+                                   hevC3 phev20C1 phev20C2 phev20C3 phev40C1
+Times available                  1371.00  1400.00  1342.00  1367.00  1443.00
+Times chosen                      541.00   494.00   507.00   518.00   558.00
+Percentage chosen overall           4.91     4.49     4.60     4.70     5.07
+Percentage chosen when available   39.46    35.29    37.78    37.89    38.67
+                                 phev40C2 phev40C3 bev100C1 bev100C2 bev100C3
+Times available                   1278.00  1369.00  1345.00  1320.00  1359.00
+Times chosen                       488.00   537.00   313.00   299.00   305.00
+Percentage chosen overall            4.43     4.88     2.84     2.72     2.77
+Percentage chosen when available    38.18    39.23    23.27    22.65    22.44
+                                 bev150C1 bev150C2 bev150C3 bev300C1 bev300C2
+Times available                   1357.00  1472.00  1410.00  1357.00  1459.00
+Times chosen                       363.00   389.00   336.00   449.00   487.00
+Percentage chosen overall            3.30     3.53     3.05     4.08     4.42
+Percentage chosen when available    26.75    26.43    23.83    33.09    33.38
+                                 bev300C3 bev400C1 bev400C2 bev400C3
+Times available                   1396.00  1394.00  1402.00  1398.00
+Times chosen                       441.00   469.00   525.00   490.00
+Percentage chosen overall            4.01     4.26     4.77     4.45
+Percentage chosen when available    31.59    33.64    37.45    35.05
+
+Nesting structure for NL model component Class_6:
+Nest: root (1)
+|-Nest: ICE (0.621)
+|  |-Alternative: cvC1
+|  |-Alternative: cvC2
+|  |-Alternative: cvC3
+|  |-Alternative: hevC1
+|  |-Alternative: hevC2
+|  '-Alternative: hevC3
+|-Nest: PHEV (0.6449)
+|  |-Alternative: phev20C1
+|  |-Alternative: phev20C2
+|  |-Alternative: phev20C3
+|  |-Alternative: phev40C1
+|  |-Alternative: phev40C2
+|  '-Alternative: phev40C3
+'-Nest: BEV (0.6475)
+   |-Alternative: bev100C1
+   |-Alternative: bev100C2
+   |-Alternative: bev100C3
+   |-Alternative: bev150C1
+   |-Alternative: bev150C2
+   |-Alternative: bev150C3
+   |-Alternative: bev300C1
+   |-Alternative: bev300C2
+   |-Alternative: bev300C3
+   |-Alternative: bev400C1
+   |-Alternative: bev400C2
+   '-Alternative: bev400C3
+
+Overview of choices for NL model component Class_7:
+                                    cvC1    cvC2    cvC3   hevC1   hevC2
+Times available                  1311.00 1389.00 1340.00 1403.00 1348.00
+Times chosen                      478.00  497.00  495.00  546.00  485.00
+Percentage chosen overall           4.34    4.51    4.50    4.96    4.41
+Percentage chosen when available   36.46   35.78   36.94   38.92   35.98
+                                   hevC3 phev20C1 phev20C2 phev20C3 phev40C1
+Times available                  1371.00  1400.00  1342.00  1367.00  1443.00
+Times chosen                      541.00   494.00   507.00   518.00   558.00
+Percentage chosen overall           4.91     4.49     4.60     4.70     5.07
+Percentage chosen when available   39.46    35.29    37.78    37.89    38.67
+                                 phev40C2 phev40C3 bev100C1 bev100C2 bev100C3
+Times available                   1278.00  1369.00  1345.00  1320.00  1359.00
+Times chosen                       488.00   537.00   313.00   299.00   305.00
+Percentage chosen overall            4.43     4.88     2.84     2.72     2.77
+Percentage chosen when available    38.18    39.23    23.27    22.65    22.44
+                                 bev150C1 bev150C2 bev150C3 bev300C1 bev300C2
+Times available                   1357.00  1472.00  1410.00  1357.00  1459.00
+Times chosen                       363.00   389.00   336.00   449.00   487.00
+Percentage chosen overall            3.30     3.53     3.05     4.08     4.42
+Percentage chosen when available    26.75    26.43    23.83    33.09    33.38
+                                 bev300C3 bev400C1 bev400C2 bev400C3
+Times available                   1396.00  1394.00  1402.00  1398.00
+Times chosen                       441.00   469.00   525.00   490.00
+Percentage chosen overall            4.01     4.26     4.77     4.45
+Percentage chosen when available    31.59    33.64    37.45    35.05
+
+Nesting structure for NL model component Class_7:
+Nest: root (1)
+|-Nest: ICE (0.1638)
+|  |-Alternative: cvC1
+|  |-Alternative: cvC2
+|  |-Alternative: cvC3
+|  |-Alternative: hevC1
+|  |-Alternative: hevC2
+|  '-Alternative: hevC3
+|-Nest: PHEV (0.2392)
+|  |-Alternative: phev20C1
+|  |-Alternative: phev20C2
+|  |-Alternative: phev20C3
+|  |-Alternative: phev40C1
+|  |-Alternative: phev40C2
+|  '-Alternative: phev40C3
+'-Nest: BEV (0.7387)
+   |-Alternative: bev100C1
+   |-Alternative: bev100C2
+   |-Alternative: bev100C3
+   |-Alternative: bev150C1
+   |-Alternative: bev150C2
+   |-Alternative: bev150C3
+   |-Alternative: bev300C1
+   |-Alternative: bev300C2
+   |-Alternative: bev300C3
+   |-Alternative: bev400C1
+   |-Alternative: bev400C2
+   '-Alternative: bev400C3
+
+Overview of choices for NL model component Class_8:
+                                    cvC1    cvC2    cvC3   hevC1   hevC2
+Times available                  1311.00 1389.00 1340.00 1403.00 1348.00
+Times chosen                      478.00  497.00  495.00  546.00  485.00
+Percentage chosen overall           4.34    4.51    4.50    4.96    4.41
+Percentage chosen when available   36.46   35.78   36.94   38.92   35.98
+                                   hevC3 phev20C1 phev20C2 phev20C3 phev40C1
+Times available                  1371.00  1400.00  1342.00  1367.00  1443.00
+Times chosen                      541.00   494.00   507.00   518.00   558.00
+Percentage chosen overall           4.91     4.49     4.60     4.70     5.07
+Percentage chosen when available   39.46    35.29    37.78    37.89    38.67
+                                 phev40C2 phev40C3 bev100C1 bev100C2 bev100C3
+Times available                   1278.00  1369.00  1345.00  1320.00  1359.00
+Times chosen                       488.00   537.00   313.00   299.00   305.00
+Percentage chosen overall            4.43     4.88     2.84     2.72     2.77
+Percentage chosen when available    38.18    39.23    23.27    22.65    22.44
+                                 bev150C1 bev150C2 bev150C3 bev300C1 bev300C2
+Times available                   1357.00  1472.00  1410.00  1357.00  1459.00
+Times chosen                       363.00   389.00   336.00   449.00   487.00
+Percentage chosen overall            3.30     3.53     3.05     4.08     4.42
+Percentage chosen when available    26.75    26.43    23.83    33.09    33.38
+                                 bev300C3 bev400C1 bev400C2 bev400C3
+Times available                   1396.00  1394.00  1402.00  1398.00
+Times chosen                       441.00   469.00   525.00   490.00
+Percentage chosen overall            4.01     4.26     4.77     4.45
+Percentage chosen when available    31.59    33.64    37.45    35.05
+
+Nesting structure for NL model component Class_8:
+Nest: root (1)
+|-Nest: ICE (3.1294)
+|  |-Alternative: cvC1
+|  |-Alternative: cvC2
+|  |-Alternative: cvC3
+|  |-Alternative: hevC1
+|  |-Alternative: hevC2
+|  '-Alternative: hevC3
+|-Nest: PHEV (0.8034)
+|  |-Alternative: phev20C1
+|  |-Alternative: phev20C2
+|  |-Alternative: phev20C3
+|  |-Alternative: phev40C1
+|  |-Alternative: phev40C2
+|  '-Alternative: phev40C3
+'-Nest: BEV (0.8081)
+   |-Alternative: bev100C1
+   |-Alternative: bev100C2
+   |-Alternative: bev100C3
+   |-Alternative: bev150C1
+   |-Alternative: bev150C2
+   |-Alternative: bev150C3
+   |-Alternative: bev300C1
+   |-Alternative: bev300C2
+   |-Alternative: bev300C3
+   |-Alternative: bev400C1
+   |-Alternative: bev400C2
+   '-Alternative: bev400C3
+
+WARNING: The nesting parameter for nest "ICE" should be between 0 and 1
+  (the nesting parameter for nest "root"), yet its value is 3.1294. 
+
+Summary of class allocation for model component :
+         Mean prob.
+Class_1     0.08441
+Class_2     0.18578
+Class_3     0.17720
+Class_4     0.16038
+Class_5     0.14731
+Class_6     0.11699
+Class_7     0.08559
+Class_8     0.04232
+
+Pre-processing likelihood function...
+Creating cluster...
+INFORMATION: While preparing your inputs for multi-core estimation, the
+  following objects were found in "apollo_inputs", but were not split
+  across cores: "attrCols", "availCols", "heterogeneity_spec",
+  "lognorm_price_dist", "n_classes", "n_draws", "nesting_params",
+  "nesting_spec", "observed_attributes", "scalingFactor_dist",
+  "utility_space". If these objects contain observation or
+  individual-specific data, and thus need to be split, please add a
+  column with the IDs to these objects, and call this column "ID" 
+Preparing workers for multithreading...
+
+Testing influence of parameters.......................................................................................................................................
+Starting main estimation
+initial  value 7784.907647 
+iter   2 value 7784.907646
+iter   3 value 7784.907638
+iter   4 value 7784.907623
+iter   5 value 7784.907531
+iter   6 value 7784.907397
+iter   7 value 7784.907321
+iter   8 value 7784.907069
+iter   9 value 7784.906992
+iter  10 value 7784.906848
+iter  11 value 7784.906815
+iter  12 value 7784.906650
+iter  13 value 7784.906565
+iter  14 value 7784.906541
+iter  15 value 7784.906419
+iter  16 value 7784.906328
+iter  17 value 7784.906265
+iter  18 value 7784.906245
+iter  19 value 7784.906179
+iter  20 value 7784.906149
+iter  21 value 7784.906102
+iter  22 value 7784.906057
+iter  23 value 7784.905967
+iter  24 value 7784.905920
+iter  25 value 7784.905883
+iter  26 value 7784.905847
+iter  27 value 7784.905826
+iter  28 value 7784.905798
+iter  29 value 7784.905771
+iter  30 value 7784.905741
+iter  31 value 7784.905706
+iter  32 value 7784.905690
+iter  33 value 7784.905660
+iter  34 value 7784.905621
+iter  35 value 7784.905592
+iter  36 value 7784.905561
+iter  37 value 7784.905538
+iter  38 value 7784.905513
+iter  39 value 7784.905490
+iter  40 value 7784.905466
+iter  41 value 7784.905446
+iter  42 value 7784.905428
+iter  43 value 7784.905416
+iter  44 value 7784.905406
+iter  45 value 7784.905399
+iter  46 value 7784.905391
+iter  47 value 7784.905384
+iter  48 value 7784.905380
+iter  49 value 7784.905375
+iter  50 value 7784.905372
+iter  51 value 7784.905369
+iter  52 value 7784.905366
+iter  53 value 7784.905366
+iter  54 value 7784.905363
+iter  55 value 7784.905361
+iter  56 value 7784.905359
+iter  57 value 7784.905357
+iter  58 value 7784.905356
+iter  59 value 7784.905356
+iter  60 value 7784.905355
+iter  61 value 7784.905354
+iter  62 value 7784.905353
+iter  63 value 7784.905352
+iter  64 value 7784.905351
+iter  65 value 7784.905350
+iter  66 value 7784.905349
+iter  67 value 7784.905349
+iter  68 value 7784.905348
+iter  69 value 7784.905348
+iter  70 value 7784.905347
+iter  71 value 7784.905347
+iter  72 value 7784.905347
+iter  73 value 7784.905347
+iter  74 value 7784.905346
+iter  75 value 7784.905346
+iter  76 value 7784.905346
+iter  77 value 7784.905345
+iter  78 value 7784.905345
+iter  79 value 7784.905345
+iter  80 value 7784.905345
+iter  81 value 7784.905345
+iter  82 value 7784.905344
+iter  83 value 7784.905344
+iter  84 value 7784.905344
+iter  85 value 7784.905344
+iter  86 value 7784.905344
+iter  87 value 7784.905344
+iter  88 value 7784.905344
+iter  89 value 7784.905344
+iter  90 value 7784.905344
+iter  91 value 7784.905344
+iter  92 value 7784.905344
+iter  93 value 7784.905344
+iter  94 value 7784.905344
+iter  95 value 7784.905344
+iter  96 value 7784.905344
+iter  97 value 7784.905344
+iter  98 value 7784.905344
+iter  99 value 7784.905344
+iter 100 value 7784.905344
+iter 101 value 7784.905344
+iter 102 value 7784.905344
+iter 103 value 7784.905344
+iter 104 value 7784.905344
+iter 105 value 7784.905344
+iter 106 value 7784.905344
+iter 107 value 7784.905344
+iter 108 value 7784.905344
+iter 109 value 7784.905344
+iter 110 value 7784.905344
+iter 111 value 7784.905344
+iter 112 value 7784.905344
+iter 113 value 7784.905344
+iter 114 value 7784.905344
+iter 115 value 7784.905344
+iter 116 value 7784.905344
+iter 117 value 7784.905344
+iter 118 value 7784.905344
+iter 119 value 7784.905344
+iter 120 value 7784.905344
+iter 121 value 7784.905344
+iter 122 value 7784.905344
+iter 123 value 7784.905344
+iter 124 value 7784.905344
+iter 124 value 7784.905344
+iter 124 value 7784.905344
+final  value 7784.905344 
+converged
+
+Estimated parameters with approximate standard errors from BHHH matrix:
+                     Estimate     BHHH se BHH t-ratio (0)
+b_Price_1           -0.072386    0.013333        -5.42906
+b_Acceleration_1    -0.161188    0.059514        -2.70838
+b_OpCost_1          -0.532314    0.057241        -9.29950
+b_hev_1              0.809571    0.244589         3.30992
+b_phev20_1           0.896334    0.407759         2.19820
+b_phev40_1           0.921951    0.366913         2.51272
+b_bev_1              1.368862    0.249954         5.47646
+b_bevRangeRel_1      0.242530    0.094797         2.55842
+b_noBEVFC_1         -0.573562    0.365396        -1.56970
+b_american_1        -1.535636    0.380969        -4.03087
+b_chinese_1         -5.715952    0.526302       -10.86060
+b_japanese_1        -0.394509    0.327818        -1.20344
+b_skorean_1         -0.509986    0.317957        -1.60395
+lambda_ICE_1         0.753384    0.575901         1.30818
+lambda_PHEV_1        0.329839    0.277642         1.18800
+lambda_BEV_1         1.117922    0.205690         5.43499
+class_intercept_1    0.000000          NA              NA
+b_Price_2           -0.128365    0.008399       -15.28261
+b_Acceleration_2    -0.173154    0.016464       -10.51722
+b_OpCost_2          -0.227768    0.017268       -13.19018
+b_hev_2              0.040401    0.077026         0.52450
+b_phev20_2           0.020725    0.136253         0.15210
+b_phev40_2           0.129886    0.136544         0.95124
+b_bev_2              0.174594    0.123577         1.41284
+b_bevRangeRel_2      0.537063    0.046941        11.44123
+b_noBEVFC_2         -0.374677    0.107795        -3.47583
+b_american_2        -0.053176    0.102976        -0.51639
+b_chinese_2         -0.289882    0.104602        -2.77128
+b_japanese_2        -0.188080    0.084281        -2.23158
+b_skorean_2         -0.318067    0.107699        -2.95331
+lambda_ICE_2         0.439905    0.126243         3.48460
+lambda_PHEV_2        0.387305    0.074879         5.17244
+lambda_BEV_2         0.741670    0.084923         8.73342
+class_intercept_2    0.790128    0.150210         5.26017
+b_Price_3           -0.137547    0.007751       -17.74617
+b_Acceleration_3    -0.080130    0.021799        -3.67595
+b_OpCost_3          -0.146666    0.021281        -6.89198
+b_hev_3              0.439778    0.183578         2.39559
+b_phev20_3           0.243328    0.161542         1.50628
+b_phev40_3           0.548385    0.154341         3.55308
+b_bev_3              0.240108    0.141046         1.70234
+b_bevRangeRel_3      0.328346    0.043161         7.60752
+b_noBEVFC_3         -0.524435    0.121210        -4.32667
+b_american_3         0.517269    0.109428         4.72702
+b_chinese_3         -4.897388    0.255478       -19.16951
+b_japanese_3         0.518336    0.103504         5.00787
+b_skorean_3         -0.351637    0.087660        -4.01138
+lambda_ICE_3         0.662076    0.196023         3.37754
+lambda_PHEV_3        1.051471    0.140728         7.47168
+lambda_BEV_3         0.986767    0.087550        11.27087
+class_intercept_3    0.743383    0.161246         4.61023
+b_Price_4           -0.102665    0.005878       -17.46746
+b_Acceleration_4    -0.019061    0.024690        -0.77200
+b_OpCost_4          -0.120656    0.010542       -11.44514
+b_hev_4             -0.006990    0.139718        -0.05003
+b_phev20_4          -0.046997    0.111021        -0.42331
+b_phev40_4           0.245889    0.139683         1.76034
+b_bev_4             -2.210665    0.159149       -13.89054
+b_bevRangeRel_4      0.920652    0.102889         8.94799
+b_noBEVFC_4          0.093672    0.196542         0.47660
+b_american_4         0.353267    0.100029         3.53166
+b_chinese_4         -0.820370    0.123656        -6.63430
+b_japanese_4         0.042288    0.138247         0.30589
+b_skorean_4          0.222973    0.120740         1.84671
+lambda_ICE_4         0.864085    0.144044         5.99874
+lambda_PHEV_4        0.321929    0.085872         3.74897
+lambda_BEV_4         0.910438    0.071578        12.71953
+class_intercept_4    0.642825    0.150138         4.28155
+b_Price_5           -0.018982    0.002731        -6.95191
+b_Acceleration_5    -0.188842    0.016713       -11.29915
+b_OpCost_5          -0.076820    0.011378        -6.75166
+b_hev_5              0.667000    0.144817         4.60582
+b_phev20_5           0.503094    0.150044         3.35297
+b_phev40_5           0.626595    0.152422         4.11093
+b_bev_5              0.698096    0.127383         5.48027
+b_bevRangeRel_5      0.101177    0.040417         2.50334
+b_noBEVFC_5         -0.473603    0.078336        -6.04581
+b_american_5         0.271972    0.112059         2.42703
+b_chinese_5         -0.088107    0.114122        -0.77204
+b_japanese_5         0.353815    0.098849         3.57934
+b_skorean_5         -0.462882    0.089093        -5.19551
+lambda_ICE_5         0.911175    0.175868         5.18103
+lambda_PHEV_5        0.715739    0.138606         5.16384
+lambda_BEV_5         0.909677    0.135558         6.71060
+class_intercept_5    0.559780    0.163440         3.42499
+b_Price_6           -0.027223    0.004217        -6.45574
+b_Acceleration_6    -0.072571    0.025762        -2.81697
+b_OpCost_6          -0.026722    0.017628        -1.51588
+b_hev_6             -0.686584    0.139912        -4.90726
+b_phev20_6          -0.980974    0.112356        -8.73097
+b_phev40_6          -0.807210    0.146859        -5.49650
+b_bev_6             -2.226720    0.179178       -12.42743
+b_bevRangeRel_6      0.100407    0.075700         1.32639
+b_noBEVFC_6         -0.205409    0.145679        -1.41001
+b_american_6        -0.880340    0.130095        -6.76691
+b_chinese_6         -2.411972    0.245705        -9.81653
+b_japanese_6        -0.768691    0.136583        -5.62803
+b_skorean_6         -1.082921    0.156782        -6.90719
+lambda_ICE_6         0.618879    0.157990         3.91720
+lambda_PHEV_6        0.643739    0.138364         4.65249
+lambda_BEV_6         0.647009    0.107506         6.01837
+class_intercept_6    0.327542    0.163061         2.00871
+b_Price_7           -0.682847    0.093816        -7.27861
+b_Acceleration_7    -0.036540    0.049000        -0.74572
+b_OpCost_7          -0.305109    0.051966        -5.87132
+b_hev_7             -0.185520    0.251046        -0.73899
+b_phev20_7           0.422256    0.372863         1.13247
+b_phev40_7          -0.347492    0.415161        -0.83700
+b_bev_7             -0.130358    0.306464        -0.42536
+b_bevRangeRel_7     -0.294186    0.112326        -2.61903
+b_noBEVFC_7          0.301971    0.274579         1.09976
+b_american_7         0.265206    0.288386         0.91962
+b_chinese_7         -0.889846    0.319274        -2.78709
+b_japanese_7         0.541829    0.217838         2.48731
+b_skorean_7         -0.083017    0.300410        -0.27635
+lambda_ICE_7         0.163755    0.143102         1.14432
+lambda_PHEV_7        0.240047    0.275617         0.87095
+lambda_BEV_7         0.738087    0.184902         3.99178
+class_intercept_7    0.015806    0.168662         0.09371
+b_Price_8           -0.058437    0.030099        -1.94151
+b_Acceleration_8    -0.482230    0.222188        -2.17037
+b_OpCost_8          -0.167773    0.091802        -1.82757
+b_hev_8             -2.412205    0.872099        -2.76597
+b_phev20_8          -1.156214    0.851882        -1.35725
+b_phev40_8          -0.652916    1.227398        -0.53195
+b_bev_8              1.513532    0.964229         1.56968
+b_bevRangeRel_8      2.505681    0.851245         2.94355
+b_noBEVFC_8         -0.794854    0.336785        -2.36012
+b_american_8        -1.338351    1.144054        -1.16983
+b_chinese_8         -3.192737    1.200273        -2.66001
+b_japanese_8        -0.681731    1.040375        -0.65527
+b_skorean_8         -1.012822    0.689402        -1.46913
+lambda_ICE_8         3.131579    2.627127         1.19202
+lambda_PHEV_8        0.799174    0.582439         1.37212
+lambda_BEV_8         0.806446    0.520282         1.55002
+class_intercept_8   -0.688366    0.220637        -3.11990
+
+Final LL: -7784.9053
+
+Nesting structure for NL model component Class_1:
+Nest: root (1)
+|-Nest: ICE (0.7534)
+|  |-Alternative: cvC1
+|  |-Alternative: cvC2
+|  |-Alternative: cvC3
+|  |-Alternative: hevC1
+|  |-Alternative: hevC2
+|  '-Alternative: hevC3
+|-Nest: PHEV (0.3298)
+|  |-Alternative: phev20C1
+|  |-Alternative: phev20C2
+|  |-Alternative: phev20C3
+|  |-Alternative: phev40C1
+|  |-Alternative: phev40C2
+|  '-Alternative: phev40C3
+'-Nest: BEV (1.1179)
+   |-Alternative: bev100C1
+   |-Alternative: bev100C2
+   |-Alternative: bev100C3
+   |-Alternative: bev150C1
+   |-Alternative: bev150C2
+   |-Alternative: bev150C3
+   |-Alternative: bev300C1
+   |-Alternative: bev300C2
+   |-Alternative: bev300C3
+   |-Alternative: bev400C1
+   |-Alternative: bev400C2
+   '-Alternative: bev400C3
+
+WARNING: The nesting parameter for nest "BEV" should be between 0 and 1
+  (the nesting parameter for nest "root"), yet its value is 1.1179. 
+Nesting structure for NL model component Class_2:
+Nest: root (1)
+|-Nest: ICE (0.4399)
+|  |-Alternative: cvC1
+|  |-Alternative: cvC2
+|  |-Alternative: cvC3
+|  |-Alternative: hevC1
+|  |-Alternative: hevC2
+|  '-Alternative: hevC3
+|-Nest: PHEV (0.3873)
+|  |-Alternative: phev20C1
+|  |-Alternative: phev20C2
+|  |-Alternative: phev20C3
+|  |-Alternative: phev40C1
+|  |-Alternative: phev40C2
+|  '-Alternative: phev40C3
+'-Nest: BEV (0.7417)
+   |-Alternative: bev100C1
+   |-Alternative: bev100C2
+   |-Alternative: bev100C3
+   |-Alternative: bev150C1
+   |-Alternative: bev150C2
+   |-Alternative: bev150C3
+   |-Alternative: bev300C1
+   |-Alternative: bev300C2
+   |-Alternative: bev300C3
+   |-Alternative: bev400C1
+   |-Alternative: bev400C2
+   '-Alternative: bev400C3
+Nesting structure for NL model component Class_3:
+Nest: root (1)
+|-Nest: ICE (0.6621)
+|  |-Alternative: cvC1
+|  |-Alternative: cvC2
+|  |-Alternative: cvC3
+|  |-Alternative: hevC1
+|  |-Alternative: hevC2
+|  '-Alternative: hevC3
+|-Nest: PHEV (1.0515)
+|  |-Alternative: phev20C1
+|  |-Alternative: phev20C2
+|  |-Alternative: phev20C3
+|  |-Alternative: phev40C1
+|  |-Alternative: phev40C2
+|  '-Alternative: phev40C3
+'-Nest: BEV (0.9868)
+   |-Alternative: bev100C1
+   |-Alternative: bev100C2
+   |-Alternative: bev100C3
+   |-Alternative: bev150C1
+   |-Alternative: bev150C2
+   |-Alternative: bev150C3
+   |-Alternative: bev300C1
+   |-Alternative: bev300C2
+   |-Alternative: bev300C3
+   |-Alternative: bev400C1
+   |-Alternative: bev400C2
+   '-Alternative: bev400C3
+
+WARNING: The nesting parameter for nest "PHEV" should be between 0 and
+  1 (the nesting parameter for nest "root"), yet its value is 1.0515. 
+Nesting structure for NL model component Class_4:
+Nest: root (1)
+|-Nest: ICE (0.8641)
+|  |-Alternative: cvC1
+|  |-Alternative: cvC2
+|  |-Alternative: cvC3
+|  |-Alternative: hevC1
+|  |-Alternative: hevC2
+|  '-Alternative: hevC3
+|-Nest: PHEV (0.3219)
+|  |-Alternative: phev20C1
+|  |-Alternative: phev20C2
+|  |-Alternative: phev20C3
+|  |-Alternative: phev40C1
+|  |-Alternative: phev40C2
+|  '-Alternative: phev40C3
+'-Nest: BEV (0.9104)
+   |-Alternative: bev100C1
+   |-Alternative: bev100C2
+   |-Alternative: bev100C3
+   |-Alternative: bev150C1
+   |-Alternative: bev150C2
+   |-Alternative: bev150C3
+   |-Alternative: bev300C1
+   |-Alternative: bev300C2
+   |-Alternative: bev300C3
+   |-Alternative: bev400C1
+   |-Alternative: bev400C2
+   '-Alternative: bev400C3
+Nesting structure for NL model component Class_5:
+Nest: root (1)
+|-Nest: ICE (0.9112)
+|  |-Alternative: cvC1
+|  |-Alternative: cvC2
+|  |-Alternative: cvC3
+|  |-Alternative: hevC1
+|  |-Alternative: hevC2
+|  '-Alternative: hevC3
+|-Nest: PHEV (0.7157)
+|  |-Alternative: phev20C1
+|  |-Alternative: phev20C2
+|  |-Alternative: phev20C3
+|  |-Alternative: phev40C1
+|  |-Alternative: phev40C2
+|  '-Alternative: phev40C3
+'-Nest: BEV (0.9097)
+   |-Alternative: bev100C1
+   |-Alternative: bev100C2
+   |-Alternative: bev100C3
+   |-Alternative: bev150C1
+   |-Alternative: bev150C2
+   |-Alternative: bev150C3
+   |-Alternative: bev300C1
+   |-Alternative: bev300C2
+   |-Alternative: bev300C3
+   |-Alternative: bev400C1
+   |-Alternative: bev400C2
+   '-Alternative: bev400C3
+Nesting structure for NL model component Class_6:
+Nest: root (1)
+|-Nest: ICE (0.6189)
+|  |-Alternative: cvC1
+|  |-Alternative: cvC2
+|  |-Alternative: cvC3
+|  |-Alternative: hevC1
+|  |-Alternative: hevC2
+|  '-Alternative: hevC3
+|-Nest: PHEV (0.6437)
+|  |-Alternative: phev20C1
+|  |-Alternative: phev20C2
+|  |-Alternative: phev20C3
+|  |-Alternative: phev40C1
+|  |-Alternative: phev40C2
+|  '-Alternative: phev40C3
+'-Nest: BEV (0.647)
+   |-Alternative: bev100C1
+   |-Alternative: bev100C2
+   |-Alternative: bev100C3
+   |-Alternative: bev150C1
+   |-Alternative: bev150C2
+   |-Alternative: bev150C3
+   |-Alternative: bev300C1
+   |-Alternative: bev300C2
+   |-Alternative: bev300C3
+   |-Alternative: bev400C1
+   |-Alternative: bev400C2
+   '-Alternative: bev400C3
+Nesting structure for NL model component Class_7:
+Nest: root (1)
+|-Nest: ICE (0.1638)
+|  |-Alternative: cvC1
+|  |-Alternative: cvC2
+|  |-Alternative: cvC3
+|  |-Alternative: hevC1
+|  |-Alternative: hevC2
+|  '-Alternative: hevC3
+|-Nest: PHEV (0.24)
+|  |-Alternative: phev20C1
+|  |-Alternative: phev20C2
+|  |-Alternative: phev20C3
+|  |-Alternative: phev40C1
+|  |-Alternative: phev40C2
+|  '-Alternative: phev40C3
+'-Nest: BEV (0.7381)
+   |-Alternative: bev100C1
+   |-Alternative: bev100C2
+   |-Alternative: bev100C3
+   |-Alternative: bev150C1
+   |-Alternative: bev150C2
+   |-Alternative: bev150C3
+   |-Alternative: bev300C1
+   |-Alternative: bev300C2
+   |-Alternative: bev300C3
+   |-Alternative: bev400C1
+   |-Alternative: bev400C2
+   '-Alternative: bev400C3
+Nesting structure for NL model component Class_8:
+Nest: root (1)
+|-Nest: ICE (3.1316)
+|  |-Alternative: cvC1
+|  |-Alternative: cvC2
+|  |-Alternative: cvC3
+|  |-Alternative: hevC1
+|  |-Alternative: hevC2
+|  '-Alternative: hevC3
+|-Nest: PHEV (0.7992)
+|  |-Alternative: phev20C1
+|  |-Alternative: phev20C2
+|  |-Alternative: phev20C3
+|  |-Alternative: phev40C1
+|  |-Alternative: phev40C2
+|  '-Alternative: phev40C3
+'-Nest: BEV (0.8064)
+   |-Alternative: bev100C1
+   |-Alternative: bev100C2
+   |-Alternative: bev100C3
+   |-Alternative: bev150C1
+   |-Alternative: bev150C2
+   |-Alternative: bev150C3
+   |-Alternative: bev300C1
+   |-Alternative: bev300C2
+   |-Alternative: bev300C3
+   |-Alternative: bev400C1
+   |-Alternative: bev400C2
+   '-Alternative: bev400C3
+
+WARNING: The nesting parameter for nest "ICE" should be between 0 and 1
+  (the nesting parameter for nest "root"), yet its value is 3.1316. 
+
+Summary of class allocation for model component :
+         Mean prob.
+Class_1     0.08428
+Class_2     0.18573
+Class_3     0.17725
+Class_4     0.16029
+Class_5     0.14752
+Class_6     0.11695
+Class_7     0.08563
+Class_8     0.04234
+
+Calculating log-likelihood at equal shares (LL(0)) for applicable
+  models...
+Calculating LL of each model component...
+Calculating other model fit measures
+INFORMATION: Your model took more than 10 minutes to estimate, so it
+  was saved to file logs/job_35774751/LC8_NL_pref/LC8_NL_pref_model.rds
+  before calculating its covariance matrix. If calculation of the
+  covariance matrix fails or is stopped before finishing, you can load
+  the model up to this point using apollo_loadModel. You may also want
+  to inspect the approximate BHHH standard errors shown above to
+  determine whether you wish to continue this process. 
+Computing covariance matrix using numerical methods (numDeriv).
+ 0%....25%....50%....75%....100%
+Negative definite Hessian with maximum eigenvalue: -0.648377
+
+Please acknowledge the use of Apollo by citing Hess & Palma (2019) -
+  doi.org/10.1016/j.jocm.2019.100170
+Model output saved to logs/job_35774751/LC8_NL_pref/LC8_NL_pref_output.txt 
+Estimates saved to logs/job_35774751/LC8_NL_pref/LC8_NL_pref_estimates.csv 
+Model object saved to logs/job_35774751/LC8_NL_pref/LC8_NL_pref.rds 
+[1] TRUE
+Main estimation complete 
+Part 2 (Estimation) complete for: LC8_NL_pref 
+Results saved to: logs/job_35774751/LC8_NL_pref 
+Total time: 3.69 hours
+Ready for Part 3 (Cross-validation + remaining)
+Done with estimation. Results and logs saved to logs/job_35774751/

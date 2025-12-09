@@ -1,0 +1,548 @@
+SLURM_ARRAY_JOB_ID: 35887057
+SLURM_JOB_ID: 35887057
+SLURM_ARRAY_TASK_ID: 15
+Created job directory: logs/job_35887057
+Task 15: Waiting for initialization to complete...
+Task 15: Initialization complete, proceeding...
+Running model 15...
+Running: MXL100_none_wtp 
+Starting Setup 
+Setup  Complete 
+Starting Search-Start 
+Saving original apollo_inputs 
+Validating inputs 
+Running searchStart with  100  draws. 
+Testing probability function (apollo_probabilities)
+Creating initial set of 101 candidate values.
+Calculating LL of candidates 0%....50%.....100%
+Total avail. cores = 32 cores
+Avail. GB per core = 2 GB
+Req. GB per cluster = 8 GB
+Running searchStart on 8 cores.
+
+Stage 1, 101 active candidates.
+Estimating 25 BFGS iteration(s) for each active candidate.
+ Candidate......LLstart.....LLfinish.....GradientNorm...Converged
+         1        -9336        -8401           942.98           0
+         2       -10304        -8391          824.119           0
+         3        -9729        -8387          157.767           0
+         4        -9544        -8371          116.526           0
+         5       -10381        -8417                6           0
+         6       -10090        -8375          109.544           0
+         7        -9398        -8381            19.65           0
+         8       -10003        -8385           42.733           0
+         9       -11473        -9527         1878.389           0
+        10       -10322        -8388           139.73           0
+        11        -9844        -8374           33.327           0
+        12       -10459        -8357          238.561           0
+        13        -9509        -8382           19.052           0
+        14       -10975        -8366           12.612           0
+        15        -9570        -8390          224.819           0
+        16        -9803        -8398           31.834           0
+        17        -9503        -8376            69.76           0
+        18        -9214        -8339           14.046           0
+        19        -9179        -8380           52.687           0
+        20       -10286        -8387            4.155           0
+        21        -9923        -8402           27.592           0
+        22        -9554        -8378          208.452           0
+        23        -9767        -8377           34.282           0
+        24        -9918        -8406           10.282           0
+        25       -11642        -8376          137.728           0
+        26        -9748        -8388           45.333           0
+        27       -11009        -8372          111.806           0
+        28       -10658        -8414           63.415           0
+        29       -10064        -8364          208.635           0
+        30        -9750        -8380          262.437           0
+        31       -10355        -8377          120.447           0
+        32       -10139        -8381           81.626           0
+        33       -10463        -8385          121.423           0
+        34       -10883        -8436         1375.863           0
+        35       -30656        -9325          993.408           0
+        36        -9996        -8373            6.022           0
+        37       -10099        -8409          411.185           0
+        38        -9819        -8404           26.185           0
+        39       -10771        -8359          185.218           0
+        40        -9580        -8404           31.049           0
+        41        -9840        -8382           29.013           0
+        42        -9677        -8383           79.554           0
+        43        -9349        -8341           79.973           0
+        44        -9706        -8373             9.01           0
+        45       -10404        -8379          227.374           0
+        46       -13344        -9947          788.646           0
+        47       -11019        -8377         1370.605           0
+        48        -9888        -8398          272.338           0
+        49       -10449        -8356           65.061           0
+        50        -9440        -8382            7.563           0
+        51       -11910        -8386          106.246           0
+        52        -9524        -8368           12.624           0
+        53       -12972        -9697         1168.942           0
+        54       -10520        -8383           66.373           0
+        55       -11300        -8422          488.292           0
+        56        -9889        -8425          364.477           0
+        57       -10219        -8368          135.509           0
+        58       -12212        -8613         1681.084           0
+        59        -9519        -8418           14.366           0
+        60        -9471        -8364           57.554           0
+        61       -11375        -8569         3419.399           0
+        62        -9595        -8389           58.198           0
+        63       -11027        -8382          112.199           0
+        64        -9836        -8376             8.62           0
+        65        -9885        -8339          129.305           0
+        66        -9504        -8358           44.298           0
+        67       -11238        -8377          497.061           0
+        68       -10062        -8387          148.388           0
+        69       -11012        -8358           73.499           0
+        70        -9665        -8389           58.102           0
+        71        -9538        -8396          228.802           0
+        72        -9215        -8373           31.101           0
+        73       -11372        -8384          741.919           0
+        74       -10130        -8431          103.642           0
+        75       -12669        -9894          873.318           0
+        76        -9526        -8366           51.217           0
+        77        -9549        -8387            22.52           0
+        78       -10703        -8354           38.676           0
+        79        -9213        -8361          115.319           0
+        80       -10229        -8396           95.918           0
+        81       -10830        -8386          156.981           0
+        82       -13104        -8407         1119.307           0
+        83        -9675        -8398           113.59           0
+        84        -9189        -8395          179.948           0
+        85        -9958        -8421           51.255           0
+        86       -10622        -8358          113.291           0
+        87        -9995        -8375           46.482           0
+        88       -10291        -8382          205.973           0
+        89        -9484        -8351           68.337           0
+        90        -9325        -8385           40.112           0
+        91       -10002        -8386           1410.7           0
+        92       -11339        -8399          395.229           0
+        93       -10964        -8422          206.129           0
+        94       -11282        -8391          232.068           0
+        95       -11930        -8476         2244.197           0
+        96       -29978       -10001            559.5           0
+        97       -10330        -8355           72.677           0
+        98       -10973        -8368          325.081           0
+        99       -13615        -9087         2819.851           0
+       100       -12467        -8376         1497.417           0
+       101       -11588        -8384           92.518           0
+Best candidate so far (LL=-8339)
+
+Stage 2, 101 active candidates.
+Estimating 25 BFGS iteration(s) for each active candidate.
+ Candidate......LLstart.....LLfinish.....GradientNorm...Converged
+         1        -8401        -8378            0.201           1
+         2        -8391        -8379            0.058           1
+         3        -8387        -8382            5.901           0
+         4        -8371        -8371            0.404           1
+         5        -8417        -8417            3.392           1
+         6        -8375        -8374            0.756           1
+         7        -8381        -8381            0.099           1
+         8        -8385        -8385            0.199           1
+         9        -9527        -8363            3.524           0
+        10        -8388        -8388            0.069           1
+        11        -8374        -8374            0.075           1
+        12        -8357        -8355            0.114           1
+        13        -8382        -8382            0.209           1
+        14        -8366        -8366            0.216           1
+        15        -8390        -8390            0.076           1
+        16        -8398        -8397            0.043           1
+        17        -8376        -8369            1.116           0
+        18        -8339        -8339            0.184           1
+        19        -8380        -8380             0.26           1
+        20        -8387        -8387             3.33           1
+        21        -8402        -8386             0.12           1
+        22        -8378        -8377            0.576           1
+        23        -8377        -8377            0.093           1
+        24        -8406        -8406            0.592           1
+        25        -8376        -8371           29.416           0
+        26        -8388        -8388            0.351           1
+        27        -8372        -8372            0.068           1
+        28        -8414        -8414            4.859           1
+        29        -8364        -8363             0.07           1
+        30        -8380        -8379            0.215           1
+        31        -8377        -8377            0.551           1
+        32        -8381        -8355            8.446           0
+        33        -8385        -8372            0.191           0
+        34        -8436        -8381            0.252           0
+        35        -9325        -8378          166.969           0
+        36        -8373        -8373            3.833           1
+        37        -8409        -8408            0.627           1
+        38        -8404        -8403            0.073           1
+        39        -8359        -8350            0.795           1
+        40        -8404        -8404            0.148           1
+        41        -8382        -8382            0.645           1
+        42        -8383        -8383            0.806           1
+        43        -8341        -8339             0.24           1
+        44        -8373        -8372             0.01           1
+        45        -8379        -8369            0.402           1
+        46        -9947        -8428            3.022           0
+        47        -8377        -8362             1.26           1
+        48        -8398        -8396            0.227           0
+        49        -8356        -8355            0.229           1
+        50        -8382        -8382            2.716           1
+        51        -8386        -8372           12.194           0
+        52        -8368        -8368            0.036           1
+        53        -9697        -8425          125.415           0
+        54        -8383        -8382            0.166           1
+        55        -8422        -8414            0.068           1
+        56        -8425        -8414              0.4           0
+        57        -8368        -8366            0.315           1
+        58        -8613        -8382            2.507           0
+        59        -8418        -8418           15.402           1
+        60        -8364        -8364            0.122           1
+        61        -8569        -8381            0.852           0
+        62        -8389        -8385           15.631           0
+        63        -8382        -8379            0.105           1
+        64        -8376        -8376           13.447           1
+        65        -8339        -8338            0.112           1
+        66        -8358        -8358            1.055           1
+        67        -8377        -8374            0.279           1
+        68        -8387        -8386            0.095           1
+        69        -8358        -8358            0.593           1
+        70        -8389        -8388            0.073           1
+        71        -8396        -8385            0.299           1
+        72        -8373        -8373            0.045           1
+        73        -8384        -8377            1.259           1
+        74        -8431        -8430            0.049           1
+        75        -9894        -8389           19.552           0
+        76        -8366        -8365            0.203           1
+        77        -8387        -8387            1.174           1
+        78        -8354        -8354            0.064           1
+        79        -8361        -8354            0.081           1
+        80        -8396        -8395             0.05           1
+        81        -8386        -8379            0.212           1
+        82        -8407        -8377            0.295           1
+        83        -8398        -8398            0.027           1
+        84        -8395        -8386            1.044           0
+        85        -8421        -8421            0.305           1
+        86        -8358        -8358             0.84           1
+        87        -8375        -8375            0.081           1
+        88        -8382        -8363           70.333           0
+        89        -8351        -8349            0.011           1
+        90        -8385        -8385            0.629           1
+        91        -8386        -8373            0.245           1
+        92        -8399        -8385           32.311           0
+        93        -8422        -8421            0.102           1
+        94        -8391        -8376           24.155           0
+        95        -8476        -8377           67.431           0
+        96       -10001        -8393          331.797           0
+        97        -8355        -8354            0.182           1
+        98        -8368        -8349            0.528           0
+        99        -9087        -8398           44.961           0
+       100        -8376        -8353            0.452           1
+       101        -8384        -8382            0.012           1
+Candidate 9 dropped.
+- Failed test 1: Too close to 29 in parameter space.
+Candidate 61 dropped.
+- Failed test 1: Too close to 34 in parameter space.
+Candidate 98 dropped.
+- Failed test 1: Too close to 89 in parameter space.
+Best candidate so far (LL=-8338.3)
+
+Stage 3, 23 active candidates.
+Estimating 25 BFGS iteration(s) for each active candidate.
+ Candidate......LLstart.....LLfinish.....GradientNorm...Converged
+         3        -8382        -8382            6.474           1
+        17        -8369        -8369            0.582           1
+        25        -8371        -8369             0.12           1
+        32        -8355        -8355             3.37           1
+        33        -8372        -8372            0.061           1
+        34        -8381        -8381            0.235           1
+        35        -8378        -8376            0.152           1
+        46        -8428        -8428            0.836           1
+        48        -8396        -8396            0.077           1
+        51        -8372        -8372            0.048           1
+        53        -8425        -8380            0.382           0
+        56        -8414        -8414            0.083           1
+        58        -8382        -8382            0.587           1
+        62        -8385        -8385            0.079           1
+        65        -8338        -8338                0           1
+        75        -8389        -8386            0.519           1
+        84        -8386        -8386            0.162           1
+        88        -8363        -8355            0.043           1
+        92        -8385        -8383            0.222           1
+        94        -8376        -8371            0.119           1
+        95        -8377        -8376            0.039           1
+        96        -8393        -8355           14.921           0
+        99        -8398        -8398            0.051           1
+Best candidate so far (LL=-8338.3)
+
+Stage 4, 3 active candidates.
+Estimating 25 BFGS iteration(s) for each active candidate.
+ Candidate......LLstart.....LLfinish.....GradientNorm...Converged
+        53        -8380        -8380            0.062           1
+        65        -8338        -8338                0           1
+        96        -8355        -8355            2.101           1
+Best candidate so far (LL=-8338.3)
+  n_points n_best n_within_tol did_best_conv
+1      101      1            3          TRUE
+Search-Start Execution Complete 
+Restored to  100  draws. 
+Using  4  cores. 
+Search-Start Post-Processing Complete 
+Starting main estimation 
+Preparing user-defined functions.
+WARNING: CAUTION: In models using mixing and workInLogs=TRUE, Apollo
+  assumes (and does not check) that the call to apollo_panelProd is
+  immediately followed by a call to apollo_avgInterDraws. 
+
+Testing likelihood function...
+Setting "avail" is missing, so full availability is assumed.
+
+Overview of choices for MNL model component :
+                                       C1      C2       C3
+Times available                  11010.00 11010.0 11010.00
+Times chosen                      3670.00  3677.0  3663.00
+Percentage chosen overall           33.33    33.4    33.27
+Percentage chosen when available    33.33    33.4    33.27
+
+
+Pre-processing likelihood function...
+Creating cluster...
+INFORMATION: While preparing your inputs for multi-core estimation, the
+  following objects were found in "apollo_inputs", but were not split
+  across cores: "attrCols", "availCols", "heterogeneity_spec",
+  "lognorm_price_dist", "n_classes", "n_draws", "nesting_params",
+  "nesting_spec", "observed_attributes", "scalingFactor_dist",
+  "utility_space". If these objects contain observation or
+  individual-specific data, and thus need to be split, please add a
+  column with the IDs to these objects, and call this column "ID" 
+Preparing workers for multithreading...
+
+Testing influence of parameters..........................
+Starting main estimation
+initial  value 8338.319001 
+iter   2 value 8338.319001
+iter   3 value 8338.319001
+iter   4 value 8338.318943
+iter   5 value 8338.318929
+iter   6 value 8338.318907
+iter   7 value 8338.318903
+iter   8 value 8338.318898
+iter   9 value 8338.318887
+iter  10 value 8338.318885
+iter  11 value 8338.318880
+iter  12 value 8338.318876
+iter  13 value 8338.318875
+iter  14 value 8338.318875
+iter  15 value 8338.318875
+iter  16 value 8338.318875
+iter  17 value 8338.318875
+iter  18 value 8338.318875
+iter  19 value 8338.318875
+iter  20 value 8338.318875
+iter  21 value 8338.318875
+iter  22 value 8338.318875
+iter  23 value 8338.318875
+iter  24 value 8338.318875
+iter  25 value 8338.318875
+iter  25 value 8338.318875
+iter  25 value 8338.318875
+final  value 8338.318875 
+converged
+
+Estimated parameters with approximate standard errors from BHHH matrix:
+                          Estimate     BHHH se BHH t-ratio (0)
+mu_scalingFactor           0.12318    0.002387         51.6147
+sigma_scalingFactor        0.05765    0.002401         24.0068
+mu_wtp_Acceleration       -1.35768    0.072503        -18.7257
+sigma_wtp_Acceleration     1.37382    0.103183         13.3144
+mu_wtp_OpCost             -1.75521    0.058390        -30.0599
+sigma_wtp_OpCost          -1.34507    0.060826        -22.1133
+mu_wtp_hev                 1.37665    0.428534          3.2125
+sigma_wtp_hev             -3.89662    0.632046         -6.1651
+mu_wtp_phev20              0.29510    0.411852          0.7165
+sigma_wtp_phev20           2.56915    0.584493          4.3955
+mu_wtp_phev40              1.30219    0.419710          3.1026
+sigma_wtp_phev40           2.44091    0.641172          3.8069
+mu_wtp_bev                -3.85780    0.455014         -8.4784
+sigma_wtp_bev             14.26347    0.312873         45.5887
+mu_wtp_bevRangeRel         4.84440    0.166367         29.1188
+sigma_wtp_bevRangeRel      5.62054    0.203475         27.6228
+mu_wtp_noBEVFC            -2.73787    0.366452         -7.4713
+sigma_wtp_noBEVFC         -1.22566    0.575694         -2.1290
+mu_wtp_american           -1.09560    0.347758         -3.1505
+sigma_wtp_american         3.73376    0.356084         10.4856
+mu_wtp_chinese           -20.89772    0.487585        -42.8596
+sigma_wtp_chinese        -19.30205    0.614691        -31.4012
+mu_wtp_japanese           -0.07126    0.358655         -0.1987
+sigma_wtp_japanese        -4.68176    0.445364        -10.5122
+mu_wtp_skorean            -3.67303    0.343793        -10.6838
+sigma_wtp_skorean          4.52234    0.467274          9.6781
+
+Final LL: -8338.3189
+
+Calculating log-likelihood at equal shares (LL(0)) for applicable
+  models...
+Calculating LL of each model component...
+Calculating other model fit measures
+Computing covariance matrix using numerical methods (numDeriv).
+ 0%....25%....50%....75%....100%
+Negative definite Hessian with maximum eigenvalue: -0.782769
+
+Please acknowledge the use of Apollo by citing Hess & Palma (2019) -
+  doi.org/10.1016/j.jocm.2019.100170
+Model output saved to logs/job_35887057/MXL100_none_wtp/MXL100_none_wtp_output.txt 
+Estimates saved to logs/job_35887057/MXL100_none_wtp/MXL100_none_wtp_estimates.csv 
+Model object saved to logs/job_35887057/MXL100_none_wtp/MXL100_none_wtp.rds 
+[1] TRUE
+Starting Cross-Validation 
+Testing likelihood function.
+5 separate runs will be conducted, each using a random subset of 80% of
+  individuals for estimation, and the remainder for validation.
+Number of individuals
+- for estimation : 587
+- for forecasting : 147
+- in sample (total): 734
+Estimated parameters and log-likelihoods for each sample will be
+  written to:
+  logs/job_35887057/MXL100_none_wtp/MXL100_none_wtp_outOfSample_params.csv
+The matrix defining the observations used in each repetition will be
+  written to:
+  logs/job_35887057/MXL100_none_wtp/MXL100_none_wtp_outOfSample_samples.csv
+
+Estimation cycle 1 (8805 obs.)
+INFORMATION: While preparing your inputs for multi-core estimation, the
+  following objects were found in "apollo_inputs", but were not split
+  across cores: "attrCols", "availCols", "heterogeneity_spec",
+  "lognorm_price_dist", "n_classes", "n_draws", "nesting_params",
+  "nesting_spec", "observed_attributes", "scalingFactor_dist",
+  "utility_space". If these objects contain observation or
+  individual-specific data, and thus need to be split, please add a
+  column with the IDs to these objects, and call this column "ID" 
+Saving CV model as: MXL100_none_wtp_CV01
+Model output saved to logs/job_35887057/MXL100_none_wtp/MXL100_none_wtp_CV01_output.txt 
+Estimates saved to logs/job_35887057/MXL100_none_wtp/MXL100_none_wtp_CV01_estimates.csv 
+Model object saved to logs/job_35887057/MXL100_none_wtp/MXL100_none_wtp_CV01.rds 
+Out-of-sample time: 0.156
+Iter. total wall time: 299.5717 secs
+Estimation results written to file.
+Estimation cycle 2 (8805 obs.)
+INFORMATION: While preparing your inputs for multi-core estimation, the
+  following objects were found in "apollo_inputs", but were not split
+  across cores: "attrCols", "availCols", "heterogeneity_spec",
+  "lognorm_price_dist", "n_classes", "n_draws", "nesting_params",
+  "nesting_spec", "observed_attributes", "scalingFactor_dist",
+  "utility_space". If these objects contain observation or
+  individual-specific data, and thus need to be split, please add a
+  column with the IDs to these objects, and call this column "ID" 
+Saving CV model as: MXL100_none_wtp_CV02
+Model output saved to logs/job_35887057/MXL100_none_wtp/MXL100_none_wtp_CV02_output.txt 
+Estimates saved to logs/job_35887057/MXL100_none_wtp/MXL100_none_wtp_CV02_estimates.csv 
+Model object saved to logs/job_35887057/MXL100_none_wtp/MXL100_none_wtp_CV02.rds 
+Out-of-sample time: 0.157
+Iter. total wall time: 466.9583 secs
+Estimation results written to file.
+Estimation cycle 3 (8805 obs.)
+INFORMATION: While preparing your inputs for multi-core estimation, the
+  following objects were found in "apollo_inputs", but were not split
+  across cores: "attrCols", "availCols", "heterogeneity_spec",
+  "lognorm_price_dist", "n_classes", "n_draws", "nesting_params",
+  "nesting_spec", "observed_attributes", "scalingFactor_dist",
+  "utility_space". If these objects contain observation or
+  individual-specific data, and thus need to be split, please add a
+  column with the IDs to these objects, and call this column "ID" 
+Saving CV model as: MXL100_none_wtp_CV03
+Model output saved to logs/job_35887057/MXL100_none_wtp/MXL100_none_wtp_CV03_output.txt 
+Estimates saved to logs/job_35887057/MXL100_none_wtp/MXL100_none_wtp_CV03_estimates.csv 
+Model object saved to logs/job_35887057/MXL100_none_wtp/MXL100_none_wtp_CV03.rds 
+Out-of-sample time: 0.155
+Iter. total wall time: 259.2361 secs
+Estimation results written to file.
+Estimation cycle 4 (8805 obs.)
+INFORMATION: While preparing your inputs for multi-core estimation, the
+  following objects were found in "apollo_inputs", but were not split
+  across cores: "attrCols", "availCols", "heterogeneity_spec",
+  "lognorm_price_dist", "n_classes", "n_draws", "nesting_params",
+  "nesting_spec", "observed_attributes", "scalingFactor_dist",
+  "utility_space". If these objects contain observation or
+  individual-specific data, and thus need to be split, please add a
+  column with the IDs to these objects, and call this column "ID" 
+Saving CV model as: MXL100_none_wtp_CV04
+Model output saved to logs/job_35887057/MXL100_none_wtp/MXL100_none_wtp_CV04_output.txt 
+Estimates saved to logs/job_35887057/MXL100_none_wtp/MXL100_none_wtp_CV04_estimates.csv 
+Model object saved to logs/job_35887057/MXL100_none_wtp/MXL100_none_wtp_CV04.rds 
+Out-of-sample time: 0.154
+Iter. total wall time: 334.9381 secs
+Estimation results written to file.
+Estimation cycle 5 (8805 obs.)
+INFORMATION: While preparing your inputs for multi-core estimation, the
+  following objects were found in "apollo_inputs", but were not split
+  across cores: "attrCols", "availCols", "heterogeneity_spec",
+  "lognorm_price_dist", "n_classes", "n_draws", "nesting_params",
+  "nesting_spec", "observed_attributes", "scalingFactor_dist",
+  "utility_space". If these objects contain observation or
+  individual-specific data, and thus need to be split, please add a
+  column with the IDs to these objects, and call this column "ID" 
+Saving CV model as: MXL100_none_wtp_CV05
+Model output saved to logs/job_35887057/MXL100_none_wtp/MXL100_none_wtp_CV05_output.txt 
+Estimates saved to logs/job_35887057/MXL100_none_wtp/MXL100_none_wtp_CV05_estimates.csv 
+Model object saved to logs/job_35887057/MXL100_none_wtp/MXL100_none_wtp_CV05.rds 
+Out-of-sample time: 0.156
+Iter. total wall time: 269.7678 secs
+Estimation results written to file.
+Processing time: 27.20477 mins
+
+Summary of cross-validation:
+         LL per obs in estimation sample LL per obs in validation sample
+sample_1                         -0.7633                         -0.7459
+sample_2                         -0.7689                         -0.7375
+sample_3                         -0.7597                         -0.7635
+sample_4                         -0.7297                         -0.9025
+sample_5                         -0.7682                         -0.7386
+Average                          -0.7580                         -0.7776
+         % difference CPU sec in validation sample
+sample_1      -2.2854                       0.1560
+sample_2      -4.0836                       0.1570
+sample_3       0.5027                       0.1550
+sample_4      23.6920                       0.1540
+sample_5      -3.8510                       0.1560
+Average        2.7949                       0.1556
+Cross-Validation Complete 
+Starting Psi' on Dataset Test 
+Restored to  100  draws. 
+Mean Psi' (all) =  0.3128428 
+Mean Psi' (chosen only) =  0.3097208 
+Saved psi' dataset to:  logs/job_35887057/MXL100_none_wtp//MXL100_none_wtp_psi_prime_dataset.csv 
+Psi' on Dataset Test Complete
+Starting Speed Test 
+       ___Draws___              sec/
+nCores inter intra  progress  LLCall RAM(MB)
+     1   100     0 ..........   2.08  1280.3
+     2   100     0 INFORMATION: While preparing your inputs for multi-core estimation, the
+  following objects were found in "apollo_inputs", but were not split
+  across cores: "attrCols", "availCols", "heterogeneity_spec",
+  "lognorm_price_dist", "n_classes", "n_draws", "nesting_params",
+  "nesting_spec", "observed_attributes", "scalingFactor_dist",
+  "utility_space". If these objects contain observation or
+  individual-specific data, and thus need to be split, please add a
+  column with the IDs to these objects, and call this column "ID" 
+..........   1.97  2242.4
+     4   100     0 INFORMATION: While preparing your inputs for multi-core estimation, the
+  following objects were found in "apollo_inputs", but were not split
+  across cores: "attrCols", "availCols", "heterogeneity_spec",
+  "lognorm_price_dist", "n_classes", "n_draws", "nesting_params",
+  "nesting_spec", "observed_attributes", "scalingFactor_dist",
+  "utility_space". If these objects contain observation or
+  individual-specific data, and thus need to be split, please add a
+  column with the IDs to these objects, and call this column "ID" 
+..........   1.19  3075.1
+
+Summary of results (sec. per call to LL function)
+       draws100
+cores1   2.0810
+cores2   1.9658
+cores4   1.1858
+       model_name cores inter_draws intra_draws calls time_per_call ram_mb
+1 MXL100_none_wtp     1         100           0   100      2.081000 1280.3
+2 MXL100_none_wtp     2         100           0   100      1.965790 2242.4
+3 MXL100_none_wtp     4         100           0   100      1.185845 3075.1
+Saved speed test results to: logs/job_35887057/MXL100_none_wtp//MXL100_none_wtp_speedTest.csv 
+Saved detailed speed test results to: logs/job_35887057/MXL100_none_wtp//MXL100_none_wtp_speedTest_detailed.csv 
+Speed Test Complete 
+Starting Psi' Test 
+Psi' Test Complete 
+Starting Func Eval Timing 
+Func Eval Timing Complete 
+MXL100_none_wtp done.
+Results saved to: logs/job_35887057/MXL100_none_wtp 
+Done Running. Log files moved to logs/job_35887057/

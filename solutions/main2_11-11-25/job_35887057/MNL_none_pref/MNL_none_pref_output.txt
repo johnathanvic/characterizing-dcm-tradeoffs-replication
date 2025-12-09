@@ -1,0 +1,392 @@
+Model run by jvicente using Apollo 0.3.6 on R 4.4.1 for Linux.
+Please acknowledge the use of Apollo by citing Hess & Palma (2019)
+  DOI 10.1016/j.jocm.2019.100170
+  www.ApolloChoiceModelling.com
+
+Model name                                  : MNL_none_pref
+Model description                           : No model description provided in apollo_control
+Model run at                                : 2025-11-10 09:50:23.729876
+Estimation method                           : bfgs
+Estimation diagnosis                        : successful convergence
+Optimisation diagnosis                      : Maximum found
+     hessian properties                     : Negative definite
+     maximum eigenvalue                     : -146.046534
+     reciprocal of condition number         : 0.000233174
+Number of individuals                       : 734
+Number of rows in database                  : 11010
+Number of modelled outcomes                 : 11010
+
+Number of cores used                        :  32 
+Model without mixing
+
+LL(start)                                   : -9336.05
+LL at equal shares, LL(0)                   : -12095.72
+LL at observed shares, LL(C)                : Not applicable
+LL(final)                                   : -9336.05
+Rho-squared vs equal shares                  :  0.2282 
+Adj.Rho-squared vs equal shares              :  0.2271 
+Rho-squared vs observed shares               :  Not applicable 
+Adj.Rho-squared vs observed shares           :  Not applicable 
+AIC                                         :  18698.1 
+BIC                                         :  18793.08 
+
+Estimated parameters                        : 13
+Time taken (hh:mm:ss)                       :  00:02:20.4 
+     pre-estimation                         :  00:01:24.4 
+     estimation                             :  00:00:11.28 
+     post-estimation                        :  00:00:44.72 
+Iterations                                  :  2  
+
+Unconstrained optimisation.
+
+Estimates:
+                  Estimate        s.e.   t.rat.(0)    Rob.s.e. Rob.t.rat.(0)
+b_Price           -0.06596    0.001307    -50.4620    0.003217      -20.5014
+b_Acceleration    -0.08672    0.008043    -10.7831    0.014808       -5.8565
+b_OpCost          -0.12346    0.005274    -23.4076    0.009816      -12.5768
+b_hev              0.07879    0.052734      1.4941    0.089602        0.8793
+b_phev20           0.01734    0.052378      0.3310    0.087157        0.1989
+b_phev40           0.13332    0.052250      2.5516    0.084942        1.5696
+b_bev             -0.22529    0.047040     -4.7894    0.101347       -2.2230
+b_bevRangeRel      0.30576    0.016564     18.4595    0.034048        8.9802
+b_noBEVFC         -0.26164    0.039058     -6.6988    0.057126       -4.5801
+b_american        -0.11332    0.041808     -2.7104    0.073687       -1.5378
+b_chinese         -1.20362    0.045281    -26.5814    0.098262      -12.2490
+b_japanese        -0.05776    0.041363     -1.3964    0.077927       -0.7412
+b_skorean         -0.39274    0.041946     -9.3631    0.072923       -5.3857
+
+
+Overview of choices for MNL model component :
+                                       C1      C2       C3
+Times available                  11010.00 11010.0 11010.00
+Times chosen                      3670.00  3677.0  3663.00
+Percentage chosen overall           33.33    33.4    33.27
+Percentage chosen when available    33.33    33.4    33.27
+
+
+
+Classical covariance matrix:
+                      b_Price b_Acceleration       b_OpCost          b_hev
+b_Price             1.709e-06      8.325e-07      8.868e-07     -6.994e-07
+b_Acceleration      8.325e-07      6.468e-05      1.487e-06      7.121e-06
+b_OpCost            8.868e-07      1.487e-06      2.782e-05     -5.962e-06
+b_hev              -6.994e-07      7.121e-06     -5.962e-06       0.002781
+b_phev20           -4.422e-07      3.818e-06     -6.125e-06       0.001399
+b_phev40            5.365e-07      8.361e-06     -3.985e-06       0.001397
+b_bev               9.204e-07      6.608e-06      2.663e-06       0.001414
+b_bevRangeRel      -2.454e-06     -6.811e-06     -3.290e-06      8.057e-06
+b_noBEVFC           2.686e-06      7.555e-06      4.999e-06     -1.200e-05
+b_american         -2.405e-07     -3.863e-06      4.021e-06      4.647e-05
+b_chinese           8.711e-06      1.575e-05      1.995e-05      4.920e-05
+b_japanese          6.198e-07      4.950e-06      5.224e-06      6.972e-05
+b_skorean           1.682e-06      7.615e-06      6.114e-06      3.457e-05
+                     b_phev20       b_phev40          b_bev  b_bevRangeRel
+b_Price            -4.422e-07      5.365e-07      9.204e-07     -2.454e-06
+b_Acceleration      3.818e-06      8.361e-06      6.608e-06     -6.811e-06
+b_OpCost           -6.125e-06     -3.985e-06      2.663e-06     -3.290e-06
+b_hev                0.001399       0.001397       0.001414      8.057e-06
+b_phev20             0.002743       0.001401       0.001368     -1.710e-06
+b_phev40             0.001401       0.002730       0.001396      1.009e-05
+b_bev                0.001368       0.001396       0.002213     1.3835e-04
+b_bevRangeRel      -1.710e-06      1.009e-05     1.3835e-04     2.7435e-04
+b_noBEVFC           2.058e-06     -7.881e-06    -7.6146e-04     -3.038e-05
+b_american          3.480e-05     -5.114e-05      1.128e-05     -2.219e-05
+b_chinese           2.735e-05     -2.424e-05      8.949e-05     -5.012e-05
+b_japanese          4.690e-05      6.494e-05      5.005e-05     -4.291e-06
+b_skorean           1.403e-05     -2.429e-05      3.497e-05     -1.230e-05
+                    b_noBEVFC     b_american      b_chinese     b_japanese
+b_Price             2.686e-06     -2.405e-07      8.711e-06      6.198e-07
+b_Acceleration      7.555e-06     -3.863e-06      1.575e-05      4.950e-06
+b_OpCost            4.999e-06      4.021e-06      1.995e-05      5.224e-06
+b_hev              -1.200e-05      4.647e-05      4.920e-05      6.972e-05
+b_phev20            2.058e-06      3.480e-05      2.735e-05      4.690e-05
+b_phev40           -7.881e-06     -5.114e-05     -2.424e-05      6.494e-05
+b_bev             -7.6146e-04      1.128e-05      8.949e-05      5.005e-05
+b_bevRangeRel      -3.038e-05     -2.219e-05     -5.012e-05     -4.291e-06
+b_noBEVFC            0.001526      1.065e-05     -4.174e-06     -2.593e-05
+b_american          1.065e-05       0.001748     8.9174e-04     8.8382e-04
+b_chinese          -4.174e-06     8.9174e-04       0.002050     8.8909e-04
+b_japanese         -2.593e-05     8.8382e-04     8.8909e-04       0.001711
+b_skorean          -2.506e-05     8.9832e-04     9.0772e-04     9.0337e-04
+                    b_skorean
+b_Price             1.682e-06
+b_Acceleration      7.615e-06
+b_OpCost            6.114e-06
+b_hev               3.457e-05
+b_phev20            1.403e-05
+b_phev40           -2.429e-05
+b_bev               3.497e-05
+b_bevRangeRel      -1.230e-05
+b_noBEVFC          -2.506e-05
+b_american         8.9832e-04
+b_chinese          9.0772e-04
+b_japanese         9.0337e-04
+b_skorean            0.001759
+
+Robust covariance matrix:
+                      b_Price b_Acceleration       b_OpCost          b_hev
+b_Price             1.035e-05      1.389e-07      8.073e-06     -2.273e-06
+b_Acceleration      1.389e-07     2.1928e-04     -1.353e-05    -1.4455e-04
+b_OpCost            8.073e-06     -1.353e-05      9.636e-05      1.250e-05
+b_hev              -2.273e-06    -1.4455e-04      1.250e-05       0.008028
+b_phev20           -5.199e-07    -1.3596e-04     -9.647e-05       0.005101
+b_phev40            2.553e-05     -2.915e-05     -2.783e-05       0.004900
+b_bev               2.484e-05     -9.836e-05    -1.1871e-04       0.005508
+b_bevRangeRel      -1.694e-05     -3.220e-05     -1.589e-05     -3.025e-05
+b_noBEVFC          -2.056e-05      6.428e-05      8.107e-05    -3.2225e-04
+b_american         -3.066e-05     -8.384e-06      2.416e-05     5.8796e-04
+b_chinese           1.311e-05    -2.4922e-04     1.1747e-04     5.6759e-04
+b_japanese         -2.777e-05      4.757e-05     -1.690e-05     6.1503e-04
+b_skorean          -2.261e-05      4.581e-05     -7.809e-05     -8.304e-05
+                     b_phev20       b_phev40          b_bev  b_bevRangeRel
+b_Price            -5.199e-07      2.553e-05      2.484e-05     -1.694e-05
+b_Acceleration    -1.3596e-04     -2.915e-05     -9.836e-05     -3.220e-05
+b_OpCost           -9.647e-05     -2.783e-05    -1.1871e-04     -1.589e-05
+b_hev                0.005101       0.004900       0.005508     -3.025e-05
+b_phev20             0.007596       0.004723       0.005543      8.134e-05
+b_phev40             0.004723       0.007215       0.005215      4.069e-05
+b_bev                0.005543       0.005215       0.010271     4.1347e-04
+b_bevRangeRel       8.134e-05      4.069e-05     4.1347e-04       0.001159
+b_noBEVFC         -3.7848e-04    -4.4630e-04      -0.001709     2.4575e-04
+b_american         9.6139e-04     7.6779e-04     6.7500e-04      6.435e-06
+b_chinese            0.001314     4.6798e-04      1.081e-05     1.3569e-04
+b_japanese           0.001119     8.9566e-04       0.001224    -1.6348e-04
+b_skorean          7.1088e-04     2.1686e-04     5.6506e-04    -1.0443e-04
+                    b_noBEVFC     b_american      b_chinese     b_japanese
+b_Price            -2.056e-05     -3.066e-05      1.311e-05     -2.777e-05
+b_Acceleration      6.428e-05     -8.384e-06    -2.4922e-04      4.757e-05
+b_OpCost            8.107e-05      2.416e-05     1.1747e-04     -1.690e-05
+b_hev             -3.2225e-04     5.8796e-04     5.6759e-04     6.1503e-04
+b_phev20          -3.7848e-04     9.6139e-04       0.001314       0.001119
+b_phev40          -4.4630e-04     7.6779e-04     4.6798e-04     8.9566e-04
+b_bev               -0.001709     6.7500e-04      1.081e-05       0.001224
+b_bevRangeRel      2.4575e-04      6.435e-06     1.3569e-04    -1.6348e-04
+b_noBEVFC            0.003263    -4.4369e-04     3.6493e-04    -1.6000e-04
+b_american        -4.4369e-04       0.005430       0.003357       0.003198
+b_chinese          3.6493e-04       0.003357       0.009655       0.002761
+b_japanese        -1.6000e-04       0.003198       0.002761       0.006073
+b_skorean          -7.265e-05       0.002782       0.002368       0.002755
+                    b_skorean
+b_Price            -2.261e-05
+b_Acceleration      4.581e-05
+b_OpCost           -7.809e-05
+b_hev              -8.304e-05
+b_phev20           7.1088e-04
+b_phev40           2.1686e-04
+b_bev              5.6506e-04
+b_bevRangeRel     -1.0443e-04
+b_noBEVFC          -7.265e-05
+b_american           0.002782
+b_chinese            0.002368
+b_japanese           0.002755
+b_skorean            0.005318
+
+Classical correlation matrix:
+                      b_Price b_Acceleration       b_OpCost          b_hev
+b_Price              1.000000       0.079188        0.12863      -0.010147
+b_Acceleration       0.079188       1.000000        0.03507       0.016789
+b_OpCost             0.128626       0.035065        1.00000      -0.021437
+b_hev               -0.010147       0.016789       -0.02144       1.000000
+b_phev20            -0.006459       0.009063       -0.02217       0.506638
+b_phev40             0.007855       0.019897       -0.01446       0.507030
+b_bev                0.014969       0.017467        0.01073       0.569898
+b_bevRangeRel       -0.113328      -0.051126       -0.03766       0.009224
+b_noBEVFC            0.052619       0.024051        0.02426      -0.005824
+b_american          -0.004400      -0.011489        0.01823       0.021076
+b_chinese            0.147177       0.043247        0.08353       0.020604
+b_japanese           0.011463       0.014880        0.02395       0.031961
+b_skorean            0.030671       0.022573        0.02763       0.015627
+                     b_phev20       b_phev40          b_bev  b_bevRangeRel
+b_Price             -0.006459       0.007855       0.014969      -0.113328
+b_Acceleration       0.009063       0.019897       0.017467      -0.051126
+b_OpCost            -0.022171      -0.014462       0.010732      -0.037657
+b_hev                0.506638       0.507030       0.569898       0.009224
+b_phev20             1.000000       0.511919       0.555323      -0.001971
+b_phev40             0.511919       1.000000       0.567774       0.011662
+b_bev                0.555323       0.567774       1.000000       0.177557
+b_bevRangeRel       -0.001971       0.011662       0.177557       1.000000
+b_noBEVFC            0.001006      -0.003862      -0.414442      -0.046959
+b_american           0.015892      -0.023409       0.005738      -0.032049
+b_chinese            0.011533      -0.010246       0.042012      -0.066819
+b_japanese           0.021648       0.030050       0.025721      -0.006263
+b_skorean            0.006384      -0.011084       0.017725      -0.017707
+                    b_noBEVFC     b_american      b_chinese     b_japanese
+b_Price              0.052619      -0.004400       0.147177       0.011463
+b_Acceleration       0.024051      -0.011489       0.043247       0.014880
+b_OpCost             0.024265       0.018234       0.083527       0.023946
+b_hev               -0.005824       0.021076       0.020604       0.031961
+b_phev20             0.001006       0.015892       0.011533       0.021648
+b_phev40            -0.003862      -0.023409      -0.010246       0.030050
+b_bev               -0.414442       0.005738       0.042012       0.025721
+b_bevRangeRel       -0.046959      -0.032049      -0.066819      -0.006263
+b_noBEVFC            1.000000       0.006523      -0.002360      -0.016049
+b_american           0.006523       1.000000       0.471047       0.511085
+b_chinese           -0.002360       0.471047       1.000000       0.474702
+b_japanese          -0.016049       0.511085       0.474702       1.000000
+b_skorean           -0.015297       0.512253       0.477921       0.520675
+                    b_skorean
+b_Price              0.030671
+b_Acceleration       0.022573
+b_OpCost             0.027635
+b_hev                0.015627
+b_phev20             0.006384
+b_phev40            -0.011084
+b_bev                0.017725
+b_bevRangeRel       -0.017707
+b_noBEVFC           -0.015297
+b_american           0.512253
+b_chinese            0.477921
+b_japanese           0.520675
+b_skorean            1.000000
+
+Robust correlation matrix:
+                      b_Price b_Acceleration       b_OpCost          b_hev
+b_Price              1.000000       0.002915        0.25561      -0.007885
+b_Acceleration       0.002915       1.000000       -0.09306      -0.108945
+b_OpCost             0.255605      -0.093056        1.00000       0.014217
+b_hev               -0.007885      -0.108945        0.01422       1.000000
+b_phev20            -0.001854      -0.105342       -0.11276       0.653187
+b_phev40             0.093421      -0.023178       -0.03338       0.643857
+b_bev                0.076173      -0.065542       -0.11933       0.606536
+b_bevRangeRel       -0.154600      -0.063866       -0.04755      -0.009914
+b_noBEVFC           -0.111860       0.075982        0.14457      -0.062956
+b_american          -0.129328      -0.007684        0.03340       0.089051
+b_chinese            0.041477      -0.171275        0.12178       0.064466
+b_japanese          -0.110761       0.041221       -0.02210       0.088084
+b_skorean           -0.096374       0.042419       -0.10909      -0.012709
+                     b_phev20       b_phev40          b_bev  b_bevRangeRel
+b_Price             -0.001854        0.09342       0.076173      -0.154600
+b_Acceleration      -0.105342       -0.02318      -0.065542      -0.063866
+b_OpCost            -0.112757       -0.03338      -0.119327      -0.047554
+b_hev                0.653187        0.64386       0.606536      -0.009914
+b_phev20             1.000000        0.63792       0.627486       0.027411
+b_phev40             0.637915        1.00000       0.605740       0.014070
+b_bev                0.627486        0.60574       1.000000       0.119825
+b_bevRangeRel        0.027411        0.01407       0.119825       1.000000
+b_noBEVFC           -0.076016       -0.09198      -0.295190       0.126348
+b_american           0.149696        0.12267       0.090386       0.002565
+b_chinese            0.153397        0.05607       0.001086       0.040558
+b_japanese           0.164768        0.13531       0.154956      -0.061616
+b_skorean            0.111848        0.03501       0.076457      -0.042059
+                    b_noBEVFC     b_american      b_chinese     b_japanese
+b_Price              -0.11186      -0.129328       0.041477       -0.11076
+b_Acceleration        0.07598      -0.007684      -0.171275        0.04122
+b_OpCost              0.14457       0.033398       0.121784       -0.02210
+b_hev                -0.06296       0.089051       0.064466        0.08808
+b_phev20             -0.07602       0.149696       0.153397        0.16477
+b_phev40             -0.09198       0.122668       0.056069        0.13531
+b_bev                -0.29519       0.090386       0.001086        0.15496
+b_bevRangeRel         0.12635       0.002565       0.040558       -0.06162
+b_noBEVFC             1.00000      -0.105403       0.065011       -0.03594
+b_american           -0.10540       1.000000       0.463684        0.55698
+b_chinese             0.06501       0.463684       1.000000        0.36052
+b_japanese           -0.03594       0.556985       0.360518        1.00000
+b_skorean            -0.01744       0.517745       0.330405        0.48473
+                    b_skorean
+b_Price              -0.09637
+b_Acceleration        0.04242
+b_OpCost             -0.10909
+b_hev                -0.01271
+b_phev20              0.11185
+b_phev40              0.03501
+b_bev                 0.07646
+b_bevRangeRel        -0.04206
+b_noBEVFC            -0.01744
+b_american            0.51774
+b_chinese             0.33041
+b_japanese            0.48473
+b_skorean             1.00000
+
+ 20 most extreme outliers in terms of lowest average per choice prediction:
+   ID Avg prob per choice
+ 1064        0.0007497142
+  420        0.0015363345
+  739        0.0026309618
+ 1808        0.0026377725
+ 1989        0.0047584913
+  982        0.0056524203
+  903        0.0062760966
+  396        0.0075145827
+  813        0.0093631701
+   79        0.0134238355
+ 1799        0.0135350745
+ 1819        0.0154791989
+  130        0.0172586342
+  310        0.0185795249
+  918        0.0205239834
+ 1746        0.0207282662
+   21        0.0241788525
+  815        0.0246507943
+ 1032        0.0256868241
+  978        0.0268647716
+
+Settings and functions used in model definition:
+
+apollo_control
+--------------
+                       Value                                            
+modelName              "MNL_none_pref"                                  
+indivID                "ID"                                             
+panelData              "TRUE"                                           
+weights                "Weight2018"                                     
+outputDirectory        "logs/job_35887057/MNL_none_pref/"               
+nCores                 "32"                                             
+noModification         "TRUE"                                           
+calculateLLC           "FALSE"                                          
+workInLogs             "TRUE"                                           
+mixing                 "FALSE"                                          
+debug                  "FALSE"                                          
+modelDescr             "No model description provided in apollo_control"
+seed                   "13"                                             
+HB                     "FALSE"                                          
+noValidation           "FALSE"                                          
+noDiagnostics          "FALSE"                                          
+analyticHessian        "FALSE"                                          
+memorySaver            "FALSE"                                          
+analyticGrad           "FALSE"                                          
+analyticGrad_manualSet "FALSE"                                          
+overridePanel          "FALSE"                                          
+preventOverridePanel   "FALSE"                                          
+
+Hessian routines attempted
+--------------------------
+numerical second derivative of LL (using numDeriv)
+
+
+apollo_probabilities
+----------------------
+function (apollo_beta, apollo_inputs, functionality = "estimate") 
+{
+    apollo_attach(apollo_beta, apollo_inputs)
+    on.exit(apollo_detach(apollo_beta, apollo_inputs))
+    V <- list()
+    alternatives <- unique(gsub("^.*C", "C", apollo_inputs$availCols))
+    alt_codes <- setNames(seq_along(alternatives), alternatives)
+    for (altName in alternatives) {
+        if (tolower(apollo_inputs$utility_space) == "wtp") {
+            attrs_no_price <- setdiff(apollo_inputs$observed_attributes, 
+                "Price")
+            attr_terms <- paste0("wtp_", attrs_no_price, " * ", 
+                attrs_no_price, altName, collapse = " + ")
+            v_expr <- paste0("scalingFactor * (", attr_terms, 
+                " - Price", altName, ")")
+        }
+        else {
+            attr_terms <- paste0("b_", apollo_inputs$observed_attributes, 
+                " * ", apollo_inputs$observed_attributes, altName, 
+                collapse = " + ")
+            v_expr <- attr_terms
+        }
+        V[[altName]] <- eval(parse(text = v_expr))
+    }
+    mnl_settings <- list(alternatives = alt_codes, choiceVar = Choice, 
+        utilities = V)
+    P <- list()
+    P[["model"]] <- apollo_mnl(mnl_settings, functionality)
+    P <- apollo_panelProd(P, apollo_inputs, functionality)
+    P <- apollo_weighting(P, apollo_inputs, functionality)
+    P <- apollo_prepareProb(P, apollo_inputs, functionality)
+    return(P)
+}
+<bytecode: 0x55bb67192118>
+<environment: 0x55bb67156018>

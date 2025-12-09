@@ -1,0 +1,4 @@
+"model_name","cores","inter_draws","intra_draws","calls","time_per_call","ram_mb"
+"LCL4_CNL_pref",1,0,0,100,1.56424953937531,239.8
+"LCL4_CNL_pref",2,0,0,100,1.79866349935532,622.8
+"LCL4_CNL_pref",4,0,0,100,2.14759124994278,994.1

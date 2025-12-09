@@ -1,0 +1,1824 @@
+---
+title: "Model Comparison Visualizations"
+format: html
+editor: visual
+---
+
+# Setup
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+rm(list = ls())
+library(tidyverse)
+library(ggrepel)
+library(patchwork)
+```
+
+## Load Data
+
+```{r, echo=FALSE}
+# Data source
+# data_folder <- "solutions/main2_10-27-25"
+# data_folder <- "solutions/main2_10-29-25"
+data_folder <- "solutions/main2_11-11-25"
+```
+
+### Load summary dfs
+
+```{r, echo=FALSE}
+time_files <- list.files(data_folder, 
+                    pattern = "_speedTest_detailed\\.csv$", 
+                    recursive = TRUE, 
+                    full.names = TRUE)
+time_data_list <- lapply(time_files, read.csv)
+```
+
+### Define data source & fix names
+
+```{r, echo=FALSE}
+# Mapping for main2_10-29-25
+name_mapping <- c(
+  "MNL_none_pref" = "MNL_none_pref",
+  "NL_NL_pref" = "NL_NL_pref",
+  "CNL_NL_pref" = "CNL_CNL_pref",  # Change this
+  "CNL_CNL_pref" = "CNL_CNL_pref",  # Change this
+  "LCL2_none_pref" = "LCL2_none_pref",
+  "LCL2_NL_pref" = "LCL2_NL_pref",
+  "LCL2_CNL_pref" = "LCL2_CNL_pref",
+  "LCL4_none_pref" = "LCL4_none_pref",
+  "LCL4_NL_pref" = "LCL4_NL_pref",
+  "LC4_CNL_pref" = "LCL4_CNL_pref",  # Change this (also fixes typo)
+  "LCL4_CNL_pref" = "LCL4_CNL_pref",
+  "LCL6_none_pref" = "LCL6_none_pref",
+  "LCL6_NL_pref" = "LCL6_NL_pref",
+  "LCL6_CNL_pref" = "LCL6_CNL_pref",
+  "LCL8_none_pref" = "LCL8_none_pref",
+  "LC8_NL_pref" = "LCL8_NL_pref",
+  "LC8_CNL_pref" = "LCL8_CNL_pref",
+  "LCL8_NL_pref" = "LCL8_NL_pref",
+  "LCL8_CNL_pref" = "LCL8_CNL_pref",
+  "MXL100_none_pref" = "MXL100_none_pref",
+  "MXL500_none_pref" = "MXL500_none_pref",
+  "MXL1k_none_pref" = "MXL1k_none_pref",
+  "MXL100_none_wtp" = "MXL100_none_wtp",
+  "MXL500_none_wtp"  = "MXL500_none_wtp",
+  "MXL1k_none_wtp" = "MXL1k_none_wtp"
+)
+model_order <- c("MNL_none_pref",           "NL_NL_pref",           "CNL_CNL_pref",
+                 "LCL2_none_pref",           "LCL2_NL_pref",           "LCL2_CNL_pref",
+                 "LCL4_none_pref",           "LCL4_NL_pref",           "LCL4_CNL_pref",
+                 "LCL6_none_pref",           "LCL6_NL_pref",           "LCL6_CNL_pref",
+                 "LCL8_none_pref",           "LCL8_NL_pref",           "LCL8_CNL_pref",
+                 "MXL100_none_pref",          "MXL500_none_pref",    "MXL1k_none_pref",
+                 "MXL100_none_wtp",          "MXL500_none_wtp",     "MXL1k_none_wtp"
+                 )
+
+model_labels <- c(
+  # Baseline models
+  "MNL_none_pref"    = "MNL",
+  "NL_NL_pref"       = "NL",
+  "CNL_CNL_pref"     = "CNL",
+
+  # Latent class models (ordered: none → NL → CNL)
+  "LCL2_none_pref"   = "LCL (2 cl.)",
+  "LCL2_NL_pref"     = "LC-NL (2 cl.)",
+  "LCL2_CNL_pref"    = "LC-CNL (2 cl.)",
+
+  "LCL4_none_pref"   = "LCL (4 cl.)",
+  "LCL4_NL_pref"     = "LC-NL (4 cl.)",
+  "LCL4_CNL_pref"    = "LC-CNL (4 cl.)",
+
+  "LCL6_none_pref"   = "LCL (6 cl.)",
+  "LCL6_NL_pref"     = "LC-NL (6 cl.)",
+  "LCL6_CNL_pref"    = "LC-CNL (6 cl.)",
+
+  "LCL8_none_pref"   = "LCL (8 cl.)",
+  "LCL8_NL_pref"     = "LC-NL (8 cl.)",
+  "LCL8_CNL_pref"    = "LC-CNL (8 cl.)",
+
+  # Mixed logit models
+  "MXL100_none_pref" = "MXL (Pref, 100 dr.)",
+  "MXL500_none_pref" = "MXL (Pref, 500 dr.)",
+  "MXL1k_none_pref"  = "MXL (Pref, 1k dr.)",
+  "MXL100_none_wtp"  = "MXL (WTP, 100 dr.)",
+  "MXL500_none_wtp"  = "MXL (WTP, 500 dr.)",
+  "MXL1k_none_wtp"   = "MXL (WTP, 1k dr.)"
+)
+
+## Timing
+time_files <- list.files(data_folder, 
+                    pattern = "_speedTest_detailed\\.csv$", 
+                    recursive = TRUE, 
+                    full.names = TRUE)
+time_data_list <- lapply(time_files, read.csv)
+
+
+## Psi prime
+psi_files <- list.files(data_folder, 
+                        pattern = "psi_prime_dataset\\.csv$", 
+                        recursive = TRUE, 
+                        full.names = TRUE)
+psi_data_list <- lapply(psi_files, function(file) {
+  df <- read.csv(file)
+  # Extract model name from filename (part before _psi_prime_dataset)
+  filename <- basename(file)
+  model_name <- sub("_psi_prime_dataset\\.csv$", "", filename)
+  df$model_name <- model_name
+  return(df)
+})
+
+## Out of sample
+oos_files <- list.files(data_folder, 
+                        pattern = "_outOfSample_params\\.csv$", 
+                        recursive = TRUE, 
+                        full.names = TRUE)
+
+# Read files and add model_name from filename
+oos_data_list <- lapply(oos_files, function(file) {
+  df <- read.csv(file)
+  # Extract model name from filename (part before _outOfSample_params)
+  filename <- basename(file)
+  model_name <- sub("_outOfSample_params\\.csv$", "", filename)
+  df$model_name <- model_name
+  return(df)
+})
+
+# Combine into one dataframe
+timing_df <- bind_rows(time_data_list)
+psi_df <- bind_rows(psi_data_list)
+oos_df <- bind_rows(oos_data_list)
+
+# Correct model names
+timing_df$model_name <- name_mapping[timing_df$model_name]
+psi_df$model_name <- name_mapping[psi_df$model_name]
+oos_df$model_name <- name_mapping[oos_df$model_name]
+
+# Order the model names
+timing_df$model_name <- factor(timing_df$model_name, levels = model_order)
+psi_df$model_name <- factor(psi_df$model_name, levels = model_order)
+oos_df$model_name <- factor(oos_df$model_name, levels = model_order)
+
+# Rename models
+timing_df$model_label <- factor(model_labels[as.character(timing_df$model_name)],
+                               levels = model_labels)
+psi_df$model_label <- factor(model_labels[as.character(psi_df$model_name)],
+                            levels = model_labels)
+oos_df$model_label <- factor(model_labels[as.character(oos_df$model_name)],
+                            levels = model_labels)
+
+# Summary dfs
+summary_timing_df <- timing_df %>%
+  group_by(model_name) %>%
+  summarise(
+    # 1 core metrics (baseline)
+    mean_elapsed = mean(sys_elapsed_seconds[cores == 1]),
+    sd_elapsed = sd(sys_elapsed_seconds[cores == 1]),
+    se_elapsed = sd(sys_elapsed_seconds[cores == 1]) / sqrt(sum(cores == 1)),
+    mean_cpu = mean(proc_total_cpu_seconds[cores == 1]),
+    sd_cpu = sd(proc_total_cpu_seconds[cores == 1]),
+    se_cpu = sd(proc_total_cpu_seconds[cores == 1]) / sqrt(sum(cores == 1)),
+    
+    # 2 core metrics
+    mean_elapsed_2core = mean(sys_elapsed_seconds[cores == 2]),
+    sd_elapsed_2core = sd(sys_elapsed_seconds[cores == 2]),
+    se_elapsed_2core = sd(sys_elapsed_seconds[cores == 2]) / sqrt(sum(cores == 2)),
+    mean_cpu_2core = mean(proc_total_cpu_seconds[cores == 2]),
+    sd_cpu_2core = sd(proc_total_cpu_seconds[cores == 2]),
+    se_cpu_2core = sd(proc_total_cpu_seconds[cores == 2]) / sqrt(sum(cores == 2)),
+    
+    # 4 core metrics
+    mean_elapsed_4core = mean(sys_elapsed_seconds[cores == 4]),
+    sd_elapsed_4core = sd(sys_elapsed_seconds[cores == 4]),
+    se_elapsed_4core = sd(sys_elapsed_seconds[cores == 4]) / sqrt(sum(cores == 4)),
+    mean_cpu_4core = mean(proc_total_cpu_seconds[cores == 4]),
+    sd_cpu_4core = sd(proc_total_cpu_seconds[cores == 4]),
+    se_cpu_4core = sd(proc_total_cpu_seconds[cores == 4]) / sqrt(sum(cores == 4))
+  )  %>% 
+  mutate(model_label = factor(model_labels[as.character(model_name)],
+                            levels = model_labels))
+# print(summary_timing_df)
+
+summary_psi_df <- psi_df %>%
+  group_by(model_name) %>%
+  summarise(
+    mean_psi = mean(psi_prime),
+    sd_psi = sd(psi_prime),
+    se_psi = sd(psi_prime) / sqrt(n())  # Standard error
+  ) %>% 
+  mutate(model_label = factor(model_labels[as.character(model_name)],
+                            levels = model_labels))
+
+summary_oos_df <- oos_df %>%
+  group_by(model_name) %>%
+  summarise(
+    mean_avg_likelihood = mean(exp(avgLLObs_val)),
+    sd_avg_likelihood = sd(exp(avgLLObs_val)),
+    se_avg_likelihood = sd(exp(avgLLObs_val)) / sqrt(n())
+  ) %>% 
+  mutate(model_label = factor(model_labels[as.character(model_name)],
+                            levels = model_labels))
+
+# Create summary df
+summary_df <- summary_oos_df %>%
+  left_join(summary_psi_df, by = "model_name") %>%
+  left_join(summary_timing_df, by = "model_name") %>% 
+  mutate(model_label = factor(model_labels[as.character(model_name)],
+                            levels = model_labels))
+
+```
+
+### Pareto summary
+
+```{r, echo=FALSE, fig.width=4, fig.height=4}
+# First, extract the reference values from MNL_none_pref
+reference_values <- summary_df %>%
+  filter(model_name == "MNL_none_pref") %>%
+  select(mean_elapsed, mean_cpu, mean_avg_likelihood, mean_psi)
+
+# Calculate relative values
+mod_summary_df <- summary_df %>% 
+  filter(!grepl("CNL", model_label)) %>%
+  mutate(
+    rel_elapsed = mean_elapsed / reference_values$mean_elapsed, 
+    rel_cpu = mean_cpu / reference_values$mean_cpu,
+    rel_avg_likelihood = mean_avg_likelihood - reference_values$mean_avg_likelihood,
+    rel_psi = mean_psi - reference_values$mean_psi
+  )
+
+
+# Plot with relative values
+ggplot(mod_summary_df, aes(y = rel_cpu, x = mean_avg_likelihood, 
+                           color = mean_psi)) +
+  geom_point(alpha = 0.7, size = 5) +
+  geom_text_repel(aes(label = model_label), size = 3, color = "black",
+                  max.overlaps = 100, 
+                  fontface = "bold",
+                  force = 5,            # default ~1, higher pushes labels farther from points
+                  force_pull = 2,       # adds pull toward data points after pushing away
+                  min.segment.length = 0,  # always show segment lines
+                  box.padding = 0.4,    # padding around text boxes
+                  point.padding = 0.5,  # padding around points
+                  
+                  nudge_x = 0.01,
+                    nudge_y = 0.1   # small upward shift
+
+) +
+  scale_color_gradient(
+    low = "red", high = "green",
+    # name = expression(atop(atop("Substitution", "Invariance"), "("*psi*"')"))
+    # name = expression(atop(atop("Substitution", "Invariance"), "("*psi*"')"))
+     # expression(atop(atop(textstyle("Substitution"), 
+     #                        textstyle("Invariance")), 
+     #                  textstyle("("*psi*"')")))
+    # name = expression(atop(textstyle("Substitution"),
+    #                   textstyle("Invariance ("*psi*"')")))
+    # name = expression("Substitution \n Invariance ("*Psi*"')")
+    # name = bquote(Substitution~Invariance~Psi')
+    name = bquote(atop("Substitution", "Invariance ("*psi*"')"))
+    # name = bquote(atop(textstyle("Substitution"), 
+    #                textstyle("Invariance ("*psi*"')")))
+  ) +
+  theme_minimal() +
+  scale_y_log10(labels = function(x) paste0(x, "x")) +
+  labs(
+    # title = "Computation Time vs Out-of-Sample Fit vs Substitution Invariance",
+    y = "Function Evaluation Time (relative to MNL)",
+    x = "Out-of-Sample Fit (Avg.L.)"
+  ) +
+  theme(
+    legend.position = c(-.01, 1.02),  # normalized coordinates (0 = left/bottom, 1 = right/top)
+    legend.justification = c(0, 1),   # anchor top-left corner of legend
+    # legend.title.align = 0.5,
+    legend.title = element_text(hjust = 0.5, lineheight = 1, size=10),
+    # legend.background = element_rect(fill = alpha("white", 0.6), color = NA)
+    axis.line.x = element_line(arrow = grid::arrow(length = unit(0.3, "cm"), 
+                                                     ends = "last"),
+                                color = "darkgreen", linewidth = 1),
+    axis.line.y = element_line(arrow = grid::arrow(length = unit(0.3, "cm"), 
+                                                     ends = "first"),
+                                color = "darkgreen", linewidth = 1)
+  )
+
+
+ggsave("output/Figures/pareto_summary.png", width = 4, height = 4, dpi = 300)
+
+
+```
+
+```{r, echo=FALSE, fig.width=4, fig.height=4}
+# First, extract the reference values from MNL_none_pref
+reference_values <- summary_df %>%
+  filter(model_name == "MNL_none_pref") %>%
+  select(mean_elapsed, mean_cpu, mean_avg_likelihood, mean_psi)
+
+# Calculate relative values
+mod_summary_df <- summary_df %>% 
+  filter(!grepl("CNL", model_label)) %>%
+  mutate(
+    rel_elapsed = mean_elapsed / reference_values$mean_elapsed, 
+    rel_cpu = mean_cpu / reference_values$mean_cpu,
+    mean_cpu = mean_cpu,
+    rel_avg_likelihood = mean_avg_likelihood - reference_values$mean_avg_likelihood,
+    rel_psi = mean_psi - reference_values$mean_psi,
+    # Calculate % improvement from random (1/3 chance)
+    pct_improvement_from_random = (mean_avg_likelihood - (1/3)) / (1/3) * 100
+  )
+
+# Create the plot
+p <- ggplot(mod_summary_df, aes(y = rel_cpu, x = pct_improvement_from_random, 
+                           color = mean_psi)) +
+  geom_point(alpha = 0.7, size = 5) +
+  geom_text_repel(aes(label = model_label), size = 3, color = "black",
+                  max.overlaps = 100, 
+                  fontface = "bold",
+                  force = 5,
+                  force_pull = 2,
+                  min.segment.length = 0,
+                  box.padding = 0.4,
+                  point.padding = 0.5,
+                  nudge_x = 0.01,
+                  nudge_y = 0.1) +
+  scale_color_gradient(
+    low = "red", high = "green",
+    name = "Substitution Invariance (ψ')",  # Single line title
+    guide = guide_colorbar(
+      title.position = "top",  # Position title above the bar
+      title.hjust = 0.5,       # Center the title
+      barwidth = 10,           # Make bar wider for horizontal display
+      barheight = 0.5          # Make bar thinner for horizontal display
+    )
+  ) +
+  theme_minimal() +
+  scale_y_log10(
+    labels = function(x) paste0(x, "x"),
+      sec.axis = sec_axis(
+      ~ . * reference_values$mean_cpu,  # Convert to CPU seconds
+      name = "CPU Time (seconds)",
+      labels = function(x) round(x, 2)  # Simple rounding to 2 decimal places
+    )
+  ) +
+  scale_x_continuous(
+    labels = function(x) paste0(x, "%"),
+    sec.axis = sec_axis(
+      ~ (. / 100 * (1/3)) + (1/3),  # Convert back to avg likelihood
+      name = "Avg. Likelihood",
+      breaks = c(0.43, 0.45, 0.47),
+      labels = function(x) round(x, 3)
+    )
+  ) +
+  # ggtitle()
+  labs(
+    # title = "Pareto Frontier of Predictive Accuracy, Function Time, and Substitution Invariance",
+    y = "Function Evaluation Time (relative to MNL)",
+    # x = "Predictive Accuracy (Average Likelihood Relative to Random)"
+    #  x = "Predictive Accuracy (Average Likelihood)"
+    x = "Predictive Accuracy (pct. improvement in \n avg. likelihood relative to random choice)"
+  ) +
+  theme(
+    legend.position = c(0.99, 0.01),  # bottom right
+    legend.justification = c(1, 0),   # anchor bottom-right corner of legend
+    legend.direction = "horizontal",  # transpose the legend
+    legend.title = element_text(hjust = 0.5, lineheight = 1, size=10),
+    axis.line.x.bottom = element_line(arrow = grid::arrow(length = unit(0.3, "cm"), 
+                                                     ends = "last"),
+                                color = "darkgreen", linewidth = 1),
+    axis.line.y.left = element_line(arrow = grid::arrow(length = unit(0.3, "cm"), 
+                                                     ends = "first"),
+                                color = "darkgreen", linewidth = 1),
+    # Secondary axes without arrows
+    # axis.line.x.top = element_line(color = "black"),
+    # axis.line.y.right = element_line(color = "black"),
+    # Style the secondary axes
+    axis.title.x.top = element_text(color = "darkgray", size = 10),
+    axis.text.x.top = element_text(color = "darkgray"),
+    axis.title.y.right = element_text(color = "darkgray", size = 10),
+    axis.text.y.right = element_text(color = "darkgray")
+  )
+
+print(p)
+
+ggsave("output/Figures/pareto_summary.png", width = 4, height = 4, dpi = 300)
+
+```
+
+```{r}
+# First identify Pareto optimal points
+pareto_points <- mod_summary_df %>%
+  arrange(desc(pct_improvement_from_random)) %>%
+  mutate(is_pareto = FALSE)
+
+# Find Pareto frontier
+for(i in 1:nrow(pareto_points)) {
+  dominated <- FALSE
+  for(j in 1:nrow(pareto_points)) {
+    if(i != j && 
+       pareto_points$pct_improvement_from_random[j] >= pareto_points$pct_improvement_from_random[i] &&
+       pareto_points$rel_cpu[j] <= pareto_points$rel_cpu[i] &&
+       (pareto_points$pct_improvement_from_random[j] > pareto_points$pct_improvement_from_random[i] ||
+        pareto_points$rel_cpu[j] < pareto_points$rel_cpu[i])) {
+      dominated <- TRUE
+      break
+    }
+  }
+  pareto_points$is_pareto[i] <- !dominated
+}
+
+pareto_frontier <- pareto_points %>%
+  filter(is_pareto) %>%
+  arrange(pct_improvement_from_random)
+
+# Add the Pareto frontier to your plot with legend
+p <- ggplot(mod_summary_df, aes(y = rel_cpu, x = pct_improvement_from_random, 
+                           color = mean_psi)) +
+  # Add the frontier line with a linetype aesthetic for legend
+  geom_line(data = pareto_frontier, 
+            aes(y = rel_cpu, x = pct_improvement_from_random,
+                linetype = "Pareto Frontier"),
+            color = "darkblue", 
+            linewidth = 1,
+            alpha = 0.6,
+            inherit.aes = FALSE) +
+  # Original points
+  geom_point(alpha = 0.7, size = 5) +
+  # Highlight Pareto optimal points
+  geom_point(data = pareto_frontier,
+             aes(y = rel_cpu, x = pct_improvement_from_random),
+             shape = 21,
+             size = 5.5,
+             stroke = 1.5,
+             color = "darkblue",
+             fill = NA,
+             inherit.aes = FALSE) +
+  geom_text_repel(aes(label = model_label), size = 3, color = "black",
+                  max.overlaps = 100, 
+                  fontface = "bold",
+                  force = 5,
+                  force_pull = 2,
+                  min.segment.length = 0,
+                  box.padding = 0.4,
+                  point.padding = 0.5,
+                  nudge_x = 0.01,
+                  nudge_y = 0.1) +
+  scale_color_gradient(
+    low = "red", high = "green",
+    name = "Substitution Invariance (ψ')",
+    guide = guide_colorbar(
+      title.position = "top",
+      title.hjust = 0.5,
+      barwidth = 10,
+      barheight = 0.5,
+      order = 1  # Control order in legend
+    )
+  ) +
+  # Add manual scale for linetype to create legend entry
+  scale_linetype_manual(
+    name = "",  # No title for this part
+    values = c("Pareto Frontier" = "solid"),
+    guide = guide_legend(
+      order = 2,  # Show after color bar
+      override.aes = list(color = "darkblue", linewidth = 1)
+    )
+  ) +
+  theme_minimal() +
+  scale_y_log10(
+    labels = function(x) paste0(x, "x"),
+    sec.axis = sec_axis(
+      ~ . * reference_values$mean_cpu,
+      name = "CPU Time (seconds)",
+      labels = function(x) round(x, 2)
+    )
+  ) +
+  scale_x_continuous(
+    labels = function(x) paste0(x, "%"),
+    sec.axis = sec_axis(
+      ~ (. / 100 * (1/3)) + (1/3),
+      name = "Average Likelihood",
+      breaks = c(0.43, 0.45, 0.47),
+      labels = function(x) round(x, 3)
+    )
+  ) +
+  labs(
+    title = "Pareto Frontier of Predictive Accuracy, Function Time, and Substitution Invariance",
+    y = "Function Evaluation Time (relative to MNL)",
+    x = "Predictive Accuracy (Relative Average Likelihood)"
+  ) +
+  theme(
+    legend.position = c(0.99, 0.01),
+    legend.justification = c(1, 0),
+    legend.direction = "horizontal",
+    legend.box = "horizontal",  # Arrange multiple legends horizontally
+    legend.title = element_text(hjust = 0.5, lineheight = 1, size=10),
+    axis.line.x.bottom = element_line(arrow = grid::arrow(length = unit(0.3, "cm"), 
+                                                     ends = "last"),
+                                color = "darkgreen", linewidth = 1),
+    axis.line.y.left = element_line(arrow = grid::arrow(length = unit(0.3, "cm"), 
+                                                     ends = "first"),
+                                color = "darkgreen", linewidth = 1),
+    axis.title.x.top = element_text(color = "darkgray", size = 10),
+    axis.text.x.top = element_text(color = "darkgray"),
+    axis.title.y.right = element_text(color = "darkgray", size = 10),
+    axis.text.y.right = element_text(color = "darkgray")
+  )
+
+print(p)
+# ggsave("output/Figures/pareto_summary.png", width = 4, height = 4, dpi = 300)
+
+```
+
+### Calc relative timing
+
+```{r, echo=FALSE}
+# Extract reference values from MNL
+reference_values <- summary_df %>%
+  filter(model_label == "MNL") %>%
+  select(mean_elapsed, se_elapsed, mean_avg_likelihood, se_avg_likelihood, mean_psi, se_psi)
+
+# Calculate relative values while preserving raw values
+mod_summary_df <- summary_df %>%
+  mutate(
+    # Relative timing - with proper SE propagation for ratios
+    rel_elapsed = mean_elapsed / reference_values$mean_elapsed,
+    rel_se_elapsed = rel_elapsed * sqrt((se_elapsed/mean_elapsed)^2 + 
+                                         (reference_values$se_elapsed/reference_values$mean_elapsed)^2),
+    
+    # Relative likelihood - correct for differences
+    rel_avg_likelihood = mean_avg_likelihood - reference_values$mean_avg_likelihood,
+    rel_se_avg_likelihood = sqrt(se_avg_likelihood^2 + reference_values$se_avg_likelihood^2),
+    # Relative psi - correct for differences
+    rel_psi = mean_psi - reference_values$mean_psi,
+    rel_se_psi = sqrt(se_psi^2 + reference_values$se_psi^2)  # Changed from sd_psi to se_psi
+  )
+```
+
+## X vs Y vs Z plots
+
+```{r, echo=FALSE}
+# Plot 1: Likelihood vs Elapsed Time
+ggplot(mod_summary_df, aes(x = mean_avg_likelihood, y = rel_elapsed)) +
+  geom_point(size = 3) +
+  geom_errorbar(aes(ymin = rel_elapsed - rel_se_elapsed,
+                    ymax = rel_elapsed + rel_se_elapsed),
+                width = 0) +
+  geom_errorbarh(aes(xmin = mean_avg_likelihood - rel_se_avg_likelihood,
+                     xmax = mean_avg_likelihood + rel_se_avg_likelihood),
+                 height = 0.02) +
+  geom_text(aes(label = model_label), vjust = -0.5, size = 3) +
+  theme_minimal() +
+  labs(title = "Mean Likelihood vs Relative Elapsed Time",
+       x = "Mean Average Likelihood",
+       y = "Relative Elapsed Time (vs Reference)")
+
+# Plot 2: Elapsed Time vs Psi
+ggplot(mod_summary_df, aes(x = rel_elapsed, y = mean_psi)) +
+  geom_point(size = 3) +
+  geom_errorbar(aes(ymin = mean_psi - rel_se_psi,
+                    ymax = mean_psi + rel_se_psi),
+                width = 0.02) +
+  geom_errorbarh(aes(xmin = rel_elapsed - rel_se_elapsed,
+                     xmax = rel_elapsed + rel_se_elapsed),
+                 height = 0) +
+  geom_text(aes(label = model_label), vjust = -0.5, size = 3) +
+  theme_minimal() +
+  labs(title = "Relative Elapsed Time vs Mean Psi",
+       x = "Relative Elapsed Time (vs Reference)",
+       y = "Mean Psi")
+
+# Plot 3: Likelihood vs Psi
+ggplot(mod_summary_df, aes(x = mean_avg_likelihood, y = mean_psi)) +
+  geom_point(size = 3) +
+  geom_errorbar(aes(ymin = mean_psi - rel_se_psi,
+                    ymax = mean_psi + rel_se_psi),
+                width = 0) +
+  geom_errorbarh(aes(xmin = mean_avg_likelihood - rel_se_avg_likelihood,
+                     xmax = mean_avg_likelihood + rel_se_avg_likelihood),
+                 height = 0) +
+  geom_text(aes(label = model_label), vjust = -0.5, size = 3) +
+  theme_minimal() +
+  labs(title = "Mean Likelihood vs Mean Psi",
+       x = "Mean Average Likelihood",
+       y = "Mean Psi")
+```
+
+# Individual Plots
+
+## Out of Sample Plots
+
+### Boxplots & CI
+
+```{r, echo=FALSE,fig.width=4, fig.height=4}
+# Identify which models have any NA values
+models_with_na <- oos_df %>%
+  group_by(model_label) %>%
+  summarise(has_na = any(is.na(exp(avgLLObs_val)))) %>%
+  filter(has_na) %>%
+  pull(model_label)
+
+# Create color vector for x-axis labels
+label_colors <- rev(ifelse(levels(oos_df$model_label) %in% models_with_na, "red", "black"))
+
+ggplot(oos_df, aes(x = exp(avgLLObs_val), y = model_label)) +
+  geom_boxplot() +
+  scale_y_discrete(limits = rev) +
+  theme_minimal() +
+  labs(title = "Out-of-Sample Fit (Boxplot)",
+       y = NULL,
+       x = "Avg. Likelihood") +
+    theme_minimal(base_size = 10) +
+  theme(
+    axis.text.y = element_text(size = 9, hjust = 0, color = label_colors),
+    axis.text.x = element_text(size = 9),
+    axis.title.x = element_text(size = 10),
+    plot.title = element_text(size = 11, face = "bold"),
+    plot.margin = margin(5, 5, 5, 5),
+    color = label_colors)
+ggsave("output/Figures/oos_box.png", width = 4, height = 4, dpi = 300)
+
+ggplot(oos_df, aes(y = model_label, x = exp(avgLLObs_val))) +
+  stat_summary(
+    fun = mean,
+    fun.min = function(x) t.test(x)$conf.int[1],
+    fun.max = function(x) t.test(x)$conf.int[2],
+    geom = "errorbar",
+    width = 0.6,
+    linewidth = 0.6
+  ) +
+  stat_summary(
+    fun = mean,
+    geom = "point",
+    size = 2
+  ) +
+  scale_y_discrete(limits = rev(levels(oos_df$model_label))) +
+  theme_minimal(base_size = 10) +
+  labs(title = "Out-of-Sample Fit (95% CI)",
+       y = NULL,
+       x = "Avg. Likelihood") +
+  theme(
+    axis.text.y = element_text(size = 9, hjust = 0, color = label_colors),
+    axis.text.x = element_text(size = 9),
+    axis.title.x = element_text(size = 10),
+    plot.title = element_text(size = 11, face = "bold"),
+    plot.margin = margin(5, 5, 5, 5)
+  )
+
+ggsave("output/Figures/oos_CI.png", width = 4, height = 4, dpi = 300)
+
+```
+
+```{r, echo=FALSE,, fig.width=4, fig.height=4}
+# Create fold_id based on row number within each model
+oos_df <- oos_df %>%
+  group_by(model_name) %>%
+  mutate(fold_id = row_number()) %>%
+  ungroup()
+
+label_colors <- rev(ifelse(levels(oos_df$model_label) %in% models_with_na, "red", "black"))
+
+ggplot(oos_df, aes(y = model_label, x = exp(avgLLObs_val),
+                   group = fold_id, color = factor(fold_id))) +
+  # geom_line(alpha = 0.6) +
+  geom_point(alpha = 0.6) +
+  # geom_text(data = oos_df %>% filter(model_label == levels(model_label)[1]),
+  #           aes(label = paste0(" #", fold_id)),
+  #           size = 2.5, vjust = -0.5, show.legend = FALSE) +
+  geom_text_repel(
+    data = oos_df %>% filter(model_label == levels(model_label)[1]),
+    aes(label = paste0(" #", fold_id)),
+    size = 2.5,
+    nudge_y = 1.5,       # nudges labels slightly above the points
+    # nudge_x = 0.01,
+    direction = "y",
+    hjust = 0,
+    segment.color = NA,   # no connecting lines
+    min.segment.length = 0
+  )+
+  scale_y_discrete(limits = rev(levels(oos_df$model_label))) +
+  theme_minimal(base_size = 10) +
+  labs(title = "Out-of-Sample Fit (by Holdout Sample)",
+       x = "Avg. Likelihood",
+       y = NULL) +
+  theme(axis.text.y = element_text(size = 9, hjust = 0, color = label_colors),
+        axis.text.x = element_text(size = 9),
+        axis.title.x = element_text(size = 10),
+        plot.title = element_text(size = 10, face = "bold"),
+        plot.margin = margin(5, 25, 5, 5),
+        legend.position = "none")
+ggsave("output/Figures/oos_scatter.png", width = 4, height = 4, dpi = 300)
+
+```
+
+### Pairwise t-test
+
+```{r, echo=FALSE, fig.width=14, fig.height=4.5}
+
+# Get unique model names
+models <- model_labels[model_order]
+models <- models[models %in% unique(oos_df$model_label)]
+
+# Create all pairwise combinations (upper triangle)
+comparisons <- expand.grid(
+  model1 = models,
+  model2 = models,
+  stringsAsFactors = FALSE
+) %>%
+  filter(match(model1, models) < match(model2, models))
+
+results <- comparisons %>%
+  rowwise() %>%
+  mutate(
+    # Create a temporary df with both models
+    temp_df = list({
+      df1 <- oos_df %>% 
+        filter(model_label == model1) %>%
+        select(avgLLObs_val) %>%
+        rename(val1 = avgLLObs_val)
+      
+      df2 <- oos_df %>% 
+        filter(model_label == model2) %>%
+        select(avgLLObs_val) %>%
+        rename(val2 = avgLLObs_val)
+      
+      # Bind and keep only complete cases
+      bind_cols(df1, df2) %>%
+        filter(!is.na(val1) & !is.na(val2))
+    }),
+    
+    # Run t-test on cleaned data
+    t_test = list(t.test(
+      exp(temp_df$val1),
+      exp(temp_df$val2),
+      paired = TRUE
+    )),
+    p_value = t_test$p.value,
+    t_stat  = t_test$statistic,
+    
+    # Compute mean values for pct diff
+    mean1 = mean(exp(temp_df$val1)),
+    mean2 = mean(exp(temp_df$val2)),
+    
+    # Percent difference relative to model2
+    mean_diff = - 100 * (mean1 - mean2) / mean2,
+    
+    # Optional: retain mean difference if desired
+    mean_raw_diff = - t_test$estimate
+  ) %>%
+  ungroup() %>%
+  select(-t_test, -temp_df, -mean1, -mean2)
+
+x_models_present <- unique(results$model1)
+y_models_present <- unique(results$model2)
+
+results$model1 <- factor(results$model1, levels = model_labels[model_order])  # rows
+results$model2 <- factor(results$model2, levels = model_labels[model_order])  # columns
+
+# Set factor levels only for models that are actually present
+results$model1 <- factor(results$model1, levels = models[models %in% x_models_present])
+results$model2 <- factor(results$model2, levels = models[models %in% y_models_present])
+
+# Now create labels only for the models that are actually there
+x_labels <- levels(results$model1)
+x_labels_wrapped <- x_labels %>%
+  gsub(" \\(", "\n(", .) %>%
+  gsub(",", ",\n", .) %>%
+  {ifelse(x_labels %in% models_with_na, paste0(., "*"), .)}
+
+y_labels <- levels(results$model2)
+y_labels_wrapped <- y_labels %>%
+  {ifelse(y_labels %in% models_with_na, paste0(., "*"), .)}
+
+results %>%
+  mutate(
+    sig_level = case_when(
+      p_value < 0.001 ~ "p < 0.001",
+      p_value < 0.01  ~ "p < 0.01",
+      p_value < 0.05  ~ "p < 0.05",
+      TRUE            ~ "ns"
+    ),
+    label = sprintf("%.1f%%", mean_diff),
+    sign = ifelse(mean_diff >= 0, "pos", "neg"),
+    fill_group = paste0(sign, "_", sig_level)
+  ) %>%
+  ggplot(aes(x = model1, y = model2, fill = fill_group)) +
+  geom_tile(color = "grey80") +
+  geom_text(aes(label = label), size = 4,  fontface = "bold") + 
+  scale_x_discrete(labels = x_labels_wrapped) +
+  scale_y_discrete(labels = y_labels_wrapped) +
+  scale_fill_manual(
+    values = c(
+      "neg_p < 0.001" = "#ff4d4d",
+      "neg_p < 0.01"  = "#ff6666",
+      "neg_p < 0.05"  = "#ffb3b3",
+      "neg_ns"        = "white",
+      "pos_p < 0.001" = "#339933",
+      "pos_p < 0.01"  = "#66cc66",
+      "pos_p < 0.05"  = "#b3ffb3",
+      "pos_ns"        = "white"
+    ),
+    labels = c(
+      "neg_p < 0.001" = "p < 0.001",
+      "neg_p < 0.01"  = "p < 0.01",
+      "neg_p < 0.05"  = "p < 0.05",
+      "pos_p < 0.001" = "p < 0.001",
+      "pos_p < 0.01"  = "p < 0.01",
+      "pos_p < 0.05"  = "p < 0.05"
+    ),
+    breaks = c(
+      "neg_p < 0.001", "neg_p < 0.01", "neg_p < 0.05",
+      "pos_p < 0.001", "pos_p < 0.01", "pos_p < 0.05"
+    )
+  ) +
+  labs(
+    title = "Pairwise Comparison: Out-of-Sample Avg. Likelihood",
+    subtitle = "Mean % difference in average likelihood (* denotes models with a numerical issue for one sample)",
+    x = NULL, #"Model (column baseline)",
+    y = NULL, #"Model (row comparison)",
+    fill = "Significance \n(Paired t-test)"
+  ) +
+  theme_minimal(base_size = 11) +  # Increased base font size
+  theme(
+    axis.text.x = element_text(angle = 0, hjust = 0.5, color = "darkred", size = 10, face="bold"),
+    axis.text.y = element_text(color = "darkgreen", size = 10, hjust = 0, face="bold"),
+    panel.grid = element_blank(),
+    legend.position = c(0.9, 0.37),
+    legend.justification = c(0.5, 0.5),
+    legend.background = element_rect(fill = "white", color = "grey80"),
+    legend.box.background = element_rect(color = "grey80"),
+    legend.text = element_text(size = 11),
+    legend.title = element_text(size = 11)
+  )
+
+ggsave("output/Figures/oos_pairwise.png", width = 14, height = 4.5, dpi = 300)
+```
+
+## Psi Prime Plot
+
+```{r, fig.width=4, fig.height=4}
+# Boxplot - Psi Prime
+ggplot(psi_df, aes(y = model_label, x = psi_prime)) +
+  geom_boxplot() +
+  scale_y_discrete(limits = rev) +
+  theme_minimal(base_size = 10) +
+  labs(title = "Substitution Invariance (Boxplot)",
+       y = NULL,
+       x = expression("Substitution Invariance (" * Psi * "')")) +
+  theme(
+    axis.text.y = element_text(size = 9, hjust = 0),
+    axis.text.x = element_text(size = 9),
+    axis.title.x = element_text(size = 10),
+    plot.title = element_text(size = 11, face = "bold"),
+    plot.margin = margin(5, 5, 5, 5)
+  )
+ggsave("output/Figures/psi_box.png", width = 4, height = 4, dpi = 300)
+
+# Mean + CI - Psi Prime
+ggplot(psi_df, aes(y = model_label, x = psi_prime)) +
+  stat_summary(
+    fun = mean,
+    fun.min = function(x) t.test(x)$conf.int[1],
+    fun.max = function(x) t.test(x)$conf.int[2],
+    geom = "errorbar",
+    width = 0.9,
+    linewidth = 0.6
+  ) +
+  stat_summary(
+    fun = mean,
+    geom = "point",
+    size = 1
+  ) +
+  stat_summary(
+    fun = mean,
+    geom = "text",
+    aes(label = after_stat(round(x, 2))),
+    hjust = -0.3,
+    size = 3
+  ) +
+  scale_x_continuous(expand = expansion(mult = c(0.05, 0.15))) +  # Add more space on the right
+  scale_y_discrete(limits = rev) +
+  theme_minimal(base_size = 10) +
+  labs(title = "Substitution Invariance (95% CI)",
+       y = NULL,
+       x = expression("Substitution Invariance (" * Psi * "')")) +
+  theme(
+    axis.text.y = element_text(size = 9, hjust = 0),
+    axis.text.x = element_text(size = 9),
+    axis.title.x = element_text(size = 10),
+    plot.title = element_text(size = 11, face = "bold"),
+    plot.margin = margin(5, 5, 5, 5)
+  )
+ggsave("output/Figures/psi_CI.png", width = 4, height = 4, dpi = 300)
+
+```
+
+## Timing Plots
+
+### Rel timing func
+
+```{r, fig.width=4, fig.height=4}
+create_rel_timing_plots <- function(timing_df, n_cores, output_dir = "output/Figures", file_prefix = "") {
+  
+  # Ensure output directory exists
+  if (!dir.exists(output_dir)) {
+    dir.create(output_dir, recursive = TRUE)
+  }
+  
+  # Add underscore to prefix if provided
+  if (file_prefix != "" && !endsWith(file_prefix, "_")) {
+    file_prefix <- paste0(file_prefix, "_")
+  }
+  
+  # Calculate reference values for this core count
+  reference_timing <- timing_df %>%
+    filter(cores == n_cores, model_label == "MNL") %>%
+    summarise(
+      mean_elapsed = mean(sys_elapsed_seconds),
+      median_elapsed = median(sys_elapsed_seconds),
+      mean_cpu = mean(proc_total_cpu_seconds),
+      median_cpu = median(proc_total_cpu_seconds)
+    )
+  
+  # Create relative timing dataframe
+  rel_timing_df <- timing_df %>%
+    filter(cores == n_cores) %>%
+    mutate(
+      rel_elapsed_mean = sys_elapsed_seconds / reference_timing$mean_elapsed,
+      rel_elapsed_median = sys_elapsed_seconds / reference_timing$median_elapsed,
+      rel_cpu_mean = proc_total_cpu_seconds / reference_timing$mean_cpu,
+      rel_cpu_median = proc_total_cpu_seconds / reference_timing$median_cpu
+    )
+  
+  # Wall Time Boxplot
+  p1 <- ggplot(rel_timing_df, aes(y = model_label, x = rel_elapsed_median)) +
+    geom_boxplot() +
+    geom_vline(xintercept = 1, linetype = "dashed", color = "red") +
+    # scale_x_log10(labels = function(x) paste0(x, "x")) +
+    scale_x_continuous(labels = function(x) paste0(x, "x")) +
+    scale_y_discrete(limits = rev) +
+    theme_minimal(base_size = 10) +
+    labs(title = "Function Evaluation Time (Boxplot)",
+         y = NULL,
+         x = "Wall Time (relative to MNL)") +
+    theme(
+      axis.text.y = element_text(size = 9, hjust = 0),
+      axis.text.x = element_text(size = 9),
+      axis.title.x = element_text(size = 10),
+      plot.title = element_text(size = 11, face = "bold"),
+      plot.margin = margin(5, 10, 5, 5)
+    )
+  print(p1)
+  ggsave(file.path(output_dir, paste0(file_prefix, "time_wall_box_rel.png")), 
+         plot = p1, width = 4, height = 4, dpi = 300)
+  
+  # Wall Time Mean + CI
+  plot_data_elapsed <- rel_timing_df %>%
+    group_by(model_label) %>%
+    summarise(
+      mean_elapsed = mean(rel_elapsed_mean),
+      ci_lower = t.test(rel_elapsed_mean)$conf.int[1],
+      ci_upper = t.test(rel_elapsed_mean)$conf.int[2],
+      .groups = "drop"
+    )
+  
+  p2 <- ggplot(plot_data_elapsed, aes(y = model_label, x = mean_elapsed)) +
+    geom_errorbar(
+      aes(xmin = ci_lower, xmax = ci_upper),
+      width = 0.9,
+      linewidth = 0.6
+    ) +
+    geom_point(size = 1) +
+    geom_vline(xintercept = 1, linetype = "dashed", color = "red") +
+    geom_text(
+      aes(x = ci_upper, label = paste0(round(mean_elapsed, 0), "x")),
+      hjust = -0.3,
+      size = 3
+    ) +
+    scale_x_log10(expand = expansion(mult = c(0.0, 0.15)), labels = function(x) paste0(x, "x")) +
+    scale_y_discrete(limits = rev) +
+    theme_minimal(base_size = 10) +
+    labs(
+      title = "Function Evaluation Time (95% CI)",
+      y = NULL,
+      x = "Wall Time (relative to MNL)"
+    ) +
+    theme(
+      axis.text.y = element_text(size = 9, hjust = 0),
+      axis.text.x = element_text(size = 9),
+      axis.title.x = element_text(size = 10),
+      plot.title = element_text(size = 11, face = "bold"),
+      plot.margin = margin(5, 10, 5, 5)
+    )
+  print(p2)
+  ggsave(file.path(output_dir, paste0(file_prefix, "time_wall_CI_rel.png")), 
+         plot = p2, width = 4, height = 4, dpi = 300)
+  
+  # CPU Time Boxplot
+  p3 <- ggplot(rel_timing_df, aes(y = model_label, x = rel_cpu_median)) +
+    geom_boxplot() +
+    geom_vline(xintercept = 1, linetype = "dashed", color = "red") +
+    # scale_x_log10(labels = function(x) paste0(x, "x")) +
+    scale_x_continuous(labels = function(x) paste0(x, "x")) +
+    scale_y_discrete(limits = rev) +
+    theme_minimal(base_size = 10) +
+    labs(title = "Function Evaluation Time (Boxplot)",
+         y = NULL,
+         x = "CPU Time (relative to MNL)") +
+    theme(
+      axis.text.y = element_text(size = 9, hjust = 0),
+      axis.text.x = element_text(size = 9),
+      axis.title.x = element_text(size = 10),
+      plot.title = element_text(size = 11, face = "bold"),
+      plot.margin = margin(5, 10, 5, 5)
+    )
+  print(p3)
+  ggsave(file.path(output_dir, paste0(file_prefix, "time_cpu_box_rel.png")), 
+         plot = p3, width = 4, height = 4, dpi = 300)
+  
+  # CPU Time Mean + CI
+  plot_data <- rel_timing_df %>%
+    group_by(model_label) %>%
+    summarise(
+      mean_cpu = mean(rel_cpu_mean),
+      ci_lower = t.test(rel_cpu_mean)$conf.int[1],
+      ci_upper = t.test(rel_cpu_mean)$conf.int[2],
+      .groups = "drop"
+    )
+  
+  p4 <- ggplot(plot_data, aes(y = model_label, x = mean_cpu)) +
+    geom_errorbar(
+      aes(xmin = ci_lower, xmax = ci_upper),
+      width = 0.9,
+      linewidth = 0.6
+    ) +
+    geom_point(size = 1) +
+    geom_text(
+      aes(x = ci_upper, label = paste0(round(mean_cpu, 0), "x")),
+      hjust = -0.3,
+      size = 3
+    ) +
+    geom_vline(xintercept = 1, linetype = "dashed", color = "red") +
+    scale_x_log10(expand = expansion(mult = c(0.0, 0.15)), labels = function(x) paste0(x, "x")) +
+    scale_y_discrete(limits = rev) +
+    theme_minimal(base_size = 10) +
+    labs(
+      title = "Function Evaluation Time (95% CI)",
+      y = NULL,
+      x = "CPU Time (relative to MNL)"
+    ) +
+    theme(
+      axis.text.y = element_text(size = 9, hjust = 0),
+      axis.text.x = element_text(size = 9),
+      axis.title.x = element_text(size = 10),
+      plot.title = element_text(size = 11, face = "bold"),
+      plot.margin = margin(5, 10, 5, 5)
+    )
+  print(p4)
+  ggsave(file.path(output_dir, paste0(file_prefix, "time_cpu_CI_rel.png")), 
+         plot = p4, width = 4, height = 4, dpi = 300)
+  
+  # Return the relative timing data for further use if needed
+  invisible(rel_timing_df)
+}
+
+rel_timing_df <- create_rel_timing_plots(timing_df, n_cores = 1, 
+                                         output_dir = "output/Figures")
+```
+
+### Raw timing func
+
+```{r}
+create_raw_timing_plots <- function(timing_df, n_cores, output_dir = "output/Figures", file_prefix = "") {
+  
+  # Ensure output directory exists
+  if (!dir.exists(output_dir)) {
+    dir.create(output_dir, recursive = TRUE)
+  }
+  
+  # Add underscore to prefix if provided
+  if (file_prefix != "" && !endsWith(file_prefix, "_")) {
+    file_prefix <- paste0(file_prefix, "_")
+  }
+  
+  # Filter data once
+  filtered_df <- timing_df %>% filter(cores == n_cores)
+  
+  # Wall Time Boxplot
+  p1 <- ggplot(filtered_df, aes(y = model_label, x = sys_elapsed_seconds)) +
+    geom_boxplot() +
+    # scale_x_log10() +
+    scale_y_discrete(limits = rev) +
+    theme_minimal(base_size = 10) +
+    labs(title = "Function Evaluation Time (Boxplot)",
+         y = NULL,
+         x = "Wall Time (seconds)") +
+    theme(
+      axis.text.y = element_text(size = 9, hjust = 0),
+      axis.text.x = element_text(size = 9),
+      axis.title.x = element_text(size = 10),
+      plot.title = element_text(size = 11, face = "bold"),
+      plot.margin = margin(5, 5, 5, 5)
+    )
+  print(p1)
+  ggsave(file.path(output_dir, paste0(file_prefix, "time_wall_box_raw.png")), 
+         plot = p1, width = 4, height = 4, dpi = 300)
+  
+  # Wall Time Mean + CI
+  plot_data_sys <- filtered_df %>%
+    group_by(model_label) %>%
+    summarise(
+      mean_sys_elapsed = mean(sys_elapsed_seconds),
+      ci_lower = t.test(sys_elapsed_seconds)$conf.int[1],
+      ci_upper = t.test(sys_elapsed_seconds)$conf.int[2],
+      .groups = "drop"
+    )
+  
+  p2 <- ggplot(plot_data_sys, aes(y = model_label, x = mean_sys_elapsed)) +
+    geom_errorbar(
+      aes(xmin = ci_lower, xmax = ci_upper),
+      width = 0.9,
+      linewidth = 0.6
+    ) +
+    geom_point(size = 1) +
+    scale_x_log10() +
+    scale_y_discrete(limits = rev) +
+    theme_minimal(base_size = 10) +
+    labs(
+      title = "Function Evaluation Time (95% CI)",
+      y = NULL,
+      x = "Wall Time (seconds)"
+    ) +
+    theme(
+      axis.text.y = element_text(size = 9, hjust = 0),
+      axis.text.x = element_text(size = 9),
+      axis.title.x = element_text(size = 10),
+      plot.title = element_text(size = 11, face = "bold"),
+      plot.margin = margin(5, 5, 5, 5)
+    )
+  print(p2)
+  ggsave(file.path(output_dir, paste0(file_prefix, "time_wall_CI_raw.png")), 
+         plot = p2, width = 4, height = 4, dpi = 300)
+  
+  # CPU Time Boxplot
+  p3 <- ggplot(filtered_df, aes(y = model_label, x = proc_total_cpu_seconds)) +
+    geom_boxplot() +
+    # scale_x_log10() +
+    scale_y_discrete(limits = rev) +
+    theme_minimal(base_size = 10) +
+    labs(title = "Function Evaluation Time (Boxplot)",
+         y = NULL,
+         x = "CPU Time (seconds)") +
+    theme(
+      axis.text.y = element_text(size = 9, hjust = 0),
+      axis.text.x = element_text(size = 9),
+      axis.title.x = element_text(size = 10),
+      plot.title = element_text(size = 11, face = "bold"),
+      plot.margin = margin(5, 5, 5, 5)
+    )
+  print(p3)
+  ggsave(file.path(output_dir, paste0(file_prefix, "time_cpu_box_raw.png")), 
+         plot = p3, width = 4, height = 4, dpi = 300)
+  
+  # CPU Time Mean + CI
+  plot_data_proc <- filtered_df %>%
+    group_by(model_label) %>%
+    summarise(
+      mean_proc_cpu = mean(proc_total_cpu_seconds),
+      ci_lower = t.test(proc_total_cpu_seconds)$conf.int[1],
+      ci_upper = t.test(proc_total_cpu_seconds)$conf.int[2],
+      .groups = "drop"
+    )
+  
+  p4 <- ggplot(plot_data_proc, aes(y = model_label, x = mean_proc_cpu)) +
+    geom_errorbar(
+      aes(xmin = ci_lower, xmax = ci_upper),
+      width = 0.9,
+      linewidth = 0.6
+    ) +
+    geom_point(size = 1) +
+    scale_x_log10() +
+    scale_y_discrete(limits = rev) +
+    theme_minimal(base_size = 10) +
+    labs(
+      title = "Function Evaluation Time (95% CI)",
+      y = NULL,
+      x = "CPU Time (seconds)"
+    ) +
+    theme(
+      axis.text.y = element_text(size = 9, hjust = 0),
+      axis.text.x = element_text(size = 9),
+      axis.title.x = element_text(size = 10),
+      plot.title = element_text(size = 11, face = "bold"),
+      plot.margin = margin(5, 5, 5, 5)
+    )
+  print(p4)
+  ggsave(file.path(output_dir, paste0(file_prefix, "time_cpu_ci_raw.png")), 
+         plot = p4, width = 4, height = 4, dpi = 300)
+  
+  # Return the filtered data for further use if needed
+  invisible(filtered_df)
+}
+```
+
+### Call timing funcs
+
+```{r, fig.width=4, fig.height=4}
+# Create plots
+rel_timing_df <- create_rel_timing_plots(timing_df, n_cores = 1, 
+                                         output_dir = "output/Figures")
+
+raw_timing_df <- create_raw_timing_plots(timing_df, n_cores = 1, 
+                                         output_dir = "output/Figures")
+```
+
+```{r}
+timing_summary <- rel_timing_df %>%
+  group_by(model_label) %>%
+  summarise(
+    # Wall time statistics
+    wall_mean = mean(rel_elapsed_mean),
+    wall_median = median(rel_elapsed_median),
+    wall_sd = sd(rel_elapsed_mean),
+    wall_ci_lower = t.test(rel_elapsed_mean)$conf.int[1],
+    wall_ci_upper = t.test(rel_elapsed_mean)$conf.int[2],
+    
+    # CPU time statistics
+    cpu_mean = mean(rel_cpu_mean),
+    cpu_median = median(rel_cpu_median),
+    cpu_sd = sd(rel_cpu_mean),
+    cpu_ci_lower = t.test(rel_cpu_mean)$conf.int[1],
+    cpu_ci_upper = t.test(rel_cpu_mean)$conf.int[2],
+    
+    # Sample size
+    n = n()
+  ) %>%
+  ungroup()
+
+# View the table
+print(timing_summary, n = Inf)
+```
+
+# SI Tables
+
+## Estimate tables
+
+```{r}
+## Estimates
+est_files <- list.files(data_folder, 
+                        pattern = "_estimates\\.csv$", 
+                        recursive = TRUE, 
+                        full.names = TRUE)
+
+# Filter out CV files (those with _CV## pattern before _estimates)
+est_files <- est_files[!grepl("_CV\\d+_estimates\\.csv$", est_files)]
+
+# Read files into a named list where each element is a separate dataframe
+est_data_list <- lapply(est_files, function(file) {
+  df <- read.csv(file)
+  # Extract model name from filename (part before _estimates)
+  filename <- basename(file)
+  model_name <- sub("_estimates\\.csv$", "", filename)
+  
+  # Optionally add model_name as a column (helpful for later)
+  df$model_name <- model_name
+  
+  return(df)
+})
+
+# Create named list for easier access
+names(est_data_list) <- sapply(est_files, function(file) {
+  filename <- basename(file)
+  sub("_estimates\\.csv$", "", filename)
+})
+
+# Apply name correction to model_name column in each dataframe
+est_data_list <- lapply(est_data_list, function(df) {
+  df$model_name <- name_mapping[df$model_name]
+  return(df)
+})
+
+# Update list names as well
+names(est_data_list) <- name_mapping[names(est_data_list)]
+
+# Function to process each model's estimates
+process_estimates <- function(df, model_name) {
+  df %>%
+    mutate(
+      # Extract the base parameter name and class/distribution identifier
+      param_base = case_when(
+        # For latent class parameters with _# suffix
+        grepl("_\\d+$", X) ~ sub("_\\d+$", "", X),
+        # For mixed logit mu_ and sigma_ parameters
+        grepl("^(mu_|sigma_)", X) ~ X,
+        # Everything else (MNL, base parameters)
+        TRUE ~ X
+      ),
+      
+      # Extract class number or distribution type
+      param_class = case_when(
+        # Latent class parameters (e.g., b_american_1 -> "class_1")
+        grepl("_\\d+$", X) & !grepl("^(mu_|sigma_|class_intercept_)", X) ~ 
+          paste0("class_", sub(".*_(\\d+)$", "\\1", X)),
+        # Class intercepts (e.g., class_intercept_1 -> "class_1")
+        grepl("^class_intercept_\\d+$", X) ~ 
+          paste0("class_", sub("class_intercept_(\\d+)$", "\\1", X)),
+        # Alpha parameters for CNL
+        grepl("^alpha_.*_\\d+$", X) ~ 
+          paste0("class_", sub(".*_(\\d+)$", "\\1", X)),
+        # Lambda parameters for NL/CNL
+        grepl("^lambda_.*_\\d+$", X) ~ 
+          paste0("class_", sub(".*_(\\d+)$", "\\1", X)),
+        # Mixed logit mu parameters
+        grepl("^mu_", X) ~ "mu",
+        # Mixed logit sigma parameters
+        grepl("^sigma_", X) ~ "sigma",
+        # Everything else (MNL, base NL/CNL parameters)
+        TRUE ~ "base"
+      ),
+      
+      # Clean up base parameter name for mu/sigma
+      param_base = case_when(
+        grepl("^mu_", param_base) ~ sub("^mu_", "", param_base),
+        grepl("^sigma_", param_base) ~ sub("^sigma_", "", param_base),
+        TRUE ~ param_base
+      )
+    ) %>%
+    select(model_name, param_base, param_class, 
+           Estimate, Std.err. = Std.err., t.ratio = t.ratio.0., 
+           Rob.std.err. = Rob.std.err., Rob.t.ratio = Rob.t.ratio.0.)
+}
+
+# Apply to all models
+est_long_list <- lapply(names(est_data_list), function(model_name) {
+  process_estimates(est_data_list[[model_name]], model_name)
+})
+
+# Combine into one dataframe
+est_long_df <- bind_rows(est_long_list)
+
+# Factor the model names for proper ordering
+est_long_df$model_name <- factor(est_long_df$model_name, levels = model_order)
+est_long_df$model_label <- factor(model_labels[as.character(est_long_df$model_name)],
+                                   levels = model_labels)
+
+# Add significance flags based on robust t-ratios
+est_long_df <- est_long_df %>%
+  mutate(
+    sig_level = case_when(
+      abs(Rob.t.ratio) > 2.576 ~ "***",  # 99% significance (p < 0.01)
+      abs(Rob.t.ratio) > 1.96  ~ "**",   # 95% significance (p < 0.05)
+      abs(Rob.t.ratio) > 1.645 ~ "*",    # 90% significance (p < 0.10)
+      TRUE ~ ""
+    ),
+    # Combined estimate with significance (3 decimals)
+    est_sig = paste0(round(Estimate, 3), sig_level)
+  )
+
+# Create wide format with significance indicators
+est_wide_df <- est_long_df %>%
+  select(model_name, param_class, param_base, est_sig) %>%
+  pivot_wider(
+    names_from = param_base,
+    values_from = est_sig,
+    id_cols = c(model_name, param_class)
+  ) %>%
+  arrange(model_name, param_class)
+
+# Add model_label
+est_wide_df <- est_wide_df %>%
+  mutate(model_label = factor(model_labels[as.character(model_name)],
+                              levels = model_labels)) %>%
+  select(model_name, model_label, param_class, everything())
+
+# Calculate class shares and replace class_intercept
+est_wide_df <- est_wide_df %>%
+  group_by(model_name) %>%
+  mutate(
+    class_share = case_when(
+      # For models with class_intercept, calculate softmax and preserve significance
+      !is.na(class_intercept) ~ {
+        # Extract significance stars
+        stars <- gsub("[^*]", "", class_intercept)
+        # Remove stars and convert to numeric
+        intercept_numeric <- as.numeric(gsub("\\*", "", class_intercept))
+        # Calculate share
+        share_value <- exp(intercept_numeric) / sum(exp(as.numeric(gsub("\\*", "", class_intercept))), na.rm = TRUE)
+        # Round to 3 decimals and add stars back
+        paste0(round(share_value, 3), stars)
+      },
+      # For base class or models without classes, NA
+      TRUE ~ NA_character_
+    )
+  ) %>%
+  ungroup() %>%
+  select(-class_intercept)  # Remove class_intercept column
+
+# Define column order - lambdas, then alpha, then class_share
+col_order <- c(
+  "model_name", "model_label", "param_class",
+  # All b_ parameters
+  names(est_wide_df)[grepl("^b_", names(est_wide_df))],
+  # Lambda parameters
+  names(est_wide_df)[grepl("^lambda_", names(est_wide_df))],
+  # Alpha parameters
+  names(est_wide_df)[grepl("^alpha_", names(est_wide_df))],
+  # Class share
+  "class_share",
+  # Any remaining columns
+  setdiff(names(est_wide_df), 
+          c("model_name", "model_label", "param_class", "class_share",
+            names(est_wide_df)[grepl("^(b_|lambda_|alpha_)", names(est_wide_df))]))
+)
+
+# Remove duplicates and keep only columns that exist
+col_order <- col_order[col_order %in% names(est_wide_df)]
+col_order <- unique(col_order)
+
+# Reorder the dataframe
+est_wide_df <- est_wide_df %>%
+  select(all_of(col_order))
+
+# # Replace NA with empty string and save
+# est_wide_df %>%
+#   mutate(across(everything(), ~replace(., is.na(.), ""))) %>%
+#   write.csv(file = file.path(data_folder, "estimates_wide_table.csv"),
+#             row.names = FALSE)
+# 
+# print(est_wide_df)
+
+# Separate into three groups
+discrete_models <- est_wide_df %>%
+  filter(!grepl("MXL", model_name))
+
+mxl_pref_models <- est_wide_df %>%
+  filter(grepl("MXL.*_pref", model_name))
+
+mxl_wtp_models <- est_wide_df %>%
+  filter(grepl("MXL.*_wtp", model_name))
+
+# Function to remove empty columns
+remove_empty_cols <- function(df) {
+  df %>%
+    select(where(~!all(. == "" | is.na(.))))
+}
+
+# Apply to each table
+discrete_clean <- remove_empty_cols(discrete_models)
+mxl_pref_clean <- remove_empty_cols(mxl_pref_models)
+mxl_wtp_clean <- remove_empty_cols(mxl_wtp_models)
+
+# Save each table
+discrete_clean %>%
+  mutate(across(everything(), ~replace(., is.na(.), ""))) %>%
+  write.csv(file = file.path(data_folder, "estimates_discrete_models.csv"),
+            row.names = FALSE)
+
+mxl_pref_clean %>%
+  mutate(across(everything(), ~replace(., is.na(.), ""))) %>%
+  write.csv(file = file.path(data_folder, "estimates_mxl_pref.csv"),
+            row.names = FALSE)
+
+mxl_wtp_clean %>%
+  mutate(across(everything(), ~replace(., is.na(.), ""))) %>%
+  write.csv(file = file.path(data_folder, "estimates_mxl_wtp.csv"),
+            row.names = FALSE)
+
+# Print summaries
+print("Discrete models:")
+print(discrete_clean)
+
+print("MXL Preference space models:")
+print(mxl_pref_clean)
+
+print("MXL WTP space models:")
+print(mxl_wtp_clean)
+
+
+```
+
+## Starting points tables
+
+```{r}
+## Model Summary files
+summary_files <- list.files(data_folder, 
+                        pattern = "^model_summary\\.csv$", 
+                        recursive = TRUE, 
+                        full.names = TRUE)
+
+# Read files into a named list where each element is a separate dataframe
+summary_data_list <- lapply(summary_files, function(file) {
+  df <- read.csv(file)
+  # Extract model name from the directory path (parent folder name)
+  parent_dir <- basename(dirname(file))
+  
+  # Add model name as a column
+  df$model_name <- parent_dir
+  
+  return(df)
+})
+
+# Apply name correction to model_name column in each dataframe
+summary_data_list <- lapply(summary_data_list, function(df) {
+  df$model_name <- name_mapping[df$model_name]
+  return(df)
+})
+
+# Combine to df - bind_rows handles mismatched columns
+ms_outcomes <- bind_rows(summary_data_list)
+
+# Remove duplicates - keep first occurrence of each model
+ms_outcomes <- ms_outcomes %>%
+  distinct(model_name, .keep_all = TRUE)
+
+# Apply model labels
+ms_outcomes$model_name <- factor(ms_outcomes$model_name, 
+                                levels = names(model_labels),
+                                labels = model_labels)
+
+# Sort by model_name and select columns
+ms_outcomes <- ms_outcomes %>%
+  arrange(model_name) %>% 
+  select(model_name, est_LL, est_AIC, est_BIC, ms_n_points, ms_n_best, ms_n_within_tol) %>% 
+  mutate(across(where(is.numeric), ~ round(., 1)))
+
+# Define clean column names
+summary_colnames <- c("Model", "Log-Likelihood", "AIC", "BIC", 
+                      "Multi-Start: n_feasible", "Multi-Start: n_best_x", "Multi-Start: n_best_f")
+
+# Apply clean names
+colnames(ms_outcomes) <- summary_colnames
+
+# Save dataframes
+write.csv(ms_outcomes, file.path(data_folder, "model_summary_clean.csv"), row.names = FALSE)
+
+print(ms_outcomes)
+```
+
+### Heatmap
+
+```{r}
+library(ggplot2)
+library(tidyr)
+
+# Reshape data for heatmap
+heatmap_data <- ms_outcomes %>%
+  select(Model, `Log-Likelihood`, AIC, BIC) %>%
+  pivot_longer(cols = c(`Log-Likelihood`, AIC, BIC),
+               names_to = "Metric",
+               values_to = "Value")
+
+# Set the order for Metric
+heatmap_data$Metric <- factor(heatmap_data$Metric, 
+                              levels = c("Log-Likelihood", "AIC", "BIC"))
+
+# Normalize values within each metric (0-1 scale)
+# For LL: higher is better, for AIC/BIC: lower is better
+heatmap_data <- heatmap_data %>%
+  group_by(Metric) %>%
+  mutate(
+    Normalized = case_when(
+      Metric == "Log-Likelihood" ~ (Value - min(Value)) / (max(Value) - min(Value)),
+      Metric %in% c("AIC", "BIC") ~ 1 - (Value - min(Value)) / (max(Value) - min(Value))
+    )
+  ) %>%
+  ungroup()
+
+# Reverse the factor levels for Model
+heatmap_data$Model <- factor(heatmap_data$Model, levels = rev(levels(ms_outcomes$Model)))
+
+# Create heatmap
+ggplot(heatmap_data, aes(x = Metric, y = Model, fill = Normalized)) +
+  geom_tile(color = "white", linewidth = 0.5) +
+  geom_text(aes(label = round(Value, 1)), size = 3) +
+  scale_fill_gradient2(low = "#d73027", mid = "#fee08b", high = "#1a9850",
+                       midpoint = 0.5) +
+  scale_x_discrete(position = "top") +
+  theme_minimal() +
+  theme(axis.title = element_blank(),
+        axis.text.x.top = element_text(angle = 0, hjust = 0.5, face = "bold"),
+        axis.text.y = element_text(face = "bold"),
+        legend.position = "none",
+        panel.grid = element_blank()) +
+  labs(title = "Model Estimation Results")
+```
+
+## Test next table
+
+```{r}
+# Create fold_id based on row number within each model
+oos_df <- oos_df %>%
+  group_by(model_name) %>%
+  mutate(fold_id = row_number()) %>%
+  ungroup()
+
+# Prepare the IN-SAMPLE data with fold-level predictions
+in_sample_summary <- oos_df %>%
+  mutate(exp_avgLObs = exp(avgObsLL_est)) %>%
+  select(model_label, fold_id, exp_avgLObs) %>%
+  pivot_wider(
+    names_from = fold_id,
+    values_from = exp_avgLObs,
+    names_prefix = "in_AL_"
+  )
+
+# Prepare the OUT-OF-SAMPLE data with fold-level predictions
+out_sample_summary <- oos_df %>%
+  mutate(exp_avgLObs = exp(avgLLObs_val)) %>%
+  select(model_label, fold_id, exp_avgLObs) %>%
+  pivot_wider(
+    names_from = fold_id,
+    values_from = exp_avgLObs,
+    names_prefix = "out_AL_"
+  )
+
+# Load one model to get n_obs
+model <- readRDS(file.path(data_folder, "job_35887057/MNL_none_pref/MNL_none_pref_model.RDS"))
+n_obs <- nrow(model$apollo_inputs$database)
+
+# Select columns from ms_outcomes and calculate average likelihood
+ms_outcomes_renamed <- ms_outcomes %>%
+  select(Model, `Log-Likelihood`, AIC, BIC) %>%
+  mutate(whole_AL = exp(`Log-Likelihood` / n_obs)) %>%
+  select(Model, whole_AL, whole_AIC = AIC, whole_BIC = BIC)
+
+# Merge all three together
+combined_table <- ms_outcomes_renamed %>%
+  left_join(in_sample_summary, by = c("Model" = "model_label")) %>%
+  left_join(out_sample_summary, by = c("Model" = "model_label"))
+
+# Get fold columns and interleave them
+in_cols <- grep("^in_AL_", names(combined_table), value = TRUE)
+out_cols <- grep("^out_AL_", names(combined_table), value = TRUE)
+
+# Create interleaved column order (in_AL_1, out_AL_1, in_AL_2, out_AL_2, etc.)
+fold_nums <- sort(unique(oos_df$fold_id))
+interleaved_cols <- c(rbind(paste0("in_AL_", fold_nums), paste0("out_AL_", fold_nums)))
+
+# Round the values
+combined_table <- combined_table %>%
+  mutate(across(c(whole_AL, all_of(c(in_cols, out_cols))), ~ round(., 4))) %>%
+  mutate(across(c(whole_AIC, whole_BIC), ~ round(., 1)))
+
+# Reorder columns: Model, whole metrics, then interleaved folds
+combined_table <- combined_table %>%
+  select(Model, starts_with("whole_"), all_of(interleaved_cols))
+
+# Save to CSV
+write.csv(combined_table, file.path(data_folder, "model_fit_table.csv"), row.names = FALSE)
+
+# Preview the table
+print(combined_table)
+```
+
+## Procedure Timing
+
+```{r}
+## Detailed Timing files
+timing_files <- list.files(data_folder, 
+                           pattern = "_detailed_timing\\.csv$", 
+                           recursive = TRUE, 
+                           full.names = TRUE)
+
+# Read files into a list
+timing_data_list <- lapply(timing_files, function(file) {
+  df <- read.csv(file)
+  # Extract model name from filename (part before _detailed_timing)
+  filename <- basename(file)
+  model_name <- sub("_detailed_timing\\.csv$", "", filename)
+  
+  # Add model name as a column
+  df$model_name <- model_name
+  
+  return(df)
+})
+
+# Apply name correction - map each value individually
+timing_data_list <- lapply(timing_data_list, function(df) {
+  # Get the unique model name (should only be one per df)
+  old_name <- unique(df$model_name)[1]
+  
+  # Remap if it exists in name_mapping
+  if (old_name %in% names(name_mapping)) {
+    df$model_name <- name_mapping[[old_name]]  # Use [[ ]] for single value
+  }
+  
+  return(df)
+})
+
+# Combine to df
+procedure_timing_df <- bind_rows(timing_data_list)
+
+# Apply model labels and order
+procedure_timing_df$model_name <- factor(procedure_timing_df$model_name, 
+                               levels = names(model_labels),
+                               labels = model_labels)
+
+# Sort by model_name
+procedure_timing_df <- procedure_timing_df %>%
+  arrange(model_name)
+
+
+## Reshape timing data to wide format
+# Variable to control which timing column to use
+timing_col <- "elapsed"
+
+# Standardize step names
+procedure_timing_df <- procedure_timing_df %>%
+  mutate(step = case_when(
+    step == "multistart" ~ "ms",
+    step == "estimation" ~ "est",
+    TRUE ~ step  # keep all other values as-is
+  ))
+
+# Reshape timing data: rows = models, columns = steps
+timing_wide <- procedure_timing_df %>%
+  select(step, model_name, all_of(timing_col)) %>%
+  pivot_wider(names_from = step, 
+              values_from = all_of(timing_col))
+
+# Convert all numeric columns to minutes and round
+timing_wide <- timing_wide %>%
+  mutate(across(where(is.numeric), ~ round(. / 60, 1)))
+
+# Select specific columns and calculate total
+procedure_timing <- timing_wide %>%
+  select(model_name, ms, est, cv, psi_data, speedTest) %>%
+  mutate(total = ms + est + cv + psi_data + speedTest)
+
+# Define clean column names
+timing_colnames <- c("Model", "Multi-Start", "Estimation", "Holdout Validation", 
+                     "Substitution Invariance", "Function Time", "Total")
+
+# Apply clean names
+colnames(procedure_timing) <- timing_colnames
+
+# Print
+print(procedure_timing)
+
+# Save
+write.csv(timing_wide, file.path(data_folder, "timing_summary_clean.csv"), row.names = FALSE)
+
+```
+
+## Timing replication
+
+### Replication func
+
+```{r}
+process_replication_timing <- function(replication_folder, data_folder, n_cores = 1, 
+                                       name_mapping, model_order, model_labels,
+                                       output_dir = "output/Figures") {
+  
+  # Load files
+  replication_path <- paste0(data_folder, "\\", replication_folder)
+  time_files <- list.files(replication_path, 
+                      pattern = "_speedTest_detailed\\.csv$", 
+                      recursive = TRUE, 
+                      full.names = TRUE)
+  time_data_list <- lapply(time_files, read.csv)
+  
+  # Combine & organize
+  rep_timing_df <- bind_rows(time_data_list)
+  rep_timing_df$model_name <- name_mapping[rep_timing_df$model_name]
+  rep_timing_df$model_name <- factor(rep_timing_df$model_name, levels = model_order) 
+  rep_timing_df$model_label <- factor(model_labels[as.character(rep_timing_df$model_name)],
+                                 levels = model_labels)
+  
+  # Create plots
+  file_prefix <- paste0(replication_folder, "_", n_cores,"-core")
+  rep_rel_timing <- create_rel_timing_plots(rep_timing_df, 
+                                            n_cores = n_cores, 
+                                            output_dir = output_dir,
+                                            file_prefix = file_prefix)
+  rep_raw_timing <- create_raw_timing_plots(rep_timing_df, 
+                                            n_cores = n_cores, 
+                                            output_dir = output_dir,
+                                            file_prefix = file_prefix)
+  
+  # Return the processed dataframe
+  return(rep_timing_df)
+}
+```
+
+### Rep code
+
+```{r, fig.width=4, fig.height=4}
+rep_timing_df <- process_replication_timing(
+  replication_folder = "timing_replication_jv_laptop",
+  n_cores = 1,
+  data_folder = data_folder, name_mapping = name_mapping, model_order = model_order, model_labels = model_labels
+  )
+
+# rep_timing_df <- process_replication_timing(
+#   replication_folder = "timing_replication_jv_laptop",
+#   n_cores = 4,
+#   data_folder = data_folder, name_mapping = name_mapping, model_order = model_order, model_labels = model_labels
+#   )
+
+rep_timing_df <- process_replication_timing(
+  replication_folder = "timing_replication_whitefoot-2",
+  n_cores = 1,
+  data_folder = data_folder, name_mapping = name_mapping, model_order = model_order, model_labels = model_labels
+  )
+
+rep_timing_df <- process_replication_timing(
+  replication_folder = "timing_replication_whitefoot-2",
+  n_cores = 4,
+  data_folder = data_folder, name_mapping = name_mapping, model_order = model_order, model_labels = model_labels
+  )
+```

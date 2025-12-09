@@ -1,0 +1,28 @@
+#!/bin/bash
+#SBATCH --job-name=install_r_packages
+#SBATCH --cpus-per-task=2
+#SBATCH --time=00:30:00
+#SBATCH --mem=8G
+#SBATCH --output=install_r_packages_%j.out
+#SBATCH --error=install_r_packages_%j.err
+
+# Move to the working directory
+cd $SLURM_SUBMIT_DIR
+
+# Set up user R package directory (the default one R expects)
+export R_LIBS_USER="/jet/home/jvicente/R/library"
+mkdir -p "$R_LIBS_USER"
+
+# Limit threading for compiled code
+export OMP_NUM_THREADS=1
+
+# Show R version and setup info
+echo "Running R version:"
+R --version | head -1
+echo "R library path:"
+echo "$R_LIBS_USER"
+
+# Run installation script
+echo "Starting R package installation..."
+Rscript install_r_packages.R
+echo "Package installation job complete."

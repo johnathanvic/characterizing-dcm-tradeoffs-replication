@@ -1,0 +1,510 @@
+SLURM_ARRAY_JOB_ID: 35887057
+SLURM_JOB_ID: 35887059
+SLURM_ARRAY_TASK_ID: 1
+Created job directory: logs/job_35887057
+Task 1: Starting hpc/hpc_init_preparation.R...
+[1] "300s Timeout on Loading Dataset"
+<environment: R_GlobalEnv>
+
+
+=== Running MNL_none_pref ===
+Apollo ignition sequence completed
+
+outputDirectory provided by user does not exist, so will be created.
+Analytic gradients cannot be used with setting workInLogs
+All checks on apollo_control completed.
+All checks on database completed.
+
+
+=== Running NL_NL_pref ===
+Apollo ignition sequence completed
+
+outputDirectory provided by user does not exist, so will be created.
+Analytic gradients cannot be used with setting workInLogs
+All checks on apollo_control completed.
+All checks on database completed.
+
+
+=== Running CNL_CNL_pref ===
+Apollo ignition sequence completed
+
+outputDirectory provided by user does not exist, so will be created.
+Analytic gradients cannot be used with setting workInLogs
+All checks on apollo_control completed.
+All checks on database completed.
+
+
+=== Running LCL2_none_pref ===
+Apollo ignition sequence completed
+
+outputDirectory provided by user does not exist, so will be created.
+Analytic gradients cannot be used with setting workInLogs
+All checks on apollo_control completed.
+All checks on database completed.
+
+
+=== Running LCL2_NL_pref ===
+Apollo ignition sequence completed
+
+outputDirectory provided by user does not exist, so will be created.
+Analytic gradients cannot be used with setting workInLogs
+All checks on apollo_control completed.
+All checks on database completed.
+
+
+=== Running LCL2_CNL_pref ===
+Apollo ignition sequence completed
+
+outputDirectory provided by user does not exist, so will be created.
+Analytic gradients cannot be used with setting workInLogs
+All checks on apollo_control completed.
+All checks on database completed.
+
+
+=== Running LCL4_none_pref ===
+Apollo ignition sequence completed
+
+outputDirectory provided by user does not exist, so will be created.
+Analytic gradients cannot be used with setting workInLogs
+All checks on apollo_control completed.
+All checks on database completed.
+
+
+=== Running LCL4_NL_pref ===
+Apollo ignition sequence completed
+
+outputDirectory provided by user does not exist, so will be created.
+Analytic gradients cannot be used with setting workInLogs
+All checks on apollo_control completed.
+All checks on database completed.
+
+
+=== Running LCL4_CNL_pref ===
+Apollo ignition sequence completed
+
+outputDirectory provided by user does not exist, so will be created.
+Analytic gradients cannot be used with setting workInLogs
+All checks on apollo_control completed.
+All checks on database completed.
+
+
+=== Running LCL6_none_pref ===
+Apollo ignition sequence completed
+
+outputDirectory provided by user does not exist, so will be created.
+Analytic gradients cannot be used with setting workInLogs
+All checks on apollo_control completed.
+All checks on database completed.
+
+
+=== Running LCL6_NL_pref ===
+Apollo ignition sequence completed
+
+outputDirectory provided by user does not exist, so will be created.
+Analytic gradients cannot be used with setting workInLogs
+All checks on apollo_control completed.
+All checks on database completed.
+
+
+=== Running LCL6_CNL_pref ===
+Apollo ignition sequence completed
+
+outputDirectory provided by user does not exist, so will be created.
+Analytic gradients cannot be used with setting workInLogs
+All checks on apollo_control completed.
+All checks on database completed.
+
+
+=== Running LCL8_none_pref ===
+Apollo ignition sequence completed
+
+outputDirectory provided by user does not exist, so will be created.
+Analytic gradients cannot be used with setting workInLogs
+All checks on apollo_control completed.
+All checks on database completed.
+
+
+=== Running MXL100_none_pref ===
+Apollo ignition sequence completed
+apollo_draws and apollo_randCoeff were found, so apollo_control$mixing
+  was set to TRUE
+
+outputDirectory provided by user does not exist, so will be created.
+Analytic gradients cannot be used with setting workInLogs
+All checks on apollo_control completed.
+All checks on database completed.
+Generating inter-individual draws .............. Done
+
+
+=== Running MXL100_none_wtp ===
+Apollo ignition sequence completed
+apollo_draws and apollo_randCoeff were found, so apollo_control$mixing
+  was set to TRUE
+
+outputDirectory provided by user does not exist, so will be created.
+Analytic gradients cannot be used with setting workInLogs
+All checks on apollo_control completed.
+All checks on database completed.
+Generating inter-individual draws .............. Done
+Saved to directory: logs/job_35887057 
+Prep done: settings & models serialized.
+Task 1: Initialization complete.
+Running model 1...
+Running: MNL_none_pref 
+Starting Setup 
+Setup  Complete 
+Starting Search-Start 
+Saving original apollo_inputs 
+Testing probability function (apollo_probabilities)
+Setting "avail" is missing, so full availability is assumed.
+Pre-processing likelihood function...
+Creating initial set of 101 candidate values.
+Calculating LL of candidates 0%....50%.....100%
+Total avail. cores = 32 cores
+Avail. GB per core = 2 GB
+Req. GB per cluster = 2 GB
+Running searchStart on 32 cores.
+
+Stage 1, 101 active candidates.
+Estimating 25 BFGS iteration(s) for each active candidate.
+ Candidate......LLstart.....LLfinish.....GradientNorm...Converged
+         1        -9336        -9336                0           1
+         2       -11464        -9336            0.164           1
+         3        -9939        -9336            0.012           1
+         4        -9888        -9336            0.419           1
+         5       -11720        -9336            0.015           1
+         6       -12186        -9336            0.063           1
+         7       -10088        -9336            0.032           1
+         8       -12171        -9336            0.116           1
+         9       -17812        -9336             1.25           1
+        10        -9845        -9336             0.01           1
+        11       -11441        -9336            0.357           1
+        12       -13165        -9336            0.195           1
+        13       -11378        -9336            0.192           1
+        14       -13708        -9336            0.098           1
+        15       -15169        -9336             0.08           1
+        16       -14999        -9336            1.226           1
+        17        -9695        -9336            0.206           1
+        18       -10941        -9336            0.467           1
+        19       -10465        -9336            0.029           1
+        20       -13662        -9336             0.35           1
+        21       -10648        -9336            0.025           1
+        22       -10966        -9336            0.501           1
+        23       -11335        -9336            0.049           1
+        24       -10464        -9336            0.091           1
+        25       -15683        -9336            0.856           1
+        26        -9952        -9336            0.009           1
+        27       -12408        -9336             0.39           1
+        28       -10162        -9336            0.237           1
+        29        -9770        -9336            0.069           1
+        30       -11155        -9336            0.023           1
+        31       -10771        -9336            0.072           1
+        32       -11072        -9336                0           1
+        33       -11099        -9336            0.101           1
+        34       -10451        -9336            0.049           1
+        35       -16328        -9336            0.061           1
+        36       -11432        -9336            0.024           1
+        37       -11015        -9336            0.111           1
+        38       -10971        -9336            0.002           1
+        39       -10502        -9336            0.031           1
+        40        -9615        -9336            0.057           1
+        41       -10983        -9336            0.198           1
+        42       -10740        -9336            0.016           1
+        43        -9632        -9336            0.007           1
+        44        -9656        -9336            0.021           1
+        45       -13491        -9336            2.361           1
+        46       -18614        -9336            2.848           1
+        47       -10998        -9336            0.401           1
+        48       -16242        -9336            0.297           1
+        49       -10390        -9336            0.153           1
+        50       -10025        -9336            0.008           1
+        51       -11355        -9336            0.027           1
+        52       -10669        -9336            0.188           1
+        53       -22541        -9336            1.064           1
+        54       -11243        -9336            0.157           1
+        55       -10790        -9336            0.017           1
+        56       -12100        -9336            0.139           1
+        57       -13685        -9336            0.353           1
+        58       -11743        -9336            0.073           1
+        59       -10748        -9336            0.007           1
+        60       -12736        -9336            0.117           1
+        61       -19641        -9336            0.877           1
+        62       -10194        -9336            0.193           1
+        63       -10150        -9336            1.661           1
+        64       -10377        -9336            0.412           1
+        65       -10311        -9336            0.278           1
+        66        -9872        -9336            0.006           1
+        67       -10490        -9336            1.081           1
+        68       -10019        -9336             0.01           1
+        69       -11347        -9336            0.119           1
+        70       -11110        -9336            0.072           1
+        71       -10289        -9336            0.474           1
+        72       -10358        -9336            0.021           1
+        73       -12774        -9336            0.064           1
+        74       -11982        -9336            0.287           1
+        75       -16438        -9336            0.085           1
+        76       -10974        -9336            0.067           1
+        77        -9918        -9336            0.013           1
+        78       -16359        -9336            0.369           1
+        79        -9799        -9336            0.009           1
+        80       -10530        -9336            0.478           1
+        81       -16712        -9336             1.03           1
+        82       -15041        -9336            0.294           1
+        83       -10737        -9336            0.091           1
+        84       -15356        -9336            0.203           1
+        85       -11315        -9336            0.012           1
+        86       -12939        -9336             0.02           1
+        87       -10627        -9336            0.012           1
+        88       -11779        -9336            1.041           1
+        89       -10604        -9336            0.012           1
+        90       -10251        -9336             0.16           1
+        91        -9792        -9336            0.056           1
+        92      -118732        -9346         1290.092           0
+        93       -54397        -9336            0.288           1
+        94       -35353        -9336            1.154           1
+        95      -110978        -9359         1748.645           0
+        96       -30396        -9336            0.166           1
+        97       -27732        -9336            0.083           1
+        98       -28761        -9336            0.493           1
+        99       -30909        -9336            0.281           1
+       100       -69549        -9336             0.24           1
+       101       -20904        -9336            0.337           1
+Best candidate so far (LL=-9336)
+
+Stage 2, 3 active candidates.
+Estimating 25 BFGS iteration(s) for each active candidate.
+ Candidate......LLstart.....LLfinish.....GradientNorm...Converged
+         1        -9336        -9336                0           1
+        92        -9346        -9336            0.005           1
+        95        -9359        -9336                0           1
+Best candidate so far (LL=-9336)
+  n_points n_best n_within_tol did_best_conv
+1      101    101          101          TRUE
+Search-Start Execution Complete 
+Using  32 cores. 
+Search-Start Post-Processing Complete 
+Starting main estimation 
+Preparing user-defined functions.
+
+Testing likelihood function...
+Setting "avail" is missing, so full availability is assumed.
+
+Overview of choices for MNL model component :
+                                       C1      C2       C3
+Times available                  11010.00 11010.0 11010.00
+Times chosen                      3670.00  3677.0  3663.00
+Percentage chosen overall           33.33    33.4    33.27
+Percentage chosen when available    33.33    33.4    33.27
+
+
+Pre-processing likelihood function...
+Creating cluster...
+INFORMATION: While preparing your inputs for multi-core estimation, the
+  following objects were found in "apollo_inputs", but were not split
+  across cores: "attrCols", "availCols", "heterogeneity_spec",
+  "lognorm_price_dist", "n_classes", "n_draws", "nesting_params",
+  "nesting_spec", "observed_attributes", "scalingFactor_dist",
+  "utility_space". If these objects contain observation or
+  individual-specific data, and thus need to be split, please add a
+  column with the IDs to these objects, and call this column "ID" 
+Preparing workers for multithreading...
+
+Testing influence of parameters.............
+Starting main estimation
+initial  value 9336.048053 
+iter   1 value 9336.048053
+final  value 9336.048053 
+converged
+
+Estimated parameters with approximate standard errors from BHHH matrix:
+                  Estimate     BHHH se BHH t-ratio (0)
+b_Price           -0.06596  5.6017e-04       -117.7508
+b_Acceleration    -0.08672    0.004592        -18.8852
+b_OpCost          -0.12346    0.003033        -40.7058
+b_hev              0.07879    0.032411          2.4309
+b_phev20           0.01734    0.033734          0.5139
+b_phev40           0.13332    0.033878          3.9354
+b_bev             -0.22529    0.025229         -8.9298
+b_bevRangeRel      0.30576    0.008340         36.6633
+b_noBEVFC         -0.26164    0.028522         -9.1733
+b_american        -0.11332    0.024839         -4.5622
+b_chinese         -1.20362    0.022825        -52.7328
+b_japanese        -0.05776    0.022786         -2.5349
+b_skorean         -0.39274    0.024856        -15.8004
+
+Final LL: -9336.0481
+
+Calculating log-likelihood at equal shares (LL(0)) for applicable
+  models...
+Calculating LL of each model component...
+Calculating other model fit measures
+Computing covariance matrix using numerical methods (numDeriv).
+ 0%....25%....50%....75%....100%
+Negative definite Hessian with maximum eigenvalue: -146.046534
+
+Please acknowledge the use of Apollo by citing Hess & Palma (2019) -
+  doi.org/10.1016/j.jocm.2019.100170
+Model output saved to logs/job_35887057/MNL_none_pref/MNL_none_pref_output.txt 
+Estimates saved to logs/job_35887057/MNL_none_pref/MNL_none_pref_estimates.csv 
+Model object saved to logs/job_35887057/MNL_none_pref/MNL_none_pref.rds 
+[1] TRUE
+Starting Cross-Validation 
+Testing likelihood function.
+5 separate runs will be conducted, each using a random subset of 80% of
+  individuals for estimation, and the remainder for validation.
+Number of individuals
+- for estimation : 587
+- for forecasting : 147
+- in sample (total): 734
+Estimated parameters and log-likelihoods for each sample will be
+  written to:
+  logs/job_35887057/MNL_none_pref/MNL_none_pref_outOfSample_params.csv
+The matrix defining the observations used in each repetition will be
+  written to:
+  logs/job_35887057/MNL_none_pref/MNL_none_pref_outOfSample_samples.csv
+
+Estimation cycle 1 (8805 obs.)
+INFORMATION: While preparing your inputs for multi-core estimation, the
+  following objects were found in "apollo_inputs", but were not split
+  across cores: "attrCols", "availCols", "heterogeneity_spec",
+  "lognorm_price_dist", "n_classes", "n_draws", "nesting_params",
+  "nesting_spec", "observed_attributes", "scalingFactor_dist",
+  "utility_space". If these objects contain observation or
+  individual-specific data, and thus need to be split, please add a
+  column with the IDs to these objects, and call this column "ID" 
+Saving CV model as: MNL_none_pref_CV01
+Model output saved to logs/job_35887057/MNL_none_pref/MNL_none_pref_CV01_output.txt 
+Estimates saved to logs/job_35887057/MNL_none_pref/MNL_none_pref_CV01_estimates.csv 
+Model object saved to logs/job_35887057/MNL_none_pref/MNL_none_pref_CV01.rds 
+Out-of-sample time: 0.017
+Iter. total wall time: 121.1784 secs
+Estimation results written to file.
+Estimation cycle 2 (8805 obs.)
+INFORMATION: While preparing your inputs for multi-core estimation, the
+  following objects were found in "apollo_inputs", but were not split
+  across cores: "attrCols", "availCols", "heterogeneity_spec",
+  "lognorm_price_dist", "n_classes", "n_draws", "nesting_params",
+  "nesting_spec", "observed_attributes", "scalingFactor_dist",
+  "utility_space". If these objects contain observation or
+  individual-specific data, and thus need to be split, please add a
+  column with the IDs to these objects, and call this column "ID" 
+Saving CV model as: MNL_none_pref_CV02
+Model output saved to logs/job_35887057/MNL_none_pref/MNL_none_pref_CV02_output.txt 
+Estimates saved to logs/job_35887057/MNL_none_pref/MNL_none_pref_CV02_estimates.csv 
+Model object saved to logs/job_35887057/MNL_none_pref/MNL_none_pref_CV02.rds 
+Out-of-sample time: 0.019
+Iter. total wall time: 123.5675 secs
+Estimation results written to file.
+Estimation cycle 3 (8805 obs.)
+INFORMATION: While preparing your inputs for multi-core estimation, the
+  following objects were found in "apollo_inputs", but were not split
+  across cores: "attrCols", "availCols", "heterogeneity_spec",
+  "lognorm_price_dist", "n_classes", "n_draws", "nesting_params",
+  "nesting_spec", "observed_attributes", "scalingFactor_dist",
+  "utility_space". If these objects contain observation or
+  individual-specific data, and thus need to be split, please add a
+  column with the IDs to these objects, and call this column "ID" 
+Saving CV model as: MNL_none_pref_CV03
+Model output saved to logs/job_35887057/MNL_none_pref/MNL_none_pref_CV03_output.txt 
+Estimates saved to logs/job_35887057/MNL_none_pref/MNL_none_pref_CV03_estimates.csv 
+Model object saved to logs/job_35887057/MNL_none_pref/MNL_none_pref_CV03.rds 
+Out-of-sample time: 0.015
+Iter. total wall time: 127.2075 secs
+Estimation results written to file.
+Estimation cycle 4 (8805 obs.)
+INFORMATION: While preparing your inputs for multi-core estimation, the
+  following objects were found in "apollo_inputs", but were not split
+  across cores: "attrCols", "availCols", "heterogeneity_spec",
+  "lognorm_price_dist", "n_classes", "n_draws", "nesting_params",
+  "nesting_spec", "observed_attributes", "scalingFactor_dist",
+  "utility_space". If these objects contain observation or
+  individual-specific data, and thus need to be split, please add a
+  column with the IDs to these objects, and call this column "ID" 
+Saving CV model as: MNL_none_pref_CV04
+Model output saved to logs/job_35887057/MNL_none_pref/MNL_none_pref_CV04_output.txt 
+Estimates saved to logs/job_35887057/MNL_none_pref/MNL_none_pref_CV04_estimates.csv 
+Model object saved to logs/job_35887057/MNL_none_pref/MNL_none_pref_CV04.rds 
+Out-of-sample time: 0.019
+Iter. total wall time: 123.8848 secs
+Estimation results written to file.
+Estimation cycle 5 (8805 obs.)
+INFORMATION: While preparing your inputs for multi-core estimation, the
+  following objects were found in "apollo_inputs", but were not split
+  across cores: "attrCols", "availCols", "heterogeneity_spec",
+  "lognorm_price_dist", "n_classes", "n_draws", "nesting_params",
+  "nesting_spec", "observed_attributes", "scalingFactor_dist",
+  "utility_space". If these objects contain observation or
+  individual-specific data, and thus need to be split, please add a
+  column with the IDs to these objects, and call this column "ID" 
+Saving CV model as: MNL_none_pref_CV05
+Model output saved to logs/job_35887057/MNL_none_pref/MNL_none_pref_CV05_output.txt 
+Estimates saved to logs/job_35887057/MNL_none_pref/MNL_none_pref_CV05_estimates.csv 
+Model object saved to logs/job_35887057/MNL_none_pref/MNL_none_pref_CV05.rds 
+Out-of-sample time: 0.015
+Iter. total wall time: 121.9755 secs
+Estimation results written to file.
+Processing time: 10.3042 mins
+
+Summary of cross-validation:
+         LL per obs in estimation sample LL per obs in validation sample
+sample_1                         -0.8535                         -0.8287
+sample_2                         -0.8598                         -0.8037
+sample_3                         -0.8451                         -0.8631
+sample_4                         -0.8141                         -0.9855
+sample_5                         -0.8537                         -0.8294
+Average                          -0.8453                         -0.8621
+         % difference CPU sec in validation sample
+sample_1       -2.913                      0.01700
+sample_2       -6.522                      0.01900
+sample_3        2.121                      0.01500
+sample_4       21.050                      0.01900
+sample_5       -2.837                      0.01500
+Average         2.180                      0.01700
+Cross-Validation Complete 
+Starting Psi' on Dataset Test 
+Mean Psi' (all) =  0 
+Mean Psi' (chosen only) =  0 
+Saved psi' dataset to:  logs/job_35887057/MNL_none_pref//MNL_none_pref_psi_prime_dataset.csv 
+Psi' on Dataset Test Complete
+Starting Speed Test 
+       ___Draws___              sec/
+nCores inter intra  progress  LLCall RAM(MB)
+     1     0     0 ..........   0.05   951.7
+     2     0     0 INFORMATION: While preparing your inputs for multi-core estimation, the
+  following objects were found in "apollo_inputs", but were not split
+  across cores: "attrCols", "availCols", "heterogeneity_spec",
+  "lognorm_price_dist", "n_classes", "n_draws", "nesting_params",
+  "nesting_spec", "observed_attributes", "scalingFactor_dist",
+  "utility_space". If these objects contain observation or
+  individual-specific data, and thus need to be split, please add a
+  column with the IDs to these objects, and call this column "ID" 
+..........   0.45  1325.1
+     4     0     0 INFORMATION: While preparing your inputs for multi-core estimation, the
+  following objects were found in "apollo_inputs", but were not split
+  across cores: "attrCols", "availCols", "heterogeneity_spec",
+  "lognorm_price_dist", "n_classes", "n_draws", "nesting_params",
+  "nesting_spec", "observed_attributes", "scalingFactor_dist",
+  "utility_space". If these objects contain observation or
+  individual-specific data, and thus need to be split, please add a
+  column with the IDs to these objects, and call this column "ID" 
+..........   0.46  1686.8
+
+Summary of results (sec. per call to LL function)
+       draws0
+cores1 0.0498
+cores2 0.4542
+cores4 0.4624
+     model_name cores inter_draws intra_draws calls time_per_call ram_mb
+1 MNL_none_pref     1           0           0   100    0.04979992  951.7
+2 MNL_none_pref     2           0           0   100    0.45423004 1325.1
+3 MNL_none_pref     4           0           0   100    0.46241467 1686.8
+Saved speed test results to: logs/job_35887057/MNL_none_pref//MNL_none_pref_speedTest.csv 
+Saved detailed speed test results to: logs/job_35887057/MNL_none_pref//MNL_none_pref_speedTest_detailed.csv 
+Speed Test Complete 
+Starting Psi' Test 
+Psi' Test Complete 
+Starting Func Eval Timing 
+Func Eval Timing Complete 
+MNL_none_pref done.
+Results saved to: logs/job_35887057/MNL_none_pref 
+Done Running. Log files moved to logs/job_35887057/

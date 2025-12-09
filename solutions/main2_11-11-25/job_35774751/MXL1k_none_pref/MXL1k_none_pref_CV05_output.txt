@@ -1,0 +1,1667 @@
+Model run by jvicente using Apollo 0.3.6 on R 4.4.1 for Linux.
+Please acknowledge the use of Apollo by citing Hess & Palma (2019)
+  DOI 10.1016/j.jocm.2019.100170
+  www.ApolloChoiceModelling.com
+
+Model name                                  : MXL1k_none_pref_CV05
+Model description                           : No model description provided in apollo_control
+Model run at                                : 2025-11-05 17:03:52.324965
+Estimation method                           : bfgs
+Estimation diagnosis                        : successful convergence
+Optimisation diagnosis                      : Unknown (no Hessian requested by user)
+Number of individuals                       : 587
+Number of rows in database                  : 8805
+Number of modelled outcomes                 : 8805
+
+Number of cores used                        :  4 
+Number of inter-individual draws            : 1000 (mlhs)
+
+LL(start)                                   : -6481.91
+LL at equal shares, LL(0)                   : -9764.8
+LL at observed shares, LL(C)                : Not applicable
+LL(final)                                   : -6417.63
+Rho-squared vs equal shares                  :  0.3428 
+Adj.Rho-squared vs equal shares              :  0.3401 
+Rho-squared vs observed shares               :  Not applicable 
+Adj.Rho-squared vs observed shares           :  Not applicable 
+AIC                                         :  12887.26 
+BIC                                         :  13071.42 
+
+Estimated parameters                        : 26
+Time taken (hh:mm:ss)                       :  00:33:10.04 
+     pre-estimation                         :  00:02:11.46 
+     estimation                             :  00:30:37.99 
+     post-estimation                        :  00:00:20.59 
+Iterations                                  :  40  
+
+Unconstrained optimisation.
+
+Estimates:
+                        Estimate        s.e.   t.rat.(0)    Rob.s.e.
+mu_b_Price              -0.14285          NA          NA          NA
+sigma_b_Price            0.10137          NA          NA          NA
+mu_b_Acceleration       -0.19010          NA          NA          NA
+sigma_b_Acceleration    -0.28918          NA          NA          NA
+mu_b_OpCost             -0.23037          NA          NA          NA
+sigma_b_OpCost          -0.19937          NA          NA          NA
+mu_b_hev                 0.09681          NA          NA          NA
+sigma_b_hev              0.86139          NA          NA          NA
+mu_b_phev20             -0.10014          NA          NA          NA
+sigma_b_phev20          -0.11583          NA          NA          NA
+mu_b_phev40              0.12268          NA          NA          NA
+sigma_b_phev40           0.11186          NA          NA          NA
+mu_b_bev                -0.65422          NA          NA          NA
+sigma_b_bev             -1.68246          NA          NA          NA
+mu_b_bevRangeRel         0.52521          NA          NA          NA
+sigma_b_bevRangeRel     -0.76462          NA          NA          NA
+mu_b_noBEVFC            -0.46247          NA          NA          NA
+sigma_b_noBEVFC         -0.42302          NA          NA          NA
+mu_b_american           -0.25694          NA          NA          NA
+sigma_b_american         1.11200          NA          NA          NA
+mu_b_chinese            -2.33860          NA          NA          NA
+sigma_b_chinese         -2.26616          NA          NA          NA
+mu_b_japanese           -0.16278          NA          NA          NA
+sigma_b_japanese         0.64646          NA          NA          NA
+mu_b_skorean            -0.71270          NA          NA          NA
+sigma_b_skorean         -0.83107          NA          NA          NA
+                     Rob.t.rat.(0)
+mu_b_Price                      NA
+sigma_b_Price                   NA
+mu_b_Acceleration               NA
+sigma_b_Acceleration            NA
+mu_b_OpCost                     NA
+sigma_b_OpCost                  NA
+mu_b_hev                        NA
+sigma_b_hev                     NA
+mu_b_phev20                     NA
+sigma_b_phev20                  NA
+mu_b_phev40                     NA
+sigma_b_phev40                  NA
+mu_b_bev                        NA
+sigma_b_bev                     NA
+mu_b_bevRangeRel                NA
+sigma_b_bevRangeRel             NA
+mu_b_noBEVFC                    NA
+sigma_b_noBEVFC                 NA
+mu_b_american                   NA
+sigma_b_american                NA
+mu_b_chinese                    NA
+sigma_b_chinese                 NA
+mu_b_japanese                   NA
+sigma_b_japanese                NA
+mu_b_skorean                    NA
+sigma_b_skorean                 NA
+
+
+Overview of choices for MNL model component :
+                                      C1      C2      C3
+Times available                  8805.00 8805.00 8805.00
+Times chosen                     2925.00 2940.00 2940.00
+Percentage chosen overall          33.22   33.39   33.39
+Percentage chosen when available   33.22   33.39   33.39
+
+
+
+Classical covariance matrix:
+                               mu_b_Price        sigma_b_Price
+mu_b_Price                             NA                   NA
+sigma_b_Price                          NA                   NA
+mu_b_Acceleration                      NA                   NA
+sigma_b_Acceleration                   NA                   NA
+mu_b_OpCost                            NA                   NA
+sigma_b_OpCost                         NA                   NA
+mu_b_hev                               NA                   NA
+sigma_b_hev                            NA                   NA
+mu_b_phev20                            NA                   NA
+sigma_b_phev20                         NA                   NA
+mu_b_phev40                            NA                   NA
+sigma_b_phev40                         NA                   NA
+mu_b_bev                               NA                   NA
+sigma_b_bev                            NA                   NA
+mu_b_bevRangeRel                       NA                   NA
+sigma_b_bevRangeRel                    NA                   NA
+mu_b_noBEVFC                           NA                   NA
+sigma_b_noBEVFC                        NA                   NA
+mu_b_american                          NA                   NA
+sigma_b_american                       NA                   NA
+mu_b_chinese                           NA                   NA
+sigma_b_chinese                        NA                   NA
+mu_b_japanese                          NA                   NA
+sigma_b_japanese                       NA                   NA
+mu_b_skorean                           NA                   NA
+sigma_b_skorean                        NA                   NA
+                        mu_b_Acceleration sigma_b_Acceleration
+mu_b_Price                             NA                   NA
+sigma_b_Price                          NA                   NA
+mu_b_Acceleration                      NA                   NA
+sigma_b_Acceleration                   NA                   NA
+mu_b_OpCost                            NA                   NA
+sigma_b_OpCost                         NA                   NA
+mu_b_hev                               NA                   NA
+sigma_b_hev                            NA                   NA
+mu_b_phev20                            NA                   NA
+sigma_b_phev20                         NA                   NA
+mu_b_phev40                            NA                   NA
+sigma_b_phev40                         NA                   NA
+mu_b_bev                               NA                   NA
+sigma_b_bev                            NA                   NA
+mu_b_bevRangeRel                       NA                   NA
+sigma_b_bevRangeRel                    NA                   NA
+mu_b_noBEVFC                           NA                   NA
+sigma_b_noBEVFC                        NA                   NA
+mu_b_american                          NA                   NA
+sigma_b_american                       NA                   NA
+mu_b_chinese                           NA                   NA
+sigma_b_chinese                        NA                   NA
+mu_b_japanese                          NA                   NA
+sigma_b_japanese                       NA                   NA
+mu_b_skorean                           NA                   NA
+sigma_b_skorean                        NA                   NA
+                              mu_b_OpCost       sigma_b_OpCost
+mu_b_Price                             NA                   NA
+sigma_b_Price                          NA                   NA
+mu_b_Acceleration                      NA                   NA
+sigma_b_Acceleration                   NA                   NA
+mu_b_OpCost                            NA                   NA
+sigma_b_OpCost                         NA                   NA
+mu_b_hev                               NA                   NA
+sigma_b_hev                            NA                   NA
+mu_b_phev20                            NA                   NA
+sigma_b_phev20                         NA                   NA
+mu_b_phev40                            NA                   NA
+sigma_b_phev40                         NA                   NA
+mu_b_bev                               NA                   NA
+sigma_b_bev                            NA                   NA
+mu_b_bevRangeRel                       NA                   NA
+sigma_b_bevRangeRel                    NA                   NA
+mu_b_noBEVFC                           NA                   NA
+sigma_b_noBEVFC                        NA                   NA
+mu_b_american                          NA                   NA
+sigma_b_american                       NA                   NA
+mu_b_chinese                           NA                   NA
+sigma_b_chinese                        NA                   NA
+mu_b_japanese                          NA                   NA
+sigma_b_japanese                       NA                   NA
+mu_b_skorean                           NA                   NA
+sigma_b_skorean                        NA                   NA
+                                 mu_b_hev          sigma_b_hev
+mu_b_Price                             NA                   NA
+sigma_b_Price                          NA                   NA
+mu_b_Acceleration                      NA                   NA
+sigma_b_Acceleration                   NA                   NA
+mu_b_OpCost                            NA                   NA
+sigma_b_OpCost                         NA                   NA
+mu_b_hev                               NA                   NA
+sigma_b_hev                            NA                   NA
+mu_b_phev20                            NA                   NA
+sigma_b_phev20                         NA                   NA
+mu_b_phev40                            NA                   NA
+sigma_b_phev40                         NA                   NA
+mu_b_bev                               NA                   NA
+sigma_b_bev                            NA                   NA
+mu_b_bevRangeRel                       NA                   NA
+sigma_b_bevRangeRel                    NA                   NA
+mu_b_noBEVFC                           NA                   NA
+sigma_b_noBEVFC                        NA                   NA
+mu_b_american                          NA                   NA
+sigma_b_american                       NA                   NA
+mu_b_chinese                           NA                   NA
+sigma_b_chinese                        NA                   NA
+mu_b_japanese                          NA                   NA
+sigma_b_japanese                       NA                   NA
+mu_b_skorean                           NA                   NA
+sigma_b_skorean                        NA                   NA
+                              mu_b_phev20       sigma_b_phev20
+mu_b_Price                             NA                   NA
+sigma_b_Price                          NA                   NA
+mu_b_Acceleration                      NA                   NA
+sigma_b_Acceleration                   NA                   NA
+mu_b_OpCost                            NA                   NA
+sigma_b_OpCost                         NA                   NA
+mu_b_hev                               NA                   NA
+sigma_b_hev                            NA                   NA
+mu_b_phev20                            NA                   NA
+sigma_b_phev20                         NA                   NA
+mu_b_phev40                            NA                   NA
+sigma_b_phev40                         NA                   NA
+mu_b_bev                               NA                   NA
+sigma_b_bev                            NA                   NA
+mu_b_bevRangeRel                       NA                   NA
+sigma_b_bevRangeRel                    NA                   NA
+mu_b_noBEVFC                           NA                   NA
+sigma_b_noBEVFC                        NA                   NA
+mu_b_american                          NA                   NA
+sigma_b_american                       NA                   NA
+mu_b_chinese                           NA                   NA
+sigma_b_chinese                        NA                   NA
+mu_b_japanese                          NA                   NA
+sigma_b_japanese                       NA                   NA
+mu_b_skorean                           NA                   NA
+sigma_b_skorean                        NA                   NA
+                              mu_b_phev40       sigma_b_phev40
+mu_b_Price                             NA                   NA
+sigma_b_Price                          NA                   NA
+mu_b_Acceleration                      NA                   NA
+sigma_b_Acceleration                   NA                   NA
+mu_b_OpCost                            NA                   NA
+sigma_b_OpCost                         NA                   NA
+mu_b_hev                               NA                   NA
+sigma_b_hev                            NA                   NA
+mu_b_phev20                            NA                   NA
+sigma_b_phev20                         NA                   NA
+mu_b_phev40                            NA                   NA
+sigma_b_phev40                         NA                   NA
+mu_b_bev                               NA                   NA
+sigma_b_bev                            NA                   NA
+mu_b_bevRangeRel                       NA                   NA
+sigma_b_bevRangeRel                    NA                   NA
+mu_b_noBEVFC                           NA                   NA
+sigma_b_noBEVFC                        NA                   NA
+mu_b_american                          NA                   NA
+sigma_b_american                       NA                   NA
+mu_b_chinese                           NA                   NA
+sigma_b_chinese                        NA                   NA
+mu_b_japanese                          NA                   NA
+sigma_b_japanese                       NA                   NA
+mu_b_skorean                           NA                   NA
+sigma_b_skorean                        NA                   NA
+                                 mu_b_bev          sigma_b_bev
+mu_b_Price                             NA                   NA
+sigma_b_Price                          NA                   NA
+mu_b_Acceleration                      NA                   NA
+sigma_b_Acceleration                   NA                   NA
+mu_b_OpCost                            NA                   NA
+sigma_b_OpCost                         NA                   NA
+mu_b_hev                               NA                   NA
+sigma_b_hev                            NA                   NA
+mu_b_phev20                            NA                   NA
+sigma_b_phev20                         NA                   NA
+mu_b_phev40                            NA                   NA
+sigma_b_phev40                         NA                   NA
+mu_b_bev                               NA                   NA
+sigma_b_bev                            NA                   NA
+mu_b_bevRangeRel                       NA                   NA
+sigma_b_bevRangeRel                    NA                   NA
+mu_b_noBEVFC                           NA                   NA
+sigma_b_noBEVFC                        NA                   NA
+mu_b_american                          NA                   NA
+sigma_b_american                       NA                   NA
+mu_b_chinese                           NA                   NA
+sigma_b_chinese                        NA                   NA
+mu_b_japanese                          NA                   NA
+sigma_b_japanese                       NA                   NA
+mu_b_skorean                           NA                   NA
+sigma_b_skorean                        NA                   NA
+                         mu_b_bevRangeRel  sigma_b_bevRangeRel
+mu_b_Price                             NA                   NA
+sigma_b_Price                          NA                   NA
+mu_b_Acceleration                      NA                   NA
+sigma_b_Acceleration                   NA                   NA
+mu_b_OpCost                            NA                   NA
+sigma_b_OpCost                         NA                   NA
+mu_b_hev                               NA                   NA
+sigma_b_hev                            NA                   NA
+mu_b_phev20                            NA                   NA
+sigma_b_phev20                         NA                   NA
+mu_b_phev40                            NA                   NA
+sigma_b_phev40                         NA                   NA
+mu_b_bev                               NA                   NA
+sigma_b_bev                            NA                   NA
+mu_b_bevRangeRel                       NA                   NA
+sigma_b_bevRangeRel                    NA                   NA
+mu_b_noBEVFC                           NA                   NA
+sigma_b_noBEVFC                        NA                   NA
+mu_b_american                          NA                   NA
+sigma_b_american                       NA                   NA
+mu_b_chinese                           NA                   NA
+sigma_b_chinese                        NA                   NA
+mu_b_japanese                          NA                   NA
+sigma_b_japanese                       NA                   NA
+mu_b_skorean                           NA                   NA
+sigma_b_skorean                        NA                   NA
+                             mu_b_noBEVFC      sigma_b_noBEVFC
+mu_b_Price                             NA                   NA
+sigma_b_Price                          NA                   NA
+mu_b_Acceleration                      NA                   NA
+sigma_b_Acceleration                   NA                   NA
+mu_b_OpCost                            NA                   NA
+sigma_b_OpCost                         NA                   NA
+mu_b_hev                               NA                   NA
+sigma_b_hev                            NA                   NA
+mu_b_phev20                            NA                   NA
+sigma_b_phev20                         NA                   NA
+mu_b_phev40                            NA                   NA
+sigma_b_phev40                         NA                   NA
+mu_b_bev                               NA                   NA
+sigma_b_bev                            NA                   NA
+mu_b_bevRangeRel                       NA                   NA
+sigma_b_bevRangeRel                    NA                   NA
+mu_b_noBEVFC                           NA                   NA
+sigma_b_noBEVFC                        NA                   NA
+mu_b_american                          NA                   NA
+sigma_b_american                       NA                   NA
+mu_b_chinese                           NA                   NA
+sigma_b_chinese                        NA                   NA
+mu_b_japanese                          NA                   NA
+sigma_b_japanese                       NA                   NA
+mu_b_skorean                           NA                   NA
+sigma_b_skorean                        NA                   NA
+                            mu_b_american     sigma_b_american
+mu_b_Price                             NA                   NA
+sigma_b_Price                          NA                   NA
+mu_b_Acceleration                      NA                   NA
+sigma_b_Acceleration                   NA                   NA
+mu_b_OpCost                            NA                   NA
+sigma_b_OpCost                         NA                   NA
+mu_b_hev                               NA                   NA
+sigma_b_hev                            NA                   NA
+mu_b_phev20                            NA                   NA
+sigma_b_phev20                         NA                   NA
+mu_b_phev40                            NA                   NA
+sigma_b_phev40                         NA                   NA
+mu_b_bev                               NA                   NA
+sigma_b_bev                            NA                   NA
+mu_b_bevRangeRel                       NA                   NA
+sigma_b_bevRangeRel                    NA                   NA
+mu_b_noBEVFC                           NA                   NA
+sigma_b_noBEVFC                        NA                   NA
+mu_b_american                          NA                   NA
+sigma_b_american                       NA                   NA
+mu_b_chinese                           NA                   NA
+sigma_b_chinese                        NA                   NA
+mu_b_japanese                          NA                   NA
+sigma_b_japanese                       NA                   NA
+mu_b_skorean                           NA                   NA
+sigma_b_skorean                        NA                   NA
+                             mu_b_chinese      sigma_b_chinese
+mu_b_Price                             NA                   NA
+sigma_b_Price                          NA                   NA
+mu_b_Acceleration                      NA                   NA
+sigma_b_Acceleration                   NA                   NA
+mu_b_OpCost                            NA                   NA
+sigma_b_OpCost                         NA                   NA
+mu_b_hev                               NA                   NA
+sigma_b_hev                            NA                   NA
+mu_b_phev20                            NA                   NA
+sigma_b_phev20                         NA                   NA
+mu_b_phev40                            NA                   NA
+sigma_b_phev40                         NA                   NA
+mu_b_bev                               NA                   NA
+sigma_b_bev                            NA                   NA
+mu_b_bevRangeRel                       NA                   NA
+sigma_b_bevRangeRel                    NA                   NA
+mu_b_noBEVFC                           NA                   NA
+sigma_b_noBEVFC                        NA                   NA
+mu_b_american                          NA                   NA
+sigma_b_american                       NA                   NA
+mu_b_chinese                           NA                   NA
+sigma_b_chinese                        NA                   NA
+mu_b_japanese                          NA                   NA
+sigma_b_japanese                       NA                   NA
+mu_b_skorean                           NA                   NA
+sigma_b_skorean                        NA                   NA
+                            mu_b_japanese     sigma_b_japanese
+mu_b_Price                             NA                   NA
+sigma_b_Price                          NA                   NA
+mu_b_Acceleration                      NA                   NA
+sigma_b_Acceleration                   NA                   NA
+mu_b_OpCost                            NA                   NA
+sigma_b_OpCost                         NA                   NA
+mu_b_hev                               NA                   NA
+sigma_b_hev                            NA                   NA
+mu_b_phev20                            NA                   NA
+sigma_b_phev20                         NA                   NA
+mu_b_phev40                            NA                   NA
+sigma_b_phev40                         NA                   NA
+mu_b_bev                               NA                   NA
+sigma_b_bev                            NA                   NA
+mu_b_bevRangeRel                       NA                   NA
+sigma_b_bevRangeRel                    NA                   NA
+mu_b_noBEVFC                           NA                   NA
+sigma_b_noBEVFC                        NA                   NA
+mu_b_american                          NA                   NA
+sigma_b_american                       NA                   NA
+mu_b_chinese                           NA                   NA
+sigma_b_chinese                        NA                   NA
+mu_b_japanese                          NA                   NA
+sigma_b_japanese                       NA                   NA
+mu_b_skorean                           NA                   NA
+sigma_b_skorean                        NA                   NA
+                             mu_b_skorean      sigma_b_skorean
+mu_b_Price                             NA                   NA
+sigma_b_Price                          NA                   NA
+mu_b_Acceleration                      NA                   NA
+sigma_b_Acceleration                   NA                   NA
+mu_b_OpCost                            NA                   NA
+sigma_b_OpCost                         NA                   NA
+mu_b_hev                               NA                   NA
+sigma_b_hev                            NA                   NA
+mu_b_phev20                            NA                   NA
+sigma_b_phev20                         NA                   NA
+mu_b_phev40                            NA                   NA
+sigma_b_phev40                         NA                   NA
+mu_b_bev                               NA                   NA
+sigma_b_bev                            NA                   NA
+mu_b_bevRangeRel                       NA                   NA
+sigma_b_bevRangeRel                    NA                   NA
+mu_b_noBEVFC                           NA                   NA
+sigma_b_noBEVFC                        NA                   NA
+mu_b_american                          NA                   NA
+sigma_b_american                       NA                   NA
+mu_b_chinese                           NA                   NA
+sigma_b_chinese                        NA                   NA
+mu_b_japanese                          NA                   NA
+sigma_b_japanese                       NA                   NA
+mu_b_skorean                           NA                   NA
+sigma_b_skorean                        NA                   NA
+
+Robust covariance matrix:
+                               mu_b_Price        sigma_b_Price
+mu_b_Price                             NA                   NA
+sigma_b_Price                          NA                   NA
+mu_b_Acceleration                      NA                   NA
+sigma_b_Acceleration                   NA                   NA
+mu_b_OpCost                            NA                   NA
+sigma_b_OpCost                         NA                   NA
+mu_b_hev                               NA                   NA
+sigma_b_hev                            NA                   NA
+mu_b_phev20                            NA                   NA
+sigma_b_phev20                         NA                   NA
+mu_b_phev40                            NA                   NA
+sigma_b_phev40                         NA                   NA
+mu_b_bev                               NA                   NA
+sigma_b_bev                            NA                   NA
+mu_b_bevRangeRel                       NA                   NA
+sigma_b_bevRangeRel                    NA                   NA
+mu_b_noBEVFC                           NA                   NA
+sigma_b_noBEVFC                        NA                   NA
+mu_b_american                          NA                   NA
+sigma_b_american                       NA                   NA
+mu_b_chinese                           NA                   NA
+sigma_b_chinese                        NA                   NA
+mu_b_japanese                          NA                   NA
+sigma_b_japanese                       NA                   NA
+mu_b_skorean                           NA                   NA
+sigma_b_skorean                        NA                   NA
+                        mu_b_Acceleration sigma_b_Acceleration
+mu_b_Price                             NA                   NA
+sigma_b_Price                          NA                   NA
+mu_b_Acceleration                      NA                   NA
+sigma_b_Acceleration                   NA                   NA
+mu_b_OpCost                            NA                   NA
+sigma_b_OpCost                         NA                   NA
+mu_b_hev                               NA                   NA
+sigma_b_hev                            NA                   NA
+mu_b_phev20                            NA                   NA
+sigma_b_phev20                         NA                   NA
+mu_b_phev40                            NA                   NA
+sigma_b_phev40                         NA                   NA
+mu_b_bev                               NA                   NA
+sigma_b_bev                            NA                   NA
+mu_b_bevRangeRel                       NA                   NA
+sigma_b_bevRangeRel                    NA                   NA
+mu_b_noBEVFC                           NA                   NA
+sigma_b_noBEVFC                        NA                   NA
+mu_b_american                          NA                   NA
+sigma_b_american                       NA                   NA
+mu_b_chinese                           NA                   NA
+sigma_b_chinese                        NA                   NA
+mu_b_japanese                          NA                   NA
+sigma_b_japanese                       NA                   NA
+mu_b_skorean                           NA                   NA
+sigma_b_skorean                        NA                   NA
+                              mu_b_OpCost       sigma_b_OpCost
+mu_b_Price                             NA                   NA
+sigma_b_Price                          NA                   NA
+mu_b_Acceleration                      NA                   NA
+sigma_b_Acceleration                   NA                   NA
+mu_b_OpCost                            NA                   NA
+sigma_b_OpCost                         NA                   NA
+mu_b_hev                               NA                   NA
+sigma_b_hev                            NA                   NA
+mu_b_phev20                            NA                   NA
+sigma_b_phev20                         NA                   NA
+mu_b_phev40                            NA                   NA
+sigma_b_phev40                         NA                   NA
+mu_b_bev                               NA                   NA
+sigma_b_bev                            NA                   NA
+mu_b_bevRangeRel                       NA                   NA
+sigma_b_bevRangeRel                    NA                   NA
+mu_b_noBEVFC                           NA                   NA
+sigma_b_noBEVFC                        NA                   NA
+mu_b_american                          NA                   NA
+sigma_b_american                       NA                   NA
+mu_b_chinese                           NA                   NA
+sigma_b_chinese                        NA                   NA
+mu_b_japanese                          NA                   NA
+sigma_b_japanese                       NA                   NA
+mu_b_skorean                           NA                   NA
+sigma_b_skorean                        NA                   NA
+                                 mu_b_hev          sigma_b_hev
+mu_b_Price                             NA                   NA
+sigma_b_Price                          NA                   NA
+mu_b_Acceleration                      NA                   NA
+sigma_b_Acceleration                   NA                   NA
+mu_b_OpCost                            NA                   NA
+sigma_b_OpCost                         NA                   NA
+mu_b_hev                               NA                   NA
+sigma_b_hev                            NA                   NA
+mu_b_phev20                            NA                   NA
+sigma_b_phev20                         NA                   NA
+mu_b_phev40                            NA                   NA
+sigma_b_phev40                         NA                   NA
+mu_b_bev                               NA                   NA
+sigma_b_bev                            NA                   NA
+mu_b_bevRangeRel                       NA                   NA
+sigma_b_bevRangeRel                    NA                   NA
+mu_b_noBEVFC                           NA                   NA
+sigma_b_noBEVFC                        NA                   NA
+mu_b_american                          NA                   NA
+sigma_b_american                       NA                   NA
+mu_b_chinese                           NA                   NA
+sigma_b_chinese                        NA                   NA
+mu_b_japanese                          NA                   NA
+sigma_b_japanese                       NA                   NA
+mu_b_skorean                           NA                   NA
+sigma_b_skorean                        NA                   NA
+                              mu_b_phev20       sigma_b_phev20
+mu_b_Price                             NA                   NA
+sigma_b_Price                          NA                   NA
+mu_b_Acceleration                      NA                   NA
+sigma_b_Acceleration                   NA                   NA
+mu_b_OpCost                            NA                   NA
+sigma_b_OpCost                         NA                   NA
+mu_b_hev                               NA                   NA
+sigma_b_hev                            NA                   NA
+mu_b_phev20                            NA                   NA
+sigma_b_phev20                         NA                   NA
+mu_b_phev40                            NA                   NA
+sigma_b_phev40                         NA                   NA
+mu_b_bev                               NA                   NA
+sigma_b_bev                            NA                   NA
+mu_b_bevRangeRel                       NA                   NA
+sigma_b_bevRangeRel                    NA                   NA
+mu_b_noBEVFC                           NA                   NA
+sigma_b_noBEVFC                        NA                   NA
+mu_b_american                          NA                   NA
+sigma_b_american                       NA                   NA
+mu_b_chinese                           NA                   NA
+sigma_b_chinese                        NA                   NA
+mu_b_japanese                          NA                   NA
+sigma_b_japanese                       NA                   NA
+mu_b_skorean                           NA                   NA
+sigma_b_skorean                        NA                   NA
+                              mu_b_phev40       sigma_b_phev40
+mu_b_Price                             NA                   NA
+sigma_b_Price                          NA                   NA
+mu_b_Acceleration                      NA                   NA
+sigma_b_Acceleration                   NA                   NA
+mu_b_OpCost                            NA                   NA
+sigma_b_OpCost                         NA                   NA
+mu_b_hev                               NA                   NA
+sigma_b_hev                            NA                   NA
+mu_b_phev20                            NA                   NA
+sigma_b_phev20                         NA                   NA
+mu_b_phev40                            NA                   NA
+sigma_b_phev40                         NA                   NA
+mu_b_bev                               NA                   NA
+sigma_b_bev                            NA                   NA
+mu_b_bevRangeRel                       NA                   NA
+sigma_b_bevRangeRel                    NA                   NA
+mu_b_noBEVFC                           NA                   NA
+sigma_b_noBEVFC                        NA                   NA
+mu_b_american                          NA                   NA
+sigma_b_american                       NA                   NA
+mu_b_chinese                           NA                   NA
+sigma_b_chinese                        NA                   NA
+mu_b_japanese                          NA                   NA
+sigma_b_japanese                       NA                   NA
+mu_b_skorean                           NA                   NA
+sigma_b_skorean                        NA                   NA
+                                 mu_b_bev          sigma_b_bev
+mu_b_Price                             NA                   NA
+sigma_b_Price                          NA                   NA
+mu_b_Acceleration                      NA                   NA
+sigma_b_Acceleration                   NA                   NA
+mu_b_OpCost                            NA                   NA
+sigma_b_OpCost                         NA                   NA
+mu_b_hev                               NA                   NA
+sigma_b_hev                            NA                   NA
+mu_b_phev20                            NA                   NA
+sigma_b_phev20                         NA                   NA
+mu_b_phev40                            NA                   NA
+sigma_b_phev40                         NA                   NA
+mu_b_bev                               NA                   NA
+sigma_b_bev                            NA                   NA
+mu_b_bevRangeRel                       NA                   NA
+sigma_b_bevRangeRel                    NA                   NA
+mu_b_noBEVFC                           NA                   NA
+sigma_b_noBEVFC                        NA                   NA
+mu_b_american                          NA                   NA
+sigma_b_american                       NA                   NA
+mu_b_chinese                           NA                   NA
+sigma_b_chinese                        NA                   NA
+mu_b_japanese                          NA                   NA
+sigma_b_japanese                       NA                   NA
+mu_b_skorean                           NA                   NA
+sigma_b_skorean                        NA                   NA
+                         mu_b_bevRangeRel  sigma_b_bevRangeRel
+mu_b_Price                             NA                   NA
+sigma_b_Price                          NA                   NA
+mu_b_Acceleration                      NA                   NA
+sigma_b_Acceleration                   NA                   NA
+mu_b_OpCost                            NA                   NA
+sigma_b_OpCost                         NA                   NA
+mu_b_hev                               NA                   NA
+sigma_b_hev                            NA                   NA
+mu_b_phev20                            NA                   NA
+sigma_b_phev20                         NA                   NA
+mu_b_phev40                            NA                   NA
+sigma_b_phev40                         NA                   NA
+mu_b_bev                               NA                   NA
+sigma_b_bev                            NA                   NA
+mu_b_bevRangeRel                       NA                   NA
+sigma_b_bevRangeRel                    NA                   NA
+mu_b_noBEVFC                           NA                   NA
+sigma_b_noBEVFC                        NA                   NA
+mu_b_american                          NA                   NA
+sigma_b_american                       NA                   NA
+mu_b_chinese                           NA                   NA
+sigma_b_chinese                        NA                   NA
+mu_b_japanese                          NA                   NA
+sigma_b_japanese                       NA                   NA
+mu_b_skorean                           NA                   NA
+sigma_b_skorean                        NA                   NA
+                             mu_b_noBEVFC      sigma_b_noBEVFC
+mu_b_Price                             NA                   NA
+sigma_b_Price                          NA                   NA
+mu_b_Acceleration                      NA                   NA
+sigma_b_Acceleration                   NA                   NA
+mu_b_OpCost                            NA                   NA
+sigma_b_OpCost                         NA                   NA
+mu_b_hev                               NA                   NA
+sigma_b_hev                            NA                   NA
+mu_b_phev20                            NA                   NA
+sigma_b_phev20                         NA                   NA
+mu_b_phev40                            NA                   NA
+sigma_b_phev40                         NA                   NA
+mu_b_bev                               NA                   NA
+sigma_b_bev                            NA                   NA
+mu_b_bevRangeRel                       NA                   NA
+sigma_b_bevRangeRel                    NA                   NA
+mu_b_noBEVFC                           NA                   NA
+sigma_b_noBEVFC                        NA                   NA
+mu_b_american                          NA                   NA
+sigma_b_american                       NA                   NA
+mu_b_chinese                           NA                   NA
+sigma_b_chinese                        NA                   NA
+mu_b_japanese                          NA                   NA
+sigma_b_japanese                       NA                   NA
+mu_b_skorean                           NA                   NA
+sigma_b_skorean                        NA                   NA
+                            mu_b_american     sigma_b_american
+mu_b_Price                             NA                   NA
+sigma_b_Price                          NA                   NA
+mu_b_Acceleration                      NA                   NA
+sigma_b_Acceleration                   NA                   NA
+mu_b_OpCost                            NA                   NA
+sigma_b_OpCost                         NA                   NA
+mu_b_hev                               NA                   NA
+sigma_b_hev                            NA                   NA
+mu_b_phev20                            NA                   NA
+sigma_b_phev20                         NA                   NA
+mu_b_phev40                            NA                   NA
+sigma_b_phev40                         NA                   NA
+mu_b_bev                               NA                   NA
+sigma_b_bev                            NA                   NA
+mu_b_bevRangeRel                       NA                   NA
+sigma_b_bevRangeRel                    NA                   NA
+mu_b_noBEVFC                           NA                   NA
+sigma_b_noBEVFC                        NA                   NA
+mu_b_american                          NA                   NA
+sigma_b_american                       NA                   NA
+mu_b_chinese                           NA                   NA
+sigma_b_chinese                        NA                   NA
+mu_b_japanese                          NA                   NA
+sigma_b_japanese                       NA                   NA
+mu_b_skorean                           NA                   NA
+sigma_b_skorean                        NA                   NA
+                             mu_b_chinese      sigma_b_chinese
+mu_b_Price                             NA                   NA
+sigma_b_Price                          NA                   NA
+mu_b_Acceleration                      NA                   NA
+sigma_b_Acceleration                   NA                   NA
+mu_b_OpCost                            NA                   NA
+sigma_b_OpCost                         NA                   NA
+mu_b_hev                               NA                   NA
+sigma_b_hev                            NA                   NA
+mu_b_phev20                            NA                   NA
+sigma_b_phev20                         NA                   NA
+mu_b_phev40                            NA                   NA
+sigma_b_phev40                         NA                   NA
+mu_b_bev                               NA                   NA
+sigma_b_bev                            NA                   NA
+mu_b_bevRangeRel                       NA                   NA
+sigma_b_bevRangeRel                    NA                   NA
+mu_b_noBEVFC                           NA                   NA
+sigma_b_noBEVFC                        NA                   NA
+mu_b_american                          NA                   NA
+sigma_b_american                       NA                   NA
+mu_b_chinese                           NA                   NA
+sigma_b_chinese                        NA                   NA
+mu_b_japanese                          NA                   NA
+sigma_b_japanese                       NA                   NA
+mu_b_skorean                           NA                   NA
+sigma_b_skorean                        NA                   NA
+                            mu_b_japanese     sigma_b_japanese
+mu_b_Price                             NA                   NA
+sigma_b_Price                          NA                   NA
+mu_b_Acceleration                      NA                   NA
+sigma_b_Acceleration                   NA                   NA
+mu_b_OpCost                            NA                   NA
+sigma_b_OpCost                         NA                   NA
+mu_b_hev                               NA                   NA
+sigma_b_hev                            NA                   NA
+mu_b_phev20                            NA                   NA
+sigma_b_phev20                         NA                   NA
+mu_b_phev40                            NA                   NA
+sigma_b_phev40                         NA                   NA
+mu_b_bev                               NA                   NA
+sigma_b_bev                            NA                   NA
+mu_b_bevRangeRel                       NA                   NA
+sigma_b_bevRangeRel                    NA                   NA
+mu_b_noBEVFC                           NA                   NA
+sigma_b_noBEVFC                        NA                   NA
+mu_b_american                          NA                   NA
+sigma_b_american                       NA                   NA
+mu_b_chinese                           NA                   NA
+sigma_b_chinese                        NA                   NA
+mu_b_japanese                          NA                   NA
+sigma_b_japanese                       NA                   NA
+mu_b_skorean                           NA                   NA
+sigma_b_skorean                        NA                   NA
+                             mu_b_skorean      sigma_b_skorean
+mu_b_Price                             NA                   NA
+sigma_b_Price                          NA                   NA
+mu_b_Acceleration                      NA                   NA
+sigma_b_Acceleration                   NA                   NA
+mu_b_OpCost                            NA                   NA
+sigma_b_OpCost                         NA                   NA
+mu_b_hev                               NA                   NA
+sigma_b_hev                            NA                   NA
+mu_b_phev20                            NA                   NA
+sigma_b_phev20                         NA                   NA
+mu_b_phev40                            NA                   NA
+sigma_b_phev40                         NA                   NA
+mu_b_bev                               NA                   NA
+sigma_b_bev                            NA                   NA
+mu_b_bevRangeRel                       NA                   NA
+sigma_b_bevRangeRel                    NA                   NA
+mu_b_noBEVFC                           NA                   NA
+sigma_b_noBEVFC                        NA                   NA
+mu_b_american                          NA                   NA
+sigma_b_american                       NA                   NA
+mu_b_chinese                           NA                   NA
+sigma_b_chinese                        NA                   NA
+mu_b_japanese                          NA                   NA
+sigma_b_japanese                       NA                   NA
+mu_b_skorean                           NA                   NA
+sigma_b_skorean                        NA                   NA
+
+Classical correlation matrix:
+                               mu_b_Price        sigma_b_Price
+mu_b_Price                             NA                   NA
+sigma_b_Price                          NA                   NA
+mu_b_Acceleration                      NA                   NA
+sigma_b_Acceleration                   NA                   NA
+mu_b_OpCost                            NA                   NA
+sigma_b_OpCost                         NA                   NA
+mu_b_hev                               NA                   NA
+sigma_b_hev                            NA                   NA
+mu_b_phev20                            NA                   NA
+sigma_b_phev20                         NA                   NA
+mu_b_phev40                            NA                   NA
+sigma_b_phev40                         NA                   NA
+mu_b_bev                               NA                   NA
+sigma_b_bev                            NA                   NA
+mu_b_bevRangeRel                       NA                   NA
+sigma_b_bevRangeRel                    NA                   NA
+mu_b_noBEVFC                           NA                   NA
+sigma_b_noBEVFC                        NA                   NA
+mu_b_american                          NA                   NA
+sigma_b_american                       NA                   NA
+mu_b_chinese                           NA                   NA
+sigma_b_chinese                        NA                   NA
+mu_b_japanese                          NA                   NA
+sigma_b_japanese                       NA                   NA
+mu_b_skorean                           NA                   NA
+sigma_b_skorean                        NA                   NA
+                        mu_b_Acceleration sigma_b_Acceleration
+mu_b_Price                             NA                   NA
+sigma_b_Price                          NA                   NA
+mu_b_Acceleration                      NA                   NA
+sigma_b_Acceleration                   NA                   NA
+mu_b_OpCost                            NA                   NA
+sigma_b_OpCost                         NA                   NA
+mu_b_hev                               NA                   NA
+sigma_b_hev                            NA                   NA
+mu_b_phev20                            NA                   NA
+sigma_b_phev20                         NA                   NA
+mu_b_phev40                            NA                   NA
+sigma_b_phev40                         NA                   NA
+mu_b_bev                               NA                   NA
+sigma_b_bev                            NA                   NA
+mu_b_bevRangeRel                       NA                   NA
+sigma_b_bevRangeRel                    NA                   NA
+mu_b_noBEVFC                           NA                   NA
+sigma_b_noBEVFC                        NA                   NA
+mu_b_american                          NA                   NA
+sigma_b_american                       NA                   NA
+mu_b_chinese                           NA                   NA
+sigma_b_chinese                        NA                   NA
+mu_b_japanese                          NA                   NA
+sigma_b_japanese                       NA                   NA
+mu_b_skorean                           NA                   NA
+sigma_b_skorean                        NA                   NA
+                              mu_b_OpCost       sigma_b_OpCost
+mu_b_Price                             NA                   NA
+sigma_b_Price                          NA                   NA
+mu_b_Acceleration                      NA                   NA
+sigma_b_Acceleration                   NA                   NA
+mu_b_OpCost                            NA                   NA
+sigma_b_OpCost                         NA                   NA
+mu_b_hev                               NA                   NA
+sigma_b_hev                            NA                   NA
+mu_b_phev20                            NA                   NA
+sigma_b_phev20                         NA                   NA
+mu_b_phev40                            NA                   NA
+sigma_b_phev40                         NA                   NA
+mu_b_bev                               NA                   NA
+sigma_b_bev                            NA                   NA
+mu_b_bevRangeRel                       NA                   NA
+sigma_b_bevRangeRel                    NA                   NA
+mu_b_noBEVFC                           NA                   NA
+sigma_b_noBEVFC                        NA                   NA
+mu_b_american                          NA                   NA
+sigma_b_american                       NA                   NA
+mu_b_chinese                           NA                   NA
+sigma_b_chinese                        NA                   NA
+mu_b_japanese                          NA                   NA
+sigma_b_japanese                       NA                   NA
+mu_b_skorean                           NA                   NA
+sigma_b_skorean                        NA                   NA
+                                 mu_b_hev          sigma_b_hev
+mu_b_Price                             NA                   NA
+sigma_b_Price                          NA                   NA
+mu_b_Acceleration                      NA                   NA
+sigma_b_Acceleration                   NA                   NA
+mu_b_OpCost                            NA                   NA
+sigma_b_OpCost                         NA                   NA
+mu_b_hev                               NA                   NA
+sigma_b_hev                            NA                   NA
+mu_b_phev20                            NA                   NA
+sigma_b_phev20                         NA                   NA
+mu_b_phev40                            NA                   NA
+sigma_b_phev40                         NA                   NA
+mu_b_bev                               NA                   NA
+sigma_b_bev                            NA                   NA
+mu_b_bevRangeRel                       NA                   NA
+sigma_b_bevRangeRel                    NA                   NA
+mu_b_noBEVFC                           NA                   NA
+sigma_b_noBEVFC                        NA                   NA
+mu_b_american                          NA                   NA
+sigma_b_american                       NA                   NA
+mu_b_chinese                           NA                   NA
+sigma_b_chinese                        NA                   NA
+mu_b_japanese                          NA                   NA
+sigma_b_japanese                       NA                   NA
+mu_b_skorean                           NA                   NA
+sigma_b_skorean                        NA                   NA
+                              mu_b_phev20       sigma_b_phev20
+mu_b_Price                             NA                   NA
+sigma_b_Price                          NA                   NA
+mu_b_Acceleration                      NA                   NA
+sigma_b_Acceleration                   NA                   NA
+mu_b_OpCost                            NA                   NA
+sigma_b_OpCost                         NA                   NA
+mu_b_hev                               NA                   NA
+sigma_b_hev                            NA                   NA
+mu_b_phev20                            NA                   NA
+sigma_b_phev20                         NA                   NA
+mu_b_phev40                            NA                   NA
+sigma_b_phev40                         NA                   NA
+mu_b_bev                               NA                   NA
+sigma_b_bev                            NA                   NA
+mu_b_bevRangeRel                       NA                   NA
+sigma_b_bevRangeRel                    NA                   NA
+mu_b_noBEVFC                           NA                   NA
+sigma_b_noBEVFC                        NA                   NA
+mu_b_american                          NA                   NA
+sigma_b_american                       NA                   NA
+mu_b_chinese                           NA                   NA
+sigma_b_chinese                        NA                   NA
+mu_b_japanese                          NA                   NA
+sigma_b_japanese                       NA                   NA
+mu_b_skorean                           NA                   NA
+sigma_b_skorean                        NA                   NA
+                              mu_b_phev40       sigma_b_phev40
+mu_b_Price                             NA                   NA
+sigma_b_Price                          NA                   NA
+mu_b_Acceleration                      NA                   NA
+sigma_b_Acceleration                   NA                   NA
+mu_b_OpCost                            NA                   NA
+sigma_b_OpCost                         NA                   NA
+mu_b_hev                               NA                   NA
+sigma_b_hev                            NA                   NA
+mu_b_phev20                            NA                   NA
+sigma_b_phev20                         NA                   NA
+mu_b_phev40                            NA                   NA
+sigma_b_phev40                         NA                   NA
+mu_b_bev                               NA                   NA
+sigma_b_bev                            NA                   NA
+mu_b_bevRangeRel                       NA                   NA
+sigma_b_bevRangeRel                    NA                   NA
+mu_b_noBEVFC                           NA                   NA
+sigma_b_noBEVFC                        NA                   NA
+mu_b_american                          NA                   NA
+sigma_b_american                       NA                   NA
+mu_b_chinese                           NA                   NA
+sigma_b_chinese                        NA                   NA
+mu_b_japanese                          NA                   NA
+sigma_b_japanese                       NA                   NA
+mu_b_skorean                           NA                   NA
+sigma_b_skorean                        NA                   NA
+                                 mu_b_bev          sigma_b_bev
+mu_b_Price                             NA                   NA
+sigma_b_Price                          NA                   NA
+mu_b_Acceleration                      NA                   NA
+sigma_b_Acceleration                   NA                   NA
+mu_b_OpCost                            NA                   NA
+sigma_b_OpCost                         NA                   NA
+mu_b_hev                               NA                   NA
+sigma_b_hev                            NA                   NA
+mu_b_phev20                            NA                   NA
+sigma_b_phev20                         NA                   NA
+mu_b_phev40                            NA                   NA
+sigma_b_phev40                         NA                   NA
+mu_b_bev                               NA                   NA
+sigma_b_bev                            NA                   NA
+mu_b_bevRangeRel                       NA                   NA
+sigma_b_bevRangeRel                    NA                   NA
+mu_b_noBEVFC                           NA                   NA
+sigma_b_noBEVFC                        NA                   NA
+mu_b_american                          NA                   NA
+sigma_b_american                       NA                   NA
+mu_b_chinese                           NA                   NA
+sigma_b_chinese                        NA                   NA
+mu_b_japanese                          NA                   NA
+sigma_b_japanese                       NA                   NA
+mu_b_skorean                           NA                   NA
+sigma_b_skorean                        NA                   NA
+                         mu_b_bevRangeRel  sigma_b_bevRangeRel
+mu_b_Price                             NA                   NA
+sigma_b_Price                          NA                   NA
+mu_b_Acceleration                      NA                   NA
+sigma_b_Acceleration                   NA                   NA
+mu_b_OpCost                            NA                   NA
+sigma_b_OpCost                         NA                   NA
+mu_b_hev                               NA                   NA
+sigma_b_hev                            NA                   NA
+mu_b_phev20                            NA                   NA
+sigma_b_phev20                         NA                   NA
+mu_b_phev40                            NA                   NA
+sigma_b_phev40                         NA                   NA
+mu_b_bev                               NA                   NA
+sigma_b_bev                            NA                   NA
+mu_b_bevRangeRel                       NA                   NA
+sigma_b_bevRangeRel                    NA                   NA
+mu_b_noBEVFC                           NA                   NA
+sigma_b_noBEVFC                        NA                   NA
+mu_b_american                          NA                   NA
+sigma_b_american                       NA                   NA
+mu_b_chinese                           NA                   NA
+sigma_b_chinese                        NA                   NA
+mu_b_japanese                          NA                   NA
+sigma_b_japanese                       NA                   NA
+mu_b_skorean                           NA                   NA
+sigma_b_skorean                        NA                   NA
+                             mu_b_noBEVFC      sigma_b_noBEVFC
+mu_b_Price                             NA                   NA
+sigma_b_Price                          NA                   NA
+mu_b_Acceleration                      NA                   NA
+sigma_b_Acceleration                   NA                   NA
+mu_b_OpCost                            NA                   NA
+sigma_b_OpCost                         NA                   NA
+mu_b_hev                               NA                   NA
+sigma_b_hev                            NA                   NA
+mu_b_phev20                            NA                   NA
+sigma_b_phev20                         NA                   NA
+mu_b_phev40                            NA                   NA
+sigma_b_phev40                         NA                   NA
+mu_b_bev                               NA                   NA
+sigma_b_bev                            NA                   NA
+mu_b_bevRangeRel                       NA                   NA
+sigma_b_bevRangeRel                    NA                   NA
+mu_b_noBEVFC                           NA                   NA
+sigma_b_noBEVFC                        NA                   NA
+mu_b_american                          NA                   NA
+sigma_b_american                       NA                   NA
+mu_b_chinese                           NA                   NA
+sigma_b_chinese                        NA                   NA
+mu_b_japanese                          NA                   NA
+sigma_b_japanese                       NA                   NA
+mu_b_skorean                           NA                   NA
+sigma_b_skorean                        NA                   NA
+                            mu_b_american     sigma_b_american
+mu_b_Price                             NA                   NA
+sigma_b_Price                          NA                   NA
+mu_b_Acceleration                      NA                   NA
+sigma_b_Acceleration                   NA                   NA
+mu_b_OpCost                            NA                   NA
+sigma_b_OpCost                         NA                   NA
+mu_b_hev                               NA                   NA
+sigma_b_hev                            NA                   NA
+mu_b_phev20                            NA                   NA
+sigma_b_phev20                         NA                   NA
+mu_b_phev40                            NA                   NA
+sigma_b_phev40                         NA                   NA
+mu_b_bev                               NA                   NA
+sigma_b_bev                            NA                   NA
+mu_b_bevRangeRel                       NA                   NA
+sigma_b_bevRangeRel                    NA                   NA
+mu_b_noBEVFC                           NA                   NA
+sigma_b_noBEVFC                        NA                   NA
+mu_b_american                          NA                   NA
+sigma_b_american                       NA                   NA
+mu_b_chinese                           NA                   NA
+sigma_b_chinese                        NA                   NA
+mu_b_japanese                          NA                   NA
+sigma_b_japanese                       NA                   NA
+mu_b_skorean                           NA                   NA
+sigma_b_skorean                        NA                   NA
+                             mu_b_chinese      sigma_b_chinese
+mu_b_Price                             NA                   NA
+sigma_b_Price                          NA                   NA
+mu_b_Acceleration                      NA                   NA
+sigma_b_Acceleration                   NA                   NA
+mu_b_OpCost                            NA                   NA
+sigma_b_OpCost                         NA                   NA
+mu_b_hev                               NA                   NA
+sigma_b_hev                            NA                   NA
+mu_b_phev20                            NA                   NA
+sigma_b_phev20                         NA                   NA
+mu_b_phev40                            NA                   NA
+sigma_b_phev40                         NA                   NA
+mu_b_bev                               NA                   NA
+sigma_b_bev                            NA                   NA
+mu_b_bevRangeRel                       NA                   NA
+sigma_b_bevRangeRel                    NA                   NA
+mu_b_noBEVFC                           NA                   NA
+sigma_b_noBEVFC                        NA                   NA
+mu_b_american                          NA                   NA
+sigma_b_american                       NA                   NA
+mu_b_chinese                           NA                   NA
+sigma_b_chinese                        NA                   NA
+mu_b_japanese                          NA                   NA
+sigma_b_japanese                       NA                   NA
+mu_b_skorean                           NA                   NA
+sigma_b_skorean                        NA                   NA
+                            mu_b_japanese     sigma_b_japanese
+mu_b_Price                             NA                   NA
+sigma_b_Price                          NA                   NA
+mu_b_Acceleration                      NA                   NA
+sigma_b_Acceleration                   NA                   NA
+mu_b_OpCost                            NA                   NA
+sigma_b_OpCost                         NA                   NA
+mu_b_hev                               NA                   NA
+sigma_b_hev                            NA                   NA
+mu_b_phev20                            NA                   NA
+sigma_b_phev20                         NA                   NA
+mu_b_phev40                            NA                   NA
+sigma_b_phev40                         NA                   NA
+mu_b_bev                               NA                   NA
+sigma_b_bev                            NA                   NA
+mu_b_bevRangeRel                       NA                   NA
+sigma_b_bevRangeRel                    NA                   NA
+mu_b_noBEVFC                           NA                   NA
+sigma_b_noBEVFC                        NA                   NA
+mu_b_american                          NA                   NA
+sigma_b_american                       NA                   NA
+mu_b_chinese                           NA                   NA
+sigma_b_chinese                        NA                   NA
+mu_b_japanese                          NA                   NA
+sigma_b_japanese                       NA                   NA
+mu_b_skorean                           NA                   NA
+sigma_b_skorean                        NA                   NA
+                             mu_b_skorean      sigma_b_skorean
+mu_b_Price                             NA                   NA
+sigma_b_Price                          NA                   NA
+mu_b_Acceleration                      NA                   NA
+sigma_b_Acceleration                   NA                   NA
+mu_b_OpCost                            NA                   NA
+sigma_b_OpCost                         NA                   NA
+mu_b_hev                               NA                   NA
+sigma_b_hev                            NA                   NA
+mu_b_phev20                            NA                   NA
+sigma_b_phev20                         NA                   NA
+mu_b_phev40                            NA                   NA
+sigma_b_phev40                         NA                   NA
+mu_b_bev                               NA                   NA
+sigma_b_bev                            NA                   NA
+mu_b_bevRangeRel                       NA                   NA
+sigma_b_bevRangeRel                    NA                   NA
+mu_b_noBEVFC                           NA                   NA
+sigma_b_noBEVFC                        NA                   NA
+mu_b_american                          NA                   NA
+sigma_b_american                       NA                   NA
+mu_b_chinese                           NA                   NA
+sigma_b_chinese                        NA                   NA
+mu_b_japanese                          NA                   NA
+sigma_b_japanese                       NA                   NA
+mu_b_skorean                           NA                   NA
+sigma_b_skorean                        NA                   NA
+
+Robust correlation matrix:
+                               mu_b_Price        sigma_b_Price
+mu_b_Price                             NA                   NA
+sigma_b_Price                          NA                   NA
+mu_b_Acceleration                      NA                   NA
+sigma_b_Acceleration                   NA                   NA
+mu_b_OpCost                            NA                   NA
+sigma_b_OpCost                         NA                   NA
+mu_b_hev                               NA                   NA
+sigma_b_hev                            NA                   NA
+mu_b_phev20                            NA                   NA
+sigma_b_phev20                         NA                   NA
+mu_b_phev40                            NA                   NA
+sigma_b_phev40                         NA                   NA
+mu_b_bev                               NA                   NA
+sigma_b_bev                            NA                   NA
+mu_b_bevRangeRel                       NA                   NA
+sigma_b_bevRangeRel                    NA                   NA
+mu_b_noBEVFC                           NA                   NA
+sigma_b_noBEVFC                        NA                   NA
+mu_b_american                          NA                   NA
+sigma_b_american                       NA                   NA
+mu_b_chinese                           NA                   NA
+sigma_b_chinese                        NA                   NA
+mu_b_japanese                          NA                   NA
+sigma_b_japanese                       NA                   NA
+mu_b_skorean                           NA                   NA
+sigma_b_skorean                        NA                   NA
+                        mu_b_Acceleration sigma_b_Acceleration
+mu_b_Price                             NA                   NA
+sigma_b_Price                          NA                   NA
+mu_b_Acceleration                      NA                   NA
+sigma_b_Acceleration                   NA                   NA
+mu_b_OpCost                            NA                   NA
+sigma_b_OpCost                         NA                   NA
+mu_b_hev                               NA                   NA
+sigma_b_hev                            NA                   NA
+mu_b_phev20                            NA                   NA
+sigma_b_phev20                         NA                   NA
+mu_b_phev40                            NA                   NA
+sigma_b_phev40                         NA                   NA
+mu_b_bev                               NA                   NA
+sigma_b_bev                            NA                   NA
+mu_b_bevRangeRel                       NA                   NA
+sigma_b_bevRangeRel                    NA                   NA
+mu_b_noBEVFC                           NA                   NA
+sigma_b_noBEVFC                        NA                   NA
+mu_b_american                          NA                   NA
+sigma_b_american                       NA                   NA
+mu_b_chinese                           NA                   NA
+sigma_b_chinese                        NA                   NA
+mu_b_japanese                          NA                   NA
+sigma_b_japanese                       NA                   NA
+mu_b_skorean                           NA                   NA
+sigma_b_skorean                        NA                   NA
+                              mu_b_OpCost       sigma_b_OpCost
+mu_b_Price                             NA                   NA
+sigma_b_Price                          NA                   NA
+mu_b_Acceleration                      NA                   NA
+sigma_b_Acceleration                   NA                   NA
+mu_b_OpCost                            NA                   NA
+sigma_b_OpCost                         NA                   NA
+mu_b_hev                               NA                   NA
+sigma_b_hev                            NA                   NA
+mu_b_phev20                            NA                   NA
+sigma_b_phev20                         NA                   NA
+mu_b_phev40                            NA                   NA
+sigma_b_phev40                         NA                   NA
+mu_b_bev                               NA                   NA
+sigma_b_bev                            NA                   NA
+mu_b_bevRangeRel                       NA                   NA
+sigma_b_bevRangeRel                    NA                   NA
+mu_b_noBEVFC                           NA                   NA
+sigma_b_noBEVFC                        NA                   NA
+mu_b_american                          NA                   NA
+sigma_b_american                       NA                   NA
+mu_b_chinese                           NA                   NA
+sigma_b_chinese                        NA                   NA
+mu_b_japanese                          NA                   NA
+sigma_b_japanese                       NA                   NA
+mu_b_skorean                           NA                   NA
+sigma_b_skorean                        NA                   NA
+                                 mu_b_hev          sigma_b_hev
+mu_b_Price                             NA                   NA
+sigma_b_Price                          NA                   NA
+mu_b_Acceleration                      NA                   NA
+sigma_b_Acceleration                   NA                   NA
+mu_b_OpCost                            NA                   NA
+sigma_b_OpCost                         NA                   NA
+mu_b_hev                               NA                   NA
+sigma_b_hev                            NA                   NA
+mu_b_phev20                            NA                   NA
+sigma_b_phev20                         NA                   NA
+mu_b_phev40                            NA                   NA
+sigma_b_phev40                         NA                   NA
+mu_b_bev                               NA                   NA
+sigma_b_bev                            NA                   NA
+mu_b_bevRangeRel                       NA                   NA
+sigma_b_bevRangeRel                    NA                   NA
+mu_b_noBEVFC                           NA                   NA
+sigma_b_noBEVFC                        NA                   NA
+mu_b_american                          NA                   NA
+sigma_b_american                       NA                   NA
+mu_b_chinese                           NA                   NA
+sigma_b_chinese                        NA                   NA
+mu_b_japanese                          NA                   NA
+sigma_b_japanese                       NA                   NA
+mu_b_skorean                           NA                   NA
+sigma_b_skorean                        NA                   NA
+                              mu_b_phev20       sigma_b_phev20
+mu_b_Price                             NA                   NA
+sigma_b_Price                          NA                   NA
+mu_b_Acceleration                      NA                   NA
+sigma_b_Acceleration                   NA                   NA
+mu_b_OpCost                            NA                   NA
+sigma_b_OpCost                         NA                   NA
+mu_b_hev                               NA                   NA
+sigma_b_hev                            NA                   NA
+mu_b_phev20                            NA                   NA
+sigma_b_phev20                         NA                   NA
+mu_b_phev40                            NA                   NA
+sigma_b_phev40                         NA                   NA
+mu_b_bev                               NA                   NA
+sigma_b_bev                            NA                   NA
+mu_b_bevRangeRel                       NA                   NA
+sigma_b_bevRangeRel                    NA                   NA
+mu_b_noBEVFC                           NA                   NA
+sigma_b_noBEVFC                        NA                   NA
+mu_b_american                          NA                   NA
+sigma_b_american                       NA                   NA
+mu_b_chinese                           NA                   NA
+sigma_b_chinese                        NA                   NA
+mu_b_japanese                          NA                   NA
+sigma_b_japanese                       NA                   NA
+mu_b_skorean                           NA                   NA
+sigma_b_skorean                        NA                   NA
+                              mu_b_phev40       sigma_b_phev40
+mu_b_Price                             NA                   NA
+sigma_b_Price                          NA                   NA
+mu_b_Acceleration                      NA                   NA
+sigma_b_Acceleration                   NA                   NA
+mu_b_OpCost                            NA                   NA
+sigma_b_OpCost                         NA                   NA
+mu_b_hev                               NA                   NA
+sigma_b_hev                            NA                   NA
+mu_b_phev20                            NA                   NA
+sigma_b_phev20                         NA                   NA
+mu_b_phev40                            NA                   NA
+sigma_b_phev40                         NA                   NA
+mu_b_bev                               NA                   NA
+sigma_b_bev                            NA                   NA
+mu_b_bevRangeRel                       NA                   NA
+sigma_b_bevRangeRel                    NA                   NA
+mu_b_noBEVFC                           NA                   NA
+sigma_b_noBEVFC                        NA                   NA
+mu_b_american                          NA                   NA
+sigma_b_american                       NA                   NA
+mu_b_chinese                           NA                   NA
+sigma_b_chinese                        NA                   NA
+mu_b_japanese                          NA                   NA
+sigma_b_japanese                       NA                   NA
+mu_b_skorean                           NA                   NA
+sigma_b_skorean                        NA                   NA
+                                 mu_b_bev          sigma_b_bev
+mu_b_Price                             NA                   NA
+sigma_b_Price                          NA                   NA
+mu_b_Acceleration                      NA                   NA
+sigma_b_Acceleration                   NA                   NA
+mu_b_OpCost                            NA                   NA
+sigma_b_OpCost                         NA                   NA
+mu_b_hev                               NA                   NA
+sigma_b_hev                            NA                   NA
+mu_b_phev20                            NA                   NA
+sigma_b_phev20                         NA                   NA
+mu_b_phev40                            NA                   NA
+sigma_b_phev40                         NA                   NA
+mu_b_bev                               NA                   NA
+sigma_b_bev                            NA                   NA
+mu_b_bevRangeRel                       NA                   NA
+sigma_b_bevRangeRel                    NA                   NA
+mu_b_noBEVFC                           NA                   NA
+sigma_b_noBEVFC                        NA                   NA
+mu_b_american                          NA                   NA
+sigma_b_american                       NA                   NA
+mu_b_chinese                           NA                   NA
+sigma_b_chinese                        NA                   NA
+mu_b_japanese                          NA                   NA
+sigma_b_japanese                       NA                   NA
+mu_b_skorean                           NA                   NA
+sigma_b_skorean                        NA                   NA
+                         mu_b_bevRangeRel  sigma_b_bevRangeRel
+mu_b_Price                             NA                   NA
+sigma_b_Price                          NA                   NA
+mu_b_Acceleration                      NA                   NA
+sigma_b_Acceleration                   NA                   NA
+mu_b_OpCost                            NA                   NA
+sigma_b_OpCost                         NA                   NA
+mu_b_hev                               NA                   NA
+sigma_b_hev                            NA                   NA
+mu_b_phev20                            NA                   NA
+sigma_b_phev20                         NA                   NA
+mu_b_phev40                            NA                   NA
+sigma_b_phev40                         NA                   NA
+mu_b_bev                               NA                   NA
+sigma_b_bev                            NA                   NA
+mu_b_bevRangeRel                       NA                   NA
+sigma_b_bevRangeRel                    NA                   NA
+mu_b_noBEVFC                           NA                   NA
+sigma_b_noBEVFC                        NA                   NA
+mu_b_american                          NA                   NA
+sigma_b_american                       NA                   NA
+mu_b_chinese                           NA                   NA
+sigma_b_chinese                        NA                   NA
+mu_b_japanese                          NA                   NA
+sigma_b_japanese                       NA                   NA
+mu_b_skorean                           NA                   NA
+sigma_b_skorean                        NA                   NA
+                             mu_b_noBEVFC      sigma_b_noBEVFC
+mu_b_Price                             NA                   NA
+sigma_b_Price                          NA                   NA
+mu_b_Acceleration                      NA                   NA
+sigma_b_Acceleration                   NA                   NA
+mu_b_OpCost                            NA                   NA
+sigma_b_OpCost                         NA                   NA
+mu_b_hev                               NA                   NA
+sigma_b_hev                            NA                   NA
+mu_b_phev20                            NA                   NA
+sigma_b_phev20                         NA                   NA
+mu_b_phev40                            NA                   NA
+sigma_b_phev40                         NA                   NA
+mu_b_bev                               NA                   NA
+sigma_b_bev                            NA                   NA
+mu_b_bevRangeRel                       NA                   NA
+sigma_b_bevRangeRel                    NA                   NA
+mu_b_noBEVFC                           NA                   NA
+sigma_b_noBEVFC                        NA                   NA
+mu_b_american                          NA                   NA
+sigma_b_american                       NA                   NA
+mu_b_chinese                           NA                   NA
+sigma_b_chinese                        NA                   NA
+mu_b_japanese                          NA                   NA
+sigma_b_japanese                       NA                   NA
+mu_b_skorean                           NA                   NA
+sigma_b_skorean                        NA                   NA
+                            mu_b_american     sigma_b_american
+mu_b_Price                             NA                   NA
+sigma_b_Price                          NA                   NA
+mu_b_Acceleration                      NA                   NA
+sigma_b_Acceleration                   NA                   NA
+mu_b_OpCost                            NA                   NA
+sigma_b_OpCost                         NA                   NA
+mu_b_hev                               NA                   NA
+sigma_b_hev                            NA                   NA
+mu_b_phev20                            NA                   NA
+sigma_b_phev20                         NA                   NA
+mu_b_phev40                            NA                   NA
+sigma_b_phev40                         NA                   NA
+mu_b_bev                               NA                   NA
+sigma_b_bev                            NA                   NA
+mu_b_bevRangeRel                       NA                   NA
+sigma_b_bevRangeRel                    NA                   NA
+mu_b_noBEVFC                           NA                   NA
+sigma_b_noBEVFC                        NA                   NA
+mu_b_american                          NA                   NA
+sigma_b_american                       NA                   NA
+mu_b_chinese                           NA                   NA
+sigma_b_chinese                        NA                   NA
+mu_b_japanese                          NA                   NA
+sigma_b_japanese                       NA                   NA
+mu_b_skorean                           NA                   NA
+sigma_b_skorean                        NA                   NA
+                             mu_b_chinese      sigma_b_chinese
+mu_b_Price                             NA                   NA
+sigma_b_Price                          NA                   NA
+mu_b_Acceleration                      NA                   NA
+sigma_b_Acceleration                   NA                   NA
+mu_b_OpCost                            NA                   NA
+sigma_b_OpCost                         NA                   NA
+mu_b_hev                               NA                   NA
+sigma_b_hev                            NA                   NA
+mu_b_phev20                            NA                   NA
+sigma_b_phev20                         NA                   NA
+mu_b_phev40                            NA                   NA
+sigma_b_phev40                         NA                   NA
+mu_b_bev                               NA                   NA
+sigma_b_bev                            NA                   NA
+mu_b_bevRangeRel                       NA                   NA
+sigma_b_bevRangeRel                    NA                   NA
+mu_b_noBEVFC                           NA                   NA
+sigma_b_noBEVFC                        NA                   NA
+mu_b_american                          NA                   NA
+sigma_b_american                       NA                   NA
+mu_b_chinese                           NA                   NA
+sigma_b_chinese                        NA                   NA
+mu_b_japanese                          NA                   NA
+sigma_b_japanese                       NA                   NA
+mu_b_skorean                           NA                   NA
+sigma_b_skorean                        NA                   NA
+                            mu_b_japanese     sigma_b_japanese
+mu_b_Price                             NA                   NA
+sigma_b_Price                          NA                   NA
+mu_b_Acceleration                      NA                   NA
+sigma_b_Acceleration                   NA                   NA
+mu_b_OpCost                            NA                   NA
+sigma_b_OpCost                         NA                   NA
+mu_b_hev                               NA                   NA
+sigma_b_hev                            NA                   NA
+mu_b_phev20                            NA                   NA
+sigma_b_phev20                         NA                   NA
+mu_b_phev40                            NA                   NA
+sigma_b_phev40                         NA                   NA
+mu_b_bev                               NA                   NA
+sigma_b_bev                            NA                   NA
+mu_b_bevRangeRel                       NA                   NA
+sigma_b_bevRangeRel                    NA                   NA
+mu_b_noBEVFC                           NA                   NA
+sigma_b_noBEVFC                        NA                   NA
+mu_b_american                          NA                   NA
+sigma_b_american                       NA                   NA
+mu_b_chinese                           NA                   NA
+sigma_b_chinese                        NA                   NA
+mu_b_japanese                          NA                   NA
+sigma_b_japanese                       NA                   NA
+mu_b_skorean                           NA                   NA
+sigma_b_skorean                        NA                   NA
+                             mu_b_skorean      sigma_b_skorean
+mu_b_Price                             NA                   NA
+sigma_b_Price                          NA                   NA
+mu_b_Acceleration                      NA                   NA
+sigma_b_Acceleration                   NA                   NA
+mu_b_OpCost                            NA                   NA
+sigma_b_OpCost                         NA                   NA
+mu_b_hev                               NA                   NA
+sigma_b_hev                            NA                   NA
+mu_b_phev20                            NA                   NA
+sigma_b_phev20                         NA                   NA
+mu_b_phev40                            NA                   NA
+sigma_b_phev40                         NA                   NA
+mu_b_bev                               NA                   NA
+sigma_b_bev                            NA                   NA
+mu_b_bevRangeRel                       NA                   NA
+sigma_b_bevRangeRel                    NA                   NA
+mu_b_noBEVFC                           NA                   NA
+sigma_b_noBEVFC                        NA                   NA
+mu_b_american                          NA                   NA
+sigma_b_american                       NA                   NA
+mu_b_chinese                           NA                   NA
+sigma_b_chinese                        NA                   NA
+mu_b_japanese                          NA                   NA
+sigma_b_japanese                       NA                   NA
+mu_b_skorean                           NA                   NA
+sigma_b_skorean                        NA                   NA
+
+ 20 most extreme outliers in terms of lowest average per choice prediction:
+   ID Avg prob per choice
+ 1989         0.004367511
+  420         0.005403021
+ 1808         0.005495211
+ 1064         0.010928747
+  396         0.013267466
+ 1799         0.013972029
+  310         0.016462707
+  982         0.019585313
+  815         0.023104842
+  387         0.025498909
+  918         0.025956437
+ 1884         0.028213558
+   79         0.029593343
+  738         0.031180862
+  130         0.036068165
+ 1032         0.042674946
+  583         0.044451903
+  978         0.048303522
+ 1557         0.052882328
+ 1812         0.055726548
+
+Settings and functions used in model definition:
+
+apollo_control
+--------------
+                       Value                                            
+modelName              "MXL1k_none_pref_CV05"                           
+indivID                "ID"                                             
+panelData              "TRUE"                                           
+weights                "Weight2018"                                     
+outputDirectory        "logs/job_35774751/MXL1k_none_pref/"             
+nCores                 "4"                                              
+noModification         "TRUE"                                           
+calculateLLC           "FALSE"                                          
+workInLogs             "TRUE"                                           
+mixing                 "TRUE"                                           
+debug                  "FALSE"                                          
+modelDescr             "No model description provided in apollo_control"
+seed                   "13"                                             
+HB                     "FALSE"                                          
+noValidation           "TRUE"                                           
+noDiagnostics          "TRUE"                                           
+analyticHessian        "FALSE"                                          
+memorySaver            "FALSE"                                          
+analyticGrad           "FALSE"                                          
+analyticGrad_manualSet "TRUE"                                           
+overridePanel          "FALSE"                                          
+preventOverridePanel   "FALSE"                                          
+
+Hessian routines attempted
+--------------------------
+none
+
+
+apollo_randCoeff
+------------------
+function (apollo_beta, apollo_inputs) 
+{
+    randcoeff <- list()
+    space <- tolower(apollo_inputs$utility_space)
+    attrs <- apollo_inputs$observed_attributes
+    if (space == "pref") {
+        for (attr in attrs) {
+            mu_name <- paste0("mu_b_", attr)
+            sigma_name <- paste0("sigma_b_", attr)
+            draw_name <- paste0("draws_", attr)
+            out_name <- paste0("b_", attr)
+            mu_val <- apollo_beta[mu_name]
+            sigma_val <- apollo_beta[sigma_name]
+            draw_val <- apollo_inputs$draws[[draw_name]]
+            if (!is.null(apollo_inputs$lognorm_price_dist) && 
+                apollo_inputs$lognorm_price_dist == TRUE && attr == 
+                "Price") {
+                randcoeff[[out_name]] <- -1 * exp(mu_val + sigma_val * 
+                  draw_val)
+            }
+            else {
+                randcoeff[[out_name]] <- mu_val + sigma_val * 
+                  draw_val
+            }
+        }
+    }
+    else if (space == "wtp") {
+        if (apollo_inputs$scalingFactor_dist) {
+            mu_name <- paste0("mu_scalingFactor")
+            sigma_name <- paste0("sigma_scalingFactor")
+            draw_name <- paste0("draws_scalingFactor")
+            out_name <- paste0("scalingFactor")
+            mu_val <- apollo_beta[mu_name]
+            sigma_val <- apollo_beta[sigma_name]
+            draw_val <- apollo_inputs$draws[[draw_name]]
+            randcoeff[[out_name]] <- mu_val + sigma_val * draw_val
+        }
+        attrs_no_price <- setdiff(attrs, "Price")
+        for (attr2 in attrs_no_price) {
+            mu_name <- paste0("mu_wtp_", attr2)
+            sigma_name <- paste0("sigma_wtp_", attr2)
+            draw_name <- paste0("draws_", attr2)
+            out_name <- paste0("wtp_", attr2)
+            mu_val <- apollo_beta[mu_name]
+            sigma_val <- apollo_beta[sigma_name]
+            draw_val <- apollo_inputs$draws[[draw_name]]
+            randcoeff[[out_name]] <- mu_val + sigma_val * draw_val
+        }
+    }
+    return(randcoeff)
+}
+<bytecode: 0x55efbfe75a60>
+<environment: 0x55efbeb39b10>
+
+
+apollo_probabilities
+----------------------
+function (apollo_beta, apollo_inputs, functionality = "estimate") 
+{
+    apollo_attach(apollo_beta, apollo_inputs)
+    on.exit(apollo_detach(apollo_beta, apollo_inputs))
+    P <- list()
+    V <- list()
+    alternatives <- unique(gsub("^.*C", "C", apollo_inputs$availCols))
+    alt_codes <- setNames(seq_along(alternatives), alternatives)
+    for (altName in alternatives) {
+        if (tolower(apollo_inputs$utility_space) == "wtp") {
+            attrs_no_price <- setdiff(apollo_inputs$observed_attributes, 
+                "Price")
+            attr_terms <- paste0("wtp_", attrs_no_price, " * ", 
+                attrs_no_price, altName, collapse = " + ")
+            v_expr <- paste0("scalingFactor * (", attr_terms, 
+                " - Price", altName, ")")
+        }
+        else {
+            attr_terms <- paste0("b_", apollo_inputs$observed_attributes, 
+                " * ", apollo_inputs$observed_attributes, altName, 
+                collapse = " + ")
+            v_expr <- attr_terms
+        }
+        V[[altName]] <- eval(parse(text = v_expr))
+    }
+    mnl_settings <- list(alternatives = alt_codes, choiceVar = Choice, 
+        utilities = V)
+    P[["model"]] <- apollo_mnl(mnl_settings, functionality)
+    P <- apollo_panelProd(P, apollo_inputs, functionality)
+    P <- apollo_avgInterDraws(P, apollo_inputs, functionality)
+    P <- apollo_weighting(P, apollo_inputs, functionality)
+    P <- apollo_prepareProb(P, apollo_inputs, functionality)
+    return(P)
+}
+<bytecode: 0x55efbfeb05e0>
+<environment: 0x55efbeb31de8>

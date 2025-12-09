@@ -1,0 +1,309 @@
+SLURM_ARRAY_JOB_ID: 35813009 (current CV job)
+SLURM_JOB_ID: 35813037
+SLURM_ARRAY_TASK_ID: 2
+ORIGINAL_JOB_ID: 35774751 (multistart job)
+Running cross-validation for model 2 using estimation results from job 35774751...
+Loaded Part 2 results for: LC8_CNL_pref 
+Constraints:
+ [1] "alpha_PHEV_ICE_logistic_1 < 10"  "alpha_PHEV_ICE_logistic_1 > -10"
+ [3] "alpha_PHEV_ICE_logistic_2 < 10"  "alpha_PHEV_ICE_logistic_2 > -10"
+ [5] "alpha_PHEV_ICE_logistic_3 < 10"  "alpha_PHEV_ICE_logistic_3 > -10"
+ [7] "alpha_PHEV_ICE_logistic_4 < 10"  "alpha_PHEV_ICE_logistic_4 > -10"
+ [9] "alpha_PHEV_ICE_logistic_5 < 10"  "alpha_PHEV_ICE_logistic_5 > -10"
+[11] "alpha_PHEV_ICE_logistic_6 < 10"  "alpha_PHEV_ICE_logistic_6 > -10"
+[13] "alpha_PHEV_ICE_logistic_7 < 10"  "alpha_PHEV_ICE_logistic_7 > -10"
+[15] "alpha_PHEV_ICE_logistic_8 < 10"  "alpha_PHEV_ICE_logistic_8 > -10"
+Using apollo_beta 
+                b_Price_1          b_Acceleration_1                b_OpCost_1 
+             -0.066828961              -0.038960201               0.114860150 
+                  b_hev_1                b_phev20_1                b_phev40_1 
+             -0.262349649              -1.437159952              -0.589859232 
+                  b_bev_1           b_bevRangeRel_1               b_noBEVFC_1 
+             -1.989467674               0.132287174               0.825640634 
+             b_american_1               b_chinese_1              b_japanese_1 
+             -2.741293175              -6.231060272              -0.771857263 
+              b_skorean_1              lambda_ICE_1              lambda_BEV_1 
+             -3.977251598               1.602611812               1.687996534 
+alpha_PHEV_ICE_logistic_1         class_intercept_1                 b_Price_2 
+              7.843032553               0.000000000              -0.082805564 
+         b_Acceleration_2                b_OpCost_2                   b_hev_2 
+             -0.113186157              -0.247858164               0.292589867 
+               b_phev20_2                b_phev40_2                   b_bev_2 
+              0.477751883               0.406625856               0.605314075 
+          b_bevRangeRel_2               b_noBEVFC_2              b_american_2 
+              0.270284656              -0.641257772              -0.330746012 
+              b_chinese_2              b_japanese_2               b_skorean_2 
+             -4.521825191               0.278038726              -0.208802508 
+             lambda_ICE_2              lambda_BEV_2 alpha_PHEV_ICE_logistic_2 
+              0.343671402               1.009431256               0.434936559 
+        class_intercept_2                 b_Price_3          b_Acceleration_3 
+              1.196824310              -0.109096956              -0.166949803 
+               b_OpCost_3                   b_hev_3                b_phev20_3 
+             -0.196248829               0.099913057               0.092660031 
+               b_phev40_3                   b_bev_3           b_bevRangeRel_3 
+              0.161566089               0.002611376               0.484742489 
+              b_noBEVFC_3              b_american_3               b_chinese_3 
+             -0.300848156              -0.167619861              -0.230907103 
+             b_japanese_3               b_skorean_3              lambda_ICE_3 
+             -0.329289630              -0.361698640               0.252000722 
+             lambda_BEV_3 alpha_PHEV_ICE_logistic_3         class_intercept_3 
+              0.634422800              -0.185527288               1.048956604 
+                b_Price_4          b_Acceleration_4                b_OpCost_4 
+             -0.020081985              -0.157425737              -0.100551922 
+                  b_hev_4                b_phev20_4                b_phev40_4 
+              0.531227902               0.332300478               0.563843360 
+                  b_bev_4           b_bevRangeRel_4               b_noBEVFC_4 
+              0.702900475               0.109194476              -0.563196550 
+             b_american_4               b_chinese_4              b_japanese_4 
+              0.348975517               0.004394513               0.251189508 
+              b_skorean_4              lambda_ICE_4              lambda_BEV_4 
+             -0.334743990               0.737063539               0.806272992 
+alpha_PHEV_ICE_logistic_4         class_intercept_4                 b_Price_5 
+              4.089798208               0.852904491              -0.033332951 
+         b_Acceleration_5                b_OpCost_5                   b_hev_5 
+             -0.080247878              -0.075746360              -0.321749648 
+               b_phev20_5                b_phev40_5                   b_bev_5 
+             -0.025723153              -0.095035743              -1.958747823 
+          b_bevRangeRel_5               b_noBEVFC_5              b_american_5 
+              0.328259979              -0.170814108              -0.211332423 
+              b_chinese_5              b_japanese_5               b_skorean_5 
+             -0.987679986              -0.199135284              -0.144165176 
+             lambda_ICE_5              lambda_BEV_5 alpha_PHEV_ICE_logistic_5 
+              0.682668308               0.441379092               0.468996185 
+        class_intercept_5                 b_Price_6          b_Acceleration_6 
+              0.791790997              -0.109221343               0.057125833 
+               b_OpCost_6                   b_hev_6                b_phev20_6 
+             -0.053568792              -0.387834882              -0.674212967 
+               b_phev40_6                   b_bev_6           b_bevRangeRel_6 
+             -0.388182980              -1.637616841               0.485061572 
+              b_noBEVFC_6              b_american_6               b_chinese_6 
+              0.111957622               0.982912840              -0.913637208 
+             b_japanese_6               b_skorean_6              lambda_ICE_6 
+              0.478954900               0.216056937               0.360834061 
+             lambda_BEV_6 alpha_PHEV_ICE_logistic_6         class_intercept_6 
+              0.760062447               1.585972675               0.776046305 
+                b_Price_7          b_Acceleration_7                b_OpCost_7 
+             -0.528608942              -0.018732709              -0.240922673 
+                  b_hev_7                b_phev20_7                b_phev40_7 
+             -0.155883144               0.456347294              -0.218669250 
+                  b_bev_7           b_bevRangeRel_7               b_noBEVFC_7 
+             -0.114577330              -0.203878546               0.236217226 
+             b_american_7               b_chinese_7              b_japanese_7 
+              0.126113790              -0.920214835               0.267393714 
+              b_skorean_7              lambda_ICE_7              lambda_BEV_7 
+             -0.136256793               0.127429474               0.629244609 
+alpha_PHEV_ICE_logistic_7         class_intercept_7                 b_Price_8 
+             -0.233556665               0.354691941              -0.058088765 
+         b_Acceleration_8                b_OpCost_8                   b_hev_8 
+             -0.461396618              -0.160883741              -2.180401349 
+               b_phev20_8                b_phev40_8                   b_bev_8 
+             -1.135656115              -0.557492134               1.344074336 
+          b_bevRangeRel_8               b_noBEVFC_8              b_american_8 
+              2.512200294              -0.719717069              -1.325372622 
+              b_chinese_8              b_japanese_8               b_skorean_8 
+             -3.207439981              -0.796179230              -1.080458845 
+             lambda_ICE_8              lambda_BEV_8 alpha_PHEV_ICE_logistic_8 
+              2.884513950               0.884433659              -9.950537550 
+        class_intercept_8 
+             -0.303156629 
+
+ Final LL: Starting Part 3 (Cross-validation + Remaining): LC8_CNL_pref 
+Starting Cross-Validation
+Testing likelihood function.
+5 separate runs will be conducted, each using a random subset of 80% of
+  individuals for estimation, and the remainder for validation.
+Number of individuals
+- for estimation : 587
+- for forecasting : 147
+- in sample (total): 734
+Estimated parameters and log-likelihoods for each sample will be
+  written to:
+  logs/job_35774751/LC8_CNL_pref/LC8_CNL_pref_outOfSample_params.csv
+The matrix defining the observations used in each repetition will be
+  written to:
+  logs/job_35774751/LC8_CNL_pref/LC8_CNL_pref_outOfSample_samples.csv
+
+Estimation cycle 1 (8805 obs.)
+WARNING: Object get_nl_spec from the global environment should not be
+  used inside apollo_probabilities. If needed, save it inside
+  apollo_inputs and call it as apollo_inputs$get_nl_spec. 
+Apollo found a model component of type CNL without a componentName. The
+  name was set to "Class_1" by default.
+Apollo found a model component of type CNL without a componentName. The
+  name was set to "Class_2" by default.
+Apollo found a model component of type CNL without a componentName. The
+  name was set to "Class_3" by default.
+Apollo found a model component of type CNL without a componentName. The
+  name was set to "Class_4" by default.
+Apollo found a model component of type CNL without a componentName. The
+  name was set to "Class_5" by default.
+Apollo found a model component of type CNL without a componentName. The
+  name was set to "Class_6" by default.
+Apollo found a model component of type CNL without a componentName. The
+  name was set to "Class_7" by default.
+Apollo found a model component of type CNL without a componentName. The
+  name was set to "Class_8" by default.
+INFORMATION: While preparing your inputs for multi-core estimation, the
+  following objects were found in "apollo_inputs", but were not split
+  across cores: "attrCols", "availCols", "constraints",
+  "heterogeneity_spec", "lognorm_price_dist", "n_classes", "n_draws",
+  "nesting_params", "nesting_spec", "observed_attributes",
+  "scalingFactor_dist", "utility_space". If these objects contain
+  observation or individual-specific data, and thus need to be split,
+  please add a column with the IDs to these objects, and call this
+  column "ID" 
+Saving CV model as: LC8_CNL_pref_CV01
+Model output saved to logs/job_35774751/LC8_CNL_pref/LC8_CNL_pref_CV01_output.txt 
+Estimates saved to logs/job_35774751/LC8_CNL_pref/LC8_CNL_pref_CV01_estimates.csv 
+Model object saved to logs/job_35774751/LC8_CNL_pref/LC8_CNL_pref_CV01.rds 
+Out-of-sample time: 0.122
+Iter. total wall time: 1651.415 secs
+Estimation results written to file.
+Estimation cycle 2 (8805 obs.)
+WARNING: Object get_nl_spec from the global environment should not be
+  used inside apollo_probabilities. If needed, save it inside
+  apollo_inputs and call it as apollo_inputs$get_nl_spec. 
+INFORMATION: While preparing your inputs for multi-core estimation, the
+  following objects were found in "apollo_inputs", but were not split
+  across cores: "attrCols", "availCols", "constraints",
+  "heterogeneity_spec", "lognorm_price_dist", "n_classes", "n_draws",
+  "nesting_params", "nesting_spec", "observed_attributes",
+  "scalingFactor_dist", "utility_space". If these objects contain
+  observation or individual-specific data, and thus need to be split,
+  please add a column with the IDs to these objects, and call this
+  column "ID" 
+Saving CV model as: LC8_CNL_pref_CV02
+Model output saved to logs/job_35774751/LC8_CNL_pref/LC8_CNL_pref_CV02_output.txt 
+Estimates saved to logs/job_35774751/LC8_CNL_pref/LC8_CNL_pref_CV02_estimates.csv 
+Model object saved to logs/job_35774751/LC8_CNL_pref/LC8_CNL_pref_CV02.rds 
+Out-of-sample time: 0.116
+Iter. total wall time: 5461.658 secs
+Estimation results written to file.
+Estimation cycle 3 (8805 obs.)
+WARNING: Object get_nl_spec from the global environment should not be
+  used inside apollo_probabilities. If needed, save it inside
+  apollo_inputs and call it as apollo_inputs$get_nl_spec. 
+INFORMATION: While preparing your inputs for multi-core estimation, the
+  following objects were found in "apollo_inputs", but were not split
+  across cores: "attrCols", "availCols", "constraints",
+  "heterogeneity_spec", "lognorm_price_dist", "n_classes", "n_draws",
+  "nesting_params", "nesting_spec", "observed_attributes",
+  "scalingFactor_dist", "utility_space". If these objects contain
+  observation or individual-specific data, and thus need to be split,
+  please add a column with the IDs to these objects, and call this
+  column "ID" 
+Saving CV model as: LC8_CNL_pref_CV03
+Model output saved to logs/job_35774751/LC8_CNL_pref/LC8_CNL_pref_CV03_output.txt 
+Estimates saved to logs/job_35774751/LC8_CNL_pref/LC8_CNL_pref_CV03_estimates.csv 
+Model object saved to logs/job_35774751/LC8_CNL_pref/LC8_CNL_pref_CV03.rds 
+Out-of-sample time: 0.145
+Iter. total wall time: 5423.736 secs
+Estimation results written to file.
+Estimation cycle 4 (8805 obs.)
+WARNING: Object get_nl_spec from the global environment should not be
+  used inside apollo_probabilities. If needed, save it inside
+  apollo_inputs and call it as apollo_inputs$get_nl_spec. 
+INFORMATION: While preparing your inputs for multi-core estimation, the
+  following objects were found in "apollo_inputs", but were not split
+  across cores: "attrCols", "availCols", "constraints",
+  "heterogeneity_spec", "lognorm_price_dist", "n_classes", "n_draws",
+  "nesting_params", "nesting_spec", "observed_attributes",
+  "scalingFactor_dist", "utility_space". If these objects contain
+  observation or individual-specific data, and thus need to be split,
+  please add a column with the IDs to these objects, and call this
+  column "ID" 
+Saving CV model as: LC8_CNL_pref_CV04
+Model output saved to logs/job_35774751/LC8_CNL_pref/LC8_CNL_pref_CV04_output.txt 
+Estimates saved to logs/job_35774751/LC8_CNL_pref/LC8_CNL_pref_CV04_estimates.csv 
+Model object saved to logs/job_35774751/LC8_CNL_pref/LC8_CNL_pref_CV04.rds 
+Out-of-sample time: 0.121
+Iter. total wall time: 2547.737 secs
+Estimation results written to file.
+Estimation cycle 5 (8805 obs.)
+WARNING: Object get_nl_spec from the global environment should not be
+  used inside apollo_probabilities. If needed, save it inside
+  apollo_inputs and call it as apollo_inputs$get_nl_spec. 
+INFORMATION: While preparing your inputs for multi-core estimation, the
+  following objects were found in "apollo_inputs", but were not split
+  across cores: "attrCols", "availCols", "constraints",
+  "heterogeneity_spec", "lognorm_price_dist", "n_classes", "n_draws",
+  "nesting_params", "nesting_spec", "observed_attributes",
+  "scalingFactor_dist", "utility_space". If these objects contain
+  observation or individual-specific data, and thus need to be split,
+  please add a column with the IDs to these objects, and call this
+  column "ID" 
+Saving CV model as: LC8_CNL_pref_CV05
+Model output saved to logs/job_35774751/LC8_CNL_pref/LC8_CNL_pref_CV05_output.txt 
+Estimates saved to logs/job_35774751/LC8_CNL_pref/LC8_CNL_pref_CV05_estimates.csv 
+Model object saved to logs/job_35774751/LC8_CNL_pref/LC8_CNL_pref_CV05.rds 
+Out-of-sample time: 0.134
+Iter. total wall time: 1549.759 secs
+Estimation results written to file.
+Processing time: 4.620993 hours
+
+Summary of cross-validation:
+         LL per obs in estimation sample LL per obs in validation sample
+sample_1                         -0.7127                         -0.7122
+sample_2                         -0.7059                             NaN
+sample_3                         -0.7095                         -0.7277
+sample_4                         -0.6743                         -0.8942
+sample_5                         -0.7094                         -0.7056
+Average                          -0.7024                             NaN
+         % difference CPU sec in validation sample
+sample_1     -0.07414                       0.1220
+sample_2          NaN                       0.1160
+sample_3      2.57716                       0.1450
+sample_4     32.61247                       0.1210
+sample_5     -0.52919                       0.1340
+Average           NaN                       0.1276
+Cross-Validation Complete
+Starting Psi' on Dataset Test 
+Mean Psi' (all) =  0.3509118 
+Mean Psi' (chosen only) =  0.3746604 
+Saved psi' dataset to:  logs/job_35774751/LC8_CNL_pref//LC8_CNL_pref_psi_prime_dataset.csv 
+Psi' on Dataset Test Complete
+Starting Speed Test 
+       ___Draws___              sec/
+nCores inter intra  progress  LLCall RAM(MB)
+     1     0     0 ..........   3.04   262.5
+     2     0     0 INFORMATION: While preparing your inputs for multi-core estimation, the
+  following objects were found in "apollo_inputs", but were not split
+  across cores: "attrCols", "availCols", "constraints",
+  "heterogeneity_spec", "lognorm_price_dist", "n_classes", "n_draws",
+  "nesting_params", "nesting_spec", "observed_attributes",
+  "scalingFactor_dist", "utility_space". If these objects contain
+  observation or individual-specific data, and thus need to be split,
+  please add a column with the IDs to these objects, and call this
+  column "ID" 
+..........   1.95   591.7
+     4     0     0 INFORMATION: While preparing your inputs for multi-core estimation, the
+  following objects were found in "apollo_inputs", but were not split
+  across cores: "attrCols", "availCols", "constraints",
+  "heterogeneity_spec", "lognorm_price_dist", "n_classes", "n_draws",
+  "nesting_params", "nesting_spec", "observed_attributes",
+  "scalingFactor_dist", "utility_space". If these objects contain
+  observation or individual-specific data, and thus need to be split,
+  please add a column with the IDs to these objects, and call this
+  column "ID" 
+..........   1.71   909.1
+
+Summary of results (sec. per call to LL function)
+       draws0
+cores1 3.0372
+cores2 1.9473
+cores4 1.7141
+    model_name cores inter_draws intra_draws calls time_per_call ram_mb
+1 LC8_CNL_pref     1           0           0   100      3.037177  262.5
+2 LC8_CNL_pref     2           0           0   100      1.947258  591.7
+3 LC8_CNL_pref     4           0           0   100      1.714140  909.1
+Saved speed test results to: logs/job_35774751/LC8_CNL_pref//LC8_CNL_pref_speedTest.csv 
+Saved detailed speed test results to: logs/job_35774751/LC8_CNL_pref//LC8_CNL_pref_speedTest_detailed.csv 
+Speed Test Complete 
+Starting Psi' Tests
+Psi' Tests Complete
+Starting Function Evaluation Timing
+Function Evaluation Timing Complete
+Part 3 (Cross-validation + Remaining) complete for: LC8_CNL_pref 
+All parts complete! Total execution time: 43.25 hours
+Final results saved to: logs/job_35774751/LC8_CNL_pref 
+Done with cross-validation. Results and logs saved to logs/job_35774751/
