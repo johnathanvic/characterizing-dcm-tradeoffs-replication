@@ -68,8 +68,9 @@ model_order <- c("MNL_none_pref",           "NL_NL_pref",           "CNL_CNL_pre
                  "LCL4_none_pref",           "LCL4_NL_pref",           "LCL4_CNL_pref",
                  "LCL6_none_pref",           "LCL6_NL_pref",           "LCL6_CNL_pref",
                  "LCL8_none_pref",           "LCL8_NL_pref",           "LCL8_CNL_pref",
-                 "MXL100_none_pref",          "MXL500_none_pref",    "MXL1k_none_pref",
-                 "MXL100_none_wtp",          "MXL500_none_wtp",     "MXL1k_none_wtp"
+                 "MXL100_none_wtp",          "MXL100_none_pref",
+                 "MXL500_none_wtp",          "MXL500_none_pref",
+                 "MXL1k_none_wtp",           "MXL1k_none_pref"
                  )
 
 model_labels <- c(
@@ -96,13 +97,40 @@ model_labels <- c(
   "LCL8_CNL_pref"    = "LC-CNL (8 cl.)",
 
   # Mixed logit models
-  "MXL100_none_pref" = "MXL (Pref, 100 dr.)",
-  "MXL500_none_pref" = "MXL (Pref, 500 dr.)",
-  "MXL1k_none_pref"  = "MXL (Pref, 1k dr.)",
   "MXL100_none_wtp"  = "MXL (WTP, 100 dr.)",
+  "MXL100_none_pref" = "MXL (Pref, 100 dr.)",
   "MXL500_none_wtp"  = "MXL (WTP, 500 dr.)",
-  "MXL1k_none_wtp"   = "MXL (WTP, 1k dr.)"
+  "MXL500_none_pref" = "MXL (Pref, 500 dr.)",
+  "MXL1k_none_wtp"   = "MXL (WTP, 1k dr.)",
+  "MXL1k_none_pref"  = "MXL (Pref, 1k dr.)"
 )
+
+model_labels_underscore <- c(
+  # Baseline models
+  "MNL_none_pref"    = "MNL",
+  "NL_NL_pref"       = "NL",
+  "CNL_CNL_pref"     = "CNL",
+  # Latent class models
+  "LCL2_none_pref"   = "LCL[2~cl.]",
+  "LCL2_NL_pref"     = "LC-NL[2~cl.]",
+  "LCL2_CNL_pref"    = "LC-CNL[2~cl.]",
+  "LCL4_none_pref"   = "LCL[4~cl.]",
+  "LCL4_NL_pref"     = "LC-NL[4~cl.]",
+  "LCL4_CNL_pref"    = "LC-CNL[4~cl.]",
+  "LCL6_none_pref"   = "LCL[6~cl.]",
+  "LCL6_NL_pref"     = "LC-NL[6~cl.]",
+  "LCL6_CNL_pref"    = "LC-CNL[6~cl.]",
+  "LCL8_none_pref"   = "LCL[8~cl.]",
+  "LCL8_NL_pref"     = "LC-NL[8~cl.]",
+  "LCL8_CNL_pref"    = "LC-CNL[8~cl.]",
+  # Mixed logit models
+  "MXL100_none_pref" = "MXL[Pref*','~100~dr.]",
+  "MXL500_none_pref" = "MXL[Pref*','~500~dr.]",
+  "MXL1k_none_pref"  = "MXL[Pref*','~1*k~dr.]",
+  "MXL100_none_wtp"  = "MXL[WTP*','~100~dr.]",
+  "MXL500_none_wtp"  = "MXL[WTP*','~500~dr.]",
+  "MXL1k_none_wtp"   = "MXL[WTP*','~1*k~dr.]"
+) # add "parse = TRUE" to geom_text_repel()
 
 ## Timing
 time_files <- list.files(data_folder, 
@@ -228,7 +256,7 @@ summary_df <- summary_oos_df %>%
 
 ### Pareto summary
 
-```{r, echo=FALSE, fig.width=4, fig.height=4}
+```{r, echo=FALSE, fig.width=8, fig.height=3}
 # First, extract the reference values from MNL_none_pref
 reference_values <- summary_df %>%
   filter(model_name == "MNL_none_pref") %>%
@@ -251,6 +279,7 @@ ggplot(mod_summary_df, aes(y = rel_cpu, x = mean_avg_likelihood,
   geom_point(alpha = 0.7, size = 5) +
   geom_text_repel(aes(label = model_label), size = 3, color = "black",
                   max.overlaps = 100, 
+                  # parse = TRUE,
                   fontface = "bold",
                   force = 5,            # default ~1, higher pushes labels farther from points
                   force_pull = 2,       # adds pull toward data points after pushing away
@@ -299,7 +328,7 @@ ggplot(mod_summary_df, aes(y = rel_cpu, x = mean_avg_likelihood,
   )
 
 
-ggsave("output/Figures/pareto_summary.png", width = 4, height = 4, dpi = 300)
+# ggsave("output/Figures/pareto_summary.png", width = 4, height = 4, dpi = 300)
 
 
 ```
@@ -399,6 +428,8 @@ print(p)
 ggsave("output/Figures/pareto_summary.png", width = 4, height = 4, dpi = 300)
 
 ```
+
+### Test pareto frontier
 
 ```{r}
 # First identify Pareto optimal points
@@ -523,28 +554,227 @@ print(p)
 # ggsave("output/Figures/pareto_summary.png", width = 4, height = 4, dpi = 300)
 
 ```
+# Poster plots
 
-### 2d Pareto Frontiers
+```{r}
+library(patchwork)
 
-```{r, echo=FALSE, fig.width=4, fig.height=4}
-# Filter to keep only selected models
-models_to_keep <- c()
+# Create fold_id based on row number within each model
+oos_df <- oos_df %>%
+  group_by(model_name) %>%
+  mutate(fold_id = row_number()) %>%
+  ungroup()
 
-# Add model category column based on model_label
-mod_summary_df <- mod_summary_df %>%
-  mutate(model_category = case_when(
-    model_label == "MNL" ~ "MNL",
-    model_label == "NL" ~ "NL",
-    grepl("^LCL \\(", model_label) ~ "LCL",
-    grepl("^LC-NL \\(", model_label) ~ "LC-NL",
-    grepl("^MXL \\(", model_label) ~ "MXL",
-    TRUE ~ "Other"
-  ))
+n_cores <- 1
 
-# Define color palette for model categories
-model_colors <- c("MNL" = "#E41A1C", "NL" = "#377EB8", "LCL" = "#4DAF4A",
-                  "LC-NL" = "#984EA3", "MXL" = "#FF7F00")
+# Identify which models have any NA values
+models_with_na <- oos_df %>%
+  group_by(model_label) %>%
+  summarise(has_na = any(is.na(exp(avgLLObs_val)))) %>%
+  filter(has_na) %>%
+  pull(model_label)
+label_colors <- rev(ifelse(levels(oos_df$model_label) %in% models_with_na, "red", "black"))
 
+# Plot 1: Out-of-Sample Fit
+p1 <- ggplot(oos_df, aes(y = model_label, x = exp(avgLLObs_val),
+                   group = fold_id, color = factor(fold_id))) +
+  geom_point(alpha = 0.6) +
+  geom_text_repel(
+    data = oos_df %>% filter(model_label == levels(model_label)[1]),
+    aes(label = paste0(" #", fold_id)),
+    size = 2.5,
+    nudge_y = 1.5,
+    direction = "y",
+    hjust = 0,
+    segment.color = NA,
+    min.segment.length = 0
+  ) +
+  scale_y_discrete(limits = rev(levels(oos_df$model_label))) +
+  theme_minimal(base_size = 10) +
+  labs(title = "Out-of-Sample Fit \n (by Holdout Sample)",
+       x = "Avg. Likelihood",
+       y = NULL) +
+  theme(axis.text.y = element_text(size = 9, hjust = 0, color = label_colors),
+        axis.text.x = element_text(size = 9),
+        axis.title.x = element_text(size = 10),
+        plot.title = element_text(size = 10, face = "bold"),
+        plot.margin = margin(5, 25, 5, 5),
+        legend.position = "none")
+
+# Plot 2: Psi Prime
+p2 <- ggplot(psi_df, aes(y = model_label, x = psi_prime)) +
+  stat_summary(
+    fun = mean,
+    fun.min = function(x) t.test(x)$conf.int[1],
+    fun.max = function(x) t.test(x)$conf.int[2],
+    geom = "errorbar",
+    width = 0.9,
+    linewidth = 0.6
+  ) +
+  stat_summary(
+    fun = mean,
+    geom = "point",
+    size = 1
+  ) +
+  stat_summary(
+    fun = mean,
+    geom = "text",
+    aes(label = after_stat(round(x, 2))),
+    hjust = -0.3,
+    size = 3
+  ) +
+  scale_x_continuous(expand = expansion(mult = c(0.05, 0.15))) +
+  scale_y_discrete(limits = rev) +
+  theme_minimal(base_size = 10) +
+  labs(title = "Substitution Invariance \n (95% CI)",
+       y = NULL,
+       x = expression("Substitution Invariance (" * Psi * "')")) +
+  theme(
+    axis.text.y = element_blank(),
+    axis.text.x = element_text(size = 9),
+    axis.title.x = element_text(size = 10),
+    plot.title = element_text(size = 11, face = "bold"),
+    plot.margin = margin(5, 5, 5, 5)
+  )
+
+# Plot 3: Timing
+# Calculate reference values
+reference_timing <- timing_df %>%
+  filter(cores == n_cores, model_label == "MNL") %>%
+  summarise(
+    mean_elapsed = mean(sys_elapsed_seconds),
+    median_elapsed = median(sys_elapsed_seconds),
+    mean_cpu = mean(proc_total_cpu_seconds),
+    median_cpu = median(proc_total_cpu_seconds)
+  )
+
+# Create relative timing dataframe
+rel_timing_df <- timing_df %>%
+  filter(cores == n_cores) %>%
+  mutate(
+    rel_elapsed_mean = sys_elapsed_seconds / reference_timing$mean_elapsed,
+    rel_elapsed_median = sys_elapsed_seconds / reference_timing$median_elapsed,
+    rel_cpu_mean = proc_total_cpu_seconds / reference_timing$mean_cpu,
+    rel_cpu_median = proc_total_cpu_seconds / reference_timing$median_cpu
+  )
+
+# CPU Time Mean + CI
+plot_data <- rel_timing_df %>%
+  group_by(model_label) %>%
+  summarise(
+    mean_cpu = mean(rel_cpu_mean),
+    ci_lower = t.test(rel_cpu_mean)$conf.int[1],
+    ci_upper = t.test(rel_cpu_mean)$conf.int[2],
+    .groups = "drop"
+  )
+
+p3 <- ggplot(plot_data, aes(y = model_label, x = mean_cpu)) +
+  geom_errorbar(
+    aes(xmin = ci_lower, xmax = ci_upper),
+    width = 0.9,
+    linewidth = 0.6
+  ) +
+  geom_point(size = 1) +
+  geom_text(
+    aes(x = ci_upper, label = paste0(round(mean_cpu, 0), "x")),
+    hjust = -0.3,
+    size = 3
+  ) +
+  geom_vline(xintercept = 1, linetype = "dashed", color = "red") +
+  scale_x_log10(expand = expansion(mult = c(0.0, 0.15)), labels = function(x) paste0(x, "x")) +
+  scale_y_discrete(limits = rev) +
+  theme_minimal(base_size = 10) +
+  labs(
+    title = "Function Evaluation Time \n (95% CI)",
+    y = NULL,
+    x = "CPU Time (relative to MNL)"
+  ) +
+  theme(
+    axis.text.y = element_blank(),
+    axis.text.x = element_text(size = 9),
+    axis.title.x = element_text(size = 10),
+    plot.title = element_text(size = 11, face = "bold"),
+    plot.margin = margin(5, 10, 5, 5)
+  )
+
+# Combine plots
+combined_plot <- p1 + p2 + p3 + 
+  plot_layout(ncol = 3, widths = c(1.2, 1, 1))
+# 
+# # Save
+# ggsave(file.path(output_dir, paste0(file_prefix, "combined_comparison.png")), 
+#        plot = combined_plot, width = 12, height = 4, dpi = 300)
+
+# Display
+print(combined_plot)
+```
+
+```{r}
+# mod_summary_df_efficiency <- mod_summary_df %>%
+#   mutate(
+#     # Raw efficiency ratios
+#     fit_per_cpu = pct_improvement_from_random / mean_cpu ,
+#     psi_per_cpu = mean_psi / mean_cpu ,
+#     
+#     # Normalize relative to MNL
+#     fit_per_cpu_norm = fit_per_cpu / fit_per_cpu[model_label == "MNL"],
+#     psi_per_cpu_norm = psi_per_cpu / psi_per_cpu[model_label == "MNL"]
+#   )
+# 
+# mod_summary_df_efficiency %>%
+#   select(model_label, fit_per_cpu, psi_per_cpu_norm) %>%
+#   arrange(desc(fit_per_cpu))
+
+# 
+# mod_summary_df_efficiency <- mod_summary_df %>%
+#   mutate(
+#     # Raw efficiency ratios
+#     fit_per_cpu = pct_improvement_from_random / mean_cpu,
+#     psi_per_cpu = mean_psi / mean_cpu,
+#     
+#     # Normalize where MNL = 0 and MXL (Pref, 1k) = 1
+#     fit_per_cpu_norm = (fit_per_cpu - fit_per_cpu[model_label == "MNL"]) / 
+#                        (fit_per_cpu[model_label == "MXL1k_none_pref"] - fit_per_cpu[model_label == "MNL"]),
+#     psi_per_cpu_norm = (psi_per_cpu - psi_per_cpu[model_label == "MNL"]) / 
+#                        (psi_per_cpu[model_label == "MXL1k_none_pref"] - psi_per_cpu[model_label == "MNL"])
+#   )
+# 
+# mod_summary_df_efficiency %>%
+#   select(model_label, fit_per_cpu_norm, psi_per_cpu_norm) %>%
+#   arrange(desc(fit_per_cpu_norm))
+```
+
+
+### Calc relative timing
+
+```{r, echo=FALSE}
+# # Extract reference values from MNL
+# reference_values <- summary_df %>%
+#   filter(model_label == "MNL") %>%
+#   select(mean_elapsed, se_elapsed, mean_avg_likelihood, se_avg_likelihood, mean_psi, se_psi)
+# 
+# # Calculate relative values while preserving raw values
+# mod_summary_df <- summary_df %>%
+#   mutate(
+#     # Relative timing - with proper SE propagation for ratios
+#     rel_elapsed = mean_elapsed / reference_values$mean_elapsed,
+#     rel_se_elapsed = rel_elapsed * sqrt((se_elapsed/mean_elapsed)^2 + 
+#                                          (reference_values$se_elapsed/reference_values$mean_elapsed)^2),
+#     
+#     # Relative likelihood - correct for differences
+#     rel_avg_likelihood = mean_avg_likelihood - reference_values$mean_avg_likelihood,
+#     rel_se_avg_likelihood = sqrt(se_avg_likelihood^2 + reference_values$se_avg_likelihood^2),
+#     # Relative psi - correct for differences
+#     rel_psi = mean_psi - reference_values$mean_psi,
+#     rel_se_psi = sqrt(se_psi^2 + reference_values$se_psi^2)  # Changed from sd_psi to se_psi
+#   )
+```
+
+## 2d pareto
+
+### Full label accuracy vs cpu
+
+```{r}
 # PLOT 1: Predictive Accuracy vs Function Time (Pareto Frontier)
 # First identify Pareto optimal points
 pareto_points <- mod_summary_df %>%
@@ -555,7 +785,7 @@ pareto_points <- mod_summary_df %>%
 for(i in 1:nrow(pareto_points)) {
   dominated <- FALSE
   for(j in 1:nrow(pareto_points)) {
-    if(i != j &&
+    if(i != j && 
        pareto_points$pct_improvement_from_random[j] >= pareto_points$pct_improvement_from_random[i] &&
        pareto_points$rel_cpu[j] <= pareto_points$rel_cpu[i] &&
        (pareto_points$pct_improvement_from_random[j] > pareto_points$pct_improvement_from_random[i] ||
@@ -571,68 +801,100 @@ pareto_frontier <- pareto_points %>%
   filter(is_pareto) %>%
   arrange(pct_improvement_from_random)
 
+# Calculate normalized accuracy based on mean_avg_likelihood (0 = worst, 1 = best)
+min_likelihood <- min(mod_summary_df$mean_avg_likelihood)
+max_likelihood <- max(mod_summary_df$mean_avg_likelihood)
 
+mod_summary_df <- mod_summary_df %>%
+  mutate(norm_accuracy = (mean_avg_likelihood - min_likelihood) / (max_likelihood - min_likelihood))
+
+pareto_frontier <- pareto_frontier %>%
+  mutate(norm_accuracy = (mean_avg_likelihood - min_likelihood) / (max_likelihood - min_likelihood))
+
+# Manual label positions for better control
+label_positions <- mod_summary_df %>%
+  mutate(
+    label_x = case_when(
+      model_label == "MNL" ~ norm_accuracy + 0,
+      model_label == "NL" ~ norm_accuracy + 0.05,
+      model_label == "LCL (2 cl.)" ~ norm_accuracy - 0.05,
+      model_label == "LCL (4 cl.)" ~ norm_accuracy - 0.05,
+      model_label == "LCL (6 cl.)" ~ norm_accuracy + 0.0,
+      model_label == "LCL (8 cl.)" ~ norm_accuracy + 0.1,
+      model_label == "LC-NL (2 cl.)" ~ norm_accuracy + 0.05,
+      model_label == "LC-NL (4 cl.)" ~ norm_accuracy - 0.02,
+      model_label == "LC-NL (6 cl.)" ~ norm_accuracy + 0.09,
+      model_label == "LC-NL (8 cl.)" ~ norm_accuracy + 0.09,
+      model_label == "MXL (WTP, 100 dr.)" ~ norm_accuracy - 0.2,
+      model_label == "MXL (Pref, 100 dr.)" ~ norm_accuracy - 0.05,
+      model_label == "MXL (WTP, 500 dr.)" ~ norm_accuracy - 0.1,
+      model_label == "MXL (Pref, 500 dr.)" ~ norm_accuracy - 0.12,
+      model_label == "MXL (WTP, 1k dr.)" ~ norm_accuracy - 0.05,
+      model_label == "MXL (Pref, 1k dr.)" ~ norm_accuracy - 0.12,
+      TRUE ~ norm_accuracy
+    ),
+    label_y = case_when(
+      model_label == "MNL" ~ rel_cpu - 50,
+      model_label == "NL" ~ rel_cpu + 50,
+      model_label == "LCL (2 cl.)" ~ rel_cpu - 50,
+      model_label == "LCL (4 cl.)" ~ rel_cpu - 50,
+      model_label == "LCL (6 cl.)" ~ rel_cpu - 50,
+      model_label == "LCL (8 cl.)" ~ rel_cpu + 0,
+      model_label == "LC-NL (2 cl.)" ~ rel_cpu + 50,
+      model_label == "LC-NL (4 cl.)" ~ rel_cpu + 80,
+      model_label == "LC-NL (6 cl.)" ~ rel_cpu + 0,
+      model_label == "LC-NL (8 cl.)" ~ rel_cpu + 20,
+      model_label == "MXL (WTP, 100 dr.)" ~ rel_cpu + 50,
+      model_label == "MXL (Pref, 100 dr.)" ~ rel_cpu + 100,
+      model_label == "MXL (WTP, 500 dr.)" ~ rel_cpu + 40,
+      model_label == "MXL (Pref, 500 dr.)" ~ rel_cpu + 0,
+      model_label == "MXL (WTP, 1k dr.)" ~ rel_cpu + 60,
+      model_label == "MXL (Pref, 1k dr.)" ~ rel_cpu - 0,
+      TRUE ~ rel_cpu
+    )
+  )
 
 # Plot 1: Accuracy vs Time
-p1 <- ggplot(mod_summary_df, aes(y = rel_cpu, x = mean_avg_likelihood, color = model_category)) +
+p1 <- ggplot(mod_summary_df, aes(y = rel_cpu, x = norm_accuracy)) +
   # Add the frontier line
-  geom_line(data = pareto_frontier,
-            aes(y = rel_cpu, x = mean_avg_likelihood,
+  geom_line(data = pareto_frontier, 
+            aes(y = rel_cpu, x = norm_accuracy,
                 linetype = "Pareto Frontier"),
-            color = "darkblue",
+            color = "darkblue", 
             linewidth = 1,
             alpha = 0.6,
             inherit.aes = FALSE) +
-  # Original points (now colored by category)
-  geom_point(alpha = 0.7, size = 5) +
-  # Outline Pareto frontier points with black border
+  # Original points
+  geom_point(alpha = 0.7, size = 5, color = "steelblue") +
+  # Highlight Pareto optimal points
   geom_point(data = pareto_frontier,
-             aes(y = rel_cpu, x = mean_avg_likelihood, fill = model_category),
+             aes(y = rel_cpu, x = norm_accuracy),
              shape = 21,
-             size = 5,
+             size = 5.5,
              stroke = 1.5,
-             color = "black",
-             alpha = 0.7,
+             color = "darkblue",
+             fill = NA,
              inherit.aes = FALSE) +
-  scale_fill_manual(
-    values = model_colors,
-    guide = "none"  # Don't show fill in legend, only color
-  ) +
-  geom_label_repel(data = mod_summary_df %>% filter(model_label %in% models_to_keep),
-                   aes(x = mean_avg_likelihood, y = rel_cpu, label = model_label),
-                   size = 4,
-                   color = "black",
-                   fontface = "bold",
-                   fill = "white",
-                   label.padding = unit(0.15, "lines"),
-                   label.size = 0,
-                   box.padding = 1.5,
-                   point.padding = 1.5,
-                   segment.color = "gray50",
-                   segment.size = 0.3,
-                   max.overlaps = 20,
-                   force = 2,
-                   force_pull = 0.5,
-                   seed = 42) +
+  # Add segments connecting points to labels
+  geom_segment(data = label_positions,
+               aes(x = norm_accuracy, y = rel_cpu,
+                   xend = label_x, yend = label_y),
+               color = "gray50",
+               size = 0.3) +
+  # Add text labels at manual positions with white background
+  geom_label(data = label_positions,
+             aes(x = label_x, y = label_y, label = model_label),
+             size = 2.8,
+             color = "black",
+             fontface = "bold",
+             fill = "white",
+             label.padding = unit(0.15, "lines"),
+             label.size = 0) +
   scale_linetype_manual(
     name = "",
     values = c("Pareto Frontier" = "solid"),
     guide = guide_legend(
-      override.aes = list(color = "darkblue", linewidth = 1),
-      keyheight = unit(0.3, "lines"),
-      keywidth = unit(1.5, "lines"),
-      order = 2,
-      title.vjust = 0.5
-    )
-  ) +
-  scale_color_manual(
-    name = "Model Type",
-    values = model_colors,
-    breaks = c("MNL", "NL", "LCL", "LC-NL", "MXL"),
-    guide = guide_legend(
-      override.aes = list(size = 4, alpha = 0.7),
-      order = 1,
-      keyheight = unit(0.8, "lines")
+      override.aes = list(color = "darkblue", linewidth = 1)
     )
   ) +
   theme_minimal() +
@@ -641,23 +903,34 @@ p1 <- ggplot(mod_summary_df, aes(y = rel_cpu, x = mean_avg_likelihood, color = m
     labels = function(x) paste0(x, "x"),
     sec.axis = sec_axis(
       ~ . * reference_values$mean_cpu,
-      name = "Evaluation Time (CPU sec.)",
+      name = "Evaluation Time (CPU seconds)",
       labels = function(x) round(x, 2)
     )
   ) +
-  scale_x_continuous(limits = c(0.42, 0.485),breaks = seq(0.4, 0.5, 0.02)) +
+  scale_x_continuous(
+    labels = function(x) {
+      case_when(
+        x == 0 ~ "0\nBaseline Model",
+        x == 1 ~ "1\nBest Model",
+        TRUE ~ as.character(round(x, 2))
+      )
+    },
+    breaks = seq(0, 1, 0.2),
+    limits = c(0, 1),
+    sec.axis = sec_axis(
+      ~ . * (max_likelihood - min_likelihood) + min_likelihood,
+      name = "Mean Out-of-Sample Average Likelihood ",
+      labels = function(x) round(x, 3)
+    )
+  ) +
   labs(
-    # title = " Predictive Accuracy vs Computational Cost",
-    title = "",
-    # title = "Pareto Frontier of Computational Cost vs Predictive Accuracy",
-    y = "Computational Cost \n (CPU sec. relative to MNL)",
-    x = "Predictive Accuracy \n (Avg. Likelihood)"
+    title = " Predictive Accuracy vs Computational Cost",
+    y = "Computational Cost",
+    x = "Predictive Accuracy (normalized)"
   ) +
   theme(
-    legend.position = "none",
-    # legend.margin = margin(t = 5, r = 5, b = 0, l = 5),  # Reduce bottom margin
-    axis.text = element_text(size = 10),  # Controls both x and y axis text
-    axis.title = element_text(size = 14), # Controls both x and y axis titles
+    legend.position = c(0.01, 0.99),
+    legend.justification = c(0, 1),
     axis.line.x.bottom = element_line(arrow = grid::arrow(length = unit(0.3, "cm"), 
                                                      ends = "last"),
                                 color = "darkgreen", linewidth = 1),
@@ -668,20 +941,247 @@ p1 <- ggplot(mod_summary_df, aes(y = rel_cpu, x = mean_avg_likelihood, color = m
     axis.text.x.top = element_text(),
     axis.title.y.right = element_text( size = 10),
     axis.text.y.right = element_text()
-    # panel.grid.major = element_blank(),
-    # panel.grid.minor = element_blank()
   )
 
 print(p1)
-
-ggsave("output/Figures/pareto_accuracy.png", width = 4, height = 4, dpi = 300)
-
 ```
 
-```{r, echo=FALSE, fig.width=4, fig.height=4}
+### Full label psi vs cpu
+```{r}
+# PLOT 2: Substitution Distortion vs Function Time (Pareto Frontier)
+# Find Pareto frontier for substitution vs time
+# (lower psi is better, lower cpu is better)
+pareto_points_sub <- mod_summary_df %>%
+  arrange(mean_psi) %>%
+  mutate(is_pareto = FALSE)
 
+for(i in 1:nrow(pareto_points_sub)) {
+  dominated <- FALSE
+  for(j in 1:nrow(pareto_points_sub)) {
+    if(i != j && 
+       pareto_points_sub$mean_psi[j] <= pareto_points_sub$mean_psi[i] &&
+       pareto_points_sub$rel_cpu[j] <= pareto_points_sub$rel_cpu[i] &&
+       (pareto_points_sub$mean_psi[j] < pareto_points_sub$mean_psi[i] ||
+        pareto_points_sub$rel_cpu[j] < pareto_points_sub$rel_cpu[i])) {
+      dominated <- TRUE
+      break
+    }
+  }
+  pareto_points_sub$is_pareto[i] <- !dominated
+}
+
+pareto_frontier_sub <- pareto_points_sub %>%
+  filter(is_pareto) %>%
+  arrange(mean_psi)
+
+# PLOT 2: Substitution Distortion vs Function Time (Pareto Frontier)
+# Find Pareto frontier for substitution vs time
+# (lower psi is better, lower cpu is better)
+pareto_points_sub <- mod_summary_df %>%
+  arrange(mean_psi) %>%
+  mutate(is_pareto = FALSE)
+
+for(i in 1:nrow(pareto_points_sub)) {
+  dominated <- FALSE
+  for(j in 1:nrow(pareto_points_sub)) {
+    if(i != j && 
+       pareto_points_sub$mean_psi[j] <= pareto_points_sub$mean_psi[i] &&
+       pareto_points_sub$rel_cpu[j] <= pareto_points_sub$rel_cpu[i] &&
+       (pareto_points_sub$mean_psi[j] < pareto_points_sub$mean_psi[i] ||
+        pareto_points_sub$rel_cpu[j] < pareto_points_sub$rel_cpu[i])) {
+      dominated <- TRUE
+      break
+    }
+  }
+  pareto_points_sub$is_pareto[i] <- !dominated
+}
+
+pareto_frontier_sub <- pareto_points_sub %>%
+  filter(is_pareto) %>%
+  arrange(mean_psi)
+
+# PLOT 2: Substitution Invariance vs Function Time (Pareto Frontier)
+# Find Pareto frontier for substitution vs time
+# (HIGHER psi is better, lower cpu is better)
+pareto_points_sub <- mod_summary_df %>%
+  arrange(desc(mean_psi)) %>%
+  mutate(is_pareto = FALSE)
+
+for(i in 1:nrow(pareto_points_sub)) {
+  dominated <- FALSE
+  for(j in 1:nrow(pareto_points_sub)) {
+    if(i != j && 
+       pareto_points_sub$mean_psi[j] >= pareto_points_sub$mean_psi[i] &&
+       pareto_points_sub$rel_cpu[j] <= pareto_points_sub$rel_cpu[i] &&
+       (pareto_points_sub$mean_psi[j] > pareto_points_sub$mean_psi[i] ||
+        pareto_points_sub$rel_cpu[j] < pareto_points_sub$rel_cpu[i])) {
+      dominated <- TRUE
+      break
+    }
+  }
+  pareto_points_sub$is_pareto[i] <- !dominated
+}
+
+pareto_frontier_sub <- pareto_points_sub %>%
+  filter(is_pareto) %>%
+  arrange(mean_psi)
+
+# Calculate normalized psi (0 = worst, 1 = best)
+min_psi <- min(mod_summary_df$mean_psi)
+max_psi <- max(mod_summary_df$mean_psi)
+
+mod_summary_df <- mod_summary_df %>%
+  mutate(norm_psi = (mean_psi - min_psi) / (max_psi - min_psi))
+
+pareto_frontier_sub <- pareto_frontier_sub %>%
+  mutate(norm_psi = (mean_psi - min_psi) / (max_psi - min_psi))
+
+# Manual label positions for plot 2
+label_positions_p2 <- mod_summary_df %>%
+  mutate(
+    label_x = case_when(
+      model_label == "MNL" ~ norm_psi + 0,
+      model_label == "NL" ~ norm_psi - 0.02,
+      model_label == "LCL (2 cl.)" ~ norm_psi - 0.0,
+      model_label == "LCL (4 cl.)" ~ norm_psi + 0.02,
+      model_label == "LCL (6 cl.)" ~ norm_psi - 0.01,
+      model_label == "LCL (8 cl.)" ~ norm_psi - 0.02,
+      model_label == "LC-NL (2 cl.)" ~ norm_psi + 0.0,
+      model_label == "LC-NL (4 cl.)" ~ norm_psi + 0.01,
+      model_label == "LC-NL (6 cl.)" ~ norm_psi - 0.0,
+      model_label == "LC-NL (8 cl.)" ~ norm_psi + 0.1,
+      model_label == "MXL (WTP, 100 dr.)" ~ norm_psi - 0.0,
+      model_label == "MXL (Pref, 100 dr.)" ~ norm_psi + 0.1,
+      model_label == "MXL (WTP, 500 dr.)" ~ norm_psi - 0.15,
+      model_label == "MXL (Pref, 500 dr.)" ~ norm_psi - 0.15,
+      model_label == "MXL (WTP, 1k dr.)" ~ norm_psi - 0.15,
+      model_label == "MXL (Pref, 1k dr.)" ~ norm_psi - 0.15,
+      TRUE ~ norm_psi
+    ),
+    label_y = case_when(
+      model_label == "MNL" ~ rel_cpu - 50,
+      model_label == "NL" ~ rel_cpu - 50,
+      model_label == "LCL (2 cl.)" ~ rel_cpu - 50,
+      model_label == "LCL (4 cl.)" ~ rel_cpu - 75,
+      model_label == "LCL (6 cl.)" ~ rel_cpu - 40,
+      model_label == "LCL (8 cl.)" ~ rel_cpu - 75,
+      model_label == "LC-NL (2 cl.)" ~ rel_cpu + 50,
+      model_label == "LC-NL (4 cl.)" ~ rel_cpu - 65,
+      model_label == "LC-NL (6 cl.)" ~ rel_cpu - 50,
+      model_label == "LC-NL (8 cl.)" ~ rel_cpu - 0,
+      model_label == "MXL (WTP, 100 dr.)" ~ rel_cpu + 50,
+      model_label == "MXL (Pref, 100 dr.)" ~ rel_cpu - 50,
+      model_label == "MXL (WTP, 500 dr.)" ~ rel_cpu + 0,
+      model_label == "MXL (Pref, 500 dr.)" ~ rel_cpu + 0,
+      model_label == "MXL (WTP, 1k dr.)" ~ rel_cpu + 0,
+      model_label == "MXL (Pref, 1k dr.)" ~ rel_cpu - 100,
+      TRUE ~ rel_cpu
+    )
+  )
+
+# Plot 2: Substitution vs Time
+p2 <- ggplot(mod_summary_df, aes(y = rel_cpu, x = norm_psi)) +
+  # Add the frontier line
+  geom_line(data = pareto_frontier_sub,
+            aes(y = rel_cpu, x = norm_psi,
+                linetype = "Pareto Frontier"),
+            color = "darkblue",
+            linewidth = 1,
+            alpha = 0.6,
+            inherit.aes = FALSE) +
+  # Original points
+  geom_point(alpha = 0.7, size = 5, color = "steelblue") +
+  # Highlight Pareto optimal points
+  geom_point(data = pareto_frontier_sub,
+             aes(y = rel_cpu, x = norm_psi),
+             shape = 21,
+             size = 5.5,
+             stroke = 1.5,
+             color = "darkblue",
+             fill = NA,
+             inherit.aes = FALSE) +
+  # Add segments connecting points to labels
+  geom_segment(data = label_positions_p2,
+               aes(x = norm_psi, y = rel_cpu,
+                   xend = label_x, yend = label_y),
+               color = "gray50",
+               size = 0.3) +
+  # Add text labels at manual positions with white background
+  geom_label(data = label_positions_p2,
+             aes(x = label_x, y = label_y, label = model_label),
+             size = 2.8,
+             color = "black",
+             fontface = "bold",
+             fill = "white",
+             label.padding = unit(0.15, "lines"),
+             label.size = 0) +
+  scale_linetype_manual(
+    name = "",
+    values = c("Pareto Frontier" = "solid"),
+    guide = guide_legend(
+      override.aes = list(color = "darkblue", linewidth = 1)
+    )
+  ) +
+  theme_minimal() +
+  scale_y_continuous(
+    labels = function(x) paste0(x, "x"),
+    sec.axis = sec_axis(
+      ~ . * reference_values$mean_cpu,
+      name = "Evaluation Time (CPU seconds)",
+      labels = function(x) round(x, 2)
+    )
+  ) +
+  scale_x_continuous(
+    labels = function(x) {
+      case_when(
+        x == 0 ~ "0\nBaseline Model",
+        x == 1 ~ "1\nBest Model",
+        TRUE ~ as.character(round(x, 2))
+      )
+    },
+    breaks = seq(0, 1, 0.2),
+    sec.axis = sec_axis(
+      ~ . * (max_psi - min_psi) + min_psi,
+      name = "Substitution Invariance (ψ')",
+      labels = function(x) round(x, 3)
+    )
+  ) +
+  labs(
+    title = "Substitution Invariance vs Computational Cost",
+    y = "Computational Cost",
+    x = "Substitution Invariance (normalized)"
+  ) +
+  theme(
+    legend.position = c(0.01, 0.99),
+    legend.justification = c(0, 1),
+    axis.line.x.bottom = element_line(arrow = grid::arrow(length = unit(0.3, "cm"),
+                                                     ends = "last"),
+                                color = "darkgreen", linewidth = 1),
+    axis.line.y.left = element_line(arrow = grid::arrow(length = unit(0.3, "cm"),
+                                                     ends = "first"),
+                                color = "darkgreen", linewidth = 1),
+    axis.title.x.top = element_text(size = 10),
+    axis.text.x.top = element_text(),
+    axis.title.y.right = element_text(size = 10),
+    axis.text.y.right = element_text()
+  )
+
+print(p2)
+```
+
+### Minimal label accuracy vs cpu
+
+```{r}
 # Filter to keep only selected models
-models_to_keep <- c()
+# models_to_keep <- c()
+models_to_keep <-c("MNL", "LCL (2 cl.)", "LCL (4 cl.)", "LCL (8 cl.)", "LC-NL (8 cl.)",                    "MXL (Pref, 500 dr.)", "MXL (Pref, 1k dr.)")
+#
+# mod_summary_df_minimal <- mod_summary_df %>%
+#   filter(model_label %in% models_to_keep)
+#
+# # Also filter label_positions and data to only show selected models
+# label_positions <- label_positions %>%
+#   filter(model_label %in% models_to_keep)
 
 # Add model category column based on model_label
 mod_summary_df <- mod_summary_df %>%
@@ -724,13 +1224,64 @@ pareto_frontier <- pareto_points %>%
   filter(is_pareto) %>%
   arrange(pct_improvement_from_random)
 
+# Calculate normalized accuracy based on mean_avg_likelihood (0 = worst, 1 = best)
+min_likelihood <- min(mod_summary_df$mean_avg_likelihood)
+max_likelihood <- max(mod_summary_df$mean_avg_likelihood)
 
+mod_summary_df <- mod_summary_df %>%
+  mutate(norm_accuracy = (mean_avg_likelihood - min_likelihood) / (max_likelihood - min_likelihood))
+
+pareto_frontier <- pareto_frontier %>%
+  mutate(norm_accuracy = (mean_avg_likelihood - min_likelihood) / (max_likelihood - min_likelihood))
+
+# Manual label positions for better control
+label_positions <- mod_summary_df %>%
+  mutate(
+    label_x = case_when(
+      model_label == "MNL" ~ norm_accuracy + 0,
+      # model_label == "NL" ~ norm_accuracy + 0.05,
+      model_label == "LCL (2 cl.)" ~ norm_accuracy - 0.05,
+      model_label == "LCL (4 cl.)" ~ norm_accuracy - 0.05,
+      model_label == "LCL (6 cl.)" ~ norm_accuracy + 0.0,
+      model_label == "LCL (8 cl.)" ~ norm_accuracy + 0.1,
+      # model_label == "LC-NL (2 cl.)" ~ norm_accuracy + 0.05,
+      # model_label == "LC-NL (4 cl.)" ~ norm_accuracy - 0.02,
+      # model_label == "LC-NL (6 cl.)" ~ norm_accuracy + 0.09,
+      model_label == "LC-NL (8 cl.)" ~ norm_accuracy - 0.0,
+      # model_label == "MXL (WTP, 100 dr.)" ~ norm_accuracy - 0.2,
+      model_label == "MXL (Pref, 100 dr.)" ~ norm_accuracy - 0.05,
+      # model_label == "MXL (WTP, 500 dr.)" ~ norm_accuracy - 0.1,
+      model_label == "MXL (Pref, 500 dr.)" ~ norm_accuracy - 0.12,
+      # model_label == "MXL (WTP, 1k dr.)" ~ norm_accuracy - 0.05,
+      model_label == "MXL (Pref, 1k dr.)" ~ norm_accuracy - 0.12,
+      TRUE ~ norm_accuracy
+    ),
+    label_y = case_when(
+      model_label == "MNL" ~ rel_cpu + 50,
+      # model_label == "NL" ~ rel_cpu + 50,
+      model_label == "LCL (2 cl.)" ~ rel_cpu + 50,
+      model_label == "LCL (4 cl.)" ~ rel_cpu + 100,
+      model_label == "LCL (6 cl.)" ~ rel_cpu + 50,
+      model_label == "LCL (8 cl.)" ~ rel_cpu + 0,
+      # model_label == "LC-NL (2 cl.)" ~ rel_cpu + 50,
+      # model_label == "LC-NL (4 cl.)" ~ rel_cpu + 80,
+      # model_label == "LC-NL (6 cl.)" ~ rel_cpu + 0,
+      model_label == "LC-NL (8 cl.)" ~ rel_cpu + 50,
+      # model_label == "MXL (WTP, 100 dr.)" ~ rel_cpu + 50,
+      model_label == "MXL (Pref, 100 dr.)" ~ rel_cpu + 100,
+      # model_label == "MXL (WTP, 500 dr.)" ~ rel_cpu + 40,
+      model_label == "MXL (Pref, 500 dr.)" ~ rel_cpu + 0,
+      # model_label == "MXL (WTP, 1k dr.)" ~ rel_cpu + 60,
+      model_label == "MXL (Pref, 1k dr.)" ~ rel_cpu - 0,
+      TRUE ~ rel_cpu
+    )
+  )
 
 # Plot 1: Accuracy vs Time
-p1 <- ggplot(mod_summary_df, aes(y = rel_cpu, x = pct_improvement_from_random, color = model_category)) +
+p1 <- ggplot(mod_summary_df, aes(y = rel_cpu, x = norm_accuracy, color = model_category)) +
   # Add the frontier line
   geom_line(data = pareto_frontier,
-            aes(y = rel_cpu, x = pct_improvement_from_random,
+            aes(y = rel_cpu, x = norm_accuracy,
                 linetype = "Pareto Frontier"),
             color = "darkblue",
             linewidth = 1,
@@ -740,7 +1291,7 @@ p1 <- ggplot(mod_summary_df, aes(y = rel_cpu, x = pct_improvement_from_random, c
   geom_point(alpha = 0.7, size = 5) +
   # Outline Pareto frontier points with black border
   geom_point(data = pareto_frontier,
-             aes(y = rel_cpu, x = pct_improvement_from_random, fill = model_category),
+             aes(y = rel_cpu, x = norm_accuracy, fill = model_category),
              shape = 21,
              size = 5,
              stroke = 1.5,
@@ -751,8 +1302,24 @@ p1 <- ggplot(mod_summary_df, aes(y = rel_cpu, x = pct_improvement_from_random, c
     values = model_colors,
     guide = "none"  # Don't show fill in legend, only color
   ) +
+  # # Add segments connecting points to labels
+  # geom_segment(data = label_positions %>% filter(model_label %in% models_to_keep),
+  #              aes(x = norm_accuracy, y = rel_cpu,
+  #                  xend = label_x, yend = label_y),
+  #              color = "gray50",
+  #              size = 0.3) +
+  # # Add text labels at manual positions with white background
+  # geom_label(data = label_positions %>% filter(model_label %in% models_to_keep),
+  #            aes(x = label_x, y = label_y, label = model_label),
+  #            size = 4,
+  #            color = "black",
+  #            fontface = "bold",
+  #            fill = "white",
+  #            label.padding = unit(0.15, "lines"),
+  #            label.size = 0) +
+    # Automatic labels with repel
   geom_label_repel(data = mod_summary_df %>% filter(model_label %in% models_to_keep),
-                   aes(x = pct_improvement_from_random, y = rel_cpu, label = model_label),
+                   aes(x = norm_accuracy, y = rel_cpu, label = model_label),
                    size = 4,
                    color = "black",
                    fontface = "bold",
@@ -794,30 +1361,42 @@ p1 <- ggplot(mod_summary_df, aes(y = rel_cpu, x = pct_improvement_from_random, c
     labels = function(x) paste0(x, "x"),
     sec.axis = sec_axis(
       ~ . * reference_values$mean_cpu,
-      name = "Evaluation Time (CPU sec.)",
+      name = "Evaluation Time (CPU seconds)",
       labels = function(x) round(x, 2)
     )
   ) +
   scale_x_continuous(
-    labels = function(x) paste0(x, "%"),
+    labels = function(x) {
+      case_when(
+        x == 0 ~ "0\nBaseline Model",
+        x == 1 ~ "1\nBest Model",
+        TRUE ~ as.character(round(x, 2))
+      )
+    },
+    breaks = seq(0, 1, 0.2),
+    limits = c(0, 1),
     sec.axis = sec_axis(
-      ~ (. / 100 * (1/3)) + (1/3),  # Convert back to avg likelihood
-      name = "Avg. Likelihood",
-      breaks = c(0.43, 0.45, 0.47),
+      ~ . * (max_likelihood - min_likelihood) + min_likelihood,
+      name = "Mean Out-of-Sample Average Likelihood ",
       labels = function(x) round(x, 3)
     )
   ) +
   labs(
     # title = " Predictive Accuracy vs Computational Cost",
-    title = "",
-    # title = "Pareto Frontier of Computational Cost vs Predictive Accuracy",
-    y = "Computational Cost \n (CPU sec. relative to MNL)",
-    x = "Predictive Accuracy \n (% improvement from random)"
+    y = "Computational Cost",
+    x = "Predictive Accuracy (normalized)"
   ) +
   theme(
-    legend.position = "none",
-    # legend.margin = margin(t = 5, r = 5, b = 0, l = 5),  # Reduce bottom margin
-    axis.text = element_text(size = 10),  # Controls both x and y axis text
+    legend.position = c(0.01, 1),
+    legend.justification = c(0, 1),
+    legend.box = "vertical",  # Stack legends vertically
+    legend.box.spacing = unit(-0.8, "lines"),  # Negative spacing to bring legends very close
+    legend.spacing.y = unit(0.1, "lines"),  # Reduce vertical spacing within legends
+    legend.text = element_text(size = 12),  # Controls legend text size
+    # legend.background = element_rect(fill = "white", color = "black", linewidth = 0.5),  # Box around legend
+    # legend.box.background = element_rect(fill = "white", color = "black", linewidth = 0.5),
+    legend.margin = margin(t = 0, r = 5, b = 0, l = 5),  # Reduce bottom margin
+    axis.text = element_text(size = 12),  # Controls both x and y axis text
     axis.title = element_text(size = 14), # Controls both x and y axis titles
     axis.line.x.bottom = element_line(arrow = grid::arrow(length = unit(0.3, "cm"), 
                                                      ends = "last"),
@@ -829,36 +1408,40 @@ p1 <- ggplot(mod_summary_df, aes(y = rel_cpu, x = pct_improvement_from_random, c
     axis.text.x.top = element_text(),
     axis.title.y.right = element_text( size = 10),
     axis.text.y.right = element_text()
-    # panel.grid.major = element_blank(),
-    # panel.grid.minor = element_blank()
   )
 
 print(p1)
-
-ggsave("output/Figures/pareto_accuracy_random.png", width = 4, height = 4, dpi = 300)
-
 ```
 
-```{r, echo=FALSE, fig.width=4, fig.height=4}
-# Filter to keep only selected models
-models_to_keep <- c()
 
-# Add model category column based on model_label
-mod_summary_df <- mod_summary_df %>%
-  mutate(model_category = case_when(
-    model_label == "MNL" ~ "MNL",
-    model_label == "NL" ~ "NL",
-    grepl("^LCL \\(", model_label) ~ "LCL",
-    grepl("^LC-NL \\(", model_label) ~ "LC-NL",
-    grepl("^MXL \\(", model_label) ~ "MXL",
-    TRUE ~ "Other"
-  ))
+
+### Minimal label psi vs cpu
+
+```{r}
+# Filter to keep only selected models
+models_to_keep <- c("MNL", "LCL (4 cl.)", "LCL (8 cl.)", "LC-NL (8 cl.)",
+                    "MXL (Pref, 500 dr.)", "MXL (Pref, 1k dr.)")
+
+# Add model category column based on model_label (if not already added)
+if (!"model_category" %in% names(mod_summary_df)) {
+  mod_summary_df <- mod_summary_df %>%
+    mutate(model_category = case_when(
+      model_label == "MNL" ~ "MNL",
+      model_label == "NL" ~ "NL",
+      grepl("^LCL \\(", model_label) ~ "LCL",
+      grepl("^LC-NL \\(", model_label) ~ "LC-NL",
+      grepl("^MXL \\(", model_label) ~ "MXL",
+      TRUE ~ "Other"
+    ))
+}
 
 # Define color palette for model categories
 model_colors <- c("MNL" = "#E41A1C", "NL" = "#377EB8", "LCL" = "#4DAF4A",
                   "LC-NL" = "#984EA3", "MXL" = "#FF7F00")
 
-# Identify pareto frontier for psi'
+# PLOT 2: Substitution Invariance vs Function Time (Pareto Frontier)
+# Find Pareto frontier for substitution vs time
+# (HIGHER psi is better, lower cpu is better)
 pareto_points_sub <- mod_summary_df %>%
   arrange(desc(mean_psi)) %>%
   mutate(is_pareto = FALSE)
@@ -882,11 +1465,21 @@ pareto_frontier_sub <- pareto_points_sub %>%
   filter(is_pareto) %>%
   arrange(mean_psi)
 
-# Plot 2: Subs vs Time
-p2 <- ggplot(mod_summary_df, aes(y = rel_cpu, x = mean_psi, color = model_category)) +
+# Calculate normalized psi (0 = worst, 1 = best)
+min_psi <- min(mod_summary_df$mean_psi)
+max_psi <- max(mod_summary_df$mean_psi)
+
+mod_summary_df <- mod_summary_df %>%
+  mutate(norm_psi = (mean_psi - min_psi) / (max_psi - min_psi))
+
+pareto_frontier_sub <- pareto_frontier_sub %>%
+  mutate(norm_psi = (mean_psi - min_psi) / (max_psi - min_psi))
+
+# Plot 2: Substitution vs Time
+p2 <- ggplot(mod_summary_df, aes(y = rel_cpu, x = norm_psi, color = model_category)) +
   # Add the frontier line
   geom_line(data = pareto_frontier_sub,
-            aes(y = rel_cpu, x = mean_psi,
+            aes(y = rel_cpu, x = norm_psi,
                 linetype = "Pareto Frontier"),
             color = "darkblue",
             linewidth = 1,
@@ -896,7 +1489,7 @@ p2 <- ggplot(mod_summary_df, aes(y = rel_cpu, x = mean_psi, color = model_catego
   geom_point(alpha = 0.7, size = 5) +
   # Outline Pareto frontier points with black border
   geom_point(data = pareto_frontier_sub,
-             aes(y = rel_cpu, x = mean_psi, fill = model_category),
+             aes(y = rel_cpu, x = norm_psi, fill = model_category),
              shape = 21,
              size = 5,
              stroke = 1.5,
@@ -907,8 +1500,346 @@ p2 <- ggplot(mod_summary_df, aes(y = rel_cpu, x = mean_psi, color = model_catego
     values = model_colors,
     guide = "none"  # Don't show fill in legend, only color
   ) +
+  # Automatic labels with repel
   geom_label_repel(data = mod_summary_df %>% filter(model_label %in% models_to_keep),
-                   aes(x = mean_psi, y = rel_cpu, label = model_label),
+                   aes(x = norm_psi, y = rel_cpu, label = model_label),
+                   size = 4,
+                   color = "black",
+                   fontface = "bold",
+                   fill = "white",
+                   label.padding = unit(0.15, "lines"),
+                   label.size = 0,
+                   box.padding = 1.5,
+                   point.padding = 1.5,
+                   segment.color = "gray50",
+                   segment.size = 0.3,
+                   max.overlaps = 20,
+                   force = 2,
+                   force_pull = 0.5,
+                   seed = 42) +
+  scale_linetype_manual(
+    name = "",
+    values = c("Pareto Frontier" = "solid"),
+    guide = guide_legend(
+      override.aes = list(color = "darkblue", linewidth = 1),
+      keyheight = unit(0.3, "lines"),
+      keywidth = unit(1.5, "lines"),
+      order = 2,
+      title.vjust = 0.5
+    )
+  ) +
+  scale_color_manual(
+    name = "Model Type",
+    values = model_colors,
+    breaks = c("MNL", "NL", "LCL", "LC-NL", "MXL"),
+    guide = guide_legend(
+      override.aes = list(size = 4, alpha = 0.7),
+      order = 1,
+      keyheight = unit(0.8, "lines")
+    )
+  ) +
+  theme_minimal() +
+  scale_y_continuous(
+    labels = function(x) paste0(x, "x"),
+    sec.axis = sec_axis(
+      ~ . * reference_values$mean_cpu,
+      name = "Evaluation Time (CPU seconds)",
+      labels = function(x) round(x, 2)
+    )
+  ) +
+  scale_x_continuous(
+    labels = function(x) {
+      case_when(
+        x == 0 ~ "0\nBaseline Model",
+        x == 1 ~ "1\nBest Model",
+        TRUE ~ as.character(round(x, 2))
+      )
+    },
+    breaks = seq(0, 1, 0.2),
+    limits = c(0, 1),
+    sec.axis = sec_axis(
+      ~ . * (max_psi - min_psi) + min_psi,
+      name = "Substitution Invariance (ψ')",
+      labels = function(x) round(x, 3)
+    )
+  ) +
+  labs(
+    # title = "Substitution Invariance vs Computational Cost",
+    y = "Computational Cost",
+    x = "Substitution Invariance (normalized)"
+  ) +
+  theme(
+    legend.position = c(0.01, 1),
+    legend.justification = c(0, 1),
+    legend.box = "vertical",  # Stack legends vertically
+    legend.box.spacing = unit(-0.8, "lines"),  # Negative spacing to bring legends very close
+    legend.spacing.y = unit(0.1, "lines"),  # Reduce vertical spacing within legends
+    legend.text = element_text(size = 12),  # Controls legend text size
+    legend.margin = margin(t = 0, r = 5, b = 0, l = 5),  # Reduce bottom margin
+    axis.text = element_text(size = 12),  # Controls both x and y axis text
+    axis.title = element_text(size = 14), # Controls both x and y axis titles
+    axis.line.x.bottom = element_line(arrow = grid::arrow(length = unit(0.3, "cm"),
+                                                     ends = "last"),
+                                color = "darkgreen", linewidth = 1),
+    axis.line.y.left = element_line(arrow = grid::arrow(length = unit(0.3, "cm"),
+                                                     ends = "first"),
+                                color = "darkgreen", linewidth = 1),
+    axis.title.x.top = element_text( size = 10),
+    axis.text.x.top = element_text(),
+    axis.title.y.right = element_text( size = 10),
+    axis.text.y.right = element_text()
+  )
+
+print(p2)
+```
+
+```{r}
+# Create table with primary (normalized) and secondary (actual) axis values
+plot_data_table <- mod_summary_df %>%
+  mutate(
+    mean_cpu = rel_cpu * reference_values$mean_cpu,
+    norm_cpu = (rel_cpu - min(rel_cpu)) / (max(rel_cpu) - min(rel_cpu))
+  ) %>%
+  rename(
+    mean_AL = mean_avg_likelihood
+  ) %>%
+  select(model_label, mean_AL, mean_psi, mean_cpu, norm_accuracy, norm_psi, rel_cpu, norm_cpu)
+
+print(plot_data_table)
+```
+
+
+### Efficiency per cpu sec
+```{r}
+# Create summary dataframe with key metrics
+model_metrics_df <- mod_summary_df %>%
+  # select(model_label, norm_accuracy, mean_avg_likelihood, norm_psi, mean_psi, rel_cpu) %>%
+  select(model_label, model_category, norm_accuracy, norm_psi, rel_cpu) %>%
+  mutate(
+    norm_cpu = (rel_cpu - min(rel_cpu)) / (max(rel_cpu) - min(rel_cpu)),
+    # accuracy_per_cpu = norm_accuracy / rel_cpu,
+    # psi_per_cpu = norm_psi / rel_cpu
+    accuracy_per_cpu = norm_accuracy / norm_cpu,
+    psi_per_cpu = norm_psi / norm_cpu
+    ) %>%
+  arrange(desc(accuracy_per_cpu))
+
+print(model_metrics_df)
+
+library(ggplot2)
+library(patchwork)
+
+# Define color palette for model categories
+model_colors <- c("MNL" = "#E41A1C", "NL" = "#377EB8", "LCL" = "#4DAF4A",
+                  "LC-NL" = "#984EA3", "MXL" = "#FF7F00")
+
+model_metrics_plot_df <- model_metrics_df %>%  filter(model_label != "MNL")
+p1 <- ggplot(model_metrics_plot_df,
+             aes(x = reorder(model_label, accuracy_per_cpu),
+                 y = accuracy_per_cpu,
+                 fill = model_category)) +
+  geom_col() +
+  geom_text(aes(label = round(accuracy_per_cpu, 1)),
+          hjust = -0.1,
+          size = 3) +
+  coord_flip(clip = "off") +
+  scale_fill_manual(
+    name = "Model Type",
+    values = model_colors
+  ) +
+  labs(
+    title = "Efficiency for \nPredictive Accuracy",
+    x = "Model",
+    y = "Ratio of Normalized \n Accuracy per CPU"
+  ) +
+  theme_minimal() +
+  theme(
+    panel.grid = element_blank(),
+    axis.text.x = element_blank(),
+    axis.ticks.x = element_blank()
+  )
+
+p2 <- ggplot(model_metrics_plot_df,
+             aes(x = reorder(model_label, psi_per_cpu),
+                 y = psi_per_cpu,
+                 fill = model_category)) +
+  geom_col() +
+  geom_text(aes(label = round(accuracy_per_cpu, 1)),
+            hjust = -0.1,
+            size = 3) +
+  coord_flip(clip = "off") +
+  scale_fill_manual(
+    name = "Model Type",
+    values = model_colors
+  ) +
+  labs(
+    title = "Efficiency for \nFlexible Substitution",
+    x = "Model",
+    y = "Ratio of Normalized \n Invariance per CPU"
+  ) +
+  theme_minimal() +
+  theme(
+    panel.grid = element_blank(),
+    axis.text.x = element_blank(),
+    axis.ticks.x = element_blank(),
+    legend.position = "none"
+  )
+
+p1 + p2 + plot_layout(guides = "collect")
+
+
+```
+
+### GW Plots
+```{r}
+# Filter to keep only selected models
+models_to_keep <- c()
+# models_to_keep <-c("MNL", "LCL (2 cl.)", "LCL (4 cl.)", "LCL (8 cl.)", "LC-NL (8 cl.)",                   "MXL (Pref, 500 dr.)", "MXL (Pref, 1k dr.)")
+#
+# mod_summary_df_minimal <- mod_summary_df %>%
+#   filter(model_label %in% models_to_keep)
+#
+# # Also filter label_positions and data to only show selected models
+# label_positions <- label_positions %>%
+#   filter(model_label %in% models_to_keep)
+
+# Add model category column based on model_label
+mod_summary_df <- mod_summary_df %>%
+  mutate(model_category = case_when(
+    model_label == "MNL" ~ "MNL",
+    model_label == "NL" ~ "NL",
+    grepl("^LCL \\(", model_label) ~ "LCL",
+    grepl("^LC-NL \\(", model_label) ~ "LC-NL",
+    grepl("^MXL \\(", model_label) ~ "MXL",
+    TRUE ~ "Other"
+  ))
+
+# Define color palette for model categories
+model_colors <- c("MNL" = "#E41A1C", "NL" = "#377EB8", "LCL" = "#4DAF4A",
+                  "LC-NL" = "#984EA3", "MXL" = "#FF7F00")
+
+# PLOT 1: Predictive Accuracy vs Function Time (Pareto Frontier)
+# First identify Pareto optimal points
+pareto_points <- mod_summary_df %>%
+  arrange(desc(pct_improvement_from_random)) %>%
+  mutate(is_pareto = FALSE)
+
+# Find Pareto frontier
+for(i in 1:nrow(pareto_points)) {
+  dominated <- FALSE
+  for(j in 1:nrow(pareto_points)) {
+    if(i != j &&
+       pareto_points$pct_improvement_from_random[j] >= pareto_points$pct_improvement_from_random[i] &&
+       pareto_points$rel_cpu[j] <= pareto_points$rel_cpu[i] &&
+       (pareto_points$pct_improvement_from_random[j] > pareto_points$pct_improvement_from_random[i] ||
+        pareto_points$rel_cpu[j] < pareto_points$rel_cpu[i])) {
+      dominated <- TRUE
+      break
+    }
+  }
+  pareto_points$is_pareto[i] <- !dominated
+}
+
+pareto_frontier <- pareto_points %>%
+  filter(is_pareto) %>%
+  arrange(pct_improvement_from_random)
+
+# Calculate normalized accuracy based on mean_avg_likelihood (0 = worst, 1 = best)
+min_likelihood <- min(mod_summary_df$mean_avg_likelihood)
+max_likelihood <- max(mod_summary_df$mean_avg_likelihood)
+
+mod_summary_df <- mod_summary_df %>%
+  mutate(norm_accuracy = (mean_avg_likelihood - min_likelihood) / (max_likelihood - min_likelihood))
+
+pareto_frontier <- pareto_frontier %>%
+  mutate(norm_accuracy = (mean_avg_likelihood - min_likelihood) / (max_likelihood - min_likelihood))
+
+# Manual label positions for better control
+label_positions <- mod_summary_df %>%
+  mutate(
+    label_x = case_when(
+      model_label == "MNL" ~ norm_accuracy + 0,
+      # model_label == "NL" ~ norm_accuracy + 0.05,
+      model_label == "LCL (2 cl.)" ~ norm_accuracy - 0.05,
+      model_label == "LCL (4 cl.)" ~ norm_accuracy - 0.05,
+      model_label == "LCL (6 cl.)" ~ norm_accuracy + 0.0,
+      model_label == "LCL (8 cl.)" ~ norm_accuracy + 0.1,
+      # model_label == "LC-NL (2 cl.)" ~ norm_accuracy + 0.05,
+      # model_label == "LC-NL (4 cl.)" ~ norm_accuracy - 0.02,
+      # model_label == "LC-NL (6 cl.)" ~ norm_accuracy + 0.09,
+      model_label == "LC-NL (8 cl.)" ~ norm_accuracy - 0.0,
+      # model_label == "MXL (WTP, 100 dr.)" ~ norm_accuracy - 0.2,
+      model_label == "MXL (Pref, 100 dr.)" ~ norm_accuracy - 0.05,
+      # model_label == "MXL (WTP, 500 dr.)" ~ norm_accuracy - 0.1,
+      model_label == "MXL (Pref, 500 dr.)" ~ norm_accuracy - 0.12,
+      # model_label == "MXL (WTP, 1k dr.)" ~ norm_accuracy - 0.05,
+      model_label == "MXL (Pref, 1k dr.)" ~ norm_accuracy - 0.12,
+      TRUE ~ norm_accuracy
+    ),
+    label_y = case_when(
+      model_label == "MNL" ~ rel_cpu + 50,
+      # model_label == "NL" ~ rel_cpu + 50,
+      model_label == "LCL (2 cl.)" ~ rel_cpu + 50,
+      model_label == "LCL (4 cl.)" ~ rel_cpu + 100,
+      model_label == "LCL (6 cl.)" ~ rel_cpu + 50,
+      model_label == "LCL (8 cl.)" ~ rel_cpu + 0,
+      # model_label == "LC-NL (2 cl.)" ~ rel_cpu + 50,
+      # model_label == "LC-NL (4 cl.)" ~ rel_cpu + 80,
+      # model_label == "LC-NL (6 cl.)" ~ rel_cpu + 0,
+      model_label == "LC-NL (8 cl.)" ~ rel_cpu + 50,
+      # model_label == "MXL (WTP, 100 dr.)" ~ rel_cpu + 50,
+      model_label == "MXL (Pref, 100 dr.)" ~ rel_cpu + 100,
+      # model_label == "MXL (WTP, 500 dr.)" ~ rel_cpu + 40,
+      model_label == "MXL (Pref, 500 dr.)" ~ rel_cpu + 0,
+      # model_label == "MXL (WTP, 1k dr.)" ~ rel_cpu + 60,
+      model_label == "MXL (Pref, 1k dr.)" ~ rel_cpu - 0,
+      TRUE ~ rel_cpu
+    )
+  )
+
+# Plot 1: Accuracy vs Time
+p1 <- ggplot(mod_summary_df, aes(y = rel_cpu, x = norm_accuracy, color = model_category)) +
+  # Add the frontier line
+  geom_line(data = pareto_frontier,
+            aes(y = rel_cpu, x = norm_accuracy,
+                linetype = "Pareto Frontier"),
+            color = "darkblue",
+            linewidth = 1,
+            alpha = 0.6,
+            inherit.aes = FALSE) +
+  # Original points (now colored by category)
+  geom_point(alpha = 0.7, size = 5) +
+  # Outline Pareto frontier points with black border
+  geom_point(data = pareto_frontier,
+             aes(y = rel_cpu, x = norm_accuracy, fill = model_category),
+             shape = 21,
+             size = 5,
+             stroke = 1.5,
+             color = "black",
+             alpha = 0.7,
+             inherit.aes = FALSE) +
+  scale_fill_manual(
+    values = model_colors,
+    guide = "none"  # Don't show fill in legend, only color
+  ) +
+  # # Add segments connecting points to labels
+  # geom_segment(data = label_positions %>% filter(model_label %in% models_to_keep),
+  #              aes(x = norm_accuracy, y = rel_cpu,
+  #                  xend = label_x, yend = label_y),
+  #              color = "gray50",
+  #              size = 0.3) +
+  # # Add text labels at manual positions with white background
+  # geom_label(data = label_positions %>% filter(model_label %in% models_to_keep),
+  #            aes(x = label_x, y = label_y, label = model_label),
+  #            size = 4,
+  #            color = "black",
+  #            fontface = "bold",
+  #            fill = "white",
+  #            label.padding = unit(0.15, "lines"),
+  #            label.size = 0) +
+    # Automatic labels with repel
+  geom_label_repel(data = mod_summary_df %>% filter(model_label %in% models_to_keep),
+                   aes(x = norm_accuracy, y = rel_cpu, label = model_label),
                    size = 4,
                    color = "black",
                    fontface = "bold",
@@ -950,24 +1881,44 @@ p2 <- ggplot(mod_summary_df, aes(y = rel_cpu, x = mean_psi, color = model_catego
     labels = function(x) paste0(x, "x"),
     sec.axis = sec_axis(
       ~ . * reference_values$mean_cpu,
-      name = "Evaluation Time (CPU sec.)",
+      name = "Evaluation Time (CPU seconds)",
       labels = function(x) round(x, 2)
     )
   ) +
   scale_x_continuous(
-    # limits = c(0.42, 0.485),breaks = seq(0.4, 0.5, 0.02)
-    ) +
+    labels = function(x) {
+      case_when(
+        x == 0 ~ "0\nBaseline Model",
+        x == 1 ~ "1\nBest Model",
+        TRUE ~ as.character(round(x, 2))
+      )
+    },
+    breaks = seq(0, 1, 0.2),
+    limits = c(0, 1),
+    sec.axis = sec_axis(
+      ~ . * (max_likelihood - min_likelihood) + min_likelihood,
+      name = "Mean Out-of-Sample Average Likelihood ",
+      labels = function(x) round(x, 3)
+    )
+  ) +
   labs(
     # title = " Predictive Accuracy vs Computational Cost",
-    title = "",
-    # title = "Pareto Frontier of Computational Cost vs Predictive Accuracy",
-    y = "Computational Cost \n (CPU sec. relative to MNL)",
-    x = "Substitution Invariance (ψ')"
+    title = "Pareto Frontier of Computational Cost vs Predictive Accuracy",
+    y = "Computational Cost",
+    x = "Predictive Accuracy (normalized)"
   ) +
   theme(
     legend.position = "none",
-    # legend.margin = margin(t = 5, r = 5, b = 0, l = 5),  # Reduce bottom margin
-    axis.text = element_text(size = 10),  # Controls both x and y axis text
+    # legend.position = c(0.01, 1),
+    # legend.justification = c(0, 1),
+    # legend.box = "vertical",  # Stack legends vertically
+    # legend.box.spacing = unit(-0.8, "lines"),  # Negative spacing to bring legends very close
+    # legend.spacing.y = unit(0.1, "lines"),  # Reduce vertical spacing within legends
+    # legend.text = element_text(size = 12),  # Controls legend text size
+    # # legend.background = element_rect(fill = "white", color = "black", linewidth = 0.5),  # Box around legend
+    # # legend.box.background = element_rect(fill = "white", color = "black", linewidth = 0.5),
+    # legend.margin = margin(t = 0, r = 5, b = 0, l = 5),  # Reduce bottom margin
+    axis.text = element_text(size = 12),  # Controls both x and y axis text
     axis.title = element_text(size = 14), # Controls both x and y axis titles
     axis.line.x.bottom = element_line(arrow = grid::arrow(length = unit(0.3, "cm"), 
                                                      ends = "last"),
@@ -983,43 +1934,654 @@ p2 <- ggplot(mod_summary_df, aes(y = rel_cpu, x = mean_psi, color = model_catego
     # panel.grid.minor = element_blank()
   )
 
-print(p2)
-
-ggsave("output/Figures/pareto_subs.png", width = 4, height = 4, dpi = 300)
-
+print(p1)
 ```
 
-### Calc relative timing
+```{r}
+# Filter to keep only selected models
+models_to_keep <- c()
+# models_to_keep <- c("MNL", "LCL (4 cl.)", "LCL (8 cl.)", "LC-NL (8 cl.)",                    "MXL (Pref, 500 dr.)", "MXL (Pref, 1k dr.)")
 
-```{r, echo=FALSE}
-# Extract reference values from MNL
-reference_values <- summary_df %>%
-  filter(model_label == "MNL") %>%
-  select(mean_elapsed, se_elapsed, mean_cpu, mean_avg_likelihood, se_avg_likelihood, mean_psi, se_psi)
+# Add model category column based on model_label (if not already added)
+if (!"model_category" %in% names(mod_summary_df)) {
+  mod_summary_df <- mod_summary_df %>%
+    mutate(model_category = case_when(
+      model_label == "MNL" ~ "MNL",
+      model_label == "NL" ~ "NL",
+      grepl("^LCL \\(", model_label) ~ "LCL",
+      grepl("^LC-NL \\(", model_label) ~ "LC-NL",
+      grepl("^MXL \\(", model_label) ~ "MXL",
+      TRUE ~ "Other"
+    ))
+}
 
-# Calculate relative values while preserving raw values
-mod_summary_df <- summary_df %>%
-  mutate(
-    # Relative timing - with proper SE propagation for ratios
-    rel_elapsed = mean_elapsed / reference_values$mean_elapsed,
-    rel_se_elapsed = rel_elapsed * sqrt((se_elapsed/mean_elapsed)^2 + 
-                                         (reference_values$se_elapsed/reference_values$mean_elapsed)^2),
-    rel_cpu = mean_cpu / reference_values$mean_cpu,
-    
-    # Relative likelihood - correct for differences
-    rel_avg_likelihood = mean_avg_likelihood - reference_values$mean_avg_likelihood,
-    rel_se_avg_likelihood = sqrt(se_avg_likelihood^2 + reference_values$se_avg_likelihood^2),
-    # Relative psi - correct for differences
-    rel_psi = mean_psi - reference_values$mean_psi,
-    rel_se_psi = sqrt(se_psi^2 + reference_values$se_psi^2)  # Changed from sd_psi to se_psi
+# Define color palette for model categories
+model_colors <- c("MNL" = "#E41A1C", "NL" = "#377EB8", "LCL" = "#4DAF4A",
+                  "LC-NL" = "#984EA3", "MXL" = "#FF7F00")
+
+# PLOT 2: Substitution Invariance vs Function Time (Pareto Frontier)
+# Find Pareto frontier for substitution vs time
+# (HIGHER psi is better, lower cpu is better)
+pareto_points_sub <- mod_summary_df %>%
+  arrange(desc(mean_psi)) %>%
+  mutate(is_pareto = FALSE)
+
+for(i in 1:nrow(pareto_points_sub)) {
+  dominated <- FALSE
+  for(j in 1:nrow(pareto_points_sub)) {
+    if(i != j &&
+       pareto_points_sub$mean_psi[j] >= pareto_points_sub$mean_psi[i] &&
+       pareto_points_sub$rel_cpu[j] <= pareto_points_sub$rel_cpu[i] &&
+       (pareto_points_sub$mean_psi[j] > pareto_points_sub$mean_psi[i] ||
+        pareto_points_sub$rel_cpu[j] < pareto_points_sub$rel_cpu[i])) {
+      dominated <- TRUE
+      break
+    }
+  }
+  pareto_points_sub$is_pareto[i] <- !dominated
+}
+
+pareto_frontier_sub <- pareto_points_sub %>%
+  filter(is_pareto) %>%
+  arrange(mean_psi)
+
+# Calculate normalized psi (0 = worst, 1 = best)
+min_psi <- min(mod_summary_df$mean_psi)
+max_psi <- max(mod_summary_df$mean_psi)
+
+mod_summary_df <- mod_summary_df %>%
+  mutate(norm_psi = (mean_psi - min_psi) / (max_psi - min_psi))
+
+pareto_frontier_sub <- pareto_frontier_sub %>%
+  mutate(norm_psi = (mean_psi - min_psi) / (max_psi - min_psi))
+
+# Plot 2: Substitution vs Time
+p2 <- ggplot(mod_summary_df, aes(y = rel_cpu, x = norm_psi, color = model_category)) +
+  # Add the frontier line
+  geom_line(data = pareto_frontier_sub,
+            aes(y = rel_cpu, x = norm_psi,
+                linetype = "Pareto Frontier"),
+            color = "darkblue",
+            linewidth = 1,
+            alpha = 0.6,
+            inherit.aes = FALSE) +
+  # Original points (now colored by category)
+  geom_point(alpha = 0.7, size = 5) +
+  # Outline Pareto frontier points with black border
+  geom_point(data = pareto_frontier_sub,
+             aes(y = rel_cpu, x = norm_psi, fill = model_category),
+             shape = 21,
+             size = 5,
+             stroke = 1.5,
+             color = "black",
+             alpha = 0.7,
+             inherit.aes = FALSE) +
+  scale_fill_manual(
+    values = model_colors,
+    guide = "none"  # Don't show fill in legend, only color
+  ) +
+  # Automatic labels with repel
+  geom_label_repel(data = mod_summary_df %>% filter(model_label %in% models_to_keep),
+                   aes(x = norm_psi, y = rel_cpu, label = model_label),
+                   size = 4,
+                   color = "black",
+                   fontface = "bold",
+                   fill = "white",
+                   label.padding = unit(0.15, "lines"),
+                   label.size = 0,
+                   box.padding = 1.5,
+                   point.padding = 1.5,
+                   segment.color = "gray50",
+                   segment.size = 0.3,
+                   max.overlaps = 20,
+                   force = 2,
+                   force_pull = 0.5,
+                   seed = 42) +
+  scale_linetype_manual(
+    name = "",
+    values = c("Pareto Frontier" = "solid"),
+    guide = guide_legend(
+      override.aes = list(color = "darkblue", linewidth = 1),
+      keyheight = unit(0.3, "lines"),
+      keywidth = unit(1.5, "lines"),
+      order = 2,
+      title.vjust = 0.5
+    )
+  ) +
+  scale_color_manual(
+    name = "Model Type",
+    values = model_colors,
+    breaks = c("MNL", "NL", "LCL", "LC-NL", "MXL"),
+    guide = guide_legend(
+      override.aes = list(size = 4, alpha = 0.7),
+      order = 1,
+      keyheight = unit(0.8, "lines")
+    )
+  ) +
+  theme_minimal() +
+  scale_y_continuous(
+    labels = function(x) paste0(x, "x"),
+    sec.axis = sec_axis(
+      ~ . * reference_values$mean_cpu,
+      name = "Evaluation Time (CPU seconds)",
+      labels = function(x) round(x, 2)
+    )
+  ) +
+  scale_x_continuous(
+    labels = function(x) {
+      case_when(
+        x == 0 ~ "0\nBaseline Model",
+        x == 1 ~ "1\nBest Model",
+        TRUE ~ as.character(round(x, 2))
+      )
+    },
+    breaks = seq(0, 1, 0.2),
+    limits = c(0, 1),
+    sec.axis = sec_axis(
+      ~ . * (max_psi - min_psi) + min_psi,
+      name = "Substitution Invariance (ψ')",
+      labels = function(x) round(x, 3)
+    )
+  ) +
+  labs(
+    title = "Pareto Frontier of Computational Cost vs Substitution Invariance",
+    # title = "Substitution Invariance vs Computational Cost",
+    y = "Computational Cost",
+    x = "Substitution Invariance (normalized)"
+  ) +
+  theme(
+    legend.position = "none",
+    # legend.position = c(0.01, 1),
+    # legend.justification = c(0, 1),
+    # legend.box = "vertical",  # Stack legends vertically
+    # legend.box.spacing = unit(-0.8, "lines"),  # Negative spacing to bring legends very close
+    # legend.spacing.y = unit(0.1, "lines"),  # Reduce vertical spacing within legends
+    # legend.text = element_text(size = 12),  # Controls legend text size
+    # legend.margin = margin(t = 0, r = 5, b = 0, l = 5),  # Reduce bottom margin
+    axis.text = element_text(size = 12),  # Controls both x and y axis text
+    axis.title = element_text(size = 14), # Controls both x and y axis titles
+    axis.line.x.bottom = element_line(arrow = grid::arrow(length = unit(0.3, "cm"),
+                                                     ends = "last"),
+                                color = "darkgreen", linewidth = 1),
+    axis.line.y.left = element_line(arrow = grid::arrow(length = unit(0.3, "cm"),
+                                                     ends = "first"),
+                                color = "darkgreen", linewidth = 1),
+    axis.title.x.top = element_text( size = 10),
+    axis.text.x.top = element_text(),
+    axis.title.y.right = element_text( size = 10),
+    axis.text.y.right = element_text(),
+    # panel.grid.major = element_blank(),
+    # panel.grid.minor = element_blank()
   )
 
-# First, extract the reference values from MNL_none_pref
-reference_values <- summary_df %>%
-  filter(model_name == "MNL_none_pref") %>%
-  select(mean_elapsed, mean_cpu, mean_avg_likelihood, mean_psi)
+print(p2)
 ```
 
+### Poster t test
+
+```{r}
+# Get unique model names and filter out CNL and LC-CNL models
+models <- model_labels[model_order]
+models <- models[models %in% unique(oos_df$model_label)]
+models <- models[!grepl("^CNL|^LC-CNL", models)]  # Filter out CNL and LC-CNL
+
+# Create all pairwise combinations (upper triangle)
+comparisons <- expand.grid(
+  model1 = models,
+  model2 = models,
+  stringsAsFactors = FALSE
+) %>%
+  filter(match(model1, models) < match(model2, models))
+
+results <- comparisons %>%
+  rowwise() %>%
+  mutate(
+    # Create a temporary df with both models
+    temp_df = list({
+      df1 <- oos_df %>%
+        filter(model_label == model1) %>%
+        select(avgLLObs_val) %>%
+        rename(val1 = avgLLObs_val)
+
+      df2 <- oos_df %>%
+        filter(model_label == model2) %>%
+        select(avgLLObs_val) %>%
+        rename(val2 = avgLLObs_val)
+
+      # Bind and keep only complete cases
+      bind_cols(df1, df2) %>%
+        filter(!is.na(val1) & !is.na(val2))
+    }),
+
+    # Run t-test on cleaned data
+    t_test = list(t.test(
+      exp(temp_df$val1),
+      exp(temp_df$val2),
+      paired = TRUE
+    )),
+    p_value = t_test$p.value,
+    t_stat  = t_test$statistic,
+
+    # Compute mean values for pct diff
+    mean1 = mean(exp(temp_df$val1)),
+    mean2 = mean(exp(temp_df$val2)),
+
+    # Percent difference relative to model2
+    mean_diff = - 100 * (mean1 - mean2) / mean2,
+
+    # Optional: retain mean difference if desired
+    mean_raw_diff = - t_test$estimate
+  ) %>%
+  ungroup() %>%
+  select(-t_test, -temp_df, -mean1, -mean2)
+
+x_models_present <- unique(results$model1)
+y_models_present <- unique(results$model2)
+
+results$model1 <- factor(results$model1, levels = model_labels[model_order])  # rows
+results$model2 <- factor(results$model2, levels = model_labels[model_order])  # columns
+
+# Set factor levels only for models that are actually present
+results$model1 <- factor(results$model1, levels = models[models %in% x_models_present])
+results$model2 <- factor(results$model2, levels = models[models %in% y_models_present])
+
+# Now create labels only for the models that are actually there
+x_labels <- levels(results$model1)
+x_labels_wrapped <- x_labels %>%
+  gsub(" \\(", "\n(", .) %>%
+  gsub(",", ",\n", .) %>%
+  {ifelse(x_labels %in% models_with_na, paste0(., "*"), .)}
+
+y_labels <- levels(results$model2)
+y_labels_wrapped <- y_labels %>%
+  {ifelse(y_labels %in% models_with_na, paste0(., "*"), .)}
+
+# Define color palette for model categories
+model_colors <- c("MNL" = "#E41A1C", "NL" = "#377EB8", "LCL" = "#4DAF4A",
+                  "LC-NL" = "#984EA3", "MXL" = "#FF7F00")
+
+# Create color vectors for axis labels based on model category
+get_model_category <- function(label) {
+  case_when(
+    label == "MNL" ~ "MNL",
+    label == "NL" ~ "NL",
+    grepl("^LCL \\(", label) ~ "LCL",
+    grepl("^LC-NL \\(", label) ~ "LC-NL",
+    grepl("^MXL \\(", label) ~ "MXL",
+    TRUE ~ "Other"
+  )
+}
+
+x_colors <- sapply(x_labels, function(l) model_colors[get_model_category(l)])
+y_colors <- sapply(y_labels, function(l) model_colors[get_model_category(l)])
+
+results %>%
+  mutate(
+    sig_level = case_when(
+      p_value < 0.001 ~ "p < 0.001",
+      p_value < 0.01  ~ "p < 0.01",
+      p_value < 0.05  ~ "p < 0.05",
+      TRUE            ~ "ns"
+    ),
+    label = sprintf("%.1f%%", mean_diff),
+    sign = ifelse(mean_diff >= 0, "pos", "neg"),
+    fill_group = paste0(sign, "_", sig_level)
+  ) %>%
+  ggplot(aes(x = model1, y = model2, fill = fill_group)) +
+  geom_tile(color = "grey80") +
+  geom_text(aes(label = label), size = 3,  fontface = "bold") + 
+  scale_x_discrete(labels = x_labels_wrapped) +
+  scale_y_discrete(labels = y_labels_wrapped) +
+  scale_fill_manual(
+    values = c(
+      "neg_p < 0.001" = "#ff4d4d",
+      "neg_p < 0.01"  = "#ff6666",
+      "neg_p < 0.05"  = "#ffb3b3",
+      "neg_ns"        = "white",
+      "pos_p < 0.001" = "#339933",
+      "pos_p < 0.01"  = "#66cc66",
+      "pos_p < 0.05"  = "#b3ffb3",
+      "pos_ns"        = "white"
+    ),
+    labels = c(
+      "neg_p < 0.001" = "p < 0.001",
+      "neg_p < 0.01"  = "p < 0.01",
+      "neg_p < 0.05"  = "p < 0.05",
+      "pos_p < 0.001" = "p < 0.001",
+      "pos_p < 0.01"  = "p < 0.01",
+      "pos_p < 0.05"  = "p < 0.05"
+    ),
+    breaks = c(
+      "neg_p < 0.001", "neg_p < 0.01", "neg_p < 0.05",
+      "pos_p < 0.001", "pos_p < 0.01", "pos_p < 0.05"
+    )
+  ) +
+  labs(
+    # title = "Pairwise Comparison: Out-of-Sample Avg. Likelihood",
+    subtitle = "Mean percent difference in average likelihood across five holdout samples",
+    # subtitle = "Mean % difference in average likelihood \n (* denotes models with a numerical issue for one sample)",
+    x = NULL, #"Model (column baseline)",
+    y = NULL, #"Model (row comparison)",
+    fill = "Significance \n(Paired t-test)"
+  ) +
+  theme_minimal(base_size = 11) +  # Increased base font size
+  theme(
+    axis.text.x = element_text(angle = 0, hjust = 0.5, color = x_colors, size = 7, face="bold"),
+    axis.text.y = element_text(color = y_colors, size = 7, hjust = 0, face="bold"),
+    panel.grid = element_blank(),
+    legend.position = c(0.9, 0.37),
+    legend.justification = c(0.5, 0.5),
+    legend.background = element_rect(fill = "white", color = "grey80"),
+    legend.box.background = element_rect(color = "grey80"),
+    legend.text = element_text(size = 11),
+    legend.title = element_text(size = 11)
+  )
+```
+
+
+### Poster Scraps
+
+```{r}
+# Create summary dataframe with raw metrics per CPU second
+model_metrics_raw_df <- mod_summary_df %>%
+  select(model_label, mean_avg_likelihood, mean_psi, mean_cpu) %>%
+  mutate(
+    likelihood_per_cpu_sec = mean_avg_likelihood / mean_cpu,
+    psi_per_cpu_sec = mean_psi / mean_cpu
+  ) %>%
+  arrange(desc(likelihood_per_cpu_sec))
+
+print(model_metrics_raw_df)
+
+library(ggplot2)
+library(patchwork)
+
+p1_raw <- ggplot(model_metrics_raw_df,
+                 aes(x = reorder(model_label, likelihood_per_cpu_sec),
+                     y = likelihood_per_cpu_sec)) +
+  geom_col() +
+  coord_flip() +
+  labs(
+    title = "Avg. Likelihood per CPU Second",
+    x = "Model",
+    y = "AL / CPU sec"
+  ) +
+  theme_minimal()
+
+p2_raw <- ggplot(model_metrics_raw_df,
+                 aes(x = reorder(model_label, psi_per_cpu_sec),
+                     y = psi_per_cpu_sec)) +
+  geom_col() +
+  coord_flip() +
+  labs(
+    title = "Psi-Prime per CPU Second",
+    x = "Model",
+    y = "ψ' / CPU sec"
+  ) +
+  theme_minimal()
+
+p1_raw | p2_raw
+```
+
+
+
+```{r}
+# PLOT 1: Predictive Accuracy vs Function Time (Pareto Frontier)
+# First identify Pareto optimal points
+pareto_points <- mod_summary_df %>%
+  arrange(desc(pct_improvement_from_random)) %>%
+  mutate(is_pareto = FALSE)
+
+# Find Pareto frontier
+for(i in 1:nrow(pareto_points)) {
+  dominated <- FALSE
+  for(j in 1:nrow(pareto_points)) {
+    if(i != j && 
+       pareto_points$pct_improvement_from_random[j] >= pareto_points$pct_improvement_from_random[i] &&
+       pareto_points$rel_cpu[j] <= pareto_points$rel_cpu[i] &&
+       (pareto_points$pct_improvement_from_random[j] > pareto_points$pct_improvement_from_random[i] ||
+        pareto_points$rel_cpu[j] < pareto_points$rel_cpu[i])) {
+      dominated <- TRUE
+      break
+    }
+  }
+  pareto_points$is_pareto[i] <- !dominated
+}
+
+pareto_frontier <- pareto_points %>%
+  filter(is_pareto) %>%
+  arrange(pct_improvement_from_random)
+
+# Plot 1: Accuracy vs Time
+p1 <- ggplot(mod_summary_df, aes(y = rel_cpu, x = pct_improvement_from_random)) +
+  # Add the frontier line
+  geom_line(data = pareto_frontier, 
+            aes(y = rel_cpu, x = pct_improvement_from_random,
+                linetype = "Pareto Frontier"),
+            color = "darkblue", 
+            linewidth = 1,
+            alpha = 0.6,
+            inherit.aes = FALSE) +
+  # Original points
+  geom_point(alpha = 0.7, size = 5, color = "steelblue") +
+  # Highlight Pareto optimal points
+  geom_point(data = pareto_frontier,
+             aes(y = rel_cpu, x = pct_improvement_from_random),
+             shape = 21,
+             size = 5.5,
+             stroke = 1.5,
+             color = "darkblue",
+             fill = NA,
+             inherit.aes = FALSE) +
+  geom_text_repel(aes(label = model_label), size = 3, color = "black",
+                  max.overlaps = 100, 
+                  fontface = "bold",
+                  force = 5,
+                  force_pull = 2,
+                  min.segment.length = 0,
+                  box.padding = 0.4,
+                  point.padding = 0.5,
+                  nudge_x = 0.01,
+                  nudge_y = 0.1) +
+  scale_linetype_manual(
+    name = "",
+    values = c("Pareto Frontier" = "solid"),
+    guide = guide_legend(
+      override.aes = list(color = "darkblue", linewidth = 1)
+    )
+  ) +
+  theme_minimal() +
+  # scale_y_log10(
+  scale_y_continuous(
+    labels = function(x) paste0(x, "x"),
+    sec.axis = sec_axis(
+      ~ . * reference_values$mean_cpu,
+      name = "CPU Time (seconds)",
+      labels = function(x) round(x, 2)
+    )
+  ) +
+  scale_x_continuous(
+    labels = function(x) paste0(x, "%"),
+    sec.axis = sec_axis(
+      ~ (. / 100 * (1/3)) + (1/3),
+      name = "Average Likelihood",
+      breaks = c(0.43, 0.45, 0.47),
+      labels = function(x) round(x, 3)
+    )
+  ) +
+  labs(
+    title = "Pareto Frontier: Predictive Accuracy vs Function Time",
+    y = "Function Evaluation Time (relative to MNL)",
+    x = "Predictive Accuracy (Relative Average Likelihood)"
+  ) +
+  theme(
+    legend.position = c(0.99, 0.01),
+    legend.justification = c(1, 0),
+    axis.line.x.bottom = element_line(arrow = grid::arrow(length = unit(0.3, "cm"), 
+                                                     ends = "last"),
+                                color = "darkgreen", linewidth = 1),
+    axis.line.y.left = element_line(arrow = grid::arrow(length = unit(0.3, "cm"), 
+                                                     ends = "first"),
+                                color = "darkgreen", linewidth = 1),
+    axis.title.x.top = element_text(color = "darkgray", size = 10),
+    axis.text.x.top = element_text(color = "darkgray"),
+    axis.title.y.right = element_text(color = "darkgray", size = 10),
+    axis.text.y.right = element_text(color = "darkgray")
+  )
+
+print(p1)
+
+# PLOT 2: Substitution Distortion vs Function Time (Pareto Frontier)
+# Find Pareto frontier for substitution vs time
+# (lower psi is better, lower cpu is better)
+pareto_points_sub <- mod_summary_df %>%
+  arrange(mean_psi) %>%
+  mutate(is_pareto = FALSE)
+
+for(i in 1:nrow(pareto_points_sub)) {
+  dominated <- FALSE
+  for(j in 1:nrow(pareto_points_sub)) {
+    if(i != j && 
+       pareto_points_sub$mean_psi[j] <= pareto_points_sub$mean_psi[i] &&
+       pareto_points_sub$rel_cpu[j] <= pareto_points_sub$rel_cpu[i] &&
+       (pareto_points_sub$mean_psi[j] < pareto_points_sub$mean_psi[i] ||
+        pareto_points_sub$rel_cpu[j] < pareto_points_sub$rel_cpu[i])) {
+      dominated <- TRUE
+      break
+    }
+  }
+  pareto_points_sub$is_pareto[i] <- !dominated
+}
+
+pareto_frontier_sub <- pareto_points_sub %>%
+  filter(is_pareto) %>%
+  arrange(mean_psi)
+
+# PLOT 2: Substitution Distortion vs Function Time (Pareto Frontier)
+# Find Pareto frontier for substitution vs time
+# (lower psi is better, lower cpu is better)
+pareto_points_sub <- mod_summary_df %>%
+  arrange(mean_psi) %>%
+  mutate(is_pareto = FALSE)
+
+for(i in 1:nrow(pareto_points_sub)) {
+  dominated <- FALSE
+  for(j in 1:nrow(pareto_points_sub)) {
+    if(i != j && 
+       pareto_points_sub$mean_psi[j] <= pareto_points_sub$mean_psi[i] &&
+       pareto_points_sub$rel_cpu[j] <= pareto_points_sub$rel_cpu[i] &&
+       (pareto_points_sub$mean_psi[j] < pareto_points_sub$mean_psi[i] ||
+        pareto_points_sub$rel_cpu[j] < pareto_points_sub$rel_cpu[i])) {
+      dominated <- TRUE
+      break
+    }
+  }
+  pareto_points_sub$is_pareto[i] <- !dominated
+}
+
+pareto_frontier_sub <- pareto_points_sub %>%
+  filter(is_pareto) %>%
+  arrange(mean_psi)
+
+# PLOT 2: Substitution Invariance vs Function Time (Pareto Frontier)
+# Find Pareto frontier for substitution vs time
+# (HIGHER psi is better, lower cpu is better)
+pareto_points_sub <- mod_summary_df %>%
+  arrange(desc(mean_psi)) %>%
+  mutate(is_pareto = FALSE)
+
+for(i in 1:nrow(pareto_points_sub)) {
+  dominated <- FALSE
+  for(j in 1:nrow(pareto_points_sub)) {
+    if(i != j && 
+       pareto_points_sub$mean_psi[j] >= pareto_points_sub$mean_psi[i] &&
+       pareto_points_sub$rel_cpu[j] <= pareto_points_sub$rel_cpu[i] &&
+       (pareto_points_sub$mean_psi[j] > pareto_points_sub$mean_psi[i] ||
+        pareto_points_sub$rel_cpu[j] < pareto_points_sub$rel_cpu[i])) {
+      dominated <- TRUE
+      break
+    }
+  }
+  pareto_points_sub$is_pareto[i] <- !dominated
+}
+
+pareto_frontier_sub <- pareto_points_sub %>%
+  filter(is_pareto) %>%
+  arrange(mean_psi)
+
+# Plot 2: Substitution vs Time
+p2 <- ggplot(mod_summary_df, aes(y = rel_cpu, x = mean_psi)) +
+  # Add the frontier line
+  geom_line(data = pareto_frontier_sub, 
+            aes(y = rel_cpu, x = mean_psi,
+                linetype = "Pareto Frontier"),
+            color = "darkred", 
+            linewidth = 1,
+            alpha = 0.6,
+            inherit.aes = FALSE) +
+  # Original points (no color mapping)
+  geom_point(alpha = 0.7, size = 5, color = "steelblue") +
+  # Highlight Pareto optimal points
+  geom_point(data = pareto_frontier_sub,
+             aes(y = rel_cpu, x = mean_psi),
+             shape = 21,
+             size = 5.5,
+             stroke = 1.5,
+             color = "darkred",
+             fill = NA,
+             inherit.aes = FALSE) +
+  geom_text_repel(aes(label = model_label), size = 3, color = "black",
+                  max.overlaps = 100, 
+                  fontface = "bold",
+                  force = 5,
+                  force_pull = 2,
+                  min.segment.length = 0,
+                  box.padding = 0.4,
+                  point.padding = 0.5,
+                  nudge_x = 0.01,
+                  nudge_y = 0.1) +
+  scale_linetype_manual(
+    name = "",
+    values = c("Pareto Frontier" = "solid"),
+    guide = guide_legend(
+      override.aes = list(color = "darkred", linewidth = 1)
+    )
+  ) +
+  theme_minimal() +
+  scale_y_log10(
+  # scale_y_continuous(
+    labels = function(x) paste0(x, "x"),
+    sec.axis = sec_axis(
+      ~ . * reference_values$mean_cpu,
+      name = "CPU Time (seconds)",
+      labels = function(x) round(x, 2)
+    )
+  ) +
+  scale_x_continuous(
+    labels = function(x) round(x, 3)
+  ) +
+  labs(
+    title = "Pareto Frontier: Substitution Invariance vs Function Time",
+    y = "Function Evaluation Time (relative to MNL)",
+    x = "Substitution Invariance (ψ')"
+  ) +
+  theme(
+    legend.position = c(0.99, 0.01),
+    legend.justification = c(1, 0),
+    axis.line.x.bottom = element_line(arrow = grid::arrow(length = unit(0.3, "cm"), 
+                                                     ends = "last"),
+                                color = "darkgreen", linewidth = 1),
+    axis.line.y.left = element_line(arrow = grid::arrow(length = unit(0.3, "cm"), 
+                                                     ends = "first"),
+                                color = "darkgreen", linewidth = 1),
+    axis.title.y.right = element_text(color = "darkgray", size = 10),
+    axis.text.y.right = element_text(color = "darkgray")
+  )
+
+print(p2)
+```
+
+# Individual plots
 ## X vs Y vs Z plots
 
 ```{r, echo=FALSE}
@@ -1145,33 +2707,32 @@ label_colors <- rev(ifelse(levels(oos_df$model_label) %in% models_with_na, "red"
 
 ggplot(oos_df, aes(y = model_label, x = exp(avgLLObs_val),
                    group = fold_id, color = factor(fold_id))) +
+  # geom_line(alpha = 0.6) +
   geom_point(alpha = 0.6) +
+  # geom_text(data = oos_df %>% filter(model_label == levels(model_label)[1]),
+  #           aes(label = paste0(" #", fold_id)),
+  #           size = 2.5, vjust = -0.5, show.legend = FALSE) +
   geom_text_repel(
     data = oos_df %>% filter(model_label == levels(model_label)[1]),
     aes(label = paste0(" #", fold_id)),
     size = 2.5,
-    nudge_y = 1.5,
+    nudge_y = 1.5,       # nudges labels slightly above the points
+    # nudge_x = 0.01,
     direction = "y",
     hjust = 0,
-    segment.color = NA,
+    segment.color = NA,   # no connecting lines
     min.segment.length = 0
-  ) +
-  geom_segment(aes(x = 1/3, xend = 1/3, y = -Inf, yend = Inf),
-               linetype = "dashed", color = "red", inherit.aes = FALSE) +
-  annotate("text", x = 1/3, y = Inf, label = "Random Choice (0.33)", 
-           color = "red", hjust = 0.5, vjust = -1, size = 3) +
+  )+
   scale_y_discrete(limits = rev(levels(oos_df$model_label))) +
-  scale_x_continuous(limits = c(1/3, NA), expand = expansion(mult = c(0, 0.05))) +
   theme_minimal(base_size = 10) +
-  coord_cartesian(clip = "off") +
   labs(title = "Out-of-Sample Fit (by Holdout Sample)",
        x = "Avg. Likelihood",
        y = NULL) +
   theme(axis.text.y = element_text(size = 9, hjust = 0, color = label_colors),
         axis.text.x = element_text(size = 9),
         axis.title.x = element_text(size = 10),
-        plot.title = element_text(size = 10, face = "bold", margin = margin(t = 0, b = 20)),
-        plot.margin = margin(10, 25, 5, 5),
+        plot.title = element_text(size = 10, face = "bold"),
+        plot.margin = margin(5, 25, 5, 5),
         legend.position = "none")
 ggsave("output/Figures/oos_scatter.png", width = 4, height = 4, dpi = 300)
 
@@ -1875,16 +3436,7 @@ est_wide_df <- est_wide_df %>%
       },
       # For base class or models without classes, NA
       TRUE ~ NA_character_
-    ),
-    # Transform alpha using binomial softmax (1 / (1 + exp(-alpha)))
-    across(starts_with("alpha_"), ~ {
-      if_else(is.na(.) | . == "", NA_character_, {
-        stars <- gsub("[^*]", "", .)
-        alpha_numeric <- as.numeric(gsub("\\*", "", .))
-        alpha_transformed <- 1 / (1 + exp(-alpha_numeric))
-        paste0(round(alpha_transformed, 3), stars)
-      })
-    })
+    )
   ) %>%
   ungroup() %>%
   select(-class_intercept)  # Remove class_intercept column
@@ -2028,50 +3580,6 @@ colnames(ms_outcomes) <- summary_colnames
 write.csv(ms_outcomes, file.path(data_folder, "model_summary_clean.csv"), row.names = FALSE)
 
 print(ms_outcomes)
-```
-
-## Pareto Summary Table
-
-```{r}
-# mod_summary_df
-
-# Calculate normalized accuracy based on mean_avg_likelihood (0 = worst, 1 = best)
-min_likelihood <- min(mod_summary_df$mean_avg_likelihood)
-max_likelihood <- max(mod_summary_df$mean_avg_likelihood)
-
-mod_summary_df <- mod_summary_df %>%
-  mutate(norm_accuracy = (mean_avg_likelihood - min_likelihood) / (max_likelihood - min_likelihood))
-
-pareto_frontier <- pareto_frontier %>%
-  mutate(norm_accuracy = (mean_avg_likelihood - min_likelihood) / (max_likelihood - min_likelihood))
-
-# Calculate normalized psi (0 = worst, 1 = best)
-min_psi <- min(mod_summary_df$mean_psi)
-max_psi <- max(mod_summary_df$mean_psi)
-
-mod_summary_df <- mod_summary_df %>%
-  mutate(norm_psi = (mean_psi - min_psi) / (max_psi - min_psi))
-
-pareto_frontier_sub <- pareto_frontier_sub %>%
-  mutate(norm_psi = (mean_psi - min_psi) / (max_psi - min_psi))
-
-# Create table with primary (normalized) and secondary (actual) axis values
-norm_data_table <- mod_summary_df %>%
-  mutate(
-    mean_cpu = rel_cpu * reference_values$mean_cpu,
-    norm_cpu = (rel_cpu - min(rel_cpu)) / (max(rel_cpu) - min(rel_cpu))
-  ) %>%
-  rename(
-    mean_AL = mean_avg_likelihood
-  ) %>%
-  # select(model_label, mean_AL, mean_psi, mean_cpu, norm_accuracy, norm_psi, norm_cpu)
-  select(model_label, mean_AL, mean_psi, mean_cpu, rel_cpu, norm_accuracy, norm_psi, norm_cpu)
-
-print(norm_data_table)
-
-write.csv(norm_data_table, file.path(data_folder, "norm_pareto_table.csv"), row.names = FALSE)
-
-
 ```
 
 ### Heatmap
