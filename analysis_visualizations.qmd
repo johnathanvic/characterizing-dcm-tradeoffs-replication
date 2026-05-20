@@ -657,7 +657,7 @@ p1 <- ggplot(mod_summary_df, aes(y = rel_cpu, x = mean_avg_likelihood, color = m
     legend.position = "none",
     # legend.margin = margin(t = 5, r = 5, b = 0, l = 5),  # Reduce bottom margin
     axis.text = element_text(size = 10),  # Controls both x and y axis text
-    axis.title = element_text(size = 14), # Controls both x and y axis titles
+    axis.title = element_text(size = 10), # Controls both x and y axis titles
     axis.line.x.bottom = element_line(arrow = grid::arrow(length = unit(0.3, "cm"), 
                                                      ends = "last"),
                                 color = "darkgreen", linewidth = 1),
@@ -818,7 +818,7 @@ p1 <- ggplot(mod_summary_df, aes(y = rel_cpu, x = pct_improvement_from_random, c
     legend.position = "none",
     # legend.margin = margin(t = 5, r = 5, b = 0, l = 5),  # Reduce bottom margin
     axis.text = element_text(size = 10),  # Controls both x and y axis text
-    axis.title = element_text(size = 14), # Controls both x and y axis titles
+    axis.title = element_text(size = 10), # Controls both x and y axis titles
     axis.line.x.bottom = element_line(arrow = grid::arrow(length = unit(0.3, "cm"), 
                                                      ends = "last"),
                                 color = "darkgreen", linewidth = 1),
@@ -968,7 +968,7 @@ p2 <- ggplot(mod_summary_df, aes(y = rel_cpu, x = mean_psi, color = model_catego
     legend.position = "none",
     # legend.margin = margin(t = 5, r = 5, b = 0, l = 5),  # Reduce bottom margin
     axis.text = element_text(size = 10),  # Controls both x and y axis text
-    axis.title = element_text(size = 14), # Controls both x and y axis titles
+    axis.title = element_text(size = 10), # Controls both x and y axis titles
     axis.line.x.bottom = element_line(arrow = grid::arrow(length = unit(0.3, "cm"), 
                                                      ends = "last"),
                                 color = "darkgreen", linewidth = 1),
@@ -1298,23 +1298,61 @@ results %>%
     )
   ) +
   labs(
-    title = "Pairwise Comparison: Out-of-Sample Avg. Likelihood",
-    subtitle = "Mean % difference in average likelihood (* denotes models with a numerical issue for one sample)",
-    x = NULL, #"Model (column baseline)",
-    y = NULL, #"Model (row comparison)",
-    fill = "Significance \n(Paired t-test)"
+      title = "Pairwise Comparison: Out-of-Sample Avg. Likelihood",
+      subtitle = "Mean % difference in average likelihood (* denotes models with a numerical issue for one sample)",
+      x = NULL,
+      y = NULL,
+      fill = "Significance \n(Paired t-test)"
+    ) +
+    theme_minimal(base_size = 11) +
+    theme(
+      plot.title    = element_text(face = "bold",   size = 11),
+      plot.subtitle = element_text(face = "italic", size = 11),
+      axis.text.x = element_text(angle = 0, hjust = 0.5, color = "darkred", size = 10, face = "bold"),
+      axis.text.y = element_text(color = "darkgreen", size = 10, hjust = 0, face = "bold"),
+      panel.grid = element_blank(),
+      legend.position = c(0.9, 0.37),
+      legend.justification = c(0.5, 0.5),
+      legend.background = element_rect(fill = "white", color = "grey80"),
+      legend.box.background = element_rect(color = "grey80"),
+      legend.text = element_text(size = 11),
+      legend.title = element_text(size = 11)
+    ) +
+  annotate(
+    "rect",
+    xmin = 12.95, xmax = 17,
+    ymin = 2.6, ymax = 5.8,
+    fill = "white",
+    color = "grey60",
+    linewidth = 0.3
+  )+
+  annotate(
+    "label",
+    x = 13,
+    y = 5,
+    label = "Positive (green): column model better",
+    size = 3.5,
+    fill = "white",
+    color = "#339933",
+    linewidth = NA,
+    label.padding = unit(0.4, "lines"),
+    hjust = 0,
+    vjust = 0.5,
+    fontface = "italic"
   ) +
-  theme_minimal(base_size = 11) +  # Increased base font size
-  theme(
-    axis.text.x = element_text(angle = 0, hjust = 0.5, color = "darkred", size = 10, face="bold"),
-    axis.text.y = element_text(color = "darkgreen", size = 10, hjust = 0, face="bold"),
-    panel.grid = element_blank(),
-    legend.position = c(0.9, 0.37),
-    legend.justification = c(0.5, 0.5),
-    legend.background = element_rect(fill = "white", color = "grey80"),
-    legend.box.background = element_rect(color = "grey80"),
-    legend.text = element_text(size = 11),
-    legend.title = element_text(size = 11)
+  annotate(
+    "label",
+    x = 13,
+    y = 3.6,
+    label = "Negative (red): row model better",
+    size = 3.5,
+    fill = "white",
+    color = "#ff4d4d",
+    linewidth = NA,
+    label.padding = unit(0.4, "lines"),
+    hjust = 0,
+    vjust = 0.5,
+    fontface = "italic"
   )
 
 ggsave("output/Figures/oos_pairwise.png", width = 14, height = 4.5, dpi = 300)
@@ -1375,6 +1413,7 @@ ggplot(psi_df, aes(y = model_label, x = psi_prime)) +
     plot.title = element_text(size = 11, face = "bold"),
     plot.margin = margin(5, 5, 5, 5)
   )
+
 ggsave("output/Figures/psi_CI.png", width = 4, height = 4, dpi = 300)
 
 ```
