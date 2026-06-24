@@ -1,0 +1,135 @@
+=== Step 1: Rebuild EPA choice set ===
+Loaded 74426 total vehicle rows.
+After filtering to MY2030 cars: 1168 rows.
+  created_alternative: 742 created / 426 real-lineage.
+Gas $3.068/gal, Electricity $0.1288/kWh, CO2e 8596 g/gal
+  Recovered 49 HEV vehicles (projected ICE with HEV ancestor).
+  Acceleration: clipped 35 vehicles at 2.0 s floor.
+
+Wrote inputs/EPA_Final-Rule_2024/epa_choice_set_my2030.csv (1168 rows, 19 cols)
+
+Sanity checks:
+  Total: 1168 (expected 1168)
+  Created vs real: 742 / 426 (expected 742 / 426)
+  BEV OpCost: median=3.47 c/mi, range=[2.19, 6.40] (expect 3-6)
+  ICE OpCost: median=9.88 c/mi, range=[5.47, 18.39] (expect 8-15)
+  Brand dummies sum: max=1 (expect <=1)
+  Nest indicators sum: min=1, max=1 (expect exactly 1)
+  Acceleration: median=5.16 s, range=[2.00, 17.88]
+
+Done.
+
+EPA choice set: 1168 alts loaded.
+Discovered 21 models.
+
+[ 1/21] LC8_CNL_pref
+  cpu  small=  4.72s  big=  8.49s  epa= 19.98s
+  psi  overall=0.00388  (7s)
+[ 2/21] LC8_NL_pref
+  cpu  small=  4.84s  big=  9.54s  epa= 23.71s
+  psi  overall=0.00442  (7s)
+[ 3/21] CNL_CNL_pref
+  cpu  small=  0.55s  big=  0.85s  epa=  1.99s
+  psi  overall=0.00040  (1s)
+[ 4/21] LCL2_CNL_pref
+  cpu  small=  1.36s  big=  2.25s  epa=  5.07s
+  psi  overall=0.00136  (2s)
+[ 5/21] LCL2_NL_pref
+  cpu  small=  1.42s  big=  2.66s  epa=  6.24s
+  psi  overall=0.00220  (2s)
+[ 6/21] LCL2_none_pref
+  cpu  small=  0.59s  big=  0.89s  epa=  1.88s
+  psi  overall=0.00048  (1s)
+[ 7/21] LCL4_CNL_pref
+  cpu  small=  2.31s  big=  4.27s  epa=  9.77s
+  psi  overall=0.00213  (4s)
+[ 8/21] LCL4_NL_pref
+  cpu  small=  2.56s  big=  4.93s  epa= 12.09s
+  psi  overall=0.00273  (4s)
+[ 9/21] LCL4_none_pref
+  cpu  small=  0.65s  big=  1.33s  epa=  3.09s
+  psi  overall=0.00089  (2s)
+[10/21] LCL6_CNL_pref
+  cpu  small=  3.41s  big=  6.11s  epa= 15.04s
+  psi  overall=0.00238  (5s)
+[11/21] LCL6_NL_pref
+  cpu  small=  3.70s  big=  7.16s  epa= 17.83s
+  psi  overall=0.00333  (5s)
+[12/21] LCL6_none_pref
+  cpu  small=  0.79s  big=  1.70s  epa=  4.54s
+  psi  overall=0.00143  (2s)
+[13/21] LCL8_none_pref
+  cpu  small=  0.91s  big=  2.23s  epa=  5.86s
+  psi  overall=0.00236  (2s)
+[14/21] MNL_none_pref
+  cpu  small=  0.08s  big=  0.21s  epa=  0.60s
+  psi  overall=0.00000  (1s)
+[15/21] MXL100_none_pref
+  cpu  small=  0.36s  big= 13.90s  epa= 58.40s
+  psi  seed= 1  overall=0.00317
+  psi  seed= 2  overall=0.00468
+  psi  seed= 3  overall=0.00479
+  psi  seed= 4  overall=0.00454
+  psi  seed= 5  overall=0.00471
+  psi  seed= 6  overall=0.00477
+  psi  seed= 7  overall=0.00463
+  psi  seed= 8  overall=0.00464
+  psi  seed= 9  overall=0.00458
+  psi  seed=10  overall=0.00464
+  psi  (10-seed mean +/- SD)  overall=0.00452 +/- 0.00048  (802s)
+[16/21] MXL100_none_wtp
+  cpu  small=  0.80s  big= 19.54s  epa= 66.87s
+  psi  seed= 1  overall=0.00408
+  psi  seed= 2  overall=0.00392
+  psi  seed= 3  overall=0.00388
+  psi  seed= 4  overall=0.00369
+  psi  seed= 5  overall=0.00402
+  psi  seed= 6  overall=0.00365
+  psi  seed= 7  overall=0.00387
+  psi  seed= 8  overall=0.00385
+  psi  seed= 9  overall=0.00366
+  psi  seed=10  overall=0.00374
+  psi  (10-seed mean +/- SD)  overall=0.00384 +/- 0.00015  (947s)
+[17/21] NL_NL_pref
+  cpu  small=  0.78s  big=  1.19s  epa=  2.78s
+  psi  overall=0.00102  (2s)
+[18/21] MXL500_none_pref
+  cpu  small=  1.07s  big= 76.67s  epa=295.81s
+  psi  seed= 1  overall=0.00443
+  psi  seed= 2  overall=0.00602
+  psi  seed= 3  overall=0.00427
+  psi  seed= 4  overall=0.00445
+  psi  seed= 5  overall=0.00447
+  psi  seed= 6  overall=0.00436
+  psi  seed= 7  overall=0.00609
+  psi  seed= 8  overall=0.00573
+  psi  seed= 9  overall=0.00583
+  psi  seed=10  overall=0.00448
+  psi  (10-seed mean +/- SD)  overall=0.00501 +/- 0.00079  (751s)
+[19/21] MXL500_none_wtp
+  cpu  small=  1.97s  big= 97.59s  epa=375.36s
+  psi  seed= 1  overall=0.00517
+  psi  seed= 2  overall=0.00510
+  psi  seed= 3  overall=0.00476
+  psi  seed= 4  overall=0.00465
+  psi  seed= 5  overall=0.00497
+  psi  seed= 6  overall=0.00457
+  psi  seed= 7  overall=0.00485
+  psi  seed= 8  overall=0.00490
+  psi  seed= 9  overall=0.00486
+  psi  seed=10  overall=0.00475
+  psi  (10-seed mean +/- SD)  overall=0.00486 +/- 0.00019  (939s)
+[20/21] MXL1k_none_pref
+  cpu  small=  2.39s  big=153.70s  epa=2138.79s
+  psi  seed= 1  overall=0.00490
+  psi  seed= 2  overall=0.00491
+  psi  seed= 3  overall=0.00473
+  psi  seed= 4  overall=0.00474
+  psi  seed= 5  overall=0.00494
+  psi  seed= 6  overall=0.00464
+  psi  seed= 7  overall=0.00511
+  psi  seed= 8  overall=0.00469
+  psi  seed= 9  overall=0.00629
+  psi  seed=10  overall=0.00496
+  psi  (10-seed mean +/- SD)  overall=0.00499 +/- 0.00048  (23799s)
+[21/21] MXL1k_none_wtp

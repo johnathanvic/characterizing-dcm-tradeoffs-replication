@@ -1,43 +1,75 @@
 mnl_utility <- function(choice_set, beta, observed_attributes,
-                        utility_space, og_expV=0, intercept=NULL){
-  
+                        utility_space, og_expV=0, intercept=NULL,
+                        precomputed = NULL){
+
   if (utility_space == "pref"){
-    # Organize attr into array (n_attr x n_veh)
-    # coef_names <- names(beta)
-    # dirty_attrs <- sub("^(b_|wtp_)", "", coef_names)
-    
-    bvec <- beta[paste0("b_", observed_attributes)]
-    X <- as.matrix(choice_set[, observed_attributes, drop=FALSE]) # (n_veh x n_attr)
+    if (is.null(precomputed)) {
+      bvec <- beta[paste0("b_", observed_attributes)]
+      X <- as.matrix(choice_set[, observed_attributes, drop=FALSE])
+    } else {
+      bvec <- beta[precomputed$bvec_names]
+      X <- precomputed$X
+    }
     V <- drop(X %*% bvec)
   } else {
     # WTP space
-    attr_no_price   <- setdiff(observed_attributes, "Price")
-    bwtp  <- beta[paste0("wtp_", attr_no_price)]
-    Xwtp  <- as.matrix(choice_set[, attr_no_price, drop=FALSE])
-    V     <- drop(beta["scalingFactor"] * (Xwtp %*% bwtp - choice_set$Price))
+    if (is.null(precomputed)) {
+      attr_no_price <- setdiff(observed_attributes, "Price")
+      bwtp <- beta[paste0("wtp_", attr_no_price)]
+      Xwtp <- as.matrix(choice_set[, attr_no_price, drop=FALSE])
+      price <- choice_set$Price
+    } else {
+      bwtp <- beta[precomputed$bwtp_names]
+      Xwtp <- precomputed$Xwtp
+      price <- precomputed$price
+    }
+    V <- drop(beta["scalingFactor"] * (Xwtp %*% bwtp - price))
   }
-  
+
   # Add intercept if relevant
   if (!is.null(intercept)) {
-    cols <- paste0(names(intercept), "_indicator")
-    V    <- V + drop(as.matrix(choice_set[, cols, drop=FALSE]) %*% intercept)
+    if (is.null(precomputed) || is.null(precomputed$X_intercept)) {
+      cols <- paste0(names(intercept), "_indicator")
+      X_intercept <- as.matrix(choice_set[, cols, drop=FALSE])
+    } else {
+      X_intercept <- precomputed$X_intercept
+    }
+    V <- V + drop(X_intercept %*% intercept)
   }
   return(V)
 }
 
+# Build the precomputed object for a fixed choice_set, given utility_space and
+# the observed_attributes. The intercept argument controls whether an intercept
+# design matrix is also cached.
+build_mnl_utility_cache <- function(choice_set, observed_attributes, utility_space,
+                                    intercept = NULL) {
+  out <- list()
+  if (utility_space == "pref") {
+    out$bvec_names <- paste0("b_", observed_attributes)
+    out$X <- as.matrix(choice_set[, observed_attributes, drop=FALSE])
+  } else {
+    attr_no_price <- setdiff(observed_attributes, "Price")
+    out$bwtp_names <- paste0("wtp_", attr_no_price)
+    out$Xwtp <- as.matrix(choice_set[, attr_no_price, drop=FALSE])
+    out$price <- choice_set$Price
+  }
+  if (!is.null(intercept)) {
+    cols <- paste0(names(intercept), "_indicator")
+    out$X_intercept <- as.matrix(choice_set[, cols, drop=FALSE])
+  }
+  out
+}
+
 mnl_prob <- function(choice_set, beta, observed_attributes,
-                     utility_space, og_expV = 0, intercept = NULL) {
-  # Calculate deterministic utilities
+                     utility_space, og_expV = 0, intercept = NULL,
+                     mnl_cache = NULL) {
   utility <- mnl_utility(choice_set, beta, observed_attributes,
-                         utility_space, intercept)
-  
-  # MNL probability calculation
+                         utility_space, intercept, precomputed = mnl_cache)
+
   exp_utility <- exp(utility)
   prob <- exp_utility / (sum(exp_utility) + og_expV)
-  
-  # Add names to match NL function structure
   names(prob) <- choice_set$veh_id
-  
   return(prob)
 }
 
@@ -51,14 +83,25 @@ calculate_mnl_prob <- function(choice_set, model, og_expV = 0, intercept = NULL)
            intercept = intercept)
 }
 
-wrap_mnl_prob_func <- function(model, og_expV = 0, intercept = NULL){
+wrap_mnl_prob_func <- function(model, og_expV = 0, intercept = NULL, init_choice_set = NULL){
+  if (!is.null(init_choice_set)) {
+    mnl_cache <- build_mnl_utility_cache(
+      choice_set          = init_choice_set,
+      observed_attributes = model$apollo_inputs$observed_attributes,
+      utility_space       = model$apollo_inputs$utility_space,
+      intercept           = intercept
+    )
+  } else {
+    mnl_cache <- NULL
+  }
   choice_prob_func <- function(choice_set){
     mnl_prob(choice_set = choice_set,
              beta = model$estimate,
              observed_attributes = model$apollo_inputs$observed_attributes,
              utility_space = model$apollo_inputs$utility_space,
              og_expV = og_expV,
-             intercept = intercept)
+             intercept = intercept,
+             mnl_cache = mnl_cache)
   }
   return(choice_prob_func)
 }
@@ -144,85 +187,43 @@ build_nesting_structure <- function(choice_set, beta, nesting_spec) {
 }
 
 # Vectorized probability calculation
-nl_prob <- function(choice_set, beta, observed_attributes, utility_space, og_expV = 0, intercept = NULL, 
-                    nesting_spec, nesting_structure = NULL) {
-  
-  
+nl_prob <- function(choice_set, beta, observed_attributes, utility_space, og_expV = 0, intercept = NULL,
+                    nesting_spec, nesting_structure = NULL, mnl_cache = NULL) {
+
   # Step 1: Calculate deterministic utilities
-  utility <- mnl_utility(choice_set, beta, observed_attributes, utility_space, og_expV, intercept)
+  utility <- mnl_utility(choice_set, beta, observed_attributes, utility_space, og_expV, intercept,
+                         precomputed = mnl_cache)
   names(utility) <- choice_set$veh_id
-  
+
   # Step 2: Get or build nesting structure
   if (is.null(nesting_structure)) {
     nesting_structure <- build_nesting_structure(choice_set, beta, nesting_spec)
   }
-  
-  # Extract components
-  A <- nesting_structure$allocation_matrix  # J x K matrix
-  lambda <- nesting_structure$lambda_vec    # J vector
+
+  A       <- nesting_structure$allocation_matrix  # J x K (nests x alts)
+  lambda  <- nesting_structure$lambda_vec         # J
   alt_ids <- nesting_structure$alt_ids
-  
-  # Ensure utility order matches allocation matrix columns
   utility <- utility[alt_ids]
-  
-  # Step 3: Optimized nested logit calculation
-  n_nests <- length(lambda)
-  n_alts <- length(utility)
-  
-  # Pre-allocate final probabilities vector
-  final_probs <- numeric(n_alts)
-  
-  # Calculate nest logsums and probabilities in one pass
-  nest_logsums <- numeric(n_nests)
-  
-  for (j in seq_len(n_nests)) {
-    # Get non-zero allocations for this nest (avoid full matrix operations)
-    alloc_j <- A[j, ]
-    active_alts <- which(alloc_j > 0)
-    
-    if (length(active_alts) > 0) {
-      # Only compute for alternatives in this nest
-      lambda_j <- lambda[j]
-      utilities_j <- utility[active_alts]
-      allocations_j <- alloc_j[active_alts]
-      
-      # Scaled exponentials: exp(V_k / lambda_j)
-      exp_scaled <- exp(utilities_j / lambda_j)
-      
-      # Weighted sum for logsum
-      weighted_sum <- sum(allocations_j * exp_scaled)
-      nest_logsums[j] <- lambda_j * log(weighted_sum)
-      
-      # Conditional probabilities within nest
-      conditional_probs <- (allocations_j * exp_scaled) / weighted_sum
-      
-      # Store for final calculation (will be multiplied by marginal prob)
-      final_probs[active_alts] <- conditional_probs
-    } else {
-      nest_logsums[j] <- -Inf
-    }
-  }
-  
-  # Step 4: Marginal nest probabilities
-  exp_nest_logsums <- exp(nest_logsums)
+
+  # Vectorized over nests: weighted[i, j] = A[j, i] * exp(V_i / lambda_j)
+  exp_scaled <- exp(outer(utility, 1 / lambda))    # n_alts x n_nests
+  weighted   <- t(A) * exp_scaled                  # n_alts x n_nests
+
+  denom_per_nest <- colSums(weighted)              # length n_nests
+  # Empty nests get -Inf logsum (matches original behavior)
+  nest_logsums   <- ifelse(denom_per_nest > 0, lambda * log(denom_per_nest), -Inf)
+
+  exp_nest_logsums    <- exp(nest_logsums)
   marginal_nest_probs <- exp_nest_logsums / (sum(exp_nest_logsums) + og_expV)
-  
-  # Step 5: Final probabilities - multiply conditional probs by marginal probs
-  final_probs_result <- numeric(n_alts)
-  
-  for (j in seq_len(n_nests)) {
-    alloc_j <- A[j, ]
-    active_alts <- which(alloc_j > 0)
-    
-    if (length(active_alts) > 0) {
-      final_probs_result[active_alts] <- final_probs_result[active_alts] + 
-        marginal_nest_probs[j] * final_probs[active_alts]
-    }
-  }
-  
-  names(final_probs_result) <- alt_ids
-  
-  return(final_probs_result)
+
+  # Conditional probs P(i|j) = weighted[i,j] / denom_per_nest[j]
+  safe_denom <- ifelse(denom_per_nest > 0, denom_per_nest, 1)
+  cond_probs <- sweep(weighted, 2, safe_denom, "/")
+  cond_probs[, denom_per_nest == 0] <- 0
+
+  final_probs <- as.vector(cond_probs %*% marginal_nest_probs)
+  names(final_probs) <- alt_ids
+  return(final_probs)
 }
 
 # Wrapper
@@ -247,97 +248,108 @@ calculate_nl_prob <- function(choice_set, model) {
   return(choice_prob_func)
 }
 
-wrap_nl_prob_func <- function(model){
-  # Calc choice prob
+wrap_nl_prob_func <- function(model, init_choice_set = NULL){
+  if (!is.null(init_choice_set)) {
+    nesting_structure <- build_nesting_structure(
+      choice_set   = init_choice_set,
+      beta         = model$estimate,
+      nesting_spec = model$apollo_inputs$nesting_spec
+    )
+    mnl_cache <- build_mnl_utility_cache(
+      choice_set          = init_choice_set,
+      observed_attributes = model$apollo_inputs$observed_attributes,
+      utility_space       = model$apollo_inputs$utility_space,
+      intercept           = NULL
+    )
+  } else {
+    nesting_structure <- NULL
+    mnl_cache         <- NULL
+  }
   choice_prob_func <- function(choice_set){
-    nl_prob(choice_set = choice_set, 
+    nl_prob(choice_set = choice_set,
             beta = model$estimate,
             observed_attributes = model$apollo_inputs$observed_attributes,
-            utility_space = model$apollo_inputs$utility_space, 
-            nesting_spec = model$apollo_inputs$nesting_spec
+            utility_space = model$apollo_inputs$utility_space,
+            nesting_spec = model$apollo_inputs$nesting_spec,
+            nesting_structure = nesting_structure,
+            mnl_cache = mnl_cache
     )
   }
   return(choice_prob_func)
 }
 
-###### CNL ###### 
-cnl_prob <- function(choice_set, beta, observed_attributes, utility_space, og_expV = 0, intercept = NULL, 
-                     nesting_spec, nesting_structure = NULL) {
-  
+###### CNL ######
+cnl_prob <- function(choice_set, beta, observed_attributes, utility_space, og_expV = 0, intercept = NULL,
+                     nesting_spec, nesting_structure = NULL, mnl_cache = NULL) {
+
   # Step 1: Calculate deterministic utilities
-  utility <- mnl_utility(choice_set, beta, observed_attributes, utility_space, og_expV, intercept)
+  utility <- mnl_utility(choice_set, beta, observed_attributes, utility_space, og_expV, intercept,
+                         precomputed = mnl_cache)
   names(utility) <- choice_set$veh_id
-  
+
   # Step 2: Get or build nesting structure
   if (is.null(nesting_structure)) {
     nesting_structure <- build_nesting_structure(choice_set, beta, nesting_spec)
   }
-  
-  # Extract components
-  A <- nesting_structure$allocation_matrix  # J x K matrix (nests x alternatives)
-  lambda <- nesting_structure$lambda_vec    # J vector
+
+  A       <- nesting_structure$allocation_matrix  # J x K (nests x alternatives)
+  lambda  <- nesting_structure$lambda_vec         # J
   alt_ids <- nesting_structure$alt_ids
-  
+
   # Ensure utility order matches allocation matrix columns
   utility <- utility[alt_ids]
-  
-  n_nests <- length(lambda)
-  n_alts <- length(utility)
-  
-  # Step 3: Calculate nest logsums (inclusive values)
-  nest_logsums <- numeric(n_nests)
-  
-  for (j in seq_len(n_nests)) {
-    lambda_j <- lambda[j]
-    
-    # CNL logsum: log(sum_k(alpha_jk * exp(V_k / lambda_j)))
-    weighted_sum <- sum(A[j, ] * exp(utility / lambda_j))
-    nest_logsums[j] <- lambda_j * log(weighted_sum)
-  }
-  
-  # Step 4: Marginal nest probabilities
-  exp_nest_logsums <- exp(nest_logsums)
+  n_alts  <- length(utility)
+
+  # Vectorized: weighted[i, j] = A[j, i] * exp(V_i / lambda_j)
+  #   - outer(utility, 1/lambda) gives n_alts x n_nests matrix of V_i/lambda_j
+  #   - t(A) reshapes to n_alts x n_nests for elementwise multiply
+  exp_scaled <- exp(outer(utility, 1 / lambda))    # n_alts x n_nests
+  weighted   <- t(A) * exp_scaled                  # n_alts x n_nests
+
+  denom_per_nest <- colSums(weighted)              # length n_nests; sum_k(alpha_jk * exp(V_k/lambda_j))
+  nest_logsums   <- lambda * log(denom_per_nest)   # inclusive values
+
+  # Marginal nest probabilities
+  exp_nest_logsums    <- exp(nest_logsums)
   marginal_nest_probs <- exp_nest_logsums / (sum(exp_nest_logsums) + og_expV)
-  
-  # Step 5: Final probabilities using the CNL formula:
-  # P(i) = sum_j [P(j) * alpha_ji * exp(V_i/lambda_j) / sum_k(alpha_jk * exp(V_k/lambda_j))]
-  final_probs <- numeric(n_alts)
-  
-  for (j in seq_len(n_nests)) {
-    lambda_j <- lambda[j]
-    
-    # Calculate denominator for conditional probabilities in nest j
-    denom_j <- sum(A[j, ] * exp(utility / lambda_j))
-    
-    # Add contribution from nest j to each alternative
-    for (i in seq_len(n_alts)) {
-      if (A[j, i] > 0) {  # Only if alternative i is allocated to nest j
-        conditional_prob <- A[j, i] * exp(utility[i] / lambda_j) / denom_j
-        final_probs[i] <- final_probs[i] + marginal_nest_probs[j] * conditional_prob
-      }
-    }
-  }
-  
+
+  # Conditional probabilities P(i|j) = weighted[i,j] / denom_per_nest[j]
+  # Guard against zero denominators (empty nests) by treating 0/0 as 0.
+  safe_denom <- ifelse(denom_per_nest > 0, denom_per_nest, 1)
+  cond_probs <- sweep(weighted, 2, safe_denom, "/")
+  cond_probs[, denom_per_nest == 0] <- 0
+
+  # Final unconditional probabilities: sum_j P(j) * P(i|j)
+  final_probs <- as.vector(cond_probs %*% marginal_nest_probs)
   names(final_probs) <- alt_ids
   return(final_probs)
 }
 
-wrap_cnl_prob_func <- function(model, init_choice_set){
-  # # Get nesting structure
-  # nesting_structure <- build_nesting_structure(
-  #   choice_set = init_choice_set, 
-  #   beta=model$estimate, 
-  #   nesting_spec = model$apollo_inputs$nesting_spec
-  #   )
-  
-  # Calc choice prob
+wrap_cnl_prob_func <- function(model, init_choice_set = NULL){
+  if (!is.null(init_choice_set)) {
+    nesting_structure <- build_nesting_structure(
+      choice_set   = init_choice_set,
+      beta         = model$estimate,
+      nesting_spec = model$apollo_inputs$nesting_spec
+    )
+    mnl_cache <- build_mnl_utility_cache(
+      choice_set          = init_choice_set,
+      observed_attributes = model$apollo_inputs$observed_attributes,
+      utility_space       = model$apollo_inputs$utility_space,
+      intercept           = NULL
+    )
+  } else {
+    nesting_structure <- NULL
+    mnl_cache         <- NULL
+  }
   choice_prob_func <- function(choice_set){
-    cnl_prob(choice_set = choice_set, 
+    cnl_prob(choice_set = choice_set,
              beta = model$estimate,
              observed_attributes = model$apollo_inputs$observed_attributes,
-             utility_space = model$apollo_inputs$utility_space, 
-             nesting_spec = model$apollo_inputs$nesting_spec
-             # nesting_structure = nesting_structure
+             utility_space = model$apollo_inputs$utility_space,
+             nesting_spec = model$apollo_inputs$nesting_spec,
+             nesting_structure = nesting_structure,
+             mnl_cache = mnl_cache
     )
   }
   return(choice_prob_func)
@@ -376,34 +388,35 @@ lcl_extract_parameters <- function(beta) {
 
 
 # Function 2: Calculate choice probabilities for latent-class logit
-lcl_prob <- function(choice_set, pref_coeff, class_intercepts, observed_attributes, 
-                     utility_space, attr_intercept = NULL, og_expV = 0) {
-  
+lcl_prob <- function(choice_set, pref_coeff, class_intercepts, observed_attributes,
+                     utility_space, attr_intercept = NULL, og_expV = 0,
+                     mnl_cache = NULL, class_membership_probs = NULL) {
+
   n_alts <- nrow(choice_set)
   n_classes <- nrow(pref_coeff)
-  
+
   # Calculate choice probabilities within each class
   class_utility_matrix <- sapply(seq_len(n_classes), function(class_j){
     mnl_utility(choice_set          = choice_set,
                 beta                = pref_coeff[class_j, ],
                 observed_attributes = observed_attributes,
                 utility_space       = utility_space,
-                intercept           = attr_intercept)  # this may not work as intended
+                intercept           = attr_intercept,
+                precomputed         = mnl_cache)
   })
   rownames(class_utility_matrix) = choice_set$veh_id
   colnames(class_utility_matrix) = rownames(pref_coeff)
-  
-  # Choice prob by class
+
   exp_utilities <- exp(class_utility_matrix)
   denominators <- colSums(exp_utilities) + og_expV
-  class_choice_probs <- sweep(exp_utilities, 2, denominators, "/")      # n_alts × n_classes
-  
-  # Calculate class membership probabilities using softmax on intercepts
-  exp_intercepts <- exp(class_intercepts)
-  class_membership_probs <- exp_intercepts / sum(exp_intercepts)
-  
-  # Calculate overall probabilities (weighted by class membership)
-  prob <- as.vector(class_choice_probs %*% class_membership_probs) # (n_veh x n_classes) * (n_classes x 1)
+  class_choice_probs <- sweep(exp_utilities, 2, denominators, "/")
+
+  if (is.null(class_membership_probs)) {
+    exp_intercepts <- exp(class_intercepts)
+    class_membership_probs <- exp_intercepts / sum(exp_intercepts)
+  }
+
+  prob <- as.vector(class_choice_probs %*% class_membership_probs)
   names(prob) <- choice_set$veh_id
   return(prob)
 }
@@ -422,17 +435,31 @@ calculate_lcl_prob <- function(choice_set, model) {
   return(prob)
 }
 
-wrap_lcl_prob_func <- function(model){
-  # Extract class parameters
+wrap_lcl_prob_func <- function(model, init_choice_set = NULL){
   lcl_params <- lcl_extract_parameters(model$estimate)
-  
-  # Calculate probabilities
+
+  if (!is.null(init_choice_set)) {
+    mnl_cache <- build_mnl_utility_cache(
+      choice_set          = init_choice_set,
+      observed_attributes = model$apollo_inputs$observed_attributes,
+      utility_space       = model$apollo_inputs$utility_space,
+      intercept           = NULL
+    )
+    exp_intercepts <- exp(lcl_params$class_intercepts)
+    class_membership_probs <- exp_intercepts / sum(exp_intercepts)
+  } else {
+    mnl_cache <- NULL
+    class_membership_probs <- NULL
+  }
+
   choice_prob_func <- function(choice_set){
     lcl_prob(choice_set = choice_set,
              pref_coeff = lcl_params$pref_coeff,
              class_intercepts = lcl_params$class_intercepts,
              observed_attributes = model$apollo_inputs$observed_attributes,
-             utility_space = model$apollo_inputs$utility_space)
+             utility_space = model$apollo_inputs$utility_space,
+             mnl_cache = mnl_cache,
+             class_membership_probs = class_membership_probs)
   }
   return(choice_prob_func)
 }
@@ -508,32 +535,47 @@ mxl_draw_coefficients <- function(beta, utility_space, n_draws = 100,
 }
 
 # Function 2: Calculate choice probabilities
-mxl_prob <- function(choice_set, rand_coeff, fixed_coeff, utility_space, og_expV = 0, scalingFactor_dist = FALSE) {
-  
+mxl_prob <- function(choice_set, rand_coeff, fixed_coeff, utility_space, og_expV = 0, scalingFactor_dist = FALSE,
+                     mxl_cache = NULL) {
+
   n_alts <- nrow(choice_set)
   n_draws <- ncol(rand_coeff)
-  
+
   if (utility_space == "pref") { # pref space
-    attr_names <- gsub("^b_", "", rownames(rand_coeff))
-    X <- as.matrix(choice_set[, attr_names, drop = FALSE])  # n_alts × n_attrs
+    if (is.null(mxl_cache)) {
+      attr_names <- gsub("^b_", "", rownames(rand_coeff))
+      X <- as.matrix(choice_set[, attr_names, drop = FALSE])
+    } else {
+      X <- mxl_cache$X
+    }
     V_matrix <- X %*% rand_coeff  # n_alts × n_draws
-    
+
   } else { # WTP space
     if (scalingFactor_dist){ # for a distributional scalingFactor
       all_param_names <- gsub("^wtp_", "", rownames(rand_coeff))
       attr_names <- all_param_names[all_param_names != "scalingFactor"]
       wtp_attr_names <- paste0("wtp_", attr_names)
-      Xwtp <- as.matrix(choice_set[, attr_names, drop = FALSE])  # n_alts × n_attrs
+      if (is.null(mxl_cache)) {
+        Xwtp <- as.matrix(choice_set[, attr_names, drop = FALSE])
+      } else {
+        Xwtp <- mxl_cache$Xwtp
+      }
       wtp_utility <- Xwtp %*% rand_coeff[wtp_attr_names, , drop = FALSE]  # n_alts × n_draws
-      price_matrix <- matrix(rep(choice_set$Price, n_draws), nrow = n_alts, ncol = n_draws)
-      scaling_matrix <- matrix(rep(rand_coeff["scalingFactor", ], each = n_alts), 
+      price_vec   <- if (is.null(mxl_cache)) choice_set$Price else mxl_cache$price
+      price_matrix <- matrix(rep(price_vec, n_draws), nrow = n_alts, ncol = n_draws)
+      scaling_matrix <- matrix(rep(rand_coeff["scalingFactor", ], each = n_alts),
                                nrow = n_alts, ncol = n_draws)  # n_alts × n_draws
       V_matrix <- scaling_matrix * (wtp_utility - price_matrix)
     } else{
-      attr_names <- gsub("^wtp_", "", rownames(rand_coeff))
-      Xwtp <- as.matrix(choice_set[, attr_names, drop = FALSE])  # n_alts × n_attrs
+      if (is.null(mxl_cache)) {
+        attr_names <- gsub("^wtp_", "", rownames(rand_coeff))
+        Xwtp <- as.matrix(choice_set[, attr_names, drop = FALSE])
+      } else {
+        Xwtp <- mxl_cache$Xwtp
+      }
       wtp_utility <- Xwtp %*% rand_coeff  # n_alts × n_draws
-      price_matrix <- matrix(rep(choice_set$Price, n_draws), nrow = n_alts, ncol = n_draws)
+      price_vec   <- if (is.null(mxl_cache)) choice_set$Price else mxl_cache$price
+      price_matrix <- matrix(rep(price_vec, n_draws), nrow = n_alts, ncol = n_draws)
       V_matrix <- fixed_coeff[["scalingFactor"]] * (wtp_utility - price_matrix)
     }
   }
@@ -566,20 +608,42 @@ calculate_mxl_prob <- function(choice_set, model, n_draws = 1000) {
            scalingFactor_dist = scalingFactor_dist)
 }
 
-wrap_mxl_prob_func <- function(model, n_draws = 1000){
+wrap_mxl_prob_func <- function(model, n_draws = 1000, init_choice_set = NULL){
   scalingFactor_dist = model$apollo_inputs$scalingFactor_dist
+  utility_space      = model$apollo_inputs$utility_space
   # Draw coefficients
   coeff_draws <- mxl_draw_coefficients(model$estimate,
-                                       model$apollo_inputs$utility_space, 
+                                       utility_space,
                                        n_draws = n_draws,
                                        scalingFactor_dist = scalingFactor_dist)
-  # Return wrapped prob func
+
+  if (!is.null(init_choice_set)) {
+    rand_coeff <- coeff_draws$rand_coeff
+    mxl_cache <- list()
+    if (utility_space == "pref") {
+      attr_names <- gsub("^b_", "", rownames(rand_coeff))
+      mxl_cache$X <- as.matrix(init_choice_set[, attr_names, drop = FALSE])
+    } else {
+      if (scalingFactor_dist) {
+        all_param_names <- gsub("^wtp_", "", rownames(rand_coeff))
+        attr_names <- all_param_names[all_param_names != "scalingFactor"]
+      } else {
+        attr_names <- gsub("^wtp_", "", rownames(rand_coeff))
+      }
+      mxl_cache$Xwtp  <- as.matrix(init_choice_set[, attr_names, drop = FALSE])
+      mxl_cache$price <- init_choice_set$Price
+    }
+  } else {
+    mxl_cache <- NULL
+  }
+
   choice_prob_func <- function(choice_set){
     mxl_prob(choice_set = choice_set,
              rand_coeff = coeff_draws$rand_coeff,
              fixed_coeff = coeff_draws$fixed_coeff,
-             utility_space = model$apollo_inputs$utility_space,
-             scalingFactor_dist = scalingFactor_dist)
+             utility_space = utility_space,
+             scalingFactor_dist = scalingFactor_dist,
+             mxl_cache = mxl_cache)
   }
   return(choice_prob_func)
 }
@@ -621,30 +685,35 @@ lcnl_extract_parameters <- function(beta) {
   ))
 }
 
-lcnl_prob <- function(choice_set, pref_coeff, class_intercepts, nesting_params, 
-                      observed_attributes, utility_space, nesting_spec, 
-                      attr_intercept = NULL, og_expV = 0, nesting_structure = NULL) {
-  
+lcnl_prob <- function(choice_set, pref_coeff, class_intercepts, nesting_params,
+                      observed_attributes, utility_space, nesting_spec,
+                      attr_intercept = NULL, og_expV = 0, nesting_structure = NULL,
+                      class_betas = NULL,
+                      class_nesting_structures = NULL,
+                      class_membership_probs = NULL,
+                      mnl_cache = NULL) {
+
   n_alts <- nrow(choice_set)
   n_classes <- nrow(pref_coeff)
-  
+
   # Calculate choice probabilities within each class (using nested logit)
   class_choice_probs <- sapply(seq_len(n_classes), function(class_j) {
-    # Get class-specific preference coefficients
-    class_beta <- pref_coeff[class_j, ]
-    
-    # Get class-specific nesting parameters
-    class_nesting_param_names <- grep(paste0("_", class_j, "$"), names(nesting_params), value = TRUE)
-    class_nesting_params <- nesting_params[class_nesting_param_names]
-    
-    # Remove class suffix from parameter names for build_nesting_structure
-    names(class_nesting_params) <- sub(paste0("_", class_j, "$"), "", names(class_nesting_params))
-    
-    # Create combined beta vector for this class (preferences + nesting params)
-    class_beta_combined <- c(class_beta, class_nesting_params)
-    
+
+    if (is.null(class_betas)) {
+      # Flexible path: parse class-specific params each call
+      class_beta <- pref_coeff[class_j, ]
+      class_nesting_param_names <- grep(paste0("_", class_j, "$"), names(nesting_params), value = TRUE)
+      class_nesting_params <- nesting_params[class_nesting_param_names]
+      names(class_nesting_params) <- sub(paste0("_", class_j, "$"), "", names(class_nesting_params))
+      class_beta_combined <- c(class_beta, class_nesting_params)
+    } else {
+      # Cached path: use pre-computed per-class beta
+      class_beta_combined <- class_betas[[class_j]]
+    }
+
+    class_ns <- if (is.null(class_nesting_structures)) nesting_structure else class_nesting_structures[[class_j]]
+
     # Calc choice prob
-    # Use existing nl_prob function for this class
     if(nesting_spec == "CNL") {
         class_probs <- cnl_prob(choice_set = choice_set,
                               beta = class_beta_combined,
@@ -653,9 +722,9 @@ lcnl_prob <- function(choice_set, pref_coeff, class_intercepts, nesting_params,
                               og_expV = og_expV,
                               intercept = attr_intercept,
                               nesting_spec = nesting_spec,
-                              nesting_structure = nesting_structure)
+                              nesting_structure = class_ns,
+                              mnl_cache = mnl_cache)
     } else{
-      # Calc choice prob
       class_probs <- nl_prob(choice_set = choice_set,
                              beta = class_beta_combined,
                              observed_attributes = observed_attributes,
@@ -663,30 +732,68 @@ lcnl_prob <- function(choice_set, pref_coeff, class_intercepts, nesting_params,
                              og_expV = og_expV,
                              intercept = attr_intercept,
                              nesting_spec = nesting_spec,
-                             nesting_structure = nesting_structure)
+                             nesting_structure = class_ns,
+                             mnl_cache = mnl_cache)
     }
-    
+
     return(class_probs[choice_set$veh_id])
   })
-  
+
   rownames(class_choice_probs) <- choice_set$veh_id
   colnames(class_choice_probs) <- paste0("class_", seq_len(n_classes))
-  
-  # Calculate class membership probabilities using softmax on intercepts
-  exp_intercepts <- exp(class_intercepts)
-  class_membership_probs <- exp_intercepts / sum(exp_intercepts)
-  
+
+  if (is.null(class_membership_probs)) {
+    exp_intercepts <- exp(class_intercepts)
+    class_membership_probs <- exp_intercepts / sum(exp_intercepts)
+  }
+
   # Calculate overall probabilities (weighted by class membership)
   prob <- as.vector(class_choice_probs %*% class_membership_probs)
   names(prob) <- choice_set$veh_id
-  
+
   return(prob)
 }
 
-wrap_lcnl_prob_func <- function(model, init_choice_set) {
+wrap_lcnl_prob_func <- function(model, init_choice_set = NULL) {
   # Extract class parameters
   lcnl_params <- lcnl_extract_parameters(model$estimate)
-  
+  nesting_spec <- model$apollo_inputs$nesting_spec
+  n_classes <- lcnl_params$n_classes
+
+  # If init_choice_set is provided, pre-compute per-class betas, nesting
+  # structures, class-membership softmax, and the attribute design matrix.
+  # All four live as closure variables; valid only for the given choice set shape.
+  if (!is.null(init_choice_set)) {
+    class_betas <- lapply(seq_len(n_classes), function(j) {
+      class_beta <- lcnl_params$pref_coeff[j, ]
+      class_nesting_param_names <- grep(paste0("_", j, "$"), names(lcnl_params$nesting_params), value = TRUE)
+      class_nesting_params <- lcnl_params$nesting_params[class_nesting_param_names]
+      names(class_nesting_params) <- sub(paste0("_", j, "$"), "", names(class_nesting_params))
+      c(class_beta, class_nesting_params)
+    })
+
+    class_nesting_structures <- lapply(seq_len(n_classes), function(j) {
+      build_nesting_structure(init_choice_set,
+                              beta = class_betas[[j]],
+                              nesting_spec = nesting_spec)
+    })
+
+    exp_intercepts <- exp(lcnl_params$class_intercepts)
+    class_membership_probs <- exp_intercepts / sum(exp_intercepts)
+
+    mnl_cache <- build_mnl_utility_cache(
+      choice_set          = init_choice_set,
+      observed_attributes = model$apollo_inputs$observed_attributes,
+      utility_space       = model$apollo_inputs$utility_space,
+      intercept           = NULL
+    )
+  } else {
+    class_betas <- NULL
+    class_nesting_structures <- NULL
+    class_membership_probs <- NULL
+    mnl_cache <- NULL
+  }
+
   # Return closure function
   choice_prob_func <- function(choice_set) {
     lcnl_prob(choice_set = choice_set,
@@ -695,32 +802,33 @@ wrap_lcnl_prob_func <- function(model, init_choice_set) {
               nesting_params = lcnl_params$nesting_params,
               observed_attributes = model$apollo_inputs$observed_attributes,
               utility_space = model$apollo_inputs$utility_space,
-              nesting_spec = model$apollo_inputs$nesting_spec)
+              nesting_spec = nesting_spec,
+              class_betas = class_betas,
+              class_nesting_structures = class_nesting_structures,
+              class_membership_probs = class_membership_probs,
+              mnl_cache = mnl_cache)
   }
   return(choice_prob_func)
 }
 
-###### Wrappers ###### 
-wrap_model <- function(model){
+###### Wrappers ######
+wrap_model <- function(model, init_choice_set = NULL){
   if (model$apollo_inputs$nesting_spec == "none"){
     choice_prob_func <- switch(model$apollo_inputs$heterogeneity_spec,
-                               "none" = wrap_mnl_prob_func(model),
-                               "latent"=wrap_lcl_prob_func(model),
-                               "mixed" = wrap_mxl_prob_func(model, n_draws = model$apollo_inputs$n_draws),
+                               "none"   = wrap_mnl_prob_func(model, init_choice_set = init_choice_set),
+                               "latent" = wrap_lcl_prob_func(model, init_choice_set = init_choice_set),
+                               "mixed"  = wrap_mxl_prob_func(model, n_draws = model$apollo_inputs$n_draws,
+                                                             init_choice_set = init_choice_set),
                                stop("Unknown heterogeneity_spec: ", model$apollo_inputs$heterogeneity_spec))
   } else if (model$apollo_inputs$nesting_spec == "CNL") {
-    # Cross-nesting
     choice_prob_func <- switch(model$apollo_inputs$heterogeneity_spec,
-                               "none" = wrap_cnl_prob_func(model),
-                               "latent" = wrap_lcnl_prob_func(model),
-                               # "latent" = "lc-nl",
-                               # "mixed" = "mx-nl",
+                               "none"   = wrap_cnl_prob_func(model, init_choice_set = init_choice_set),
+                               "latent" = wrap_lcnl_prob_func(model, init_choice_set = init_choice_set),
                                stop("Unknown heterogeneity_spec: ", model$apollo_inputs$heterogeneity_spec))
   } else{
-    # Nesting
     choice_prob_func <- switch(model$apollo_inputs$heterogeneity_spec,
-                               "none" = wrap_nl_prob_func(model),
-                               "latent" = wrap_lcnl_prob_func(model),
+                               "none"   = wrap_nl_prob_func(model, init_choice_set = init_choice_set),
+                               "latent" = wrap_lcnl_prob_func(model, init_choice_set = init_choice_set),
                                stop("Unknown heterogeneity_spec: ", model$apollo_inputs$heterogeneity_spec))
   }
   return(choice_prob_func)
