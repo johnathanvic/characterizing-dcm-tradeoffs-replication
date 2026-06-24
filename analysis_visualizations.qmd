@@ -657,7 +657,7 @@ p1 <- ggplot(mod_summary_df, aes(y = rel_cpu, x = mean_avg_likelihood, color = m
     legend.position = "none",
     # legend.margin = margin(t = 5, r = 5, b = 0, l = 5),  # Reduce bottom margin
     axis.text = element_text(size = 10),  # Controls both x and y axis text
-    axis.title = element_text(size = 10), # Controls both x and y axis titles
+    axis.title = element_text(size = 11), # Controls both x and y axis titles
     axis.line.x.bottom = element_line(arrow = grid::arrow(length = unit(0.3, "cm"), 
                                                      ends = "last"),
                                 color = "darkgreen", linewidth = 1),
@@ -818,7 +818,7 @@ p1 <- ggplot(mod_summary_df, aes(y = rel_cpu, x = pct_improvement_from_random, c
     legend.position = "none",
     # legend.margin = margin(t = 5, r = 5, b = 0, l = 5),  # Reduce bottom margin
     axis.text = element_text(size = 10),  # Controls both x and y axis text
-    axis.title = element_text(size = 10), # Controls both x and y axis titles
+    axis.title = element_text(size = 11), # Controls both x and y axis titles
     axis.line.x.bottom = element_line(arrow = grid::arrow(length = unit(0.3, "cm"), 
                                                      ends = "last"),
                                 color = "darkgreen", linewidth = 1),
@@ -968,7 +968,7 @@ p2 <- ggplot(mod_summary_df, aes(y = rel_cpu, x = mean_psi, color = model_catego
     legend.position = "none",
     # legend.margin = margin(t = 5, r = 5, b = 0, l = 5),  # Reduce bottom margin
     axis.text = element_text(size = 10),  # Controls both x and y axis text
-    axis.title = element_text(size = 10), # Controls both x and y axis titles
+    axis.title = element_text(size = 11), # Controls both x and y axis titles
     axis.line.x.bottom = element_line(arrow = grid::arrow(length = unit(0.3, "cm"), 
                                                      ends = "last"),
                                 color = "darkgreen", linewidth = 1),
@@ -1296,7 +1296,7 @@ results %>%
       "neg_p < 0.001", "neg_p < 0.01", "neg_p < 0.05",
       "pos_p < 0.001", "pos_p < 0.01", "pos_p < 0.05"
     )
-  ) +
+    ) +
   labs(
       title = "Pairwise Comparison: Out-of-Sample Avg. Likelihood",
       subtitle = "Mean % difference in average likelihood (* denotes models with a numerical issue for one sample)",
@@ -1413,7 +1413,6 @@ ggplot(psi_df, aes(y = model_label, x = psi_prime)) +
     plot.title = element_text(size = 11, face = "bold"),
     plot.margin = margin(5, 5, 5, 5)
   )
-
 ggsave("output/Figures/psi_CI.png", width = 4, height = 4, dpi = 300)
 
 ```
